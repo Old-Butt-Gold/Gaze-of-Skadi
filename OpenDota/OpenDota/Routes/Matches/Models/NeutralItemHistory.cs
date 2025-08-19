@@ -1,0 +1,15 @@
+﻿using System.Text.Json.Serialization;
+
+namespace OpenDota.Routes.Matches.Models;
+
+public class NeutralItemHistory
+{
+    [JsonPropertyName("time")]
+    public int Time { get; set; }
+
+    [JsonPropertyName("item_neutral")]
+    public string? ItemNeutral { get; set; }
+
+    [JsonPropertyName("item_neutral_enhancement")]
+    public string ItemNeutralEnhancement { get; set; }
+}
