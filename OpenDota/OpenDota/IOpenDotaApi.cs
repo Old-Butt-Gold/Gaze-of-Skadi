@@ -2,8 +2,6 @@
 using OpenDota.Routes.Heroes;
 using OpenDota.Routes.Matches;
 using OpenDota.Routes.Players;
-using OpenDota.Routes.ProMatches;
-using OpenDota.Routes.PublicMatches;
 using OpenDota.Routes.Resources;
 using OpenDota.Routes.Search;
 using OpenDota.Routes.Teams;

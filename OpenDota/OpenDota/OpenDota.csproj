@@ -7,11 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="..\README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-        <Link>README.md</Link>
-      </None>
       <None Update="Resources\*.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
