@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using GoS.Domain.BaseEnums;
+using GoS.Domain.Extensions;
 using GoS.Domain.Resources.Enums;
 using GoS.Domain.Resources.Models.Abilities;
 using GoS.Domain.Resources.Models.AghanimDescriptions;
@@ -11,7 +12,6 @@ using GoS.Domain.Resources.Models.Heroes;
 using GoS.Domain.Resources.Models.ItemColors;
 using GoS.Domain.Resources.Models.Items;
 using GoS.Domain.Resources.Models.NeutralAbilities;
-using OpenDota.Extensions;
 
 namespace OpenDota.Routes.Resources;
 

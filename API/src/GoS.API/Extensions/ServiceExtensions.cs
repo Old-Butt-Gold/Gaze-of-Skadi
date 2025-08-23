@@ -1,10 +1,21 @@
 using System.Reflection;
+using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Models;
 
 namespace GoS.API.Extensions;
 
 public static class ServiceExtensions
 {
+    public static void ConfigureControllers(this IServiceCollection services)
+    {
+        services.AddControllers(config =>
+        {
+            config.RespectBrowserAcceptHeader = true;
+            config.ReturnHttpNotAcceptable = true;
+            
+        }).AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
+    }
+    
     public static void ConfigureMemoryCache(this IServiceCollection services)
     {
         services.AddMemoryCache();

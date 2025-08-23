@@ -35,6 +35,11 @@ internal sealed class HttpRequester : IRequester
 
             await using var stream = await response.Content.ReadAsStreamAsync(ct);
 
+            if (stream is null or { CanSeek: true, Length: 0 })
+            {
+                return null;
+            }
+            
             var options = _serializationOptionsProvider.CreateJsonSerializerOptions();
             return await JsonSerializer.DeserializeAsync<T>(stream, options, ct);
         }
