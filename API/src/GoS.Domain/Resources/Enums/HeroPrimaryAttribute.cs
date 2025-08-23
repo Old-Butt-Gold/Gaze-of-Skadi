@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace OpenDota.Enums.Permanent;
+namespace GoS.Domain.Resources.Enums;
 
 /// <summary>
 /// The primary attribute of the hero.

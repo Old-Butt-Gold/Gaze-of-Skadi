@@ -1,0 +1,31 @@
+﻿namespace GoS.Domain.BaseEnums;
+
+public enum GameMode
+{
+    Unknown = 0,
+    AllPick,
+    CaptainsMode,
+    RandomDraft,
+    SingleDraft,
+    AllRandom,
+    Intro,
+    Diretide,
+    ReverseCaptainsMode,
+    Greeviling,
+    Tutorial,
+    MidOnly,
+    LeastPlayed,
+    LimitedHeroes,
+    CompendiumMatchmaking,
+    Custom,
+    CaptainsDraft,
+    BalancedDraft,
+    AbilityDraft,
+    Event,
+    AllRandomDeathMatch,
+    OneVOneMid,
+    AllPickRanked,
+    Turbo,
+    Mutation,
+    CoachesChallenge,
+}

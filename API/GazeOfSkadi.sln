@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenDota", "OpenDota\OpenDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{E610008D-2096-4C30-BCF9-7F2B77345BD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.API", "src\GoS.API\GoS.API.csproj", "{EC4A5757-9680-4BE3-AAE2-C4285A339A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Domain", "src\GoS.Domain\GoS.Domain.csproj", "{E28BAFE3-5ED1-4C74-87BD-912A45441516}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E610008D-2096-4C30-BCF9-7F2B77345BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E610008D-2096-4C30-BCF9-7F2B77345BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E610008D-2096-4C30-BCF9-7F2B77345BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4A5757-9680-4BE3-AAE2-C4285A339A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4A5757-9680-4BE3-AAE2-C4285A339A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4A5757-9680-4BE3-AAE2-C4285A339A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4A5757-9680-4BE3-AAE2-C4285A339A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,46 @@
+﻿namespace GoS.Domain.Matches.Enums;
+
+public enum UnitOrder
+{
+    None = 0, // DOTA_UNIT_ORDER_NONE
+    MoveToPosition = 1, // DOTA_UNIT_ORDER_MOVE_TO_POSITION
+    MoveToTarget = 2, // DOTA_UNIT_ORDER_MOVE_TO_TARGET
+    AttackMove = 3, // DOTA_UNIT_ORDER_ATTACK_MOVE
+    AttackTarget = 4, // DOTA_UNIT_ORDER_ATTACK_TARGET
+    CastPosition = 5, // DOTA_UNIT_ORDER_CAST_POSITION
+    CastTarget = 6, // DOTA_UNIT_ORDER_CAST_TARGET
+    CastTargetTree = 7, // DOTA_UNIT_ORDER_CAST_TARGET_TREE
+    CastNoTarget = 8, // DOTA_UNIT_ORDER_CAST_NO_TARGET
+    CastToggle = 9, // DOTA_UNIT_ORDER_CAST_TOGGLE
+    HoldPosition = 10, // DOTA_UNIT_ORDER_HOLD_POSITION
+    TrainAbility = 11, // DOTA_UNIT_ORDER_TRAIN_ABILITY
+    DropItem = 12, // DOTA_UNIT_ORDER_DROP_ITEM
+    GiveItem = 13, // DOTA_UNIT_ORDER_GIVE_ITEM
+    PickupItem = 14, // DOTA_UNIT_ORDER_PICKUP_ITEM
+    PickupRune = 15, // DOTA_UNIT_ORDER_PICKUP_RUNE
+    PurchaseItem = 16, // DOTA_UNIT_ORDER_PURCHASE_ITEM
+    SellItem = 17, // DOTA_UNIT_ORDER_SELL_ITEM
+    DisassembleItem = 18, // DOTA_UNIT_ORDER_DISASSEMBLE_ITEM
+    MoveItem = 19, // DOTA_UNIT_ORDER_MOVE_ITEM
+    CastToggleAuto = 20, // DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO
+    Stop = 21, // DOTA_UNIT_ORDER_STOP
+    Taunt = 22, // DOTA_UNIT_ORDER_TAUNT
+    Buyback = 23, // DOTA_UNIT_ORDER_BUYBACK
+    Glyph = 24, // DOTA_UNIT_ORDER_GLYPH
+    EjectItemFromStash = 25, // DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH
+    CastRune = 26, // DOTA_UNIT_ORDER_CAST_RUNE
+    PingAbility = 27, // DOTA_UNIT_ORDER_PING_ABILITY
+    MoveToDirection = 28, // DOTA_UNIT_ORDER_MOVE_TO_DIRECTION
+    Patrol = 29, // DOTA_UNIT_ORDER_PATROL
+    VectorTargetPosition = 30, // DOTA_UNIT_ORDER_VECTOR_TARGET_POSITION
+    Radar = 31, // DOTA_UNIT_ORDER_RADAR
+    SetItemCombineLock = 32, // DOTA_UNIT_ORDER_SET_ITEM_COMBINE_LOCK
+    Continue = 33, // DOTA_UNIT_ORDER_CONTINUE
+    VectorTargetCanceled = 34, // DOTA_UNIT_ORDER_VECTOR_TARGET_CANCELED
+    CastRiverPaint = 35, // DOTA_UNIT_ORDER_CAST_RIVER_PAINT
+    PregameAdjustItemAssignment = 36, // DOTA_UNIT_ORDER_PREGAME_ADJUST_ITEM_ASSIGNMENT
+    DropItemAtFountain = 37, // DOTA_UNIT_ORDER_DROP_ITEM_AT_FOUNTAIN
+    TakeItemFromNeutralItemStash = 38, // DOTA_UNIT_ORDER_TAKE_ITEM_FROM_NEUTRAL_ITEM_STASH
+    MoveRelative = 39, // DOTA_UNIT_ORDER_MOVE_RELATIVE
+    CastToggleAlt = 40 // DOTA_UNIT_ORDER_CAST_TOGGLE_ALT
+}

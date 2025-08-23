@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace OpenDota.Routes.Resources.Models.Countries;
+namespace GoS.Domain.Resources.Models.Countries;
 
 public class Country
 {

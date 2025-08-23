@@ -1,7 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-using OpenDota.Enums.Permanent;
+using GoS.Domain.BaseEnums;
+using GoS.Domain.Resources.Enums;
 
-namespace OpenDota.Routes.Heroes.Models;
+namespace GoS.Domain.Heroes.Models;
 
 /// <summary>
 /// Represents hero stats.
