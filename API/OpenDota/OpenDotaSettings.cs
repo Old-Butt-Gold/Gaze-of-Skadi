@@ -1,11 +1,9 @@
-﻿using System.ComponentModel;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using GoS.Domain.Matches.Enums;
 using OpenDota.Converters;
 using OpenDota.Converters.Factories;
-using OpenDota.Enums;
-using OpenDota.Enums.Permanent;
 
 namespace OpenDota;
 

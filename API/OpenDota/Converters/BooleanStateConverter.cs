@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using OpenDota.Enums.Permanent;
+using GoS.Domain.BaseEnums;
 
 namespace OpenDota.Converters;
 

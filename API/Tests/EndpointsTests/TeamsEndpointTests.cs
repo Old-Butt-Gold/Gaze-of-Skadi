@@ -1,5 +1,5 @@
-﻿using OpenDota;
-using OpenDota.Enums.Permanent;
+﻿using GoS.Domain.BaseEnums;
+using OpenDota;
 using Tests.Extensions;
 using Xunit.Abstractions;
 

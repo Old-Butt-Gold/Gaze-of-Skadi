@@ -1,6 +1,6 @@
-﻿using OpenDota.Enums;
-using OpenDota.Enums.Permanent;
-using OpenDota.Routes.Players.Models;
+﻿using GoS.Domain.Players.Enums;
+using GoS.Domain.Players.Models;
+using GoS.Domain.Players.Models.EndpointParameters;
 
 namespace OpenDota.Routes.Players;
 
@@ -87,7 +87,7 @@ public interface IPlayersEndpoint
 	/// <param name="field">Field to aggregate on.</param>
 	/// <param name="parameters">Query Parameters.</param>
 	/// <returns>Distribution of matches in a single stat.</returns>
-	Task<List<PlayerHistogram>?> GetPlayerHistogramsAsync(long accountId, Field field, PlayerEndpointParameters? parameters = null);
+	Task<List<PlayerHistogram>?> GetPlayerHistogramsAsync(long accountId, PlayerFieldHistogram field, PlayerEndpointParameters? parameters = null);
 
 	/// <summary>
 	/// Gets wards placed in matches played.

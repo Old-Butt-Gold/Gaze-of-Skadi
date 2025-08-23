@@ -1,8 +1,8 @@
-﻿using System.Text;
+﻿using GoS.Domain.BaseEnums;
+using GoS.Domain.Matches.Enums;
+using GoS.Domain.Matches.Models;
+using GoS.Domain.Resources.Models.ItemColors;
 using OpenDota;
-using OpenDota.Enums.Permanent;
-using OpenDota.Routes.Matches.Models;
-using OpenDota.Routes.Resources.Models.ItemColors;
 
 var openDota = new OpenDotaApi();
 // 8382164196

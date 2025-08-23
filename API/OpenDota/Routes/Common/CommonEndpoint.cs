@@ -1,6 +1,6 @@
-﻿using OpenDota.Enums.Permanent;
+﻿using GoS.Domain.Common.Enums;
+using GoS.Domain.Common.Models;
 using OpenDota.Extensions;
-using OpenDota.Routes.Common.Models;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Common;
@@ -15,7 +15,7 @@ public class CommonEndpoint(Requester requester) : ICommonEndpoint
     }
 
     /// <inheritdoc />
-    public Task<List<Record>?> GetRecordsByFieldAsync(FieldRecords field)
+    public Task<List<Record>?> GetRecordsByFieldAsync(CommonFieldRecords field)
     {
         return requester.GetResponseAsync<List<Record>>($"records/{field.ToSnakeCase()}");
     }

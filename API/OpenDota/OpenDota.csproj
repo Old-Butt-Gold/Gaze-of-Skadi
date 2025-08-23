@@ -12,4 +12,8 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\src\GoS.Domain\GoS.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

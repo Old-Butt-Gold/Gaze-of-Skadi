@@ -1,4 +1,4 @@
-﻿using OpenDota.Routes.Teams.Models;
+﻿using GoS.Domain.Teams.Models;
 
 namespace OpenDota.Routes.Teams;
 

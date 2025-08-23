@@ -1,13 +1,13 @@
-﻿using OpenDota.Enums.Permanent;
-using OpenDota.Routes.Resources.Models.Abilities;
-using OpenDota.Routes.Resources.Models.AghanimDescriptions;
-using OpenDota.Routes.Resources.Models.ChatWheels;
-using OpenDota.Routes.Resources.Models.Countries;
-using OpenDota.Routes.Resources.Models.HeroAbilities;
-using OpenDota.Routes.Resources.Models.Heroes;
-using OpenDota.Routes.Resources.Models.ItemColors;
-using OpenDota.Routes.Resources.Models.Items;
-using OpenDota.Routes.Resources.Models.NeutralAbilities;
+﻿using GoS.Domain.BaseEnums;
+using GoS.Domain.Resources.Models.Abilities;
+using GoS.Domain.Resources.Models.AghanimDescriptions;
+using GoS.Domain.Resources.Models.ChatWheels;
+using GoS.Domain.Resources.Models.Countries;
+using GoS.Domain.Resources.Models.HeroAbilities;
+using GoS.Domain.Resources.Models.Heroes;
+using GoS.Domain.Resources.Models.ItemColors;
+using GoS.Domain.Resources.Models.Items;
+using GoS.Domain.Resources.Models.NeutralAbilities;
 
 namespace OpenDota.Routes.Resources;
 

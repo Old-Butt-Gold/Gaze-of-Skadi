@@ -1,4 +1,4 @@
-﻿using OpenDota.Routes.Heroes.Models;
+﻿using GoS.Domain.Heroes.Models;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Heroes;

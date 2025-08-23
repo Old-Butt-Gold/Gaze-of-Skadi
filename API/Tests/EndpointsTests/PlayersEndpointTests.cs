@@ -1,6 +1,5 @@
-﻿using OpenDota;
-using OpenDota.Enums;
-using OpenDota.Enums.Permanent;
+﻿using GoS.Domain.Players.Enums;
+using OpenDota;
 using Tests.Extensions;
 using Xunit.Abstractions;
 
@@ -159,7 +158,7 @@ public class PlayersEndpointTests(ITestOutputHelper testOutputHelper)
 	[Fact]
 	public async Task TestGetPlayerHistograms()
 	{
-        var items = Enum.GetValues<Field>();
+        var items = Enum.GetValues<PlayerFieldHistogram>();
 
         foreach (var item in items)
         {

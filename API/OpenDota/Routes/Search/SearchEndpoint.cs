@@ -1,4 +1,4 @@
-﻿using OpenDota.Routes.Search.Models;
+﻿using GoS.Domain.Search.Models;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Search;

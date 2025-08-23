@@ -1,5 +1,5 @@
-﻿using OpenDota.Enums.Permanent;
-using OpenDota.Routes.Common.Models;
+﻿using GoS.Domain.Common.Enums;
+using GoS.Domain.Common.Models;
 
 namespace OpenDota.Routes.Common;
 
@@ -21,7 +21,7 @@ public interface ICommonEndpoint
     /// </summary>
     /// <param name="field">Field name to query.</param>
     /// <returns>Records in ranked matches.</returns>
-    Task<List<Record>?> GetRecordsByFieldAsync(FieldRecords field);
+    Task<List<Record>?> GetRecordsByFieldAsync(CommonFieldRecords field);
 
     // ------------------------
 

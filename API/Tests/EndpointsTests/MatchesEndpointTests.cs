@@ -34,8 +34,8 @@ public class MatchesEndpointTests(ITestOutputHelper testOutputHelper)
             Assert.True(result.TrueForAll(x => x.MatchSeqNum > 0));
             Assert.True(result.TrueForAll(x => x.NumRankTier > 0));
             Assert.True(result.TrueForAll(x => x.StartTime > 0));
-            Assert.True(result.TrueForAll(x => x.RadiantTeam.Length == 5));
-            Assert.True(result.TrueForAll(x => x.DireTeam.Length == 5));
+            Assert.True(result.TrueForAll(x => x.RadiantTeam.Count == 5));
+            Assert.True(result.TrueForAll(x => x.DireTeam.Count == 5));
         }
     }
 

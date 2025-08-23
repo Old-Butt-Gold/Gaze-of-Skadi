@@ -1,4 +1,5 @@
-﻿using OpenDota.Routes.Matches.Models;
+﻿using GoS.Domain.Matches.Models;
+using GoS.Domain.Matches.Models.EndpointParameters;
 
 namespace OpenDota.Routes.Matches;
 

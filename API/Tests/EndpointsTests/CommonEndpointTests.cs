@@ -1,5 +1,6 @@
-﻿using OpenDota;
-using OpenDota.Enums.Permanent;
+﻿using GoS.Domain.BaseEnums;
+using GoS.Domain.Common.Enums;
+using OpenDota;
 using Tests.Extensions;
 using Xunit.Abstractions;
 
@@ -24,7 +25,7 @@ public class CommonEndpointTests(ITestOutputHelper testOutputHelper)
     [Fact]
     public async Task TestGetRecordsByField()
     {
-        var items = Enum.GetValues<FieldRecords>();
+        var items = Enum.GetValues<CommonFieldRecords>();
 
         foreach (var item in items)
         {

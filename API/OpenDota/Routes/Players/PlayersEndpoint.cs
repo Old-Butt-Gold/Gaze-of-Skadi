@@ -1,7 +1,7 @@
-﻿using OpenDota.Enums;
-using OpenDota.Enums.Permanent;
+﻿using GoS.Domain.Players.Enums;
+using GoS.Domain.Players.Models;
+using GoS.Domain.Players.Models.EndpointParameters;
 using OpenDota.Extensions;
-using OpenDota.Routes.Players.Models;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Players;
@@ -56,7 +56,7 @@ public class PlayersEndpoint(Requester requester) : IPlayersEndpoint
 			$"players/{accountId}/counts", GetArguments(parameters));
 
 	/// <inheritdoc />
-	public Task<List<PlayerHistogram>?> GetPlayerHistogramsAsync(long accountId, Field field,
+	public Task<List<PlayerHistogram>?> GetPlayerHistogramsAsync(long accountId, PlayerFieldHistogram field,
 		PlayerEndpointParameters? parameters = null) =>
 		requester.GetResponseAsync<List<PlayerHistogram>>(
 			$"players/{accountId}/histograms/{field.ToSnakeCase()}", GetArguments(parameters));
