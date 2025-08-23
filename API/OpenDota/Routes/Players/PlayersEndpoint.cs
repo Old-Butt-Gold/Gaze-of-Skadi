@@ -1,7 +1,7 @@
-﻿using GoS.Domain.Players.Enums;
+﻿using GoS.Domain.Extensions;
+using GoS.Domain.Players.Enums;
 using GoS.Domain.Players.Models;
 using GoS.Domain.Players.Models.EndpointParameters;
-using OpenDota.Extensions;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Players;

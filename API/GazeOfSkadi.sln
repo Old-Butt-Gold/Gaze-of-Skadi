@@ -13,6 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.API", "src\GoS.API\GoS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Domain", "src\GoS.Domain\GoS.Domain.csproj", "{E28BAFE3-5ED1-4C74-87BD-912A45441516}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Application", "src\GoS.Application\GoS.Application.csproj", "{7384EFAF-22D6-4F94-974D-D3935CF42FBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F8DD6454-03C4-4440-800F-FADFB1B5D37B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.ResourceManager", "src\Infrastructure\GoS.Infrastructure.ResourceManager\GoS.Infrastructure.ResourceManager.csproj", "{D40E0563-4403-4197-9740-460C2FDDFC03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.OptionsProvider", "src\Infrastructure\GoS.Infrastructure.OptionsProvider\GoS.Infrastructure.OptionsProvider.csproj", "{ECF0F5F6-911A-4426-A835-924F289B881A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.Requester", "src\Infrastructure\GoS.Infrastructure.Requester\GoS.Infrastructure.Requester.csproj", "{ED7B420C-2893-4E7E-8F52-347983E3050C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +49,32 @@ Global
 		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E28BAFE3-5ED1-4C74-87BD-912A45441516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7384EFAF-22D6-4F94-974D-D3935CF42FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7384EFAF-22D6-4F94-974D-D3935CF42FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7384EFAF-22D6-4F94-974D-D3935CF42FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7384EFAF-22D6-4F94-974D-D3935CF42FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40E0563-4403-4197-9740-460C2FDDFC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40E0563-4403-4197-9740-460C2FDDFC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40E0563-4403-4197-9740-460C2FDDFC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40E0563-4403-4197-9740-460C2FDDFC03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF0F5F6-911A-4426-A835-924F289B881A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF0F5F6-911A-4426-A835-924F289B881A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF0F5F6-911A-4426-A835-924F289B881A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF0F5F6-911A-4426-A835-924F289B881A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED7B420C-2893-4E7E-8F52-347983E3050C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED7B420C-2893-4E7E-8F52-347983E3050C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED7B420C-2893-4E7E-8F52-347983E3050C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED7B420C-2893-4E7E-8F52-347983E3050C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DCCDD515-D485-4787-A4C3-C302A2185BE1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D40E0563-4403-4197-9740-460C2FDDFC03} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
+		{ECF0F5F6-911A-4426-A835-924F289B881A} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
+		{ED7B420C-2893-4E7E-8F52-347983E3050C} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
 	EndGlobalSection
 EndGlobal

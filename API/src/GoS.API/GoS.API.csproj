@@ -25,4 +25,11 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GoS.Application\GoS.Application.csproj" />
+      <ProjectReference Include="..\Infrastructure\GoS.Infrastructure.OptionsProvider\GoS.Infrastructure.OptionsProvider.csproj" />
+      <ProjectReference Include="..\Infrastructure\GoS.Infrastructure.Requester\GoS.Infrastructure.Requester.csproj" />
+      <ProjectReference Include="..\Infrastructure\GoS.Infrastructure.ResourceManager\GoS.Infrastructure.ResourceManager.csproj" />
+    </ItemGroup>
+
 </Project>

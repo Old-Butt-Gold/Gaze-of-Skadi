@@ -1,4 +1,3 @@
-﻿using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using GoS.Domain.Matches.Enums;
@@ -18,11 +17,6 @@ public sealed class OpenDotaSettings
 	public string? ApiKey { get; set; } = null;
 
 	/// <summary>
-	/// The proxy.
-	/// </summary>
-	public IWebProxy? Proxy { get; set; } = null;
-
-	/// <summary>
 	/// The JSON serializer options. If you want to use own options, set this property.
 	/// </summary>
 	public JsonSerializerOptions? JsonSerializerOptions { get; set; } = CreateJsonSerializerOptions();
@@ -31,7 +25,6 @@ public sealed class OpenDotaSettings
 	{
 		return new(JsonSerializerOptions.Web)
 		{
-
 			Converters =
 			{
 				new SingleOrArrayConverter(), new BooleanStateConverter(),

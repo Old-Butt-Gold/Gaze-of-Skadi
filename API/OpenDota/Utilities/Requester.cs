@@ -22,11 +22,7 @@ public sealed class Requester : IDisposable
 	{
 		_openDotaSettings = settings;
 
-		_httpClientHandler = new HttpClientHandler
-		{
-			UseProxy = true,
-			Proxy = settings.Proxy,
-		};
+		_httpClientHandler = new HttpClientHandler();
 
 		_httpClient = new HttpClient(_httpClientHandler)
 		{

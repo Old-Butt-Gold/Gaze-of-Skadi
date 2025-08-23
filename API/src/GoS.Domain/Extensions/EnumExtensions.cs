@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace OpenDota.Extensions;
+namespace GoS.Domain.Extensions;
 
 /// <summary>
 /// Extension methods for <see cref="Enum"/>

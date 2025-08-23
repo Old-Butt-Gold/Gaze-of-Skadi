@@ -1,6 +1,6 @@
 ﻿using GoS.Domain.Common.Enums;
 using GoS.Domain.Common.Models;
-using OpenDota.Extensions;
+using GoS.Domain.Extensions;
 using OpenDota.Utilities;
 
 namespace OpenDota.Routes.Common;
