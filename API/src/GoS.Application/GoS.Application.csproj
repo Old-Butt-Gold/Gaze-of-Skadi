@@ -17,9 +17,6 @@
 
     <ItemGroup>
       <Folder Include="Features\Common\Queries\" />
-      <Folder Include="Features\Heroes\" />
-      <Folder Include="Features\Matches\" />
-      <Folder Include="Features\Players\" />
     </ItemGroup>
 
 </Project>

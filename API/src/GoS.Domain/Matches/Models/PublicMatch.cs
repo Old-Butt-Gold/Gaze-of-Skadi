@@ -15,12 +15,6 @@ public class PublicMatch
 	public long MatchId { get; init; }
 
 	/// <summary>
-	/// Gets integer corresponding to match sequence number.
-	/// </summary>
-	[JsonPropertyName("match_seq_num")]
-	public long MatchSeqNum { get; init; }
-
-	/// <summary>
 	/// Gets boolean corresponding to whether radiant won.
 	/// </summary>
 	[JsonPropertyName("radiant_win")]

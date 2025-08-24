@@ -55,7 +55,13 @@ public class Profile
 	/// </summary>
 	[JsonPropertyName("avatarfull")]
 	public Uri? AvatarFull { get; init; }
-
+	
+	/// <summary>
+	/// Is profile is closed or not
+	/// </summary>
+	[JsonPropertyName("fh_unavailable")]
+	public BooleanState? FhUnavailable { get; init; }
+	
 	/// <summary>
 	/// Gets the player's profile URL.
 	/// </summary>

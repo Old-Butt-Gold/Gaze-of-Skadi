@@ -50,5 +50,5 @@ public class PlayerCount
 	/// Gets radiant/dire stats.
 	/// </summary>
 	[JsonPropertyName("is_radiant")]
-	public Dictionary<Team, PlayerCountStats> IsRadiant { get; init; } = new();
+	public Dictionary<TeamEnum, PlayerCountStats> IsRadiant { get; init; } = new();
 }

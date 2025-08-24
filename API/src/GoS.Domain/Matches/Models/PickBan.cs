@@ -24,7 +24,7 @@ public class PickBan
 	/// Gets team that picked or banned the hero
 	/// </summary>
 	[JsonPropertyName("team")]
-	public Team Team { get; init; }
+	public TeamEnum TeamEnum { get; init; }
 
 	/// <summary>
 	/// Gets order of pick or ban
