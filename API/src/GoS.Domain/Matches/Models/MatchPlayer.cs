@@ -1,7 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
-using GoS.Domain.Players.Enums;
 
 namespace GoS.Domain.Matches.Models;
 

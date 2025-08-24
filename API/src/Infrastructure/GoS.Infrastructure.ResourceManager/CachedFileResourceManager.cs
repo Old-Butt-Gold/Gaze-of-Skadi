@@ -71,11 +71,6 @@ internal sealed class CachedFileResourceManager : IResourceManager
         return GetOrCreateAsync(Resource.HeroAbilities, () => _fileResourceManager.GetHeroAbilitiesAsync());
     }
 
-    public Task<Dictionary<string, string>?> GetHeroLoreAsync()
-    {
-        return GetOrCreateAsync(Resource.HeroLore, () => _fileResourceManager.GetHeroLoreAsync());
-    }
-
     public Task<Dictionary<string, HeroInfo>?> GetHeroInfosAsync()
     {
         return GetOrCreateAsync(Resource.Heroes, () => _fileResourceManager.GetHeroInfosAsync());

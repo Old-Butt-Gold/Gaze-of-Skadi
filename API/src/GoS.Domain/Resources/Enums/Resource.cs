@@ -41,11 +41,6 @@ public enum Resource
 	HeroAbilities,
 
 	/// <summary>
-	/// Hero lore.
-	/// </summary>
-	HeroLore,
-
-	/// <summary>
 	/// Heroes.
 	/// </summary>
 	Heroes,

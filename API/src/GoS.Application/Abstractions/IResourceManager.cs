@@ -27,8 +27,6 @@ public interface IResourceManager
 
     public Task<Dictionary<string, HeroAbility>?> GetHeroAbilitiesAsync();
 
-    public Task<Dictionary<string, string>?> GetHeroLoreAsync();
-	
     public Task<Dictionary<string, HeroInfo>?> GetHeroInfosAsync();
 	
     public Task<Dictionary<string, Item>?> GetItemsAsync();

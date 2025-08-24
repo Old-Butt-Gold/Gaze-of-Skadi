@@ -20,6 +20,12 @@ public class HeroInfo
 
     [JsonPropertyName("roles")]
     public List<HeroRole> Roles { get; set; } = [];
+    
+    [JsonPropertyName("lore")]
+    public string Lore { get; set; }
+    
+    [JsonPropertyName("video")]
+    public string Video { get; set; }
 
     [JsonPropertyName("img")]
     public string ImagePath { get; set; }

@@ -67,11 +67,6 @@ internal sealed class FileResourceManager : IResourceManager
 		return LoadResourceAsync<Dictionary<string, HeroAbility>?>(Resource.HeroAbilities);
 	}
 
-	public Task<Dictionary<string, string>?> GetHeroLoreAsync()
-	{
-		return LoadResourceAsync<Dictionary<string, string>?>(Resource.HeroLore);
-	}
-
 	public Task<Dictionary<string, HeroInfo>?> GetHeroInfosAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, HeroInfo>?>(Resource.Heroes);
