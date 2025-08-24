@@ -4,4 +4,4 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
 
-public record GetPublicMatchesQuery(PublicMatchesEndpointParameters? Parameters) : IRequest<IEnumerable<PublicMatch>?>;
+public record GetPublicMatchesQuery(PublicMatchesEndpointParameters Parameters) : IRequest<IEnumerable<PublicMatch>?>;

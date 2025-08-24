@@ -59,12 +59,6 @@ public class PublicMatch
 	public int NumRankTier { get; init; }
 
 	/// <summary>
-	/// Gets cluster of match.
-	/// </summary>
-	[JsonPropertyName("cluster")]
-	public int Cluster { get; init; }
-
-	/// <summary>
 	/// Gets a list of player IDs in the radiant team.
 	/// </summary>
 	[JsonPropertyName("radiant_team")]

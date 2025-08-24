@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
 namespace GoS.API.Extensions;
@@ -8,6 +9,10 @@ public static class ServiceExtensions
 {
     public static void ConfigureControllers(this IServiceCollection services)
     {
+        /*services.Configure<ApiBehaviorOptions>(options =>
+        {
+            options.SuppressModelStateInvalidFilter = true;
+        });*/
         services.AddControllers(config =>
         {
             config.RespectBrowserAcceptHeader = true;

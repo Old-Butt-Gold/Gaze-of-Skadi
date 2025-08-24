@@ -13,8 +13,6 @@ internal sealed class GetPlayersByNameHandler(IRequester requester)
         {
             new KeyValuePair<string, string>("q", request.PersonaName)
         };
-        
-        // TODO validation and more than 2 symbols
 
         return requester.GetResponseAsync<IEnumerable<PlayerResponse>>("search", parameters, ct);
     }

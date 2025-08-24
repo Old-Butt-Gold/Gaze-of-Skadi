@@ -23,9 +23,6 @@ public sealed class SearchController : ControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetPlayersByName([FromQuery] string q)
     {
-        if (string.IsNullOrWhiteSpace(q))
-            return BadRequest("Query parameter 'q' is required.");
-
         var result = await _sender.Send(new GetPlayersByNameQuery(q));
         return result is null ? NotFound() : Ok(result);
     }
@@ -33,7 +30,7 @@ public sealed class SearchController : ControllerBase
     [HttpGet("proplayers")]
     [ProducesResponseType(typeof(IEnumerable<ProPlayer>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetProPlayersByName([FromQuery] string q)
+    public async Task<IActionResult> GetProPlayersByName([FromQuery] string? q)
     {
         var result = await _sender.Send(new GetProPlayersByNameQuery(q));
         return result is null ? NotFound() : Ok(result);

@@ -33,7 +33,7 @@ internal sealed class CachedFileResourceManager : IResourceManager
         {
             entry.Priority = CacheItemPriority.NeverRemove;
             return await factory();
-        }, new MemoryCacheEntryOptions())!;
+        })!;
     }
     
     public Task<Dictionary<string, Ability>?> GetAbilitiesAsync()

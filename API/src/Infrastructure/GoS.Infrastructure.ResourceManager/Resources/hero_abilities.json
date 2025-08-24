@@ -46,7 +46,7 @@
       {
         "id": 0,
         "name": "antimage_magebanes_mirror",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Magebane's Mirror",
@@ -55,7 +55,7 @@
       {
         "id": 1,
         "name": "antimage_mana_thirst",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Mana Thirst",
@@ -111,7 +111,7 @@
       {
         "id": 0,
         "name": "axe_one_man_army",
-        "icon": "strength",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "One Man Army",
@@ -123,7 +123,7 @@
       {
         "id": 1,
         "name": "axe_call_out",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Call Out",
@@ -180,7 +180,7 @@
       {
         "id": 0,
         "name": "bane_dream_stalker",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Dream Stalker",
@@ -189,7 +189,7 @@
       {
         "id": 1,
         "name": "bane_sleepwalk",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Sleepwalk",
@@ -244,7 +244,7 @@
       {
         "id": 0,
         "name": "bloodseeker_arterial_spray",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Arterial Spray",
@@ -254,7 +254,7 @@
         "id": 1,
         "name": "bloodseeker_bloodrush",
         "deprecated": "true",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Bloodrush",
@@ -263,7 +263,7 @@
       {
         "id": 2,
         "name": "bloodseeker_old_blood",
-        "icon": "debuff",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Old Blood",
@@ -320,7 +320,7 @@
         "id": 0,
         "name": "crystal_maiden_frozen_expanse",
         "deprecated": "true",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Frozen Expanse",
@@ -330,7 +330,7 @@
         "id": 1,
         "name": "crystal_maiden_cold_comfort",
         "deprecated": "true",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Cold Comfort",
@@ -339,7 +339,7 @@
       {
         "id": 2,
         "name": "crystal_maiden_glacial_guard",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Glacial Guard",
@@ -348,7 +348,7 @@
       {
         "id": 3,
         "name": "crystal_maiden_arcane_overflow",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Arcane Overflow",
@@ -403,7 +403,7 @@
       {
         "id": 0,
         "name": "drow_ranger_high_ground",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Vantage Point",
@@ -415,7 +415,7 @@
       {
         "id": 1,
         "name": "drow_ranger_sidestep",
-        "icon": "multi_arrow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/multi_arrow.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Sidestep",
@@ -471,7 +471,7 @@
       {
         "id": 0,
         "name": "earthshaker_tectonic_buildup",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Tectonic Buildup",
@@ -481,7 +481,7 @@
         "id": 1,
         "name": "earthshaker_slugger",
         "deprecated": "true",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Slugger Facet",
@@ -493,7 +493,7 @@
       {
         "id": 2,
         "name": "earthshaker_reverberating_ridge",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
         "gradient_id": 2,
         "title": "Resonating Ridge",
@@ -548,7 +548,7 @@
       {
         "id": 0,
         "name": "juggernaut_bladestorm",
-        "icon": "spinning",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Bladestorm",
@@ -557,7 +557,7 @@
       {
         "id": 1,
         "name": "juggernaut_agigain",
-        "icon": "agility",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Bladeform",
@@ -616,7 +616,7 @@
         "id": 0,
         "name": "mirana_moonlight",
         "deprecated": "true",
-        "icon": "moon",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/moon.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Moonlight Shadow Facet",
@@ -629,7 +629,7 @@
         "id": 1,
         "name": "mirana_sunlight",
         "deprecated": "true",
-        "icon": "sun",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/sun.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Solar Flare",
@@ -641,7 +641,7 @@
       {
         "id": 2,
         "name": "mirana_starstruck",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Starstruck",
@@ -650,7 +650,7 @@
       {
         "id": 3,
         "name": "mirana_leaps_and_bounds",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Leaps and Bounds",
@@ -706,7 +706,7 @@
       {
         "id": 0,
         "name": "nevermore_lasting_presence",
-        "icon": "armor_broken",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Lasting Presence",
@@ -715,7 +715,7 @@
       {
         "id": 1,
         "name": "nevermore_shadowmire",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Shadowmire",
@@ -773,7 +773,7 @@
       {
         "id": 0,
         "name": "morphling_agi",
-        "icon": "agility",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Ebb",
@@ -785,7 +785,7 @@
       {
         "id": 1,
         "name": "morphling_str",
-        "icon": "strength",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Flow",
@@ -844,7 +844,7 @@
         "id": 0,
         "name": "phantom_lancer_convergence",
         "deprecated": "true",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Convergence",
@@ -853,7 +853,7 @@
       {
         "id": 1,
         "name": "phantom_lancer_divergence",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Divergence",
@@ -862,7 +862,7 @@
       {
         "id": 2,
         "name": "phantom_lancer_lancelot",
-        "icon": "phantom_lance",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_lance.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Lancelot",
@@ -917,7 +917,7 @@
       {
         "id": 0,
         "name": "puck_jostling_rift",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Jostling Rift",
@@ -926,7 +926,7 @@
       {
         "id": 1,
         "name": "puck_curveball",
-        "icon": "curve_ball",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/curve_ball.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Curveball",
@@ -981,7 +981,7 @@
       {
         "id": 0,
         "name": "pudge_fresh_meat",
-        "icon": "meat",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/meat.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Fresh Meat",
@@ -991,7 +991,7 @@
         "id": 1,
         "name": "pudge_flayers_hook",
         "deprecated": "true",
-        "icon": "pudge_hook",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/pudge_hook.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Flayer's Hook",
@@ -1000,7 +1000,7 @@
       {
         "id": 2,
         "name": "pudge_rotten_core",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Green",
         "gradient_id": 3,
         "title": "Rotten Core",
@@ -1055,7 +1055,7 @@
       {
         "id": 0,
         "name": "razor_thunderhead",
-        "icon": "barrier",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Thunderhead",
@@ -1064,7 +1064,7 @@
       {
         "id": 1,
         "name": "razor_spellamp",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Dynamo",
@@ -1123,7 +1123,7 @@
         "id": 0,
         "name": "sand_king_sandshroud",
         "deprecated": "true",
-        "icon": "vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Sandshroud",
@@ -1133,7 +1133,7 @@
         "id": 1,
         "name": "sand_king_dust_devil",
         "deprecated": "true",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Dust Devil",
@@ -1142,7 +1142,7 @@
       {
         "id": 2,
         "name": "sand_king_obscurity",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "Sandblast",
@@ -1151,7 +1151,7 @@
       {
         "id": 3,
         "name": "sand_king_pinpoint",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Final Sting",
@@ -1207,7 +1207,7 @@
       {
         "id": 0,
         "name": "storm_spirit_shock_collar",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Shock Collar",
@@ -1216,7 +1216,7 @@
       {
         "id": 1,
         "name": "storm_spirit_static_slide",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Static Slide",
@@ -1272,7 +1272,7 @@
       {
         "id": 0,
         "name": "sven_heavy_plate",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Heavy Plate",
@@ -1281,7 +1281,7 @@
       {
         "id": 1,
         "name": "sven_strscaling",
-        "icon": "strength",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Wrath of God",
@@ -1340,7 +1340,7 @@
       {
         "id": 0,
         "name": "tiny_crash_landing",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
         "gradient_id": 2,
         "title": "Crash Landing",
@@ -1349,7 +1349,7 @@
       {
         "id": 1,
         "name": "tiny_insurmountable",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
         "gradient_id": 4,
         "title": "Insurmountable",
@@ -1407,7 +1407,7 @@
       {
         "id": 0,
         "name": "vengefulspirit_avenging_missile",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Avenging Missile",
@@ -1416,7 +1416,7 @@
       {
         "id": 1,
         "name": "vvengefulspirit_melee",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Soul Strike",
@@ -1476,7 +1476,7 @@
         "id": 0,
         "name": "windrunner_tailwind",
         "deprecated": "true",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "",
@@ -1486,7 +1486,7 @@
         "id": 1,
         "name": "windrunner_focusfire",
         "deprecated": "true",
-        "icon": "focus_fire",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/focus_fire.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Focus Fire Facet",
@@ -1496,7 +1496,7 @@
         "id": 2,
         "name": "windrunner_whirlwind",
         "deprecated": "true",
-        "icon": "multi_arrow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/multi_arrow.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Whirlwind",
@@ -1505,7 +1505,7 @@
       {
         "id": 3,
         "name": "windrunner_tangled",
-        "icon": "tree",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Tangled",
@@ -1514,7 +1514,7 @@
       {
         "id": 4,
         "name": "windrunner_killshot",
-        "icon": "execute",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/execute.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Killshot",
@@ -1570,7 +1570,7 @@
       {
         "id": 0,
         "name": "zuus_livewire",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Livewire",
@@ -1579,7 +1579,7 @@
       {
         "id": 1,
         "name": "zuus_divine_rampage",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Divine Rampage",
@@ -1635,7 +1635,7 @@
       {
         "id": 0,
         "name": "kunkka_high_tide",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "High Tide",
@@ -1644,7 +1644,7 @@
       {
         "id": 1,
         "name": "kunkka_grog",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Grog Blossom",
@@ -1699,7 +1699,7 @@
       {
         "id": 0,
         "name": "lina_supercharge",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Thermal Runaway",
@@ -1708,7 +1708,7 @@
       {
         "id": 1,
         "name": "lina_dot",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Slow Burn",
@@ -1767,7 +1767,7 @@
         "id": 0,
         "name": "lich_frostbound",
         "deprecated": "true",
-        "icon": "snowflake",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Frostbound",
@@ -1776,7 +1776,7 @@
       {
         "id": 1,
         "name": "lich_growing_cold",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Growing Cold",
@@ -1785,7 +1785,7 @@
       {
         "id": 2,
         "name": "lich_cryophobia",
-        "icon": "vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Evil Eye",
@@ -1840,7 +1840,7 @@
       {
         "id": 0,
         "name": "lion_essence_eater",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Essence Eater",
@@ -1849,7 +1849,7 @@
       {
         "id": 1,
         "name": "lion_fist_of_death",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Fist of Death",
@@ -1905,7 +1905,7 @@
         "id": 0,
         "name": "shadow_shaman_cluster_cluck",
         "deprecated": "true",
-        "icon": "chicken",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chicken.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Cluster Cluck",
@@ -1914,7 +1914,7 @@
       {
         "id": 1,
         "name": "shadow_shaman_voodoo_hands",
-        "icon": "chicken",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chicken.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Chicken Fingers",
@@ -1926,7 +1926,7 @@
       {
         "id": 2,
         "name": "shadow_shaman_massive_serpent_ward",
-        "icon": "snake",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snake.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Massive Serpent Ward",
@@ -1981,7 +1981,7 @@
       {
         "id": 0,
         "name": "slardar_leg_day",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Leg Day",
@@ -1990,7 +1990,7 @@
       {
         "id": 1,
         "name": "slardar_brineguard",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Brineguard",
@@ -2046,7 +2046,7 @@
       {
         "id": 0,
         "name": "tidehunter_kraken_swell",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Kraken Swell",
@@ -2055,7 +2055,7 @@
       {
         "id": 1,
         "name": "tidehunter_sizescale",
-        "icon": "overshadow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/overshadow.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Krill Eater",
@@ -2114,7 +2114,7 @@
         "id": 0,
         "name": "witch_doctor_headhunter",
         "deprecated": "true",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Headhunter",
@@ -2124,7 +2124,7 @@
         "id": 1,
         "name": "witch_doctor_voodoo_festeration",
         "deprecated": "true",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Voodoo Festeration",
@@ -2133,7 +2133,7 @@
       {
         "id": 2,
         "name": "witch_doctor_cleft_death",
-        "icon": "death_ward",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/death_ward.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Cleft Death",
@@ -2142,7 +2142,7 @@
       {
         "id": 3,
         "name": "witch_doctor_malpractice",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Malpractice",
@@ -2197,7 +2197,7 @@
       {
         "id": 0,
         "name": "riki_contract_killer",
-        "icon": "xp",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Contract Killer",
@@ -2206,7 +2206,7 @@
       {
         "id": 1,
         "name": "riki_exterminator",
-        "icon": "agility",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Exterminator",
@@ -2261,7 +2261,7 @@
       {
         "id": 0,
         "name": "enigma_gravity",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Event Horizon",
@@ -2273,7 +2273,7 @@
       {
         "id": 1,
         "name": "enigma_fragment",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Splitting Image",
@@ -2332,7 +2332,7 @@
       {
         "id": 0,
         "name": "tinker_repair_bots",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Repair Bots",
@@ -2341,7 +2341,7 @@
       {
         "id": 1,
         "name": "tinker_translocator",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Translocator",
@@ -2396,7 +2396,7 @@
       {
         "id": 0,
         "name": "sniper_ghillie_suit",
-        "icon": "vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Ghillie Suit",
@@ -2405,7 +2405,7 @@
       {
         "id": 1,
         "name": "sniper_scattershot",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Scattershot",
@@ -2460,7 +2460,7 @@
       {
         "id": 0,
         "name": "necrolyte_profane_potency",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Profane Potency",
@@ -2469,7 +2469,7 @@
       {
         "id": 1,
         "name": "necrolyte_rapid_decay",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Green",
         "gradient_id": 3,
         "title": "Rapid Decay",
@@ -2524,7 +2524,7 @@
       {
         "id": 0,
         "name": "warlock_golem",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Champion of Gorroth",
@@ -2533,7 +2533,7 @@
       {
         "id": 1,
         "name": "warlock_grimoire",
-        "icon": "xp",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Black Grimoire",
@@ -2592,7 +2592,7 @@
       {
         "id": 0,
         "name": "beastmaster_wild_hunt",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Wild Hunt",
@@ -2601,7 +2601,7 @@
       {
         "id": 1,
         "name": "beastmaster_beast_mode",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Beast Mode",
@@ -2657,7 +2657,7 @@
         "id": 0,
         "name": "queenofpain_lifesteal",
         "deprecated": "true",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Succubus Facet",
@@ -2669,7 +2669,7 @@
       {
         "id": 1,
         "name": "queenofpain_selfdmg",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Masochist",
@@ -2681,7 +2681,7 @@
       {
         "id": 2,
         "name": "queenofpain_facet_bondage",
-        "icon": "twin_hearts",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Bondage",
@@ -2739,7 +2739,7 @@
       {
         "id": 0,
         "name": "venomancer_patient_zero",
-        "icon": "snot",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snot.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Patient Zero",
@@ -2748,7 +2748,7 @@
       {
         "id": 1,
         "name": "venomancer_plague_carrier",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Plague Carrier",
@@ -2804,7 +2804,7 @@
         "id": 0,
         "name": "faceless_void_temporal_impunity",
         "deprecated": "true",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "",
@@ -2813,7 +2813,7 @@
       {
         "id": 1,
         "name": "faceless_void_chronosphere",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Chronosphere",
@@ -2825,7 +2825,7 @@
       {
         "id": 2,
         "name": "faceless_void_time_zone",
-        "icon": "chrono_cube",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chrono_cube.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Time Zone",
@@ -2883,7 +2883,7 @@
       {
         "id": 0,
         "name": "skeleton_king_facet_bone_guard",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Bone Guard",
@@ -2895,7 +2895,7 @@
       {
         "id": 1,
         "name": "skeleton_king_facet_cursed_blade",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Spectral Blade",
@@ -2954,7 +2954,7 @@
         "id": 0,
         "name": "death_prophet_suppress",
         "deprecated": "true",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Suppress",
@@ -2963,7 +2963,7 @@
       {
         "id": 1,
         "name": "death_prophet_ghosts",
-        "icon": "spirit",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Green",
         "gradient_id": 1,
         "title": "Spirit Collector",
@@ -2975,7 +2975,7 @@
       {
         "id": 2,
         "name": "death_prophet_delayed_damage",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Mourning Ritual",
@@ -3034,7 +3034,7 @@
         "id": 0,
         "name": "phantom_assassin_veiled_one",
         "deprecated": "true",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Veiled One",
@@ -3043,7 +3043,7 @@
       {
         "id": 1,
         "name": "phantom_assassin_methodical",
-        "icon": "skull",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/skull.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Methodical",
@@ -3052,7 +3052,7 @@
       {
         "id": 2,
         "name": "phantom_assassin_sweet_release",
-        "icon": "phantom_ass_dagger",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_ass_dagger.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Sweet Release",
@@ -3107,7 +3107,7 @@
       {
         "id": 0,
         "name": "pugna_siphoning_ward",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Siphoning Ward",
@@ -3116,7 +3116,7 @@
       {
         "id": 1,
         "name": "pugna_rewards_of_ruin",
-        "icon": "siege",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/siege.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Rewards of Ruin",
@@ -3172,7 +3172,7 @@
       {
         "id": 0,
         "name": "templar_assassin_voidblades",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Voidblades",
@@ -3181,7 +3181,7 @@
       {
         "id": 1,
         "name": "templar_assassin_refractor",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Refractor",
@@ -3190,7 +3190,7 @@
       {
         "id": 2,
         "name": "templar_assassin_hidden_reach",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Hidden Reach",
@@ -3245,7 +3245,7 @@
       {
         "id": 0,
         "name": "viper_poison_burst",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Poison Burst",
@@ -3254,7 +3254,7 @@
       {
         "id": 1,
         "name": "viper_caustic_bath",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Caustic Bath",
@@ -3311,7 +3311,7 @@
         "id": 0,
         "name": "luna_lunar_orbit",
         "deprecated": "true",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "",
@@ -3320,7 +3320,7 @@
       {
         "id": 1,
         "name": "luna_moonshield",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Moonshield",
@@ -3329,7 +3329,7 @@
       {
         "id": 2,
         "name": "luna_moonstorm",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Moonstorm",
@@ -3385,7 +3385,7 @@
       {
         "id": 0,
         "name": "dragon_knight_fire_dragon",
-        "icon": "dragon_fire",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_fire.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Fire Dragon",
@@ -3394,7 +3394,7 @@
       {
         "id": 1,
         "name": "dragon_knight_corrosive_dragon",
-        "icon": "dragon_poison",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_poison.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Corrosive Dragon",
@@ -3403,7 +3403,7 @@
       {
         "id": 2,
         "name": "dragon_knight_frost_dragon",
-        "icon": "dragon_frost",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_frost.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Frost Dragon",
@@ -3459,7 +3459,7 @@
       {
         "id": 0,
         "name": "dazzle_facet_nothl_boon",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Nothl Boon",
@@ -3471,7 +3471,7 @@
       {
         "id": 1,
         "name": "dazzle_poison_bloom",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Poison Bloom",
@@ -3527,7 +3527,7 @@
       {
         "id": 0,
         "name": "rattletrap_hookup",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 2,
         "title": "Hookup",
@@ -3536,7 +3536,7 @@
       {
         "id": 1,
         "name": "rattletrap_expanded_armature",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Expanded Armature",
@@ -3545,7 +3545,7 @@
       {
         "id": 2,
         "name": "rattletrap_junk_mail",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Chainmeal",
@@ -3600,7 +3600,7 @@
       {
         "id": 0,
         "name": "leshrac_attacks_mana",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Chronoptic Nourishment",
@@ -3612,7 +3612,7 @@
       {
         "id": 1,
         "name": "leshrac_misanthropy",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Misanthropy",
@@ -3667,7 +3667,7 @@
       {
         "id": 0,
         "name": "furion_soothing_saplings",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Soothing Saplings",
@@ -3677,7 +3677,7 @@
         "id": 1,
         "name": "furion_ironwood_treant",
         "deprecated": "true",
-        "icon": "siege",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/siege.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Ironwood Treant",
@@ -3686,7 +3686,7 @@
       {
         "id": 2,
         "name": "furion_natures_profit",
-        "icon": "gold",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Nature's Profit",
@@ -3746,7 +3746,7 @@
         "id": 0,
         "name": "life_stealer_maxhp_gain",
         "deprecated": "true",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "",
@@ -3759,7 +3759,7 @@
         "id": 1,
         "name": "life_stealer_rage",
         "deprecated": "true",
-        "icon": "lifestealer_rage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/lifestealer_rage.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "Rage",
@@ -3772,7 +3772,7 @@
         "id": 2,
         "name": "life_stealer_rage_dispell",
         "deprecated": "true",
-        "icon": "broken_chain",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Unfettered",
@@ -3784,7 +3784,7 @@
       {
         "id": 3,
         "name": "life_stealer_fleshfeast",
-        "icon": "full_heart",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/full_heart.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Fleshfeast",
@@ -3793,7 +3793,7 @@
       {
         "id": 4,
         "name": "life_stealer_gorestorm",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Gorestorm",
@@ -3848,7 +3848,7 @@
       {
         "id": 0,
         "name": "dark_seer_atkspd",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Quick Wit",
@@ -3860,7 +3860,7 @@
       {
         "id": 1,
         "name": "dark_seer_movespd",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Heart of Battle",
@@ -3919,7 +3919,7 @@
       {
         "id": 0,
         "name": "clinkz_suppressive_fire",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Suppressive Fire",
@@ -3928,7 +3928,7 @@
       {
         "id": 1,
         "name": "clinkz_engulfing_step",
-        "icon": "teleport",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Engulfing Step",
@@ -3983,7 +3983,7 @@
       {
         "id": 0,
         "name": "omniknight_omnipresent",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Omnipresent",
@@ -3992,7 +3992,7 @@
       {
         "id": 1,
         "name": "omniknight_dmgheals",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Healing Hammer",
@@ -4051,7 +4051,7 @@
       {
         "id": 0,
         "name": "enchantress_overprotective_wisps",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Overprotective Wisps",
@@ -4060,7 +4060,7 @@
       {
         "id": 1,
         "name": "enchantress_spellbound",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Spellbound",
@@ -4116,7 +4116,7 @@
         "id": 0,
         "name": "huskar_bloodbath",
         "deprecated": "true",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Bloodbath",
@@ -4126,7 +4126,7 @@
         "id": 1,
         "name": "huskar_nothl_transfusion",
         "deprecated": "true",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Nothl Transfusion",
@@ -4135,7 +4135,7 @@
       {
         "id": 2,
         "name": "huskar_cauterize",
-        "icon": "broken_chain",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Cauterize",
@@ -4144,7 +4144,7 @@
       {
         "id": 3,
         "name": "huskar_nothl_conflagration",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Incendiary",
@@ -4201,7 +4201,7 @@
         "id": 0,
         "name": "night_stalker_blinding_void",
         "deprecated": "True",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Blinding Void",
@@ -4210,7 +4210,7 @@
       {
         "id": 1,
         "name": "night_stalker_dayswap",
-        "icon": "moon",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/moon.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Night Reign",
@@ -4222,7 +4222,7 @@
       {
         "id": 2,
         "name": "night_stalker_voidbringer",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Voidbringer",
@@ -4277,7 +4277,7 @@
       {
         "id": 0,
         "name": "broodmother_necrotic_webs",
-        "icon": "web",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/web.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Necrotic Webs",
@@ -4286,7 +4286,7 @@
       {
         "id": 1,
         "name": "broodmother_feeding_frenzy",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Feeding Frenzy",
@@ -4341,7 +4341,7 @@
       {
         "id": 0,
         "name": "bounty_hunter_shuriken",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Through and Through",
@@ -4350,7 +4350,7 @@
       {
         "id": 1,
         "name": "bounty_hunter_mugging",
-        "icon": "gold",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Cutpurse",
@@ -4409,7 +4409,7 @@
       {
         "id": 0,
         "name": "weaver_skitterstep",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Skitterstep",
@@ -4418,7 +4418,7 @@
       {
         "id": 1,
         "name": "weaver_hivemind",
-        "icon": "xp",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Hivemind",
@@ -4474,7 +4474,7 @@
         "id": 0,
         "name": "jakiro_fire",
         "deprecated": "true",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Liquid Fire Facet",
@@ -4487,7 +4487,7 @@
         "id": 1,
         "name": "jakiro_ice",
         "deprecated": "true",
-        "icon": "snowflake",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Liquid Frost Facet",
@@ -4499,7 +4499,7 @@
       {
         "id": 2,
         "name": "jakiro_twin_terror",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Twin Terror",
@@ -4508,7 +4508,7 @@
       {
         "id": 3,
         "name": "jakiro_ice_breaker",
-        "icon": "snowflake",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Ice Breaker",
@@ -4566,7 +4566,7 @@
       {
         "id": 0,
         "name": "batrider_buff_on_displacement",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Stoked",
@@ -4575,7 +4575,7 @@
       {
         "id": 1,
         "name": "batrider_arsonist",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Arsonist",
@@ -4630,7 +4630,7 @@
       {
         "id": 0,
         "name": "chen_centaur_convert",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "Centaur Convert",
@@ -4640,7 +4640,7 @@
         "id": 1,
         "name": "chen_wolf_convert",
         "deprecated": "true",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Wolf Convert",
@@ -4649,7 +4649,7 @@
       {
         "id": 2,
         "name": "chen_hellbear_convert",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Hellbear Convert",
@@ -4658,7 +4658,7 @@
       {
         "id": 3,
         "name": "chen_troll_convert",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Troll Convert",
@@ -4667,7 +4667,7 @@
       {
         "id": 4,
         "name": "chen_satyr_convert",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Satyr Convert",
@@ -4676,7 +4676,7 @@
       {
         "id": 5,
         "name": "chen_frog_convert",
-        "icon": "bubbles",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/bubbles.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Marshmage Convert",
@@ -4732,7 +4732,7 @@
       {
         "id": 0,
         "name": "spectre_forsaken",
-        "icon": "spectre",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spectre.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Forsaken",
@@ -4741,7 +4741,7 @@
       {
         "id": 1,
         "name": "spectre_twist_the_knife",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Twist the Knife",
@@ -4797,7 +4797,7 @@
       {
         "id": 0,
         "name": "doom_bringer_gluttony",
-        "icon": "meat",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/meat.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Gluttony",
@@ -4806,7 +4806,7 @@
       {
         "id": 1,
         "name": "doom_bringer_boost_selling",
-        "icon": "gold",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Devil's Bargain",
@@ -4818,7 +4818,7 @@
       {
         "id": 2,
         "name": "doom_bringer_impending_doom",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Impending Doom",
@@ -4874,7 +4874,7 @@
       {
         "id": 0,
         "name": "ancient_apparition_bone_chill",
-        "icon": "debuff",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Bone Chill",
@@ -4883,7 +4883,7 @@
       {
         "id": 1,
         "name": "ancient_apparition_exposure",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Exposure",
@@ -4938,7 +4938,7 @@
       {
         "id": 0,
         "name": "ursa_grudge_bearer",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Grudge Bearer",
@@ -4947,7 +4947,7 @@
       {
         "id": 1,
         "name": "ursa_debuff_reduce",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Bear Down",
@@ -5005,7 +5005,7 @@
       {
         "id": 0,
         "name": "spirit_breaker_bull_rush",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Bull Rush",
@@ -5015,7 +5015,7 @@
         "id": 1,
         "name": "spirit_breaker_imbalanced",
         "deprecated": "true",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Imbalanced",
@@ -5024,7 +5024,7 @@
       {
         "id": 2,
         "name": "spirit_breaker_bulls_hit",
-        "icon": "rng",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Bull's Hit",
@@ -5081,7 +5081,7 @@
       {
         "id": 0,
         "name": "gyrocopter_secondary_strikes",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Secondary Strikes",
@@ -5090,7 +5090,7 @@
       {
         "id": 1,
         "name": "gyrocopter_afterburner",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Afterburner",
@@ -5146,7 +5146,7 @@
       {
         "id": 0,
         "name": "alchemist_seed_money",
-        "icon": "gold",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Seed Money",
@@ -5155,7 +5155,7 @@
       {
         "id": 1,
         "name": "alchemist_mixologist",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Mixologist",
@@ -5164,7 +5164,7 @@
       {
         "id": 2,
         "name": "alchemist_dividends",
-        "icon": "aghs",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/aghs.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Dividends",
@@ -5229,7 +5229,7 @@
       {
         "id": 0,
         "name": "invoker_quas_focus",
-        "icon": "invoker_quas",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_quas.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Scholar of Koryx",
@@ -5238,7 +5238,7 @@
       {
         "id": 1,
         "name": "invoker_wex_focus",
-        "icon": "invoker_wex",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_wex.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Mind of Tornarus",
@@ -5247,7 +5247,7 @@
       {
         "id": 2,
         "name": "invoker_exort_focus",
-        "icon": "invoker_exort",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_exort.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Agent of Gallaron",
@@ -5303,7 +5303,7 @@
         "id": 0,
         "name": "silencer_irrepressible",
         "deprecated": "true",
-        "icon": "silencer",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/silencer.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Irrepressible",
@@ -5316,7 +5316,7 @@
         "id": 1,
         "name": "silencer_reverberating_silence",
         "deprecated": "true",
-        "icon": "debuff",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Reverberating Silence",
@@ -5325,7 +5325,7 @@
       {
         "id": 2,
         "name": "silencer_spread_the_knowledge",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Synaptic Split",
@@ -5334,7 +5334,7 @@
       {
         "id": 3,
         "name": "silencer_oppressive_silence",
-        "icon": "debuff",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Suffer In Silence",
@@ -5392,7 +5392,7 @@
       {
         "id": 0,
         "name": "obsidian_destroyer_obsidian_decimator",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Obsidian Decimator",
@@ -5401,7 +5401,7 @@
       {
         "id": 1,
         "name": "obsidian_destroyer_overwhelming_devourer",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Overwhelming Devourer",
@@ -5456,7 +5456,7 @@
       {
         "id": 0,
         "name": "lycan_pack_leader",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Pack Leader",
@@ -5465,7 +5465,7 @@
       {
         "id": 1,
         "name": "lycan_spirit_wolves",
-        "icon": "spirit",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Spirit Wolves",
@@ -5474,7 +5474,7 @@
       {
         "id": 2,
         "name": "lycan_alpha_wolves",
-        "icon": "wolf",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/wolf.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Alpha Wolves",
@@ -5530,7 +5530,7 @@
       {
         "id": 0,
         "name": "brewmaster_roll_out_the_barrel",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Roll Out the Barrel",
@@ -5539,7 +5539,7 @@
       {
         "id": 1,
         "name": "brewmaster_drunken_master",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Drunken Master",
@@ -5595,7 +5595,7 @@
       {
         "id": 0,
         "name": "shadow_demon_promulgate",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Promulgate",
@@ -5604,7 +5604,7 @@
       {
         "id": 1,
         "name": "shadow_demon_facet_soul_mastery",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Shadow Servant",
@@ -5663,7 +5663,7 @@
       {
         "id": 0,
         "name": "lone_druid_bear_with_me",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "gradient_id": 1,
         "title": "Bear with Me",
@@ -5673,7 +5673,7 @@
         "id": 1,
         "name": "lone_druid_unbearable",
         "deprecated": "true",
-        "icon": "overshadow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/overshadow.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Unbearable",
@@ -5682,7 +5682,7 @@
       {
         "id": 2,
         "name": "lone_druid_bear_necessities",
-        "icon": "item",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Bear Necessities",
@@ -5741,7 +5741,7 @@
         "id": 0,
         "name": "chaos_knight_strong_illusions",
         "deprecated": "true",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Phantasmagoria",
@@ -5753,7 +5753,7 @@
       {
         "id": 1,
         "name": "chaos_knight_irrationality",
-        "icon": "rng",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Irrationality",
@@ -5762,7 +5762,7 @@
       {
         "id": 2,
         "name": "chaos_knight_facet_fundamental_forging",
-        "icon": "item",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Fundamental Forging",
@@ -5774,7 +5774,7 @@
       {
         "id": 3,
         "name": "chaos_knight_cloven_chaos",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Cloven Chaos",
@@ -5831,7 +5831,7 @@
       {
         "id": 0,
         "name": "meepo_more_meepo",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "More Meepo",
@@ -5840,7 +5840,7 @@
       {
         "id": 1,
         "name": "meepo_codependent",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Codependent",
@@ -5850,7 +5850,7 @@
         "id": 2,
         "name": "meepo_pack_rat",
         "deprecated": "true",
-        "icon": "item",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Pack Rat",
@@ -5908,7 +5908,7 @@
       {
         "id": 0,
         "name": "treant_primeval_power",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Primeval Power",
@@ -5920,7 +5920,7 @@
       {
         "id": 1,
         "name": "treant_sapling",
-        "icon": "tree",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Sapling",
@@ -5976,7 +5976,7 @@
       {
         "id": 0,
         "name": "ogre_magi_fat_chance",
-        "icon": "rng",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Fat Chance",
@@ -5985,7 +5985,7 @@
       {
         "id": 1,
         "name": "ogre_magi_learning_curve",
-        "icon": "ogre",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ogre.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Learning Curve",
@@ -6040,7 +6040,7 @@
       {
         "id": 0,
         "name": "undying_rotting_mitts",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Green",
         "gradient_id": 4,
         "title": "Rotting Mitts",
@@ -6049,7 +6049,7 @@
       {
         "id": 1,
         "name": "undying_ripped",
-        "icon": "strength",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Ripped",
@@ -6117,7 +6117,7 @@
       {
         "id": 0,
         "name": "rubick_frugal_filch",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Purple",
         "gradient_id": 2,
         "title": "Frugal Filch",
@@ -6126,7 +6126,7 @@
       {
         "id": 1,
         "name": "rubick_arcane_accumulation",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Arcane Accumulation",
@@ -6181,7 +6181,7 @@
       {
         "id": 0,
         "name": "disruptor_thunderstorm",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Thunderstorm",
@@ -6190,7 +6190,7 @@
       {
         "id": 1,
         "name": "disruptor_line_walls",
-        "icon": "fence",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fence.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Kinetic Fence",
@@ -6202,7 +6202,7 @@
       {
         "id": 2,
         "name": "disruptor_conduit",
-        "icon": "vortex_out",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_out.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Transferrence",
@@ -6258,7 +6258,7 @@
       {
         "id": 0,
         "name": "nyx_assassin_burn_mana",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Mana Burn",
@@ -6267,7 +6267,7 @@
       {
         "id": 1,
         "name": "nyx_assassin_scuttle",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Scuttle",
@@ -6323,7 +6323,7 @@
       {
         "id": 0,
         "name": "naga_siren_passive_riptide",
-        "icon": "armor_broken",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Rip Tide",
@@ -6335,7 +6335,7 @@
       {
         "id": 1,
         "name": "naga_siren_active_riptide",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Deluge",
@@ -6397,7 +6397,7 @@
       {
         "id": 0,
         "name": "keeper_of_the_light_facet_solar_bind",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Solar Bind",
@@ -6409,7 +6409,7 @@
       {
         "id": 1,
         "name": "keeper_of_the_light_facet_recall",
-        "icon": "teleport",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Recall",
@@ -6469,7 +6469,7 @@
       {
         "id": 0,
         "name": "wisp_kritzkrieg",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Kritzkrieg",
@@ -6478,7 +6478,7 @@
       {
         "id": 1,
         "name": "wisp_medigun",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Medigun",
@@ -6535,7 +6535,7 @@
       {
         "id": 0,
         "name": "visage_sepulchre",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Sepulchre",
@@ -6544,7 +6544,7 @@
       {
         "id": 1,
         "name": "visage_faithful_followers",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Faithful Followers",
@@ -6553,7 +6553,7 @@
       {
         "id": 2,
         "name": "visage_gold_assumption",
-        "icon": "gold",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Death Toll",
@@ -6608,7 +6608,7 @@
       {
         "id": 0,
         "name": "slark_leeching_leash",
-        "icon": "agility",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Green",
         "gradient_id": 2,
         "title": "Leeching Leash",
@@ -6617,7 +6617,7 @@
       {
         "id": 1,
         "name": "slark_dark_reef_renegade",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Dark Reef Renegade",
@@ -6672,7 +6672,7 @@
       {
         "id": 0,
         "name": "medusa_engorged",
-        "icon": "snake",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snake.png",
         "color": "Green",
         "gradient_id": 1,
         "title": "Engorged",
@@ -6682,7 +6682,7 @@
         "id": 1,
         "name": "medusa_mana_pact",
         "deprecated": "true",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Mana Pact",
@@ -6691,7 +6691,7 @@
       {
         "id": 2,
         "name": "medusa_slow_attacks",
-        "icon": "slow",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Venomous Volley",
@@ -6703,7 +6703,7 @@
       {
         "id": 3,
         "name": "medusa_undulation",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Undulation",
@@ -6761,7 +6761,7 @@
       {
         "id": 0,
         "name": "troll_warlord_insensitive",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Insensitive",
@@ -6770,7 +6770,7 @@
       {
         "id": 1,
         "name": "troll_warlord_bad_influence",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Bad Influence",
@@ -6826,7 +6826,7 @@
       {
         "id": 0,
         "name": "centaur_counter_strike",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Counter-Strike",
@@ -6835,7 +6835,7 @@
       {
         "id": 1,
         "name": "centaur_horsepower",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Horsepower",
@@ -6894,7 +6894,7 @@
         "id": 0,
         "name": "magnataur_run_through",
         "deprecated": "true",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "",
@@ -6904,7 +6904,7 @@
         "id": 1,
         "name": "magnataur_reverse_polarity",
         "deprecated": "true",
-        "icon": "vortex_in",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_in.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Reverse Polarity",
@@ -6913,7 +6913,7 @@
       {
         "id": 2,
         "name": "magnataur_eternal_empowerment",
-        "icon": "empower",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/empower.png",
         "color": "Gray",
         "gradient_id": 1,
         "title": "Eternal Empowerment",
@@ -6922,7 +6922,7 @@
       {
         "id": 3,
         "name": "magnataur_diminishing_return",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Diminishing Return",
@@ -6932,7 +6932,7 @@
         "id": 4,
         "name": "magnataur_reverse_reverse_polarity",
         "deprecated": "true",
-        "icon": "vortex_out",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_out.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Reverse Reverse Polarity",
@@ -6990,7 +6990,7 @@
       {
         "id": 0,
         "name": "shredder_shredder",
-        "icon": "tree",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Shredder",
@@ -6999,7 +6999,7 @@
       {
         "id": 1,
         "name": "shredder_second_chakram",
-        "icon": "spinning",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Twisted Chakram",
@@ -7059,7 +7059,7 @@
         "id": 0,
         "name": "bristleback_berserk",
         "deprecated": "true",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Berserk",
@@ -7068,7 +7068,7 @@
       {
         "id": 1,
         "name": "bristleback_snot_rocket",
-        "icon": "snot",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snot.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Snot Rocket",
@@ -7077,7 +7077,7 @@
       {
         "id": 2,
         "name": "bristleback_seeing_red",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Seeing Red",
@@ -7133,7 +7133,7 @@
       {
         "id": 0,
         "name": "tusk_facet_tag_team",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Tag Team",
@@ -7145,7 +7145,7 @@
       {
         "id": 1,
         "name": "tusk_facet_fist_bump",
-        "icon": "movement",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Drinking Buddies",
@@ -7203,7 +7203,7 @@
       {
         "id": 0,
         "name": "skywrath_mage_shield",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Shield of the Scion",
@@ -7215,7 +7215,7 @@
       {
         "id": 1,
         "name": "skywrath_mage_staff",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Yellow",
         "gradient_id": 2,
         "title": "Staff of the Scion",
@@ -7273,7 +7273,7 @@
       {
         "id": 0,
         "name": "abaddon_death_dude",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "The Quickening",
@@ -7286,7 +7286,7 @@
         "id": 1,
         "name": "abaddon_mephitic_shroud",
         "deprecated": "true",
-        "icon": "barrier",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Mephitic Shroud",
@@ -7295,7 +7295,7 @@
       {
         "id": 2,
         "name": "abaddon_mists_of_fate",
-        "icon": "phantom_ass_dagger",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_ass_dagger.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Malignant Mist",
@@ -7352,7 +7352,7 @@
       {
         "id": 0,
         "name": "elder_titan_deconstruction",
-        "icon": "armor_broken",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Deconstruction",
@@ -7361,7 +7361,7 @@
       {
         "id": 1,
         "name": "elder_titan_boost_atkspd",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Momentum",
@@ -7419,7 +7419,7 @@
       {
         "id": 0,
         "name": "legion_commander_stonehall_plate",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Stonehall Plate",
@@ -7428,7 +7428,7 @@
       {
         "id": 1,
         "name": "legion_commander_spoils_of_war",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Spoils of War",
@@ -7483,7 +7483,7 @@
       {
         "id": 0,
         "name": "ember_spirit_double_impact",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Double Impact",
@@ -7492,7 +7492,7 @@
       {
         "id": 1,
         "name": "ember_spirit_chain_gang",
-        "icon": "debuff",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Chain Gang",
@@ -7547,7 +7547,7 @@
       {
         "id": 0,
         "name": "earth_spirit_resonance",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Resonance",
@@ -7556,7 +7556,7 @@
       {
         "id": 1,
         "name": "earth_spirit_stepping_stone",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 2,
         "title": "Stepping Stone",
@@ -7565,7 +7565,7 @@
       {
         "id": 2,
         "name": "earth_spirit_ready_to_roll",
-        "icon": "spinning",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Ready to Roll",
@@ -7621,7 +7621,7 @@
       {
         "id": 0,
         "name": "terrorblade_condemned",
-        "icon": "twin_hearts",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Condemned",
@@ -7630,7 +7630,7 @@
       {
         "id": 1,
         "name": "terrorblade_soul_fragment",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Soul Fragment",
@@ -7688,7 +7688,7 @@
       {
         "id": 0,
         "name": "phoenix_facet_immolate",
-        "icon": "barrier",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Dying Light",
@@ -7700,7 +7700,7 @@
       {
         "id": 1,
         "name": "phoenix_hotspot",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Hotspot",
@@ -7755,7 +7755,7 @@
       {
         "id": 0,
         "name": "oracle_facet_dmg",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Clairvoyant Curse",
@@ -7767,7 +7767,7 @@
       {
         "id": 1,
         "name": "oracle_facet_heal",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "gradient_id": 1,
         "title": "Clairvoyant Cure",
@@ -7825,7 +7825,7 @@
       {
         "id": 0,
         "name": "techies_atk_range",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Squee's Scope",
@@ -7837,7 +7837,7 @@
       {
         "id": 1,
         "name": "techies_spleens_secret_sauce",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Spleen's Secret Sauce",
@@ -7846,7 +7846,7 @@
       {
         "id": 2,
         "name": "techies_backpack",
-        "icon": "item",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Spoon's Stash",
@@ -7905,7 +7905,7 @@
         "id": 0,
         "name": "winter_wyvern_heal_mana",
         "deprecated": "True",
-        "icon": "mana",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Essence of the Blueheart",
@@ -7918,7 +7918,7 @@
         "id": 1,
         "name": "winter_wyvern_atk_range",
         "deprecated": "True",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Dragon Sight",
@@ -7930,7 +7930,7 @@
       {
         "id": 2,
         "name": "winter_wyvern_winterproof",
-        "icon": "tower",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tower.png",
         "color": "Blue",
         "gradient_id": 2,
         "title": "Winterproof",
@@ -7939,7 +7939,7 @@
       {
         "id": 3,
         "name": "winter_wyvern_recursive",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
         "gradient_id": 0,
         "title": "Recursive",
@@ -7995,7 +7995,7 @@
         "id": 0,
         "name": "arc_warden_order",
         "deprecated": "true",
-        "icon": "arc_warden",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Order",
@@ -8005,7 +8005,7 @@
         "id": 1,
         "name": "arc_warden_disorder",
         "deprecated": "true",
-        "icon": "arc_warden_alt",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden_alt.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Disorder",
@@ -8014,7 +8014,7 @@
       {
         "id": 2,
         "name": "arc_warden_runed_replica",
-        "icon": "arc_warden_alt",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden_alt.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Runed Replica",
@@ -8023,7 +8023,7 @@
       {
         "id": 3,
         "name": "arc_warden_power_capture",
-        "icon": "rune",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rune.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Power Capture",
@@ -8078,7 +8078,7 @@
       {
         "id": 0,
         "name": "abyssal_underlord_demons_reach",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Demon's Reach",
@@ -8087,7 +8087,7 @@
       {
         "id": 1,
         "name": "abyssal_underlord_summons",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "Abyssal Horde",
@@ -8148,7 +8148,7 @@
         "id": 0,
         "name": "monkey_king_wukongs_faithful",
         "deprecated": "true",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Wukong's Faithful",
@@ -8157,7 +8157,7 @@
       {
         "id": 1,
         "name": "monkey_king_simian_stride",
-        "icon": "tree",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
         "gradient_id": 4,
         "title": "Simian Stride",
@@ -8166,7 +8166,7 @@
       {
         "id": 2,
         "name": "monkey_king_transfiguration",
-        "icon": "summons",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Changing of the Guard",
@@ -8226,7 +8226,7 @@
       {
         "id": 0,
         "name": "pangolier_double_jump",
-        "icon": "double_bounce",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/double_bounce.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Double Jump",
@@ -8235,7 +8235,7 @@
       {
         "id": 1,
         "name": "pangolier_thunderbolt",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Thunderbolt",
@@ -8290,7 +8290,7 @@
       {
         "id": 0,
         "name": "dark_willow_throwing_shade",
-        "icon": "damage",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Throwing Shade",
@@ -8300,7 +8300,7 @@
         "id": 1,
         "name": "dark_willow_thorny_thicket",
         "deprecated": "true",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
         "gradient_id": 4,
         "title": "Thorny Thicket",
@@ -8309,7 +8309,7 @@
       {
         "id": 2,
         "name": "dark_willow_shattering_crown",
-        "icon": "barrier",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Green",
         "gradient_id": 4,
         "title": "Shattering Crown",
@@ -8365,7 +8365,7 @@
       {
         "id": 0,
         "name": "grimstroke_inkstigate",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
         "gradient_id": 0,
         "title": "Inkstigate",
@@ -8374,7 +8374,7 @@
       {
         "id": 1,
         "name": "grimstroke_fine_art",
-        "icon": "brush",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/brush.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Fine Art",
@@ -8429,7 +8429,7 @@
       {
         "id": 0,
         "name": "mars_victory_feast",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Red",
         "gradient_id": 2,
         "title": "Victory Feast",
@@ -8438,7 +8438,7 @@
       {
         "id": 1,
         "name": "mars_arena",
-        "icon": "no_vision",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Blood Sport",
@@ -8493,7 +8493,7 @@
       {
         "id": 0,
         "name": "void_spirit_sanctuary",
-        "icon": "armor",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Purple",
         "gradient_id": 1,
         "title": "Sanctuary",
@@ -8503,7 +8503,7 @@
         "id": 1,
         "name": "void_spirit_phys_barrier",
         "deprecated": "true",
-        "icon": "nuke",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Symmetry",
@@ -8515,7 +8515,7 @@
       {
         "id": 2,
         "name": "void_spirit_aether_artifice",
-        "icon": "illusion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Call of the Void",
@@ -8571,7 +8571,7 @@
       {
         "id": 0,
         "name": "snapfire_ricochet_ii",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Ricochet II",
@@ -8580,7 +8580,7 @@
       {
         "id": 1,
         "name": "snapfire_full_bore",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Full Bore",
@@ -8637,7 +8637,7 @@
       {
         "id": 0,
         "name": "hoodwink_hunter",
-        "icon": "range",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Go Nuts",
@@ -8647,7 +8647,7 @@
         "id": 1,
         "name": "hoodwink_treebounce_trickshot",
         "deprecated": "true",
-        "icon": "tree",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Treebounce Trickshot",
@@ -8656,7 +8656,7 @@
       {
         "id": 2,
         "name": "hoodwink_hipshot",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Green",
         "gradient_id": 0,
         "title": "Hipshot",
@@ -8712,7 +8712,7 @@
       {
         "id": 0,
         "name": "dawnbreaker_solar_charged",
-        "icon": "cooldown",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Solar Charged",
@@ -8722,7 +8722,7 @@
         "id": 1,
         "name": "dawnbreaker_gleaming_hammer",
         "deprecated": "true",
-        "icon": "dawnbreaker_hammer",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dawnbreaker_hammer.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Gleaming Hammer",
@@ -8731,7 +8731,7 @@
       {
         "id": 2,
         "name": "dawnbreaker_blaze",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Starsurge",
@@ -8740,7 +8740,7 @@
       {
         "id": 3,
         "name": "dawnbreaker_hearthfire",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Trailblazer",
@@ -8796,7 +8796,7 @@
         "id": 0,
         "name": "marci_sidekick",
         "deprecated": "true",
-        "icon": "healing",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Sidekick",
@@ -8809,7 +8809,7 @@
         "id": 1,
         "name": "marci_bodyguard",
         "deprecated": "true",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Bodyguard Facet",
@@ -8821,7 +8821,7 @@
       {
         "id": 2,
         "name": "marci_buddy_system",
-        "icon": "twin_hearts",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Blue",
         "gradient_id": 1,
         "title": "Buddy System",
@@ -8830,7 +8830,7 @@
       {
         "id": 3,
         "name": "marci_pickmeup",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
         "gradient_id": 0,
         "title": "Pick-me-up",
@@ -8839,7 +8839,7 @@
       {
         "id": 4,
         "name": "marci_fleeting_fury",
-        "icon": "fist",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Fleeting Fury",
@@ -8896,7 +8896,7 @@
         "id": 0,
         "name": "primal_beast_romp_n_stomp",
         "deprecated": "true",
-        "icon": "speed",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Romp n' Stomp",
@@ -8905,7 +8905,7 @@
       {
         "id": 1,
         "name": "primal_beast_provoke_the_beast",
-        "icon": "broken_chain",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Provoke the Beast",
@@ -8914,7 +8914,7 @@
       {
         "id": 2,
         "name": "primal_beast_ferocity",
-        "icon": "area_of_effect",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
         "gradient_id": 3,
         "title": "Ferocity",
@@ -8972,7 +8972,7 @@
       {
         "id": 0,
         "name": "muerta_dance_of_the_dead",
-        "icon": "spirit",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Green",
         "gradient_id": 1,
         "title": "Dance of the Dead",
@@ -8982,7 +8982,7 @@
         "id": 1,
         "name": "muerta_ofrenda",
         "deprecated": "true",
-        "icon": "teleport",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Yellow",
         "gradient_id": 0,
         "title": "Ofrenda",
@@ -8994,7 +8994,7 @@
       {
         "id": 2,
         "name": "muerta_slingshot",
-        "icon": "ricochet",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Red",
         "gradient_id": 1,
         "title": "Quickdraw",
@@ -9067,7 +9067,7 @@
         "id": 0,
         "name": "ringmaster_default",
         "deprecated": "true",
-        "icon": "item",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Gray",
         "gradient_id": 3,
         "title": "Center Stage",
@@ -9076,7 +9076,7 @@
       {
         "id": 1,
         "name": "ringmaster_carny_classics",
-        "icon": "whoopee_cushion",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/whoopee_cushion.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Carny Classics",
@@ -9090,7 +9090,7 @@
       {
         "id": 2,
         "name": "ringmaster_sideshow_secrets",
-        "icon": "pie",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/pie.png",
         "color": "Red",
         "gradient_id": 0,
         "title": "Sideshow Secrets",
@@ -9155,7 +9155,7 @@
       {
         "id": 0,
         "name": "kez_flutter",
-        "icon": "kez_flutter",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/kez_flutter.png",
         "color": "Yellow",
         "gradient_id": 1,
         "title": "Flutter",
@@ -9164,7 +9164,7 @@
       {
         "id": 1,
         "name": "kez_shadowhawk",
-        "icon": "kez_shadowhawk",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/kez_shadowhawk.png",
         "color": "Blue",
         "gradient_id": 3,
         "title": "Shadowhawk",

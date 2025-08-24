@@ -1,5 +1,4 @@
 using GoS.Application.Abstractions;
-using GoS.Application.Features.Players.Queries.GetPlayerById;
 using GoS.Domain.Players.Models;
 using MediatR;
 

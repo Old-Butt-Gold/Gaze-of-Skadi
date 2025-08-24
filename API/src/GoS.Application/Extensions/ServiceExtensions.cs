@@ -1,3 +1,4 @@
+using FluentValidation;
 using GoS.Application.Behaviors;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,12 @@ public static class ServiceExtensions
         {
             config.RegisterServicesFromAssembly(typeof(AssemblyReference).Assembly);
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
+            config.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
+    }
+    
+    public static void ConfigureFluentValidation(this IServiceCollection serviceCollection)
+    {
+        serviceCollection.AddValidatorsFromAssemblyContaining(typeof(AssemblyReference));
     }
 }

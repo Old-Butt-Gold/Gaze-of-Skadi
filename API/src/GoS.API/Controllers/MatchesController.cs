@@ -32,7 +32,7 @@ public sealed class MatchesController : ControllerBase
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatch>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetPublicMatches([FromQuery] PublicMatchesEndpointParameters? parameters)
+    public async Task<IActionResult> GetPublicMatches([FromQuery] PublicMatchesEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPublicMatchesQuery(parameters));
         return result is null ? NotFound() : Ok(result);

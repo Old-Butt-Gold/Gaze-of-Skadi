@@ -9,7 +9,6 @@ internal sealed class GetProPlayersByNameHandler(IRequester requester)
 {
     public async Task<IEnumerable<ProPlayer>?> Handle(GetProPlayersByNameQuery request, CancellationToken ct)
     {
-        // TODO validation and more than 2 symbols
         var proPlayers = await requester.GetResponseAsync<IEnumerable<ProPlayer>>("proPlayers", ct: ct);
 
         if (proPlayers is null) return null;
