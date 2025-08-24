@@ -1,4 +1,5 @@
 using GoS.Application.EndpointParameters;
+using GoS.Domain.Extensions;
 
 namespace GoS.Application.Features.Players;
 
@@ -25,11 +26,9 @@ internal static class PlayerQueryHelpers
         AddIfNotNull(args, "significant", 0);
         AddIfNotNull(args, "having", parameters.Having);
 
-        if (!string.IsNullOrEmpty(parameters.Sort))
-            args.Add(new KeyValuePair<string, string>("sort", parameters.Sort));
+        if (parameters.Sort.HasValue)
+            args.Add(new KeyValuePair<string, string>("sort", parameters.Sort.ToSnakeCase()));
 
-        AddListParameters(args, "included_account_id", parameters.IncludedAccountIds);
-        AddListParameters(args, "excluded_account_id", parameters.ExcludedAccountIds);
         AddListParameters(args, "with_hero_id", parameters.WithHeroIds);
         AddListParameters(args, "against_hero_id", parameters.AgainstHeroIds);
         AddListParameters(args, "project", parameters.Project);

@@ -1,4 +1,5 @@
 ﻿using GoS.Domain.BaseEnums;
+using GoS.Domain.Players.Enums;
 
 namespace GoS.Application.EndpointParameters;
 
@@ -65,16 +66,6 @@ public class PlayerEndpointParameters
 	public int? IsRadiant { get; set; }
 
 	/// <summary>
-	/// Gets the account IDs in the match (array).
-	/// </summary>
-	public List<int> IncludedAccountIds { get; set; } = [];
-
-	/// <summary>
-	/// Gets the account IDs not in the match (array).
-	/// </summary>
-	public List<int> ExcludedAccountIds { get; set; } = [];
-
-	/// <summary>
 	/// Gets the hero IDs on the player's team (array).
 	/// </summary>
 	public List<int> WithHeroIds { get; set; } = [];
@@ -92,7 +83,7 @@ public class PlayerEndpointParameters
 	/// <summary>
 	/// Gets the field to return matches sorted by in descending order.
 	/// </summary>
-	public string? Sort { get; set; } = string.Empty;
+	public PlayerFieldHistogram? Sort { get; set; }
 
 	/// <summary>
 	/// Gets the fields to project (array).
