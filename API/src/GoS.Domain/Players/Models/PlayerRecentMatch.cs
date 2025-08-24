@@ -138,12 +138,6 @@ public class PlayerRecentMatch
 	public BooleanState? IsRoaming { get; init; }
 
 	/// <summary>
-	/// Gets cluster
-	/// </summary>
-	[JsonPropertyName("cluster")]
-	public int Cluster { get; init; }
-
-	/// <summary>
 	/// Gets integer describing whether or not the player left the game. 0: didn't leave. 1: left safely. 2+: Abandoned
 	/// </summary>
 	[JsonPropertyName("leaver_status")]

@@ -22,7 +22,7 @@ internal static class PlayerQueryHelpers
         AddIfNotNull(args, "lane_role", (int?)parameters.LaneRole);
         AddIfNotNull(args, "hero_id", parameters.HeroId);
         AddIfNotNull(args, "is_radiant", parameters.IsRadiant);
-        AddIfNotNull(args, "significant", parameters.Significant);
+        AddIfNotNull(args, "significant", 0);
         AddIfNotNull(args, "having", parameters.Having);
 
         if (!string.IsNullOrEmpty(parameters.Sort))

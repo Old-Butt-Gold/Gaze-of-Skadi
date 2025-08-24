@@ -85,12 +85,6 @@ public class PlayerEndpointParameters
 	public List<int> AgainstHeroIds { get; set; } = [];
 
 	/// <summary>
-	/// Gets whether the match was significant for aggregation purposes.
-	/// Defaults to 1 (true), set this to 0 to return data for non-standard modes/matches.
-	/// </summary>
-	public int? Significant { get; set; }
-
-	/// <summary>
 	/// Gets the minimum number of games played, for filtering hero stats.
 	/// </summary>
 	public int? Having { get; set; }
@@ -104,4 +98,6 @@ public class PlayerEndpointParameters
 	/// Gets the fields to project (array).
 	/// </summary>
 	public List<string> Project { get; set; } = [];
+
+    // TODO add Project level & lane_role to get them to /matches
 }
