@@ -31,7 +31,7 @@ public interface ICommonEndpoint
     /// <param name="item">Filter by item name e.g. "spirit_vessel".</param>
     /// <param name="heroId">Hero ID.</param>
     /// <returns>Win rates for certain item timings on a hero for items that cost at least 1400 gold.</returns>
-    Task<List<ItemTiming>?> GetItemTimingAsync(string? item = null, int? heroId = null);
+    Task<List<ItemTiming>?> GetItemTimingAsync();
 
     /// <summary>
     /// Gets win rates for heroes in certain lane roles. GET /scenarios/laneRoles.
@@ -39,7 +39,7 @@ public interface ICommonEndpoint
     /// <param name="laneRole">Filter by lane role 1-4 (Safe, Mid, Off, Jungle).</param>
     /// <param name="heroId">Hero ID.</param>
     /// <returns>Win rates for heroes in certain lane roles.</returns>
-    Task<List<LaneRoles>?> GetLaneRolesAsync(int? laneRole = null, int? heroId = null);
+    Task<List<LaneRoles>?> GetLaneRolesAsync();
 
     // ----------------------------- For internal uses
 

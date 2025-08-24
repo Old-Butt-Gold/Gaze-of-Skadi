@@ -4,7 +4,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeamHeroesById;
 
-public class GetTeamHeroesByIdHandler(IRequester requester)
+internal sealed class GetTeamHeroesByIdHandler(IRequester requester)
     : IRequestHandler<GetTeamHeroesByIdQuery, List<TeamHero>?>
 {
     public Task<List<TeamHero>?> Handle(GetTeamHeroesByIdQuery request, CancellationToken ct)

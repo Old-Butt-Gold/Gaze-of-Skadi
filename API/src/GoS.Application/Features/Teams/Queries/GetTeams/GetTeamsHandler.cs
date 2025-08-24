@@ -4,7 +4,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeams;
 
-public class GetTeamsHandler(IRequester requester) : IRequestHandler<GetTeamsQuery, List<Team>?>
+internal sealed class GetTeamsHandler(IRequester requester) : IRequestHandler<GetTeamsQuery, List<Team>?>
 {
     public Task<List<Team>?> Handle(GetTeamsQuery request, CancellationToken ct)
     {
