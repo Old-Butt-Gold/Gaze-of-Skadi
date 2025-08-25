@@ -83,6 +83,7 @@ public class PlayerEndpointParameters
 	/// <summary>
 	/// Gets the field to return matches sorted by in descending order.
 	/// </summary>
+	// TODO There will be at most the same field as enum.value.ToSnakeCase() in JavaScript
 	public PlayerFieldHistogram? Sort { get; set; }
 
 	/// <summary>

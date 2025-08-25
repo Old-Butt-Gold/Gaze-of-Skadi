@@ -14,6 +14,13 @@ public class PlayerMatch
 	[JsonPropertyName("match_id")]
 	public long MatchId { get; init; }
 
+    /// <summary>
+    /// Gets parse version, used internally by OpenDota
+    /// </summary>
+    /// TODO if match parsed or not. if not then it's null
+    [JsonPropertyName("version")]
+    public int? Version { get; init; }
+
 	/// <summary>
 	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
 	/// </summary>
@@ -87,7 +94,7 @@ public class PlayerMatch
 	/// </summary>
 	[JsonPropertyName("party_size")]
 	public int? PartySize { get; init; }
-	
+
 	[JsonPropertyName("level")]
 	public int? Level { get; init; }
 
@@ -100,28 +107,28 @@ public class PlayerMatch
 	/// </summary>
 	[JsonPropertyName("hero_variant")]
 	public int? HeroVariant { get; init; }
-	
+
 	[JsonPropertyName("item_0")]
 	public int? Item0 { get; init; }
-	
+
 	[JsonPropertyName("item_1")]
 	public int? Item1 { get; init; }
-	
+
 	[JsonPropertyName("item_2")]
 	public int? Item2 { get; init; }
-	
+
 	[JsonPropertyName("item_3")]
 	public int? Item3 { get; init; }
-	
+
 	[JsonPropertyName("item_4")]
 	public int? Item4 { get; init; }
-	
+
 	[JsonPropertyName("item_5")]
 	public int? Item5 { get; init; }
-	
+
 	[JsonPropertyName("heroes")]
 	public Dictionary<PlayerSlot, PlayerMatchHero>? Heroes { get; init; }
-	
+
 	[JsonPropertyName("lane_role")]
 	public LaneRole? Lane { get; init; }
 }

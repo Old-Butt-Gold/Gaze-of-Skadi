@@ -169,12 +169,6 @@ public class Match
 	public List<int> RadiantXpAdvantage { get; init; } = [];
 
 	/// <summary>
-	/// Gets the skill level of the game
-	/// </summary>
-	[JsonPropertyName("skill")]
-	public int? Skill { get; init; }
-
-	/// <summary>
 	/// Gets the Unix timestamp at which the game started.
 	/// </summary>
 	[JsonPropertyName("start_time")]
@@ -199,9 +193,11 @@ public class Match
 	public TowerStatus TowerStatusRadiant { get; init; }
 
 	/// <summary>
-	/// Gets parse version, used internally by OpenDota </summary>
+	/// Gets parse version, used internally by OpenDota
+	/// </summary>
+	/// TODO if match parsed or not. if not then it's null
 	[JsonPropertyName("version")]
-	public int Version { get; init; }
+	public int? Version { get; init; }
 
 	/// <summary>
 	/// Gets salt of the replay file.

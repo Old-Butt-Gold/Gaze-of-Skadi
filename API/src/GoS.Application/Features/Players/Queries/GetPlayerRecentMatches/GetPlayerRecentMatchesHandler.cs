@@ -30,15 +30,16 @@ internal sealed class GetPlayerRecentMatchesHandler(IRequester requester)
         "heroes",
         "start_time",
         "lane_role",
-        "level"
+        "level",
+        "version"
     ];
-    
+
     public Task<IEnumerable<PlayerMatch>?> Handle(GetPlayerRecentMatchesQuery request, CancellationToken ct)
     {
         var parameters = request.Parameters;
         parameters.Limit ??= Limit;
         parameters.Project = Project;
-        
+
         var queryParameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
         return requester.GetResponseAsync<IEnumerable<PlayerMatch>>($"players/{request.AccountId}/matches", queryParameters, ct);
     }

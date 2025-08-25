@@ -29,9 +29,10 @@ internal sealed class GetPlayerMatchesHandler(IRequester requester)
         "heroes",
         "start_time",
         "lane_role",
-        "level"
+        "level",
+        "version"
     ];
-    
+
     public Task<IEnumerable<PlayerMatch>?> Handle(GetPlayerMatchesQuery request, CancellationToken ct)
     {
         request.Parameters.Project = Project;

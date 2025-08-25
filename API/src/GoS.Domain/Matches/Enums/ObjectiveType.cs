@@ -18,7 +18,7 @@ public enum ObjectiveType
 
     [JsonPropertyName("CHAT_MESSAGE_COURIER_LOST")]
     ChatMessageCourierLost,
-    
+
     [JsonPropertyName("CHAT_MESSAGE_AEGIS_STOLEN")]
     ChatMessageAegisStolen,
 }
