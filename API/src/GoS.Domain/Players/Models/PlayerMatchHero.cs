@@ -18,10 +18,4 @@ public class PlayerMatchHero
 	/// </summary>
 	[JsonPropertyName("hero_id")]
 	public long HeroId { get; init; }
-
-	/// <summary>
-	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
-	/// </summary>
-	[JsonPropertyName("player_slot")]
-	public long PlayerSlot { get; init; }
 }

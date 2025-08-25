@@ -34,7 +34,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<Player?>> GetPlayerById(long accountId)
+    [ProducesResponseType(typeof(Player), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerById(long accountId)
     {
         var result = await _sender.Send(new GetPlayerByIdQuery(accountId));
         return result is null ? NotFound() : Ok(result);
@@ -42,7 +43,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wl")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<PlayerWinLoss?>> GetPlayerWinLossById(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(PlayerWinLoss), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerWinLossById(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWinLossByIdQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -50,15 +52,17 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("recentMatches")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerRecentMatch>>> GetPlayerRecentMatches(long accountId)
+    [ProducesResponseType(typeof(IEnumerable<PlayerMatch>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerRecentMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
-        var result = await _sender.Send(new GetPlayerRecentMatchesQuery(accountId));
+        var result = await _sender.Send(new GetPlayerRecentMatchesQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
     }
 
     [HttpGet("matches")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerMatch>>> GetPlayerMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerMatch>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerMatchesQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -66,7 +70,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("heroes")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerHero>>> GetPlayerHeroes(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerHero>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerHeroes(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerHeroesQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -74,7 +79,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("peers")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerPeer>>> GetPlayerPeers(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerPeer>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerPeers(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerPeersQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -82,7 +88,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("pros")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerPro>>> GetPlayerPros(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerPro>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerPros(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerProsQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -90,7 +97,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("totals")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerTotal>>> GetPlayerTotals(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerTotal>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerTotals(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerTotalsQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -98,7 +106,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("counts")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<PlayerCount?>> GetPlayerCounts(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(PlayerCount), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerCounts(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerCountsQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -106,7 +115,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("histograms/{field}")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerHistogram>>> GetPlayerHistograms(long accountId, PlayerFieldHistogram field, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(IEnumerable<PlayerHistogram>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerHistograms(long accountId, PlayerFieldHistogram field, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerHistogramsQuery(accountId, field, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -114,7 +124,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wardmap")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<PlayerWardMap?>> GetPlayerWardMap(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(PlayerWardMap), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerWardMap(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWardMapQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -122,7 +133,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wordcloud")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<PlayerWordCloud?>> GetPlayerWordCloud(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    [ProducesResponseType(typeof(PlayerWordCloud), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerWordCloud(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWordCloudQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
@@ -130,7 +142,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("rankings")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult<IEnumerable<PlayerHeroRanking>>> GetPlayerHeroRankings(long accountId)
+    [ProducesResponseType(typeof(PlayerHeroRanking), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetPlayerHeroRankings(long accountId)
     {
         var result = await _sender.Send(new GetPlayerHeroRankingsQuery(accountId));
         return result is null ? NotFound() : Ok(result);
@@ -138,7 +151,8 @@ public sealed class PlayersController : ControllerBase
 
     [HttpPost("refresh")]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<ActionResult> RefreshPlayerMatchHistory(long accountId)
+    [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
+    public async Task<IActionResult> RefreshPlayerMatchHistory(long accountId)
     {
         var result = await _sender.Send(new RefreshPlayerMatchHistoryCommand(accountId));
         return Ok(result);

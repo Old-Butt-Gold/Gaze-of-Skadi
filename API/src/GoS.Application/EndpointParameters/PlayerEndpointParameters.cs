@@ -89,6 +89,4 @@ public class PlayerEndpointParameters
 	/// Gets the fields to project (array).
 	/// </summary>
 	public List<string> Project { get; set; } = [];
-
-    // TODO add Project level & lane_role to get them to /matches
 }

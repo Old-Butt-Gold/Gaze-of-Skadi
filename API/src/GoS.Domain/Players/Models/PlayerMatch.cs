@@ -87,20 +87,41 @@ public class PlayerMatch
 	/// </summary>
 	[JsonPropertyName("party_size")]
 	public int? PartySize { get; init; }
+	
+	[JsonPropertyName("level")]
+	public int? Level { get; init; }
 
 	[JsonPropertyName("average_rank")]
-	public Rank? AverageRank { get; init; }
+	// TODO rank can be not in enum somehow, so before sending to front, parse it and make unknown or enum
+	public int? AverageRank { get; init; }
 
 	/// <summary>
 	/// Gets the variant of the hero played. 1-indexed facet, see https://github.com/odota/dotaconstants/blob/master/build/hero_abilities.json
 	/// </summary>
 	[JsonPropertyName("hero_variant")]
 	public int? HeroVariant { get; init; }
-
-	/// <summary>
-	/// Gets the heroes.
-	/// (requires ?project=heroes).
-	/// </summary>
+	
+	[JsonPropertyName("item_0")]
+	public int? Item0 { get; init; }
+	
+	[JsonPropertyName("item_1")]
+	public int? Item1 { get; init; }
+	
+	[JsonPropertyName("item_2")]
+	public int? Item2 { get; init; }
+	
+	[JsonPropertyName("item_3")]
+	public int? Item3 { get; init; }
+	
+	[JsonPropertyName("item_4")]
+	public int? Item4 { get; init; }
+	
+	[JsonPropertyName("item_5")]
+	public int? Item5 { get; init; }
+	
 	[JsonPropertyName("heroes")]
-	public Dictionary<string, PlayerMatchHero>? Heroes { get; init; }
+	public Dictionary<PlayerSlot, PlayerMatchHero>? Heroes { get; init; }
+	
+	[JsonPropertyName("lane_role")]
+	public LaneRole? Lane { get; init; }
 }
