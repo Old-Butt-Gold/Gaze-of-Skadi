@@ -35,12 +35,6 @@ public class Match
 	public List<Chat> Chat { get; init; } = [];
 
 	/// <summary>
-	/// Gets cluster
-	/// </summary>
-	[JsonPropertyName("cluster")]
-	public int Cluster { get; init; }
-
-	/// <summary>
 	/// Gets cosmetics
 	/// </summary>
 	[JsonPropertyName("cosmetics")]

@@ -11,11 +11,11 @@ public class PlayerWordCloud
 	/// Gets player's word counts.
 	/// </summary>
 	[JsonPropertyName("my_word_counts")]
-	public Dictionary<string, long> MyWordCounts { get; init; } = new();
+	public Dictionary<string, long> WriteWordCount { get; init; } = new();
 
 	/// <summary>
 	/// Gets word counts.
 	/// </summary>
 	[JsonPropertyName("all_word_counts")]
-	public Dictionary<string, long> AllWordCounts { get; init; } = new();
+	public Dictionary<string, long> ReadWordCounts { get; init; } = new();
 }

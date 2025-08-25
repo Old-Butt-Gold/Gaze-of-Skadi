@@ -63,12 +63,6 @@ public class TeamMatch
 	public string? LeagueName { get; init; }
 
 	/// <summary>
-	/// Gets the cluster ID.
-	/// </summary>
-	[JsonPropertyName("cluster")]
-	public long Cluster { get; init; }
-
-	/// <summary>
 	/// Gets the opposing team ID.
 	/// </summary>
 	[JsonPropertyName("opposing_team_id")]

@@ -564,12 +564,6 @@ public class MatchPlayer
 	public int Duration { get; init; }
 
 	/// <summary>
-	/// Gets the cluster of the match
-	/// </summary>
-	[JsonPropertyName("cluster")]
-	public long Cluster { get; init; }
-
-	/// <summary>
 	/// Gets integer corresponding to lobby type of match.
 	/// List of constants can be found here: https://github.com/odota/dotaconstants/blob/master/json/lobby_type.json.
 	/// </summary>

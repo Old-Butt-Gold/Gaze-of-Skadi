@@ -57,12 +57,6 @@ public class PlayerPro
 	public BooleanState? IsPro { get; init; }
 
 	/// <summary>
-	/// Gets when the player is locked.
-	/// </summary>
-	[JsonPropertyName("locked_until")]
-	public object? LockedUntil { get; init; }
-
-	/// <summary>
 	/// Gets Steam ID of the player.
 	/// </summary>
 	[JsonPropertyName("steamid")]
@@ -109,12 +103,6 @@ public class PlayerPro
 	/// </summary>
 	[JsonPropertyName("full_history_time")]
 	public DateTimeOffset? FullHistoryTime { get; init; }
-
-	/// <summary>
-	/// Gets cheese of the player.
-	/// </summary>
-	[JsonPropertyName("cheese")]
-	public long Cheese { get; init; }
 
 	/// <summary>
 	/// Gets whether the player is fh unavailable.
@@ -181,16 +169,4 @@ public class PlayerPro
 	/// </summary>
 	[JsonPropertyName("against_games")]
 	public long AgainstGames { get; init; }
-
-	/// <summary>
-	/// Gets with gold per minute sum of the player.
-	/// </summary>
-	[JsonPropertyName("with_gpm_sum")]
-	public long? WithGpmSum { get; init; }
-
-	/// <summary>
-	/// Gets with xp per minute sum of the player.
-	/// </summary>
-	[JsonPropertyName("with_xpm_sum")]
-	public long? WithXpmSum { get; init; }
 }
