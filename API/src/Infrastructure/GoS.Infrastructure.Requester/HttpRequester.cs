@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using System.Text.Json;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
@@ -29,7 +30,15 @@ internal sealed class HttpRequester : IRequester
             var requestUri = BuildUri(url, parameters);
             using var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
-            using var response = await _httpClient.SendAsync(request, ct);
+            request.Headers.AcceptEncoding.Clear();
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("br"));
+            request.Headers.Accept.Add(new("*/*"));
+            request.Headers.Add("origin", "https://www.opendota.com");
+            request.Headers.Add("referer", "https://www.opendota.com");
+
+            using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
 
             response.EnsureSuccessStatusCode();
 
@@ -50,7 +59,7 @@ internal sealed class HttpRequester : IRequester
         }
         catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
         {
-            _logger.LogWarning(ex, "Request to {Url} timed out after {TimeoutSeconds}s.", url, _httpClient.Timeout.TotalSeconds);
+            _logger.LogWarning(ex.Message, "Request to {Url} timed out after {TimeoutSeconds}s.", url, _httpClient.Timeout.TotalSeconds);
             throw new TimeoutException($"Request to '{url}' timed out after {_httpClient.Timeout.TotalSeconds} seconds.", ex);
         }
         catch (HttpRequestException ex)
