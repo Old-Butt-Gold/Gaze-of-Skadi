@@ -531,13 +531,13 @@ public class MatchPlayer
 	/// Gets a persona name of the player
 	/// </summary>
 	[JsonPropertyName("personaname")]
-	public string Personaname { get; init; } = string.Empty;
+	public string? Personaname { get; init; }
 
 	/// <summary>
 	/// Gets a name of the player
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string Name { get; init; } = string.Empty;
+	public string? Name { get; init; }
 
 	/// <summary>
 	/// Gets a time in seconds of last login of the player

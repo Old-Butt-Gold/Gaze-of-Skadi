@@ -194,24 +194,6 @@ public class Match
 	public int? Version { get; init; }
 
 	/// <summary>
-	/// Gets salt of the replay file.
-	/// </summary>
-	[JsonPropertyName("replay_salt")]
-	public long? ReplaySalt { get; init; }
-
-	/// <summary>
-	/// Gets the series ID
-	/// </summary>
-	[JsonPropertyName("series_id")]
-	public long SeriesId { get; init; }
-
-	/// <summary>
-	/// Gets the series type
-	/// </summary>
-	[JsonPropertyName("series_type")]
-	public long SeriesType { get; init; }
-
-	/// <summary>
 	/// Gets information about the league (if any)
 	/// </summary>
 	[JsonPropertyName("league")]

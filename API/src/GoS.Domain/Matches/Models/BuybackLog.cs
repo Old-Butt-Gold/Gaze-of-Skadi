@@ -24,9 +24,11 @@ public class BuybackLog
 	[JsonPropertyName("type")]
 	public LogType Type { get; init; }
 
+    /*
 	/// <summary>
 	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
 	/// </summary>
 	[JsonPropertyName("player_slot")]
 	public PlayerSlot PlayerSlot { get; init; }
+	*/
 }

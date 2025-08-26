@@ -38,9 +38,5 @@ public class Chat
 	/// </summary>
 	[JsonPropertyName("player_slot")]
 	public PlayerSlot PlayerSlot { get; init; }
-
-	// Gets name of the player who sent the message
-	[JsonPropertyName("unit")]
-	public string? Unit { get; init; }
 }
 

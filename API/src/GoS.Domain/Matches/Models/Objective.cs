@@ -45,10 +45,4 @@ public class Objective
 	/// </summary>
 	[JsonPropertyName("unit")]
 	public string? Unit { get; init; }
-
-	/// <summary>
-	/// Gets which team got the objective
-	/// </summary>
-	[JsonPropertyName("team")]
-	public long? Team { get; init; }
 }
