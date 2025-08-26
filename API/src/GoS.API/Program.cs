@@ -19,6 +19,7 @@ builder.Services.ConfigureRequester(builder.Configuration);
 builder.Services.ConfigureMemoryCache();
 builder.Services.ConfigureMediatR();
 builder.Services.ConfigureFluentValidation();
+builder.Services.ConfigureExchangeRedis(builder.Configuration);
 
 var app = builder.Build();
 
