@@ -12,7 +12,7 @@ internal sealed class HttpRequester : IRequester
     private readonly IOptionsMonitor<HttpRequesterOptions> _optionsMonitor;
     private readonly ISerializationOptionsProvider _serializationOptionsProvider;
     private readonly ILogger<HttpRequester> _logger;
-    
+
     public HttpRequester(HttpClient httpClient, IOptionsMonitor<HttpRequesterOptions> optionsMonitor,
         ISerializationOptionsProvider serializationOptionsProvider, ILogger<HttpRequester> logger)
     {
@@ -39,7 +39,7 @@ internal sealed class HttpRequester : IRequester
             {
                 return null;
             }
-            
+
             var options = _serializationOptionsProvider.CreateJsonSerializerOptions();
             return await JsonSerializer.DeserializeAsync<T>(stream, options, ct);
         }
@@ -47,6 +47,11 @@ internal sealed class HttpRequester : IRequester
         {
             _logger.LogDebug("Request to {Url} was canceled by caller.", url);
             throw;
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning(ex, "Request to {Url} timed out after {TimeoutSeconds}s.", url, _httpClient.Timeout.TotalSeconds);
+            throw new TimeoutException($"Request to '{url}' timed out after {_httpClient.Timeout.TotalSeconds} seconds.", ex);
         }
         catch (HttpRequestException ex)
         {

@@ -22,6 +22,8 @@ builder.Services.ConfigureFluentValidation();
 
 var app = builder.Build();
 
+app.UseApiExceptionHandler();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
