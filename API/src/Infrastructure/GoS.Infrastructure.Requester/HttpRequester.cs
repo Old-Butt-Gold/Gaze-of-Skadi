@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using GoS.Application.Abstractions;
@@ -40,7 +41,7 @@ internal sealed class HttpRequester : IRequester
 
             using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
 
-            response.EnsureSuccessStatusCode();
+            EnsureSucessCode(response, request.RequestUri!);
 
             await using var stream = await response.Content.ReadAsStreamAsync(ct);
 
@@ -72,6 +73,38 @@ internal sealed class HttpRequester : IRequester
             _logger.LogError(ex, "Failed to deserialize response for {Url}", url);
             throw;
         }
+    }
+
+    private void EnsureSucessCode(HttpResponseMessage response, Uri requestUri)
+    {
+        if (!response.IsSuccessStatusCode)
+        {
+            var message = $"Upstream request to '{requestUri}' returned {(int)response.StatusCode} {response.StatusCode}";
+
+            switch (response.StatusCode)
+            {
+                case HttpStatusCode.NotFound:
+                    _logger.LogWarning("Resource not found: {Url}", requestUri);
+                    throw new KeyNotFoundException(message);
+
+                case HttpStatusCode.Unauthorized:
+                case HttpStatusCode.Forbidden:
+                    _logger.LogWarning("Unauthorized/Forbidden when requesting {Url}", requestUri);
+                    throw new UnauthorizedAccessException(message);
+
+                case HttpStatusCode.BadRequest:
+                    _logger.LogWarning("Bad request from upstream: {Url}", requestUri);
+                    throw new HttpRequestException(message);
+
+                case HttpStatusCode.Conflict:
+                    _logger.LogWarning("Conflict returned from upstream: {Url}", requestUri);
+                    throw new HttpRequestException(message);
+                default:
+                    _logger.LogWarning("Upstream returned non-success status {Status} for {Url}", (int)response.StatusCode, requestUri);
+                    throw new HttpRequestException(message);
+            }
+        }
+
     }
 
     public Task<HttpResponseMessage> PostRequestAsync(string url, HttpContent? content = null, CancellationToken cancellationToken = default)

@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  gos-api:
+    build:
+      context: .
+      dockerfile: ./API/src/GoS.API/Dockerfile
+    container_name: gos-api-container
+    ports:
+      - "43190:43190"
+    environment:
+      Redis__Configuration: "localhost:6379"
+      Redis__InstanceName: "GoS:"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: gos-redis-container
+    ports:
+      - "6379:6379"
+    volumes:
+      - gos_redis:/data
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  gos_redis:
