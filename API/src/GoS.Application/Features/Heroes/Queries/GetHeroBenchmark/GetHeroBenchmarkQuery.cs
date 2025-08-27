@@ -1,8 +1,13 @@
-using GoS.Application.Features.Heroes.Common;
+using GoS.Application.Abstractions.Queries;
+using GoS.Application.Caching;
 using GoS.Application.Features.Heroes.Common.Interfaces;
 using GoS.Domain.Heroes.Models;
-using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroBenchmark;
 
-public record GetHeroBenchmarkQuery(int HeroId) : IRequest<Benchmark?>, IHeroIdRequest;
+public record GetHeroBenchmarkQuery(int HeroId) : ICacheableQuery<Benchmark?>, IHeroIdRequest
+{
+    public string GetCacheKey() => CacheKey.Create("hero:benchmark", new { heroId = HeroId });
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(2);
+    public TimeSpan? GetSlidingExpiration() => TimeSpan.FromMinutes(30);
+}

@@ -1,6 +1,6 @@
 ﻿using GoS.Application.Abstractions;
 using GoS.Application.Abstractions.Queries;
-using GoS.Application.Extensions;
+using GoS.Application.Caching;
 using MediatR;
 using Microsoft.Extensions.Caching.Distributed;
 

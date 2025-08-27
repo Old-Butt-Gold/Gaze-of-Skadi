@@ -2,7 +2,6 @@ using FluentValidation;
 using GoS.Application.Behaviors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StackExchange.Redis.Profiling;
 
 namespace GoS.Application.Extensions;
 

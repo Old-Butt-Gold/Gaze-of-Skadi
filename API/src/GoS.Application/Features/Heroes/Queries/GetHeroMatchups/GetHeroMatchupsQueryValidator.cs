@@ -1,7 +1,5 @@
 using FluentValidation;
-using GoS.Application.Features.Heroes.Common;
 using GoS.Application.Features.Heroes.Common.Interfaces;
-using GoS.Application.Features.Heroes.Queries.GetHeroRanking;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroMatchups;
 

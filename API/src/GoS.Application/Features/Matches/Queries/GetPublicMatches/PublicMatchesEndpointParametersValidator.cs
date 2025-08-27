@@ -1,5 +1,4 @@
 using FluentValidation;
-using GoS.Application.EndpointParameters;
 
 namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
 

@@ -2,9 +2,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace GoS.Application.Extensions;
+namespace GoS.Application.Caching;
 
-public static class DistributedCacheExtensions
+internal static class DistributedCacheExtensions
 {
     private static readonly JsonSerializerOptions DefaultOptions = new()
     {

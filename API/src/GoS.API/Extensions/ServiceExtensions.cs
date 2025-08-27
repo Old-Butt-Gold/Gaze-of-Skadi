@@ -1,6 +1,5 @@
 using System.Reflection;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
 namespace GoS.API.Extensions;

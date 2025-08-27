@@ -1,5 +1,4 @@
 using FluentValidation;
-using GoS.Application.Features.Heroes.Common;
 using GoS.Application.Features.Heroes.Common.Interfaces;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroMatches;
