@@ -68,12 +68,12 @@ public class PlayerEndpointParameters
 	/// <summary>
 	/// Gets the hero IDs on the player's team (array).
 	/// </summary>
-	public List<int> WithHeroIds { get; set; } = [];
+	public List<int>? WithHeroIds { get; set; }
 
 	/// <summary>
 	/// Gets the hero IDs against the player's team (array).
 	/// </summary>
-	public List<int> AgainstHeroIds { get; set; } = [];
+	public List<int>? AgainstHeroIds { get; set; }
 
 	/// <summary>
 	/// Gets the minimum number of games played, for filtering hero stats.
