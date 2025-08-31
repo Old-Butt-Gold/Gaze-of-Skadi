@@ -19,4 +19,10 @@ public class PermanentBuff
 	/// </summary>
 	[JsonPropertyName("stack_count")]
 	public long StackCount { get; init; }
+
+    /// <summary>
+    /// Gets a grant time
+    /// </summary>
+    [JsonPropertyName("grant_time")]
+    public int GrantTime { get; init; }
 }

@@ -12,8 +12,12 @@ public enum PermanentBuffEnum
     EssenceShift,
     AtrophyAura,
     Jinada,
-    AghanimsShard,
+    AghanimsShard = 12,
     CullingBlade,
     ReapersScythe,
-    PierceTheVeil
+    PierceTheVeil,
+    Feast = 16,
+    PowerCapture = 17,
+    Cutpurse = 18,
+    TrackGold = 19,
 }

@@ -270,4 +270,10 @@ public class Match
 	/// </summary>
 	[JsonPropertyName("replay_url")]
 	public Uri? ReplayUrl { get; init; }
+
+    /// <summary>
+    /// Gets all pause times
+    /// </summary>
+    [JsonPropertyName("pauses")]
+    public List<PauseTime>? PauseTimes { get; init; }
 }
