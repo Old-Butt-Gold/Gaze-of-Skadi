@@ -9,7 +9,7 @@ services:
     ports:
       - "43190:43190"
     environment:
-      Redis__Configuration: "localhost:6379"
+      Redis__Configuration: "redis:6379"
       Redis__InstanceName: "GoS:"
     depends_on:
       - redis
