@@ -9,6 +9,6 @@ internal sealed class GetMatchByIdHandler(IRequester requester)
 {
     public Task<Match?> Handle(GetMatchByIdQuery request, CancellationToken ct)
     {
-        return requester.GetResponseAsync<Match>($"matches/{request.MatchId}", ct: ct);
+        return requester.GetResponseAsync<Match?>($"matches/{request.MatchId}", ct: ct);
     }
 }

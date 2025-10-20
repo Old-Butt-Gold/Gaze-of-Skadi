@@ -1,6 +1,6 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
-using GoS.Application.Features.Matches.Queries.GetMatchById;
+using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
 using GoS.Domain.Matches.Models;
@@ -20,12 +20,12 @@ public sealed class MatchesController : ControllerBase
         _sender = sender;
     }
 
-    [HttpGet("{matchId:long}")]
+    [HttpGet("{matchId:long}/overview")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Match), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetMatchById(long matchId)
     {
-        var result = await _sender.Send(new GetMatchByIdQuery(matchId));
+        var result = await _sender.Send(new GetMatchOverviewByIdQuery(matchId));
         return result is null ? NotFound() : Ok(result);
     }
 
