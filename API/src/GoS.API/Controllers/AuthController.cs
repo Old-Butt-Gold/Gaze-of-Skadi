@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using AspNet.Security.OpenId.Steam;
+using GoS.Application.Abstractions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -11,6 +12,13 @@ namespace GoS.API.Controllers;
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
+    private readonly ISteamService _steamService;
+
+    public AuthController(ISteamService steamService)
+    {
+        _steamService = steamService;
+    }
+    
     [HttpGet("login")]
     public IActionResult Login(string returnUrl = "/") 
         => Challenge(new AuthenticationProperties { RedirectUri = returnUrl }, SteamAuthenticationDefaults.AuthenticationScheme);
@@ -26,17 +34,33 @@ public class AuthController : ControllerBase
 
     [Authorize]
     [HttpGet("profile")]
-    public IActionResult GetProfile()
+    public async Task<IActionResult> GetProfile()
     {
         var user = User;
-        var steamId = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        var steamId64 = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         var steamName = user.Identity?.Name;
+
+        var playerSummary = await _steamService.GetPlayerSummaryAsync(steamId64);
+        var steamId32 = _steamService.ConvertSteamIdTo32(playerSummary.SteamId);
 
         return Ok(new
         {
             IsAuthenticated = user.Identity?.IsAuthenticated ?? false,
-            SteamId = steamId,
+            SteamId64 = playerSummary.SteamId,
+            SteamId32 = steamId32,
             SteamName = steamName,
+            playerSummary.ProfileUrl,
+            Avatar = new 
+            {
+                Small = playerSummary.Avatar,
+                Medium = playerSummary.AvatarMedium,
+                Full = playerSummary.AvatarFull
+            },
+            playerSummary.RealName,
+            ProfileCreated = playerSummary.TimeCreated > 0 ? 
+                DateTimeOffset.FromUnixTimeSeconds(playerSummary.TimeCreated).DateTime : (DateTime?)null,
+            LastLogoff = playerSummary.LastLogoff > 0 ? 
+                DateTimeOffset.FromUnixTimeSeconds(playerSummary.LastLogoff).DateTime : (DateTime?)null,
         });
     }
 

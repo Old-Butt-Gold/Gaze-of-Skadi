@@ -21,6 +21,7 @@ builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
 builder.Services.ConfigureSteamAuthentication(builder.Configuration);
+builder.Services.ConfigureSteamServices(builder.Configuration);
 
 var app = builder.Build();
 

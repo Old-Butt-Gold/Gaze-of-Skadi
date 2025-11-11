@@ -1,4 +1,5 @@
 using FluentValidation;
+using GoS.Application.Abstractions;
 using GoS.Application.Behaviors;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,5 +43,11 @@ public static class ServiceExtensions
     public static void ConfigureFluentValidation(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddValidatorsFromAssemblyContaining(typeof(AssemblyReference));
+    }
+    
+    public static void ConfigureSteamServices(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddHttpClient<ISteamService, SteamService>();
+        services.AddScoped<ISteamService, SteamService>();
     }
 }
