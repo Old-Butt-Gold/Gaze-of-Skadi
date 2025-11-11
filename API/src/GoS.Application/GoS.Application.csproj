@@ -11,9 +11,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AspNet.Security.OpenId.Steam" Version="9.0.0" />
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
       <PackageReference Include="MediatR" Version="12.5.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.8" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.11" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.8" />
     </ItemGroup>
 

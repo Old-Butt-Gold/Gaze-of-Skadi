@@ -1,5 +1,7 @@
 using System.Reflection;
 using System.Text.Json.Serialization;
+using AspNet.Security.OpenId.Steam;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.OpenApi.Models;
 
 namespace GoS.API.Extensions;
@@ -20,9 +22,30 @@ public static class ServiceExtensions
         }).AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
     }
     
-    public static void ConfigureMemoryCache(this IServiceCollection services)
+    public static void ConfigureMemoryCache(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddMemoryCache();
+    }
+
+    public static void ConfigureSteamAuthentication(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = SteamAuthenticationDefaults.AuthenticationScheme;
+            })
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/api/login";
+                options.LogoutPath = "/api/logout";
+                options.Cookie.SameSite = SameSiteMode.Lax; 
+                options.ExpireTimeSpan = TimeSpan.FromHours(24);
+            })
+            .AddSteam(options =>
+            {
+                options.ApplicationKey = configuration["Steam:ApplicationKey"];
+                options.CallbackPath = "/api/steam-callback";
+            });
     }
     
     public static void ConfigureCors(this IServiceCollection services)

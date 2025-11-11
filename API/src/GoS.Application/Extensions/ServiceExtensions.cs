@@ -10,21 +10,32 @@ public static class ServiceExtensions
     public static void ConfigureExchangeRedis(this IServiceCollection services, IConfiguration configuration)
     {
         var redisSection = configuration.GetSection("Redis");
-        services.AddStackExchangeRedisCache(options =>
+        var isEnabled = redisSection.GetValue<bool>("Enabled");
+    
+        if (isEnabled)
         {
-            options.Configuration = redisSection["Configuration"];
-            options.InstanceName = redisSection["InstanceName"];
-        });
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = redisSection["Configuration"];
+                options.InstanceName = redisSection["InstanceName"];
+            });
+        }
     }
 
-    public static void ConfigureMediatR(this IServiceCollection services)
+    public static void ConfigureMediatR(this IServiceCollection services, IConfiguration configuration)
     {
+        var isRedisEnabled = configuration.GetSection("Redis").GetValue<bool>("Enabled");
+
         services.AddMediatR(config =>
         {
             config.RegisterServicesFromAssembly(typeof(AssemblyReference).Assembly);
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-            config.AddOpenBehavior(typeof(CachingBehavior<,>));
+        
+            if (isRedisEnabled)
+            {
+                config.AddOpenBehavior(typeof(CachingBehavior<,>));
+            }
         });
     }
 

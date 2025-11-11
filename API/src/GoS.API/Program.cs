@@ -16,10 +16,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
 builder.Services.ConfigureResourceManager();
 builder.Services.ConfigureRequester(builder.Configuration);
-builder.Services.ConfigureMemoryCache();
-builder.Services.ConfigureMediatR();
+builder.Services.ConfigureMemoryCache(builder.Configuration);
+builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
+builder.Services.ConfigureSteamAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
