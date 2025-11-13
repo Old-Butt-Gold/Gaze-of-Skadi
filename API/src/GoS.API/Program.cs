@@ -3,6 +3,7 @@ using GoS.Application.Extensions;
 using GoS.Infrastructure.OptionsProvider.Extensions;
 using GoS.Infrastructure.Requester.Extensions;
 using GoS.Infrastructure.ResourceManager.Extensions;
+using GoS.Infrastructure.Steam.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,12 +17,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
 builder.Services.ConfigureResourceManager();
 builder.Services.ConfigureRequester(builder.Configuration);
-builder.Services.ConfigureMemoryCache(builder.Configuration);
+builder.Services.ConfigureMemoryCache();
 builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
 builder.Services.ConfigureSteamAuthentication(builder.Configuration);
-builder.Services.ConfigureSteamServices(builder.Configuration);
 
 var app = builder.Build();
 

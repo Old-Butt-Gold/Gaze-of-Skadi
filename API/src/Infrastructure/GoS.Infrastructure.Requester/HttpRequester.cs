@@ -41,7 +41,7 @@ internal sealed class HttpRequester : IRequester
 
             using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
 
-            EnsureSucessCode(response, request.RequestUri!);
+            EnsureSuccessCode(response, request.RequestUri!);
 
             await using var stream = await response.Content.ReadAsStreamAsync(ct);
 
@@ -75,7 +75,7 @@ internal sealed class HttpRequester : IRequester
         }
     }
 
-    private void EnsureSucessCode(HttpResponseMessage response, Uri requestUri)
+    private void EnsureSuccessCode(HttpResponseMessage response, Uri requestUri)
     {
         if (!response.IsSuccessStatusCode)
         {

@@ -1,6 +1,4 @@
-using System.Security.Claims;
-using AspNet.Security.OpenId.Steam;
-using GoS.Application.Abstractions;
+using GoS.Infrastructure.Steam;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
@@ -9,16 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace GoS.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/auth")]
 public class AuthController : ControllerBase
 {
-    private readonly ISteamService _steamService;
-
-    public AuthController(ISteamService steamService)
-    {
-        _steamService = steamService;
-    }
-    
     [HttpGet("login")]
     public IActionResult Login(string returnUrl = "/") 
         => Challenge(new AuthenticationProperties { RedirectUri = returnUrl }, SteamAuthenticationDefaults.AuthenticationScheme);
@@ -34,41 +25,64 @@ public class AuthController : ControllerBase
 
     [Authorize]
     [HttpGet("profile")]
-    public async Task<IActionResult> GetProfile()
+    public IActionResult GetProfile()
     {
         var user = User;
-        var steamId64 = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var steamName = user.Identity?.Name;
-
-        var playerSummary = await _steamService.GetPlayerSummaryAsync(steamId64);
-        var steamId32 = _steamService.ConvertSteamIdTo32(playerSummary.SteamId);
+        
+        var steamId64 = user.FindFirst(SteamClaimTypes.SteamId64)?.Value;
+        var steamId32 = user.FindFirst(SteamClaimTypes.SteamId32)?.Value;
+        var profileUrl = user.FindFirst(SteamClaimTypes.ProfileUrl)?.Value;
+        var steamName = user.FindFirst(SteamClaimTypes.SteamName)?.Value;
+        var realName = user.FindFirst(SteamClaimTypes.RealName)?.Value;
+        
+        var avatarSmall = user.FindFirst(SteamClaimTypes.Avatar)?.Value;
+        var avatarMedium = user.FindFirst(SteamClaimTypes.AvatarMedium)?.Value;
+        var avatarFull = user.FindFirst(SteamClaimTypes.AvatarFull)?.Value;
+        
+        var timeCreatedClaim = user.FindFirst(SteamClaimTypes.TimeCreated)?.Value;
+        var lastLogoffClaim = user.FindFirst(SteamClaimTypes.LastLogoff)?.Value;
+        
+        DateTime? profileCreated = null;
+        DateTime? lastLogoff = null;
+        
+        if (long.TryParse(timeCreatedClaim, out var timeCreatedLong))
+        {
+            profileCreated = DateTimeOffset.FromUnixTimeSeconds(timeCreatedLong).DateTime;
+        }
+        
+        if (long.TryParse(lastLogoffClaim, out var lastLogoffLong))
+        {
+            lastLogoff = DateTimeOffset.FromUnixTimeSeconds(lastLogoffLong).DateTime;
+        }
 
         return Ok(new
         {
             IsAuthenticated = user.Identity?.IsAuthenticated ?? false,
-            SteamId64 = playerSummary.SteamId,
+            SteamId64 = steamId64,
             SteamId32 = steamId32,
             SteamName = steamName,
-            playerSummary.ProfileUrl,
+            ProfileUrl = profileUrl,
+            RealName = realName,
             Avatar = new 
             {
-                Small = playerSummary.Avatar,
-                Medium = playerSummary.AvatarMedium,
-                Full = playerSummary.AvatarFull
+                Small = avatarSmall,
+                Medium = avatarMedium,
+                Full = avatarFull
             },
-            playerSummary.RealName,
-            ProfileCreated = playerSummary.TimeCreated > 0 ? 
-                DateTimeOffset.FromUnixTimeSeconds(playerSummary.TimeCreated).DateTime : (DateTime?)null,
-            LastLogoff = playerSummary.LastLogoff > 0 ? 
-                DateTimeOffset.FromUnixTimeSeconds(playerSummary.LastLogoff).DateTime : (DateTime?)null,
+            ProfileCreated = profileCreated,
+            LastLogoff = lastLogoff,
         });
     }
 
     [HttpGet("status")]
-    public IActionResult GetAuthStatus() =>
-        Ok(new
+    public IActionResult GetAuthStatus()
+    {
+        var user = User;
+        
+        return Ok(new
         {
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false,
-            UserName = User.Identity?.Name
+            UserName = user.FindFirst(SteamClaimTypes.SteamName)?.Value
         });
+    }
 }

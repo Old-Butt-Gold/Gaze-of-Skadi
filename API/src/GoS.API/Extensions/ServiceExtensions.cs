@@ -1,7 +1,6 @@
 using System.Reflection;
 using System.Text.Json.Serialization;
-using AspNet.Security.OpenId.Steam;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
 namespace GoS.API.Extensions;
@@ -10,10 +9,11 @@ public static class ServiceExtensions
 {
     public static void ConfigureControllers(this IServiceCollection services)
     {
-        /*services.Configure<ApiBehaviorOptions>(options =>
+        services.Configure<ApiBehaviorOptions>(options =>
         {
             options.SuppressModelStateInvalidFilter = true;
-        });*/
+        });
+        
         services.AddControllers(config =>
         {
             config.RespectBrowserAcceptHeader = true;
@@ -22,30 +22,9 @@ public static class ServiceExtensions
         }).AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
     }
     
-    public static void ConfigureMemoryCache(this IServiceCollection services, IConfiguration configuration)
+    public static void ConfigureMemoryCache(this IServiceCollection services)
     {
         services.AddMemoryCache();
-    }
-
-    public static void ConfigureSteamAuthentication(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = SteamAuthenticationDefaults.AuthenticationScheme;
-            })
-            .AddCookie(options =>
-            {
-                options.LoginPath = "/api/login";
-                options.LogoutPath = "/api/logout";
-                options.Cookie.SameSite = SameSiteMode.Lax; 
-                options.ExpireTimeSpan = TimeSpan.FromHours(24);
-            })
-            .AddSteam(options =>
-            {
-                options.ApplicationKey = configuration["Steam:ApplicationKey"];
-                options.CallbackPath = "/api/steam-callback";
-            });
     }
     
     public static void ConfigureCors(this IServiceCollection services)
