@@ -9,17 +9,16 @@ namespace GoS.Infrastructure.OptionsProvider;
 
 internal sealed class SerializationOptionsProvider : ISerializationOptionsProvider
 {
-    public JsonSerializerOptions CreateJsonSerializerOptions()
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new(JsonSerializerOptions.Web)
     {
-        return new(JsonSerializerOptions.Web)
+        Converters =
         {
-            Converters =
-            {
-                new SingleOrArrayConverter(), new BooleanStateConverter(),
-                new JsonNumberEnumConverter<BarracksStatus>(), new JsonNumberEnumConverter<TowerStatus>(),
-                new EnumListConverterFactory(), new EnumConverterFactory(), new EnumDictionaryConverterFactory(),
-            },
-            IncludeFields = true,
-        };
-    }
+            new SingleOrArrayConverter(), new BooleanStateConverter(),
+            new JsonNumberEnumConverter<BarracksStatus>(), new JsonNumberEnumConverter<TowerStatus>(),
+            new EnumListConverterFactory(), new EnumConverterFactory(), new EnumDictionaryConverterFactory(),
+        },
+        IncludeFields = true,
+    };
+    
+    public JsonSerializerOptions CreateJsonSerializerOptions() => JsonSerializerOptions;
 }
