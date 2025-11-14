@@ -37,5 +37,5 @@ public sealed class GlobalMappingProfile : Profile
 
     private void CreateEnumMap<T>() where T : Enum
         => CreateMap<T, BaseEnumDto<T>>()
-            .ConvertUsing<EnumToBaseEnumDtoConverter<T>>();
+            .ConvertUsing(new EnumToBaseEnumDtoConverter<T>());
 }
