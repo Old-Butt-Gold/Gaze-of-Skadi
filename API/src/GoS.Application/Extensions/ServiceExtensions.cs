@@ -43,4 +43,11 @@ public static class ServiceExtensions
     {
         serviceCollection.AddValidatorsFromAssemblyContaining(typeof(AssemblyReference));
     }
+    
+    public static void ConfigureAutoMapper(this IServiceCollection services)
+    {
+        services.AddAutoMapper(cfg => {
+            cfg.AddMaps(typeof(AssemblyReference).Assembly);
+        });
+    }
 }

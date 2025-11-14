@@ -22,6 +22,7 @@ builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
 builder.Services.ConfigureSteamAuthentication(builder.Configuration);
+builder.Services.ConfigureAutoMapper();
 
 var app = builder.Build();
 
@@ -47,5 +48,7 @@ app.UseCors("CorsGlobalPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.AssertAutoMapperConfigurationValid(app.Services);
 
 app.Run();

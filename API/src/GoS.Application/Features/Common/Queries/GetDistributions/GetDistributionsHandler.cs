@@ -1,14 +1,17 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Common.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Common.Queries.GetDistributions;
 
-internal sealed class GetDistributionsHandler(IRequester requester)
-    : IRequestHandler<GetDistributionsQuery, Distribution?>
+internal sealed class GetDistributionsHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetDistributionsQuery, DistributionDto>
 {
-    public Task<Distribution?> Handle(GetDistributionsQuery request, CancellationToken ct)
+    public async Task<DistributionDto> Handle(GetDistributionsQuery request, CancellationToken ct)
     {
-        return requester.GetResponseAsync<Distribution>("distributions", ct: ct);
+        var distributions = await requester.GetResponseAsync<Distribution>("distributions", ct: ct);
+
+        return mapper.Map<DistributionDto>(distributions);
     }
 }

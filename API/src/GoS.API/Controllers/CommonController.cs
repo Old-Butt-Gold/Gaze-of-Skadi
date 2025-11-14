@@ -24,7 +24,7 @@ public sealed class CommonController : ControllerBase
 
     [HttpGet("distributions")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Distribution), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(DistributionDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetDistributions()
     {
         var result = await _sender.Send(new GetDistributionsQuery());

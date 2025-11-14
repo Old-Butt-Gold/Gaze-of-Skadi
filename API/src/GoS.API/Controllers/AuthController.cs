@@ -24,23 +24,17 @@ public class AuthController : ControllerBase
     }
 
     [Authorize]
-    [HttpGet("profile")]
-    public IActionResult GetProfile()
-    {
-        return Ok(User.Claims
+    [HttpGet("me")]
+    public IActionResult Me() =>
+        Ok(User.Claims
             .Where(x => x.Type.StartsWith(SteamAuthenticationDefaults.AuthenticationScheme))
             .ToDictionary(x => x.Type.ToLowerInvariant(), x => x.Value));
-    }
 
     [HttpGet("status")]
-    public IActionResult GetAuthStatus()
-    {
-        var user = User;
-        
-        return Ok(new
+    public IActionResult GetAuthStatus() =>
+        Ok(new
         {
             IsAuthenticated = User.Identity?.IsAuthenticated ?? false,
-            UserName = user.FindFirst(SteamClaimTypes.SteamName)?.Value
+            UserName = User.FindFirst(SteamClaimTypes.SteamName)?.Value
         });
-    }
 }
