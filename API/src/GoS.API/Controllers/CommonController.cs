@@ -32,7 +32,7 @@ public sealed class CommonController : ControllerBase
     }
 
     [HttpGet("records/{field}")]
-    [ProducesResponseType(typeof(IEnumerable<Record>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<RecordDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetRecordsByField([FromRoute] CommonFieldRecords field)
     {

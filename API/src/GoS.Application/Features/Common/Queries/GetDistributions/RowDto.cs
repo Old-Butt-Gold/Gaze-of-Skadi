@@ -5,7 +5,6 @@ namespace GoS.Application.Features.Common.Queries.GetDistributions;
 
 public class RowDto
 {
-    public int Bin { get; set; }
     public BaseEnumDto<Rank> Rank { get; set; } = null!;
     public int Count { get; set; }
     public int CumulativeSum { get; set; }

@@ -19,7 +19,7 @@ public class HeroInfo
     public HeroAttackType AttackType { get; set; }
 
     [JsonPropertyName("roles")]
-    public List<HeroRole> Roles { get; set; } = [];
+    public IEnumerable<HeroRole> Roles { get; set; } = [];
     
     [JsonPropertyName("lore")]
     public string Lore { get; set; }
