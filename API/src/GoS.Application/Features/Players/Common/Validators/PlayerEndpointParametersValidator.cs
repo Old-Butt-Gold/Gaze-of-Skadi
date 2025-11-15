@@ -79,6 +79,7 @@ public class PlayerEndpointParametersValidator : AbstractValidator<IPlayerEndpoi
     private async Task<bool> IsValidHeroIdAsync(int heroId)
     {
         var heroes = await _resourceManager.GetHeroInfosAsync();
-        return heroes is not null && heroes.Values.Any(h => h.Id == heroId);
+
+        return heroes != null && heroes.TryGetValue(heroId.ToString(), out var info) && info.Id == heroId;
     }
 }

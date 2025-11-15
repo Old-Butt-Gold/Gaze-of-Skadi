@@ -13,13 +13,14 @@ public class HeroIdValidator : AbstractValidator<IHeroIdRequest>
         _resourceManager = resourceManager;
         
         RuleFor(x => x.HeroId)
-            .MustAsync((x, _) => IsValidHeroId(x))
+            .MustAsync((x, _) => IsValidHeroIdAsync(x))
             .WithMessage("Invalid HeroId. Hero does not exist.");
     }
 
-    private async Task<bool> IsValidHeroId(int heroId)
+    private async Task<bool> IsValidHeroIdAsync(int heroId)
     {
         var heroes = await _resourceManager.GetHeroInfosAsync();
-        return heroes != null && heroes.Values.Any(h => h.Id == heroId);
+
+        return heroes != null && heroes.TryGetValue(heroId.ToString(), out var info) && info.Id == heroId;
     }
 }
