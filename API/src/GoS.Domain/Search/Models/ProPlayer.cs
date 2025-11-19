@@ -63,7 +63,7 @@ public class ProPlayer
 	/// Gets plus.
 	/// </summary>
 	[JsonPropertyName("plus")]
-	public bool? Plus { get; init; }
+	public BooleanState? Plus { get; init; }
 
 	/// <summary>
 	/// Gets verified player name, e.g. 'Miracle-'.

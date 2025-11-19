@@ -1,3 +1,5 @@
+using GoS.Application.Dto;
+
 namespace GoS.Application.Features.Common.Queries.GetRecordsByField;
 
 public class RecordDto

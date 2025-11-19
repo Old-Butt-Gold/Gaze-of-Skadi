@@ -1,6 +1,7 @@
 using System.Reflection;
 using AutoMapper;
 using GoS.Application.Dto;
+using GoS.Domain.Resources.Models.Heroes;
 
 namespace GoS.Application.AutoMapper;
 
@@ -15,7 +16,18 @@ public sealed class GlobalMappingProfile : Profile
     public static Assembly Application => typeof(AssemblyReference).Assembly;
     public static Assembly Domain => typeof(Domain.BaseEnums.Rank).Assembly;
     
-    public GlobalMappingProfile() => RegisterEnumConverters(All);
+    public GlobalMappingProfile()
+    {
+        CreateMap<HeroInfo, HeroInfoDto>();
+        
+        CreateMap<DateTimeOffset, long>()
+            .ConvertUsing(src => src.ToUnixTimeSeconds());
+        
+        CreateMap<long, DateTimeOffset>()
+            .ConvertUsing(src => DateTimeOffset.FromUnixTimeSeconds(src));
+        
+        RegisterEnumConverters(All);
+    }
 
     private void RegisterEnumConverters(Assembly[] assemblies)
     {

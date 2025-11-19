@@ -88,15 +88,6 @@ public sealed class ResourceController : ControllerBase
         return result is null ? NotFound() : Ok(result);
     }
 
-    [HttpGet("heroes")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, HeroInfo>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetHeroInfos()
-    {
-        var result = await _resourceManager.GetHeroInfosAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
     [HttpGet("items")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Dictionary<string, Item>), StatusCodes.Status200OK)]

@@ -1,5 +1,6 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Dto;
 using GoS.Domain.Common.Models;
 using GoS.Domain.Extensions;
 using MediatR;
@@ -20,19 +21,16 @@ internal sealed class GetRecordsByFieldHandler(IRequester requester, IMapper map
         var recordDtos = mapper.Map<IEnumerable<RecordDto>>(records);
         
         var heroes = await resourceManager.GetHeroInfosAsync();
-        
-        foreach (var recordDto in recordDtos)
+
+        foreach (var recordDto in recordDtos.Where(x => x.HeroId.HasValue))
         {
-            if (recordDto.HeroId.HasValue)
+            var heroKey = recordDto.HeroId.Value.ToString();
+            if (heroes.TryGetValue(heroKey, out var heroInfo))
             {
-                var heroKey = recordDto.HeroId.Value.ToString();
-                if (heroes.TryGetValue(heroKey, out var heroInfo))
-                {
-                    recordDto.HeroInfo = mapper.Map<HeroInfoDto>(heroInfo);
-                }
+                recordDto.HeroInfo = mapper.Map<HeroInfoDto>(heroInfo);
             }
         }
-        
+
         return recordDtos;
     }
 }

@@ -1,19 +1,22 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Search.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Search.Queries.GetPlayersByName;
 
-internal sealed class GetPlayersByNameHandler(IRequester requester)
-    : IRequestHandler<GetPlayersByNameQuery, IEnumerable<PlayerResponse>?>
+internal sealed class GetPlayersByNameHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetPlayersByNameQuery, IEnumerable<PlayerResponseDto>?>
 {
-    public Task<IEnumerable<PlayerResponse>?> Handle(GetPlayersByNameQuery request, CancellationToken ct)
+    public async Task<IEnumerable<PlayerResponseDto>?> Handle(GetPlayersByNameQuery request, CancellationToken ct)
     {
         var parameters = new[]
         {
             new KeyValuePair<string, string>("q", request.PersonaName)
         };
 
-        return requester.GetResponseAsync<IEnumerable<PlayerResponse>>("search", parameters, ct);
+        var response = await requester.GetResponseAsync<IEnumerable<PlayerResponse>>("search", parameters, ct);
+        
+        return response is null ? null : mapper.Map<IEnumerable<PlayerResponseDto>>(response);
     }
 }

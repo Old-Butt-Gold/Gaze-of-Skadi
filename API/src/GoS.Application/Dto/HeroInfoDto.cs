@@ -1,8 +1,7 @@
-using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Resources.Enums;
 
-namespace GoS.Application.Features.Common.Queries.GetRecordsByField;
+namespace GoS.Application.Dto;
 
 public class HeroInfoDto
 {

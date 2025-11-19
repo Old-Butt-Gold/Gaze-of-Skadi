@@ -4,7 +4,6 @@ using GoS.Application.Features.Teams.Queries.GetTeamHeroesById;
 using GoS.Application.Features.Teams.Queries.GetTeamMatchesById;
 using GoS.Application.Features.Teams.Queries.GetTeamPlayersById;
 using GoS.Application.Features.Teams.Queries.GetTeams;
-using GoS.Domain.Teams.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +22,7 @@ public sealed class TeamController : ControllerBase
     
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(List<Team>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<TeamDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetTeams()
     {
         return Ok(await _sender.Send(new GetTeamsQuery()));
@@ -31,7 +30,7 @@ public sealed class TeamController : ControllerBase
 
     [HttpGet("{teamId:int}")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Team), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(TeamByIdDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetTeamById(int teamId)
     {
@@ -40,7 +39,7 @@ public sealed class TeamController : ControllerBase
 
     [HttpGet("{teamId:int}/matches")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(List<TeamMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<TeamMatchDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetTeamMatches(int teamId)
     {
@@ -49,7 +48,7 @@ public sealed class TeamController : ControllerBase
 
     [HttpGet("{teamId:int}/players")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(List<TeamPlayer>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<TeamPlayerDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetTeamPlayers(int teamId)
     {
@@ -58,7 +57,7 @@ public sealed class TeamController : ControllerBase
 
     [HttpGet("{teamId:int}/heroes")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(List<TeamHero>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<TeamHeroDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetTeamHeroes(int teamId)
     {

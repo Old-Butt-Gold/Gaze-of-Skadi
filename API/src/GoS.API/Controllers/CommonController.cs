@@ -5,7 +5,6 @@ using GoS.Application.Features.Common.Queries.GetLaneRoles;
 using GoS.Application.Features.Common.Queries.GetLeagues;
 using GoS.Application.Features.Common.Queries.GetRecordsByField;
 using GoS.Domain.Common.Enums;
-using GoS.Domain.Common.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,7 +41,7 @@ public sealed class CommonController : ControllerBase
 
     [HttpGet("item-timings")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<ItemTiming>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<ItemTimingDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetItemTimings()
     {
         var result = await _sender.Send(new GetItemTimingsQuery());
@@ -51,7 +50,7 @@ public sealed class CommonController : ControllerBase
 
     [HttpGet("lane-roles")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<LaneRoles>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<LaneRolesDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetLaneRoles()
     {
         var result = await _sender.Send(new GetLaneRolesQuery());
@@ -60,7 +59,7 @@ public sealed class CommonController : ControllerBase
 
     [HttpGet("leagues")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<League>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<LeagueDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetLeagues()
     {
         var result = await _sender.Send(new GetLeaguesQuery());

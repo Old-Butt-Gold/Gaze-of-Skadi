@@ -1,7 +1,6 @@
 using System.Net.Mime;
 using GoS.Application.Features.Search.Queries.GetPlayersByName;
 using GoS.Application.Features.Search.Queries.GetProPlayersByName;
-using GoS.Domain.Search.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,7 +18,7 @@ public sealed class SearchController : ControllerBase
     }
 
     [HttpGet("players")]
-    [ProducesResponseType(typeof(IEnumerable<PlayerResponse>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerResponseDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetPlayersByName([FromQuery] string q)
     {
@@ -28,7 +27,7 @@ public sealed class SearchController : ControllerBase
     }
 
     [HttpGet("proplayers")]
-    [ProducesResponseType(typeof(IEnumerable<ProPlayer>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<ProPlayerDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetProPlayersByName([FromQuery] string? q)
     {

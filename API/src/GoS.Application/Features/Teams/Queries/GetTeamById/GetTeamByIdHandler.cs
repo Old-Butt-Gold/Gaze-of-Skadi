@@ -1,14 +1,17 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Teams.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeamById;
 
-internal sealed class GetTeamByIdHandler(IRequester requester)
-    : IRequestHandler<GetTeamByIdQuery, Team?>
+internal sealed class GetTeamByIdHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetTeamByIdQuery, TeamByIdDto?>
 {
-    public Task<Team?> Handle(GetTeamByIdQuery request, CancellationToken ct)
+    public async Task<TeamByIdDto?> Handle(GetTeamByIdQuery request, CancellationToken ct)
     {
-        return requester.GetResponseAsync<Team>($"teams/{request.Id}", ct: ct);
+        var team = await requester.GetResponseAsync<Team>($"teams/{request.Id}", ct: ct);
+
+        return mapper.Map<TeamByIdDto>(team);
     }
 }

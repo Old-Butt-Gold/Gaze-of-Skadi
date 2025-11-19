@@ -1,13 +1,16 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Teams.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeams;
 
-internal sealed class GetTeamsHandler(IRequester requester) : IRequestHandler<GetTeamsQuery, List<Team>?>
+internal sealed class GetTeamsHandler(IRequester requester, IMapper mapper) : IRequestHandler<GetTeamsQuery, IEnumerable<TeamDto>?>
 {
-    public Task<List<Team>?> Handle(GetTeamsQuery request, CancellationToken ct)
+    public async Task<IEnumerable<TeamDto>?> Handle(GetTeamsQuery request, CancellationToken ct)
     {
-        return requester.GetResponseAsync<List<Team>>("teams", ct: ct);
+        var teams = await requester.GetResponseAsync<IEnumerable<Team>>("teams", ct: ct);
+
+        return mapper.Map<IEnumerable<TeamDto>>(teams);
     }
 }
