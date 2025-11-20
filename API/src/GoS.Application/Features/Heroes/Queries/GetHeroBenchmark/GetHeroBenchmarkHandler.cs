@@ -1,18 +1,20 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroBenchmark;
 
-internal sealed class GetHeroBenchmarkHandler(IRequester requester)
-    : IRequestHandler<GetHeroBenchmarkQuery, Benchmark?>
+internal sealed class GetHeroBenchmarkHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetHeroBenchmarkQuery, BenchmarkDto?>
 {
-    public Task<Benchmark?> Handle(GetHeroBenchmarkQuery request, CancellationToken ct)
+    public async Task<BenchmarkDto?> Handle(GetHeroBenchmarkQuery request, CancellationToken ct)
     {
         var parameters = new[]
         {
             new KeyValuePair<string, string>("hero_id", request.HeroId.ToString())
         };
-        return requester.GetResponseAsync<Benchmark>("benchmarks", parameters, ct);
+        var benchmark = await requester.GetResponseAsync<Benchmark>("benchmarks", parameters, ct);
+        return benchmark is null ? null : mapper.Map<BenchmarkDto>(benchmark);
     }
 }

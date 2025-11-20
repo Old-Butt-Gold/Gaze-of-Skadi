@@ -1,12 +1,16 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroMatches;
 
-internal sealed class GetHeroMatchesHandler(IRequester requester)
-    : IRequestHandler<GetHeroMatchesQuery, IEnumerable<HeroMatch>?>
+internal sealed class GetHeroMatchesHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetHeroMatchesQuery, IEnumerable<HeroMatchDto>?>
 {
-    public Task<IEnumerable<HeroMatch>?> Handle(GetHeroMatchesQuery request, CancellationToken ct) =>
-        requester.GetResponseAsync<IEnumerable<HeroMatch>>($"heroes/{request.HeroId}/matches", ct: ct);
+    public async Task<IEnumerable<HeroMatchDto>?> Handle(GetHeroMatchesQuery request, CancellationToken ct)
+    {
+        var heroMatches = await requester.GetResponseAsync<IEnumerable<HeroMatch>>($"heroes/{request.HeroId}/matches", ct: ct);
+        return heroMatches is null ? null : mapper.Map<IEnumerable<HeroMatchDto>>(heroMatches);
+    }
 }

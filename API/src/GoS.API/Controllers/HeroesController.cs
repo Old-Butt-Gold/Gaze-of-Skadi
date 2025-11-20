@@ -8,7 +8,6 @@ using GoS.Application.Features.Heroes.Queries.GetHeroPlayers;
 using GoS.Application.Features.Heroes.Queries.GetHeroStats;
 using GoS.Application.Features.Heroes.Queries.GetHeroes;
 using GoS.Application.Features.Heroes.Queries.GetHeroRanking;
-using GoS.Domain.Heroes.Models;
 using GoS.Domain.Resources.Models.Heroes;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +36,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("stats")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroStats>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroStatsDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetHeroStats()
     {
         var result = await _sender.Send(new GetHeroStatsQuery());
@@ -46,7 +45,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/rankings")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(HeroRanking), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(HeroRankingDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroRankings(int heroId)
     {
@@ -56,7 +55,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/benchmark")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Benchmark), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(BenchmarkDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroBenchmark(int heroId)
     {
@@ -66,7 +65,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/matches")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroMatchDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroMatches(int heroId)
     {
@@ -76,7 +75,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/matchups")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroMatchup>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroMatchupDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroMatchups(int heroId)
     {
@@ -86,7 +85,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/durations")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroDuration>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroDurationDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroDurations(int heroId)
     {
@@ -96,7 +95,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/players")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroPlayer>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroPlayerDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroPlayers(int heroId)
     {
@@ -106,7 +105,7 @@ public sealed class HeroesController : ControllerBase
 
     [HttpGet("{heroId:int}/item-popularity")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(HeroItemPopularity), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(HeroItemPopularityDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> GetHeroItemPopularity(int heroId)
     {

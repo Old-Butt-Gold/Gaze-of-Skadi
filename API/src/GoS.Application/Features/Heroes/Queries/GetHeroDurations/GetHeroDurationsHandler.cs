@@ -1,12 +1,16 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroDurations;
 
-internal sealed class GetHeroDurationsHandler(IRequester requester)
-    : IRequestHandler<GetHeroDurationsQuery, IEnumerable<HeroDuration>?>
+internal sealed class GetHeroDurationsHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetHeroDurationsQuery, IEnumerable<HeroDurationDto>?>
 {
-    public Task<IEnumerable<HeroDuration>?> Handle(GetHeroDurationsQuery request, CancellationToken ct) =>
-        requester.GetResponseAsync<IEnumerable<HeroDuration>>($"heroes/{request.HeroId}/durations", ct: ct);
+    public async Task<IEnumerable<HeroDurationDto>?> Handle(GetHeroDurationsQuery request, CancellationToken ct)
+    {
+        var heroDurations = await requester.GetResponseAsync<IEnumerable<HeroDuration>>($"heroes/{request.HeroId}/durations", ct: ct);
+        return heroDurations is null ? null : mapper.Map<IEnumerable<HeroDurationDto>>(heroDurations).OrderBy(x => x.DurationBin);
+    }
 }
