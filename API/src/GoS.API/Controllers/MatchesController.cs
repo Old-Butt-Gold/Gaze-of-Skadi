@@ -1,5 +1,6 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
+using GoS.Application.Features.Matches.Queries.FindMatches;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
@@ -44,6 +45,15 @@ public sealed class MatchesController : ControllerBase
     public async Task<IActionResult> GetProMatches([FromQuery] long? lessThanMatchId)
     {
         var result = await _sender.Send(new GetProMatchesQuery(lessThanMatchId));
+        return result is null ? NotFound() : Ok(result);
+    }
+
+    [HttpGet("findMatches")]
+    [ProducesResponseType(typeof(IEnumerable<MatchFind>), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public async Task<IActionResult> FindMatches([FromQuery] int[] teamA, [FromQuery] int[] teamB)
+    {
+        var result = await _sender.Send(new FindMatchesQuery(teamA, teamB));
         return result is null ? NotFound() : Ok(result);
     }
 }

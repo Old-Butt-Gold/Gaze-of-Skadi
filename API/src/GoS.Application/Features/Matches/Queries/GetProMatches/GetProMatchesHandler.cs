@@ -13,11 +13,9 @@ internal sealed class GetProMatchesHandler(IRequester requester)
         return requester.GetResponseAsync<IEnumerable<ProMatch>>("proMatches", parameters, ct);
     }
 
-    private static ICollection<KeyValuePair<string, string>>? BuildParameters(long? lessThanMatchId)
+    private static IEnumerable<KeyValuePair<string, string>> BuildParameters(long? lessThanMatchId)
     {
         if (lessThanMatchId.HasValue)
-            return [new KeyValuePair<string, string>("less_than_match_id", lessThanMatchId.Value.ToString())];
-
-        return null;
+            yield return new("less_than_match_id", lessThanMatchId.Value.ToString());
     }
 }

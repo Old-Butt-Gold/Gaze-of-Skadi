@@ -24,7 +24,7 @@ internal sealed class HttpRequester : IRequester
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
-    public async Task<T?> GetResponseAsync<T>(string url, ICollection<KeyValuePair<string, string>>? parameters = null, CancellationToken ct = default) where T : class?
+    public async Task<T?> GetResponseAsync<T>(string url, IEnumerable<KeyValuePair<string, string>>? parameters = null, CancellationToken ct = default) where T : class?
     {
         try
         {
