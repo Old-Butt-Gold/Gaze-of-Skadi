@@ -24,10 +24,4 @@ public class PlayerHeroRanking
 	/// </summary>
 	[JsonPropertyName("percent_rank")]
 	public double PercentRank { get; init; }
-
-	/// <summary>
-	/// Gets the card value of the hero played.
-	/// </summary>
-	[JsonPropertyName("card")]
-	public long Card { get; init; }
 }

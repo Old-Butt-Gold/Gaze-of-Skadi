@@ -13,7 +13,6 @@ using GoS.Application.Features.Players.Queries.GetPlayerWardMap;
 using GoS.Application.Features.Players.Queries.GetPlayerWinLossById;
 using GoS.Application.Features.Players.Queries.GetPlayerWordCloud;
 using GoS.Domain.Players.Enums;
-using GoS.Domain.Players.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,7 +40,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wl")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(PlayerWinLoss), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerWinLossDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerWinLossById(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWinLossByIdQuery(accountId, parameters));
@@ -69,7 +68,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("heroes")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerHero>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerHeroDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerHeroes(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerHeroesQuery(accountId, parameters));
@@ -78,7 +77,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("peers")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerPeer>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerPeerDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerPeers(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerPeersQuery(accountId, parameters));
@@ -87,7 +86,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("pros")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerPro>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerProDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerPros(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerProsQuery(accountId, parameters));
@@ -96,7 +95,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("totals")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerTotal>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerTotalDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerTotals(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerTotalsQuery(accountId, parameters));
@@ -105,7 +104,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("counts")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(PlayerCount), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerCountDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerCounts(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerCountsQuery(accountId, parameters));
@@ -114,7 +113,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("histograms/{field}")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerHistogram>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerHistogramDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerHistograms(long accountId, PlayerFieldHistogram field, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerHistogramsQuery(accountId, field, parameters));
@@ -123,7 +122,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wardmap")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(PlayerWardMap), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerWardMapDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerWardMap(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWardMapQuery(accountId, parameters));
@@ -132,7 +131,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("wordcloud")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(PlayerWordCloud), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerWordCloudDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerWordCloud(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerWordCloudQuery(accountId, parameters));
@@ -141,7 +140,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("rankings")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(PlayerHeroRanking), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerHeroRankingDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerHeroRankings(long accountId)
     {
         var result = await _sender.Send(new GetPlayerHeroRankingsQuery(accountId));

@@ -1,15 +1,17 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerCounts;
 
-internal sealed class GetPlayerCountsHandler(IRequester requester)
-    : IRequestHandler<GetPlayerCountsQuery, PlayerCount?>
+internal sealed class GetPlayerCountsHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetPlayerCountsQuery, PlayerCountDto?>
 {
-    public Task<PlayerCount?> Handle(GetPlayerCountsQuery request, CancellationToken ct)
+    public async Task<PlayerCountDto?> Handle(GetPlayerCountsQuery request, CancellationToken ct)
     {
         var parameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
-        return requester.GetResponseAsync<PlayerCount>($"players/{request.AccountId}/counts", parameters, ct);
+        var playerCount = await requester.GetResponseAsync<PlayerCount>($"players/{request.AccountId}/counts", parameters, ct);
+        return mapper.Map<PlayerCountDto?>(playerCount);
     }
 }

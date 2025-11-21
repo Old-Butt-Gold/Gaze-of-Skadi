@@ -1,15 +1,17 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerWordCloud;
 
-internal sealed class GetPlayerWordCloudHandler(IRequester requester)
-    : IRequestHandler<GetPlayerWordCloudQuery, PlayerWordCloud?>
+internal sealed class GetPlayerWordCloudHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetPlayerWordCloudQuery, PlayerWordCloudDto?>
 {
-    public Task<PlayerWordCloud?> Handle(GetPlayerWordCloudQuery request, CancellationToken ct)
+    public async Task<PlayerWordCloudDto?> Handle(GetPlayerWordCloudQuery request, CancellationToken ct)
     {
         var parameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
-        return requester.GetResponseAsync<PlayerWordCloud>($"players/{request.AccountId}/wordcloud", parameters, ct);
+        var playerWordCloud = await requester.GetResponseAsync<PlayerWordCloud>($"players/{request.AccountId}/wordcloud", parameters, ct);
+        return mapper.Map<PlayerWordCloudDto?>(playerWordCloud);
     }
 }

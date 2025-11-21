@@ -36,13 +36,13 @@ public class PlayerPro
 	/// Gets team name of the player.
 	/// </summary>
 	[JsonPropertyName("team_name")]
-	public string TeamName { get; init; }
+	public string? TeamName { get; init; }
 
 	/// <summary>
 	/// Gets team tag of the player.
 	/// </summary>
 	[JsonPropertyName("team_tag")]
-	public string TeamTag { get; init; }
+	public string? TeamTag { get; init; }
 
 	/// <summary>
 	/// Gets whether the player is locked.
@@ -114,7 +114,7 @@ public class PlayerPro
 	/// Gets location country code of the player.
 	/// </summary>
 	[JsonPropertyName("loccountrycode")]
-	public string LocCountryCode { get; init; }
+	public string? LocCountryCode { get; init; }
 
 	/// <summary>
 	/// Gets last match time of the player.

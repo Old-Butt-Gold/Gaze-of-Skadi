@@ -1,15 +1,17 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerWardMap;
 
-internal sealed class GetPlayerWardMapHandler(IRequester requester)
-    : IRequestHandler<GetPlayerWardMapQuery, PlayerWardMap?>
+internal sealed class GetPlayerWardMapHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetPlayerWardMapQuery, PlayerWardMapDto?>
 {
-    public Task<PlayerWardMap?> Handle(GetPlayerWardMapQuery request, CancellationToken ct)
+    public async Task<PlayerWardMapDto?> Handle(GetPlayerWardMapQuery request, CancellationToken ct)
     {
         var parameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
-        return requester.GetResponseAsync<PlayerWardMap>($"players/{request.AccountId}/wardmap", parameters, ct);
+        var playerWardMap = await requester.GetResponseAsync<PlayerWardMap>($"players/{request.AccountId}/wardmap", parameters, ct);
+        return mapper.Map<PlayerWardMapDto?>(playerWardMap);
     }
 }
