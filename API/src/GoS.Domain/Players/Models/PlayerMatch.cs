@@ -89,12 +89,6 @@ public class PlayerMatch
 	[JsonPropertyName("leaver_status")]
 	public LeaverStatus LeaverStatus { get; init; }
 
-	/// <summary>
-	/// Gets size of the player's party.
-	/// </summary>
-	[JsonPropertyName("party_size")]
-	public int? PartySize { get; init; }
-
 	[JsonPropertyName("level")]
 	public int? Level { get; init; }
 

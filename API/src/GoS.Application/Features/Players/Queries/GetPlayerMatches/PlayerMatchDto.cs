@@ -32,8 +32,6 @@ public class PlayerMatchDto
 
 	public BaseEnumDto<LeaverStatus> LeaverStatus { get; init; }
 
-	public int? PartySize { get; init; }
-
 	public int? Level { get; init; }
 
     // TODO should be -1 from .json file
@@ -58,7 +56,5 @@ public class PlayerMatchDto
 
 public class PlayerMatchHeroDto
 {
-    public long? AccountId { get; init; }
-
     public long HeroId { get; init; }
 }

@@ -1,6 +1,5 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
-using GoS.Application.Features.Players.Commands.RefreshPlayerMatchHistory;
 using GoS.Application.Features.Players.Queries.GetPlayerById;
 using GoS.Application.Features.Players.Queries.GetPlayerCounts;
 using GoS.Application.Features.Players.Queries.GetPlayerHeroes;
@@ -147,14 +146,5 @@ public sealed class PlayersController : ControllerBase
     {
         var result = await _sender.Send(new GetPlayerHeroRankingsQuery(accountId));
         return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpPost("refresh")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
-    public async Task<IActionResult> RefreshPlayerMatchHistory(long accountId)
-    {
-        var result = await _sender.Send(new RefreshPlayerMatchHistoryCommand(accountId));
-        return Ok(result);
     }
 }
