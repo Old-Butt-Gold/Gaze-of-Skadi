@@ -31,7 +31,7 @@ public sealed class MatchesController : ControllerBase
     }
 
     [HttpGet("public")]
-    [ProducesResponseType(typeof(IEnumerable<PublicMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetPublicMatches([FromQuery] PublicMatchesEndpointParameters parameters)
     {
@@ -40,7 +40,7 @@ public sealed class MatchesController : ControllerBase
     }
 
     [HttpGet("pro")]
-    [ProducesResponseType(typeof(IEnumerable<ProMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<ProMatchDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> GetProMatches([FromQuery] long? lessThanMatchId)
     {
@@ -49,7 +49,7 @@ public sealed class MatchesController : ControllerBase
     }
 
     [HttpGet("findMatches")]
-    [ProducesResponseType(typeof(IEnumerable<MatchFind>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<MatchFindDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<IActionResult> FindMatches([FromQuery] int[] teamA, [FromQuery] int[] teamB)
     {

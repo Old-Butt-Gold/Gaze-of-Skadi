@@ -1,3 +1,4 @@
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.EndpointParameters;
 using GoS.Domain.Matches.Models;
@@ -5,13 +6,14 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
 
-internal sealed class GetPublicMatchesHandler(IRequester requester)
-    : IRequestHandler<GetPublicMatchesQuery, IEnumerable<PublicMatch>?>
+internal sealed class GetPublicMatchesHandler(IRequester requester, IMapper mapper)
+    : IRequestHandler<GetPublicMatchesQuery, IEnumerable<PublicMatchDto>?>
 {
-    public Task<IEnumerable<PublicMatch>?> Handle(GetPublicMatchesQuery request, CancellationToken ct)
+    public async Task<IEnumerable<PublicMatchDto>?> Handle(GetPublicMatchesQuery request, CancellationToken ct)
     {
         var parameters = BuildParameters(request.Parameters);
-        return requester.GetResponseAsync<IEnumerable<PublicMatch>>("publicMatches", parameters, ct);
+        var publicMatches = await requester.GetResponseAsync<IEnumerable<PublicMatch>>("publicMatches", parameters, ct);
+        return publicMatches is null ? null : mapper.Map<IEnumerable<PublicMatchDto>>(publicMatches);
     }
 
     private static ICollection<KeyValuePair<string, string>>? BuildParameters(PublicMatchesEndpointParameters? p)

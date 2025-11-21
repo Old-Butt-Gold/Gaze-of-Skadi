@@ -88,9 +88,4 @@ public class ProMatch
 	/// </summary>
 	[JsonPropertyName("radiant_win")]
 	public BooleanState RadiantWin { get; init; }
-
-	/// <summary>
-	/// Gets a value indicating whether the team/player/hero was on Radiant.
-	/// </summary>
-	public BooleanState Radiant { get; init; }
 }
