@@ -1,6 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using GoS.Domain.BaseEnums;
-using GoS.Domain.Resources.Enums;
 
 namespace GoS.Domain.Heroes.Models;
 

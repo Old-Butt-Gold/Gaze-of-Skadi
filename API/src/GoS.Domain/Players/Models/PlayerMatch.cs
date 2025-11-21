@@ -25,7 +25,7 @@ public class PlayerMatch
 	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
 	/// </summary>
 	[JsonPropertyName("player_slot")]
-	public PlayerSlot PlayerSlot { get; init; }
+	public int PlayerSlot { get; init; }
 
 	/// <summary>
 	/// Gets whether Radiant won the match.
@@ -97,10 +97,6 @@ public class PlayerMatch
 
 	[JsonPropertyName("level")]
 	public int? Level { get; init; }
-
-	[JsonPropertyName("average_rank")]
-	// TODO rank can be not in enum somehow, so before sending to front, parse it and make unknown or enum
-	public int? AverageRank { get; init; }
 
 	/// <summary>
 	/// Gets the variant of the hero played. 1-indexed facet, see https://github.com/odota/dotaconstants/blob/master/build/hero_abilities.json

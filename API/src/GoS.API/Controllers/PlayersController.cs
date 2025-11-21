@@ -9,7 +9,6 @@ using GoS.Application.Features.Players.Queries.GetPlayerHistograms;
 using GoS.Application.Features.Players.Queries.GetPlayerMatches;
 using GoS.Application.Features.Players.Queries.GetPlayerPeers;
 using GoS.Application.Features.Players.Queries.GetPlayerPros;
-using GoS.Application.Features.Players.Queries.GetPlayerRecentMatches;
 using GoS.Application.Features.Players.Queries.GetPlayerTotals;
 using GoS.Application.Features.Players.Queries.GetPlayerWardMap;
 using GoS.Application.Features.Players.Queries.GetPlayerWinLossById;
@@ -52,16 +51,17 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet("recentMatches")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerRecentMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
-        var result = await _sender.Send(new GetPlayerRecentMatchesQuery(accountId, parameters));
+        parameters.Limit ??= 20;
+        var result = await _sender.Send(new GetPlayerMatchesQuery(accountId, parameters));
         return result is null ? NotFound() : Ok(result);
     }
 
     [HttpGet("matches")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerMatch>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
     {
         var result = await _sender.Send(new GetPlayerMatchesQuery(accountId, parameters));
