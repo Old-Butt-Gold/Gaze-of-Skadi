@@ -12,57 +12,37 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class CommonController : ControllerBase
+public sealed class CommonController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public CommonController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public CommonController(ISender sender) : base(sender) { }
 
     [HttpGet("distributions")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(DistributionDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetDistributions()
-    {
-        var result = await _sender.Send(new GetDistributionsQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetDistributions()
+        => HandleQueryAsync(new GetDistributionsQuery());
 
     [HttpGet("records/{field}")]
     [ProducesResponseType(typeof(IEnumerable<RecordDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetRecordsByField([FromRoute] CommonFieldRecords field)
-    {
-        var result = await _sender.Send(new GetRecordsByFieldQuery(field));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetRecordsByField([FromRoute] CommonFieldRecords field)
+        => HandleQueryAsync(new GetRecordsByFieldQuery(field));
 
     [HttpGet("item-timings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<ItemTimingDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetItemTimings()
-    {
-        var result = await _sender.Send(new GetItemTimingsQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
-
+    public Task<IActionResult> GetItemTimings()
+        => HandleQueryAsync(new GetItemTimingsQuery());
+    
     [HttpGet("lane-roles")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<LaneRolesDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetLaneRoles()
-    {
-        var result = await _sender.Send(new GetLaneRolesQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetLaneRoles()
+        => HandleQueryAsync(new GetLaneRolesQuery());
 
     [HttpGet("leagues")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<LeagueDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetLeagues()
-    {
-        var result = await _sender.Send(new GetLeaguesQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetLeagues()
+        => HandleQueryAsync(new GetLeaguesQuery());
 }

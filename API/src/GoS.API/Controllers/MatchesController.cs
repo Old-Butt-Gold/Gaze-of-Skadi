@@ -12,48 +12,31 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class MatchesController : ControllerBase
+public sealed class MatchesController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public MatchesController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public MatchesController(ISender sender) : base(sender) { }
 
     [HttpGet("{matchId:long}/overview")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Match), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetMatchById(long matchId)
-    {
-        var result = await _sender.Send(new GetMatchOverviewByIdQuery(matchId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetMatchById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchOverviewByIdQuery(matchId));
 
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetPublicMatches([FromQuery] PublicMatchesEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPublicMatchesQuery(parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPublicMatches([FromQuery] PublicMatchesEndpointParameters parameters)
+        => HandleQueryAsync(new GetPublicMatchesQuery(parameters));
 
     [HttpGet("pro")]
     [ProducesResponseType(typeof(IEnumerable<ProMatchDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetProMatches([FromQuery] long? lessThanMatchId)
-    {
-        var result = await _sender.Send(new GetProMatchesQuery(lessThanMatchId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetProMatches([FromQuery] long? lessThanMatchId)
+        => HandleQueryAsync(new GetProMatchesQuery(lessThanMatchId));
 
     [HttpGet("findMatches")]
     [ProducesResponseType(typeof(IEnumerable<MatchFindDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> FindMatches([FromQuery] int[] teamA, [FromQuery] int[] teamB)
-    {
-        var result = await _sender.Send(new FindMatchesQuery(teamA, teamB));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> FindMatches([FromQuery] int[] teamA, [FromQuery] int[] teamB)
+        => HandleQueryAsync(new FindMatchesQuery(teamA, teamB));
 }

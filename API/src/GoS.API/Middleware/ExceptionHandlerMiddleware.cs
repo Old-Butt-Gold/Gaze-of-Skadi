@@ -2,6 +2,7 @@
 using System.Net;
 using System.Text.Json;
 using FluentValidation;
+using GoS.Infrastructure.Steam;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
@@ -42,7 +43,7 @@ public sealed class ExceptionHandlerMiddleware
         httpContext.Response.ContentType = "application/problem+json";
 
         var traceId = Activity.Current?.Id ?? httpContext.TraceIdentifier;
-        var userId = httpContext.User.FindFirst(System.Security.Claims.ClaimTypes.Sid)?.Value ?? "Anonymous";
+        var userId = httpContext.User.FindFirst(SteamClaimTypes.SteamId32)?.Value ?? "Anonymous";
 
         const string logMessage = "Exception caught by middleware | Type: {Type} | User: {User} | Path: {Path} | Method: {Method} | Status: {Status} | TraceId: {TraceId}";
 

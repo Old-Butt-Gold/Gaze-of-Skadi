@@ -8,30 +8,19 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class SearchController : ControllerBase
+public sealed class SearchController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public SearchController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public SearchController(ISender sender) : base(sender) { }
 
     [HttpGet("players")]
     [ProducesResponseType(typeof(IEnumerable<PlayerResponseDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetPlayersByName([FromQuery] string q)
-    {
-        var result = await _sender.Send(new GetPlayersByNameQuery(q));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayersByName([FromQuery] string q)
+        => HandleQueryAsync(new GetPlayersByNameQuery(q));
 
     [HttpGet("proplayers")]
     [ProducesResponseType(typeof(IEnumerable<ProPlayerDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public async Task<IActionResult> GetProPlayersByName([FromQuery] string? q)
-    {
-        var result = await _sender.Send(new GetProPlayersByNameQuery(q));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetProPlayersByName([FromQuery] string? q)
+        => HandleQueryAsync(new GetProPlayersByNameQuery(q));
 }

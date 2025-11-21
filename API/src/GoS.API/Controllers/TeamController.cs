@@ -11,56 +11,41 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class TeamController : ControllerBase
+public sealed class TeamController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public TeamController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public TeamController(ISender sender) : base(sender) { }
     
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetTeams()
-    {
-        return Ok(await _sender.Send(new GetTeamsQuery()));
-    }
+    public Task<IActionResult> GetTeams()
+        => HandleQueryAsync(new GetTeamsQuery());
 
     [HttpGet("{teamId:int}")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(TeamByIdDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetTeamById(int teamId)
-    {
-        return Ok(await _sender.Send(new GetTeamByIdQuery(teamId)));
-    }
+    public Task<IActionResult> GetTeamById([FromRoute] int teamId)
+        => HandleQueryAsync(new GetTeamByIdQuery(teamId));
 
     [HttpGet("{teamId:int}/matches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamMatchDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetTeamMatches(int teamId)
-    {
-        return Ok(await _sender.Send(new GetTeamMatchesByIdQuery(teamId)));
-    }
+    public Task<IActionResult> GetTeamMatches([FromRoute] int teamId)
+        => HandleQueryAsync(new GetTeamMatchesByIdQuery(teamId));
 
     [HttpGet("{teamId:int}/players")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamPlayerDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetTeamPlayers(int teamId)
-    {
-        return Ok(await _sender.Send(new GetTeamPlayersByIdQuery(teamId)));
-    }
+    public Task<IActionResult> GetTeamPlayers([FromRoute] int teamId)
+        => HandleQueryAsync(new GetTeamPlayersByIdQuery(teamId));
 
     [HttpGet("{teamId:int}/heroes")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamHeroDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetTeamHeroes(int teamId)
-    {
-        return Ok(await _sender.Send(new GetTeamHeroesByIdQuery(teamId)));
-    }
+    public Task<IActionResult> GetTeamHeroes([FromRoute] int teamId)
+        => HandleQueryAsync(new GetTeamHeroesByIdQuery(teamId));
 }

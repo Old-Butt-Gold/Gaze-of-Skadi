@@ -5,6 +5,7 @@ using GoS.Infrastructure.Requester.Extensions;
 using GoS.Infrastructure.ResourceManager.Extensions;
 using GoS.Infrastructure.Steam.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,13 @@ builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
 builder.Services.ConfigureSteamAuthentication(builder.Configuration);
 builder.Services.ConfigureAutoMapper();
+builder.Services.AddHealthChecks();
+
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<BrotliCompressionProvider>();
+});
 
 var app = builder.Build();
 
@@ -37,6 +45,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
 // For correct IP definition
 app.UseForwardedHeaders(new ForwardedHeadersOptions()
 {
@@ -46,8 +55,11 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions()
 app.UseCors("CorsGlobalPolicy");
 
 app.UseAuthorization();
+app.UseResponseCompression();
 
 app.MapControllers();
+
+app.MapHealthChecks("/health");
 
 app.AssertAutoMapperConfigurationValid(app.Services);
 

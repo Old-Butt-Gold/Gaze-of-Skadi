@@ -20,130 +20,111 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]/{accountId:long}")]
-public sealed class PlayersController : ControllerBase
+public sealed class PlayersController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public PlayersController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public PlayersController(ISender sender) : base(sender) { }
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerById(long accountId)
-    {
-        var result = await _sender.Send(new GetPlayerByIdQuery(accountId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerById([FromRoute] long accountId)
+        => HandleQueryAsync(new GetPlayerByIdQuery(accountId));
 
     [HttpGet("wl")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWinLossDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerWinLossById(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerWinLossByIdQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerWinLossById(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerWinLossByIdQuery(accountId, parameters));
 
     [HttpGet("recentMatches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerRecentMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
+    public Task<IActionResult> GetPlayerRecentMatches(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
     {
         parameters.Limit ??= 20;
-        var result = await _sender.Send(new GetPlayerMatchesQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
+        return HandleQueryAsync(new GetPlayerMatchesQuery(accountId, parameters));
     }
 
     [HttpGet("matches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerMatches(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerMatchesQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerMatches(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerMatchesQuery(accountId, parameters));
 
     [HttpGet("heroes")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerHeroDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerHeroes(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerHeroesQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerHeroes(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerHeroesQuery(accountId, parameters));
 
     [HttpGet("peers")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerPeerDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerPeers(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerPeersQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerPeers(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerPeersQuery(accountId, parameters));
 
     [HttpGet("pros")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerProDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerPros(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerProsQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerPros(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerProsQuery(accountId, parameters));
 
     [HttpGet("totals")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerTotalDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerTotals(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerTotalsQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerTotals(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerTotalsQuery(accountId, parameters));
 
     [HttpGet("counts")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerCountDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerCounts(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerCountsQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerCounts(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerCountsQuery(accountId, parameters));
 
     [HttpGet("histograms/{field}")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerHistogramDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerHistograms(long accountId, PlayerFieldHistogram field, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerHistogramsQuery(accountId, field, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerHistograms(
+        [FromRoute] long accountId, 
+        [FromRoute] PlayerFieldHistogram field, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerHistogramsQuery(accountId, field, parameters));
 
     [HttpGet("wardmap")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWardMapDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerWardMap(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerWardMapQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerWardMap(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerWardMapQuery(accountId, parameters));
 
     [HttpGet("wordcloud")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWordCloudDto), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerWordCloud(long accountId, [FromQuery] PlayerEndpointParameters parameters)
-    {
-        var result = await _sender.Send(new GetPlayerWordCloudQuery(accountId, parameters));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerWordCloud(
+        [FromRoute] long accountId, 
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerWordCloudQuery(accountId, parameters));
 
     [HttpGet("rankings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerHeroRankingDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerHeroRankings(long accountId)
-    {
-        var result = await _sender.Send(new GetPlayerHeroRankingsQuery(accountId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetPlayerHeroRankings([FromRoute] long accountId)
+        => HandleQueryAsync(new GetPlayerHeroRankingsQuery(accountId));
 }

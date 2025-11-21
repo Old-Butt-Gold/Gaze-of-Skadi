@@ -16,100 +16,68 @@ namespace GoS.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public sealed class HeroesController : ControllerBase
+public sealed class HeroesController : ApiControllerBase
 {
-    private readonly ISender _sender;
-
-    public HeroesController(ISender sender)
-    {
-        _sender = sender;
-    }
+    public HeroesController(ISender sender) : base(sender) { }
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Dictionary<string, HeroInfo>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetHeroes()
-    {
-        var result = await _sender.Send(new GetHeroesQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroes()
+        => HandleQueryAsync(new GetHeroesQuery());
 
     [HttpGet("stats")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroStatsDto>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetHeroStats()
-    {
-        var result = await _sender.Send(new GetHeroStatsQuery());
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroStats()
+        => HandleQueryAsync(new GetHeroStatsQuery());
 
     [HttpGet("{heroId:int}/rankings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(HeroRankingDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroRankings(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroRankingsQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroRankings([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroRankingsQuery(heroId));
 
     [HttpGet("{heroId:int}/benchmark")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(BenchmarkDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroBenchmark(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroBenchmarkQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroBenchmark([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroBenchmarkQuery(heroId));
 
     [HttpGet("{heroId:int}/matches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroMatchDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroMatches(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroMatchesQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroMatches([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroMatchesQuery(heroId));
 
     [HttpGet("{heroId:int}/matchups")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroMatchupDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroMatchups(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroMatchupsQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroMatchups([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroMatchupsQuery(heroId));
 
     [HttpGet("{heroId:int}/durations")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroDurationDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroDurations(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroDurationsQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroDurations([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroDurationsQuery(heroId));
 
     [HttpGet("{heroId:int}/players")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroPlayerDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroPlayers(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroPlayersQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroPlayers([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroPlayersQuery(heroId));
 
     [HttpGet("{heroId:int}/item-popularity")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(HeroItemPopularityDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> GetHeroItemPopularity(int heroId)
-    {
-        var result = await _sender.Send(new GetHeroItemPopularityQuery(heroId));
-        return result is null ? NotFound() : Ok(result);
-    }
+    public Task<IActionResult> GetHeroItemPopularity([FromRoute] int heroId)
+        => HandleQueryAsync(new GetHeroItemPopularityQuery(heroId));
 }
