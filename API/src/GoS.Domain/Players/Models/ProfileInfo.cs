@@ -6,7 +6,7 @@ namespace GoS.Domain.Players.Models;
 /// <summary>
 /// Represents a player profile.
 /// </summary>
-public class Profile
+public class ProfileInfo
 {
 	/// <summary>
 	/// Gets account ID of the player.
@@ -55,13 +55,13 @@ public class Profile
 	/// </summary>
 	[JsonPropertyName("avatarfull")]
 	public Uri? AvatarFull { get; init; }
-	
+
 	/// <summary>
 	/// Is profile is closed or not
 	/// </summary>
 	[JsonPropertyName("fh_unavailable")]
 	public BooleanState? FhUnavailable { get; init; }
-	
+
 	/// <summary>
 	/// Gets the player's profile URL.
 	/// </summary>
@@ -78,5 +78,5 @@ public class Profile
 	/// Gets the player's location country code.
 	/// </summary>
 	[JsonPropertyName("loccountrycode")]
-	public string LocCountryCode { get; init; }
+	public string? LocCountryCode { get; init; }
 }

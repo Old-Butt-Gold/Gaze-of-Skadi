@@ -21,5 +21,5 @@ public class Player
 	/// Gets the profile.
 	/// </summary>
 	[JsonPropertyName("profile")]
-	public Profile Profile { get; init; } = new();
+	public ProfileInfo Profile { get; init; } = new();
 }

@@ -34,7 +34,7 @@ public sealed class PlayersController : ControllerBase
 
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Player), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerDto), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetPlayerById(long accountId)
     {
         var result = await _sender.Send(new GetPlayerByIdQuery(accountId));
