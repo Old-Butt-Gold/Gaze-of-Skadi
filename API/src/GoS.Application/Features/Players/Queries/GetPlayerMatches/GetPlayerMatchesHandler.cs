@@ -19,6 +19,7 @@ internal sealed class GetPlayerMatchesHandler(IRequester requester, IMapper mapp
         "assists",
         "leaver_status",
         "hero_variant",
+        "party_size",
         "item_0",
         "item_1",
         "item_2",

@@ -1,16 +1,17 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
+using GoS.Domain.Players.Enums;
 
-namespace GoS.Application.Features.Players.Queries.GetPlayerMatches;
+namespace GoS.Application.Features.Players.Queries.GetPlayerRecord;
 
-public class PlayerMatchDto
+public class PlayerRecordDto
 {
 	public long MatchId { get; init; }
 
     /// TODO if match parsed or not. if not then it's null
     public int? Version { get; init; }
 
-	public BaseEnumDto<BooleanState> IsRadiant { get; set; }
+	public BaseEnumDto<BooleanState> IsRadiant { get; init; }
 
 	public BaseEnumDto<BooleanState>? RadiantWin { get; init; }
 
@@ -32,31 +33,10 @@ public class PlayerMatchDto
 
 	public BaseEnumDto<LeaverStatus> LeaverStatus { get; init; }
 
-	public int? Level { get; init; }
-
     // TODO should be -1 from .json file
 	public int? HeroVariant { get; init; }
 
     public int? PartySize { get; init; }
 
-	public int? Item0 { get; init; }
-
-	public int? Item1 { get; init; }
-
-	public int? Item2 { get; init; }
-
-	public int? Item3 { get; init; }
-
-	public int? Item4 { get; init; }
-
-	public int? Item5 { get; init; }
-
-	public Dictionary<PlayerSlot, PlayerMatchHeroDto>? Heroes { get; init; }
-
-	public BaseEnumDto<LaneRole>? Lane { get; init; }
-}
-
-public class PlayerMatchHeroDto
-{
-    public long HeroId { get; init; }
+    public Dictionary<PlayerFieldHistogram, object>? RecordFields { get; set; }
 }

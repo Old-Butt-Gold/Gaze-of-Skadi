@@ -121,7 +121,7 @@ public enum PlayerFieldHistogram
     Stomp,
 
     /// <summary>
-    /// Seconds of disable on heroe
+    /// Seconds of disable on heroes
     /// </summary>
     Stuns,
 

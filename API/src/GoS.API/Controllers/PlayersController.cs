@@ -1,5 +1,6 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
+using GoS.Application.Features.Players.Queries.GetPlayerActivity;
 using GoS.Application.Features.Players.Queries.GetPlayerById;
 using GoS.Application.Features.Players.Queries.GetPlayerCounts;
 using GoS.Application.Features.Players.Queries.GetPlayerHeroes;
@@ -8,6 +9,7 @@ using GoS.Application.Features.Players.Queries.GetPlayerHistograms;
 using GoS.Application.Features.Players.Queries.GetPlayerMatches;
 using GoS.Application.Features.Players.Queries.GetPlayerPeers;
 using GoS.Application.Features.Players.Queries.GetPlayerPros;
+using GoS.Application.Features.Players.Queries.GetPlayerRecord;
 using GoS.Application.Features.Players.Queries.GetPlayerTotals;
 using GoS.Application.Features.Players.Queries.GetPlayerWardMap;
 using GoS.Application.Features.Players.Queries.GetPlayerWinLossById;
@@ -34,7 +36,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWinLossDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerWinLossById(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerWinLossByIdQuery(accountId, parameters));
 
@@ -42,7 +44,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerRecentMatches(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
     {
         parameters.Limit ??= 20;
@@ -53,7 +55,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerMatches(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerMatchesQuery(accountId, parameters));
 
@@ -61,7 +63,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerHeroDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerHeroes(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerHeroesQuery(accountId, parameters));
 
@@ -69,7 +71,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerPeerDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerPeers(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerPeersQuery(accountId, parameters));
 
@@ -77,15 +79,24 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerProDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerPros(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerProsQuery(accountId, parameters));
+
+    [HttpGet("records/{field}")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerRecordDto>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetPlayerRecords(
+        [FromRoute] long accountId,
+        [FromRoute] PlayerFieldHistogram field,
+        [FromQuery] PlayerEndpointParameters parameters) =>
+        HandleQueryAsync(new GetPlayerRecordsQuery(accountId, field, parameters));
 
     [HttpGet("totals")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerTotalDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerTotals(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerTotalsQuery(accountId, parameters));
 
@@ -93,7 +104,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerCountDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerCounts(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerCountsQuery(accountId, parameters));
 
@@ -101,8 +112,8 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerHistogramDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerHistograms(
-        [FromRoute] long accountId, 
-        [FromRoute] PlayerFieldHistogram field, 
+        [FromRoute] long accountId,
+        [FromRoute] PlayerFieldHistogram field,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerHistogramsQuery(accountId, field, parameters));
 
@@ -110,7 +121,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWardMapDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerWardMap(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerWardMapQuery(accountId, parameters));
 
@@ -118,7 +129,7 @@ public sealed class PlayersController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(PlayerWordCloudDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerWordCloud(
-        [FromRoute] long accountId, 
+        [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters)
         => HandleQueryAsync(new GetPlayerWordCloudQuery(accountId, parameters));
 
@@ -127,4 +138,11 @@ public sealed class PlayersController : ApiControllerBase
     [ProducesResponseType(typeof(IEnumerable<PlayerHeroRankingDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerHeroRankings([FromRoute] long accountId)
         => HandleQueryAsync(new GetPlayerHeroRankingsQuery(accountId));
+
+    [HttpGet("activity")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(Dictionary<DateOnly, IEnumerable<PlayerMatchDto>>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetPlayerActivity([FromRoute] long accountId,
+        [FromQuery] PlayerEndpointParameters parameters)
+        => HandleQueryAsync(new GetPlayerActivityQuery(accountId, parameters));
 }

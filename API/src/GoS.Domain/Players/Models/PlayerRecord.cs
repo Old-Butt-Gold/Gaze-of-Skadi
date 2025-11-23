@@ -4,9 +4,9 @@ using GoS.Domain.BaseEnums;
 namespace GoS.Domain.Players.Models;
 
 /// <summary>
-/// Represents a player match.
+/// Represents a player record.
 /// </summary>
-public class PlayerMatch
+public class PlayerRecord
 {
 	/// <summary>
 	/// Gets ID used to identify individual matches, e.g. 3703866531.
@@ -89,9 +89,6 @@ public class PlayerMatch
 	[JsonPropertyName("leaver_status")]
 	public LeaverStatus LeaverStatus { get; init; }
 
-	[JsonPropertyName("level")]
-	public int? Level { get; init; }
-
 	/// <summary>
 	/// Gets the variant of the hero played. 1-indexed facet, see https://github.com/odota/dotaconstants/blob/master/build/hero_abilities.json
 	/// </summary>
@@ -105,27 +102,6 @@ public class PlayerMatch
     [JsonPropertyName("party_size")]
     public int? PartySize { get; init; }
 
-	[JsonPropertyName("item_0")]
-	public int? Item0 { get; init; }
-
-	[JsonPropertyName("item_1")]
-	public int? Item1 { get; init; }
-
-	[JsonPropertyName("item_2")]
-	public int? Item2 { get; init; }
-
-	[JsonPropertyName("item_3")]
-	public int? Item3 { get; init; }
-
-	[JsonPropertyName("item_4")]
-	public int? Item4 { get; init; }
-
-	[JsonPropertyName("item_5")]
-	public int? Item5 { get; init; }
-
-	[JsonPropertyName("heroes")]
-	public Dictionary<PlayerSlot, PlayerMatchHero>? Heroes { get; init; }
-
-	[JsonPropertyName("lane_role")]
-	public LaneRole? Lane { get; init; }
+    [JsonExtensionData]
+    public Dictionary<string, object>? RecordFields { get; set; }
 }
