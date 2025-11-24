@@ -7,8 +7,6 @@ public class GetRecordsByFieldMappingProfile : Profile
 {
     public GetRecordsByFieldMappingProfile()
     {
-        // TODO make the same includes in the other files
-        CreateMap<Record, RecordDto>()
-            .ForMember(x => x.HeroInfo, opt => opt.Ignore());
+        CreateMap<Record, RecordDto>();
     }
 }

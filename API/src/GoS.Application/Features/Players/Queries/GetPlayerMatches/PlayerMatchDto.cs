@@ -34,7 +34,6 @@ public class PlayerMatchDto
 
 	public int? Level { get; init; }
 
-    // TODO should be -1 from .json file
 	public int? HeroVariant { get; init; }
 
     public int? PartySize { get; init; }

@@ -28,6 +28,8 @@ public class GetPlayerRecordMappingProfile : Profile
         CreateMap<PlayerRecord, PlayerRecordDto>()
             .ForMember(x => x.IsRadiant, opt => opt.MapFrom(src =>
                 BaseEnumDto<BooleanState>.FromEnum(IsInRadiantTeam(src.PlayerSlot))))
+            .ForMember(x => x.HeroVariant, opt => opt.MapFrom(src =>
+                src.HeroVariant - 1))
             .ForMember(x => x.RecordFields, opt => opt.MapFrom(MapRecordFields));
     }
 

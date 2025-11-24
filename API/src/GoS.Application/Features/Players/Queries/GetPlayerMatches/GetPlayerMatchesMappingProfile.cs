@@ -11,7 +11,9 @@ public class GetPlayerMatchesMappingProfile : Profile
     {
         CreateMap<PlayerMatch, PlayerMatchDto>()
             .ForMember(x => x.IsRadiant, opt => opt.MapFrom(src =>
-                BaseEnumDto<BooleanState>.FromEnum(IsInRadiantTeam(src.PlayerSlot))));
+                BaseEnumDto<BooleanState>.FromEnum(IsInRadiantTeam(src.PlayerSlot))))
+            .ForMember(x => x.HeroVariant, opt => opt.MapFrom(src =>
+                src.HeroVariant - 1));
         CreateMap<PlayerMatchHero, PlayerMatchHeroDto>();
     }
 
