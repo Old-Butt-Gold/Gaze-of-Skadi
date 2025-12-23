@@ -1,6 +1,7 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
 using GoS.Application.Features.Matches.Queries.FindMatches;
+using GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
@@ -19,8 +20,14 @@ public sealed class MatchesController : ApiControllerBase
     [HttpGet("{matchId:long}/overview")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Match), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetMatchById([FromRoute] long matchId)
+    public Task<IActionResult> GetMatchOverviewById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchOverviewByIdQuery(matchId));
+    
+    [HttpGet("{matchId:long}/benchmarks")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(MatchBenchmarksDto), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchBenchmarksById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchBenchmarksByIdQuery(matchId));
 
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]

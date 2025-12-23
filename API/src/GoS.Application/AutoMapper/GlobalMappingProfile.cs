@@ -1,24 +1,27 @@
 using System.Reflection;
 using AutoMapper;
 using GoS.Application.Dto;
+using GoS.Domain.Matches.Models;
 using GoS.Domain.Resources.Models.Heroes;
 
 namespace GoS.Application.AutoMapper;
 
 public sealed class GlobalMappingProfile : Profile
 {
-    public static Assembly[] All => 
+    private static Assembly[] All => 
     [
         Application,
         Domain
     ];
-    
-    public static Assembly Application => typeof(AssemblyReference).Assembly;
-    public static Assembly Domain => typeof(Domain.BaseEnums.Rank).Assembly;
+    private static Assembly Application => typeof(AssemblyReference).Assembly;
+    private static Assembly Domain => typeof(Domain.BaseEnums.Rank).Assembly;
     
     public GlobalMappingProfile()
     {
         CreateMap<HeroInfo, HeroInfoDto>();
+        
+        CreateMap<MatchPlayer, PlayerInfoDto>()
+            .ForMember(dest => dest.HeroVariant, opt => opt.MapFrom(src => src.HeroVariant - 1));
         
         CreateMap<DateTimeOffset, long>()
             .ConvertUsing(src => src.ToUnixTimeSeconds());

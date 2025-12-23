@@ -11,7 +11,12 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IResourceManag
     public async Task<Match?> Handle(GetMatchOverviewByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
-        // TODO implement overview logic and etc
+
+        if (match is null)
+        {
+            return null;
+        }
+        
         return match;
     }
 }
