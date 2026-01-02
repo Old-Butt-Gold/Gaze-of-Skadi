@@ -96,7 +96,6 @@ public class PlayerMatch
 	/// Gets the variant of the hero played. 1-indexed facet, see https://github.com/odota/dotaconstants/blob/master/build/hero_abilities.json
 	/// </summary>
 	[JsonPropertyName("hero_variant")]
-    // TODO should be -1 from .json file
 	public int? HeroVariant { get; init; }
 
     /// <summary>

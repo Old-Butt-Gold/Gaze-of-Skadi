@@ -175,65 +175,6 @@ static async Task PrintOverviewInfo(Match match)
     }
 }
 
-static async Task PrintBenchmarksInfo(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        var bench = player.Benchmarks;
-
-        var benchmarkEntries = new (string Name, IDictionary<MatchPlayerBenchmarkEnum, double?>? Data)[]
-        {
-            (nameof(bench.GoldPerMin), bench.GoldPerMin),
-            (nameof(bench.HeroDamagePerMin), bench.HeroDamagePerMin),
-            (nameof(bench.HeroHealingPerMin), bench.HeroHealingPerMin),
-            (nameof(bench.KillsPerMin), bench.KillsPerMin),
-            (nameof(bench.LastHitsPerMin), bench.LastHitsPerMin),
-            (nameof(bench.StunsPerMin), bench.StunsPerMin),
-            (nameof(bench.TowerDamage), bench.TowerDamage),
-            (nameof(bench.XpPerMin), bench.XpPerMin),
-        };
-
-        foreach (var (name, data) in benchmarkEntries)
-        {
-            var rawValue = data != null && data.TryGetValue(MatchPlayerBenchmarkEnum.Raw, out var raw)
-                ? raw.ToString()
-                : "N/A";
-
-            var pctValue = data != null && data.TryGetValue(MatchPlayerBenchmarkEnum.Percentage, out var pct)
-                ? pct.ToString()
-                : "N/A";
-
-            Console.WriteLine($"{name} — {MatchPlayerBenchmarkEnum.Raw} – {rawValue} : {MatchPlayerBenchmarkEnum.Percentage} – {pctValue}");
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintPerfomances(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-        Console.WriteLine($"Kills in a row: {player.MultiKills.Keys.Max()}"); // убийств подряд
-        Console.WriteLine($"A series of kills: {player.KillStreaks.Keys.Max()}");
-        Console.WriteLine($"Stuns duration: {player.Stuns}");
-        Console.WriteLine($"Stacks: {player.CampsStacked}");
-        Console.WriteLine($"Dead: {GetTime(player.LifeStateDead)}");
-        Console.WriteLine($"Buybacks: {player.BuybackCount}");
-        Console.WriteLine($"Max hero hit: {player.MaxHeroHit.Inflictor ?? "Auto-attack"} – {heroes.First(x => x.Value.Name == player.MaxHeroHit.Key).Value.LocalizedName} – {player.MaxHeroHit.Value}");
-        Console.WriteLine($"Pings: {player.Pings}"); // Сигналок на карте
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
 static async Task PrintLaning(Match match)
 {
     var openDota = new OpenDotaApi();
@@ -391,33 +332,6 @@ static async Task PrintEarnings(Match match)
     }
 }
 
-static async Task PrintItems(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    var items = await openDota.Resource.GetItemsAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        foreach (var it in player.PurchaseLog)
-        {
-            var item = items[it.Key];
-            if (item.Quality is ItemType.Consumable)
-            {
-                Console.WriteLine($"{item.Quality} {item.DisplayName} : {GetTime(it.Time)}");
-            }
-            else
-            {
-                Console.WriteLine(item.DisplayName + " : " + GetTime(it.Time));
-            }
-
-        }
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
 static async Task PrintGraphics(Match match)
 {
     var openDota = new OpenDotaApi();
@@ -487,74 +401,6 @@ static async Task PrintGraphics(Match match)
         for (int i = 0; i < player.LastHitsEachMinute.Count; i++)
         {
             Console.WriteLine($"Time: {GetTime(i * 60)} – {player.LastHitsEachMinute[i]}");
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintAbilities(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    var abilities = await openDota.Resource.GetAbilitiesAsync()!;
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        Console.WriteLine($"Abilities: ");
-        foreach (var item in player.AbilityUses)
-        {
-            if (abilities.TryGetValue(item.Key, out var ability))
-            {
-                Console.WriteLine($"Abilities used: {ability.DisplayName} — {item.Value}");
-            }
-
-            if (player.AbilityTargets.TryGetValue(item.Key, out var target))
-            {
-                foreach (var keyValue in target)
-                {
-                    Console.WriteLine($"Hero: {keyValue.Key} : {keyValue.Value}");
-                }
-            }
-        }
-
-        foreach (var item in player.ItemUses)
-        {
-            Console.WriteLine(item.Key + " : " + item.Value);
-        }
-
-        foreach (var heroHit in player.HeroHits)
-        {
-            Console.WriteLine($"{heroHit.Key} : {heroHit.Value}");
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintObjectives(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    var objectives = await openDota.Resource.GetObjectiveNamesAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        foreach (var damage in player.Damage)
-        {
-            if (objectives.TryGetValue(damage.Key, out var objective))
-            {
-                Console.WriteLine($"{objective} – {damage.Value}");
-            }
-        }
-
-        foreach (var rune in player.Runes)
-        {
-            Console.WriteLine($"{rune.Key} – {rune.Value}");
         }
 
         Console.WriteLine("--------------------------------------------");
@@ -656,25 +502,6 @@ static async Task PrintWards(Match match)
         }
 
         Console.WriteLine($"{typeStr} – {owner} – {startTimeStr} – {endTimeStr} – {durationStr} – {destroyedBy} (loc: {placementLocation})");
-    }
-
-}
-
-static async Task PrintActions(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        foreach (var action in player.Actions)
-        {
-            Console.WriteLine(action.Key + " : " + action.Value);
-        }
-
-        Console.WriteLine("--------------------------------------------");
     }
 }
 
@@ -877,45 +704,6 @@ static async Task PrintJournal(Match match)
     {
         Console.WriteLine($"{GetTime(teamFight.Start)} – Started team fight");
         Console.WriteLine($"{GetTime(teamFight.End)} – Ended team fight");
-    }
-}
-
-static async Task PrintChat(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    var chatResources = await openDota.Resource.GetChatWheelsAsync();
-
-    foreach (var chat in match.Chat)
-    {
-        if (chat.Type == ChatType.Chat)
-        {
-            var player = match.Players[(int)chat.Slot];
-            Console.WriteLine($"{GetTime(chat.Time)} [ALL] {heroes[player.HeroId.ToString()].LocalizedName} {chat.Key}");
-        }
-
-        if (chat.Type == ChatType.ChatWheel)
-        {
-            var player = match.Players[(int)chat.Slot];
-            if (chatResources.TryGetValue(chat.Key, out var resource))
-            {
-                if (resource.SoundExtension != null)
-                {
-                    Console.WriteLine($"{GetTime(chat.Time)} Sound [ALL] {heroes[player.HeroId.ToString()].LocalizedName} >>> {resource.Message}:{resource.Url}");
-                }
-
-                if (resource.Image != null)
-                {
-                    Console.WriteLine($"{GetTime(chat.Time)} Spray [ALL] {heroes[player.HeroId.ToString()].LocalizedName} >>> {resource.Image}");
-                }
-
-                if (resource.Message != null)
-                {
-                    Console.WriteLine($"{GetTime(chat.Time)} [ALL] {heroes[player.HeroId.ToString()].LocalizedName} >>> {resource.Message}");
-                }
-            }
-        }
-
     }
 }
 

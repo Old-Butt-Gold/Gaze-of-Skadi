@@ -229,7 +229,6 @@ public class MatchPlayer
     /// Gets the chosen aspect
     /// </summary>
     [JsonPropertyName("hero_variant")]
-    // TODO should be -1 from .json file
     public int? HeroVariant { get; init; }
 
 	/// <summary>

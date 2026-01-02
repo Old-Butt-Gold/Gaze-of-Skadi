@@ -8,9 +8,9 @@ using MediatR;
 namespace GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 
 internal sealed class GetMatchBenchmarksByIdHandler(ISender sender, IMapper mapper)
-    : IRequestHandler<GetMatchBenchmarksByIdQuery, MatchBenchmarksDto?>
+    : IRequestHandler<GetMatchBenchmarksByIdQuery, IEnumerable<PlayerBenchmarkDto>?>
 {
-    public async Task<MatchBenchmarksDto?> Handle(GetMatchBenchmarksByIdQuery request, CancellationToken ct)
+    public async Task<IEnumerable<PlayerBenchmarkDto>?> Handle(GetMatchBenchmarksByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
 
@@ -31,10 +31,7 @@ internal sealed class GetMatchBenchmarksByIdHandler(ISender sender, IMapper mapp
             });
         }
 
-        return new MatchBenchmarksDto
-        {
-            Players = playerBenchmarks
-        };
+        return playerBenchmarks;
     }
 
     private static List<BenchmarkDataDto> ExtractBenchmarks(MatchPlayerBenchmarks benchmarks)

@@ -2,4 +2,4 @@
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 
-public record GetMatchBenchmarksByIdQuery(long MatchId) : IRequest<MatchBenchmarksDto?>;
+public record GetMatchBenchmarksByIdQuery(long MatchId) : IRequest<IEnumerable<PlayerBenchmarkDto>?>;
