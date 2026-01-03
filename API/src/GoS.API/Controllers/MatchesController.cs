@@ -9,10 +9,12 @@ using GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 using GoS.Application.Features.Matches.Queries.GetMatchEarningsById;
 using GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
 using GoS.Application.Features.Matches.Queries.GetMatchItemsById;
+using GoS.Application.Features.Matches.Queries.GetMatchJournalById;
 using GoS.Application.Features.Matches.Queries.GetMatchLaneById;
 using GoS.Application.Features.Matches.Queries.GetMatchObjectivesById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
+using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
 using GoS.Domain.Matches.Models;
@@ -98,6 +100,18 @@ public sealed class MatchesController : ApiControllerBase
     [ProducesResponseType(typeof(IEnumerable<PlayerCastsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCastsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchCastsByIdQuery(matchId));
+    
+    [HttpGet("{matchId:long}/teamfights")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(IEnumerable<TeamfightDetailedDto>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchTeamfightsById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchTeamfightsByIdQuery(matchId));
+    
+    [HttpGet("{matchId:long}/journal")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(MatchJournalDto), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchJournalById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchJournalByIdQuery(matchId));
 
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]
