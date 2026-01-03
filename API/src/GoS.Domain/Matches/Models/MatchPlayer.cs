@@ -199,7 +199,7 @@ public class MatchPlayer
 	/// Gets a list containing total gold at different times of the match
 	/// </summary>
 	[JsonPropertyName("gold_t")]
-	public List<long> GoldEachMinute { get; init; } = [];
+	public List<int> GoldEachMinute { get; init; } = [];
 
 	/// <summary>
 	/// Gets a hero damage dealt
@@ -510,7 +510,7 @@ public class MatchPlayer
 	public int? TowersKilled { get; init; }
 
 	/// <summary>
-	/// Gets a experience per minute obtained by the player
+	/// Gets an experience per minute obtained by the player
 	/// </summary>
 	[JsonPropertyName("xp_per_min")]
 	public int XpPerMin { get; init; }
@@ -525,7 +525,7 @@ public class MatchPlayer
 	/// Gets a list of experience at each minute of the game
 	/// </summary>
 	[JsonPropertyName("xp_t")]
-	public List<long> XpEachMinute { get; init; } = [];
+	public List<int> XpEachMinute { get; init; } = [];
 
 	/// <summary>
 	/// Gets a persona name of the player

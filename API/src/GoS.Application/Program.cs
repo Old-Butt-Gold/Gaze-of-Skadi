@@ -175,238 +175,6 @@ static async Task PrintOverviewInfo(Match match)
     }
 }
 
-static async Task PrintLaning(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-        Console.WriteLine($"Lane: {player.LaneRole}");
-        Console.WriteLine($"Lane efficiency in 10 minutes: {player.LaneEfficiency}");
-        Console.WriteLine($"Killed creeps in 10 minutes: {player.LastHitsEachMinute[10]}");
-        Console.WriteLine($"Killed creeps in 10 minutes: {player.DeniesAtDifferentTimes[10]}");
-
-        Console.WriteLine($"Last Hits + Denies");
-        for (int i = 0; i < player.LastHitsEachMinute.Count; i++)
-        {
-            Console.WriteLine(
-                $"Time: {GetTime(i * 60)} – {player.LastHitsEachMinute[i] + player.DeniesAtDifferentTimes[i]}");
-        }
-
-        Console.WriteLine("Lane position distribution:");
-
-        foreach (var xEntry in player.LanePos)
-        {
-            var xKey = xEntry.Key;
-            var yDict = xEntry.Value;
-
-            foreach (var yEntry in yDict)
-            {
-                Console.WriteLine($"Position [{xKey}, {yEntry.Key}] – {yEntry.Value}");
-            }
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintDamage(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-    var abilities = await openDota.Resource.GetAbilitiesAsync();
-    var items = await openDota.Resource.GetItemsAsync();
-    var namesSet = heroes.Select(x => x.Value.Name).ToHashSet();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-        Console.WriteLine("\nKilled:");
-        var killDict = new Dictionary<string, int>();
-        foreach (var kill in player.KillsLog)
-        {
-            killDict.TryAdd(kill.Key, 0);
-            killDict[kill.Key]++;
-        }
-
-        foreach (var kill in killDict)
-        {
-            Console.WriteLine($"{heroes.First(x => x.Value.Name == kill.Key).Value.LocalizedName} – {kill.Value}");
-        }
-
-        Console.WriteLine("\nKilled By: ");
-        foreach (var killedBy in player.KilledBy)
-        {
-            Console.WriteLine($"{heroes.First(x => x.Value.Name == killedBy.Key).Value.LocalizedName} – {killedBy.Value}");
-        }
-
-        Console.WriteLine("\nDamage Dealt:");
-        foreach (var damage in player.Damage.Where(damage => namesSet.Contains(damage.Key)))
-        {
-            Console.WriteLine($"{heroes.First(x => x.Value.Name == damage.Key).Value.LocalizedName} – {damage.Value}");
-        }
-
-        Console.WriteLine("\nDamage Taken:");
-        foreach (var damageTaken in player.DamageTaken.Where(damage => namesSet.Contains(damage.Key)))
-        {
-            Console.WriteLine($"{heroes.First(x => x.Value.Name == damageTaken.Key).Value.LocalizedName} – {damageTaken.Value}");
-        }
-
-        Console.WriteLine("\nDamage Dealt Description: ");
-        foreach (var damage in player.DamageInflictor)
-        {
-            var description = player.DamageTargets[damage.Key];
-            Console.WriteLine($"{damage.Key} – {description.Values.Sum()}");
-            foreach (var desc in description)
-            {
-                Console.WriteLine($"{heroes.First(x => x.Value.Name == desc.Key).Value.LocalizedName} – {desc.Value}");
-            }
-
-            Console.WriteLine();
-        }
-
-        Console.WriteLine("\nDamage Taken Description");
-        foreach (var damageTaken in player.DamageInflictorReceived)
-        {
-            if (damageTaken.Key is "null")
-            {
-                Console.WriteLine($"Auto-attack : {damageTaken.Value}");
-            }
-            else
-            {
-                if (abilities.TryGetValue(damageTaken.Key, out var ability))
-                {
-                    Console.WriteLine($"{ability.DisplayName} – {damageTaken.Value}");
-                }
-
-                if (items.TryGetValue(damageTaken.Key, out var item))
-                {
-                    Console.WriteLine($"{item.DisplayName} – {damageTaken.Value}");
-                }
-            }
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintEarnings(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-        Console.WriteLine($"Heroes killed: {player.Kills}");
-        Console.WriteLine($"Lane Creeps killed: {player.LaneKills}");
-        Console.WriteLine($"Neutral Creeps killed: {player.NeutralKills}");
-        Console.WriteLine($"Ancient Creeps killed: {player.AncientKills}");
-        Console.WriteLine($"Towers killed: {player.TowerKills}");
-        Console.WriteLine($"Couriers killed: {player.CourierKills}");
-        Console.WriteLine($"Roshan killed: {player.RoshanKills}");
-        Console.WriteLine($"Observer killed: {player.ObserverKills}");
-        Console.WriteLine($"Roshan killed: {player.RoshanKills}");
-
-        Console.WriteLine("Creeps last hits in minutes:");
-        Console.WriteLine($"5 min: {player.LastHitsEachMinute[5]}");
-        Console.WriteLine($"10 min: {player.LastHitsEachMinute[10]}");
-        Console.WriteLine($"15 min: {player.LastHitsEachMinute[15]}");
-        Console.WriteLine($"20 min: {player.LastHitsEachMinute[20]}");
-
-        Console.WriteLine("\nGold incomes:");
-        foreach (var gold in player.GoldReasons)
-        {
-            Console.WriteLine(gold.Key + " : " + gold.Value);
-        }
-
-        Console.WriteLine("\nXp incomes:");
-        foreach (var xp in player.XpReasons)
-        {
-            Console.WriteLine(xp.Key + " : " + xp.Value);
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
-static async Task PrintGraphics(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    var objective = match.Objectives.FirstOrDefault(x => x.Type == ObjectiveType.ChatMessageFirstBlood);
-
-    if (objective is { Slot: not null })
-    {
-        var index = ((int?)objective.Slot).Value;
-        var key = objective.Key?.GetRawText();
-        if (int.TryParse(key, out var heroIndex))
-        {
-            var player = match.Players[heroIndex];
-            var heroName = heroes[player.HeroId.ToString()].LocalizedName;
-            Console.WriteLine($"{GetTime(objective.Time.Value)} – {objective.Type} – {heroes[match.Players[index].HeroId.ToString()].LocalizedName} -> {heroName}");
-        }
-        else
-        {
-            Console.WriteLine($"{GetTime(objective.Time.Value)} – {objective.Type} – {heroes[match.Players[index].HeroId.ToString()].LocalizedName}");
-        }
-    }
-
-    foreach (var fight in match.Teamfights)
-    {
-        Console.WriteLine($"{nameof(fight.Start)} – {fight.Start}");
-        Console.WriteLine($"{nameof(fight.End)} – {fight.End}");
-
-        for (int i = 0; i < fight.Players.Count; i++)
-        {
-            var heroState = fight.Players[i];
-
-            Console.WriteLine($"Hero: {heroes[match.Players[i].HeroId.ToString()].LocalizedName}");
-            Console.WriteLine($"{nameof(heroState.GoldDelta)} – {heroState.GoldDelta}");
-            Console.WriteLine($"WasDead: {heroState.Deaths > 0}");
-            Console.WriteLine();
-        }
-    }
-
-    int time = 0;
-    foreach (var stat in match.RadiantGoldAdvantage)
-    {
-        Console.WriteLine($"Gold advantage {GetTime(time * 60)} - team: {(stat > 0 ? Team.Radiant : Team.Dire)} - {Math.Abs(stat)}");
-        Console.WriteLine($"Xp advantage {GetTime(time * 60)} - team: {(match.RadiantXpAdvantage[time] > 0 ? Team.Radiant : Team.Dire)} - {Math.Abs(match.RadiantXpAdvantage[time])}");
-        time++;
-        Console.WriteLine();
-    }
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        Console.WriteLine("Gold: ");
-
-        for (int i = 0; i < player.GoldEachMinute.Count; i++)
-        {
-            Console.WriteLine($"Time: {GetTime(i * 60)} – {player.GoldEachMinute[i]}");
-        }
-
-        Console.WriteLine("XP: ");
-        for (int i = 0; i < player.XpEachMinute.Count; i++)
-        {
-            Console.WriteLine($"Time: {GetTime(i * 60)} – {player.XpEachMinute[i]}");
-        }
-
-        Console.WriteLine("Last Hits: ");
-        for (int i = 0; i < player.LastHitsEachMinute.Count; i++)
-        {
-            Console.WriteLine($"Time: {GetTime(i * 60)} – {player.LastHitsEachMinute[i]}");
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-}
-
 static async Task PrintWards(Match match)
 {
     var openDota = new OpenDotaApi();
@@ -513,7 +281,7 @@ static async Task PrintTeamFights(Match match)
     var namesDictionary = heroes.Select(x => new
     {
         x.Value.Name,
-        x.Value.LocalizedName,
+        x.Value.Id,
     }).ToDictionary(x => x.Name);
 
     foreach (var fight in match.Teamfights)
@@ -566,19 +334,18 @@ static async Task PrintTeamFights(Match match)
         for (int i = 0; i < fight.Players.Count; i++)
         {
             var player = fight.Players[i];
-            Console.WriteLine($"Hero: {heroes[match.Players[i].HeroId.ToString()].LocalizedName}");
+            Console.WriteLine($"Hero: {match.Players[i].HeroId.ToString()}");
             Console.WriteLine($"Was dead: {player.Deaths > 0}");
             Console.WriteLine($"Damage: {player.Damage}");
             Console.WriteLine($"Healed total: {player.Healing}");
             Console.WriteLine($"Gold Delta: {player.GoldDelta}");
             Console.WriteLine($"XP Delta: {player.XpDelta}");
             Console.WriteLine($"Buybacks: {player.Buybacks > 0}");
-            Console.WriteLine("Abilities: ");
             foreach (var item in player.AbilityUses)
             {
                 if (abilities.TryGetValue(item.Key, out var ability))
                 {
-                    Console.WriteLine($"Abilities used: {ability.DisplayName} — {item.Value}");
+                    Console.WriteLine($"Abilities used: {item.Key} — {item.Value}");
                 }
             }
 
@@ -591,7 +358,7 @@ static async Task PrintTeamFights(Match match)
             Console.WriteLine("Killed");
             foreach (var killed in player.Killed)
             {
-                Console.WriteLine(namesDictionary[killed.Key].LocalizedName + " : " + killed.Value);
+                Console.WriteLine(namesDictionary[killed.Key].Id + " : " + killed.Value);
             }
 
             Console.WriteLine($"Deaths POS: ");
