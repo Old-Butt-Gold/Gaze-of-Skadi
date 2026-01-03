@@ -5,6 +5,7 @@ using GoS.Application.Features.Matches.Queries.GetMatchActionsById;
 using GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 using GoS.Application.Features.Matches.Queries.GetMatchCastsById;
 using GoS.Application.Features.Matches.Queries.GetMatchChatById;
+using GoS.Application.Features.Matches.Queries.GetMatchCosmeticsById;
 using GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 using GoS.Application.Features.Matches.Queries.GetMatchEarningsById;
 using GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
@@ -112,6 +113,12 @@ public sealed class MatchesController : ApiControllerBase
     [ProducesResponseType(typeof(MatchJournalDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchJournalById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchJournalByIdQuery(matchId));
+    
+    [HttpGet("{matchId:long}/cosmetics")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerCosmeticsDto>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchCosmeticsById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchCosmeticsByIdQuery(matchId));
 
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]

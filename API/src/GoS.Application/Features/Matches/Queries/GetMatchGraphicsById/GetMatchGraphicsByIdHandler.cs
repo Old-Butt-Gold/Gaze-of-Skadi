@@ -54,8 +54,6 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             });
         }
 
-        
-        // TODO tormentor kills
         var roshanKills = match.Objectives
             .Where(o => o is { Type: ObjectiveType.ChatMessageRoshanKill, Time: not null });
 

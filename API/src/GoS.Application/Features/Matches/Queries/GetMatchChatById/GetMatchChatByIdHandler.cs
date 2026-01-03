@@ -60,8 +60,6 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
                         }
                     };
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
     }

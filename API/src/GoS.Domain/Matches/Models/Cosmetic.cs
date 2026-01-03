@@ -13,7 +13,6 @@ public class Cosmetic
 	[JsonPropertyName("creation_date")]
 	public DateTimeOffset? CreationDate { get; init; }
 
-    // TODO https://cdn.cloudflare.steamstatic.com/apps/570/
 	/// <summary>
 	/// Gets the image path
 	/// </summary>
@@ -32,7 +31,6 @@ public class Cosmetic
 	[JsonPropertyName("item_rarity")]
 	public string ItemRarity { get; init; } = string.Empty;
 
-    // TODO https://steamcommunity.com/market/listings/570/
 	/// <summary>
 	/// Gets the name
 	/// </summary>
