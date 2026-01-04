@@ -411,7 +411,7 @@ public class MatchPlayer
 	/// Gets a dictionary containing information on the items the player purchased (item, times purchased)
 	/// </summary>
 	[JsonPropertyName("purchase")]
-	public Dictionary<string, long?> Purchase { get; init; } = new();
+	public Dictionary<string, int> Purchase { get; init; } = new();
 
 	/// <summary>
 	/// Gets a list containing information on when items were purchased

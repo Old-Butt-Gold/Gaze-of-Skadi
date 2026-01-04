@@ -16,6 +16,7 @@ using GoS.Application.Features.Matches.Queries.GetMatchObjectivesById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
 using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
+using GoS.Application.Features.Matches.Queries.GetMatchVisionById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
 using GoS.Domain.Matches.Models;
@@ -119,6 +120,12 @@ public sealed class MatchesController : ApiControllerBase
     [ProducesResponseType(typeof(IEnumerable<PlayerCosmeticsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCosmeticsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchCosmeticsByIdQuery(matchId));
+    
+    [HttpGet("{matchId:long}/vision")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(MatchVisionDto), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchVisionById([FromRoute] long matchId)
+        => HandleQueryAsync(new GetMatchVisionByIdQuery(matchId));
 
     [HttpGet("public")]
     [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]

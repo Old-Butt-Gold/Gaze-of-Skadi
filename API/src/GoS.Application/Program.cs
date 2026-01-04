@@ -122,7 +122,7 @@ static async Task PrintOverviewInfo(Match match)
     {
         if (player.IsRadiant == BooleanState.True)
         {
-            Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
+            Console.WriteLine($"Hero: {player.HeroId.ToString()}");
             Console.WriteLine($"Player name: {(!string.IsNullOrEmpty(player.Personaname) ? player.Personaname : "Anonimous")}");
             Console.WriteLine($"Lane: {player.LaneRole}");
             Console.WriteLine($"Rank: {(player.RankTier is not null ? player.RankTier : "N/A")}");
@@ -173,116 +173,5 @@ static async Task PrintOverviewInfo(Match match)
         time++;
         Console.WriteLine();
     }
-}
-
-static async Task PrintWards(Match match)
-{
-    var openDota = new OpenDotaApi();
-    var heroes = await openDota.Resource.GetHeroInfosAsync();
-
-    var visibilityNames = GetVisibilityNames();
-
-    foreach (var player in match.Players)
-    {
-        Console.WriteLine($"Hero: {heroes[player.HeroId.ToString()].LocalizedName}");
-
-        Console.WriteLine("Purchased: ");
-        foreach (var item in player.Purchase.Where(x => visibilityNames.Contains(x.Key)))
-        {
-            Console.WriteLine(item.Key + " : " + item.Value);
-        }
-
-        Console.WriteLine("Used: ");
-        foreach (var item in player.ItemUses.Where(x => visibilityNames.Contains(x.Key)))
-        {
-            Console.WriteLine(item.Key + " : " + item.Value);
-        }
-
-        Console.WriteLine("--------------------------------------------");
-    }
-
-    var groups = match.Players
-        .SelectMany(p => p.ObsLog
-            .Concat(p.ObsLeftLog)
-            .Concat(p.SenLog)
-            .Concat(p.SenLeftLog)
-            .Select(w => new { Player = p, Log = w })
-        ) // allWards
-        .GroupBy(x => x.Log.Ehandle)
-        .Select(g => new
-        {
-            Ehandle = g.Key,
-            Entries = g.OrderBy(e => e.Log.Time).ToList(),
-            FirstTime = g.Min(e => e.Log.Time)
-        })
-        .OrderBy(g => g.FirstTime)
-        .ToList();
-
-    Console.WriteLine("Type – Owner – Placement Start – Placement End – Duration – Destroyed by");
-
-    foreach (var g in groups)
-    {
-        var entries = g.Entries;
-
-        var placementEntry = entries.First(e => e.Log.Type is LogType.ObsLog or LogType.SenLog);
-        var leftEntry = entries.FirstOrDefault(e => e.Log.Type is LogType.ObsLeftLog or LogType.SenLeftLog);
-
-        var typeStr = placementEntry.Log.Type == LogType.SenLog
-            ? "Sentry"
-            : "Observer";
-
-        // Владелец (имя героя если есть)
-        var owner = "Unknown";
-        var ownerPlayer = placementEntry.Player;
-
-        var heroKey = ownerPlayer.HeroId.ToString();
-        if (heroes != null && heroes.TryGetValue(heroKey, out var heroInfo) && !string.IsNullOrWhiteSpace(heroInfo.LocalizedName))
-            owner = heroInfo.LocalizedName;
-
-        string placementLocation = $"({placementEntry.Log.X:F0}, {placementEntry.Log.Y:F0})";
-
-        string startTimeStr = GetTime(placementEntry.Log.Time).ToString();
-        string endTimeStr = leftEntry != null ? GetTime(leftEntry.Log.Time).ToString() : string.Empty;
-
-        string durationStr;
-        if (leftEntry != null)
-        {
-            var seconds = leftEntry.Log.Time - placementEntry.Log.Time;
-            if (seconds < 0) seconds = 0;
-            durationStr = TimeSpan.FromSeconds(seconds).ToString();
-        }
-        else
-        {
-            var lastRecorded = match.Duration;
-            var seconds = lastRecorded - placementEntry.Log.Time;
-            if (seconds < 0) seconds = 0;
-            durationStr = $"{TimeSpan.FromSeconds(seconds)} (recorded)";
-        }
-
-        var destroyedBy = "N/A";
-        if (leftEntry != null)
-        {
-            var attacker = leftEntry.Log.AttackerName;
-            if (!string.IsNullOrWhiteSpace(attacker))
-                destroyedBy = attacker;
-            else if (leftEntry.Log.EntityLeft == BooleanState.True)
-                destroyedBy = "Expired / left";
-        }
-
-        Console.WriteLine($"{typeStr} – {owner} – {startTimeStr} – {endTimeStr} – {durationStr} – {destroyedBy} (loc: {placementLocation})");
-    }
-}
-
-static HashSet<string> GetVisibilityNames()
-{
-    return ["ward_sentry", "ward_observer", "dust", "gem", "smoke_of_deceit"];
-}
-
-static TimeSpan GetTime(long time) => TimeSpan.FromSeconds(time);
-
-static DateTime GetTimeFromUnix(long time)
-{
-    var dto = DateTimeOffset.FromUnixTimeSeconds(time);
-    return dto.DateTime;
 }
 */
