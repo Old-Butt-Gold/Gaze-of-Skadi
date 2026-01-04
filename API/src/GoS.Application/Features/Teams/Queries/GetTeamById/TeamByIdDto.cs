@@ -9,5 +9,6 @@ public class TeamByIdDto
     public long LastMatchTime { get; init; }
     public string? Name { get; init; }
     public string? Tag { get; init; }
+    public Uri? LogoUrl { get; init; }
 }
 

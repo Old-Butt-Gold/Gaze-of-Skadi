@@ -1,14 +1,18 @@
 ﻿using AutoMapper;
+using GoS.Application.Abstractions;
 using GoS.Application.Dto;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Domain.Matches.Models;
+using GoS.Domain.Resources.Models.ItemColors;
+using GoS.Domain.Resources.Models.Items;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchItemsById;
 
-internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper)
+internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper, IResourceManager manager)
     : IRequestHandler<GetMatchItemsByIdQuery, IEnumerable<PlayerItemsDto>?>
 {
+    private Dictionary<string, Item> _items = [];
     public async Task<IEnumerable<PlayerItemsDto>?> Handle(GetMatchItemsByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
@@ -18,6 +22,8 @@ internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper)
             return null;
         }
 
+        _items = (await manager.GetItemsAsync())!;
+
         return match.Players
             .Select(player => new PlayerItemsDto { 
                 PlayerInfo = mapper.Map<PlayerInfoDto>(player), 
@@ -25,6 +31,11 @@ internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper)
             .ToList();
     }
 
-    private static List<ItemsDataDto> GetItemsForPlayer(MatchPlayer player) 
-        => player.PurchaseLog.Select(it => new ItemsDataDto { ItemKey = it.Key, ItemBuyTime = it.Time, }).ToList();
+    private List<ItemsDataDto> GetItemsForPlayer(MatchPlayer player) =>
+        player.PurchaseLog.Select(it => new ItemsDataDto
+        {
+            ItemKey = it.Key,
+            ItemBuyTime = it.Time,
+            Consumable = _items[it.Key].Quality is not null && _items[it.Key].Quality == ItemType.Consumable,
+        }).ToList();
 }

@@ -120,7 +120,7 @@ internal sealed class GetMatchDamageByIdHandler(
                     SourceType = DetermineDamageSourceType(inflictor.Key),
                     Breakdown = validBreakdown
                 };
-            });
+            }).ToList();
     }
 
     private IEnumerable<DamageSummaryDto> MapDamageTaken(IDictionary<string, int>? damageTaken)
@@ -135,7 +135,7 @@ internal sealed class GetMatchDamageByIdHandler(
                 InflictorKey = kvp.Key,
                 TotalDamage = kvp.Value,
                 SourceType = mapper.Map<BaseEnumDto<DamageSourceType>>(DetermineDamageSourceType(kvp.Key)),
-            });
+            }).ToList();
     }
     
     private DamageSourceType DetermineDamageSourceType(string key)

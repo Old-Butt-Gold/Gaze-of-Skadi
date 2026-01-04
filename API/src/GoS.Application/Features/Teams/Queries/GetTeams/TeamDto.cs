@@ -9,6 +9,7 @@ public class TeamDto
     public int Wins { get; init; }
     public double Rating { get; init; }
     public int TeamId { get; init; }
+    public Uri? LogoUrl { get; init; }
 }
 
 

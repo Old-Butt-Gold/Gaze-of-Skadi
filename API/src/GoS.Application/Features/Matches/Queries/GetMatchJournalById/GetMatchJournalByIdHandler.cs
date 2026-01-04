@@ -116,7 +116,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                             Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
                             Player = mapper.Map<PlayerInfoDto>(players[playerIndex]),
                             Target = null,
-                            TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(players[playerIndex].IsRadiant == BooleanState.True ? TeamEnum.Dire : TeamEnum.Radiant),
+                            TargetTeam = null,
                         });
                     }
                 }
