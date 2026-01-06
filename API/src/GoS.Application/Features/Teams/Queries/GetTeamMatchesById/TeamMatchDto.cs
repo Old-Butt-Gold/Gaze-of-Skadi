@@ -12,6 +12,10 @@ public class TeamMatchDto
     public required BaseEnumDto<BooleanState> Radiant { get; init; }
     public long Duration { get; init; }
     public long StartTime { get; init; }
+    public long LeagueId { get; init; }
+    public string? LeagueName { get; init; }
+    public long OpposingTeamId { get; init; }
+    public string? OpposingTeamName { get; init; }
     public Uri? OpposingTeamLogo { get; init; }
 }
 

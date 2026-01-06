@@ -19,7 +19,6 @@ using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 using GoS.Application.Features.Matches.Queries.GetMatchVisionById;
 using GoS.Application.Features.Matches.Queries.GetProMatches;
 using GoS.Application.Features.Matches.Queries.GetPublicMatches;
-using GoS.Domain.Matches.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +32,7 @@ public sealed class MatchesController : ApiControllerBase
 
     [HttpGet("{matchId:long}/overview")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Match), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(MatchOverviewDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchOverviewById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchOverviewByIdQuery(matchId));
     
