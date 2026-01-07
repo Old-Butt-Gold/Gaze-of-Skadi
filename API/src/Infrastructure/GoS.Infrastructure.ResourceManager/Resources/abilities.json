@@ -8800,7 +8800,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/antimage_persectur.png"
   },
   "antimage_blink": {
     "dname": "Blink",
@@ -9477,7 +9477,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/axe_coat_of_blood.png"
   },
   "bane_enfeeble": {
     "dname": "Enfeeble",
@@ -9810,7 +9810,7 @@
     "behavior": "Passive",
     "desc": "Bane's attribute gains are always evenly distributed across all three attributes (items that grant +3 Strength will now grant +1 Str/Agi/Int).",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/bane_ichor_of_nyctasha.png"
   },
   "bloodseeker_bloodrage": {
     "dname": "Bloodrage",
@@ -10260,7 +10260,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/bloodseeker_sanguivore.png"
   },
   "crystal_maiden_let_it_go": {
     "behavior": "Point Target",
@@ -10745,8 +10745,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
-
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/crystal_maiden_blueheart_floe.png"
   },
   "drow_ranger_frost_arrows": {
     "dname": "Frost Arrows",
@@ -11067,7 +11066,7 @@
       }
     ],
     "lore": "Traxex' time spent alone in the forests of her Drow home has allowed her to teach other archers how to improve their bow skills.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/drow_ranger_trueshot.png"
   },
   "drow_ranger_marksmanship": {
     "dname": "Marksmanship",
@@ -11595,7 +11594,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/earthshaker_spirit_cairn.png"
   },
   "earthshaker_slugger": {
     "dname": "Slugger",
@@ -11670,7 +11669,7 @@
         "value": "7%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/earthshaker_slugger.png"
   },
   "special_bonus_unique_earthshaker": {
     "dname": "-1.5s Enchant Totem Cooldown"
@@ -11995,7 +11994,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/juggernaut_duelist.png"
   },
   "juggernaut_bladeform": {
     "dname": "Bladeform",
@@ -12516,7 +12515,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/mirana_selemenes_faithful.png"
   },
   "special_bonus_unique_mirana_1": {
     "dname": "+90 Leap Attack Speed"
@@ -12853,7 +12852,7 @@
       }
     ],
     "lore": "Harvested souls swirl in and out of the Abysm, empowering the Shadow Fiend to increase the size of his collection.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/nevermore_necromastery.png"
   },
   "nevermore_dark_lord": {
     "dname": "Presence of the Dark Lord",
@@ -13497,7 +13496,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/morphling_accumulation.png"
   },
   "phantom_lancer_spirit_lance": {
     "dname": "Spirit Lance",
@@ -13849,7 +13848,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/phantom_lancer_illusory_armaments.png"
   },
   "puck_illusory_orb": {
     "dname": "Illusory Orb",
@@ -14015,7 +14014,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/puck_puckish.png"
   },
   "puck_waning_rift": {
     "dname": "Waning Rift",
@@ -14538,7 +14537,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/pudge_innate_graft_flesh.png"
   },
   "razor_plasma_field": {
     "dname": "Plasma Field",
@@ -14827,7 +14826,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/razor_unstable_current.png"
   },
   "razor_eye_of_the_storm": {
     "dname": "Eye of the Storm",
@@ -15116,7 +15115,7 @@
       }
     ],
     "lore": "An injection from Crixalis makes one brittle and as dry as the arid wastes, subject to implosive demise.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/sandking_caustic_finale.png"
   },
   "sandking_epicenter": {
     "dname": "Epicenter",
@@ -15662,7 +15661,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/storm_spirit_galvanized.png"
   },
   "sven_storm_bolt": {
     "dname": "Storm Hammer",
@@ -15925,7 +15924,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/sven_vanquisher.png"
   },
   "sven_wrath_of_god": {
     "dname": "Wrath of God",
@@ -16185,7 +16184,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tiny_craggy_exterior.png"
   },
   "tiny_tree_grab": {
     "dname": "Tree Grab",
@@ -16483,7 +16482,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tiny_rocksteady.png"
   },
   "tiny_insurmountable": {
     "dname": "Insurmountable",
@@ -16506,7 +16505,7 @@
         "value": "10%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tiny_insurmountable.png"
   },
   "vengefulspirit_magic_missile": {
     "dname": "Magic Missile",
@@ -16805,7 +16804,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/vengefulspirit_retribution.png"
   },
   "windrunner_gale_force": {
     "dname": "Gale Force",
@@ -17221,7 +17220,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/windrunner_easy_breezy.png"
   },
   "zuus_heavenly_jump": {
     "dname": "Heavenly Jump",
@@ -17585,7 +17584,7 @@
       }
     ],
     "lore": "The air crackles with static when the Thundergod walks the world.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/zuus_static_field.png"
   },
   "zuus_thundergods_wrath": {
     "dname": "Thundergod's Wrath",
@@ -18194,7 +18193,7 @@
       }
     ],
     "cd": "60",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/kunkka_admirals_rum.png"
   },
   "lina_dragon_slave": {
     "dname": "Dragon Slave",
@@ -18606,7 +18605,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lina_combustion.png"
   },
   "special_bonus_unique_lina_1": {
     "dname": "-3s Dragon Slave Cooldown"
@@ -18833,7 +18832,7 @@
       "40",
       "30"
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lich_death_charge.png"
   },
   "lich_sinister_gaze": {
     "dname": "Sinister Gaze",
@@ -19631,7 +19630,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lion_to_hell_and_back.png"
   },
   "shadow_shaman_ether_shock": {
     "dname": "Ether Shock",
@@ -20054,7 +20053,7 @@
     ],
     "lore": "Rhasta had to learn early on how to stay one step ahead of those who (rightfully or wrongfully) wished him harm.",
     "cd": "120",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/shadow_shaman_fowl_play.png"
   },
   "shadow_shaman_voodoo_hands": {
     "dname": "Chicken Fingers",
@@ -20222,7 +20221,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/slardar_seaborn_sentinel.png"
   },
   "slardar_sprint": {
     "dname": "Guardian Sprint",
@@ -20925,7 +20924,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tidehunter_blubber.png"
   },
   "witch_doctor_paralyzing_cask": {
     "dname": "Paralyzing Cask",
@@ -21311,7 +21310,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/witch_doctor_gris_gris.png"
   },
   "riki_poison_dart": {
     "behavior": [
@@ -21573,7 +21572,7 @@
         "value": "0"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/riki_innate_backstab.png"
   },
   "riki_permanent_invisibility": {
     "behavior": "Passive",
@@ -22193,7 +22192,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/enigma_gravity_well.png"
   },
   "enigma_splitting_image": {
     "dname": "Splitting Image",
@@ -22455,7 +22454,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tinker_eureka.png"
   },
   "tinker_innate_keen_teleport_gold_on_death": {
     "behavior": "Passive",
@@ -23285,7 +23284,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/sniper_keen_scope.png"
   },
   "necrolyte_death_seeker": {
     "dname": "Death Seeker",
@@ -23492,7 +23491,7 @@
         "value": "8"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/necrolyte_sadist.png"
   },
   "necrolyte_ghost_shroud": {
     "dname": "Ghost Shroud",
@@ -24310,7 +24309,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/warlock_eldritch_summoning.png"
   },
   "warlock_black_grimoire": {
     "dname": "Black Grimoire",
@@ -25119,7 +25118,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/beastmaster_rugged.png"
   },
   "special_bonus_unique_beastmaster_5": {
     "dname": "+15 Movespeed to Beastmaster and his summons"
@@ -25466,7 +25465,7 @@
         "value": "14%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/queenofpain_succubus.png"
   },
   "queenofpain_bondage": {
     "dname": "Bondage",
@@ -25985,7 +25984,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/venomancer_sepsis.png"
   },
   "faceless_void_time_walk": {
     "dname": "Time Walk",
@@ -26073,7 +26072,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/faceless_void_distortion_field.png"
   },
   "faceless_void_backtrack": {
     "behavior": "Passive",
@@ -26794,7 +26793,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/skeleton_king_vampiric_spirit.png"
   },
   "death_prophet_carrion_swarm": {
     "dname": "Crypt Swarm",
@@ -26978,7 +26977,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/death_prophet_witchcraft.png"
   },
   "death_prophet_spirit_siphon": {
     "dname": "Spirit Siphon",
@@ -27216,7 +27215,7 @@
         "value": "1"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/death_prophet_mourning_ritual.png"
   },
   "phantom_assassin_fan_of_knives": {
     "dname": "Fan of Knives",
@@ -27542,7 +27541,7 @@
     "lore": "Meditation allows a Veiled Sister to carefully anticipate her opponents in combat.",
     "mc": "50",
     "cd": "45",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/phantom_assassin_blur.png"
   },
   "phantom_assassin_coup_de_grace": {
     "dname": "Coup de Grace",
@@ -27921,7 +27920,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/pugna_oblivion_savant.png"
   },
   "templar_assassin_refraction": {
     "dname": "Refraction",
@@ -28203,7 +28202,7 @@
     "dispellable": "No",
     "desc": "Templar Assassin and her teammates can see Roshan's respawn timer.",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/templar_assassin_third_eye.png"
   },
   "templar_assassin_hidden_gates": {
     "dname": "Hidden Gates",
@@ -28242,7 +28241,7 @@
       }
     ],
     "mc": "25",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/templar_assassin_hidden_gates.png"
   },
   "templar_assassin_trap": {
     "dname": "Trap",
@@ -28556,7 +28555,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/viper_predator.png"
   },
   "viper_viper_strike": {
     "dname": "Viper Strike",
@@ -28954,7 +28953,7 @@
       }
     ],
     "lore": "The Goddess of the Moon smiles upon her kin.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/luna_lunar_blessing.png"
   },
   "luna_lunar_grace": {
     "behavior": [
@@ -29361,7 +29360,7 @@
         "value": "1.5"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dragon_knight_inherited_vigor.png"
   },
   "dragon_knight_elder_dragon_form": {
     "dname": "Elder Dragon Form",
@@ -30111,7 +30110,7 @@
       }
     ],
     "lore": "His ethereal journey into the Nothl realm has allowed Dazzle to mend together the powers of light and dark, creating shifting waves of enchantments.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dazzle_innate_weave.png"
   },
   "dazzle_nothl_boon": {
     "dname": "Nothl Boon",
@@ -30664,7 +30663,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/rattletrap_armor_power.png"
   },
   "leshrac_split_earth": {
     "dname": "Split Earth",
@@ -31037,7 +31036,7 @@
         "value": "0.7"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/leshrac_defilement.png"
   },
   "furion_sprout": {
     "dname": "Sprout",
@@ -31709,7 +31708,7 @@
         "value": "1"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/furion_spirit_of_the_forest.png"
   },
   "furion_natures_profit": {
     "dname": "Nature's Profit",
@@ -31993,7 +31992,7 @@
       }
     ],
     "lore": "After escaping from his cell in Devarque, N'aix subsisted on flesh and bones of those unfortunate to cross his path.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/life_stealer_feast.png"
   },
   "life_stealer_open_wounds": {
     "dname": "Open Wounds",
@@ -32791,7 +32790,7 @@
     "dmg_type": [],
     "desc": "Dark Seer's Intelligence cannot be lower than the average of his Strength and Agility.",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dark_seer_mental_fortitude.png"
   },
   "dark_seer_aggrandize": {
     "dname": "Aggrandize",
@@ -32813,7 +32812,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dark_seer_aggrandize.png"
   },
   "clinkz_strafe": {
     "dname": "Strafe",
@@ -33320,7 +33319,7 @@
     ],
     "mc": "0",
     "cd": "0",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/clinkz_bone_and_arrow.png"
   },
   "clinkz_tar_bomb": {
     "dname": "Tar Bomb",
@@ -33455,7 +33454,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/clinkz_infernal_shred.png"
   },
   "omniknight_hammer_of_purity": {
     "dname": "Hammer of Purity",
@@ -33769,7 +33768,7 @@
       }
     ],
     "lore": "The holy embodiment of Purist Thunderwrath is enough to weaken those of lesser faith.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/omniknight_degen_aura.png"
   },
   "omniknight_healing_hammer": {
     "dname": "Healing Hammer",
@@ -34446,7 +34445,7 @@
         "value": "4%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/enchantress_rabblerouser.png"
   },
   "huskar_inner_vitality": {
     "behavior": "Unit Target",
@@ -34763,7 +34762,7 @@
     "dmg_type": [],
     "desc": "Huskar does not have mana. Mana costs of items are converted into health costs.Huskar's Health Costs are Magical Damage and can be reduced by Magic Resist.",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/huskar_blood_magic.png"
   },
   "huskar_life_break": {
     "dname": "Life Break",
@@ -35181,7 +35180,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/night_stalker_heart_of_darkness.png"
   },
   "night_stalker_night_reign": {
     "dname": "Night Reign",
@@ -35499,7 +35498,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/broodmother_spiders_milk.png"
   },
   "broodmother_silken_bola": {
     "behavior": "Unit Target",
@@ -36150,7 +36149,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/bounty_hunter_cutpurse.png"
   },
   "bounty_hunter_big_game_hunter": {
     "dname": "Big Game Hunter",
@@ -36165,7 +36164,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/bounty_hunter_big_game_hunter.png"
   },
   "weaver_the_swarm": {
     "dname": "The Swarm",
@@ -36474,7 +36473,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/weaver_rewoven.png"
   },
   "jakiro_dual_breath": {
     "dname": "Dual Breath",
@@ -36996,7 +36995,7 @@
         "value": "50%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/jakiro_double_trouble.png"
   },
   "batrider_sticky_napalm": {
     "dname": "Sticky Napalm",
@@ -37151,7 +37150,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/batrider_smoldering_resin.png"
   },
   "batrider_stoked": {
     "behavior": [
@@ -37981,7 +37980,7 @@
     "lore": "Chen's true strength is knowing which forces to call upon in battle.",
     "mc": "50",
     "cd": "30",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/chen_summon_convert.png"
   },
   "chen_innate_check_for_team_change": {
     "behavior": "Hidden",
@@ -38125,7 +38124,7 @@
       }
     ],
     "lore": "Often times, warriors find themselves alone with a vision of Mercurial - the fated question is if it is the true Spectre.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/spectre_desolate.png"
   },
   "spectre_dispersion": {
     "dname": "Dispersion",
@@ -38503,7 +38502,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/spectre_spectral.png"
   },
   "doom_bringer_devour": {
     "dname": "Devour",
@@ -38594,7 +38593,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/doom_bringer_lvl_pain.png"
   },
   "doom_bringer_scorched_earth": {
     "dname": "Scorched Earth",
@@ -39291,7 +39290,7 @@
         "value": "0"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/ancient_apparition_death_rime.png"
   },
   "ancient_apparition_ice_blast_release": {
     "dname": "Release",
@@ -39637,7 +39636,7 @@
         "value": "1.25%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/ursa_maul.png"
   },
   "ursa_bear_down": {
     "dname": "Bear Down",
@@ -40113,7 +40112,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/spirit_breaker_herd_mentality.png"
   },
   "gyrocopter_rocket_barrage": {
     "dname": "Rocket Barrage",
@@ -40493,7 +40492,7 @@
     "behavior": "Passive",
     "desc": "Gyrocopter can disassemble most items.",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/gyrocopter_chop_shop.png"
   },
   "alchemist_berserk_potion": {
     "dname": "Berserk Potion",
@@ -40871,7 +40870,7 @@
       }
     ],
     "lore": "While it is not a mountain, Razzil has mastered the conversion of smaller compounds to line his pockets.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/alchemist_goblins_greed.png"
   },
   "alchemist_chemical_rage": {
     "dname": "Chemical Rage",
@@ -41233,7 +41232,7 @@
     "lore": "So begins a new age of knowledge.",
     "mc": "0",
     "cd": "7",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/invoker_invoke.png"
   },
   "invoker_attribute_bonus": {
     "dname": "Attribute Bonus",
@@ -42434,7 +42433,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/invoker_mastermind.png"
   },
   "invoker_cold_snap_ad": {
     "dname": "Cold Snap (AD)",
@@ -43571,7 +43570,7 @@
         "value": "1"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/silencer_brain_drain.png"
   },
   "silencer_oppressive_silence": {
     "dname": "Suffer In Silence",
@@ -43669,7 +43668,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/obsidian_destroyer_ominous_discernment.png"
   },
   "obsidian_destroyer_astral_imprisonment": {
     "dname": "Astral Imprisonment",
@@ -44453,7 +44452,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lycan_apex_predator.png"
   },
   "brewmaster_thunder_clap": {
     "dname": "Thunder Clap",
@@ -44859,7 +44858,7 @@
     ],
     "mc": "0",
     "cd": "0",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/brewmaster_liquid_courage.png"
   },
   "brewmaster_primal_split": {
     "dname": "Primal Split",
@@ -46027,7 +46026,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/shadow_demon_menace.png"
   },
   "lone_druid_gift_bearer": {
     "dname": "Gift Bearer",
@@ -46042,7 +46041,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lone_druid_gift_bearer.png"
   },
   "lone_druid_bear_necessities": {
     "dname": "Bear Necessities",
@@ -46169,7 +46168,7 @@
     "lore": "Sylla's lifelong companion is symbiotic with his spirit and heart, coming to aid him in any time of need.",
     "mc": "75",
     "cd": "120",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lone_druid_spirit_bear.png"
   },
   "lone_druid_rabid": {
     "behavior": [
@@ -46836,7 +46835,7 @@
         "value": "30%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/lone_druid_spirit_bear_demolish.png"
   },
   "special_bonus_unique_lone_druid_2": {
     "dname": "-25s Summon Spirit Bear Cooldown"
@@ -47216,7 +47215,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/chaos_knight_reins_of_chaos.png"
   },
   "chaos_knight_fundamental_forging": {
     "dname": "Fundamental Forging",
@@ -47703,7 +47702,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/meepo_sticky_fingers.png"
   },
   "treant_natures_guise": {
     "dname": "Nature's Guise",
@@ -47764,7 +47763,7 @@
     ],
     "lore": "The Protectors don't often come into vision; their natural state being nestled within their leafy brethren.",
     "cd": "50",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/treant_natures_guise.png"
   },
   "treant_innate_attack_damage": {
     "behavior": [
@@ -48253,7 +48252,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/ogre_magi_dumb_luck.png"
   },
   "ogre_magi_fireblast": {
     "dname": "Fireblast",
@@ -49243,7 +49242,7 @@
     ],
     "lore": "Only when the Dirge of the Dead God ceases will this soldier's march finally end.",
     "cd": "480",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/undying_ceaseless_dirge.png"
   },
   "special_bonus_unique_undying_3": {
     "dname": "Tombstone On Death"
@@ -49563,7 +49562,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/rubick_might_and_magus.png"
   },
   "rubick_spell_steal": {
     "dname": "Spell Steal",
@@ -50073,7 +50072,7 @@
     ],
     "lore": "Safe harbor found inside the storm.",
     "cd": "5",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/disruptor_electromagnetic_repulsion.png"
   },
   "special_bonus_unique_disruptor": {
     "dname": "+60 Static Storm Max DPS"
@@ -50502,7 +50501,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/nyx_assassin_nyxth_sense.png"
   },
   "nyx_assassin_innate_mana_burn": {
     "behavior": [
@@ -50813,7 +50812,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/naga_siren_eelskin.png"
   },
   "naga_siren_crit": {
     "behavior": [
@@ -51620,7 +51619,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/keeper_of_the_light_mana_magnifier.png"
   },
   "keeper_of_the_light_special_reserve": {
     "dname": "Special Reserve",
@@ -51635,7 +51634,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/keeper_of_the_light_special_reserve.png"
   },
   "wisp_tether": {
     "dname": "Tether",
@@ -52032,7 +52031,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/wisp_sight_seer.png"
   },
   "wisp_essence_conduction": {
     "dname": "Wellspring",
@@ -52048,7 +52047,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/wisp_essence_conduction.png"
   },
   "visage_grave_chill": {
     "dname": "Grave Chill",
@@ -52642,7 +52641,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/visage_lurker.png"
   },
   "visage_summon_familiars_recall": {
     "dname": "Recall Familiar",
@@ -52936,7 +52935,7 @@
       }
     ],
     "lore": "With each strike at his adversaries, Slark's knowledge of their weaknesses improves.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/slark_essence_shift.png"
   },
   "slark_shadow_dance": {
     "dname": "Shadow Dance",
@@ -53368,7 +53367,7 @@
       }
     ],
     "lore": "While Medusa was not gifted with eternal life upon birth, her curse bestowed her with impressive defensive powers.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/medusa_mana_shield.png"
   },
   "medusa_stone_gaze": {
     "dname": "Stone Gaze",
@@ -53790,7 +53789,7 @@
       }
     ],
     "lore": "Jah'rakal has a variety of ways to get under an enemy's skin.",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/troll_warlord_switch_stance.png"
   },
   "troll_warlord_innate_masterful": {
     "behavior": "Passive",
@@ -54520,7 +54519,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/centaur_horsepower.png"
   },
   "centaur_mount": {
     "dname": "Hitch A Ride",
@@ -54618,7 +54617,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/centaur_rawhide.png"
   },
   "magnataur_horn_toss": {
     "dname": "Horn Toss",
@@ -55215,7 +55214,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/magnataur_solid_core.png"
   },
   "magnus_strength_of_joelrak": {
     "behavior": "Passive",
@@ -55872,7 +55871,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/shredder_exposure_therapy.png"
   },
   "bristleback_hairball": {
     "dname": "Hairball",
@@ -56244,7 +56243,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/bristleback_prickly.png"
   },
   "bristleback_warpath": {
     "dname": "Warpath",
@@ -56765,7 +56764,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/tusk_bitter_chill.png"
   },
   "tusk_walrus_punch": {
     "dname": "Walrus PUNCH!",
@@ -57255,7 +57254,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/skywrath_mage_ruin_and_restoration.png"
   },
   "abaddon_death_coil": {
     "dname": "Mist Coil",
@@ -57481,7 +57480,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/abaddon_withering_mist.png"
   },
   "abaddon_frostmourne": {
     "dname": "Curse of Avernus",
@@ -58186,7 +58185,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/elder_titan_tip_the_scales.png"
   },
   "legion_commander_overwhelming_odds": {
     "dname": "Overwhelming Odds",
@@ -58459,7 +58458,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/legion_commander_outfight_them.png"
   },
   "ember_spirit_searing_chains": {
     "dname": "Searing Chains",
@@ -58757,7 +58756,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/ember_spirit_immolation.png"
   },
   "ember_spirit_fire_remnant": {
     "dname": "Fire Remnant",
@@ -59313,7 +59312,7 @@
     "lore": "Earth Spirit calls forth a remnant of his stone army, long buried with him in the dark embrace of the Earth.",
     "mc": "0",
     "cd": "0",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/earth_spirit_stone_caller.png"
   },
   "earth_spirit_petrify": {
     "dname": "Enchant Remnant",
@@ -59957,7 +59956,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/terrorblade_dark_unity.png"
   },
   "phoenix_icarus_dive": {
     "dname": "Icarus Dive",
@@ -60504,7 +60503,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/phoenix_blinding_sun.png"
   },
   "special_bonus_unique_phoenix_1": {
     "dname": "+2 Supernova Hit Count"
@@ -60907,7 +60906,7 @@
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/oracle_prognosticate.png"
   },
   "techies_land_mines": {
     "dname": "Proximity Mines",
@@ -61569,7 +61568,7 @@
     "lore": "Watch your step!",
     "mc": "0",
     "cd": "60",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/techies_minefield_sign.png"
   },
   "techies_squees_scope": {
     "dname": "Squee's Scope",
@@ -61987,7 +61986,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/winter_wyvern_eldwurm_scholar.png"
   },
   "special_bonus_unique_winter_wyvern_1": {
     "dname": "+17% Arctic Burn Slow"
@@ -62514,7 +62513,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/arc_warden_runic_infusion.png"
   },
   "special_bonus_unique_arc_warden": {
     "dname": "+50% Spark Wraith Damage"
@@ -62975,7 +62974,7 @@
         "value": "5"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/abyssal_underlord_raid_boss.png"
   },
   "abyssal_underlord_abyssal_horde": {
     "dname": "Abyssal Horde",
@@ -63333,7 +63332,7 @@
       "16",
       "12"
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/monkey_king_mischief.png"
   },
   "monkey_king_untransform": {
     "dname": "Revert Form",
@@ -64195,7 +64194,7 @@
         "value": "-40%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/pangolier_fortune_favors_the_bold.png"
   },
   "pangolier_gyroshell_stop": {
     "dname": "Stop Rolling",
@@ -64815,7 +64814,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dark_willow_pixie_dust.png"
   },
   "grimstroke_dark_artistry": {
     "dname": "Stroke of Fate",
@@ -65433,7 +65432,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/grimstroke_ink_trail.png"
   },
   "mars_spear": {
     "dname": "Spear of Mars",
@@ -65647,7 +65646,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/mars_dauntless.png"
   },
   "mars_bulwark": {
     "dname": "Bulwark",
@@ -66360,7 +66359,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/void_spirit_intrinsic_edge.png"
   },
   "snapfire_scatterblast": {
     "dname": "Scatterblast",
@@ -66948,7 +66947,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/snapfire_buckshot.png"
   },
   "snapfire_lil_shredder": {
     "dname": "Lil' Shredder",
@@ -67715,7 +67714,7 @@
         ]
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/hoodwink_mistwoods_wayfarer.png"
   },
   "dawnbreaker_fire_wreath": {
     "dname": "Starbreaker",
@@ -68250,7 +68249,7 @@
         "value": "20%"
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dawnbreaker_break_of_dawn.png"
   },
   "dawnbreaker_unbreakable": {
     "behavior": "Passive",
@@ -68818,7 +68817,7 @@
     ],
     "lore": "Professional courtesy, from one courier to another.",
     "cd": "240",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/marci_special_delivery.png"
   },
   "special_bonus_unique_marci_grapple_stun_duration": {
     "dname": "+0.75s Rebound Stun Duration"
@@ -69346,7 +69345,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/primal_beast_colossal.png"
   },
   "primal_beast_innate_slow_resistance_per_time": {
     "behavior": "Passive",
@@ -69806,7 +69805,7 @@
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/muerta_supernatural.png"
   },
   "muerta_ofrenda_destroy": {
     "dname": "Destroy Ofrenda",
@@ -70572,7 +70571,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/ringmaster_dark_carnival_souvenirs.png"
   },
   "ringmaster_funhouse_mirror": {
     "dname": "Funhouse Mirror",
@@ -71176,7 +71175,7 @@
     ],
     "lore": "As former followers of the Shodo, the leaders of the Kazurai Order can switch effortlessly between twin disciplines of martial mastery over sai and blade.",
     "cd": "7.75",
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/kez_switch_weapons.png"
   },
   "kez_echo_slash": {
     "dname": "Echo Slash",
@@ -72643,7 +72642,7 @@
         "generated": true
       }
     ],
-    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/innate_icon.png"
+    "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/largo_encore.png"
   },
   "special_bonus_unique_broodmother_web_speed": {
     "dname": "+{s:bonus_bonus_movespeed}% Spin Web Move Speed and Ignore Speed Limit"
