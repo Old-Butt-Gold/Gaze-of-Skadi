@@ -20,10 +20,10 @@ public class HeroInfo
 
     [JsonPropertyName("roles")]
     public IEnumerable<HeroRole> Roles { get; set; } = [];
-    
+
     [JsonPropertyName("lore")]
     public string Lore { get; set; }
-    
+
     [JsonPropertyName("video")]
     public string Video { get; set; }
 
@@ -37,13 +37,13 @@ public class HeroInfo
     public int BaseHealth { get; set; }
 
     [JsonPropertyName("base_health_regen")]
-    public double? BaseHealthRegen { get; set; }
+    public double BaseHealthRegen { get; set; }
 
     [JsonPropertyName("base_mana")]
     public int BaseMana { get; set; }
 
     [JsonPropertyName("base_mana_regen")]
-    public double? BaseManaRegen { get; set; }
+    public double BaseManaRegen { get; set; }
 
     [JsonPropertyName("base_armor")]
     public double BaseArmor { get; set; }
