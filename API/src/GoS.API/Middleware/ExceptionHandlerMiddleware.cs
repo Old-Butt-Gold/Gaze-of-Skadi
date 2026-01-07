@@ -45,15 +45,14 @@ public sealed class ExceptionHandlerMiddleware
         var traceId = Activity.Current?.Id ?? httpContext.TraceIdentifier;
         var userId = httpContext.User.FindFirst(SteamClaimTypes.SteamId32)?.Value ?? "Anonymous";
 
-        const string logMessage = "Exception caught by middleware | Type: {Type} | User: {User} | Path: {Path} | Method: {Method} | Status: {Status} | TraceId: {TraceId}";
 
         if (_env.IsDevelopment())
         {
-            _logger.LogError(ex, logMessage, ex.GetType().Name, userId, httpContext.Request.Path, httpContext.Request.Method, status, traceId);
+            _logger.LogError(ex, "Exception caught by middleware, Message: {Message} | Type: {Type} | User: {User} | Path: {Path} | Method: {Method} | Status: {Status} | TraceId: {TraceId}", ex.Message, ex.GetType().Name, userId, httpContext.Request.Path, httpContext.Request.Method, status, traceId);
         }
         else
         {
-            _logger.LogError("{LogMessage} | Message: {Message}", logMessage, ex.Message);
+            _logger.LogError("Exception caught by middleware | Type: {Type} | User: {User} | Path: {Path} | Method: {Method} | Status: {Status} | TraceId: {TraceId} | Message: {Message}", ex.GetType().Name, userId, httpContext.Request.Path, httpContext.Request.Method, status, traceId, ex.Message);
         }
 
         object problemDetails;
