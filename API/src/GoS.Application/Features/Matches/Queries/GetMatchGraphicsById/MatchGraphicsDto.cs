@@ -1,4 +1,5 @@
 ﻿using GoS.Application.Dto;
+using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Domain.Matches.Enums;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
@@ -24,13 +25,6 @@ public record TeamfightDto
     public required long End { get; init; }
     public required long Deaths { get; init; }
     public required IEnumerable<TeamfightPlayerStateDto> Players { get; init; }
-}
-
-public record TeamAdvantageDto
-{
-    public required int Minute { get; init; }
-    public required int RadiantGoldAdvantage { get; init; }
-    public required int RadiantXpAdvantage { get; init; }
 }
 
 public record MinuteValueDto

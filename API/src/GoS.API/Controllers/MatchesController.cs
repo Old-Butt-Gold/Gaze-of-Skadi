@@ -35,91 +35,91 @@ public sealed class MatchesController : ApiControllerBase
     [ProducesResponseType(typeof(MatchOverviewDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchOverviewById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchOverviewByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/benchmarks")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerBenchmarkDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchBenchmarksById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchBenchmarksByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/performances")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerPerformanceDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchPerformancesById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchPerformancesByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/items")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerItemsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchItemsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchItemsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/lanes")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerLaneDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchLaneById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchLaneByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/earnings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerEarningsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchEarningsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchEarningsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/graphics")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchGraphicsDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchGraphicsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchGraphicsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/damage")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerDamageDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchDamageById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchDamageByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/objectives")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerObjectivesDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchObjectivesById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchObjectivesByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/actions")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerActionsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchActionsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchActionsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/chat")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<ChatMessageDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchChatById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchChatByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/casts")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerCastsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCastsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchCastsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/teamfights")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamfightDetailedDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchTeamfightsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchTeamfightsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/journal")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchJournalDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchJournalById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchJournalByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/cosmetics")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerCosmeticsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCosmeticsById([FromRoute] long matchId)
         => HandleQueryAsync(new GetMatchCosmeticsByIdQuery(matchId));
-    
+
     [HttpGet("{matchId:long}/vision")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchVisionDto), StatusCodes.Status200OK)]

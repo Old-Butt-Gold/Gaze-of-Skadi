@@ -9,17 +9,17 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 
-internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager) 
+internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager)
     : IRequestHandler<GetMatchOverviewByIdQuery, MatchOverviewDto?>
 {
     private Dictionary<string, string> _objectives = [];
     private Dictionary<string, string> _itemIds = [];
-    
+
     public async Task<MatchOverviewDto?> Handle(GetMatchOverviewByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;
-        
+
         _itemIds = (await resourceManager.GetItemIdsAsync())!;
         _objectives = (await resourceManager.GetObjectiveNamesAsync())!;
 
@@ -58,7 +58,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
     private IEnumerable<PickBanDto> MapPicksBans(IEnumerable<PickBan>? picksBans)
     {
         if (picksBans == null) return [];
-        
+
         return picksBans.Select(pb => new PickBanDto
         {
             Order = pb.Order + 1,
@@ -73,10 +73,10 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
 
     private PlayerOverviewDto MapPlayerOverview(MatchPlayer player)
     {
-        var aghanimShardBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.AghanimsShard) 
+        var aghanimShardBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.AghanimsShard)
                                || player.PurchaseLog.Any(x => x.Key == ShardKey);
-        
-        var aghanimBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.UltimateScepter) 
+
+        var aghanimBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.UltimateScepter)
                                || player.PurchaseLog.Any(x => x.Key == AghanimKey);
 
         return new PlayerOverviewDto
@@ -138,18 +138,18 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         foreach (var itemId in itemSlots)
         {
             if (itemId == 0) continue;
-            
-            var itemPurchase = new ItemPurchaseDto { 
+
+            var itemPurchase = new ItemPurchaseDto {
                 ItemIndex = index,
                 ItemId = itemId,
                 FirstPurchaseTime = null
             };
-            
+
             if (firstPurchaseTime.Count != 0 && firstPurchaseTime.TryGetValue(_itemIds[itemId.ToString()], out var purchaseTime))
             {
                 itemPurchase.FirstPurchaseTime = purchaseTime;
             }
-            
+
             items.Add(itemPurchase);
             index++;
         }
@@ -169,14 +169,14 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             advantages.Add(new TeamAdvantageDto
             {
                 Minute = minute,
-                GoldAdvantage = match.RadiantGoldAdvantage[minute],
-                XpAdvantage = match.RadiantXpAdvantage[minute]
+                RadiantGoldAdvantage = match.RadiantGoldAdvantage[minute],
+                RadiantXpAdvantage = match.RadiantXpAdvantage[minute]
             });
         }
 
         return advantages;
     }
-    
+
     private IEnumerable<ObjectiveDataDto> GetObjectiveDataForPlayer(MatchPlayer player) =>
         player.Damage
             .Where(x => _objectives.ContainsKey(x.Key))

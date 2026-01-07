@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GoS.Application.Dto;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
+using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Domain.Matches.Enums;
 using GoS.Domain.Matches.Models;
 using MediatR;
@@ -28,16 +29,16 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
     private IEnumerable<ObjectiveDto> MapObjectives(Match match)
     {
         var objectives = new List<ObjectiveDto>();
-        
+
         var firstBlood = match.Objectives
             .FirstOrDefault(o => o.Type == ObjectiveType.ChatMessageFirstBlood);
-        
+
         if (firstBlood?.Slot is not null && firstBlood.Time.HasValue)
         {
             var killerIndex = (int)firstBlood.Slot;
             PlayerInfoDto? victimPlayer = null;
 
-            if (int.TryParse(firstBlood.Key?.GetRawText(), out var victimIndex) && 
+            if (int.TryParse(firstBlood.Key?.GetRawText(), out var victimIndex) &&
                 victimIndex >= 0 && victimIndex < match.Players.Count)
             {
                 victimPlayer = mapper.Map<PlayerInfoDto>(match.Players[victimIndex]);

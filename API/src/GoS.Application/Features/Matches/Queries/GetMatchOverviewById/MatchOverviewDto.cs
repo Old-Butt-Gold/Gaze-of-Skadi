@@ -27,8 +27,8 @@ public record AbilityUpgradeDto
 public record TeamAdvantageDto
 {
     public required int Minute { get; init; }
-    public required int GoldAdvantage { get; init; }
-    public required int XpAdvantage { get; init; }
+    public required int RadiantGoldAdvantage { get; init; }
+    public required int RadiantXpAdvantage { get; init; }
 }
 
 public record ObjectiveDataDto
