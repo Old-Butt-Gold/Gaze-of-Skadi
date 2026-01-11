@@ -6,7 +6,7 @@ export const useDistributions = () => {
   return useQuery<DistributionResponseDto, Error>({
     queryKey: ['common', 'distribution'],
     queryFn: commonService.getDistributions,
-    staleTime: 1000 * 60 * 10, // Кешируем на 10 минут
+    staleTime: 1000 * 60 * 5, // Кешируем на 5 минут
     retry: 1,
   });
 };

@@ -13,20 +13,20 @@ public static class ServiceExtensions
         {
             options.SuppressModelStateInvalidFilter = true;
         });
-        
+
         services.AddControllers(config =>
         {
             config.RespectBrowserAcceptHeader = true;
             config.ReturnHttpNotAcceptable = true;
-            
+
         }).AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
     }
-    
+
     public static void ConfigureMemoryCache(this IServiceCollection services)
     {
         services.AddMemoryCache();
     }
-    
+
     public static void ConfigureCors(this IServiceCollection services)
     {
         services.AddCors(options =>
@@ -37,7 +37,7 @@ public static class ServiceExtensions
                     .AllowAnyHeader());
         });
     }
-    
+
     public static void ConfigureSwaggerGen(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddSwaggerGen(options =>
@@ -57,12 +57,12 @@ public static class ServiceExtensions
                     Name = "MIT License",
                 }
             });
-            
+
             var basePath = AppContext.BaseDirectory;
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(basePath, xmlFile);
             options.IncludeXmlComments(xmlPath);
-            
+
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Type = SecuritySchemeType.ApiKey,
@@ -72,7 +72,7 @@ public static class ServiceExtensions
                 Scheme = "Bearer",
                 BearerFormat = "JWT",
             });
-            
+
             options.AddSecurityRequirement(new OpenApiSecurityRequirement()
             {
                 {

@@ -46,7 +46,7 @@ export const Layout: React.FC = () => {
                                                     src={item.icon}
                                                     alt=""
                                                     className={clsx(
-                                                        "w-5 h-5 object-contain",
+                                                        "w-8 h-8 object-contain",
                                                         isActive ? "opacity-100" : "opacity-70 grayscale hover:grayscale-0 transition-all"
                                                     )}
                                                 />

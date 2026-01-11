@@ -69,7 +69,7 @@ export const NotFoundPage: React.FC = () => {
                         <div className="absolute inset-0 bg-blue-500/0 group-hover:bg-blue-500/5 transition-colors duration-300"></div>
 
                         <img
-                            src="/assets/images/medal_0.png" // Используем существующую иконку или placeholder
+                            src="/assets/images/not_found_icon.webp" // Используем существующую иконку или placeholder
                             className="w-6 h-6 grayscale group-hover:grayscale-0 transition-all duration-300"
                             alt=""
                         />
