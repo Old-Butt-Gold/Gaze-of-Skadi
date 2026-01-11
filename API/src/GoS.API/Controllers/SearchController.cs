@@ -15,12 +15,12 @@ public sealed class SearchController : ApiControllerBase
     [HttpGet("players")]
     [ProducesResponseType(typeof(IEnumerable<PlayerResponseDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetPlayersByName([FromQuery] string q)
-        => HandleQueryAsync(new GetPlayersByNameQuery(q));
+    public Task<IActionResult> GetPlayersByName([FromQuery] string q, CancellationToken ct = default)
+        => HandleQueryAsync(new GetPlayersByNameQuery(q), ct);
 
     [HttpGet("proplayers")]
     [ProducesResponseType(typeof(IEnumerable<ProPlayerDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetProPlayersByName([FromQuery] string? q)
-        => HandleQueryAsync(new GetProPlayersByNameQuery(q));
+    public Task<IActionResult> GetProPlayersByName([FromQuery] string? q, CancellationToken ct = default)
+        => HandleQueryAsync(new GetProPlayersByNameQuery(q), ct);
 }

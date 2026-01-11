@@ -23,61 +23,61 @@ public sealed class HeroesController : ApiControllerBase
     [HttpGet]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Dictionary<string, HeroInfo>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetHeroes()
-        => HandleQueryAsync(new GetHeroesQuery());
+    public Task<IActionResult> GetHeroes(CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroesQuery(), ct);
 
     [HttpGet("stats")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroStatsDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetHeroStats()
-        => HandleQueryAsync(new GetHeroStatsQuery());
+    public Task<IActionResult> GetHeroStats(CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroStatsQuery(), ct);
 
     [HttpGet("{heroId:int}/rankings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(HeroRankingDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroRankings([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroRankingsQuery(heroId));
+    public Task<IActionResult> GetHeroRankings([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroRankingsQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/benchmark")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(BenchmarkDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroBenchmark([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroBenchmarkQuery(heroId));
+    public Task<IActionResult> GetHeroBenchmark([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroBenchmarkQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/matches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroMatchDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroMatches([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroMatchesQuery(heroId));
+    public Task<IActionResult> GetHeroMatches([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroMatchesQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/matchups")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroMatchupDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroMatchups([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroMatchupsQuery(heroId));
+    public Task<IActionResult> GetHeroMatchups([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroMatchupsQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/durations")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroDurationDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroDurations([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroDurationsQuery(heroId));
+    public Task<IActionResult> GetHeroDurations([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroDurationsQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/players")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<HeroPlayerDto>), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroPlayers([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroPlayersQuery(heroId));
+    public Task<IActionResult> GetHeroPlayers([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroPlayersQuery(heroId), ct);
 
     [HttpGet("{heroId:int}/item-popularity")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(HeroItemPopularityDto), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public Task<IActionResult> GetHeroItemPopularity([FromRoute] int heroId)
-        => HandleQueryAsync(new GetHeroItemPopularityQuery(heroId));
+    public Task<IActionResult> GetHeroItemPopularity([FromRoute] int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroItemPopularityQuery(heroId), ct);
 }

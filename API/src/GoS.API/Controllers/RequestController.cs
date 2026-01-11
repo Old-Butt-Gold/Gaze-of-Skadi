@@ -15,10 +15,9 @@ public class RequestController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(bool), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(bool), StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> ParseMatch(long matchId)
+    public async Task<IActionResult> ParseMatch(long matchId, CancellationToken ct)
     {
-        var result = await Sender.Send(new ParseMatchCommand(matchId));
-
+        var result = await Sender.Send(new ParseMatchCommand(matchId), ct);
         return result ? Ok(result) : BadRequest(result);
     }
 }
