@@ -8,4 +8,5 @@ public class RowDto
     public BaseEnumDto<Rank> Rank { get; set; } = null!;
     public int Count { get; set; }
     public int CumulativeSum { get; set; }
+    public double Percentage { get; set; }
 }

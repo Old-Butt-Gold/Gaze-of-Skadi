@@ -1,0 +1,14 @@
+﻿export interface NavItem {
+  name: string;
+  path: string;
+  icon?: string;
+}
+
+export const APP_ROUTES = {
+  HOME: '/',
+  DISTRIBUTIONS: '/distributions',
+} as const;
+
+export const MAIN_NAVIGATION: NavItem[] = [
+  { name: 'Distributions', path: APP_ROUTES.DISTRIBUTIONS, icon: '/assets/images/medal_0.png' },
+];

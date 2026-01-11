@@ -3,3 +3,15 @@
 @plugin "daisyui" {
     themes: false;
 }
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        * {
+            scroll-behavior: smooth;
+        }
+    }
+}
