@@ -1,4 +1,4 @@
-﻿import React, {useMemo, useState} from 'react';
+﻿import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecords } from '../hooks/queries/useRecords';
 import { RECORD_CATEGORIES, type RecordField } from '../types/records';
@@ -6,48 +6,8 @@ import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { formatRelativeTime, formatDuration } from '../utils/formatUtils';
 import clsx from 'clsx';
-import {HeroTooltip} from "../components/heroes/HeroTooltip.tsx";
-import {useHeroes} from "../hooks/queries/useHeroes.ts";
-
-const HeroCell: React.FC<{ heroId: number | null }> = ({ heroId }) => {
-    const { getHero, isLoading } = useHeroes();
-    if (!heroId) return <span className="text-slate-300 text-xs italic pl-2 opacity-50">Unknown</span>;
-
-    const hero = getHero(heroId);
-
-    if (isLoading) {
-        return (
-            <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-slate-800 rounded-md animate-pulse"></div>
-                <div className="h-4 w-20 bg-slate-200 rounded animate-pulse"></div>
-            </div>
-        );
-    }
-
-    if (!hero) {
-        return <span className="text-slate-500 text-sm">Hero {heroId}</span>;
-    }
-
-    return (
-        <HeroTooltip heroId={heroId}>
-            <div className="flex items-center gap-3 group/hero cursor-help">
-                <Link to={`/heroes/${heroId}`} className="relative block shrink-0 overflow-hidden rounded-lg shadow-sm border border-slate-200 group-hover/hero:border-blue-400 transition-colors">
-                    <div className="w-10 h-10 bg-slate-800">
-                        {/* Используем icon прямо из объекта героя */}
-                        <img
-                            src={hero.icon}
-                            alt={hero.localized_name}
-                            className="w-full h-full object-cover transform group-hover/hero:scale-110 transition-transform duration-300"
-                        />
-                    </div>
-                </Link>
-                <Link to={`/heroes/${heroId}`} className="font-semibold text-slate-700 group-hover/hero:text-blue-600 transition-colors text-sm">
-                    {hero.localized_name}
-                </Link>
-            </div>
-        </HeroTooltip>
-    );
-};
+import { HeroCell } from "../components/heroes/HeroCell";
+import { useRecordsStore } from '../store/recordsStore';
 
 const getRankStyle = (rank: number) => {
     switch (rank) {
@@ -71,7 +31,9 @@ const getRankStyle = (rank: number) => {
 };
 
 export const RecordsPage: React.FC = () => {
-    const [activeField, setActiveField] = useState<RecordField>(Object.keys(RECORD_CATEGORIES)[0] as RecordField);
+    const activeField = useRecordsStore((state) => state.activeCategory);
+    const setActiveField = useRecordsStore((state) => state.setActiveCategory);
+
     const { data, isLoading, isError, error, refetch } = useRecords(activeField);
 
     const activeCategory = RECORD_CATEGORIES[activeField];

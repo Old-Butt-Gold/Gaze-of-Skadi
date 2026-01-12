@@ -1,4 +1,4 @@
-﻿import {HeroAttackType, HeroPrimaryAttribute, HeroRole, type HeroStatsIcon} from '../types/heroes';
+﻿import {HeroAttackType, type HeroInfo, HeroPrimaryAttribute, HeroRole, type HeroStatsIcon} from '../types/heroes';
 
 export const getAttributeColor = (attr: HeroPrimaryAttribute) => {
   switch (attr) {
@@ -55,8 +55,8 @@ export const getStatsIcon = (type: HeroStatsIcon): string => {
     case 'attack': return "/assets/images/icon_damage.png";
     case 'move_speed': return "/assets/images/icon_movement_speed.png";
 
-        default: return "";
-    }
+    default: return "";
+  }
 };
 
 export type AttributeIconInfo = {
@@ -77,4 +77,48 @@ export const getAttributeIconInfo = (attr: HeroPrimaryAttribute): AttributeIconI
         default:
             return { src: "", alt: "Unknown" };
     }
+};
+
+export const calculateHealth = (hero: HeroInfo): number => {
+  return Math.floor(hero.base_health + (hero.base_str * 22));
+};
+
+export const calculateHealthRegen = (hero: HeroInfo): string => {
+  return (hero.base_health_regen + (hero.base_str * 0.1)).toFixed(1);
+};
+
+export const calculateMana = (hero: HeroInfo): number => {
+  return Math.floor(hero.base_mana + (hero.base_int * 12));
+};
+
+export const calculateManaRegen = (hero: HeroInfo): string => {
+  return (hero.base_mana_regen + (hero.base_int * 0.05)).toFixed(1);
+};
+
+export const calculateArmor = (hero: HeroInfo): string => {
+  return (hero.base_armor + (hero.base_agi / 6)).toFixed(1);
+};
+
+export const calculateDamage = (hero: HeroInfo): { min: number; max: number } => {
+  let bonusDamage = 0;
+
+  switch (hero.primary_attr) {
+    case HeroPrimaryAttribute.Strength:
+      bonusDamage = hero.base_str;
+      break;
+    case HeroPrimaryAttribute.Agility:
+      bonusDamage = hero.base_agi;
+      break;
+    case HeroPrimaryAttribute.Intelligence:
+      bonusDamage = hero.base_int;
+      break;
+    case HeroPrimaryAttribute.All:
+      bonusDamage = Math.floor((hero.base_str + hero.base_agi + hero.base_int) * 0.45);
+      break;
+  }
+
+  return {
+    min: Math.floor(hero.base_attack_min + bonusDamage),
+    max: Math.floor(hero.base_attack_max + bonusDamage),
+  };
 };
