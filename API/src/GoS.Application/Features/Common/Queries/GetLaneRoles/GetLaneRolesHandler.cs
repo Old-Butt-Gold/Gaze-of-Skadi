@@ -10,8 +10,11 @@ internal sealed class GetLaneRolesHandler(IRequester requester, IMapper mapper)
 {
     public async Task<IEnumerable<LaneRolesDto>?> Handle(GetLaneRolesQuery request, CancellationToken ct)
     {
-        var laneRoles = await requester.GetResponseAsync<IEnumerable<LaneRoles>>("scenarios/laneRoles", ct: ct);
+        var parameters = BuildParameters(request.HeroId);
+        var laneRoles = await requester.GetResponseAsync<IEnumerable<LaneRoles>>("scenarios/laneRoles", parameters, ct: ct);
 
         return mapper.Map<IEnumerable<LaneRolesDto>>(laneRoles);
     }
+
+    private static ICollection<KeyValuePair<string, string>> BuildParameters(int heroId) => [new("hero_id", heroId.ToString())];
 }

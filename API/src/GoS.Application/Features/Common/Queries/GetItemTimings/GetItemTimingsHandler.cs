@@ -10,8 +10,11 @@ internal sealed class GetItemTimingsHandler(IRequester requester, IMapper mapper
 {
     public async Task<IEnumerable<ItemTimingDto>?> Handle(GetItemTimingsQuery request, CancellationToken ct)
     {
-        var itemTimings = await requester.GetResponseAsync<IEnumerable<ItemTiming>>("scenarios/itemTimings", ct: ct);
+        var parameters = BuildParameters(request.HeroId);
+        var itemTimings = await requester.GetResponseAsync<IEnumerable<ItemTiming>>("scenarios/itemTimings", parameters, ct);
 
         return mapper.Map<IEnumerable<ItemTimingDto>>(itemTimings);
     }
+
+    private static ICollection<KeyValuePair<string, string>> BuildParameters(int heroId) => [new("hero_id", heroId.ToString())];
 }

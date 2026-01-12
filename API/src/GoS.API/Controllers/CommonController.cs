@@ -28,17 +28,17 @@ public sealed class CommonController : ApiControllerBase
     public Task<IActionResult> GetRecordsByField([FromRoute] CommonFieldRecords field, CancellationToken ct = default)
         => HandleQueryAsync(new GetRecordsByFieldQuery(field), ct);
 
-    [HttpGet("item-timings")]
+    [HttpGet("item-timings/{heroId:int}")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<ItemTimingDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetItemTimings(CancellationToken ct = default)
-        => HandleQueryAsync(new GetItemTimingsQuery(), ct);
+    public Task<IActionResult> GetItemTimings(int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetItemTimingsQuery(heroId), ct);
 
-    [HttpGet("lane-roles")]
+    [HttpGet("lane-roles/{heroId:int}")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<LaneRolesDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetLaneRoles(CancellationToken ct = default)
-        => HandleQueryAsync(new GetLaneRolesQuery(), ct);
+    public Task<IActionResult> GetLaneRoles(int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetLaneRolesQuery(heroId), ct);
 
     [HttpGet("leagues")]
     [Produces(MediaTypeNames.Application.Json)]
