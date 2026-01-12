@@ -9,14 +9,14 @@ export const commonService = {
   },
 
   getRecordsByField: async (field: RecordField): Promise<RecordDto[]> => {
-    return apiClient.get(`/Common/records/${field}`);
+    return apiClient.get(`/common/records/${field}`);
   },
 
-  getItemTimings: async (): Promise<ItemTimingDto[]> => {
-    return apiClient.get('/Common/item-timings');
+  getItemTimings: async (heroId: number): Promise<ItemTimingDto[]> => {
+    return apiClient.get(`/common/item-timings/${heroId}`);
   },
 
-  getLaneRoles: async (): Promise<LaneRolesDto[]> => {
-    return apiClient.get('/Common/lane-roles');
+  getLaneRoles: async (heroId: number): Promise<LaneRolesDto[]> => {
+    return apiClient.get(`/common/lane-roles/${heroId}`);
   },
 };

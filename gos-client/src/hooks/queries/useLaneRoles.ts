@@ -2,10 +2,11 @@
 import { commonService } from '../../services/commonService';
 import type { LaneRolesDto } from '../../types/scenarios';
 
-export const useLaneRoles = () => {
+export const useLaneRoles = (heroId: number | null) => {
   return useQuery<LaneRolesDto[], Error>({
-    queryKey: ['scenarios', 'lanes'],
-    queryFn: commonService.getLaneRoles,
-    staleTime: 1000 * 60 * 10,
+    queryKey: ['scenarios', 'lanes', heroId],
+    queryFn: () => commonService.getLaneRoles(heroId!),
+    enabled: !!heroId,
+    staleTime: 1000 * 60 * 60,
   });
 };
