@@ -6,17 +6,78 @@ import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { formatRelativeTime, formatDuration } from '../utils/formatUtils';
 import clsx from 'clsx';
+import {HeroTooltip} from "../components/heroes/HeroTooltip.tsx";
+import {useHeroes} from "../hooks/queries/useHeroes.ts";
+
+const HeroCell: React.FC<{ heroId: number | null }> = ({ heroId }) => {
+    const { getHero, isLoading } = useHeroes();
+    if (!heroId) return <span className="text-slate-300 text-xs italic pl-2 opacity-50">Unknown</span>;
+
+    const hero = getHero(heroId);
+
+    if (isLoading) {
+        return (
+            <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-slate-800 rounded-md animate-pulse"></div>
+                <div className="h-4 w-20 bg-slate-200 rounded animate-pulse"></div>
+            </div>
+        );
+    }
+
+    if (!hero) {
+        return <span className="text-slate-500 text-sm">Hero {heroId}</span>;
+    }
+
+    return (
+        <HeroTooltip heroId={heroId}>
+            <div className="flex items-center gap-3 group/hero cursor-help">
+                <Link to={`/heroes/${heroId}`} className="relative block shrink-0 overflow-hidden rounded-lg shadow-sm border border-slate-200 group-hover/hero:border-blue-400 transition-colors">
+                    <div className="w-10 h-10 bg-slate-800">
+                        {/* Используем icon прямо из объекта героя */}
+                        <img
+                            src={hero.icon}
+                            alt={hero.localized_name}
+                            className="w-full h-full object-cover transform group-hover/hero:scale-110 transition-transform duration-300"
+                        />
+                    </div>
+                </Link>
+                <Link to={`/heroes/${heroId}`} className="font-semibold text-slate-700 group-hover/hero:text-blue-600 transition-colors text-sm">
+                    {hero.localized_name}
+                </Link>
+            </div>
+        </HeroTooltip>
+    );
+};
+
+const getRankStyle = (rank: number) => {
+    switch (rank) {
+        case 1: return {
+            badge: "bg-yellow-400 text-yellow-900 ring-4 ring-yellow-400/20 shadow-lg shadow-yellow-400/20",
+            row: "bg-gradient-to-r from-yellow-50/80 to-white hover:to-yellow-50/50 border-l-4 border-l-yellow-400"
+        };
+        case 2: return {
+            badge: "bg-slate-200 text-slate-700 ring-4 ring-slate-200/50",
+            row: "bg-gradient-to-r from-slate-50/80 to-white hover:to-slate-50/50 border-l-4 border-l-slate-300"
+        };
+        case 3: return {
+            badge: "bg-orange-300 text-orange-900 ring-4 ring-orange-300/20",
+            row: "bg-gradient-to-r from-orange-50/80 to-white hover:to-orange-50/50 border-l-4 border-l-orange-300"
+        };
+        default: return {
+            badge: "bg-transparent text-slate-400 font-mono text-sm",
+            row: "hover:bg-slate-50 border-l-4 border-l-transparent transition-colors"
+        };
+    }
+};
 
 export const RecordsPage: React.FC = () => {
-    // Берем первый ключ из объекта категорий по умолчанию
     const [activeField, setActiveField] = useState<RecordField>(Object.keys(RECORD_CATEGORIES)[0] as RecordField);
     const { data, isLoading, isError, error, refetch } = useRecords(activeField);
 
     const activeCategory = RECORD_CATEGORIES[activeField];
 
     const hasHeroData = useMemo(() => {
-        if (!data || data.length === 0) return false;
-        return data.some(record => record.heroId !== null && record.heroId !== 0);
+        return data?.some(r => r.heroId) ?? false;
     }, [data]);
 
     const formatScore = (val: number) => {
@@ -78,7 +139,7 @@ export const RecordsPage: React.FC = () => {
                 {/* --- Content Table --- */}
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 min-h-[500px] overflow-hidden">
                     {isLoading ? (
-                        <LoadingSpinner text={`Analyzing ${activeCategory.label} data...`} />
+                        <LoadingSpinner text={`Scanning matches for ${activeCategory.label}...`} />
                     ) : isError ? (
                         <ErrorDisplay message={(error as Error).message} onRetry={refetch} />
                     ) : !data || data.length === 0 ? (
@@ -110,50 +171,20 @@ export const RecordsPage: React.FC = () => {
                                 <tbody className="text-sm divide-y divide-slate-100">
                                 {data.map((record, index) => {
                                     const rank = index + 1;
-
-                                    // Top 3 Visuals Styling
-                                    let rankContent = <span className="font-mono text-slate-500 font-medium">#{rank}</span>;
-                                    let rowClass = "hover:bg-slate-50 transition-colors group";
-
-                                    if (rank === 1) {
-                                        rankContent = <div className="mx-auto w-8 h-8 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-700 font-bold border border-yellow-200 shadow-sm ring-2 ring-yellow-400/20">1</div>;
-                                        rowClass = "bg-yellow-50/40 hover:bg-yellow-50/70 border-b border-yellow-100";
-                                    } else if (rank === 2) {
-                                        rankContent = <div className="mx-auto w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-700 font-bold border border-slate-200 shadow-sm">2</div>;
-                                    } else if (rank === 3) {
-                                        rankContent = <div className="mx-auto w-8 h-8 flex items-center justify-center rounded-full bg-orange-100 text-orange-800 font-bold border border-orange-200 shadow-sm">3</div>;
-                                        rowClass = "bg-orange-50/20 hover:bg-orange-50/40";
-                                    }
+                                    const style = getRankStyle(rank);
 
                                     return (
-                                        <tr key={`${record.matchId}-${index}`} className={rowClass}>
-                                            <td className="px-6 py-4 text-center align-middle">
-                                                {rankContent}
+                                        <tr key={`${record.matchId}_${index}`} className={clsx("border-b border-slate-100 last:border-0", style.row)}>
+                                            <td className="px-6 py-4">
+                                                <div className={clsx("mx-auto w-8 h-8 flex items-center justify-center rounded-full font-bold", style.badge)}>
+                                                    {rank}
+                                                </div>
                                             </td>
 
-                                            {/* CONDITIONAL CELL: Render only if heroes exist */}
+                                            {/* Hero (Conditional) */}
                                             {hasHeroData && (
-                                                <td className="px-6 py-4 align-middle">
-                                                    {record.heroId ? (
-                                                        <div className="flex items-center gap-4">
-                                                            <Link to={`/heroes/${record.heroId}`} className="group/hero relative block shrink-0">
-                                                                <div className="w-12 h-12 bg-slate-800 rounded-lg overflow-hidden shadow-sm border border-slate-200 group-hover/hero:border-blue-400 group-hover/hero:shadow-md transition-all">
-                                                                    {/* Img placeholder */}
-                                                                    <div className="w-full h-full flex items-center justify-center text-xs font-mono text-slate-400 bg-slate-900 group-hover/hero:bg-slate-800 transition-colors">
-                                                                        {record.heroId}
-                                                                    </div>
-                                                                </div>
-                                                            </Link>
-
-                                                            <Link to={`/heroes/${record.heroId}`} className="font-bold text-slate-700 hover:text-blue-600 transition-colors">
-                                                                Hero {record.heroId}
-                                                            </Link>
-                                                        </div>
-                                                    ) : (
-                                                        // Fallback should technically not happen often due to hasHeroData check,
-                                                        // but keeps layout safe if mixed data exists
-                                                        <span className="text-slate-400 italic text-xs">N/A</span>
-                                                    )}
+                                                <td className="px-6 py-4">
+                                                    <HeroCell heroId={record.heroId} />
                                                 </td>
                                             )}
 

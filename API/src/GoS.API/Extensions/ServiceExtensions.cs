@@ -19,7 +19,7 @@ public static class ServiceExtensions
             config.RespectBrowserAcceptHeader = true;
             config.ReturnHttpNotAcceptable = true;
 
-        }).AddJsonOptions(opts => opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter())); ;
+        });
     }
 
     public static void ConfigureMemoryCache(this IServiceCollection services)
