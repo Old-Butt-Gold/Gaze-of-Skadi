@@ -1,16 +1,15 @@
 ﻿import React from 'react';
 import { useHeroes } from '../../hooks/queries/useHeroes';
 import {
-    getAttributeColor,
+    getAttributeColor, getAttributeIconInfo,
     getAttributeName,
-    getHeroRoleName,
-    getStatsIcon,
+    getHeroRoleName, getStatsIcon,
     getThemeColor,
     isMelee
 } from '../../utils/heroUtils';
 import clsx from 'clsx';
-import {AttributeIcon} from "./AttributeIcon.tsx";
 import {HeroPrimaryAttribute} from "../../types/heroes.ts";
+import {Icon} from "../Icon.tsx";
 
 interface Props {
     heroId: number;
@@ -28,6 +27,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
 
     const attrColor = getAttributeColor(hero.primary_attr);
     const themeClasses = getThemeColor(hero.primary_attr);
+    const attributeIcon = getAttributeIconInfo(hero.primary_attr);
 
     return (
         <div className="relative group/tooltip">
@@ -60,7 +60,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             <div className="flex items-center gap-2 mt-1">
                                 <span className={clsx("text-xs font-bold uppercase tracking-wider flex items-center gap-1", attrColor)}>
                                    {/* Attribute Icon (Generic Circle for now) */}
-                                    {<AttributeIcon attr={hero.primary_attr}/>}
+                                    {<Icon src={attributeIcon.src} alt={attributeIcon.alt} size={4}/>}
                                     {getAttributeName(hero.primary_attr)}
                                 </span>
                                 <span className="text-slate-400 text-[10px] uppercase tracking-wider border-l border-slate-600 pl-2">
@@ -98,7 +98,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             {/* STR */}
                             <div className="flex flex-col items-center justify-center gap-0.5">
                                 <div className="flex items-center gap-1.5">
-                                    <AttributeIcon attr={HeroPrimaryAttribute.Strength} />
+                                    {<Icon src={getAttributeIconInfo(HeroPrimaryAttribute.Strength).src} alt={attributeIcon.alt} size={4}/>}
                                     <span className="text-slate-200 font-bold text-sm">{hero.base_str}</span>
                                 </div>
                                 <span className="text-[10px] text-slate-500 font-mono">+{hero.str_gain.toFixed(1)}</span>
@@ -106,7 +106,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             {/* AGI */}
                             <div className="flex flex-col items-center justify-center gap-0.5">
                                 <div className="flex items-center gap-1.5">
-                                    <AttributeIcon attr={HeroPrimaryAttribute.Agility} />
+                                    {<Icon src={getAttributeIconInfo(HeroPrimaryAttribute.Agility).src} alt={attributeIcon.alt} size={4}/>}
                                     <span className="text-slate-200 font-bold text-sm">{hero.base_agi}</span>
                                 </div>
                                 <span className="text-[10px] text-slate-500 font-mono">+{hero.agi_gain.toFixed(1)}</span>
@@ -114,7 +114,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             {/* INT */}
                             <div className="flex flex-col items-center justify-center gap-0.5">
                                 <div className="flex items-center gap-1.5">
-                                    <AttributeIcon attr={HeroPrimaryAttribute.Intelligence} />
+                                    {<Icon src={getAttributeIconInfo(HeroPrimaryAttribute.Intelligence).src} alt={attributeIcon.alt} size={4}/>}
                                     <span className="text-slate-200 font-bold text-sm">{hero.base_int}</span>
                                 </div>
                                 <span className="text-[10px] text-slate-500 font-mono">+{hero.int_gain.toFixed(1)}</span>
@@ -125,33 +125,21 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             <div className="text-center group">
                                 <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Attack</div>
                                 <div className="text-slate-200 font-semibold text-sm flex items-center justify-center gap-1">
-                                    <img
-                                        src={getStatsIcon('attack')}
-                                        alt={"attack"}
-                                        className="w-4 h-4 object-contain inline-block"
-                                    />
+                                    <Icon src={getStatsIcon('attack')} alt={'attack'} size={4}/>
                                     <span>{hero.base_attack_min}-{hero.base_attack_max}</span>
                                 </div>
                             </div>
                             <div className="text-center group">
                                 <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Armor</div>
                                 <div className="text-slate-200 font-semibold text-sm flex items-center justify-center gap-1">
-                                    <img
-                                        src={getStatsIcon('armor')}
-                                        alt={"armor"}
-                                        className="w-4 h-4 object-contain inline-block"
-                                    />
+                                    <Icon src={getStatsIcon('armor')} alt={'armor'} size={4}/>
                                     <span>{hero.base_armor.toFixed(1)}</span>
                                 </div>
                             </div>
                             <div className="text-center group">
                                 <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Speed</div>
                                 <div className="text-slate-200 font-semibold text-sm flex items-center justify-center gap-1">
-                                    <img
-                                        src={getStatsIcon('move_speed')}
-                                        alt={"move_speed"}
-                                        className="w-4 h-4 object-contain inline-block"
-                                    />
+                                    <Icon src={getStatsIcon("move_speed")} alt={'attack'} size={4}/>
                                     <span>{hero.move_speed}</span>
                                 </div>
                             </div>

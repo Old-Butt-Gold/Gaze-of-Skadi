@@ -5,7 +5,7 @@ export const getAttributeColor = (attr: HeroPrimaryAttribute) => {
     case HeroPrimaryAttribute.Strength: return 'text-red-500';
     case HeroPrimaryAttribute.Agility: return 'text-emerald-500';
     case HeroPrimaryAttribute.Intelligence: return 'text-blue-400';
-    case HeroPrimaryAttribute.All: return 'text-amber-400'; // Universal
+    case HeroPrimaryAttribute.All: return 'text-amber-400';
     default: return 'text-slate-400';
   }
 };
@@ -55,6 +55,26 @@ export const getStatsIcon = (type: HeroStatsIcon): string => {
     case 'attack': return "/assets/images/icon_damage.png";
     case 'move_speed': return "/assets/images/icon_movement_speed.png";
 
-    default: return "";
-  }
+        default: return "";
+    }
+};
+
+export type AttributeIconInfo = {
+    src: string;
+    alt: string;
+};
+
+export const getAttributeIconInfo = (attr: HeroPrimaryAttribute): AttributeIconInfo => {
+    switch (attr) {
+        case HeroPrimaryAttribute.Agility:
+            return { src: "/assets/images/hero_agility.png", alt: "AGI" };
+        case HeroPrimaryAttribute.Intelligence:
+            return { src: "/assets/images/hero_intelligence.png", alt: "INT" };
+        case HeroPrimaryAttribute.Strength:
+            return { src: "/assets/images/hero_strength.png", alt: "STR" };
+        case HeroPrimaryAttribute.All:
+            return { src: "/assets/images/hero_universal.png", alt: "ALL" };
+        default:
+            return { src: "", alt: "Unknown" };
+    }
 };
