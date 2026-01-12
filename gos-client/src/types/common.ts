@@ -1,5 +1,5 @@
-﻿export interface BaseEnum {
-  value: number;
+﻿export interface BaseEnum<T> {
+  value: T;
   name: string;
 }
 
