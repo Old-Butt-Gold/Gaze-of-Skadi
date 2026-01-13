@@ -1,17 +1,39 @@
 ﻿import { LaneRole } from "../types/scenarios";
 
 export const getLaneConfig = (roleValue: number) => {
+  const baseStyle = "border backdrop-blur-md bg-opacity-20";
+
   switch (roleValue) {
     case LaneRole.SafeLane:
-      return { label: 'Safe Lane', style: 'bg-emerald-50 text-emerald-700 border-emerald-200', iconSrc: '/assets/images/lane_safe.svg' };
+      return {
+        label: 'Safe Lane',
+        style: `${baseStyle} bg-emerald-500/10 text-emerald-400 border-emerald-500/30`,
+        iconSrc: '/assets/images/lane_safe.svg'
+      };
     case LaneRole.MidLane:
-      return { label: 'Mid Lane', style: 'bg-rose-50 text-rose-700 border-rose-200', iconSrc: '/assets/images/lane_mid.svg' };
+      return {
+        label: 'Mid Lane',
+        style: `${baseStyle} bg-red-500/10 text-red-400 border-red-500/30`,
+        iconSrc: '/assets/images/lane_mid.svg'
+      };
     case LaneRole.OffLane:
-      return { label: 'Off Lane', style: 'bg-orange-50 text-orange-700 border-orange-200', iconSrc: '/assets/images/lane_off.svg' };
+      return {
+        label: 'Off Lane',
+        style: `${baseStyle} bg-orange-500/10 text-orange-400 border-orange-500/30`,
+        iconSrc: '/assets/images/lane_off.svg'
+      };
     case LaneRole.Jungle:
-      return { label: 'Jungle', style: 'bg-lime-50 text-lime-700 border-lime-200', iconSrc: '/assets/images/lane_jungle.svg' };
+      return {
+        label: 'Jungle',
+        style: `${baseStyle} bg-lime-500/10 text-lime-400 border-lime-500/30`,
+        iconSrc: '/assets/images/lane_jungle.svg'
+      };
     default:
-      return { label: 'Unknown', style: 'bg-slate-50 text-slate-500 border-slate-200', iconSrc: '' };
+      return {
+        label: 'Unknown',
+        style: `${baseStyle} bg-slate-500/10 text-slate-400 border-slate-600/30`,
+        iconSrc: ''
+      };
   }
 };
 
