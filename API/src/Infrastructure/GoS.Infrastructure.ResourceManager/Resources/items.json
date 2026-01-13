@@ -2429,7 +2429,8 @@
     "cd": null,
     "lore": "Winged boots that grant omnipresence.",
     "components": [
-      "boots"
+      "boots",
+      "recipe_travel_boots"
     ],
     "created": true,
     "charges": null
