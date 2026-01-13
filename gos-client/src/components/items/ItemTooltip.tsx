@@ -227,19 +227,20 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                                 <div className="flex gap-2">
                                                     {item.mc && (
                                                         <div className="flex items-center gap-0.5 text-[#0099ff] font-bold text-xs">
+                                                            <Icon src="/assets/images/ability_manacost.png" size={4} />
                                                             <div className="w-2 h-2 bg-[#0099ff] rounded-sm"></div>
                                                             {item.mc}
                                                         </div>
                                                     )}
                                                     {item.hc && (
                                                         <div className="flex items-center gap-0.5 text-[#286323] font-bold text-xs">
-                                                            <div className="w-2 h-2 bg-[#286323] rounded-sm"></div>
+                                                            <Icon src="/assets/images/ability_healthcost.png" size={4} />
                                                             {item.hc}
                                                         </div>
                                                     )}
                                                     {item.cd && (
                                                         <div className="flex items-center gap-0.5 text-[#fff] font-bold text-xs opacity-70">
-                                                            <div className="w-2 h-2 bg-white rounded-full border border-gray-500"></div>
+                                                            <Icon src="/assets/images/ability_cooldown.png" size={4} />
                                                             {item.cd}
                                                         </div>
                                                     )}
