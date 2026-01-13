@@ -86,29 +86,29 @@ export interface ItemAttribute {
 }
 
 export interface Item {
-  abilities?: ItemAbility[];
-  hint?: string[];
+  abilities: ItemAbility[] | null;
+  hint: string[] | null;
   id: number;
   img: string; // URL изображения
-  dname?: string; // Название предмета
-  qual?: ItemType;
-  cost?: number;
-  behavior?: Behavior[];
-  notes?: string;
-  attrib: ItemAttribute[];
-  mc?: number; // Mana Cost
-  hc?: number; // Health Cost
-  cd?: number; // Cooldown
-  lore?: string;
-  components?: string[];
+  dname: string | null; // Название предмета
+  qual: ItemType | null;
+  cost: number | null;
+  behavior: Behavior[] | null;
+  notes: string | null;
+  attrib: ItemAttribute[] | null;
+  mc: number | null; // Mana Cost
+  hc: number | null; // Health Cost
+  cd: number | null; // Cooldown
+  lore: string | null;
+  components: string[] | null;
   created: BooleanState;
-  charges?: string;
-  dmg_type?: DamageType;
+  charges: string | null;
+  dmg_type: DamageType | null;
   target_team: TargetTeam[];
   target_type: TargetType[]
-  dispellable?: Dispellable;
-  bkbpierce?: BooleanState;
-  tier?: NeutralItemTier; // Neutral Item Tier
+  dispellable: Dispellable | null;
+  bkbpierce: BooleanState | null;
+  tier: NeutralItemTier | null; // Neutral Item Tier
 }
 
 export type ItemDictionary = Record<string, Item>;

@@ -2,7 +2,13 @@
 import { useItems } from '../../hooks/queries/useItems';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
-import {ItemComponent} from "./ItemComponent.tsx";
+import { ItemComponent } from './ItemComponent'; // Убедитесь, что импортируете компонент
+import {
+    getDamageTypeName,
+    getDamageTypeColor,
+    getDispellableName
+} from '../../utils/itemUtils';
+import { BooleanState } from '../../types/common'; // Импорт BooleanState
 
 interface Props {
     itemName: string;
@@ -37,7 +43,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
         const rect = triggerRef.current.getBoundingClientRect();
 
         const spaceAbove = rect.top;
-        const tooltipHeightEstimate = 500; // Increased estimate due to components list
+        const tooltipHeightEstimate = 600;
         const shouldShowBelow = spaceAbove < tooltipHeightEstimate;
 
         setPosition({
@@ -59,7 +65,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
 
             {isVisible && (
                 <div
-                    className="fixed z-[9999] pointer-events-none transition-all duration-200 ease-out origin-bottom"
+                    className="fixed z-9999 pointer-events-none transition-all duration-200 ease-out origin-bottom"
                     style={{
                         top: position.top,
                         left: position.left,
@@ -74,7 +80,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                             <div className="w-16 h-12 bg-[#0f1114] border border-[#2e353b] flex items-center justify-center overflow-hidden rounded-sm shrink-0">
                                 <img
                                     src={`${item.img}`}
-                                    alt={item.dname}
+                                    alt={item.dname ?? "unknown"}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -92,6 +98,44 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                         {/* Content Body */}
                         <div className="p-3 space-y-3">
 
+                            {/* --- META INFO BLOCK (Target, Damage, Dispel) --- */}
+                            <div className="text-[11px] font-bold space-y-1">
+                                {/* Damage Type */}
+                                {item.dmg_type !== null && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Damage Type:</span>
+                                        <span className={clsx(getDamageTypeColor(item.dmg_type))}>
+                                            {getDamageTypeName(item.dmg_type)}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {/* Pierces BKB */}
+                                {item.bkbpierce !== null && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Pierces Spell Immunity:</span>
+                                        <span className={item.bkbpierce === BooleanState.True ? "text-white" : "text-[#808fa6]"}>
+                                            {item.bkbpierce === BooleanState.True ? 'Yes' : 'No'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {/* Dispellable */}
+                                {item.dispellable !== null && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Dispellable:</span>
+                                        <span className="text-white">
+                                            {getDispellableName(item.dispellable)}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Separator if meta info exists */}
+                            {(item.behavior || item.dmg_type !== null || item.dispellable !== null) && (
+                                <div className="border-b border-[#2e353b]"></div>
+                            )}
+
                             {/* Attributes (Filtered value != "0") */}
                             {item.attrib && item.attrib.length > 0 && (
                                 <div className="space-y-0.5">
@@ -106,32 +150,20 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                                     }} />
                                                 ) : (
                                                     <span>
-                                                    <span className="text-white font-bold">+{attr.value}</span> {attr.key.replace(/_/g, ' ')}
-                                                </span>
+                                                        +<span className="text-white font-bold"> {attr.value}</span> {attr.key.replace(/_/g, ' ')}
+                                                    </span>
                                                 )}
                                             </div>
                                         ))}
                                 </div>
                             )}
 
-                            {/* Extra Info: Dispellable, Teams, etc. */}
-                            <div className="flex flex-wrap gap-2 text-[10px] uppercase font-bold text-[#58606e]">
-                                {item.dispellable && (
-                                    <span className="bg-[#1a2e1a] text-[#556b2f] px-1.5 py-0.5 rounded border border-[#556b2f]/30">
-                                        Dispellable: {item.dispellable}
-                                    </span>
-                                )}
-                                {item.bkbpierce === 1 && (
-                                    <span className="bg-[#2e1a1a] text-[#a04040] px-1.5 py-0.5 rounded border border-[#a04040]/30">
-                                        Pierces BKB
-                                    </span>
-                                )}
-                                {item.charges && (
-                                    <span className="bg-[#1a242e] text-[#4070a0] px-1.5 py-0.5 rounded border border-[#4070a0]/30">
-                                        Charges: {item.charges}
-                                    </span>
-                                )}
-                            </div>
+                            {/* Charges */}
+                            {item.charges && (
+                                <span className="block bg-[#1a242e] text-[#4070a0] px-1.5 py-0.5 rounded border border-[#4070a0]/30 w-fit text-[10px] uppercase font-bold">
+                                    Charges: {item.charges}
+                                </span>
+                            )}
 
                             {/* Abilities */}
                             {item.abilities && item.abilities.map((ability, idx) => (
@@ -143,23 +175,24 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                         )}>
                                             {ability.type === 0 ? 'Active' : 'Passive'}: {ability.title}
                                         </span>
+
                                         {/* Cost Icons */}
                                         <div className="flex gap-2">
                                             {item.mc && ability.type === 0 && (
                                                 <div className="flex items-center gap-0.5 text-[#0099ff] font-bold text-xs">
-                                                    <Icon src={"/assets/images/ability_manacost.png"} size={4}/>
+                                                    <Icon src="/assets/images/ability_manacost.png" size={4} />
                                                     {item.mc}
                                                 </div>
                                             )}
                                             {item.hc && ability.type === 0 && (
                                                 <div className="flex items-center gap-0.5 text-[#286323] font-bold text-xs">
-                                                    <Icon src={"/assets/images/ability_healthcost.png"} size={4}/>
+                                                    <Icon src="/assets/images/ability_healthcost.png" size={4} />
                                                     {item.hc}
                                                 </div>
                                             )}
                                             {item.cd && ability.type === 0 && (
                                                 <div className="flex items-center gap-0.5 text-[#fff] font-bold text-xs opacity-70">
-                                                    <Icon src={"/assets/images/ability_cooldown.png"} size={4}/>
+                                                    <Icon src="/assets/images/ability_cooldown.png" size={4} />
                                                     {item.cd}
                                                 </div>
                                             )}
@@ -211,4 +244,3 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
         </div>
     );
 };
-
