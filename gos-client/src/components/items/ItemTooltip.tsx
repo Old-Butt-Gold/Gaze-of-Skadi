@@ -6,9 +6,10 @@ import { ItemComponent } from './ItemComponent'; // Убедитесь, что �
 import {
     getDamageTypeName,
     getDamageTypeColor,
-    getDispellableName
+    getDispellableName, getAbilityTypeName
 } from '../../utils/itemUtils';
-import { BooleanState } from '../../types/common'; // Импорт BooleanState
+import { BooleanState } from '../../types/common';
+import {AbilityType} from "../../types/items.ts"; // Импорт BooleanState
 
 interface Props {
     itemName: string;
@@ -132,7 +133,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                             </div>
 
                             {/* Separator if meta info exists */}
-                            {(item.behavior || item.dmg_type !== null || item.dispellable !== null) && (
+                            {(item.target_team || item.target_type || item.behavior || item.dmg_type !== null || item.dispellable !== null) && (
                                 <div className="border-b border-[#2e353b]"></div>
                             )}
 
@@ -166,43 +167,50 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                             )}
 
                             {/* Abilities */}
-                            {item.abilities && item.abilities.map((ability, idx) => (
-                                <div key={idx} className="bg-[#15171c] p-2 rounded border border-[#2e353b] space-y-1">
-                                    <div className="flex justify-between items-center">
-                                        <span className={clsx(
-                                            "font-bold uppercase text-xs tracking-wider",
-                                            ability.type === 0 ? "text-[#fff]" : "text-[#808fa6]"
-                                        )}>
-                                            {ability.type === 0 ? 'Active' : 'Passive'}: {ability.title}
-                                        </span>
+                            {item.abilities && item.abilities.map((ability, idx) => {
+                                // Определяем стиль: Active/Toggle/Use - яркие, Passive/Upgrade - тусклые
+                                const isActiveLike = ability.type === AbilityType.Active || ability.type === AbilityType.Toggle || ability.type === AbilityType.Use;
 
-                                        {/* Cost Icons */}
-                                        <div className="flex gap-2">
-                                            {item.mc && ability.type === 0 && (
-                                                <div className="flex items-center gap-0.5 text-[#0099ff] font-bold text-xs">
-                                                    <Icon src="/assets/images/ability_manacost.png" size={4} />
-                                                    {item.mc}
-                                                </div>
-                                            )}
-                                            {item.hc && ability.type === 0 && (
-                                                <div className="flex items-center gap-0.5 text-[#286323] font-bold text-xs">
-                                                    <Icon src="/assets/images/ability_healthcost.png" size={4} />
-                                                    {item.hc}
-                                                </div>
-                                            )}
-                                            {item.cd && ability.type === 0 && (
-                                                <div className="flex items-center gap-0.5 text-[#fff] font-bold text-xs opacity-70">
-                                                    <Icon src="/assets/images/ability_cooldown.png" size={4} />
-                                                    {item.cd}
+                                return (
+                                    <div key={idx} className="bg-[#15171c] p-2 rounded border border-[#2e353b] space-y-1">
+                                        <div className="flex justify-between items-center">
+                                            <span className={clsx(
+                                                "font-bold uppercase text-xs tracking-wider",
+                                                isActiveLike ? "text-white" : "text-[#808fa6]"
+                                            )}>
+                                                {getAbilityTypeName(ability.type)}: {ability.title}
+                                            </span>
+
+                                            {/* Cost Icons (Show only for Active-like abilities) */}
+                                            {isActiveLike && (
+                                                <div className="flex gap-2">
+                                                    {item.mc && (
+                                                        <div className="flex items-center gap-0.5 text-[#0099ff] font-bold text-xs">
+                                                            <div className="w-2 h-2 bg-[#0099ff] rounded-sm"></div>
+                                                            {item.mc}
+                                                        </div>
+                                                    )}
+                                                    {item.hc && (
+                                                        <div className="flex items-center gap-0.5 text-[#286323] font-bold text-xs">
+                                                            <div className="w-2 h-2 bg-[#286323] rounded-sm"></div>
+                                                            {item.hc}
+                                                        </div>
+                                                    )}
+                                                    {item.cd && (
+                                                        <div className="flex items-center gap-0.5 text-[#fff] font-bold text-xs opacity-70">
+                                                            <div className="w-2 h-2 bg-white rounded-full border border-gray-500"></div>
+                                                            {item.cd}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             )}
                                         </div>
+                                        <p className="text-[#808fa6] text-xs leading-relaxed">
+                                            {ability.description.replace(/<[^>]*>?/gm, '')}
+                                        </p>
                                     </div>
-                                    <p className="text-[#808fa6] text-xs leading-relaxed">
-                                        {ability.description.replace(/<[^>]*>?/gm, '')}
-                                    </p>
-                                </div>
-                            ))}
+                                );
+                            })}
 
                             {/* Hints / Notes */}
                             {item.notes && (
