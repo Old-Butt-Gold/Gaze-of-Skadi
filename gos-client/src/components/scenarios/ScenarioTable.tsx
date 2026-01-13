@@ -5,6 +5,7 @@ import { formatDuration } from '../../utils/formatUtils';
 import { getLaneConfig } from '../../utils/scenariosUtils';
 import type { ItemTimingDto, LaneRolesDto } from "../../types/scenarios";
 import { Icon } from '../Icon';
+import {ItemCell} from "../items/ItemCell.tsx";
 
 type ScenarioData = ItemTimingDto | LaneRolesDto;
 
@@ -41,14 +42,7 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
                             {/* Context */}
                             <td className="px-4 md:px-6 py-3 font-medium align-middle">
                                 {isItemTiming(row) ? (
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e] flex items-center justify-center text-[10px] text-[#58606e]">
-                                            ?
-                                        </div>
-                                        <span className="capitalize font-serif text-slate-200 text-[15px] tracking-wide group-hover:text-white transition-colors">
-                                                {row.item.replace(/_/g, ' ')}
-                                            </span>
-                                    </div>
+                                    <ItemCell itemName={row.item} />
                                 ) : (
                                     (() => {
                                         const config = getLaneConfig(row.laneRole.value);
