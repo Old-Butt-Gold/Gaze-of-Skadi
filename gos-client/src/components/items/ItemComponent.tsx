@@ -12,7 +12,7 @@ export const ItemComponent = ({ itemName }: { itemName: string }) => {
             <div className="w-8 h-6 bg-[#1a1d24] border border-[#2e353b] rounded flex items-center justify-center overflow-hidden">
                 <img
                     src={`${item.img}`}
-                    alt={item.dname}
+                    alt={item.dname ?? "unknown"}
                     className="w-full h-full object-cover"
                 />
             </div>

@@ -4,6 +4,7 @@ import { isItemTiming } from '../utils/typeGuards';
 import { formatTimeRange } from '../utils/formatUtils';
 import {useItemTimings} from "./queries/useItemTimings.ts";
 import {useLaneRoles} from "./queries/useLaneRoles.ts";
+import {useItems} from "./queries/useItems.ts";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -13,6 +14,8 @@ export const useScenarioLogic = () => {
     selectedHeroId, activeTab, searchQuery, selectedTime,
     setSelectedHeroId, setActiveTab, setSearchQuery, setSelectedTime
   } = useScenariosStore();
+
+  const { getItem } = useItems();
 
   // 2. Local State
   const [currentPage, setCurrentPage] = useState(1);
@@ -74,9 +77,16 @@ export const useScenarioLogic = () => {
 
         if (searchQuery) {
           const q = searchQuery.toLowerCase();
-          return isItemTiming(item)
-            ? item.item.toLowerCase().includes(q)
-            : item.laneRole.value.toString().includes(q);
+          if (isItemTiming(item)) {
+            const itemDictionary = getItem(item.item);
+            if (itemDictionary !== null) {
+              return itemDictionary.dname?.toLowerCase().includes(q);
+            } else {
+              return item.item.toLowerCase().includes(q);
+            }
+          } else {
+            return item.laneRole.value.toString().includes(q);
+          }
         }
         return true;
       })
@@ -90,7 +100,7 @@ export const useScenarioLogic = () => {
         // 3. Время (раньше - выше)
         return a.time - b.time;
       });
-  }, [currentRawData, selectedTime, searchQuery]);
+  }, [currentRawData, selectedTime, searchQuery, getItem]);
 
   // 6. Pagination
   const paginatedData = useMemo(() => {

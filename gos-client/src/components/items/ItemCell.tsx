@@ -22,7 +22,7 @@ export const ItemCell = ({ itemName }: { itemName: string }) => {
                 <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e] flex items-center justify-center text-[10px] text-[#58606e] overflow-hidden">
                     <img
                         src={`${item.img}`}
-                        alt={item.dname}
+                        alt={item.dname ?? "unknown"}
                         className="w-full h-full object-cover"
                     />
                 </div>

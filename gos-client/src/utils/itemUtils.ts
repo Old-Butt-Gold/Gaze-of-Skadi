@@ -8,7 +8,6 @@
 } from "../types/items";
 
 export const getDamageTypeName = (type: DamageType): string => {
-  console.log(type);
   switch (type) {
     case DamageType.Magical: return 'Magical';
     case DamageType.Physical: return 'Physical';

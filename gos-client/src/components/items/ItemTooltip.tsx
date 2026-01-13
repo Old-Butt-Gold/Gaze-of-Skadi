@@ -2,14 +2,18 @@
 import { useItems } from '../../hooks/queries/useItems';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
-import { ItemComponent } from './ItemComponent'; // Убедитесь, что импортируете компонент
+import { ItemComponent } from './ItemComponent';
 import {
     getDamageTypeName,
     getDamageTypeColor,
-    getDispellableName, getAbilityTypeName
+    getDispellableName,
+    getAbilityTypeName,
+    getBehaviorName,
+    getTargetTeamName,
+    getTargetTypeName
 } from '../../utils/itemUtils';
 import { BooleanState } from '../../types/common';
-import {AbilityType} from "../../types/items.ts"; // Импорт BooleanState
+import { AbilityType, Behavior } from "../../types/items";
 
 interface Props {
     itemName: string;
@@ -89,18 +93,53 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 <h4 className="text-[#e7d291] font-bold text-lg leading-tight font-serif uppercase tracking-wide">
                                     {item.dname}
                                 </h4>
-                                <div className="flex items-center gap-1 text-[#e7d291] text-xs font-bold mt-1">
-                                    <Icon src="/assets/images/gold.png" size={3} />
-                                    <span>{item.cost}</span>
-                                </div>
+                                {item.cost && (
+                                    <div className="flex items-center gap-1 text-[#e7d291] text-xs font-bold mt-1">
+                                        <Icon src="/assets/images/gold.png" size={3} />
+                                        <span>{item.cost}</span>
+                                    </div>
+                                )}
                             </div>
                         </div>
 
                         {/* Content Body */}
                         <div className="p-3 space-y-3">
 
-                            {/* --- META INFO BLOCK (Target, Damage, Dispel) --- */}
                             <div className="text-[11px] font-bold space-y-1">
+
+                                {/* 1. Item Behavior (Target Type) */}
+                                {item.behavior && item.behavior.length > 0 && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Target:</span>
+                                        <span className="text-white">
+                                            {item.behavior
+                                                .filter(b => b !== Behavior.Hidden)
+                                                .map(b => getBehaviorName(b))
+                                                .join(' / ') || 'None'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {/* 2. Item Target Team */}
+                                {item.target_team && item.target_team.length > 0 && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Affects:</span>
+                                        <span className="text-white">
+                                            {item.target_team.map(t => getTargetTeamName(t)).join(' / ')}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {/* 3. Item Target Unit Type */}
+                                {item.target_type && item.target_type.length > 0 && (
+                                    <div className="flex gap-1 text-[#808fa6]">
+                                        <span className="uppercase text-[#58606e]">Units:</span>
+                                        <span className="text-white">
+                                            {item.target_type.map(t => getTargetTypeName(t)).join(' / ')}
+                                        </span>
+                                    </div>
+                                )}
+
                                 {/* Damage Type */}
                                 {item.dmg_type !== null && (
                                     <div className="flex gap-1 text-[#808fa6]">
@@ -168,8 +207,10 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
 
                             {/* Abilities */}
                             {item.abilities && item.abilities.map((ability, idx) => {
-                                // Определяем стиль: Active/Toggle/Use - яркие, Passive/Upgrade - тусклые
-                                const isActiveLike = ability.type === AbilityType.Active || ability.type === AbilityType.Toggle || ability.type === AbilityType.Use;
+                                const isActiveLike =
+                                    ability.type === AbilityType.Active
+                                    || ability.type === AbilityType.Toggle
+                                    || ability.type === AbilityType.Use;
 
                                 return (
                                     <div key={idx} className="bg-[#15171c] p-2 rounded border border-[#2e353b] space-y-1">
