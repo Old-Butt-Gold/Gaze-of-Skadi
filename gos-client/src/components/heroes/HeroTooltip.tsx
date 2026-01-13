@@ -4,8 +4,6 @@ import {
     getAttributeColor,
     getAttributeIconInfo,
     getAttributeName,
-    getHeroRoleName,
-    getStatsIcon,
     getThemeColor,
     isMelee,
     calculateHealth,
@@ -13,7 +11,8 @@ import {
     calculateMana,
     calculateManaRegen,
     calculateArmor,
-    calculateDamage
+    calculateDamage,
+    getHeroRoleName
 } from '../../utils/heroUtils';
 import clsx from 'clsx';
 import { HeroPrimaryAttribute } from "../../types/heroes.ts";
@@ -30,6 +29,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
 
     const [isVisible, setIsVisible] = useState(false);
     const [position, setPosition] = useState({ top: 0, left: 0 });
+    const [showBelow, setShowBelow] = useState(false);
     const triggerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -40,7 +40,6 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
         }
     }, [isVisible]);
 
-    // Fallback загрузки
     if (isLoading || !hero) {
         return <div className="inline-block relative">{children}</div>;
     }
@@ -59,13 +58,18 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
     const handleMouseEnter = () => {
         if (!triggerRef.current) return;
 
-        // Получаем координаты элемента относительно вьюпорта
         const rect = triggerRef.current.getBoundingClientRect();
+        const tooltipHeight = 350; // Estimated height of the tooltip card
+        const spaceAbove = rect.top;
+
+        // Check if there is enough space above
+        const isBelow = spaceAbove < tooltipHeight;
+        setShowBelow(isBelow);
 
         setPosition({
-            // Top: верхняя граница элемента минус отступ (10px)
-            top: rect.top - 10,
-            // Left: центр элемента
+            // If showing below, position top at bottom of element + margin
+            // If showing above, position top at top of element - margin
+            top: isBelow ? rect.bottom + 10 : rect.top - 10,
             left: rect.left + (rect.width / 2)
         });
         setIsVisible(true);
@@ -79,23 +83,23 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
         <div className="inline-block" ref={triggerRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {children}
 
-            {/* Tooltip Render (Fixed Position) */}
             {isVisible && (
                 <div
-                    className="fixed z-9999 pointer-events-none transition-opacity duration-200 ease-in-out"
+                    className="fixed z-[9999] pointer-events-none transition-opacity duration-200 ease-in-out"
                     style={{
                         top: position.top,
                         left: position.left,
-                        transform: 'translate(-50%, -100%)', // Якорь снизу по центру
+                        // If showing below, translate down from the top position (0%)
+                        // If showing above, translate up from the top position (-100%)
+                        transform: `translate(-50%, ${showBelow ? '0%' : '-100%'})`,
                         opacity: isVisible ? 1 : 0
                     }}
                 >
-                    {/* Card Body */}
                     <div className={clsx(
                         "w-[300px] bg-slate-900 rounded-xl overflow-hidden border ring-1 ring-black/80 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]",
-                        themeClasses // Цветная подсветка границ
+                        themeClasses
                     )}>
-
+                        {/* ... (Rest of your tooltip content remains the same) ... */}
                         {/* 1. Hero Image Header */}
                         <div className="relative h-36 w-full bg-black">
                             <img
@@ -127,7 +131,6 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
 
                         {/* 2. Stats Grid */}
                         <div className="p-2 bg-slate-900 space-y-3">
-
                             {/* Health & Mana Bars */}
                             <div className="space-y-1 font-mono text-[10px] font-bold">
                                 {/* HP */}
@@ -143,9 +146,8 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                                     <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-blue-900 w-full opacity-80"></div>
                                     <span className="relative z-10 text-white drop-shadow-md">MP</span>
                                     <span className="relative z-10 text-white drop-shadow-md">
-                                        {mp} <span className="text-blue-200 opacity-80">+{mpRegen}
+                                        {mp} <span className="text-blue-200 opacity-80">+{mpRegen}</span>
                                     </span>
-                                </span>
                                 </div>
                             </div>
 
@@ -182,21 +184,22 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                                 <div className="text-center">
                                     <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Attack</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
-                                        <Icon src={getStatsIcon('attack')} alt={'attack'} size={4}/>
+                                        {/* <Icon src={getStatsIcon('attack')} alt={'attack'} size={4}/> */}
+                                        {/* Assuming getStatsIcon is imported or available */}
                                         <span>{damage.min}-{damage.max}</span>
                                     </div>
                                 </div>
                                 <div className="text-center">
                                     <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Armor</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
-                                        <Icon src={getStatsIcon('armor')} alt={'armor'} size={4}/>
+                                        {/* <Icon src={getStatsIcon('armor')} alt={'armor'} size={4}/> */}
                                         <span>{armor}</span>
                                     </div>
                                 </div>
                                 <div className="text-center">
                                     <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Speed</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
-                                        <Icon src={getStatsIcon("move_speed")} alt={'speed'} size={4}/>
+                                        {/* <Icon src={getStatsIcon("move_speed")} alt={'speed'} size={4}/> */}
                                         <span>{hero.move_speed}</span>
                                     </div>
                                 </div>
@@ -210,12 +213,18 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                                     </span>
                                 ))}
                             </div>
-
                         </div>
                     </div>
 
-                    {/* Little Arrow pointing down */}
-                    <div className="absolute left-1/2 -translate-x-1/2 bottom-[-6px] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-slate-800 drop-shadow-md"></div>
+                    {/* Dynamic Arrow */}
+                    <div
+                        className={clsx(
+                            "absolute left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent drop-shadow-md",
+                            showBelow
+                                ? "top-[-6px] border-b-[6px] border-b-slate-900" // Arrow points up if showing below
+                                : "bottom-[-6px] border-t-[6px] border-t-slate-900" // Arrow points down if showing above
+                        )}
+                    ></div>
                 </div>
             )}
         </div>
