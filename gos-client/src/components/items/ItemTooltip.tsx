@@ -110,7 +110,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* 1. Item Behavior (Target Type) */}
                                 {item.behavior && item.behavior.length > 0 && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Target:</span>
+                                        <span className="text-[#58606e]">Target:</span>
                                         <span className="text-white">
                                             {item.behavior
                                                 .filter(b => b !== Behavior.Hidden)
@@ -123,7 +123,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* 2. Item Target Team */}
                                 {item.target_team && item.target_team.length > 0 && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Affects:</span>
+                                        <span className="text-[#58606e]">Affects:</span>
                                         <span className="text-white">
                                             {item.target_team.map(t => getTargetTeamName(t)).join(' / ')}
                                         </span>
@@ -133,7 +133,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* 3. Item Target Unit Type */}
                                 {item.target_type && item.target_type.length > 0 && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Units:</span>
+                                        <span className="text-[#58606e]">Units:</span>
                                         <span className="text-white">
                                             {item.target_type.map(t => getTargetTypeName(t)).join(' / ')}
                                         </span>
@@ -143,7 +143,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* Damage Type */}
                                 {item.dmg_type !== null && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Damage Type:</span>
+                                        <span className="text-[#58606e]">Damage Type:</span>
                                         <span className={clsx(getDamageTypeColor(item.dmg_type))}>
                                             {getDamageTypeName(item.dmg_type)}
                                         </span>
@@ -153,7 +153,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* Pierces BKB */}
                                 {item.bkbpierce !== null && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Pierces Spell Immunity:</span>
+                                        <span className="text-[#58606e]">Pierces Spell Immunity:</span>
                                         <span className={item.bkbpierce === BooleanState.True ? "text-white" : "text-[#808fa6]"}>
                                             {item.bkbpierce === BooleanState.True ? 'Yes' : 'No'}
                                         </span>
@@ -163,7 +163,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                 {/* Dispellable */}
                                 {item.dispellable !== null && (
                                     <div className="flex gap-1 text-[#808fa6]">
-                                        <span className="uppercase text-[#58606e]">Dispellable:</span>
+                                        <span className="text-[#58606e]">Dispellable:</span>
                                         <span className="text-white">
                                             {getDispellableName(item.dispellable)}
                                         </span>
@@ -180,13 +180,12 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                             {item.attrib && item.attrib.length > 0 && (
                                 <div className="space-y-0.5">
                                     {item.attrib
-                                        .filter(attr => attr.value !== "0")
+                                        .filter(attr => attr.value !== "0" && attr.display?.includes("{value}"))
                                         .map((attr, idx) => (
                                             <div key={idx} className="text-[#808fa6]">
                                                 {attr.display ? (
                                                     <span dangerouslySetInnerHTML={{
-                                                        __html: attr.display
-                                                            .replace('{value}', `<span class="text-white font-bold">${attr.value}</span>`)
+                                                        __html: attr.display.replace('{value}', `<span class="text-white font-bold">${attr.value}</span>`)
                                                     }} />
                                                 ) : (
                                                     <span>
@@ -200,7 +199,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
 
                             {/* Charges */}
                             {item.charges && (
-                                <span className="block bg-[#1a242e] text-[#4070a0] px-1.5 py-0.5 rounded border border-[#4070a0]/30 w-fit text-[10px] uppercase font-bold">
+                                <span className="block bg-[#1a242e] text-[#4070a0] px-1.5 py-0.5 rounded border border-[#4070a0]/30 w-fit text-[10px] font-bold">
                                     Charges: {item.charges}
                                 </span>
                             )}
@@ -216,7 +215,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                     <div key={idx} className="bg-[#15171c] p-2 rounded border border-[#2e353b] space-y-1">
                                         <div className="flex justify-between items-center">
                                             <span className={clsx(
-                                                "font-bold uppercase text-xs tracking-wider",
+                                                "font-bold text-xs tracking-wider",
                                                 isActiveLike ? "text-white" : "text-[#808fa6]"
                                             )}>
                                                 {getAbilityTypeName(ability.type)}: {ability.title}
@@ -246,7 +245,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                                                 </div>
                                             )}
                                         </div>
-                                        <p className="text-[#808fa6] text-xs leading-relaxed">
+                                        <p className="text-[#808fa6] text-xs leading-relaxed whitespace-pre-line"> {/* whitespace-pre-line adds /n to text */}
                                             {ability.description.replace(/<[^>]*>?/gm, '')}
                                         </p>
                                     </div>
@@ -270,7 +269,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                             {/* Components */}
                             {item.components && item.components.length > 0 && (
                                 <div className="border-t border-[#2e353b] pt-2">
-                                    <div className="text-[10px] text-[#58606e] mb-1 uppercase tracking-wider font-bold">Components</div>
+                                    <div className="text-[10px] text-[#58606e] mb-1 tracking-wider font-bold">Components</div>
                                     <div className="flex flex-wrap gap-2">
                                         {item.components.map((compName) => (
                                             <ItemComponent key={compName} itemName={compName} />

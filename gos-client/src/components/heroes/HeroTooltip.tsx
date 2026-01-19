@@ -117,12 +117,12 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                                     {hero.localized_name}
                                 </h4>
                                 <div className="flex items-center gap-2 mt-1">
-                                <span className={clsx("text-xs font-bold uppercase tracking-wider flex items-center gap-1", attrColor)}>
+                                <span className={clsx("text-xs font-bold tracking-wider flex items-center gap-1", attrColor)}>
                                    {/* Attribute Icon (Generic Circle for now) */}
                                     {<Icon src={attributeIcon.src} alt={attributeIcon.alt} size={4}/>}
                                     {getAttributeName(hero.primary_attr)}
                                 </span>
-                                    <span className="text-slate-400 text-[12px] uppercase tracking-wider border-l border-slate-600 pl-2">
+                                    <span className="text-slate-400 text-[12px] tracking-wider border-l border-slate-600 pl-2">
                                   {isMelee(hero.attack_type) ? 'Melee' : 'Ranged'}
                                 </span>
                                 </div>
@@ -182,7 +182,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             {/* Combat Stats (Calculated) */}
                             <div className="flex justify-around items-center px-1">
                                 <div className="text-center">
-                                    <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Attack</div>
+                                    <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Attack</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
                                         {/* <Icon src={getStatsIcon('attack')} alt={'attack'} size={4}/> */}
                                         {/* Assuming getStatsIcon is imported or available */}
@@ -190,14 +190,14 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Armor</div>
+                                    <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Armor</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
                                         {/* <Icon src={getStatsIcon('armor')} alt={'armor'} size={4}/> */}
                                         <span>{armor}</span>
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <div className="text-[9px] text-slate-500 uppercase tracking-wider mb-0.5">Speed</div>
+                                    <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Speed</div>
                                     <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
                                         {/* <Icon src={getStatsIcon("move_speed")} alt={'speed'} size={4}/> */}
                                         <span>{hero.move_speed}</span>
@@ -208,7 +208,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                             {/* Roles */}
                             <div className="border-t border-slate-700/50 pt-2 flex flex-wrap gap-1 justify-center">
                                 {hero.roles.slice(0, 5).map(role => (
-                                    <span key={role} className="px-1.5 py-0.5 rounded-[2px] text-[9px] uppercase font-bold tracking-wider bg-[#232730] text-[#808fa6] border border-white/5">
+                                    <span key={role} className="px-1.5 py-0.5 rounded-[2px] text-[9px] font-bold tracking-wider bg-[#232730] text-[#808fa6] border border-white/5">
                                         {getHeroRoleName(role)}
                                     </span>
                                 ))}

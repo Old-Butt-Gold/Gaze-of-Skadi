@@ -42,13 +42,13 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
                             {/* Context */}
                             <td className="px-4 md:px-6 py-3 font-medium align-middle">
                                 {isItemTiming(row) ? (
-                                    <ItemCell itemName={row.item} />
+                                    <ItemCell itemName={row.item} showName={true} />
                                 ) : (
                                     (() => {
                                         const config = getLaneConfig(row.laneRole.value);
                                         return (
                                             <span className={clsx(
-                                                "inline-flex items-center gap-2 px-3 py-1 rounded border uppercase tracking-wider text-[10px] font-bold shadow-sm",
+                                                "inline-flex items-center gap-2 px-3 py-1 rounded border tracking-wider text-[10px] font-bold shadow-sm",
                                                 config.style
                                             )}>
                                                     {config.iconSrc && <Icon src={config.iconSrc} size={3} alt={config.label} />}

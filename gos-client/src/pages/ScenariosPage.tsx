@@ -122,24 +122,24 @@ export const ScenariosPage: React.FC = () => {
                             />
                         ) : (
                             <select
-                                className="select select-sm select-bordered w-full sm:w-56 bg-[#121417] border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none uppercase text-xs tracking-wider font-bold"
+                                className="select select-sm select-bordered w-full sm:w-56 bg-[#121417] border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none text-xs tracking-wider font-bold"
                                 onChange={handleLaneChange}
                                 value={filters.searchQuery} // Используем searchQuery для хранения выбранного lane name
                             >
-                                <option value="">ALL LANES</option>
+                                <option value="">All lanes</option>
                                 {LANE_OPTIONS.map(opt => (
-                                    <option key={opt.value} value={opt.value}>{opt.label.toUpperCase()}</option>
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
                         )}
 
                         {/* Time Select */}
                         <select
-                            className="select select-sm select-bordered w-full sm:w-48 bg-[#121417] border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none uppercase text-xs tracking-wider font-bold font-mono"
+                            className="select select-sm select-bordered w-full sm:w-48 bg-[#121417] border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none text-xs tracking-wider font-bold font-mono"
                             value={filters.selectedTime}
                             onChange={handleTimeChange}
                         >
-                            <option value="all">ANY TIME</option>
+                            <option value="all">Any time</option>
                             {timeOptions.map(opt => (
                                 <option key={opt.value} value={opt.value}>
                                     {opt.label}

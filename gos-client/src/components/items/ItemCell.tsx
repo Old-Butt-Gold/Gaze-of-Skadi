@@ -1,7 +1,11 @@
-﻿import {useItems} from "../../hooks/queries/useItems.ts";
-import {ItemTooltip} from "./ItemTooltip.tsx";
+﻿import { useItems } from "../../hooks/queries/useItems.ts";
+import { ItemTooltip } from "./ItemTooltip.tsx";
+import React from "react";
 
-export const ItemCell = ({ itemName }: { itemName: string }) => {
+export const ItemCell: React.FC<{
+    itemName: string;
+    showName?: boolean;
+}> = ({ itemName, showName = false }) => {
     const { getItem } = useItems();
     const item = getItem(itemName);
 
@@ -9,9 +13,11 @@ export const ItemCell = ({ itemName }: { itemName: string }) => {
         return (
             <div className="flex items-center gap-3 opacity-50">
                 <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e]"></div>
-                <span className="capitalize font-serif text-slate-200 text-[15px] tracking-wide">
-                    {itemName.replace(/_/g, ' ')}
-                </span>
+                {showName && (
+                    <span className="font-serif text-slate-200 text-[15px] tracking-wide">
+            {itemName.replace(/_/g, ' ')}
+          </span>
+                )}
             </div>
         );
     }
@@ -26,9 +32,11 @@ export const ItemCell = ({ itemName }: { itemName: string }) => {
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <span className="capitalize font-serif text-slate-200 text-[15px] tracking-wide group-hover:text-white transition-colors border-[#58606e]/50 hover:border-white/50">
-                    {item.dname}
-                </span>
+                {showName && (
+                    <span className="font-serif text-slate-200 text-[15px] tracking-wide group-hover:text-white transition-colors border-[#58606e]/50 hover:border-white/50">
+                        {item.dname}
+                    </span>
+                )}
             </div>
         </ItemTooltip>
     );

@@ -146,7 +146,7 @@ export const RecordsPage: React.FC = () => {
                                             {/* Hero (Conditional) */}
                                             {hasHeroData && (
                                                 <td className="px-6 py-4">
-                                                    <HeroCell heroId={record.heroId} />
+                                                    <HeroCell heroId={record.heroId} showName={true} />
                                                 </td>
                                             )}
 
