@@ -8,10 +8,12 @@ export interface BaseScenarioData {
 }
 
 export interface ItemTimingDto extends BaseScenarioData {
+  type: 'itemTiming';
   item: string;
 }
 
 export interface LaneRolesDto extends BaseScenarioData {
+  type: 'laneRole';
   laneRole: BaseEnum<LaneRole>;
 }
 

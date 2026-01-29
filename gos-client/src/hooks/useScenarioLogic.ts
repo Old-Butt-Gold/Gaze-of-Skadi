@@ -1,6 +1,5 @@
 ﻿import { useMemo, useState } from 'react';
 import {type ScenarioTab, useScenariosStore} from '../store/scenariosStore';
-import { isItemTiming } from '../utils/typeGuards';
 import { formatTimeRange } from '../utils/formatUtils';
 import {useItemTimings} from "./queries/useItemTimings.ts";
 import {useLaneRoles} from "./queries/useLaneRoles.ts";
@@ -77,7 +76,7 @@ export const useScenarioLogic = () => {
 
         if (searchQuery) {
           const q = searchQuery.toLowerCase();
-          if (isItemTiming(item)) {
+          if (item.type === 'itemTiming') {
             const itemDictionary = getItem(item.item);
             if (itemDictionary !== null) {
               return itemDictionary.dname?.toLowerCase().includes(q);

@@ -1,6 +1,5 @@
 ﻿import React from 'react';
 import clsx from 'clsx';
-import { isItemTiming } from '../../utils/typeGuards';
 import { formatDuration } from '../../utils/formatUtils';
 import { getLaneConfig } from '../../utils/scenariosUtils';
 import type { ItemTimingDto, LaneRolesDto } from "../../types/scenarios";
@@ -41,7 +40,7 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
 
                             {/* Context */}
                             <td className="px-4 md:px-6 py-3 font-medium align-middle">
-                                {isItemTiming(row) ? (
+                                {row.type == 'itemTiming' ? (
                                     <ItemCell itemName={row.item} showName={true} />
                                 ) : (
                                     (() => {

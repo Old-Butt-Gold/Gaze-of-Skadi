@@ -6,6 +6,7 @@ import {NotFoundPage} from "./pages/NotFoundPage.tsx";
 import {HomePage} from "./pages/HomePage.tsx";
 import {RecordsPage} from "./pages/RecordsPage.tsx";
 import {ScenariosPage} from "./pages/ScenariosPage.tsx";
+import {TeamsPage} from "./pages/TeamsPage.tsx";
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path={APP_ROUTES.DISTRIBUTIONS} element={<DistributionPage />} />
                 <Route path={APP_ROUTES.RECORDS} element={<RecordsPage />} />
                 <Route path={APP_ROUTES.SCENARIOS} element={<ScenariosPage />} />
+                <Route path={APP_ROUTES.TEAMS} element={<TeamsPage />} />
 
                 {/* Placeholders for the new links (Matches & Heroes).
                    These currently point to 404 until you build the actual pages.
