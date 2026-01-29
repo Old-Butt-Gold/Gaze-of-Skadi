@@ -41,13 +41,13 @@ public class Team
 	/// Gets the name.
 	/// </summary>
 	[JsonPropertyName("name")]
-	public string? Name { get; init; }
+	public required string Name { get; init; }
 
 	/// <summary>
 	/// Gets the tag.
 	/// </summary>
 	[JsonPropertyName("tag")]
-	public string? Tag { get; init; }
+	public required string Tag { get; init; }
 
 	/// <summary>
 	/// Gets the logo url.

@@ -11,6 +11,6 @@ internal sealed class GetTeamsHandler(IRequester requester, IMapper mapper) : IR
     {
         var teams = await requester.GetResponseAsync<IEnumerable<Team>>("teams", ct: ct);
 
-        return mapper.Map<IEnumerable<TeamDto>>(teams);
+        return mapper.Map<IEnumerable<TeamDto>>(teams).OrderByDescending(x => x.Rating);
     }
 }
