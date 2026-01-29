@@ -2,13 +2,14 @@
 import { TeamCard } from '../components/teams/TeamCard';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
+import clsx from 'clsx';
 import {useTeamsLogic} from "../hooks/useTeamLogic.ts";
 import type {TeamSortOption} from "../store/teamStore.ts";
 
 export const TeamsPage: React.FC = () => {
     const {
         teams, totalCount, isLoading, isError, refetch,
-        totalPages, currentPage, searchQuery, sortBy, actions
+        totalPages, currentPage, searchQuery, sortBy, sortDirection, actions
     } = useTeamsLogic();
 
     if (isLoading) return <div className="min-h-screen flex items-center justify-center"><LoadingSpinner text="Scouting Teams..." /></div>;
@@ -35,7 +36,7 @@ export const TeamsPage: React.FC = () => {
                         {/* Controls */}
                         <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
                             {/* Search */}
-                            <div className="relative group">
+                            <div className="relative group w-full sm:w-auto">
                                 <input
                                     type="text"
                                     placeholder="SEARCH TEAM..."
@@ -50,17 +51,35 @@ export const TeamsPage: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Sort */}
-                            <select
-                                className="select w-full sm:w-48 bg-[#121417] border border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none uppercase text-xs tracking-wider font-bold h-10 px-4 cursor-pointer hover:bg-[#15171c] transition-colors"
-                                value={sortBy}
-                                onChange={(e) => actions.setSortBy(e.target.value as TeamSortOption)}
-                            >
-                                <option value="rating">Sort by Rating</option>
-                                <option value="winrate">Sort by Winrate</option>
-                                <option value="activity">Sort by Activity</option>
-                                <option value="name">Sort by Name</option>
-                            </select>
+                            {/* Sort Group (Select + Direction Button) */}
+                            <div className="flex gap-1 w-full sm:w-auto">
+                                <select
+                                    className="select flex-grow sm:w-40 bg-[#121417] border border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none uppercase text-xs tracking-wider font-bold h-10 px-4 cursor-pointer hover:bg-[#15171c] transition-colors appearance-none"
+                                    value={sortBy}
+                                    onChange={(e) => actions.setSortBy(e.target.value as TeamSortOption)}
+                                >
+                                    <option value="rating">Rating</option>
+                                    <option value="winrate">Winrate</option>
+                                    <option value="activity">Activity</option>
+                                </select>
+
+                                {/* Direction Toggle Button */}
+                                <button
+                                    onClick={actions.toggleSortDirection}
+                                    className="btn btn-square h-10 w-10 bg-[#121417] border border-[#2e353b] hover:bg-[#15171c] hover:border-[#4a5568] group tooltip tooltip-bottom"
+                                    data-tip={sortDirection === 'asc' ? "Ascending" : "Descending"}
+                                >
+                                    <div className={clsx(
+                                        "transition-transform duration-300 text-[#e7d291]",
+                                        sortDirection === 'asc' ? "rotate-180" : "rotate-0"
+                                    )}>
+                                        {/* Sort Icon (Bars) */}
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h7a1 1 0 100-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM15 8a1 1 0 10-2 0v5.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L15 13.586V8z" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,12 +87,6 @@ export const TeamsPage: React.FC = () => {
 
             {/* Content Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="mb-4 text-[#58606e] text-xs font-bold uppercase tracking-widest flex justify-between items-center">
-                    <span className="text-[#e7d291]">
-                        {totalCount} Found <span className="text-[#58606e] ml-1">(Page {currentPage}/{totalPages || 1})</span>
-                    </span>
-                </div>
-
                 {teams.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-32 text-[#454c59]">
                         <div className="w-20 h-20 border-2 border-[#2e353b] rounded-full flex items-center justify-center mb-6">
@@ -92,26 +105,31 @@ export const TeamsPage: React.FC = () => {
 
                         {/* Pagination Footer */}
                         {totalPages > 1 && (
-                            <div className="mt-10 flex justify-center pb-10">
+                            <div className="mt-12 flex flex-col items-center gap-3 pb-10">
                                 <div className="join bg-[#1a1d24] border border-[#2e353b] rounded-lg p-1 shadow-lg">
                                     <button
-                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider"
+                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider w-24"
                                         disabled={currentPage === 1}
                                         onClick={() => actions.setCurrentPage(Math.max(1, currentPage - 1))}
                                     >
-                                        Prev
+                                        Previous
                                     </button>
-                                    <div className="join-item flex items-center px-4 text-xs font-mono text-[#e7d291] border-l border-r border-[#2e353b]">
+                                    <div className="join-item flex items-center px-4 text-sm font-mono text-[#e7d291] border-l border-r border-[#2e353b] min-w-[80px] justify-center">
                                         {currentPage} / {totalPages}
                                     </div>
                                     <button
-                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider"
+                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider w-24"
                                         disabled={currentPage === totalPages}
                                         onClick={() => actions.setCurrentPage(Math.min(totalPages, currentPage + 1))}
                                     >
                                         Next
                                     </button>
                                 </div>
+
+                                {/* Info Text Styled */}
+                                <span className="text-[#58606e] text-[10px] font-bold uppercase tracking-wider">
+                                    Total: {totalCount}; Showing <span className="text-[#e7d291]">{teams.length}</span> teams on this page
+                                </span>
                             </div>
                         )}
                     </>

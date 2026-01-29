@@ -28,7 +28,7 @@ export const Icon: React.FC<IconProps> =
 
     return (
         <img
-            src={src}
+            src={imgSrc}
             alt={alt ?? src}
             className={`${widthClass} ${heightClass} object-contain inline-block`}
             loading={"lazy"}
