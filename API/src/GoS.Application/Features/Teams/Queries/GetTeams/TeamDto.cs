@@ -11,5 +11,3 @@ public class TeamDto
     public int TeamId { get; init; }
     public Uri? LogoUrl { get; init; }
 }
-
-

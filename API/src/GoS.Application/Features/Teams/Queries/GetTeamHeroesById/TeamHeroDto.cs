@@ -6,4 +6,3 @@ public class TeamHeroDto
     public int GamesPlayed { get; init; }
     public int Wins { get; init; }
 }
-

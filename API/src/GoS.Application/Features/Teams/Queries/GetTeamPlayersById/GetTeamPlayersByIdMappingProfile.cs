@@ -7,7 +7,9 @@ public class GetTeamPlayersByIdMappingProfile : Profile
 {
     public GetTeamPlayersByIdMappingProfile()
     {
-        CreateMap<TeamPlayer, TeamPlayerDto>();
+        CreateMap<TeamPlayer, TeamPlayerDto>()
+            .ForMember(dest => dest.ImageUrl, opt => opt.MapFrom(src =>
+                $"https://cdn.stratz.com/images/dota2/players/{src.AccountId}.png"));
     }
 }
 

@@ -13,6 +13,7 @@ public class TeamMatchDto
     public long Duration { get; init; }
     public long StartTime { get; init; }
     public long LeagueId { get; init; }
+    public required string LeagueImageUrl { get; init; }
     public string? LeagueName { get; init; }
     public long OpposingTeamId { get; init; }
     public string? OpposingTeamName { get; init; }

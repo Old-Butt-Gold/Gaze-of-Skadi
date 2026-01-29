@@ -10,5 +10,6 @@ public class TeamPlayerDto
     public long GamesPlayed { get; init; }
     public long Wins { get; init; }
     public BaseEnumDto<BooleanState>? IsCurrentTeamMember { get; init; }
+    public required string ImageUrl { get; set; }
 }
 
