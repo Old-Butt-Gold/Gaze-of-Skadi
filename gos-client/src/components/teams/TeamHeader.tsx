@@ -24,14 +24,12 @@ export const TeamHeader: React.FC<Props> = ({ team }) => {
                     {/* Logo Container */}
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-gradient-to-br from-[#e7d291]/20 to-transparent rounded-2xl blur opacity-50 group-hover:opacity-100 transition-opacity"></div>
-                        <div className="relative w-32 h-32 md:w-40 md:h-40 bg-[#0f1114] rounded-2xl border border-[#2e353b] flex items-center justify-center shadow-2xl p-4">
                             <Icon
                                 src={team.logoUrl || "fallback"}
-                                size={24} // Large size
+                                size={64}
                                 fallbackSrc="/assets/images/icon_team_default.png"
                                 alt={team.tag}
                             />
-                        </div>
                     </div>
 
                     {/* Team Info */}

@@ -23,7 +23,7 @@ export const TeamRoster: React.FC<Props> = ({ players }) => {
                     "relative bg-[#1a1d24] border rounded-xl overflow-hidden transition-all duration-300 group hover:-translate-y-1 block",
                     isActive
                         ? "border-[#2e353b] hover:border-[#e7d291]/50 hover:shadow-[0_0_15px_rgba(231,210,145,0.1)]"
-                        : "border-[#2e353b]/50 opacity-70 hover:opacity-100 hover:border-[#4a5568]"
+                        : "border-[#2e353b]/50 opacity-90 hover:opacity-100 hover:border-[#4a5568]"
                 )}
             >
                 {/* Background Gradient */}

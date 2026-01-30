@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 interface IconProps {
     src: string;
@@ -16,6 +16,10 @@ export const Icon: React.FC<IconProps> =
      }) => {
 
     const [imgSrc, setImgSrc] = useState(src);
+
+    useEffect(() => {
+        setImgSrc(src);
+    }, [src]);
 
     const handleError = () => {
         if (fallbackSrc && imgSrc !== fallbackSrc) {

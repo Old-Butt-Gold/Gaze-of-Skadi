@@ -1,10 +1,10 @@
 ﻿import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import type {TeamDto, TeamMatchDto} from '../../types/teams';
+import type { TeamDto, TeamMatchDto } from '../../types/teams';
 import { formatDuration, formatRelativeTime } from '../../utils/formatUtils';
 import { Icon } from '../Icon';
-import {isRadiantTeam, isTeamWon} from "../../utils/matchUtils.ts";
+import { isRadiantTeam, isTeamWon } from "../../utils/matchUtils.ts";
 
 interface Props {
     matches: TeamMatchDto[];
@@ -26,31 +26,34 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
+        document.getElementById('matches-top')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
     return (
         <div id="matches-top" className="flex flex-col gap-3">
-            {/* Header removed for cleaner card-list look, or keep simplified */}
-
             <div className="space-y-3">
                 {paginatedMatches.map((match) => {
-                    const isRadiant = isRadiantTeam(match.radiant);
-                    const won = isTeamWon(match.radiant, match.radiantWin);
+                    const weAreRadiant = isRadiantTeam(match.radiant);
+                    const weWon = isTeamWon(match.radiant, match.radiantWin);
 
-                    // Side Config
-                    const sideColor = isRadiant ? "text-emerald-400" : "text-red-400";
-                    const sideIcon = isRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png";
-                    const sideName = isRadiant ? "Radiant" : "Dire";
+                    const radiantName = weAreRadiant ? team.name : match.opposingTeamName || 'Unknown Team';
+                    const radiantLogo = weAreRadiant ? team.logoUrl : match.opposingTeamLogo;
+                    const radiantId = weAreRadiant ? team.teamId : match.opposingTeamId;
+                    const radiantScore = match.radiantScore;
+
+                    const direName = !weAreRadiant ? team.name : match.opposingTeamName || 'Unknown Team';
+                    const direLogo = !weAreRadiant ? team.logoUrl : match.opposingTeamLogo;
+                    const direId = !weAreRadiant ? team.teamId : match.opposingTeamId;
+                    const direScore = match.direScore;
 
                     return (
                         <div
                             key={match.matchId}
                             className="relative grid grid-cols-1 md:grid-cols-12 bg-[#15171c] hover:bg-[#1a1d24] border border-[#2e353b] hover:border-[#4a5568] rounded-xl overflow-hidden transition-all group shadow-sm hover:shadow-lg"
                         >
-                            {/* Win/Loss Indicator (Left Border) */}
                             <div className={clsx(
                                 "absolute left-0 top-0 bottom-0 w-1.5",
-                                won
+                                weWon
                                     ? "bg-gradient-to-b from-emerald-400 to-emerald-600 shadow-[0_0_15px_rgba(16,185,129,0.4)]"
                                     : "bg-gradient-to-b from-red-500 to-red-700 shadow-[0_0_15px_rgba(239,68,68,0.4)]"
                             )} />
@@ -81,63 +84,89 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
                                 </div>
                             </div>
 
-                            {/* 2. Match Context (Center) */}
-                            <div className="col-span-12 md:col-span-5 flex items-center justify-between md:justify-center p-4 border-t md:border-t-0 md:border-l border-[#2e353b] md:bg-transparent bg-[#121417]">
-                                {/* Our Team (Context) */}
-                                <div className="flex flex-col items-center w-1/3">
-                                    <div className="flex items-center gap-1.5 mb-1">
-                                        {/* Faction Icon */}
-                                        <Icon src={sideIcon} alt={sideName} size={5} />
-                                        <span className={clsx("text-[12px] font-bold uppercase tracking-wider", sideColor)}>
-                                            {sideName}
+                            {/* 2. Match Context: Radiant vs Dire (Center Column) */}
+                            <div className="col-span-12 md:col-span-6 flex items-center justify-between p-2 md:border-l border-[#2e353b] bg-[#121417] md:bg-transparent relative">
+
+                                {/* === RADIANT SIDE (Left) === */}
+                                <div className="flex flex-col items-center w-[40%] group/radiant">
+                                    {/* Faction Header */}
+
+
+                                    {/* Team Logo & Name */}
+                                    <Link to={`/teams/${radiantId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+                                        <div className={clsx(
+                                            "w-12 h-12 bg-[#0f1114] rounded-lg border flex items-center justify-center shadow-lg transition-all",
+                                            "border-emerald-500/30 shadow-emerald-500/10"
+                                        )}>
+                                            <Icon src={radiantLogo || "fallback"} size={10} fallbackSrc="/assets/images/icon_team_default.png" />
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Icon src="/assets/images/radiant.png" alt="Radiant" size={4} />
+                                            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Radiant</span>
+                                        </div>
+                                        <span className={clsx(
+                                            "text-xs font-bold text-center leading-tight line-clamp-1 max-w-[120px] transition-colors",
+                                            weAreRadiant ? "text-white" : "text-[#808fa6] group-hover/radiant:text-white"
+                                        )}>
+                                            {radiantName}
                                         </span>
-                                    </div>
-                                    <span className="text-[#e3e3e3] font-bold text-xs uppercase tracking-wide">
-                                        {team.name}
-                                    </span>
+                                    </Link>
                                 </div>
 
-                                {/* Score */}
-                                <div className="flex flex-col items-center w-1/3 px-4">
-                                    <div className="font-mono font-black text-2xl tracking-widest text-[#e3e3e3] flex items-center gap-2">
-                                        <span className={isRadiant ? "text-emerald-400 drop-shadow-[0_0_5px_rgba(52,211,153,0.5)]" : "text-red-400 drop-shadow-[0_0_5px_rgba(248,113,113,0.5)]"}>
-                                            {match.radiantScore}
+                                {/* === SCORE (Center) === */}
+                                <div className="flex flex-col items-center w-[20%] z-10">
+                                    <div className="font-mono font-black text-2xl tracking-widest text-[#e3e3e3] flex items-center justify-center gap-2 bg-[#0f1114]/50 px-3 py-1 rounded border border-[#2e353b]/50">
+                                        {/* Radiant Score */}
+                                        <span className={"text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.6)]"}>
+                                            {radiantScore}
                                         </span>
-                                        <span className="text-[#58606e] text-lg">:</span>
-                                        <span className={!isRadiant ? "text-emerald-400 drop-shadow-[0_0_5px_rgba(52,211,153,0.5)]" : "text-red-400 drop-shadow-[0_0_5px_rgba(248,113,113,0.5)]"}>
-                                            {match.direScore}
+                                        <span className="text-[#58606e] text-sm">:</span>
+                                        {/* Dire Score */}
+                                        <span className={"text-red-400 drop-shadow-[0_0_8px_rgba(248,113,113,0.6)]"}>
+                                            {direScore}
                                         </span>
                                     </div>
-                                    <span className="text-[#58606e] text-[10px] font-bold uppercase mt-1">{formatDuration(match.duration)}</span>
+                                    <span className="text-[#58606e] text-[12px] font-bold uppercase mt-1 tracking-wider">{formatDuration(match.duration)}</span>
                                 </div>
 
-                                {/* Opponent */}
-                                <Link to={`/teams/${match.opposingTeamId}`} className="flex flex-col items-center w-1/3 group/opp">
-                                    <div className="w-10 h-10 bg-[#0f1114] rounded-lg border border-[#2e353b] flex items-center justify-center shadow-sm group-hover/opp:border-[#e7d291]/50 transition-colors mb-1.5">
-                                        <Icon src={match.opposingTeamLogo || "fallback"} size={8} fallbackSrc="/assets/images/icon_team_default.png" />
-                                    </div>
-                                    <span className="text-[#808fa6] font-bold text-xs text-center leading-tight group-hover/opp:text-white transition-colors line-clamp-1 max-w-full">
-                                        {match.opposingTeamName || 'Unknown'}
-                                    </span>
-                                </Link>
+                                {/* === DIRE SIDE (Right) === */}
+                                <div className="flex flex-col items-center w-[40%] group/dire">
+                                    {/* Team Logo & Name */}
+                                    <Link to={`/teams/${direId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+                                        <div className={clsx(
+                                            "w-12 h-12 bg-[#0f1114] rounded-lg border flex items-center justify-center shadow-lg transition-all",
+                                            "border-red-500/30 shadow-red-500/10"
+                                        )}>
+                                            <Icon src={direLogo || "fallback"} size={10} fallbackSrc="/assets/images/icon_team_default.png" />
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <span className="text-[10px] font-bold uppercase tracking-wider text-red-400">Dire</span>
+                                            <Icon src="/assets/images/dire.png" alt="Dire" size={4} />
+                                        </div>
+                                        <span className={clsx(
+                                            "text-xs font-bold text-center leading-tight line-clamp-1 max-w-[120px] transition-colors",
+                                            !weAreRadiant ? "text-white" : "text-[#808fa6] group-hover/dire:text-white"
+                                        )}>
+                                            {direName}
+                                        </span>
+                                    </Link>
+                                </div>
                             </div>
 
-                            {/* 3. Result (Right) */}
-                            <div className="col-span-12 md:col-span-3 flex items-center justify-center md:justify-center p-4 md:pr-6 border-t md:border-t-0 md:border-l border-[#2e353b] bg-gradient-to-r from-transparent to-[#0f1114]/30">
+                            {/* 3. Result Badge (Right Column) */}
+                            <div className="col-span-12 md:col-span-2 flex items-center justify-center md:justify-end p-4 md:pr-6 border-t md:border-t-0 md:border-l border-[#2e353b] bg-gradient-to-r from-transparent to-[#0f1114]/30">
                                 <div className={clsx(
-                                    "flex items-center gap-3 px-4 py-2 rounded-lg border backdrop-blur-sm",
-                                    won
+                                    "px-4 py-2 rounded-lg border backdrop-blur-sm flex flex-col items-center min-w-[80px]",
+                                    weWon
                                         ? "bg-emerald-500/5 border-emerald-500/20"
                                         : "bg-red-500/5 border-red-500/20"
                                 )}>
-                                    <div className="flex flex-col items-end">
-                                        <span className={clsx(
-                                            "font-serif font-black text-lg uppercase tracking-widest leading-none",
-                                            won ? "text-emerald-400" : "text-red-400"
-                                        )}>
-                                            {won ? 'Victory' : 'Defeat'}
-                                        </span>
-                                    </div>
+                                    <span className={clsx(
+                                        "font-serif font-black text-sm uppercase tracking-widest leading-none",
+                                        weWon ? "text-emerald-400" : "text-red-400"
+                                    )}>
+                                        {weWon ? 'Victory' : 'Defeat'}
+                                    </span>
                                 </div>
                             </div>
                         </div>
