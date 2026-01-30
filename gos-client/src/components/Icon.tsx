@@ -31,7 +31,6 @@ export const Icon: React.FC<IconProps> =
             src={imgSrc}
             alt={alt ?? src}
             className={`${widthClass} ${heightClass} object-contain inline-block`}
-            loading={"lazy"}
             onError={handleError}
         />
     );

@@ -6,7 +6,7 @@ export const useItems = () => {
   const query = useQuery<ItemDictionary, Error>({
     queryKey: ['items'],
     queryFn: itemService.getItemsByName,
-    staleTime: 1000 * 60 * 60 * 24, // 24 hours cache
+    staleTime: 1000 * 60 * 60, // 24 hours cache
   });
 
   const getItem = (itemName: string): Item | null => {

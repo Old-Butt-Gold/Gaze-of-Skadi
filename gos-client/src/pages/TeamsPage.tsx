@@ -12,8 +12,8 @@ export const TeamsPage: React.FC = () => {
         totalPages, currentPage, searchQuery, sortBy, sortDirection, actions
     } = useTeamsLogic();
 
-    if (isLoading) return <div className="min-h-screen flex items-center justify-center"><LoadingSpinner text="Scouting Teams..." /></div>;
-    if (isError) return <div className="min-h-screen flex items-center justify-center"><ErrorDisplay message="Failed to load teams data" onRetry={refetch} /></div>;
+    if (isLoading) return <LoadingSpinner text="Scouting Teams..." />;
+    if (isError) return <ErrorDisplay message="Failed to load teams data" onRetry={refetch} />;
 
     return (
         <div className="w-full space-y-8 animate-fade-in pb-20">

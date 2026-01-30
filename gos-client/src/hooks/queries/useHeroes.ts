@@ -6,7 +6,7 @@ export const useHeroes = () => {
   const query = useQuery<HeroDictionary, Error>({
     queryKey: ['heroes'],
     queryFn: heroService.getHeroes,
-    staleTime: 1000 * 60 * 60 * 24, // 24 hours cache
+    staleTime: 1000 * 60 * 60, // 24 hours cache
     refetchOnWindowFocus: false,
   });
 

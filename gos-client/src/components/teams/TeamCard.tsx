@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import type { TeamDto } from '../../types/teams';
 import { formatRelativeTime } from '../../utils/formatUtils';
 import { Icon } from '../Icon';
+import {APP_ROUTES} from "../../config/navigation.ts";
 
 interface Props {
     team: TeamDto & { rank: number };
@@ -19,7 +20,7 @@ export const TeamCard: React.FC<Props> = ({ team }) => {
 
     return (
         <Link
-            to={`/teams/${team.teamId}`}
+            to={`${APP_ROUTES.TEAMS}/${team.teamId}`}
             className="group relative bg-[#1a1d24] border border-[#2e353b] hover:border-[#4a5568] rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:-translate-y-1 block"
         >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-60 pointer-events-none" />
@@ -33,10 +34,10 @@ export const TeamCard: React.FC<Props> = ({ team }) => {
 
                 {/* Header: Logo & Name */}
                 <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 bg-[#0f1114] rounded-lg border border-[#2e353b] flex items-center justify-center shrink-0 shadow-lg group-hover:shadow-blue-900/20 transition-shadow overflow-hidden">
+                    <div className="w-16 h-16 bg-[#0f1114] rounded-lg border border-[#2e353b] flex items-center justify-center shrink-0 shadow-lg group-hover:shadow-blue-900/20 transition-shadow overflow-show">
                         <Icon
                             src={team.logoUrl || "fallback"}
-                            size={12}
+                            size={16}
                             fallbackSrc="/assets/images/icon_team_default.png"
                             alt={team.tag || "Team Logo"}
                         />
