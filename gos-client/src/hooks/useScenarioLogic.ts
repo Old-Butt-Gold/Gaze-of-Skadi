@@ -4,6 +4,7 @@ import { formatTimeRange } from '../utils/formatUtils';
 import {useItemTimings} from "./queries/useItemTimings.ts";
 import {useLaneRoles} from "./queries/useLaneRoles.ts";
 import {useItems} from "./queries/useItems.ts";
+import {isItemTiming} from "../utils/typeGuards.ts";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -76,7 +77,7 @@ export const useScenarioLogic = () => {
 
         if (searchQuery) {
           const q = searchQuery.toLowerCase();
-          if (item.type === 'itemTiming') {
+          if (isItemTiming(item)) {
             const itemDictionary = getItem(item.item);
             if (itemDictionary !== null) {
               return itemDictionary.dname?.toLowerCase().includes(q);

@@ -2,11 +2,10 @@
 import clsx from 'clsx';
 import { formatDuration } from '../../utils/formatUtils';
 import { getLaneConfig } from '../../utils/scenariosUtils';
-import type { ItemTimingDto, LaneRolesDto } from "../../types/scenarios";
+import type {ScenarioData} from "../../types/scenarios";
 import { Icon } from '../Icon';
 import {ItemCell} from "../items/ItemCell.tsx";
-
-type ScenarioData = ItemTimingDto | LaneRolesDto;
+import {isItemTiming} from "../../utils/typeGuards.ts";
 
 interface Props {
     data: ScenarioData[];
@@ -40,7 +39,7 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
 
                             {/* Context */}
                             <td className="px-4 md:px-6 py-3 font-medium align-middle">
-                                {row.type == 'itemTiming' ? (
+                                {isItemTiming(row) ? (
                                     <ItemCell itemName={row.item} showName={true} />
                                 ) : (
                                     (() => {
