@@ -17,38 +17,41 @@ export const HeroStatsPage: React.FC = () => {
 
     const tabs: { id: Tab; label: string }[] = [
         { id: 'pro', label: 'Pro Scene' },
-        { id: 'ranked', label: 'Ranked Meta' },
-        { id: 'turbo', label: 'Turbo Mode' },
+        { id: 'ranked', label: 'Ranked' },
+        { id: 'turbo', label: 'Turbo' },
     ];
 
     return (
-        <div className="w-full space-y-6 animate-fade-in pb-20 overflow-hidden">
+        // Убрал overflow-hidden здесь, чтобы sticky работал
+        <div className="w-full min-h-screen animate-fade-in pb-20">
 
-            {/* Header */}
-            <div className="bg-[#1a1d24] border-b border-[#2e353b] top-16 z-30 shadow-xl backdrop-blur-md bg-opacity-95">
-                <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                    <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-                        <div>
-                            <h1 className="text-3xl font-serif font-black text-[#f0f0f0] tracking-wide uppercase drop-shadow-md">
-                                Hero Statistics
-                            </h1>
-                            <p className="text-[#808fa6] text-xs md:text-sm font-medium mt-1 flex items-center gap-2">
-                                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"/>
-                                Analysis based on matches from the last 7 days
-                            </p>
-                        </div>
+            {/* Sticky Header */}
+            <div className="sticky top-16 z-30 bg-[#1a1d24]/95 backdrop-blur-md border-b border-[#2e353b] shadow-lg transition-all">
+                <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
 
-                        <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                            {/* Tabs */}
+                        {/* Title */}
+                        <div className="flex items-center gap-4">
+                            <div>
+                                <h1 className="text-2xl font-serif font-black text-[#f0f0f0] tracking-wide uppercase drop-shadow-md leading-none">
+                                    Hero Statistics
+                                </h1>
+                                <p className="text-[#808fa6] text-[10px] uppercase font-bold tracking-widest mt-1">
+                                    Live Data • Last 7 Days
+                                </p>
+                            </div>
+                            <div className="hidden sm:block w-px h-8 bg-[#2e353b] mx-2"></div>
+
+                            {/* Tabs (Integrated in Header for space saving) */}
                             <div className="flex p-1 bg-[#121417] border border-[#2e353b] rounded-lg">
                                 {tabs.map(tab => (
                                     <button
                                         key={tab.id}
                                         onClick={() => setActiveTab(tab.id)}
                                         className={clsx(
-                                            "px-4 py-2 text-xs font-bold uppercase tracking-wider rounded transition-all duration-200 flex-1 sm:flex-none",
+                                            "px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded transition-all duration-200",
                                             activeTab === tab.id
-                                                ? "bg-[#2e353b] text-white shadow-md"
+                                                ? "bg-[#2e353b] text-white shadow-sm"
                                                 : "text-[#808fa6] hover:text-[#e3e3e3] hover:bg-[#1a1d24]"
                                         )}
                                     >
@@ -56,38 +59,48 @@ export const HeroStatsPage: React.FC = () => {
                                     </button>
                                 ))}
                             </div>
+                        </div>
 
-                            {/* Search */}
-                            <div className="relative group w-full sm:w-64">
-                                <input
-                                    type="text"
-                                    placeholder="SEARCH HERO..."
-                                    className="input w-full bg-[#121417] border border-[#2e353b] text-white placeholder-[#454c59] focus:border-[#4a5568] focus:outline-none uppercase text-xs tracking-wider font-bold h-10 pl-4 pr-10 transition-colors shadow-inner rounded-lg"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                                <div className="absolute right-3 top-1/2 -translate-y-1/2 text-[#454c59] pointer-events-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                    </svg>
-                                </div>
+                        {/* Search Input */}
+                        <div className="relative group w-full md:w-64">
+                            <input
+                                type="text"
+                                placeholder="Find Hero..."
+                                className="input w-full bg-[#121417] border border-[#2e353b] text-white text-xs font-bold placeholder-[#454c59] focus:border-[#4a5568] focus:outline-none h-9 pl-9 pr-4 transition-colors shadow-inner rounded-full"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#454c59] pointer-events-none group-focus-within:text-[#e7d291] transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* Decorative bottom line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#e7d291]/30 to-transparent"></div>
             </div>
 
             {/* Content Container */}
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            {/* Добавил overflow-hidden только здесь для таблицы, если нужно */}
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
                 {stats && stats.length > 0 ? (
                     <>
                         <HeroStatsTable stats={stats} activeTab={activeTab} searchQuery={searchQuery} />
 
-                        <div className="mt-4 text-center">
+                        <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-2 text-center pb-10">
                             <p className="text-[#58606e] text-[10px] uppercase tracking-widest">
-                                * Winrates are calculated as <span className="font-mono text-[#808fa6]">(Wins / Picks) * 100</span>.
-                                {activeTab === 'ranked' && ' "Pub" includes all public matchmaking games.'}
+                                Winrates calculated as <span className="font-mono text-[#808fa6]">(Wins / Picks) * 100</span>
                             </p>
+                            {activeTab === 'ranked' && (
+                                <>
+                                    <span className="hidden sm:inline text-[#2e353b]">•</span>
+                                    <p className="text-[#58606e] text-[10px] uppercase tracking-widest">
+                                        "All Pubs" excludes Ranked Matches
+                                    </p>
+                                </>
+                            )}
                         </div>
                     </>
                 ) : (
