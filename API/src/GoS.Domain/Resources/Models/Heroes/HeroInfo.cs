@@ -10,7 +10,7 @@ public class HeroInfo
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonPropertyName("primary_attr")]
     public HeroPrimaryAttribute PrimaryAttribute { get; set; }
@@ -22,16 +22,16 @@ public class HeroInfo
     public IEnumerable<HeroRole> Roles { get; set; } = [];
 
     [JsonPropertyName("lore")]
-    public string Lore { get; set; }
+    public required string Lore { get; set; }
 
     [JsonPropertyName("video")]
-    public string Video { get; set; }
+    public required string Video { get; set; }
 
     [JsonPropertyName("img")]
-    public string ImagePath { get; set; }
+    public required string ImagePath { get; set; }
 
     [JsonPropertyName("icon")]
-    public string IconPath { get; set; }
+    public required string IconPath { get; set; }
 
     [JsonPropertyName("base_health")]
     public int BaseHealth { get; set; }
@@ -110,5 +110,5 @@ public class HeroInfo
     public int NightVision { get; set; }
 
     [JsonPropertyName("localized_name")]
-    public string LocalizedName { get; set; }
+    public required string LocalizedName { get; set; }
 }

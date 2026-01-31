@@ -20,7 +20,7 @@ function App() {
                 <Route path={APP_ROUTES.SCENARIOS} element={<ScenariosPage />} />
                 <Route path={APP_ROUTES.TEAMS} element={<TeamsPage />} />
                 <Route path={`${APP_ROUTES.TEAMS}/:teamId`} element={<TeamDetailsPage />} />
-                <Route path={APP_ROUTES.HERO_STATS} element={<HeroStatsPage />} />
+                <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
 
                 {/* Placeholders for the new links (Matches & Heroes).
                    These currently point to 404 until you build the actual pages.

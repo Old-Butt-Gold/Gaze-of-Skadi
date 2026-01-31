@@ -51,9 +51,15 @@ export const isMelee = (attackType: HeroAttackType): boolean => {
 
 export const getStatsIcon = (type: HeroStatsIcon): string => {
   switch (type) {
-    case 'armor': return "/assets/images/icon_armor.png";
     case 'attack': return "/assets/images/icon_damage.png";
+    case 'attack_rate': return "/assets/images/icon_attack_time.png";
+    case 'attack_range': return "/assets/images/icon_attack_range.png";
+    case 'projectile_speed': return "/assets/images/icon_projectile_speed.png";
+    case 'armor': return "/assets/images/icon_armor.png";
+    case 'base_magic_resistance': return "/assets/images/icon_magic_resist.png";
     case 'move_speed': return "/assets/images/icon_movement_speed.png";
+    case 'turn_rate': return "/assets/images/icon_turn_rate.png";
+    case 'vision': return "/assets/images/icon_vision.png";
 
     default: return "";
   }

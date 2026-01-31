@@ -2,6 +2,7 @@
 import React from "react";
 import { HeroTooltip } from "./HeroTooltip.tsx";
 import { Link } from "react-router-dom";
+import {APP_ROUTES} from "../../config/navigation.ts";
 
 export const HeroCell: React.FC<{
     heroId: number | null;
@@ -36,7 +37,7 @@ export const HeroCell: React.FC<{
         <HeroTooltip heroId={heroId}>
             <div className="flex items-center gap-3 group/hero cursor-help">
                 <Link
-                    to={`/heroes/${heroId}`}
+                    to={`${APP_ROUTES.HEROES}/${heroId}`}
                     className="relative block shrink-0 overflow-hidden rounded-lg shadow-sm border border-slate-200 group-hover/hero:border-blue-400 transition-colors"
                 >
                     <div className="w-10 h-10 bg-slate-800">
@@ -49,7 +50,7 @@ export const HeroCell: React.FC<{
                 </Link>
                 {showName && (
                     <Link
-                        to={`/heroes/${heroId}`}
+                        to={`${APP_ROUTES.HEROES}/${heroId}`}
                         className="font-semibold text-slate-700 group-hover/hero:text-blue-600 transition-colors text-sm"
                     >
                         {hero.localized_name}

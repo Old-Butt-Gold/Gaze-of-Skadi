@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import type { TeamPlayerDto } from '../../types/teams';
 import { Icon } from '../Icon';
 import clsx from 'clsx';
+import {APP_ROUTES} from "../../config/navigation.ts";
 
 interface Props {
     players: TeamPlayerDto[];
@@ -18,7 +19,7 @@ export const TeamRoster: React.FC<Props> = ({ players }) => {
 
         return (
             <Link
-                to={`/players/${player.accountId}`} // Assuming you have a player profile route
+                to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} // Assuming you have a player profile route
                 className={clsx(
                     "relative bg-[#1a1d24] border rounded-xl overflow-hidden transition-all duration-300 group hover:-translate-y-1 block",
                     isActive

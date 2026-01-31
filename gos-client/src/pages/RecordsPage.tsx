@@ -8,6 +8,7 @@ import { formatRelativeTime, formatDuration } from '../utils/formatUtils';
 import clsx from 'clsx';
 import { HeroCell } from "../components/heroes/HeroCell";
 import { useRecordsStore } from '../store/recordsStore';
+import {APP_ROUTES} from "../config/navigation.ts";
 
 const getRankStyle = (rank: number) => {
     switch (rank) {
@@ -163,7 +164,7 @@ export const RecordsPage: React.FC = () => {
                                             </td>
                                             <td className="px-6 py-4 text-right align-middle">
                                                 <Link
-                                                    to={`/matches/${record.matchId}`}
+                                                    to={`${APP_ROUTES.MATCHES}/${record.matchId}`}
                                                     className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-md transition-colors border border-blue-100"
                                                 >
                                                     {record.matchId}

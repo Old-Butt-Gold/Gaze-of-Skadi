@@ -10,7 +10,9 @@ export const APP_ROUTES = {
   RECORDS: '/records',
   SCENARIOS: '/scenarios',
   TEAMS: '/teams',
-  HERO_STATS: '/hero-stats'
+  HEROES: '/heroes',
+  PLAYERS: '/players',
+  MATCHES: '/matches',
 } as const;
 
 export const MAIN_NAVIGATION: NavItem[] = [
@@ -18,5 +20,5 @@ export const MAIN_NAVIGATION: NavItem[] = [
   { name: 'Records', path: APP_ROUTES.RECORDS },
   { name: 'Scenarios', path: APP_ROUTES.SCENARIOS },
   { name: 'Team', path: APP_ROUTES.TEAMS },
-  { name: 'Heroes', path: APP_ROUTES.HERO_STATS }
+  { name: 'Heroes', path: APP_ROUTES.HEROES }
 ];

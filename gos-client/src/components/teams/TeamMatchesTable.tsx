@@ -5,6 +5,7 @@ import type { TeamDto, TeamMatchDto } from '../../types/teams';
 import { formatDuration, formatRelativeTime } from '../../utils/formatUtils';
 import { Icon } from '../Icon';
 import { isRadiantTeam, isTeamWon } from "../../utils/matchUtils.ts";
+import {APP_ROUTES} from "../../config/navigation.ts";
 
 interface Props {
     matches: TeamMatchDto[];
@@ -74,7 +75,7 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
                                         <div className="flex items-center gap-2 mt-1">
                                             <span className="text-[#808fa6] text-xs font-mono">{formatRelativeTime(match.startTime)}</span>
                                             <Link
-                                                to={`/matches/${match.matchId}`}
+                                                to={`${APP_ROUTES.MATCHES}/${match.matchId}`}
                                                 className="text-[#58606e] text-[10px] hover:text-white transition-colors border border-[#2e353b] px-1.5 py-0.5 rounded bg-[#0f1114]"
                                             >
                                                 ID: {match.matchId}
@@ -93,7 +94,7 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
 
 
                                     {/* Team Logo & Name */}
-                                    <Link to={`/teams/${radiantId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+                                    <Link to={`/${APP_ROUTES.TEAMS}/${radiantId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
                                         <div className={clsx(
                                             "w-12 h-12 bg-[#0f1114] rounded-lg border flex items-center justify-center shadow-lg transition-all",
                                             "border-emerald-500/30 shadow-emerald-500/10"
@@ -132,7 +133,7 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
                                 {/* === DIRE SIDE (Right) === */}
                                 <div className="flex flex-col items-center w-[40%] group/dire">
                                     {/* Team Logo & Name */}
-                                    <Link to={`/teams/${direId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
+                                    <Link to={`${APP_ROUTES.TEAMS}/${direId}`} className="flex flex-col items-center gap-2 hover:opacity-80 transition-opacity">
                                         <div className={clsx(
                                             "w-12 h-12 bg-[#0f1114] rounded-lg border flex items-center justify-center shadow-lg transition-all",
                                             "border-red-500/30 shadow-red-500/10"

@@ -56,8 +56,12 @@ export interface HeroInfo {
   agi_gain: number;
   int_gain: number;
   attack_range: number;
+  attack_rate: number;
+  base_attack_time: number;
+  attack_point: number;
   move_speed: number;
   turn_rate: number;
+  projectile_speed: number;
   cm_enabled: BooleanState;
   legs: number; // Important stat! :)
   day_vision: number;
@@ -66,4 +70,5 @@ export interface HeroInfo {
 
 export type HeroDictionary = Record<string, HeroInfo>;
 
-export type HeroStatsIcon = 'armor' | 'attack' | 'move_speed';
+export type HeroStatsIcon = 'attack' | 'attack_rate' | 'attack_range'
+  | 'projectile_speed' | 'armor' | 'base_magic_resistance' | 'move_speed' | 'turn_rate' | 'vision';
