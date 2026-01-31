@@ -13,6 +13,7 @@ import {
 import {getRankColor, getRankIconUrl, getRankNameBase, getRankNameFull, getRankStarUrl} from '../../utils/rankUtils';
 import type {DistributionRowDto} from "../../types/distribution.ts";
 import type {AxisDomain} from "recharts/types/util/types";
+import {RankIcon} from "../distributions/RankIcon.tsx";
 
 interface Props {
     data: DistributionRowDto[];
@@ -89,12 +90,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
     return (
         <div className="bg-slate-900/95 backdrop-blur text-white p-4 rounded-xl shadow-2xl border border-slate-700 ring-1 ring-white/10 z-50">
             <div className="flex items-center gap-4 mb-3 border-b border-slate-700/50 pb-3">
-                <div className="relative w-12 h-12 shrink-0">
-                    <img src={iconUrl} alt="Rank" className="absolute inset-0 w-full h-full object-contain" />
-                    {starUrl && (
-                        <img src={starUrl} alt="Star" className="absolute inset-0 w-full h-full object-contain" />
-                    )}
-                </div>
+                <RankIcon iconUrl={iconUrl} starUrl={starUrl} size={12} />
                 <div>
                     <p className="font-bold text-lg leading-none text-slate-100">{getRankNameFull(data.rank.value, data.rank.name)}</p>
                 </div>
@@ -125,7 +121,7 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
     const domainRight: AxisDomain = [0, maxCumulative * 1.1];
 
     return (
-        <div className="w-full h-full min-h-[500px] bg-white rounded-2xl p-4 md:p-8 shadow-sm border border-slate-200">
+        <div className="w-full h-full min-h-125 bg-white rounded-2xl p-4 md:p-8 shadow-sm border border-slate-200">
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart // Используем ComposedChart для комбинации графиков
                     data={data}
