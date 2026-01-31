@@ -5,7 +5,7 @@ import { HeroCell } from './HeroCell';
 import { Icon } from '../Icon';
 import { getRankIconUrl } from '../../utils/rankUtils';
 import { calculateWinRate, getWinRateColor, RANK_ICON_IDS, RANK_KEYS } from '../../utils/heroStatsUtils';
-import type {HeroStatsGroupedDto, RankedStatsDto} from "../../types/heroStats.ts";
+import type { HeroStatsGroupedDto, RankedStatsDto } from "../../types/heroStats.ts";
 
 interface Props {
     stats: HeroStatsGroupedDto[];
@@ -20,18 +20,16 @@ interface SortConfig {
     direction: SortDirection;
 }
 
-// --- Sub-Components (Clean & Simple) ---
-
 const StatCell = React.memo(({ pick, win, isCompact = false }: { pick: number, win: number, isCompact?: boolean }) => {
     const wr = calculateWinRate(win, pick);
-    if (pick === 0) return <span className="text-[#2e353b] text-center block">-</span>;
+    if (pick === 0) return <span className="text-[#2e353b] text-center block w-full">-</span>;
 
     return (
-        <div className="flex flex-col items-center justify-center leading-tight">
-            <span className={clsx("font-bold font-mono", getWinRateColor(wr), isCompact ? "text-xs" : "text-sm")}>
+        <div className="flex flex-col items-center justify-center w-full h-full leading-tight">
+            <span className={clsx("font-bold font-mono text-center", getWinRateColor(wr), isCompact ? "text-xs" : "text-sm")}>
                 {wr.toFixed(1)}%
             </span>
-            <span className={clsx("text-[#58606e] font-medium opacity-80", isCompact ? "text-[9px]" : "text-[10px]")}>
+            <span className={clsx("text-[#58606e] font-medium opacity-80 text-center", isCompact ? "text-[9px]" : "text-[10px]")}>
                 {pick.toLocaleString()}
             </span>
         </div>
@@ -39,11 +37,37 @@ const StatCell = React.memo(({ pick, win, isCompact = false }: { pick: number, w
 });
 
 const SortIndicator = ({ active, dir }: { active: boolean, dir: SortDirection }) => {
-    if (!active) return <span className="w-3 block" />;
+    if (!active) return <span className="block" />;
     return <span className="text-[#e7d291] ml-1 text-[10px] w-3 block transition-transform">{dir === 'asc' ? '▲' : '▼'}</span>;
 };
 
-// --- Main Component ---
+// Reusable Header Cell Component
+interface HeaderCellProps {
+    label: React.ReactNode;
+    sortKey: string;
+    sortConfig: SortConfig;
+    onSort: (key: string) => void;
+    className?: string;
+}
+
+const HeaderCell: React.FC<HeaderCellProps> = ({ label, sortKey, sortConfig, onSort, className }) => (
+    <th
+        className={clsx(
+            "px-4 py-3 cursor-pointer hover:bg-[#1e222b] hover:text-white transition-colors relative group/th select-none text-center align-middle",
+            className
+        )}
+        onClick={() => onSort(sortKey)}
+    >
+        {/* Flex container centered for alignment */}
+        <div className="flex items-center justify-center gap-1 w-full h-full">
+            {label}
+            <SortIndicator active={sortConfig.key === sortKey} dir={sortConfig.direction} />
+        </div>
+        {sortConfig.key === sortKey && (
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e7d291] opacity-60" />
+        )}
+    </th>
+);
 
 export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery }) => {
     const { getHero } = useHeroes();
@@ -109,23 +133,8 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
         return data;
     }, [stats, activeTab, searchQuery, sortConfig, getHero]);
 
-    // Helper for Header Cells
-    const HeaderCell = ({ label, sortKey, className }: { label: React.ReactNode, sortKey: string, className?: string }) => (
-        <th
-            className={clsx("px-4 py-3 cursor-pointer hover:bg-[#1e222b] hover:text-white transition-colors relative group/th select-none", className)}
-            onClick={() => handleSort(sortKey)}
-        >
-            <div className="flex items-center justify-center gap-1 h-full">
-                {label} <SortIndicator active={sortConfig.key === sortKey} dir={sortConfig.direction} />
-            </div>
-            {sortConfig.key === sortKey && <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e7d291] opacity-60" />}
-        </th>
-    );
-
     return (
-        // ВАЖНО: relative z-0 создает новый stacking context для таблицы, но не обрезает fixed элементы (тултип)
         <div className="w-full bg-[#15171c] border border-[#2e353b] rounded-xl shadow-2xl relative z-0 flex flex-col">
-
             <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#15171c] rounded-xl pb-1">
                 <table className="w-full text-left border-collapse min-w-max">
                     <thead>
@@ -133,46 +142,90 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
 
                         {/* Sticky Hero Column */}
                         <th
-                            className="px-4 py-3 sticky left-0 z-20 bg-[#0f1114] border-r border-[#2e353b] cursor-pointer hover:text-white transition-colors min-w-[200px] shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] select-none"
+                            className="px-4 py-3 sticky left-0 z-20 bg-[#0f1114] border-r border-[#2e353b] cursor-pointer hover:text-white transition-colors min-w-[200px] shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] select-none text-left align-middle"
                             onClick={() => handleSort('name')}
                         >
-                            <div className="flex items-center gap-2">
+                            <div className="flex justify-center items-center gap-2 h-full">
                                 Hero <SortIndicator active={sortConfig.key === 'name'} dir={sortConfig.direction} />
                             </div>
                         </th>
 
                         {activeTab === 'turbo' && (
                             <>
-                                <HeaderCell label="Matches" sortKey="picks" className="border-r border-[#2e353b]/30" />
-                                <HeaderCell label="Win Rate" sortKey="winrate" />
+                                <HeaderCell
+                                    label="Matches"
+                                    sortKey="picks"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                    className="border-r border-[#2e353b]/30"
+                                />
+                                <HeaderCell
+                                    label="Win Rate"
+                                    sortKey="winrate"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                />
                             </>
                         )}
 
                         {activeTab === 'pro' && (
                             <>
-                                <HeaderCell label="Picks" sortKey="picks" className="border-r border-[#2e353b]/30" />
-                                <HeaderCell label="Bans" sortKey="bans" className="border-r border-[#2e353b]/30" />
-                                <HeaderCell label="Win Rate" sortKey="winrate" />
+                                <HeaderCell
+                                    label="Picks"
+                                    sortKey="picks"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                    className="border-r border-[#2e353b]/30"
+                                />
+                                <HeaderCell
+                                    label="Bans"
+                                    sortKey="bans"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                    className="border-r border-[#2e353b]/30"
+                                />
+                                <HeaderCell
+                                    label="Win Rate"
+                                    sortKey="winrate"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                />
                             </>
                         )}
 
                         {activeTab === 'ranked' && (
                             <>
+                                {/* Ranks Columns */}
                                 {RANK_KEYS.map((key) => (
-                                    <th key={key} className="px-2 py-3 text-center border-r border-[#2e353b]/30 min-w-[90px] cursor-pointer hover:bg-[#1e222b] relative group/th select-none" onClick={() => handleSort(key)}>
-                                        <div className="flex flex-col items-center gap-1">
-                                            <Icon src={getRankIconUrl(RANK_ICON_IDS[key as keyof Omit<RankedStatsDto, 'pub'>])} size={6} />
-                                            <div className="flex items-center">
+                                    <th
+                                        key={key}
+                                        className="px-2 py-3 text-center border-r border-[#2e353b]/30 min-w-[90px] cursor-pointer hover:bg-[#1e222b] relative group/th select-none align-middle"
+                                        onClick={() => handleSort(key)}
+                                    >
+                                        <div className="flex flex-col items-center justify-center gap-1 w-full h-full">
+                                            <Icon src={getRankIconUrl(RANK_ICON_IDS[key as keyof Omit<RankedStatsDto, 'pub'>])} size={8} />
+                                            <div className="flex items-center justify-center mt-1">
                                                 <span className="text-[9px] opacity-70 group-hover/th:text-white transition-colors">Win%</span>
                                                 <SortIndicator active={sortConfig.key === key} dir={sortConfig.direction} />
                                             </div>
                                         </div>
-                                        {sortConfig.key === key && <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e7d291] opacity-60" />}
+                                        {sortConfig.key === key && (
+                                            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#e7d291] opacity-60" />
+                                        )}
                                     </th>
                                 ))}
+                                {/* Pub Column */}
                                 <HeaderCell
-                                    label={<div className="flex flex-col items-center"><span className="text-[11px] mb-0.5">All Pubs</span><span className="text-[9px] opacity-70">Win%</span></div>}
+                                    label={
+                                        <div className="flex flex-col items-center justify-center">
+                                            <span className="text-[11px] text-[#808fa6] group-hover/th:text-white transition-colors mb-0.5">All Pubs</span>
+                                            <span className="text-[9px] opacity-70">Win%</span>
+                                        </div>
+                                    }
                                     sortKey="pub.winrate"
+                                    sortConfig={sortConfig}
+                                    onSort={handleSort}
+                                    className="min-w-[100px] border-r border-[#2e353b]/30"
                                 />
                             </>
                         )}
@@ -187,7 +240,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                         )}>
                             {/* Sticky Hero Cell */}
                             <td className={clsx(
-                                "px-4 py-2 sticky left-0 z-10 border-r border-[#2e353b] transition-colors shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)]",
+                                "px-4 py-2 sticky left-0 z-10 border-r border-[#2e353b] transition-colors shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] align-middle",
                                 idx % 2 === 0 ? "bg-[#15171c] group-hover:bg-[#1e222b]" : "bg-[#181a20] group-hover:bg-[#1e222b]"
                             )}>
                                 <HeroCell heroId={row.id} showName={true} />
@@ -195,10 +248,10 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
 
                             {activeTab === 'turbo' && (
                                 <>
-                                    <td className="px-4 py-2 text-center font-mono text-[#e3e3e3] border-r border-[#2e353b]/30">
+                                    <td className="px-4 py-2 text-center font-mono text-[#e3e3e3] border-r border-[#2e353b]/30 align-middle">
                                         {row.turbo.pick.toLocaleString()}
                                     </td>
-                                    <td className="px-4 py-2 text-center">
+                                    <td className="px-4 py-2 text-center align-middle">
                                         <StatCell pick={row.turbo.pick} win={row.turbo.win} />
                                     </td>
                                 </>
@@ -206,13 +259,13 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
 
                             {activeTab === 'pro' && (
                                 <>
-                                    <td className="px-4 py-2 text-center font-mono text-[#e3e3e3] border-r border-[#2e353b]/30">
+                                    <td className="px-4 py-2 text-center font-mono text-[#e3e3e3] border-r border-[#2e353b]/30 align-middle">
                                         {row.pro.pick.toLocaleString()}
                                     </td>
-                                    <td className="px-4 py-2 text-center font-mono text-[#808fa6] border-r border-[#2e353b]/30">
+                                    <td className="px-4 py-2 text-center font-mono text-[#808fa6] border-r border-[#2e353b]/30 align-middle">
                                         {row.pro.ban.toLocaleString()}
                                     </td>
-                                    <td className="px-4 py-2 text-center">
+                                    <td className="px-4 py-2 text-center align-middle">
                                         <StatCell pick={row.pro.pick} win={row.pro.win} />
                                     </td>
                                 </>
@@ -220,12 +273,16 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
 
                             {activeTab === 'ranked' && (
                                 <>
-                                    {RANK_KEYS.map(key => (
-                                        <td key={key} className="px-2 py-2 text-center border-r border-[#2e353b]/30">
-                                            <StatCell pick={row.ranked[key].pick} win={row.ranked[key].win} isCompact />
-                                        </td>
-                                    ))}
-                                    <td className="px-2 py-2 text-center">
+                                    {RANK_KEYS.map(key => {
+                                        const tierData = row.ranked[key];
+                                        return (
+                                            <td key={key} className="px-2 py-2 text-center border-r border-[#2e353b]/30 align-middle">
+                                                <StatCell pick={tierData.pick} win={tierData.win} isCompact />
+                                            </td>
+                                        );
+                                    })}
+                                    {/* Pub Column */}
+                                    <td className="px-2 py-2 text-center border-r border-[#2e353b]/30 align-middle">
                                         <StatCell pick={row.ranked.pub.pick} win={row.ranked.pub.win} />
                                     </td>
                                 </>
