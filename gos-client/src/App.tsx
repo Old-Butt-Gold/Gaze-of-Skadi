@@ -9,6 +9,7 @@ import {ScenariosPage} from "./pages/ScenariosPage.tsx";
 import {TeamsPage} from "./pages/TeamsPage.tsx";
 import {TeamDetailsPage} from "./pages/TeamDetailsPage.tsx";
 import {HeroStatsPage} from "./pages/HeroStatsPage.tsx";
+import {HeroDetailsPage} from "./pages/HeroDetailsPage.tsx";
 
 function App() {
     return (
@@ -21,13 +22,9 @@ function App() {
                 <Route path={APP_ROUTES.TEAMS} element={<TeamsPage />} />
                 <Route path={`${APP_ROUTES.TEAMS}/:teamId`} element={<TeamDetailsPage />} />
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
+                <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
 
-                {/* Placeholders for the new links (Matches & Heroes).
-                   These currently point to 404 until you build the actual pages.
-                   Or you can create a temporary "Under Construction" component.
-                */}
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
-                <Route path="heroes/:heroId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>
         </Routes>

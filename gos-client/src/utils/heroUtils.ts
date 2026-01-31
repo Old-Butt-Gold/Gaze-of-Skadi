@@ -105,6 +105,14 @@ export const calculateArmor = (hero: HeroInfo): string => {
   return (hero.base_armor + (hero.base_agi / 6)).toFixed(1);
 };
 
+export const calculateMagicResistance = (hero: HeroInfo): string => {
+  const base = hero.base_mr / 100;
+  const intBonus = hero.base_int * 0.001;
+  const totalResistance = 1 - ((1 - base) * (1 - intBonus));
+
+  return (totalResistance * 100).toFixed(1);
+};
+
 export const calculateDamage = (hero: HeroInfo): { min: number; max: number } => {
   let bonusDamage = 0;
 
