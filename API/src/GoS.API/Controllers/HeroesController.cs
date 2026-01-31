@@ -28,7 +28,7 @@ public sealed class HeroesController : ApiControllerBase
 
     [HttpGet("stats")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<HeroStatsDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<HeroStatsGroupedDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetHeroStats(CancellationToken ct = default)
         => HandleQueryAsync(new GetHeroStatsQuery(), ct);
 
