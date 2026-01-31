@@ -37,8 +37,13 @@ const StatCell = React.memo(({ pick, win, isCompact = false }: { pick: number, w
 });
 
 const SortIndicator = ({ active, dir }: { active: boolean, dir: SortDirection }) => {
-    if (!active) return <span className="block" />;
-    return <span className="text-[#e7d291] ml-1 text-[10px] w-3 block transition-transform">{dir === 'asc' ? '▲' : '▼'}</span>;
+    if (!active) return null;
+
+    return (
+        <span className="text-[#e7d291] ml-1 text-[10px] w-3 block transition-transform animate-in fade-in zoom-in duration-200">
+            {dir === 'asc' ? '▲' : '▼'}
+        </span>
+    );
 };
 
 // Reusable Header Cell Component
@@ -142,7 +147,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
 
                         {/* Sticky Hero Column */}
                         <th
-                            className="px-4 py-3 sticky left-0 z-20 bg-[#0f1114] border-r border-[#2e353b] cursor-pointer hover:text-white transition-colors min-w-[200px] shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] select-none text-left align-middle"
+                            className="px-4 py-3 sticky left-0 z-20 bg-[#0f1114] border-r border-[#2e353b] cursor-pointer hover:text-white transition-colors shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] select-none text-left align-middle"
                             onClick={() => handleSort('name')}
                         >
                             <div className="flex justify-center items-center gap-2 h-full">
@@ -199,7 +204,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                                 {RANK_KEYS.map((key) => (
                                     <th
                                         key={key}
-                                        className="px-2 py-3 text-center border-r border-[#2e353b]/30 min-w-[90px] cursor-pointer hover:bg-[#1e222b] relative group/th select-none align-middle"
+                                        className="px-2 py-3 text-center border-r border-[#2e353b]/30 cursor-pointer hover:bg-[#1e222b] relative group/th select-none align-middle"
                                         onClick={() => handleSort(key)}
                                     >
                                         <div className="flex flex-col items-center justify-center gap-1 w-full h-full">
@@ -225,7 +230,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                                     sortKey="pub.winrate"
                                     sortConfig={sortConfig}
                                     onSort={handleSort}
-                                    className="min-w-[100px] border-r border-[#2e353b]/30"
+                                    className="border-r border-[#2e353b]/30"
                                 />
                             </>
                         )}

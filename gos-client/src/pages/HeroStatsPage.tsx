@@ -27,7 +27,7 @@ export const HeroStatsPage: React.FC = () => {
 
             {/* Sticky Header */}
             <div className="sticky top-16 z-30 bg-[#1a1d24]/95 backdrop-blur-md border-b border-[#2e353b] shadow-lg transition-all">
-                <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
 
                         {/* Title */}
@@ -84,7 +84,7 @@ export const HeroStatsPage: React.FC = () => {
 
             {/* Content Container */}
             {/* Добавил overflow-hidden только здесь для таблицы, если нужно */}
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full mt-6">
                 {stats && stats.length > 0 ? (
                     <>
                         <HeroStatsTable stats={stats} activeTab={activeTab} searchQuery={searchQuery} />
