@@ -24,7 +24,7 @@ export const TeamDetailsPage: React.FC = () => {
         return <NotFoundPage />;
     }
 
-    if (isLoading) return <div className="min-h-screen flex items-center justify-center"><LoadingSpinner text="Loading Team Data..." /></div>;
+    if (isLoading) return <LoadingSpinner text="Loading Team Data..." />;
     if (isError || !team) return <ErrorDisplay message="Failed to load team details." />;
 
     return (

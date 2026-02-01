@@ -14,11 +14,7 @@ public class RankingPlayerDto
 
     public string PersonaName { get; init; } = string.Empty;
 
-    public string Name { get; init; } = string.Empty;
-
     public Uri? Avatar { get; init; }
-
-    public long? LastLogin { get; init; }
 
     public int RankTier { get; init; }
 }

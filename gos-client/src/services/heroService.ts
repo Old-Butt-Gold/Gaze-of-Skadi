@@ -2,6 +2,7 @@
 import type { HeroDictionary } from '../types/heroes';
 import type {HeroStatsGroupedDto} from "../types/heroStats.ts";
 import type {HeroBenchmarkDto} from "../types/heroBenchmarks.ts";
+import type {HeroRankingDto} from "../types/heroRankings.ts";
 
 export const heroService = {
   getHeroes: async (): Promise<HeroDictionary> => {
@@ -14,5 +15,9 @@ export const heroService = {
 
   getHeroBenchmarks: async (heroId: number): Promise<HeroBenchmarkDto> => {
     return apiClient.get(`/heroes/${heroId}/benchmark`);
-  }
+  },
+
+  getHeroRankings: async (heroId: number): Promise<HeroRankingDto> => {
+    return apiClient.get(`/heroes/${heroId}/rankings`);
+  },
 };

@@ -12,8 +12,8 @@ export const HeroStatsPage: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [activeTab, setActiveTab] = useState<Tab>('pro');
 
-    if (isLoading) return <div className="min-h-screen flex items-center justify-center"><LoadingSpinner text="Reading Meta..." /></div>;
-    if (isError) return <div className="min-h-screen flex items-center justify-center"><ErrorDisplay message="Failed to load stats" onRetry={refetch} /></div>;
+    if (isLoading) return <LoadingSpinner text="Reading Meta..." />;
+    if (isError) return <ErrorDisplay message="Failed to load stats" onRetry={refetch} />;
 
     const tabs: { id: Tab; label: string }[] = [
         { id: 'pro', label: 'Pro Scene' },

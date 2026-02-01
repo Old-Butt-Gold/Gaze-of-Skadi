@@ -7,6 +7,7 @@ import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import {HeroOverviewTab} from "../components/heroes/tabs/HeroOverviewTab.tsx";
 import {HeroDetailsHeader} from "../components/heroes/HeroDetailsHeader.tsx";
 import {HeroBenchmarksTab} from "../components/heroes/tabs/HeroBenchmarksTab.tsx";
+import {HeroRankingsTab} from "../components/heroes/tabs/HeroRankingsTab.tsx";
 
 type HeroTab = 'overview' | 'rankings' | 'matches' | 'matchups' | 'items' | 'players' | 'benchmarks' | 'durations';
 
@@ -43,7 +44,7 @@ export const HeroDetailsPage: React.FC = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-[#0f1114] text-white pb-20 animate-fade-in relative">
+        <div className="min-h-screen bg-[#0f1114] text-white pb-10 animate-fade-in relative">
 
             {/* === 1. COMPACT HERO HEADER (VIDEO BG) === */}
             <HeroDetailsHeader hero={hero}/>
@@ -81,13 +82,8 @@ export const HeroDetailsPage: React.FC = () => {
                     <HeroBenchmarksTab hero={hero} />
                 )}
 
-                {/* Other Tabs Placeholder */}
-                {activeTab !== 'overview' && activeTab !== 'benchmarks' && (
-                    <div className="flex flex-col items-center justify-center py-32 text-[#454c59] animate-in fade-in zoom-in-95 duration-300">
-                        <span className="text-6xl opacity-20 mb-4">?</span>
-                        <p className="font-serif text-lg tracking-wider text-[#808fa6] uppercase">Data Not Found</p>
-                        <p className="text-xs text-[#58606e] mt-2">The observers have not yet reported back.</p>
-                    </div>
+                {activeTab === 'rankings' && (
+                    <HeroRankingsTab hero={hero} />
                 )}
             </div>
         </div>
