@@ -1,18 +1,19 @@
-﻿import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+﻿import React, {useMemo, useState} from 'react';
+import {Link} from 'react-router-dom';
 import clsx from 'clsx';
-import { useHeroMatches } from '../../../hooks/queries/useHeroMatches';
-import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers';
-import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import { ErrorDisplay } from '../../ui/ErrorDisplay';
-import { formatDuration, formatRelativeTime } from '../../../utils/formatUtils';
-import { isTeamWon, isRadiantTeam } from '../../../utils/matchUtils';
-import { APP_ROUTES } from '../../../config/navigation';
-import type { HeroInfo } from '../../../types/heroes';
-import type { SortDirection } from '../../../store/teamStore';
-import { SortIndicator } from "../SortIndicator";
-import { Icon } from "../../Icon";
-import type { SteamPlayerDto } from "../../../types/steam";
+import {useHeroMatches} from '../../../hooks/queries/useHeroMatches';
+import {useSteamPlayers} from '../../../hooks/queries/useSteamPlayers';
+import {LoadingSpinner} from '../../ui/LoadingSpinner';
+import {ErrorDisplay} from '../../ui/ErrorDisplay';
+import {formatDuration, formatRelativeTime} from '../../../utils/formatUtils';
+import {isRadiantTeam, isTeamWon} from '../../../utils/matchUtils';
+import {APP_ROUTES} from '../../../config/navigation';
+import type {HeroInfo} from '../../../types/heroes';
+import type {SortDirection} from '../../../store/teamStore';
+import {SortIndicator} from "../SortIndicator";
+import {Icon} from "../../Icon";
+import type {SteamPlayerDto} from "../../../types/steam";
+import {PlayerCellShort} from "../../players/PlayerCellShort.tsx";
 
 interface Props {
     hero: HeroInfo;
@@ -67,7 +68,9 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
         return paginatedData.map(m => m.accountId);
     }, [paginatedData]);
 
-    const { data: steamPlayers } = useSteamPlayers(playerIds);
+    const { data: steamPlayers, isLoading: isPlayersLoading, isFetching: isPlayersFetching } = useSteamPlayers(playerIds);
+
+    const isPlayersBusy = isPlayersLoading || isPlayersFetching;
 
     const playersMap = useMemo(() => {
         const map = new Map<string, SteamPlayerDto>();
@@ -117,49 +120,23 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-lg">
 
                 {/* Table Head */}
-                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
-                    <div
-                        className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('id')}
-                    >
+                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10 items-center">
+                    <div className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('id')}>
                         Match ID <SortIndicator active={sortKey === 'id'} dir={sortDirection} />
                     </div>
-
-                    <div
-                        className="col-span-2 md:col-span-1 flex items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('result')}
-                    >
+                    <div className="col-span-2 md:col-span-1 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('result')}>
                         Result <SortIndicator active={sortKey === 'result'} dir={sortDirection} />
                     </div>
-
-                    {/* Player */}
-                    <div
-                        className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('player')}
-                    >
+                    <div className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('player')}>
                         Player <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
                     </div>
-
-                    {/* League */}
-                    <div
-                        className="hidden md:flex md:col-span-3 items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('league')}
-                    >
+                    <div className="hidden md:flex md:col-span-3 items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('league')}>
                         League <SortIndicator active={sortKey === 'league'} dir={sortDirection} />
                     </div>
-
-                    {/* KDA */}
-                    <div
-                        className="hidden md:flex md:col-span-2 text-center justify-center items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('kda')}
-                    >
+                    <div className="hidden md:flex md:col-span-2 text-center justify-center items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('kda')}>
                         K / D / A <SortIndicator active={sortKey === 'kda'} dir={sortDirection} />
                     </div>
-
-                    <div
-                        className="col-span-2 md:col-span-2 text-right md:text-center flex justify-end md:justify-center items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('duration')}
-                    >
+                    <div className="col-span-2 md:col-span-2 text-right md:text-center flex justify-end md:justify-center items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('duration')}>
                         Duration <SortIndicator active={sortKey === 'duration'} dir={sortDirection} />
                     </div>
                 </div>
@@ -172,16 +149,11 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         const sideIcon = isRadiant ? '/assets/images/radiant.png' : '/assets/images/dire.png';
 
                         const playerData = playersMap.get(String(match.accountId));
-                        const playerName = playerData?.steamName || `ID: ${match.accountId}`;
-                        const playerAvatar = playerData?.avatar || '/assets/images/unknown_player.png';
 
                         return (
                             <div key={match.matchId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors relative min-h-16">
                                 {/* Left Border Indicator */}
-                                <div className={clsx(
-                                    "absolute left-0 top-0 bottom-0 w-1 transition-all duration-300",
-                                    won ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]" : "bg-red-500/50"
-                                )} />
+                                <div className={clsx("absolute left-0 top-0 bottom-0 w-1 transition-all duration-300", won ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]" : "bg-red-500/50")} />
 
                                 {/* 1. Match ID & Side */}
                                 <div className="col-span-4 md:col-span-2 flex flex-col justify-center">
@@ -190,10 +162,7 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                                     </Link>
                                     <div className="flex items-center gap-1.5 mt-1">
                                         <Icon src={sideIcon} size={4} />
-                                        <span className={clsx(
-                                            "text-[10px] uppercase font-bold tracking-wider",
-                                            isRadiant ? "text-green-400" : "text-red-400"
-                                        )}>
+                                        <span className={clsx("text-[10px] uppercase font-bold tracking-wider", isRadiant ? "text-green-400" : "text-red-400")}>
                                             {isRadiant ? 'Radiant' : 'Dire'}
                                         </span>
                                     </div>
@@ -201,27 +170,17 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
 
                                 {/* 2. Result */}
                                 <div className="col-span-2 md:col-span-1 flex items-center">
-                                    <span className={clsx(
-                                        "text-[10px] font-bold uppercase px-2 py-1 rounded border tracking-widest",
-                                        won
-                                            ? "text-emerald-400 bg-emerald-500/5 border-emerald-500/20 shadow-[0_0_8px_rgba(16,185,129,0.1)]"
-                                            : "text-red-400 bg-red-500/5 border-red-500/20"
-                                    )}>
+                                    <span className={clsx("text-[10px] font-bold uppercase px-2 py-1 rounded border tracking-widest", won ? "text-emerald-400 bg-emerald-500/5 border-emerald-500/20 shadow-[0_0_8px_rgba(16,185,129,0.1)]" : "text-red-400 bg-red-500/5 border-red-500/20")}>
                                         {won ? 'Won' : 'Lost'}
                                     </span>
                                 </div>
 
-                                {/* 3. Player (Dynamic Data) */}
-                                <div className="col-span-4 md:col-span-2 flex items-center gap-3">
-                                    <Link to={`${APP_ROUTES.PLAYERS}/${match.accountId}`} className="flex items-center gap-3 group/player">
-                                        <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
-
-                                        <div className="flex flex-col">
-                                            <span className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors break-words leading-tight" title={playerName}>
-                                                {playerName}
-                                            </span>
-                                        </div>
-                                    </Link>
+                                <div className="col-span-4 md:col-span-2 flex items-center pr-4 overflow-hidden">
+                                    <PlayerCellShort
+                                        accountId={match.accountId}
+                                        playerData={playerData}
+                                        isLoading={isPlayersBusy}
+                                    />
                                 </div>
 
                                 {/* 4. League */}

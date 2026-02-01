@@ -1,5 +1,4 @@
 ﻿import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useHeroPlayers } from '../../../hooks/queries/useHeroPlayers';
 import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers';
@@ -7,11 +6,10 @@ import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
 import type { HeroInfo } from '../../../types/heroes';
-import { APP_ROUTES } from "../../../config/navigation";
 import type { SortDirection } from "../../../store/teamStore";
-import { Icon } from "../../Icon";
 import { SortIndicator } from "../SortIndicator";
 import type { SteamPlayerDto } from "../../../types/steam";
+import {PlayerCellShort} from "../../players/PlayerCellShort.tsx";
 
 interface Props {
     hero: HeroInfo;
@@ -63,7 +61,9 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
         return paginatedData.map(p => p.accountId);
     }, [paginatedData]);
 
-    const { data: steamPlayers } = useSteamPlayers(playerIds);
+    const { data: steamPlayers, isLoading: isPlayersLoading, isFetching: isPlayersFetching } = useSteamPlayers(playerIds);
+
+    const isPlayersBusy = isPlayersLoading || isPlayersFetching;
 
     const playersMap = useMemo(() => {
         const map = new Map<string, SteamPlayerDto>();
@@ -135,22 +135,13 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
                 <div className="divide-y divide-[#2e353b]/50">
                     {paginatedData.length > 0 ? paginatedData.map((player) => {
                         const steamData = playersMap.get(String(player.accountId));
-                        const playerName = steamData?.steamName || `${player.accountId}`;
-                        const playerAvatar = steamData?.avatar || '/assets/images/unknown_player.png';
 
                         return (
                             <div key={player.accountId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors">
 
                                 {/* Player Info */}
-                                <div className="col-span-6 md:col-span-5">
-                                    <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="flex items-center gap-3 group/link">
-                                        <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
-                                        <div className="flex flex-col">
-                                            <span className="font-bold text-sm text-[#e3e3e3] group-hover/link:text-[#e7d291] transition-colors break-words leading-tight" title={playerName}>
-                                                {playerName}
-                                            </span>
-                                        </div>
-                                    </Link>
+                                <div className="col-span-6 md:col-span-5 overflow-hidden">
+                                    <PlayerCellShort accountId={player.accountId} playerData={steamData} isLoading={isPlayersBusy} />
                                 </div>
 
                             {/* Matches */}
