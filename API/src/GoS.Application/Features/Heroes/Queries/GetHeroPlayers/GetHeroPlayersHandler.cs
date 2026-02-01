@@ -10,7 +10,10 @@ internal sealed class GetHeroPlayersHandler(IRequester requester, IMapper mapper
 {
     public async Task<IEnumerable<HeroPlayerDto>?> Handle(GetHeroPlayersQuery request, CancellationToken ct)
     {
-        var heroPlayers = await requester.GetResponseAsync<IEnumerable<HeroPlayer>>($"heroes/{request.HeroId}/players", ct: ct);
-        return heroPlayers is null ? null : mapper.Map<IEnumerable<HeroPlayerDto>>(heroPlayers);
+        var heroPlayers =
+            await requester.GetResponseAsync<IEnumerable<HeroPlayer>>($"heroes/{request.HeroId}/players", ct: ct);
+        return heroPlayers is null
+            ? null
+            : mapper.Map<IEnumerable<HeroPlayerDto>>(heroPlayers.Where(x => x.AccountId != null));
     }
 }

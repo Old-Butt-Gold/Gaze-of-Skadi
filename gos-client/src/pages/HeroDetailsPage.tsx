@@ -11,6 +11,7 @@ import {HeroRankingsTab} from "../components/heroes/tabs/HeroRankingsTab.tsx";
 import {HeroMatchupsTab} from "../components/heroes/tabs/HeroMatchupsTab.tsx";
 import {HeroItemsTab} from "../components/heroes/tabs/HeroItemsTab.tsx";
 import {HeroDurationsTab} from "../components/heroes/tabs/HeroDurationsTab.tsx";
+import {HeroPlayersTab} from "../components/heroes/tabs/HeroPlayersTab.tsx";
 
 type HeroTab = 'overview' | 'rankings' | 'matches' | 'matchups' | 'items' | 'players' | 'benchmarks' | 'durations';
 
@@ -42,7 +43,7 @@ export const HeroDetailsPage: React.FC = () => {
         { id: 'matches', label: 'Matches' },
         { id: 'matchups', label: 'Matchups' },
         { id: 'items', label: 'Items' },
-        { id: 'players', label: 'Pro Players' },
+        { id: 'players', label: 'Players' },
         { id: 'durations', label: 'Durations' },
     ];
 
@@ -99,6 +100,10 @@ export const HeroDetailsPage: React.FC = () => {
 
                 {activeTab === 'durations' && (
                     <HeroDurationsTab hero={hero} />
+                )}
+
+                {activeTab === 'players' && (
+                    <HeroPlayersTab hero={hero} />
                 )}
             </div>
         </div>

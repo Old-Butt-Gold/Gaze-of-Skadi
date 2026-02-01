@@ -6,4 +6,3 @@ public class HeroPlayerDto
     public long GamesPlayed { get; set; }
     public long Wins { get; set; }
 }
-
