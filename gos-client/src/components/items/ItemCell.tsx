@@ -15,8 +15,8 @@ export const ItemCell: React.FC<{
                 <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e]"></div>
                 {showName && (
                     <span className="font-serif text-slate-200 text-[15px] tracking-wide">
-            {itemName.replace(/_/g, ' ')}
-          </span>
+                        {itemName.replace(/_/g, ' ')}
+                      </span>
                 )}
             </div>
         );

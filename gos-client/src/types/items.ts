@@ -111,4 +111,6 @@ export interface Item {
   tier: NeutralItemTier | null; // Neutral Item Tier
 }
 
-export type ItemDictionary = Record<string, Item>;
+export type ItemDictionary = Record<string, Item>
+
+export type ItemIdDictionary = Record<string, string>;
