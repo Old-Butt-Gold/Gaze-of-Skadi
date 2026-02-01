@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Teams.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeamHeroesById;
 
-internal sealed class GetTeamHeroesByIdHandler(IRequester requester, IMapper mapper)
+internal sealed class GetTeamHeroesByIdHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetTeamHeroesByIdQuery, IEnumerable<TeamHeroDto>?>
 {
     public async Task<IEnumerable<TeamHeroDto>?> Handle(GetTeamHeroesByIdQuery request, CancellationToken ct)

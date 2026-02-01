@@ -1,12 +1,13 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Extensions;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerHistograms;
 
-internal sealed class GetPlayerHistogramsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetPlayerHistogramsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPlayerHistogramsQuery, IEnumerable<PlayerHistogramDto>?>
 {
     public async Task<IEnumerable<PlayerHistogramDto>?> Handle(GetPlayerHistogramsQuery request, CancellationToken ct)

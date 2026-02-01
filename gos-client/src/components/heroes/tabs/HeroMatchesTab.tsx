@@ -10,13 +10,13 @@ import { APP_ROUTES } from '../../../config/navigation';
 import type { HeroInfo } from '../../../types/heroes';
 import type { SortDirection } from '../../../store/teamStore';
 import { SortIndicator } from "../SortIndicator";
-import { Icon } from "../../Icon"; // Используем твой компонент иконки
+import { Icon } from "../../Icon";
 
 interface Props {
     hero: HeroInfo;
 }
 
-type SortKey = 'id' | 'league' | 'duration' | 'result' | 'kda' | 'time';
+type SortKey = 'id' | 'league' | 'duration' | 'result' | 'kda' | 'time' | 'player';
 const PAGE_SIZE = 20;
 
 export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
@@ -39,6 +39,7 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                 case 'league': valA = a.leagueName || ''; valB = b.leagueName || ''; break;
                 case 'duration': valA = a.duration; valB = b.duration; break;
                 case 'time': valA = a.startTime; valB = b.startTime; break;
+                case 'player': valA = a.accountId; valB = b.accountId; break;
                 case 'kda':
                     valA = (a.kills + a.assists) / (a.deaths || 1);
                     valB = (b.kills + b.assists) / (b.deaths || 1);
@@ -88,7 +89,7 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                     </h3>
                     <p className="text-[#808fa6] text-sm mt-1 flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                        Professional matches involving<span className="text-[#e7d291]">{hero.localized_name}</span>
+                        Professional matches involving <span className="text-[#e7d291]">{hero.localized_name}</span>.
                     </p>
                 </div>
                 <div className="text-xs text-[#58606e] uppercase font-bold tracking-wider">
@@ -99,8 +100,9 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
             {/* Table */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-lg">
 
-                {/* Table Head */}
-                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
+                {/* Table Head (Adjusted grid columns for 14 total span logic if needed, currently 12) */}
+                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10 items-center">
+                    {/* ID + Side */}
                     <div
                         className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('id')}
@@ -108,6 +110,7 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         Match ID <SortIndicator active={sortKey === 'id'} dir={sortDirection} />
                     </div>
 
+                    {/* Result */}
                     <div
                         className="col-span-2 md:col-span-1 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('result')}
@@ -115,6 +118,15 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         Result <SortIndicator active={sortKey === 'result'} dir={sortDirection} />
                     </div>
 
+                    {/* Player (New Column) */}
+                    <div
+                        className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
+                        onClick={() => handleSort('player')}
+                    >
+                        Player <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
+                    </div>
+
+                    {/* League */}
                     <div
                         className="hidden md:flex md:col-span-3 items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('league')}
@@ -122,25 +134,20 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         League <SortIndicator active={sortKey === 'league'} dir={sortDirection} />
                     </div>
 
+                    {/* KDA */}
                     <div
-                        className="col-span-3 md:col-span-2 text-center flex justify-center items-center cursor-pointer hover:text-white transition-colors"
+                        className="hidden md:flex md:col-span-2 text-center justify-center items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('kda')}
                     >
                         K / D / A <SortIndicator active={sortKey === 'kda'} dir={sortDirection} />
                     </div>
 
+                    {/* Duration + Time (Merged for Mobile, separate on Desktop) */}
                     <div
-                        className="col-span-3 md:col-span-2 text-center flex justify-center items-center cursor-pointer hover:text-white transition-colors"
+                        className="col-span-2 md:col-span-2 text-right md:text-center flex justify-end md:justify-center items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('duration')}
                     >
                         Duration <SortIndicator active={sortKey === 'duration'} dir={sortDirection} />
-                    </div>
-
-                    <div
-                        className="hidden md:flex md:col-span-2 justify-end items-center cursor-pointer hover:text-white transition-colors"
-                        onClick={() => handleSort('time')}
-                    >
-                        Played <SortIndicator active={sortKey === 'time'} dir={sortDirection} />
                     </div>
                 </div>
 
@@ -152,14 +159,14 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         const sideIcon = isRadiant ? '/assets/images/radiant.png' : '/assets/images/dire.png';
 
                         return (
-                            <div key={match.matchId} className="grid grid-cols-12 gap-4 px-6 py-4 items-center group hover:bg-[#1e222b] transition-colors relative min-h-[64px]">
+                            <div key={match.matchId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors relative min-h-16">
                                 {/* Left Border Indicator */}
                                 <div className={clsx(
                                     "absolute left-0 top-0 bottom-0 w-1 transition-all duration-300",
                                     won ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.3)]" : "bg-red-500/50"
                                 )} />
 
-                                {/* 1. Match ID & Side (With Icon) */}
+                                {/* 1. Match ID & Side */}
                                 <div className="col-span-4 md:col-span-2 flex flex-col justify-center">
                                     <Link to={`${APP_ROUTES.MATCHES}/${match.matchId}`} className="font-mono font-bold text-sm text-[#e3e3e3] group-hover:text-[#e7d291] group-hover:underline decoration-[#58606e] underline-offset-4 transition-colors">
                                         {match.matchId}
@@ -187,15 +194,27 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                                     </span>
                                 </div>
 
-                                {/* 3. League (Desktop) - Fixed text wrapping */}
+                                {/* 3. Player (New Column) */}
+                                <div className="col-span-4 md:col-span-2 flex items-center gap-3">
+                                    <Link to={`${APP_ROUTES.PLAYERS}/${match.accountId}`} className="flex items-center gap-3 group/player">
+                                        <Icon src="/assets/images/unknown_player.png" size={8} />
+                                        <div className="flex flex-col min-w-0">
+                                            <span className="font-mono text-sm text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors">
+                                                ID: {match.accountId}
+                                            </span>
+                                        </div>
+                                    </Link>
+                                </div>
+
+                                {/* 4. League (Desktop) */}
                                 <div className="hidden md:flex md:col-span-3 flex-col justify-center">
                                     <div className="text-sm text-[#a3aab8] leading-tight line-clamp-2 pr-2" title={match.leagueName}>
                                         {match.leagueName || "Professional Match"}
                                     </div>
                                 </div>
 
-                                {/* 4. KDA */}
-                                <div className="col-span-3 md:col-span-2 text-center flex justify-center items-center">
+                                {/* 5. KDA (Desktop) */}
+                                <div className="hidden md:flex md:col-span-2 justify-center items-center">
                                     <div className="font-mono text-sm bg-[#0f1114]/50 px-3 py-1 rounded border border-[#2e353b]/50">
                                         <span className="text-white font-bold">{match.kills}</span>
                                         <span className="text-[#58606e] mx-1.5">/</span>
@@ -205,16 +224,12 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                                     </div>
                                 </div>
 
-                                {/* 5. Duration */}
-                                <div className="col-span-3 md:col-span-2 text-center flex justify-center items-center">
+                                {/* 6. Duration & Time */}
+                                <div className="col-span-2 md:col-span-2 text-right md:text-center flex flex-col justify-center md:items-center">
                                     <span className="text-sm text-[#e3e3e3] font-mono">
                                         {formatDuration(match.duration)}
                                     </span>
-                                </div>
-
-                                {/* 6. Relative Time (Desktop) */}
-                                <div className="hidden md:flex md:col-span-2 justify-end text-right items-center">
-                                    <span className="text-xs text-[#808fa6]">
+                                    <span className="text-[10px] text-[#808fa6]">
                                         {formatRelativeTime(match.startTime)}
                                     </span>
                                 </div>

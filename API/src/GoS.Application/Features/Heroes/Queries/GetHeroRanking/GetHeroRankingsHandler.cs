@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroRanking;
 
-internal sealed class GetHeroRankingsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetHeroRankingsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetHeroRankingsQuery, HeroRankingDto?>
 {
     public async Task<HeroRankingDto?> Handle(GetHeroRankingsQuery request, CancellationToken ct)

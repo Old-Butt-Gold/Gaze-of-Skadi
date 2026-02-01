@@ -15,7 +15,7 @@ public static class SteamAuthenticationExtensions
     /// </summary>
     /// <param name="builder">The authentication builder.</param>
     /// <returns>The <see cref="AuthenticationBuilder"/>.</returns>
-    public static AuthenticationBuilder AddSteam(this AuthenticationBuilder builder) 
+    public static AuthenticationBuilder AddSteam(this AuthenticationBuilder builder)
         => builder.AddSteam(SteamAuthenticationDefaults.AuthenticationScheme, _ => { });
 
     /// <summary>
@@ -27,7 +27,7 @@ public static class SteamAuthenticationExtensions
     /// <returns>The <see cref="AuthenticationBuilder"/>.</returns>
     public static AuthenticationBuilder AddSteam(
         this AuthenticationBuilder builder,
-        Action<SteamAuthenticationOptions> configuration) 
+        Action<SteamAuthenticationOptions> configuration)
         => builder.AddSteam(SteamAuthenticationDefaults.AuthenticationScheme, configuration);
 
     /// <summary>
@@ -52,7 +52,7 @@ public static class SteamAuthenticationExtensions
     /// <param name="configuration">The delegate used to configure the Steam options.</param>
     /// <returns>The <see cref="AuthenticationBuilder"/>.</returns>
     public static AuthenticationBuilder AddSteam(
-        this AuthenticationBuilder builder, string scheme, string? caption,
+        this AuthenticationBuilder builder, string scheme, string caption,
         Action<SteamAuthenticationOptions> configuration) =>
         builder.AddOpenId<SteamAuthenticationOptions, SteamAuthenticationHandler>(scheme, caption, configuration);
 }

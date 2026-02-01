@@ -8,15 +8,15 @@ using Microsoft.Extensions.Options;
 
 namespace GoS.Infrastructure.Requester;
 
-internal sealed class HttpRequester : IRequester
+internal sealed class OpenDotaRequester : IOpenDotaRequester
 {
     private readonly HttpClient _httpClient;
-    private readonly IOptionsMonitor<HttpRequesterOptions> _optionsMonitor;
+    private readonly IOptionsMonitor<OpenDotaHttpRequesterOptions> _optionsMonitor;
     private readonly ISerializationOptionsProvider _serializationOptionsProvider;
-    private readonly ILogger<HttpRequester> _logger;
+    private readonly ILogger<OpenDotaRequester> _logger;
 
-    public HttpRequester(HttpClient httpClient, IOptionsMonitor<HttpRequesterOptions> optionsMonitor,
-        ISerializationOptionsProvider serializationOptionsProvider, ILogger<HttpRequester> logger)
+    public OpenDotaRequester(HttpClient httpClient, IOptionsMonitor<OpenDotaHttpRequesterOptions> optionsMonitor,
+        ISerializationOptionsProvider serializationOptionsProvider, ILogger<OpenDotaRequester> logger)
     {
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         _optionsMonitor = optionsMonitor ?? throw new ArgumentNullException(nameof(optionsMonitor));

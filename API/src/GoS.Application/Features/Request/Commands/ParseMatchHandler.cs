@@ -1,9 +1,10 @@
 ﻿using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using MediatR;
 
 namespace GoS.Application.Features.Request.Commands;
 
-internal sealed class ParseMatchHandler(IRequester requester) : IRequestHandler<ParseMatchCommand, bool>
+internal sealed class ParseMatchHandler(IRequester<OpenDotaHttpRequesterOptions> requester) : IRequestHandler<ParseMatchCommand, bool>
 {
     public async Task<bool> Handle(ParseMatchCommand request, CancellationToken ct)
     {

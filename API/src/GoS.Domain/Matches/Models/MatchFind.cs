@@ -15,7 +15,7 @@ public class MatchFind
     public required List<int> TeamB { get; set; }
 
     [JsonPropertyName("teamawin")]
-    public BooleanState TeamAWin { get; set; }
+    public BooleanState RadiantWin { get; set; }
 
     [JsonPropertyName("start_time")]
     public long StartTime { get; set; }

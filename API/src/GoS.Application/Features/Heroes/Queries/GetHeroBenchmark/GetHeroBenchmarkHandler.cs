@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroBenchmark;
 
-internal sealed class GetHeroBenchmarkHandler(IRequester requester, IMapper mapper)
+internal sealed class GetHeroBenchmarkHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetHeroBenchmarkQuery, BenchmarkDto?>
 {
     public async Task<BenchmarkDto?> Handle(GetHeroBenchmarkQuery request, CancellationToken ct)

@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Teams.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Teams.Queries.GetTeams;
 
-internal sealed class GetTeamsHandler(IRequester requester, IMapper mapper) : IRequestHandler<GetTeamsQuery, IEnumerable<TeamDto>?>
+internal sealed class GetTeamsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper) : IRequestHandler<GetTeamsQuery, IEnumerable<TeamDto>?>
 {
     public async Task<IEnumerable<TeamDto>?> Handle(GetTeamsQuery request, CancellationToken ct)
     {

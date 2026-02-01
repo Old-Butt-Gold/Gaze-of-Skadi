@@ -18,7 +18,7 @@ export const TeamHeroesGrid: React.FC<Props> = ({ heroes }) => {
 
                 return (
                     <div key={hero.heroId} className="bg-[#1a1d24] border border-[#2e353b] rounded-lg p-3 flex items-center justify-between hover:bg-[#1e222b] transition-colors">
-                        <HeroCell heroId={hero.heroId} />
+                        <HeroCell heroId={hero.heroId} showName={true} />
 
                         <div className="text-right">
                             <div className="text-[#e3e3e3] font-mono font-bold text-sm">

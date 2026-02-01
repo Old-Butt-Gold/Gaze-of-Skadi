@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerWinLossById;
 
-internal sealed class GetPlayerWinLossByIdHandler(IRequester requester, IMapper mapper)
+internal sealed class GetPlayerWinLossByIdHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPlayerWinLossByIdQuery, PlayerWinLossDto?>
 {
     public async Task<PlayerWinLossDto?> Handle(GetPlayerWinLossByIdQuery request, CancellationToken ct)

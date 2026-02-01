@@ -1,6 +1,5 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
-using GoS.Application.Features.Matches.Queries.FindMatches;
 using GoS.Application.Features.Matches.Queries.GetMatchActionsById;
 using GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 using GoS.Application.Features.Matches.Queries.GetMatchCastsById;
@@ -141,13 +140,4 @@ public sealed class MatchesController : ApiControllerBase
         [FromQuery] long? lessThanMatchId,
         CancellationToken ct = default)
         => HandleQueryAsync(new GetProMatchesQuery(lessThanMatchId), ct);
-
-    [HttpGet("findMatches")]
-    [ProducesResponseType(typeof(IEnumerable<MatchFindDto>), StatusCodes.Status200OK)]
-    [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> FindMatches(
-        [FromQuery] int[] teamA,
-        [FromQuery] int[] teamB,
-        CancellationToken ct = default)
-        => HandleQueryAsync(new FindMatchesQuery(teamA, teamB), ct);
 }

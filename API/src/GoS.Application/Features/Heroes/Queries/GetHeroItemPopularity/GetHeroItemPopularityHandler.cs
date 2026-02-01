@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroItemPopularity;
 
-internal sealed class GetHeroItemPopularityHandler(IRequester requester, IMapper mapper)
+internal sealed class GetHeroItemPopularityHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetHeroItemPopularityQuery, HeroItemPopularityDto?>
 {
     public async Task<HeroItemPopularityDto?> Handle(GetHeroItemPopularityQuery request, CancellationToken ct)

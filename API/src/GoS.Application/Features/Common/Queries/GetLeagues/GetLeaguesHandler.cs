@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Common.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Common.Queries.GetLeagues;
 
-internal sealed class GetLeaguesHandler(IRequester requester, IMapper mapper)
+internal sealed class GetLeaguesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetLeaguesQuery, IEnumerable<LeagueDto>?>
 {
     public async Task<IEnumerable<LeagueDto>?> Handle(GetLeaguesQuery request, CancellationToken ct)

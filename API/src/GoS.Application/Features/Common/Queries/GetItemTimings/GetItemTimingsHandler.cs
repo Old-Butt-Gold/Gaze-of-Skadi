@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Common.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Common.Queries.GetItemTimings;
 
-internal sealed class GetItemTimingsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetItemTimingsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetItemTimingsQuery, IEnumerable<ItemTimingDto>?>
 {
     public async Task<IEnumerable<ItemTimingDto>?> Handle(GetItemTimingsQuery request, CancellationToken ct)

@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroMatchups;
 
-internal sealed class GetHeroMatchupsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetHeroMatchupsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetHeroMatchupsQuery, IEnumerable<HeroMatchupDto>?>
 {
     public async Task<IEnumerable<HeroMatchupDto>?> Handle(GetHeroMatchupsQuery request, CancellationToken ct)

@@ -1,12 +1,13 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.EndpointParameters;
+using GoS.Application.Options;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
 
-internal sealed class GetPublicMatchesHandler(IRequester requester, IMapper mapper)
+internal sealed class GetPublicMatchesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPublicMatchesQuery, IEnumerable<PublicMatchDto>?>
 {
     public async Task<IEnumerable<PublicMatchDto>?> Handle(GetPublicMatchesQuery request, CancellationToken ct)

@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Common.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Common.Queries.GetLaneRoles;
 
-internal sealed class GetLaneRolesHandler(IRequester requester, IMapper mapper)
+internal sealed class GetLaneRolesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetLaneRolesQuery, IEnumerable<LaneRolesDto>?>
 {
     public async Task<IEnumerable<LaneRolesDto>?> Handle(GetLaneRolesQuery request, CancellationToken ct)

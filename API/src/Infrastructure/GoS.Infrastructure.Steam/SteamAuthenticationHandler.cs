@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using AspNet.Security.OpenId;
+using GoS.Application.Abstractions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
@@ -12,10 +13,14 @@ namespace GoS.Infrastructure.Steam;
 
 public class SteamAuthenticationHandler : OpenIdAuthenticationHandler<SteamAuthenticationOptions>
 {
+    private readonly ISteamIdConverter _steamIdConverter;
+
     public SteamAuthenticationHandler(
-        IOptionsMonitor<SteamAuthenticationOptions> options, ILoggerFactory logger, UrlEncoder encoder)
+        IOptionsMonitor<SteamAuthenticationOptions> options, ILoggerFactory logger,
+        UrlEncoder encoder, ISteamIdConverter steamIdConverter)
         : base(options, logger, encoder)
     {
+        _steamIdConverter = steamIdConverter;
     }
 
     protected override async Task<AuthenticationTicket> CreateTicketAsync(ClaimsIdentity identity, AuthenticationProperties properties,
@@ -56,8 +61,8 @@ public class SteamAuthenticationHandler : OpenIdAuthenticationHandler<SteamAuthe
         }
 
         identity.AddClaim(new Claim(SteamClaimTypes.SteamId64, identifier, ClaimValueTypes.String, Options.ClaimsIssuer));
-        identity.AddClaim(new Claim(SteamClaimTypes.SteamId32, ConvertSteamIdTo32(identifier), ClaimValueTypes.String, Options.ClaimsIssuer));
-        
+        identity.AddClaim(new Claim(SteamClaimTypes.SteamId32, _steamIdConverter.ConvertSteamId64To32(identifier), ClaimValueTypes.String, Options.ClaimsIssuer));
+
         var address = QueryHelpers.AddQueryString(Options.UserInformationEndpoint, new Dictionary<string, string?>
         {
             [SteamAuthenticationConstants.Parameters.Key] = Options.ApplicationKey,
@@ -153,16 +158,5 @@ public class SteamAuthenticationHandler : OpenIdAuthenticationHandler<SteamAuthe
             // with the notification to allow replacing the ticket.
             return context.Ticket;
         }
-    }
-    
-    private static string ConvertSteamIdTo32(string steamId64)
-    {
-        if (ulong.TryParse(steamId64, out var steamId))
-        {
-            var steamId32 = (steamId - 76561197960265728) & 0xFFFFFFFF;
-            return steamId32.ToString();
-        }
-
-        return steamId64;
     }
 }

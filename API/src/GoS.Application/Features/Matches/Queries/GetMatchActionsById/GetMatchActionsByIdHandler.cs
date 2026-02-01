@@ -20,11 +20,11 @@ internal sealed class GetMatchActionsByIdHandler(ISender sender, IMapper mapper)
         }
 
         return match.Players
-            .Select(player => new PlayerActionsDto { PlayerInfo = mapper.Map<PlayerInfoDto>(player), 
+            .Select(player => new PlayerActionsDto { PlayerInfo = mapper.Map<PlayerInfoDto>(player),
                 Actions = GetActionsForPlayer(player), }).ToList();
     }
 
-    private List<ActionsDataDto> GetActionsForPlayer(MatchPlayer player) 
+    private List<ActionsDataDto> GetActionsForPlayer(MatchPlayer player)
         => player.Actions.
             Select(action => new ActionsDataDto
                 { Key = mapper.Map<BaseEnumDto<UnitOrder>>(action.Key), Value = action.Value, })

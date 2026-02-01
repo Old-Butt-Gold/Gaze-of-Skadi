@@ -11,13 +11,11 @@ public static class ServiceExtensions
 {
     public static void ConfigureRequester(this IServiceCollection services, IConfiguration configuration)
     {
-        services.Configure<HttpRequesterOptions>(configuration.GetSection(HttpRequesterOptions.ConfigurationPath));
+        services.Configure<OpenDotaHttpRequesterOptions>(configuration.GetSection(OpenDotaHttpRequesterOptions.ConfigurationPath));
 
-        services.AddSingleton<IRequester, HttpRequester>();
-
-        services.AddHttpClient<IRequester, HttpRequester>((sp, client) =>
+        services.AddHttpClient<IRequester<OpenDotaHttpRequesterOptions>, OpenDotaRequester>((sp, client) =>
         {
-            var opts = sp.GetRequiredService<IOptionsMonitor<HttpRequesterOptions>>().CurrentValue;
+            var opts = sp.GetRequiredService<IOptionsMonitor<OpenDotaHttpRequesterOptions>>().CurrentValue;
             client.BaseAddress = new Uri(opts.BaseAddress!);
             client.Timeout = TimeSpan.FromSeconds(opts.TimeoutSeconds);
         }).ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler

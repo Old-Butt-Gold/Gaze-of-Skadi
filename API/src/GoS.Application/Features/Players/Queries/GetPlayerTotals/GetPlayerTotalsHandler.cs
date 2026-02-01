@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerTotals;
 
-internal sealed class GetPlayerTotalsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetPlayerTotalsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPlayerTotalsQuery, IEnumerable<PlayerTotalDto>?>
 {
     public async Task<IEnumerable<PlayerTotalDto>?> Handle(GetPlayerTotalsQuery request, CancellationToken ct)

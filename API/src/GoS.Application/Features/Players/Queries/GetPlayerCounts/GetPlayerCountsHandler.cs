@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Players.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerCounts;
 
-internal sealed class GetPlayerCountsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetPlayerCountsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPlayerCountsQuery, PlayerCountDto?>
 {
     public async Task<PlayerCountDto?> Handle(GetPlayerCountsQuery request, CancellationToken ct)

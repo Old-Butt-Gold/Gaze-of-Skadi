@@ -1,11 +1,12 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
+using GoS.Application.Options;
 using GoS.Domain.Heroes.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Heroes.Queries.GetHeroDurations;
 
-internal sealed class GetHeroDurationsHandler(IRequester requester, IMapper mapper)
+internal sealed class GetHeroDurationsHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetHeroDurationsQuery, IEnumerable<HeroDurationDto>?>
 {
     public async Task<IEnumerable<HeroDurationDto>?> Handle(GetHeroDurationsQuery request, CancellationToken ct)
