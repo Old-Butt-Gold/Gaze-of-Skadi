@@ -8,17 +8,10 @@ import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { formatRelativeTime } from '../utils/formatUtils';
 import { APP_ROUTES } from '../config/navigation';
 import type { FindMatchesParams } from '../types/search';
+import {Icon} from "../components/Icon.tsx";
 
-// --- Components ---
-
-// Слот для героя в команде (Прямоугольный 16:9, чтобы не обрезать картинку)
-const HeroSlot = ({
-                      heroId,
-                      onRemove,
-                      isRadiant,
-                      isActiveSide,
-                      onClick
-                  }: {
+const HeroSlot =
+    ({ heroId, onRemove, isRadiant, isActiveSide, onClick }: {
     heroId?: number,
     onRemove: (id: number) => void,
     isRadiant: boolean,
@@ -29,23 +22,19 @@ const HeroSlot = ({
     const hero = heroId ? getHero(heroId) : null;
 
     return (
-        <div
-            onClick={onClick}
+        <div onClick={onClick}
             className={clsx(
-                "relative w-20 h-12 md:w-28 md:h-16 rounded border transition-all duration-200 group cursor-pointer shadow-lg overflow-hidden shrink-0",
+                "relative w-20 h-12 rounded border transition-all duration-200 group cursor-pointer shadow-lg overflow-hidden shrink-0",
                 hero
                     ? (isRadiant ? "border-emerald-500 shadow-emerald-500/20" : "border-red-500 shadow-red-500/20")
                     : (isActiveSide
                         ? (isRadiant ? "border-emerald-500/50 bg-emerald-500/5" : "border-red-500/50 bg-red-500/5")
                         : "border-[#2e353b] bg-[#15171c] hover:border-[#58606e]")
-            )}
-        >
+            )}>
             {hero ? (
                 <>
-                    {/* Используем object-cover, так как слот теперь 16:9, как и картинка */}
-                    <img src={hero.img} alt={hero.localized_name} className="w-full h-full object-cover" />
+                    <Icon src={hero.img} alt={hero.localized_name}/>
 
-                    {/* Overlay remove button */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[1px]">
                         <button
                             onClick={(e) => { e.stopPropagation(); onRemove(hero.id); }}
@@ -66,12 +55,8 @@ const HeroSlot = ({
     );
 };
 
-// Сетка выбора героев (Снизу)
-const HeroPicker = ({
-                        onSelect,
-                        selectedIds,
-                        activeTeam
-                    }: {
+const HeroPicker =
+({ onSelect, selectedIds, activeTeam } : {
     onSelect: (id: number) => void,
     selectedIds: number[],
     activeTeam: 'A' | 'B'
@@ -89,8 +74,7 @@ const HeroPicker = ({
     if (isLoading) return <LoadingSpinner text="Loading heroes..." />;
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 shadow-2xl relative overflow-hidden">
-            {/* Header / Search */}
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-3 shadow-2xl relative overflow-hidden">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4 relative z-10">
                 <div className="text-[#808fa6] text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                     <span>Available Heroes</span>
@@ -132,7 +116,7 @@ const HeroPicker = ({
                             )}
                             title={hero.localized_name}
                         >
-                            <img src={hero.img} alt={hero.localized_name} className="w-full h-full object-cover" loading="lazy" />
+                            <Icon src={hero.img} alt={hero.localized_name} />
 
                             {/* Name Overlay */}
                             {!isSelected && (
@@ -157,8 +141,6 @@ const HeroPicker = ({
         </div>
     );
 };
-
-// --- Main Page ---
 
 export const FindMatchesPage: React.FC = () => {
     const { getHero } = useHeroes();
@@ -294,8 +276,7 @@ export const FindMatchesPage: React.FC = () => {
                 </div>
             </div>
 
-            {/* HERO PICKER */}
-            <div className="mb-12">
+            <div className="mb-6">
                 <HeroPicker
                     onSelect={handleSelectHero}
                     selectedIds={allSelected}
@@ -303,7 +284,6 @@ export const FindMatchesPage: React.FC = () => {
                 />
             </div>
 
-            {/* RESULTS */}
             {isError && (
                 <div className="mb-8">
                     <ErrorDisplay message="Failed to find matches." />
@@ -321,7 +301,7 @@ export const FindMatchesPage: React.FC = () => {
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                <tr className="bg-[#0f1114] text-[10px] uppercase text-[#58606e] text-center font-bold tracking-wider border-b border-[#2e353b]">
+                                <tr className="bg-[#0f1114] text-[10px] text-center uppercase text-[#58606e] font-bold tracking-wider border-b border-[#2e353b]">
                                     <th className="px-6 py-4">Match ID</th>
                                     <th className="px-6 py-4">Radiant</th>
                                     <th className="px-6 py-4">Dire</th>
@@ -335,29 +315,29 @@ export const FindMatchesPage: React.FC = () => {
 
                                     return (
                                         <tr key={match.matchId} className="group hover:bg-[#1e222b] transition-colors relative">
-                                            {/* Winner Border Indicator */}
-                                            <td className={clsx(
-                                                "absolute left-0 top-0 bottom-0 w-1 transition-colors",
-                                                radiantWon ? "bg-emerald-500" : "bg-red-500"
-                                            )}></td>
-
                                             {/* Match ID */}
-                                            <td className="px-6 py-4">
-                                                <Link to={`${APP_ROUTES.MATCHES}/${match.matchId}`} className="font-mono font-bold text-[#e3e3e3] hover:text-[#e7d291] hover:underline decoration-dashed underline-offset-4">
+                                            <td className="px-6 py-4 relative">
+                                                <div className={clsx(
+                                                    "absolute left-0 top-0 bottom-0 w-1 transition-colors",
+                                                    radiantWon ? "bg-emerald-500" : "bg-red-500"
+                                                )}></div>
+
+                                                <Link to={`${APP_ROUTES.MATCHES}/${match.matchId}`} className="font-mono font-bold text-[#e3e3e3] hover:text-[#e7d291] hover:underline decoration-dashed underline-offset-4 block">
                                                     {match.matchId}
                                                 </Link>
                                             </td>
 
                                             {/* Radiant Heroes */}
-                                            <td className="px-6 py-4">
-                                                <div className="flex">
+                                            <td className="px-6 py-4 align-middle">
+                                                <div className="flex flex-wrap justify-center gap-1">
                                                     {match.teamA.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="block relative z-0 hover:z-10 transition-transform hover:scale-110">
+                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-10 transition-transform hover:scale-110">
                                                                 <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-emerald-900/50 overflow-hidden bg-[#0f1114] shadow-sm">
-                                                                    <img src={h.img} alt={h.localized_name} className="w-full h-full object-cover" />
+                                                                    <Icon src={h.img} alt={h.localized_name}/>
                                                                 </div>
+
                                                             </Link>
                                                         ) : <div key={heroId} className="w-10 h-6 rounded bg-gray-800 border border-[#15171c]"></div>;
                                                     })}
@@ -365,14 +345,14 @@ export const FindMatchesPage: React.FC = () => {
                                             </td>
 
                                             {/* Dire Heroes */}
-                                            <td className="px-6 py-4">
-                                                <div className="flex">
+                                            <td className="px-6 py-4 align-middle">
+                                                <div className="flex flex-wrap gap-1">
                                                     {match.teamB.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="block relative z-0 hover:z-10 transition-transform hover:scale-110">
+                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-10 transition-transform hover:scale-110">
                                                                 <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-red-900/50 overflow-hidden bg-[#0f1114] shadow-sm">
-                                                                    <img src={h.img} alt={h.localized_name} className="w-full h-full object-cover" />
+                                                                    <Icon src={h.img} alt={h.localized_name}/>
                                                                 </div>
                                                             </Link>
                                                         ) : <div key={heroId} className="w-10 h-6 rounded bg-gray-800 border border-[#15171c]"></div>;
@@ -381,9 +361,9 @@ export const FindMatchesPage: React.FC = () => {
                                             </td>
 
                                             {/* Winner */}
-                                            <td className="px-6 py-4 text-center">
+                                            <td className="px-6 py-4 text-center align-middle">
                                                     <span className={clsx(
-                                                        "text-[10px] font-bold uppercase px-2 py-1 rounded border",
+                                                        "text-[10px] font-bold uppercase px-2 py-1 rounded border inline-block min-w-[60px]",
                                                         radiantWon
                                                             ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
                                                             : "text-red-400 bg-red-500/10 border-red-500/20"
@@ -392,8 +372,11 @@ export const FindMatchesPage: React.FC = () => {
                                                     </span>
                                             </td>
 
-                                            <td className="px-6 py-4 text-right text-xs text-[#808fa6] font-mono">
-                                                {formatRelativeTime(match.startTime)}
+                                            {/* Date */}
+                                            <td className="px-6 py-4 text-right align-middle">
+                                                    <span className="text-xs text-[#808fa6] font-mono whitespace-nowrap">
+                                                        {formatRelativeTime(match.startTime)}
+                                                    </span>
                                             </td>
                                         </tr>
                                     );

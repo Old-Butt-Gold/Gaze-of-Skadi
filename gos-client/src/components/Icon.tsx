@@ -3,14 +3,14 @@ import React, {useEffect, useState} from 'react';
 interface IconProps {
     src: string;
     alt?: string;
-    size: number;
+    size?: number;
     fallbackSrc?: string
 }
 
 export const Icon: React.FC<IconProps> =
     ({
          src,
-         size = 4,
+         size,
          alt,
          fallbackSrc = undefined
      }) => {
@@ -27,8 +27,8 @@ export const Icon: React.FC<IconProps> =
         }
     };
 
-    const widthClass = `w-${size}`;
-    const heightClass = `h-${size}`;
+    const widthClass = `w-${size ?? "full"}`;
+    const heightClass = `h-${size ?? "full"}`;
 
     return (
         <img
