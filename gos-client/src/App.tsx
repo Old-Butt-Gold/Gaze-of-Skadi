@@ -10,6 +10,7 @@ import {TeamsPage} from "./pages/TeamsPage.tsx";
 import {TeamDetailsPage} from "./pages/TeamDetailsPage.tsx";
 import {HeroStatsPage} from "./pages/HeroStatsPage.tsx";
 import {HeroDetailsPage} from "./pages/HeroDetailsPage.tsx";
+import {FindMatchesPage} from "./pages/FindMatchesPage.tsx";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path={`${APP_ROUTES.TEAMS}/:teamId`} element={<TeamDetailsPage />} />
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
                 <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
+                <Route path={APP_ROUTES.COMBOS} element={<FindMatchesPage />} />
 
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
