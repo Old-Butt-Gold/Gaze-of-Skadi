@@ -45,7 +45,7 @@ export const HeroItemsTab: React.FC<Props> = ({ hero }) => {
     if (isError || !popularity) return <ErrorDisplay message="Item data unavailable" onRetry={refetch} />;
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-12">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
 
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
                 <div className="border-l-4 border-[#e7d291] pl-4 bg-linear-to-r from-[#e7d291]/5 to-transparent py-3 w-full md:w-auto rounded-r-lg">

@@ -5,6 +5,7 @@ import type {HeroBenchmarkDto} from "../types/heroBenchmarks.ts";
 import type {HeroRankingDto} from "../types/heroRankings.ts";
 import type {HeroMatchupDto} from "../types/heroMatchups.ts";
 import type {HeroItemPopularityDto} from "../types/heroItemPopularity.ts";
+import type {HeroDurationDto} from "../types/heroDurations.ts";
 
 export const heroService = {
   getHeroes: async (): Promise<HeroDictionary> => {
@@ -29,5 +30,9 @@ export const heroService = {
 
   getHeroItemPopularity: async (heroId: number): Promise<HeroItemPopularityDto> => {
     return apiClient.get(`/heroes/${heroId}/item-popularity`);
+  },
+
+  getHeroDurations: async (heroId: number): Promise<HeroDurationDto[]> => {
+    return apiClient.get(`/heroes/${heroId}/durations`);
   },
 };
