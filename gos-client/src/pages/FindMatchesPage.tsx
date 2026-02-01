@@ -215,7 +215,7 @@ export const FindMatchesPage: React.FC = () => {
                         </h3>
                         <span className="text-[#808fa6] text-xs font-mono">{teamA.length} / 5</span>
                     </div>
-                    <div className="flex flex-wrap justify-center gap-2">
+                    <div className="flex flex-wrap justify-around gap-2">
                         {[...Array(5)].map((_, i) => (
                             <HeroSlot
                                 key={`radiant-${i}`}
@@ -261,7 +261,7 @@ export const FindMatchesPage: React.FC = () => {
                         </h3>
                         <span className="text-[#808fa6] text-xs font-mono">{teamB.length} / 5</span>
                     </div>
-                    <div className="flex flex-wrap justify-center gap-2">
+                    <div className="flex flex-wrap justify-around gap-2">
                         {[...Array(5)].map((_, i) => (
                             <HeroSlot
                                 key={`dire-${i}`}
@@ -317,11 +317,6 @@ export const FindMatchesPage: React.FC = () => {
                                         <tr key={match.matchId} className="group hover:bg-[#1e222b] transition-colors relative">
                                             {/* Match ID */}
                                             <td className="px-6 py-4 relative">
-                                                <div className={clsx(
-                                                    "absolute left-0 top-0 bottom-0 w-1 transition-colors",
-                                                    radiantWon ? "bg-emerald-500" : "bg-red-500"
-                                                )}></div>
-
                                                 <Link to={`${APP_ROUTES.MATCHES}/${match.matchId}`} className="font-mono font-bold text-[#e3e3e3] hover:text-[#e7d291] hover:underline decoration-dashed underline-offset-4 block">
                                                     {match.matchId}
                                                 </Link>
@@ -333,11 +328,15 @@ export const FindMatchesPage: React.FC = () => {
                                                     {match.teamA.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-10 transition-transform hover:scale-110">
-                                                                <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-emerald-900/50 overflow-hidden bg-[#0f1114] shadow-sm">
+                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-20 transition-transform hover:scale-110 group/tooltip" title={h.localized_name} >
+                                                                <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-emerald-900/50 overflow-hidden bg-[#0f1114] shadow-sm relative z-10">
                                                                     <Icon src={h.img} alt={h.localized_name}/>
                                                                 </div>
 
+                                                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#0f1114] border border-[#e7d291]/30 text-white text-[10px] font-bold uppercase tracking-wider whitespace-nowrap rounded shadow-[0_0_10px_rgba(0,0,0,0.8)] opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-30 hidden md:block backdrop-blur-sm">
+                                                                    {h.localized_name}
+                                                                    <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#0f1114]"></div>
+                                                                </div>
                                                             </Link>
                                                         ) : <div key={heroId} className="w-10 h-6 rounded bg-gray-800 border border-[#15171c]"></div>;
                                                     })}
@@ -350,9 +349,14 @@ export const FindMatchesPage: React.FC = () => {
                                                     {match.teamB.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-10 transition-transform hover:scale-110">
-                                                                <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-red-900/50 overflow-hidden bg-[#0f1114] shadow-sm">
+                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-20 transition-transform hover:scale-110 group/tooltip" title={h.localized_name} >
+                                                            <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-red-900/50 overflow-hidden bg-[#0f1114] shadow-sm relative z-10">
                                                                     <Icon src={h.img} alt={h.localized_name}/>
+                                                                </div>
+
+                                                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-[#0f1114] border border-[#e7d291]/30 text-white text-[10px] font-bold uppercase tracking-wider whitespace-nowrap rounded shadow-[0_0_10px_rgba(0,0,0,0.8)] opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none z-30 hidden md:block backdrop-blur-sm">
+                                                                    {h.localized_name}
+                                                                    <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#0f1114]"></div>
                                                                 </div>
                                                             </Link>
                                                         ) : <div key={heroId} className="w-10 h-6 rounded bg-gray-800 border border-[#15171c]"></div>;
