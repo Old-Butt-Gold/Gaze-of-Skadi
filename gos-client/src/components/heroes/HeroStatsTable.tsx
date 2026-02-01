@@ -1,11 +1,12 @@
-﻿import React, { useMemo, useState } from 'react';
+﻿import React, {useMemo, useState} from 'react';
 import clsx from 'clsx';
-import { useHeroes } from '../../hooks/queries/useHeroes';
-import { HeroCell } from './HeroCell';
-import { Icon } from '../Icon';
-import { getRankIconUrl } from '../../utils/rankUtils';
-import { calculateWinRate, getWinRateColor, RANK_ICON_IDS, RANK_KEYS } from '../../utils/heroStatsUtils';
-import type { HeroStatsGroupedDto, RankedStatsDto } from "../../types/heroStats.ts";
+import {useHeroes} from '../../hooks/queries/useHeroes';
+import {HeroCell} from './HeroCell';
+import {Icon} from '../Icon';
+import {getRankIconUrl} from '../../utils/rankUtils';
+import {calculateWinRate, getWinRateColor, RANK_ICON_IDS, RANK_KEYS} from '../../utils/heroStatsUtils';
+import type {HeroStatsGroupedDto, RankedStatsDto} from "../../types/heroStats.ts";
+import {SortIndicator} from "./SortIndicator.tsx";
 
 interface Props {
     stats: HeroStatsGroupedDto[];
@@ -35,16 +36,6 @@ const StatCell = React.memo(({ pick, win, isCompact = false }: { pick: number, w
         </div>
     );
 });
-
-const SortIndicator = ({ active, dir }: { active: boolean, dir: SortDirection }) => {
-    if (!active) return null;
-
-    return (
-        <span className="text-[#e7d291] ml-1 text-[10px] w-3 block transition-transform animate-in fade-in zoom-in duration-200">
-            {dir === 'asc' ? '▲' : '▼'}
-        </span>
-    );
-};
 
 // Reusable Header Cell Component
 interface HeaderCellProps {

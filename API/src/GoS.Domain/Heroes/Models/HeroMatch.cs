@@ -48,7 +48,7 @@ public class HeroMatch
 	/// Gets a value indicating whether the team/player/hero was on Radiant.
 	/// </summary>
 	[JsonPropertyName("radiant")]
-	public BooleanState Radiant { get; init; }
+	public BooleanState IsRadiant { get; init; }
 
 	/// <summary>
 	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
