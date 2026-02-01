@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useHeroPlayers } from '../../../hooks/queries/useHeroPlayers';
-import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers'; // Импорт хука
+import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
@@ -27,6 +27,7 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
     const [currentPage, setCurrentPage] = useState(1);
 
+    // 1. Сортировка
     const sortedData = useMemo(() => {
         if (!players) return [];
 
@@ -51,18 +52,19 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
             });
     }, [players, sortKey, sortDirection]);
 
+    // 2. Пагинация
     const paginatedData = useMemo(() => {
         const startIndex = (currentPage - 1) * PAGE_SIZE;
         return sortedData.slice(startIndex, startIndex + PAGE_SIZE);
     }, [sortedData, currentPage]);
 
+    // 3. Steam API Integration
     const playerIds = useMemo(() => {
         return paginatedData.map(p => p.accountId);
     }, [paginatedData]);
 
     const { data: steamPlayers } = useSteamPlayers(playerIds);
 
-    // 5. Маппинг данных
     const playersMap = useMemo(() => {
         const map = new Map<string, SteamPlayerDto>();
         if (steamPlayers) {
@@ -108,12 +110,12 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-lg">
 
                 {/* Table Head */}
-                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest">
+                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
                     <div
                         className="col-span-6 md:col-span-5 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('player')}
                     >
-                        Player <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
+                        Player Account <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
                     </div>
                     <div
                         className="col-span-3 md:col-span-3 text-center flex justify-center items-center cursor-pointer hover:text-white transition-colors"
@@ -144,7 +146,7 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
                                     <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="flex items-center gap-3 group/link">
                                         <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-sm text-[#e3e3e3] group-hover/link:text-[#e7d291] transition-colors truncate" title={playerName}>
+                                            <span className="font-bold text-sm text-[#e3e3e3] group-hover/link:text-[#e7d291] transition-colors break-words leading-tight" title={playerName}>
                                                 {playerName}
                                             </span>
                                         </div>

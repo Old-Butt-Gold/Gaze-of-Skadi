@@ -12,7 +12,7 @@ import type { HeroInfo } from '../../../types/heroes';
 import type { SortDirection } from '../../../store/teamStore';
 import { SortIndicator } from "../SortIndicator";
 import { Icon } from "../../Icon";
-import type {SteamPlayerDto} from "../../../types/steam.ts";
+import type { SteamPlayerDto } from "../../../types/steam";
 
 interface Props {
     hero: HeroInfo;
@@ -125,7 +125,6 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         Match ID <SortIndicator active={sortKey === 'id'} dir={sortDirection} />
                     </div>
 
-                    {/* Result */}
                     <div
                         className="col-span-2 md:col-span-1 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('result')}
@@ -133,7 +132,7 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         Result <SortIndicator active={sortKey === 'result'} dir={sortDirection} />
                     </div>
 
-                    {/* Player (New Column) */}
+                    {/* Player */}
                     <div
                         className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('player')}
@@ -157,7 +156,6 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         K / D / A <SortIndicator active={sortKey === 'kda'} dir={sortDirection} />
                     </div>
 
-                    {/* Duration + Time (Merged for Mobile, separate on Desktop) */}
                     <div
                         className="col-span-2 md:col-span-2 text-right md:text-center flex justify-end md:justify-center items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('duration')}
@@ -219,21 +217,21 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                                         <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
 
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors">
+                                            <span className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors break-words leading-tight" title={playerName}>
                                                 {playerName}
                                             </span>
                                         </div>
                                     </Link>
                                 </div>
 
-                                {/* 4. League (Desktop) */}
+                                {/* 4. League */}
                                 <div className="hidden md:flex md:col-span-3 flex-col justify-center">
                                     <div className="text-sm text-[#a3aab8] leading-tight line-clamp-2 pr-2" title={match.leagueName}>
                                         {match.leagueName || "Professional Match"}
                                     </div>
                                 </div>
 
-                                {/* 5. KDA (Desktop) */}
+                                {/* 5. KDA */}
                                 <div className="hidden md:flex md:col-span-2 justify-center items-center">
                                     <div className="font-mono text-sm bg-[#0f1114]/50 px-3 py-1 rounded border border-[#2e353b]/50">
                                         <span className="text-white font-bold">{match.kills}</span>
