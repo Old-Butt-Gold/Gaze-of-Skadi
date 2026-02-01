@@ -6,6 +6,7 @@ import { NotFoundPage } from './NotFoundPage';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import {HeroOverviewTab} from "../components/heroes/tabs/HeroOverviewTab.tsx";
 import {HeroDetailsHeader} from "../components/heroes/HeroDetailsHeader.tsx";
+import {HeroBenchmarksTab} from "../components/heroes/tabs/HeroBenchmarksTab.tsx";
 
 type HeroTab = 'overview' | 'rankings' | 'matches' | 'matchups' | 'items' | 'players' | 'benchmarks' | 'durations';
 
@@ -76,8 +77,12 @@ export const HeroDetailsPage: React.FC = () => {
                     <HeroOverviewTab hero={hero} />
                 )}
 
+                {activeTab === 'benchmarks' && (
+                    <HeroBenchmarksTab hero={hero} />
+                )}
+
                 {/* Other Tabs Placeholder */}
-                {activeTab !== 'overview' && (
+                {activeTab !== 'overview' && activeTab !== 'benchmarks' && (
                     <div className="flex flex-col items-center justify-center py-32 text-[#454c59] animate-in fade-in zoom-in-95 duration-300">
                         <span className="text-6xl opacity-20 mb-4">?</span>
                         <p className="font-serif text-lg tracking-wider text-[#808fa6] uppercase">Data Not Found</p>
