@@ -5,7 +5,7 @@ namespace GoS.Domain.Steam;
 public class SteamPlayer
 {
     [JsonPropertyName("steamid")]
-    public string? SteamId { get; set; }
+    public required string SteamId { get; set; }
 
     [JsonPropertyName("personaname")]
     public string? SteamName { get; set; }

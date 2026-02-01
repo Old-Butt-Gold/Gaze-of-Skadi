@@ -11,7 +11,7 @@ public static class ServiceExtensions
     {
         var redisSection = configuration.GetSection("Redis");
         var isEnabled = redisSection.GetValue<bool>("Enabled");
-    
+
         if (isEnabled)
         {
             services.AddStackExchangeRedisCache(options =>
@@ -31,7 +31,7 @@ public static class ServiceExtensions
             config.RegisterServicesFromAssembly(typeof(AssemblyReference).Assembly);
             config.AddOpenBehavior(typeof(LoggingBehavior<,>));
             config.AddOpenBehavior(typeof(ValidationBehavior<,>));
-        
+
             if (isRedisEnabled)
             {
                 config.AddOpenBehavior(typeof(CachingBehavior<,>));
@@ -43,11 +43,17 @@ public static class ServiceExtensions
     {
         serviceCollection.AddValidatorsFromAssemblyContaining(typeof(AssemblyReference));
     }
-    
+
     public static void ConfigureAutoMapper(this IServiceCollection services)
     {
-        services.AddAutoMapper(cfg => {
-            cfg.AddMaps(typeof(AssemblyReference).Assembly);
-        });
+        /*
+            services.AddAutoMapper(cfg => {
+                cfg.AddMaps(typeof(AssemblyReference).Assembly);
+            });
+        */
+        services.AddAutoMapper((serviceProvider, config) =>
+        {
+            config.ConstructServicesUsing(serviceProvider.GetService);
+        }, typeof(AssemblyReference).Assembly);
     }
 }

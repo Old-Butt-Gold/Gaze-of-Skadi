@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useHeroPlayers } from '../../../hooks/queries/useHeroPlayers';
+import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers'; // Импорт хука
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
@@ -10,13 +11,14 @@ import { APP_ROUTES } from "../../../config/navigation";
 import type { SortDirection } from "../../../store/teamStore";
 import { Icon } from "../../Icon";
 import { SortIndicator } from "../SortIndicator";
+import type { SteamPlayerDto } from "../../../types/steam";
 
 interface Props {
     hero: HeroInfo;
 }
 
 type SortKey = 'games' | 'winrate' | 'player';
-const PAGE_SIZE = 100;
+const PAGE_SIZE = 20;
 
 export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
     const { data: players, isLoading, isError, refetch } = useHeroPlayers(hero.id);
@@ -25,7 +27,6 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
     const [currentPage, setCurrentPage] = useState(1);
 
-    // 1. Process & Sort Data
     const sortedData = useMemo(() => {
         if (!players) return [];
 
@@ -50,11 +51,25 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
             });
     }, [players, sortKey, sortDirection]);
 
-    // 2. Paginate Data
     const paginatedData = useMemo(() => {
         const startIndex = (currentPage - 1) * PAGE_SIZE;
         return sortedData.slice(startIndex, startIndex + PAGE_SIZE);
     }, [sortedData, currentPage]);
+
+    const playerIds = useMemo(() => {
+        return paginatedData.map(p => p.accountId);
+    }, [paginatedData]);
+
+    const { data: steamPlayers } = useSteamPlayers(playerIds);
+
+    // 5. Маппинг данных
+    const playersMap = useMemo(() => {
+        const map = new Map<string, SteamPlayerDto>();
+        if (steamPlayers) {
+            steamPlayers.forEach(p => map.set(p.steamId32, p));
+        }
+        return map;
+    }, [steamPlayers]);
 
     const totalPages = Math.ceil(sortedData.length / PAGE_SIZE);
 
@@ -98,7 +113,7 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
                         className="col-span-6 md:col-span-5 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('player')}
                     >
-                        Player Account <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
+                        Player <SortIndicator active={sortKey === 'player'} dir={sortDirection} />
                     </div>
                     <div
                         className="col-span-3 md:col-span-3 text-center flex justify-center items-center cursor-pointer hover:text-white transition-colors"
@@ -116,20 +131,25 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
 
                 {/* Table Body */}
                 <div className="divide-y divide-[#2e353b]/50">
-                    {paginatedData.length > 0 ? paginatedData.map((player) => (
-                        <div key={player.accountId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors">
+                    {paginatedData.length > 0 ? paginatedData.map((player) => {
+                        const steamData = playersMap.get(String(player.accountId));
+                        const playerName = steamData?.steamName || `${player.accountId}`;
+                        const playerAvatar = steamData?.avatar || '/assets/images/unknown_player.png';
 
-                            {/* Player */}
-                            <div className="col-span-6 md:col-span-5">
-                                <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="flex items-center gap-4 group/link">
-                                    <Icon src="/assets/images/unknown_player.png" size={8} />
-                                    <div className="flex flex-col">
-                                        <span className="font-bold text-sm text-[#e3e3e3] group-hover/link:text-[#e7d291] transition-colors font-mono">
-                                            ID: {player.accountId}
-                                        </span>
-                                    </div>
-                                </Link>
-                            </div>
+                        return (
+                            <div key={player.accountId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors">
+
+                                {/* Player Info */}
+                                <div className="col-span-6 md:col-span-5">
+                                    <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="flex items-center gap-3 group/link">
+                                        <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
+                                        <div className="flex flex-col">
+                                            <span className="font-bold text-sm text-[#e3e3e3] group-hover/link:text-[#e7d291] transition-colors truncate" title={playerName}>
+                                                {playerName}
+                                            </span>
+                                        </div>
+                                    </Link>
+                                </div>
 
                             {/* Matches */}
                             <div className="col-span-3 md:col-span-3 text-center">
@@ -154,8 +174,9 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
                                 </span>
                             </div>
 
-                        </div>
-                    )) : (
+                            </div>
+                        );
+                    }) : (
                         <div className="py-12 text-center text-[#58606e] uppercase tracking-widest text-xs">
                             No pro players found
                         </div>

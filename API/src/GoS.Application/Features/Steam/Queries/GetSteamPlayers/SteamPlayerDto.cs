@@ -2,7 +2,7 @@
 
 public class SteamPlayerDto
 {
-    public string SteamId32 { get; set; } = string.Empty;
-    public string SteamName { get; set; } = string.Empty;
-    public string Avatar { get; set; } = string.Empty;
+    public required string SteamId32 { get; set; }
+    public string? SteamName { get; set; }
+    public string? Avatar { get; set; }
 }

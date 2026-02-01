@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useHeroMatches } from '../../../hooks/queries/useHeroMatches';
+import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { formatDuration, formatRelativeTime } from '../../../utils/formatUtils';
@@ -11,6 +12,7 @@ import type { HeroInfo } from '../../../types/heroes';
 import type { SortDirection } from '../../../store/teamStore';
 import { SortIndicator } from "../SortIndicator";
 import { Icon } from "../../Icon";
+import type {SteamPlayerDto} from "../../../types/steam.ts";
 
 interface Props {
     hero: HeroInfo;
@@ -26,7 +28,6 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
     const [currentPage, setCurrentPage] = useState(1);
 
-    // 1. Process & Sort
     const sortedData = useMemo(() => {
         if (!matches) return [];
 
@@ -57,11 +58,26 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
         });
     }, [matches, sortKey, sortDirection]);
 
-    // 2. Paginate
     const paginatedData = useMemo(() => {
         const startIndex = (currentPage - 1) * PAGE_SIZE;
         return sortedData.slice(startIndex, startIndex + PAGE_SIZE);
     }, [sortedData, currentPage]);
+
+    const playerIds = useMemo(() => {
+        return paginatedData.map(m => m.accountId);
+    }, [paginatedData]);
+
+    const { data: steamPlayers } = useSteamPlayers(playerIds);
+
+    const playersMap = useMemo(() => {
+        const map = new Map<string, SteamPlayerDto>();
+        if (steamPlayers) {
+            steamPlayers.forEach(p => {
+                map.set(p.steamId32, p);
+            });
+        }
+        return map;
+    }, [steamPlayers]);
 
     const totalPages = Math.ceil(sortedData.length / PAGE_SIZE);
 
@@ -100,9 +116,8 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
             {/* Table */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-lg">
 
-                {/* Table Head (Adjusted grid columns for 14 total span logic if needed, currently 12) */}
-                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10 items-center">
-                    {/* ID + Side */}
+                {/* Table Head */}
+                <div className="grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
                     <div
                         className="col-span-4 md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors"
                         onClick={() => handleSort('id')}
@@ -158,6 +173,10 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                         const isRadiant = isRadiantTeam(match.isRadiant);
                         const sideIcon = isRadiant ? '/assets/images/radiant.png' : '/assets/images/dire.png';
 
+                        const playerData = playersMap.get(String(match.accountId));
+                        const playerName = playerData?.steamName || `ID: ${match.accountId}`;
+                        const playerAvatar = playerData?.avatar || '/assets/images/unknown_player.png';
+
                         return (
                             <div key={match.matchId} className="grid grid-cols-12 gap-4 px-6 py-3 items-center group hover:bg-[#1e222b] transition-colors relative min-h-16">
                                 {/* Left Border Indicator */}
@@ -194,13 +213,14 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                                     </span>
                                 </div>
 
-                                {/* 3. Player (New Column) */}
+                                {/* 3. Player (Dynamic Data) */}
                                 <div className="col-span-4 md:col-span-2 flex items-center gap-3">
                                     <Link to={`${APP_ROUTES.PLAYERS}/${match.accountId}`} className="flex items-center gap-3 group/player">
-                                        <Icon src="/assets/images/unknown_player.png" size={8} />
-                                        <div className="flex flex-col min-w-0">
-                                            <span className="font-mono text-sm text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors">
-                                                ID: {match.accountId}
+                                        <Icon src={playerAvatar} size={8} alt={playerName} fallbackSrc={'/assets/images/unknown_player.png'} />
+
+                                        <div className="flex flex-col">
+                                            <span className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors">
+                                                {playerName}
                                             </span>
                                         </div>
                                     </Link>

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using GoS.Application.Abstractions;
+using GoS.Application.AutoMapper;
 using GoS.Domain.Steam;
 
 namespace GoS.Application.Features.Steam.Queries.GetSteamPlayers;
@@ -9,10 +11,10 @@ public class GetSteamPlayersMappingProfile : Profile
     {
         CreateMap<SteamPlayer, SteamPlayerDto>()
             .ForMember(dest => dest.SteamId32,
-                opt => opt.MapFrom(src => src.SteamId ?? string.Empty))
+                opt => opt.MapFrom<SteamId32Resolver>())
             .ForMember(dest => dest.SteamName,
-                opt => opt.MapFrom(src => src.SteamName ?? string.Empty))
+                opt => opt.MapFrom(src => src.SteamName))
             .ForMember(dest => dest.Avatar,
-                opt => opt.MapFrom(src => src.Avatar ?? string.Empty));
+                opt => opt.MapFrom(src => src.Avatar));
     }
 }
