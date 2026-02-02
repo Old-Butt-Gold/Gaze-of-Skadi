@@ -26,7 +26,7 @@ export const PlayerCellShort = ({accountId, playerData, isLoading}: {
 
             <div className="flex flex-col min-w-0">
                 <span
-                    className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors break-words leading-tight"
+                    className="font-bold text-xs text-[#e3e3e3] group-hover/player:text-[#e7d291] transition-colors wrap-break-word leading-tight"
                     title={playerName}>
                     {playerName}
                 </span>

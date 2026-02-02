@@ -11,6 +11,7 @@ import {TeamDetailsPage} from "./pages/TeamDetailsPage.tsx";
 import {HeroStatsPage} from "./pages/HeroStatsPage.tsx";
 import {HeroDetailsPage} from "./pages/HeroDetailsPage.tsx";
 import {FindMatchesPage} from "./pages/FindMatchesPage.tsx";
+import {NewsPage} from "./pages/NewsPage.tsx";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
                 <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
                 <Route path={APP_ROUTES.COMBOS} element={<FindMatchesPage />} />
+                <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
 
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />

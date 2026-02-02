@@ -38,7 +38,7 @@ public class SteamPlayersResponse
     public required IEnumerable<SteamPlayer> Players { get; set; }
 }
 
-public class SteamApiResponse
+public class SteamPlayerResponse
 {
     [JsonPropertyName("response")]
     public required SteamPlayersResponse Response { get; set; }

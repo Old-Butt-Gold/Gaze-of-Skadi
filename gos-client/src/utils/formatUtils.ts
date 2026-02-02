@@ -43,3 +43,12 @@ export const formatDuration = (seconds: number): string => {
 export const formatTimeRange = (startSeconds: number, endSeconds: number): string => {
   return `${formatDuration(startSeconds)} - ${formatDuration(endSeconds)}`;
 };
+
+export const formatDateLong = (unixSeconds: number): string => {
+  const date = new Date(unixSeconds * 1000);
+  return new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  }).format(date);
+};

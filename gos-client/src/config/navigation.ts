@@ -13,7 +13,8 @@ export const APP_ROUTES = {
   HEROES: '/heroes',
   PLAYERS: '/players',
   MATCHES: '/matches',
-  COMBOS: '/combo'
+  COMBOS: '/combo',
+  NEWS: '/news',
 } as const;
 
 export const MAIN_NAVIGATION: NavItem[] = [
@@ -23,4 +24,5 @@ export const MAIN_NAVIGATION: NavItem[] = [
   { name: 'Team', path: APP_ROUTES.TEAMS },
   { name: 'Heroes', path: APP_ROUTES.HEROES },
   { name: 'Combos', path: APP_ROUTES.COMBOS },
+  { name: 'News', path: APP_ROUTES.NEWS },
 ];

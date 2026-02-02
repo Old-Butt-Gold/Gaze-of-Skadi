@@ -16,7 +16,7 @@ internal sealed class GetSteamPlayersHandler(IRequester<SteamHttpRequesterOption
             .ToArray();
 
         var parameters = BuildParameters(steamIds64);
-        var apiResponse = await requester.GetResponseAsync<SteamApiResponse>(
+        var apiResponse = await requester.GetResponseAsync<SteamPlayerResponse?>(
             "ISteamUser/GetPlayerSummaries/v2",
             parameters,
             ct: cancellationToken);

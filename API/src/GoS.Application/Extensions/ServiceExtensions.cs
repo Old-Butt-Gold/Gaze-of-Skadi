@@ -53,7 +53,7 @@ public static class ServiceExtensions
         */
         services.AddAutoMapper((serviceProvider, config) =>
         {
-            config.ConstructServicesUsing(serviceProvider.GetService);
+            config.ConstructServicesUsing(serviceProvider.GetRequiredService);
         }, typeof(AssemblyReference).Assembly);
     }
 }
