@@ -37,8 +37,6 @@ export const NewsPage: React.FC = () => {
                 {/* Background Pattern / Image (Abstract Dota Pattern) */}
                 <div className="absolute inset-0 opacity-20 bg-[url('https://shared.akamai.steamstatic.com//store_item_assets/steam/apps/570/ss_27b6345f22243bd6b885cc64c5cda74e4bd9c3e8.jpg')] bg-cover bg-no-repeat bg-position-[center_top_9%]" />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e13] via-transparent to-transparent" />
-
                 <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
                     <div className="flex items-center gap-3 mb-2 animate-in fade-in slide-in-from-left-4 duration-700">
                         <span className="h-px w-12 bg-[#e7d291]" />
