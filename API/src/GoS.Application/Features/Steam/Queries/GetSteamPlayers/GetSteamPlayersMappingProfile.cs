@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GoS.Application.Abstractions;
 using GoS.Application.AutoMapper;
 using GoS.Domain.Steam;
 

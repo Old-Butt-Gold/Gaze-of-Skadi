@@ -1,5 +1,4 @@
 using System.Net.Mime;
-using GoS.Application.EndpointParameters;
 using GoS.Application.Features.Matches.Queries.GetMatchActionsById;
 using GoS.Application.Features.Matches.Queries.GetMatchBenchmarksById;
 using GoS.Application.Features.Matches.Queries.GetMatchCastsById;
@@ -16,8 +15,6 @@ using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
 using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 using GoS.Application.Features.Matches.Queries.GetMatchVisionById;
-using GoS.Application.Features.Matches.Queries.GetProMatches;
-using GoS.Application.Features.Matches.Queries.GetPublicMatches;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -124,20 +121,4 @@ public sealed class MatchesController : ApiControllerBase
     [ProducesResponseType(typeof(MatchVisionDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchVisionById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchVisionByIdQuery(matchId), ct);
-
-    [HttpGet("public")]
-    [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]
-    [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetPublicMatches(
-        [FromQuery] PublicMatchesEndpointParameters parameters,
-        CancellationToken ct = default)
-        => HandleQueryAsync(new GetPublicMatchesQuery(parameters), ct);
-
-    [HttpGet("pro")]
-    [ProducesResponseType(typeof(IEnumerable<ProMatchDto>), StatusCodes.Status200OK)]
-    [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetProMatches(
-        [FromQuery] long? lessThanMatchId,
-        CancellationToken ct = default)
-        => HandleQueryAsync(new GetProMatchesQuery(lessThanMatchId), ct);
 }

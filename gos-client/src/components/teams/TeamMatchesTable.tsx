@@ -27,7 +27,6 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        document.getElementById('matches-top')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     };
 
     return (

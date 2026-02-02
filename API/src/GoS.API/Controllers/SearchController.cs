@@ -1,5 +1,8 @@
 using System.Net.Mime;
+using GoS.Application.EndpointParameters;
 using GoS.Application.Features.Matches.Queries.FindMatches;
+using GoS.Application.Features.Matches.Queries.GetProMatches;
+using GoS.Application.Features.Matches.Queries.GetPublicMatches;
 using GoS.Application.Features.Search.Queries.GetPlayersByName;
 using GoS.Application.Features.Search.Queries.GetProPlayersByName;
 using MediatR;
@@ -33,4 +36,20 @@ public sealed class SearchController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     public Task<IActionResult> GetProPlayersByName([FromQuery] string? q, CancellationToken ct = default)
         => HandleQueryAsync(new GetProPlayersByNameQuery(q), ct);
+
+    [HttpGet("public")]
+    [ProducesResponseType(typeof(IEnumerable<PublicMatchDto>), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetPublicMatches(
+        [FromQuery] PublicMatchesEndpointParameters parameters,
+        CancellationToken ct = default)
+        => HandleQueryAsync(new GetPublicMatchesQuery(parameters), ct);
+
+    [HttpGet("pro")]
+    [ProducesResponseType(typeof(IEnumerable<ProMatchDto>), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetProMatches(
+        [FromQuery] long? lessThanMatchId,
+        CancellationToken ct = default)
+        => HandleQueryAsync(new GetProMatchesQuery(lessThanMatchId), ct);
 }
