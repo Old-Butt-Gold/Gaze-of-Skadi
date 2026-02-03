@@ -5,9 +5,9 @@ import {APP_ROUTES} from "../config/navigation.ts";
 
 export const SearchPage: React.FC = () => {
     return (
-        <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-10 p-5">
+        <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] p-5">
             {/* Navigation Tabs */}
-            <div className="sticky top-0 z-40 bg-[#0b0e13]/95 backdrop-blur border-b border-[#2e353b] pb-4">
+            <div className="sticky top-0 z-40 bg-[#0b0e13]/95 backdrop-blur border-b border-[#2e353b] mb-4">
                 <div className="mx-auto px-4">
                     <div className="flex gap-8 overflow-x-auto scrollbar-none">
                         <SearchTab to={APP_ROUTES.COMBOS} label="Hero Combos" />
@@ -19,9 +19,7 @@ export const SearchPage: React.FC = () => {
             </div>
 
             {/* Content Area */}
-            <div className="mx-auto px-4 py-8">
-                <Outlet />
-            </div>
+            <Outlet />
         </div>
     );
 };

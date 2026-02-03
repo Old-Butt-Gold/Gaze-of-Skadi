@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { usePublicMatches } from '../../../hooks/queries/usePublicMatches';
 import { useHeroes } from '../../../hooks/queries/useHeroes';
-import { LoadingSpinner } from '../../ui/LoadingSpinner.tsx';
-import { ErrorDisplay } from '../../ui/ErrorDisplay.tsx';
+import { LoadingSpinner } from '../../../components/ui/LoadingSpinner';
+import { ErrorDisplay } from '../../../components/ui/ErrorDisplay';
 import { formatDuration, formatRelativeTime } from '../../../utils/formatUtils';
 import { getGameModeName, getLobbyTypeName } from '../../../utils/enumUtils';
 import { APP_ROUTES } from '../../../config/navigation';
@@ -85,7 +85,7 @@ export const SearchPublicMatchesTab: React.FC = () => {
     };
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-12">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
 
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-5 mb-6 shadow-lg">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
@@ -100,13 +100,12 @@ export const SearchPublicMatchesTab: React.FC = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                             </svg>
-                            <span className="text-xs font-bold uppercase tracking-wide">Min &gt; Max</span>
+                            <span className="text-xs font-bold uppercase tracking-wide">Min Rank must be &le; Max</span>
                         </div>
                     )}
                 </div>
             </div>
 
-            {/* Content State */}
             {isLoading && !matches ? (
                 <div className="py-32 flex flex-col items-center justify-center">
                     <LoadingSpinner text="Scouring public matches..." />
@@ -118,18 +117,17 @@ export const SearchPublicMatchesTab: React.FC = () => {
             ) : (
                 <div className="space-y-4">
 
-                    {/* Results Table */}
                     <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-2xl">
                         <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#0f1114]">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                <tr className="bg-[#0f1114] text-[10px] uppercase text-[#58606e] font-bold tracking-wider border-b border-[#2e353b]">
-                                    <th className="px-6 py-4 w-32">Match ID</th>
-                                    <th className="px-4 py-4 w-28 text-center">Avg Rank</th>
-                                    <th className="px-4 py-4 w-40 text-center">Game Mode</th>
-                                    <th className="px-4 py-4 text-center">Radiant</th>
-                                    <th className="px-4 py-4 text-center">Dire</th>
-                                    <th className="px-6 py-4 w-40 text-right">Duration</th>
+                                <tr className="bg-[#0f1114] text-[10px] text-center uppercase text-[#58606e] font-bold tracking-wider border-b border-[#2e353b]">
+                                    <th className="px-6 py-4">Match ID</th>
+                                    <th className="px-4 py-4">Avg Rank</th>
+                                    <th className="px-4 py-4">Game Mode</th>
+                                    <th className="px-4 py-4">Radiant</th>
+                                    <th className="px-4 py-4">Dire</th>
+                                    <th className="px-6 py-4">Duration</th>
                                 </tr>
                                 </thead>
                                 <tbody className="divide-y divide-[#2e353b]/50">
@@ -138,16 +136,15 @@ export const SearchPublicMatchesTab: React.FC = () => {
 
                                     return (
                                         <tr key={match.matchId} className="group hover:bg-[#1e222b] transition-colors relative">
-                                            {/* Win Indicator Line */}
-                                            <td className="p-0 absolute left-0 top-0 bottom-0 w-1">
-                                                <div className={clsx(
-                                                    "w-full h-full",
-                                                    radiantWon ? "bg-gradient-to-b from-emerald-500 to-transparent opacity-50" : "bg-gradient-to-b from-transparent to-red-500 opacity-50"
-                                                )} />
-                                            </td>
 
-                                            {/* ID */}
-                                            <td className="px-6 py-4 align-middle">
+                                            <td className="px-4 py-4 align-middle relative">
+                                                <div className={clsx(
+                                                    "absolute left-0 top-0 bottom-0 w-1 transition-all",
+                                                    radiantWon
+                                                        ? "bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.4)]"
+                                                        : "bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.4)]"
+                                                )} />
+
                                                 <div className="flex flex-col pl-2">
                                                     <Link
                                                         to={`${APP_ROUTES.MATCHES}/${match.matchId}`}
@@ -176,13 +173,13 @@ export const SearchPublicMatchesTab: React.FC = () => {
                                                         {getGameModeName(match.gameMode.value)}
                                                     </span>
                                                     <span className="text-[12px] text-[#58606e] font-mono">
-                                                        Lobby – {getLobbyTypeName(match.lobbyType.value)}
+                                                        {getLobbyTypeName(match.lobbyType.value)} Lobby
                                                     </span>
                                                 </div>
                                             </td>
 
                                             <td className="px-4 py-4 align-middle">
-                                                <div className="flex justify-center gap-2">
+                                                <div className="flex justify-center gap-2 pl-1 pr-1 bg-emerald-500/5 border border-emerald-500/10">
                                                     {match.radiantTeam.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return (
@@ -195,7 +192,7 @@ export const SearchPublicMatchesTab: React.FC = () => {
                                             </td>
 
                                             <td className="px-4 py-4 align-middle">
-                                                <div className="flex justify-center gap-2">
+                                                <div className="flex justify-center gap-2 pl-1 pr-1 bg-red-500/5 border border-red-500/10">
                                                     {match.direTeam.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return (
