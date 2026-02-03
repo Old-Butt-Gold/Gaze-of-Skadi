@@ -15,4 +15,3 @@ public class ProPlayerDto
     public string? TeamName { get; set; }
     public BaseEnumDto<BooleanState>? HaveDotaPlus { get; set; }
 }
-

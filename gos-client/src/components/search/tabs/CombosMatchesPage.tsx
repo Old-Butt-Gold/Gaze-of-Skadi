@@ -1,17 +1,14 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import {useHeroes} from "../hooks/queries/useHeroes.ts";
-import {Icon} from "../components/Icon.tsx";
-import {LoadingSpinner} from "../components/ui/LoadingSpinner.tsx";
-import type {FindMatchesParams} from "../types/search.ts";
-import {useFindMatches} from "../hooks/queries/useFindMatches.ts";
-import {ErrorDisplay} from "../components/ui/ErrorDisplay.tsx";
-import {APP_ROUTES} from "../config/navigation.ts";
-import {formatRelativeTime} from "../utils/formatUtils.ts";
-
-// --- Вставьте сюда компоненты HeroSlot и HeroPicker из твоего кода ---
-// (Я сократил их здесь для краткости ответа, но ты просто скопируй их полностью)
+import {useHeroes} from "../../../hooks/queries/useHeroes.ts";
+import {Icon} from "../../Icon.tsx";
+import {LoadingSpinner} from "../../ui/LoadingSpinner.tsx";
+import type {FindMatchesParams} from "../../../types/search.ts";
+import {useFindMatches} from "../../../hooks/queries/useFindMatches.ts";
+import {ErrorDisplay} from "../../ui/ErrorDisplay.tsx";
+import {APP_ROUTES} from "../../../config/navigation.ts";
+import {formatRelativeTime} from "../../../utils/formatUtils.ts";
 
 const HeroSlot = ({ heroId, onRemove, isRadiant, isActiveSide, onClick } : {
     heroId?: number,

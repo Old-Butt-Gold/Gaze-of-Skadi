@@ -8,5 +8,3 @@ public class PlayerResponseDto
     public string PersonaName { get; set; } = string.Empty;
     public long AccountId { get; set; }
 }
-
-
