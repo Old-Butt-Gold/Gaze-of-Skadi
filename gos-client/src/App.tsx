@@ -10,11 +10,12 @@ import {TeamsPage} from "./pages/TeamsPage.tsx";
 import {TeamDetailsPage} from "./pages/TeamDetailsPage.tsx";
 import {HeroStatsPage} from "./pages/HeroStatsPage.tsx";
 import {HeroDetailsPage} from "./pages/HeroDetailsPage.tsx";
-import {SearchCombosTab} from "./components/search/tabs/CombosMatchesPage.tsx";
+import {SearchCombosTab} from "./components/search/tabs/CombosMatchesTab.tsx";
 import {NewsPage} from "./pages/NewsPage.tsx";
 import {SearchPage} from "./pages/SearchPage.tsx";
 import {InProgressTab} from "./components/ui/InProgressTab.tsx";
 import {SearchPlayersTab} from "./components/search/tabs/SearchPlayersTab.tsx";
+import {SearchPublicMatchesTab} from "./components/search/tabs/SearchPublicMatchesTab.tsx";
 
 function App() {
     return (
@@ -35,7 +36,7 @@ function App() {
 
                     <Route path={APP_ROUTES.COMBOS} element={<SearchCombosTab />} />
                     <Route path={APP_ROUTES.FINDPLAYERS} element={<SearchPlayersTab />} />
-                    <Route path={APP_ROUTES.PUBMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
+                    <Route path={APP_ROUTES.PUBMATCHES} element={<SearchPublicMatchesTab />} />
                     <Route path={APP_ROUTES.PROMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
                 </Route>
 

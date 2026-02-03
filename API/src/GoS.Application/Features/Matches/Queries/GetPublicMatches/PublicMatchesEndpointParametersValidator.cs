@@ -6,20 +6,6 @@ public class PublicMatchesEndpointParametersValidator : AbstractValidator<GetPub
 {
     public PublicMatchesEndpointParametersValidator()
     {
-        RuleFor(x => x.Parameters.MmrAscending)
-            .Equal(1)
-            .When(x => x.Parameters.MmrDescending.HasValue)
-            .WithMessage("mmr_ascending must be 1 or null.");
-
-        RuleFor(x => x.Parameters.MmrDescending)
-            .Equal(1)
-            .When(x => x.Parameters.MmrDescending.HasValue)
-            .WithMessage("mmr_descending must be 1 or null.");
-
-        RuleFor(x => x)
-            .Must(x => !(x.Parameters.MmrAscending == 1 && x.Parameters.MmrDescending == 1))
-            .WithMessage("mmr_ascending and mmr_descending cannot both be 1.");
-
         RuleFor(x => x)
             .Must(x =>
             {

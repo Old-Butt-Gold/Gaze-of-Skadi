@@ -10,7 +10,7 @@ import {
     ResponsiveContainer,
     Cell
 } from 'recharts';
-import {getRankColor, getRankIconUrl, getRankNameBase, getRankNameFull, getRankStarUrl} from '../../utils/rankUtils';
+import {getRankColor, getRankIconUrl, getRankNameBase, getRankNameFull} from '../../utils/rankUtils';
 import type {DistributionRowDto} from "../../types/distribution.ts";
 import type {AxisDomain} from "recharts/types/util/types";
 import {RankIcon} from "../distributions/RankIcon.tsx";
@@ -84,13 +84,11 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
     if (!data) return null;
 
     const color = getRankColor(data.rank.value);
-    const iconUrl = getRankIconUrl(data.rank.value);
-    const starUrl = getRankStarUrl(data.rank.value);
 
     return (
         <div className="bg-slate-900/95 backdrop-blur text-white p-4 rounded-xl shadow-2xl border border-slate-700 ring-1 ring-white/10 z-50">
             <div className="flex items-center gap-4 mb-3 border-b border-slate-700/50 pb-3">
-                <RankIcon iconUrl={iconUrl} starUrl={starUrl} size={12} />
+                <RankIcon rank={data.rank.value} size={12} />
                 <div>
                     <p className="font-bold text-lg leading-none text-slate-100">{getRankNameFull(data.rank.value)}</p>
                 </div>

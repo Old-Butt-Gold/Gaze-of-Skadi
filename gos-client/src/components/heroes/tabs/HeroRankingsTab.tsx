@@ -1,9 +1,8 @@
 ﻿import React from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom'; // Импортируем Link
+import { Link } from 'react-router-dom';
 import { useHeroRankings } from '../../../hooks/queries/useHeroRankings';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
-import { getRankIconUrl, getRankStarUrl } from '../../../utils/rankUtils';
 import { RankIcon } from "../../distributions/RankIcon";
 import { LoadingSpinner } from "../../ui/LoadingSpinner";
 import type { HeroInfo } from "../../../types/heroes";
@@ -119,8 +118,7 @@ export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
                                     <td className="px-6 py-3 text-center align-middle">
                                         <div className="flex justify-center scale-110">
                                             <RankIcon
-                                                iconUrl={getRankIconUrl(player.rankTier)}
-                                                starUrl={getRankStarUrl(player.rankTier)}
+                                                rank={player.rankTier}
                                                 size={10}
                                             />
                                         </div>

@@ -23,12 +23,6 @@ internal sealed class GetPublicMatchesHandler(IRequester<OpenDotaHttpRequesterOp
 
         var parameters = new List<KeyValuePair<string, string>>();
 
-        if (p.MmrAscending.HasValue)
-            parameters.Add(new("mmr_ascending", p.MmrAscending.Value.ToString()));
-
-        if (p.MmrDescending.HasValue)
-            parameters.Add(new("mmr_descending", p.MmrDescending.Value.ToString()));
-
         if (p.LessThanMatchId.HasValue)
             parameters.Add(new("less_than_match_id", p.LessThanMatchId.Value.ToString()));
 
