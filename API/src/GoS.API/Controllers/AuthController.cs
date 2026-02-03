@@ -11,7 +11,7 @@ namespace GoS.API.Controllers;
 public class AuthController : ControllerBase
 {
     [HttpGet("login")]
-    public IActionResult Login(string returnUrl = "/") 
+    public IActionResult Login(string returnUrl = "/")
         => Challenge(new AuthenticationProperties { RedirectUri = returnUrl }, SteamAuthenticationDefaults.AuthenticationScheme);
 
     [Authorize]
@@ -19,7 +19,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        
+
         return Ok(new { message = "Successfully logged out" });
     }
 
@@ -32,9 +32,5 @@ public class AuthController : ControllerBase
 
     [HttpGet("status")]
     public IActionResult GetAuthStatus() =>
-        Ok(new
-        {
-            IsAuthenticated = User.Identity?.IsAuthenticated ?? false,
-            UserName = User.FindFirst(SteamClaimTypes.SteamName)?.Value
-        });
+        Ok(new { IsAuthenticated = User.Identity?.IsAuthenticated ?? false, });
 }

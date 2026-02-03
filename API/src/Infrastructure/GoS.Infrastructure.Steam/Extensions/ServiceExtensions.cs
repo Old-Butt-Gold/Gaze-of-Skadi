@@ -22,6 +22,7 @@ public static class ServiceExtensions
             {
                 options.Cookie.SameSite = SameSiteMode.Lax;
                 options.ExpireTimeSpan = TimeSpan.FromHours(24);
+                options.Cookie.Name = "GoS.Auth";
             })
             .AddSteam(options =>
             {
