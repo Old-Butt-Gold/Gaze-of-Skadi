@@ -6,11 +6,8 @@ public class GetProPlayersByNameQueryValidator : AbstractValidator<GetProPlayers
 {
     public GetProPlayersByNameQueryValidator()
     {
-        When(x => !string.IsNullOrWhiteSpace(x.Name), () =>
-        {
-            RuleFor(x => x.Name)
-                .MinimumLength(3)
-                .WithMessage("'q' must be at least 3 characters when provided.");
-        });
+        RuleFor(x => x.Name)
+            .NotNull().WithMessage("'q' (PersonaName) is required.")
+            .MinimumLength(3).WithMessage("'q' must be at least 3 characters.");
     }
 }

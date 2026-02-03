@@ -30,7 +30,7 @@ export const NewsPage: React.FC = () => {
     if (isError || !news) return <ErrorDisplay message="Failed to load news feed" onRetry={refetch} />;
 
     return (
-        <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-20">
+        <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-10">
 
             {/* Hero Header */}
             <div className="relative h-64 md:h-80 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] overflow-hidden border-b border-[#2e353b]">

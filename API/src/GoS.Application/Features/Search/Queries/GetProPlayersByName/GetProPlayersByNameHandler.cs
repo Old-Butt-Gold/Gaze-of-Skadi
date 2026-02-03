@@ -15,8 +15,6 @@ internal sealed class GetProPlayersByNameHandler(IRequester<OpenDotaHttpRequeste
 
         if (proPlayers is null) return null;
 
-        if (request.Name is null) return mapper.Map<IEnumerable<ProPlayerDto>>(proPlayers);
-
         var term = request.Name.Trim();
 
         var filteredPlayers = proPlayers.Where(player =>
@@ -24,6 +22,8 @@ internal sealed class GetProPlayersByNameHandler(IRequester<OpenDotaHttpRequeste
             ContainsIgnoreCase(player.PersonaName, term) ||
             ContainsIgnoreCase(player.TeamName, term)
         );
+
+        filteredPlayers = filteredPlayers.Where(x => x.FullHistoryUnavailable is not null);
 
         return mapper.Map<IEnumerable<ProPlayerDto>>(filteredPlayers);
     }

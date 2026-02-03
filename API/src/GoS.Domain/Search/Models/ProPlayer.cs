@@ -63,7 +63,7 @@ public class ProPlayer
 	/// Gets plus.
 	/// </summary>
 	[JsonPropertyName("plus")]
-	public BooleanState? Plus { get; init; }
+	public BooleanState? HaveDotaPlus { get; init; }
 
 	/// <summary>
 	/// Gets verified player name, e.g. 'Miracle-'.
@@ -100,4 +100,10 @@ public class ProPlayer
 	/// </summary>
 	[JsonPropertyName("is_pro")]
 	public BooleanState? IsPro { get; init; }
+
+    /// <summary>
+    /// Gets a value indicating whether the player is analyzable or not.
+    /// </summary>
+    [JsonPropertyName("fh_unavailable")]
+    public BooleanState? FullHistoryUnavailable { get; init; }
 }

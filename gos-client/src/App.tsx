@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {Layout} from "./components/Layout.tsx";
 import {DistributionPage} from "./pages/DistributionPage.tsx";
 import {APP_ROUTES} from "./config/navigation";
@@ -10,8 +10,10 @@ import {TeamsPage} from "./pages/TeamsPage.tsx";
 import {TeamDetailsPage} from "./pages/TeamDetailsPage.tsx";
 import {HeroStatsPage} from "./pages/HeroStatsPage.tsx";
 import {HeroDetailsPage} from "./pages/HeroDetailsPage.tsx";
-import {FindMatchesPage} from "./pages/FindMatchesPage.tsx";
+import {SearchCombosTab} from "./pages/CombosMatchesPage.tsx";
 import {NewsPage} from "./pages/NewsPage.tsx";
+import {SearchPage} from "./pages/SearchPage.tsx";
+import {InProgressTab} from "./components/ui/InProgressTab.tsx";
 
 function App() {
     return (
@@ -25,8 +27,15 @@ function App() {
                 <Route path={`${APP_ROUTES.TEAMS}/:teamId`} element={<TeamDetailsPage />} />
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
                 <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
-                <Route path={APP_ROUTES.COMBOS} element={<FindMatchesPage />} />
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
+
+                <Route path={APP_ROUTES.SEARCH} element={<SearchPage />}>
+                    <Route index element={<Navigate to={APP_ROUTES.COMBOS} replace />} />
+
+                    <Route path={APP_ROUTES.COMBOS} element={<SearchCombosTab />} />
+                    <Route path={APP_ROUTES.FINDPLAYERS} element={<InProgressTab title="Search Players" description="Advanced filtering for professional players is currently under development." />} />
+                    <Route path={APP_ROUTES.FINDMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
+                </Route>
 
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
