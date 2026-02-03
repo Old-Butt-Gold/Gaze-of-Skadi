@@ -14,7 +14,6 @@ export interface ProPlayerDto {
   personaName: string | null;
   lastMatchTime: number | null;
   name: string; // Official Pro Name (e.g. "Dendi")
-  teamId: number | null;
   teamName: string | null;
   haveDotaPlus: BaseEnum<BooleanState> | null;
 }

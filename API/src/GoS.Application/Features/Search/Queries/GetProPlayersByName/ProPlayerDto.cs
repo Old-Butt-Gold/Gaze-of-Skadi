@@ -11,7 +11,6 @@ public class ProPlayerDto
     public string? PersonaName { get; set; }
     public long? LastMatchTime { get; set; }
     public string Name { get; set; } = string.Empty;
-    public long? TeamId { get; set; }
     public string? TeamName { get; set; }
     public BaseEnumDto<BooleanState>? HaveDotaPlus { get; set; }
 }

@@ -17,30 +17,29 @@ const ProPlayerCard = ({ player }: { player: ProPlayerDto }) => {
     const hasDotaPlus = player.haveDotaPlus?.value === 1;
 
     return (
-        <div className="group relative bg-[#15171c] border border-[#2e353b] hover:border-[#e7d291] rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(231,210,145,0.1)] flex flex-col">
+        <div className="group relative bg-[#15171c] border border-[#2e353b] hover:border-[#e7d291] rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(231,210,145,0.1)] flex flex-col h-full">
             <div className="h-1 w-full bg-gradient-to-r from-[#b88a44] via-[#e7d291] to-[#b88a44] opacity-70 group-hover:opacity-100 transition-opacity" />
 
-            <div className="p-5 flex items-start gap-4 relative">
+            <div className="p-5 flex items-start gap-4 relative flex-1">
+                <div className="absolute inset-0 opacity-20 bg-[url('https://shared.akamai.steamstatic.com//store_item_assets/steam/apps/570/ss_27b6345f22243bd6b885cc64c5cda74e4bd9c3e8.jpg')] bg-cover bg-no-repeat bg-position-[center_top_9%] pointer-events-none mix-blend-overlay" />
 
-                <div className="absolute inset-0 opacity-20 bg-[url('https://shared.akamai.steamstatic.com//store_item_assets/steam/apps/570/ss_27b6345f22243bd6b885cc64c5cda74e4bd9c3e8.jpg')] bg-cover bg-no-repeat bg-position-[center_top_9%]" />
-
-                <div className="relative shrink-0">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg border-2 border-[#2e353b] group-hover:border-[#e7d291] overflow-hidden shadow-lg transition-colors">
-                        <Icon src={player.avatar || ''} alt={player.name} fallbackSrc="/assets/images/unknown_player.png"/>
+                <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="relative shrink-0 z-10 block">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg border-2 border-[#2e353b] group-hover:border-[#e7d291] overflow-hidden shadow-lg transition-colors bg-[#0f1114]">
+                        <Icon src={player.avatar || ''} alt={player.name} fallbackSrc="/assets/images/unknown_player.png" />
                     </div>
                     {hasDotaPlus && (
-                        <div className="absolute -bottom-2 -right-2 bg-[#0f1114] rounded-full p-1 border border-[#2e353b] shadow-md z-10" title="Dota Plus">
+                        <div className="absolute -bottom-2 -right-2 bg-[#0f1114] rounded-full p-1 border border-[#2e353b] shadow-md z-20" title="Dota Plus">
                             <img src="/assets/images/dota_plus_icon.png" alt="Dota Plus" className="w-5 h-5 animate-pulse-slow" />
                         </div>
                     )}
-                </div>
+                </Link>
 
-                <div className="flex-1 min-w-0 flex flex-col h-full justify-between">
+                <div className="flex-1 min-w-0 flex flex-col h-full justify-between relative z-10">
                     <div>
                         <div className="flex items-center justify-between">
-                            <h3 className="font-serif font-bold text-lg md:text-xl text-white group-hover:text-[#e7d291] transition-colors truncate">
+                            <Link to={`${APP_ROUTES.PLAYERS}/${player.accountId}`} className="font-serif font-bold text-lg md:text-xl text-white group-hover:text-[#e7d291] transition-colors truncate hover:underline decoration-dashed underline-offset-4">
                                 {player.name}
-                            </h3>
+                            </Link>
 
                             {player.profileUrl && (
                                 <a
@@ -56,12 +55,10 @@ const ProPlayerCard = ({ player }: { player: ProPlayerDto }) => {
                         </div>
 
                         {player.teamName ? (
-                            <Link to={`${APP_ROUTES.TEAMS}/${player.teamId}`}>
-                                <div className="inline-flex items-center gap-1.5 mt-1 px-2 py-0.5 bg-[#e7d291]/10 border border-[#e7d291]/20 rounded text-[#e7d291] text-[10px] font-bold uppercase tracking-wider mb-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#e7d291]" />
-                                    {player.teamName}
-                                </div>
-                            </Link>
+                            <div className="inline-flex items-center gap-1.5 mt-1 px-2 py-0.5 bg-[#e7d291]/10 border border-[#e7d291]/20 rounded text-[#e7d291] text-[10px] font-bold uppercase tracking-wider mb-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#e7d291]" />
+                                {player.teamName}
+                            </div>
                         ) : (
                             <div className="text-[10px] text-[#58606e] uppercase font-bold tracking-wider mt-1 mb-2">Free Agent</div>
                         )}
@@ -73,10 +70,10 @@ const ProPlayerCard = ({ player }: { player: ProPlayerDto }) => {
                 </div>
             </div>
 
-            <div className="mt-auto border-t border-[#2e353b] bg-[#0f1114]/50 px-5 py-3 flex justify-between items-center text-xs">
+            <div className="mt-auto border-t border-[#2e353b] bg-[#0f1114]/80 px-5 py-3 flex justify-between items-center text-xs relative z-10">
                 <div className="flex items-center gap-2 text-[#58606e]">
                     <span className={clsx("w-2 h-2 rounded-full", player.lastMatchTime ? "bg-emerald-500" : "bg-gray-600")} />
-                    <span>{player.lastMatchTime ? `Last active: ${formatRelativeTime(player.lastMatchTime)}` : 'Unknown'}</span>
+                    <span>{player.lastMatchTime ? `Last active: ${formatRelativeTime(player.lastMatchTime)}` : 'Inactive'}</span>
                 </div>
 
                 <Link
@@ -165,9 +162,9 @@ export const SearchPlayersTab: React.FC = () => {
                 )}
             </div>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
-                <div className="xl:col-span-2 space-y-6">
+                <div className="space-y-6">
                     {proPlayers.length > 0 && (
                         <div className="animate-in fade-in slide-in-from-left-4 duration-500">
                             <div className="flex items-center justify-between mb-4 border-l-4 border-[#e7d291] pl-4">
@@ -182,7 +179,7 @@ export const SearchPlayersTab: React.FC = () => {
                                 </span>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                                 {proPlayers.map(player => (
                                     <ProPlayerCard key={player.accountId} player={player} />
                                 ))}
@@ -191,7 +188,7 @@ export const SearchPlayersTab: React.FC = () => {
                     )}
                 </div>
 
-                <div className="xl:col-span-1 space-y-6">
+                <div className="space-y-6">
                     {publicPlayers.length > 0 && (
                         <div className="animate-in fade-in slide-in-from-right-4 duration-500 delay-100">
                             <div className="flex items-center justify-between mb-4 border-l-4 border-[#58606e] pl-4">
@@ -206,7 +203,7 @@ export const SearchPlayersTab: React.FC = () => {
                                 </span>
                             </div>
 
-                            <div className="flex flex-col gap-3">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                                 {publicPlayers.map(player => (
                                     <PublicPlayerCard key={player.accountId} player={player} />
                                 ))}
@@ -227,7 +224,6 @@ export const SearchPlayersTab: React.FC = () => {
                     <p className="text-sm">We couldn't find any players matching "<span className="text-[#e7d291]">{query}</span>".</p>
                 </div>
             )}
-
         </div>
     );
 };
