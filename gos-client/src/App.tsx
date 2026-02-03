@@ -35,7 +35,8 @@ function App() {
 
                     <Route path={APP_ROUTES.COMBOS} element={<SearchCombosTab />} />
                     <Route path={APP_ROUTES.FINDPLAYERS} element={<SearchPlayersTab />} />
-                    <Route path={APP_ROUTES.FINDMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
+                    <Route path={APP_ROUTES.PUBMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
+                    <Route path={APP_ROUTES.PROMATCHES} element={<InProgressTab title="Match Finder" description="Advanced match filtering (by duration, result, league) is coming soon." />} />
                 </Route>
 
                 <Route path="matches/:matchId" element={<NotFoundPage />} />

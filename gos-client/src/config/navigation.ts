@@ -16,7 +16,8 @@ export const APP_ROUTES = {
   NEWS: '/news',
   SEARCH: '/search',
   COMBOS: 'combo',
-  FINDMATCHES: 'find-matches',
+  PUBMATCHES: 'public-matches',
+  PROMATCHES: 'pro-matches',
   FINDPLAYERS: 'find-players',
 } as const;
 

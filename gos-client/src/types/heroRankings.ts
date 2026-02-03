@@ -1,9 +1,11 @@
-﻿export interface RankingPlayerDto {
+﻿import type {Rank} from "./common.ts";
+
+export interface RankingPlayerDto {
   accountId: number;
   score: number;
   personaName: string;
   avatar: string | null;
-  rankTier: number;
+  rankTier: Rank;
 }
 
 export interface HeroRankingDto {

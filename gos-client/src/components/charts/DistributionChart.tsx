@@ -65,7 +65,7 @@ const RankGroupTick = ({ x, y, payload, data }: CustomTickProps) => {
                 style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.2))' }}
             />
             <text x={0} y={65} textAnchor="middle" fill="#64748b" fontSize={12} fontWeight={600}>
-                {getRankNameBase(row.rank.name)}
+                {getRankNameBase(row.rank.value)}
             </text>
         </g>
     );
@@ -92,7 +92,7 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
             <div className="flex items-center gap-4 mb-3 border-b border-slate-700/50 pb-3">
                 <RankIcon iconUrl={iconUrl} starUrl={starUrl} size={12} />
                 <div>
-                    <p className="font-bold text-lg leading-none text-slate-100">{getRankNameFull(data.rank.value, data.rank.name)}</p>
+                    <p className="font-bold text-lg leading-none text-slate-100">{getRankNameFull(data.rank.value)}</p>
                 </div>
             </div>
 

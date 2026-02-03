@@ -12,7 +12,8 @@ export const SearchPage: React.FC = () => {
                     <div className="flex gap-8 overflow-x-auto scrollbar-none">
                         <SearchTab to={APP_ROUTES.COMBOS} label="Hero Combos" />
                         <SearchTab to={APP_ROUTES.FINDPLAYERS} label="Find Players" />
-                        <SearchTab to={APP_ROUTES.FINDMATCHES} label="Find Matches" />
+                        <SearchTab to={APP_ROUTES.PUBMATCHES} label="Find Public Matches" />
+                        <SearchTab to={APP_ROUTES.PROMATCHES} label="Find Pro Matches" />
                     </div>
                 </div>
             </div>
