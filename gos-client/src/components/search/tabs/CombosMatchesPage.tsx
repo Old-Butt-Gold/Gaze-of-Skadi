@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import {useHeroes} from "../../../hooks/queries/useHeroes.ts";
 import {Icon} from "../../Icon.tsx";
 import {LoadingSpinner} from "../../ui/LoadingSpinner.tsx";
-import type {FindMatchesParams} from "../../../types/search.ts";
+import type {FindMatchesParams} from "../../../types/combo.ts";
 import {useFindMatches} from "../../../hooks/queries/useFindMatches.ts";
 import {ErrorDisplay} from "../../ui/ErrorDisplay.tsx";
 import {APP_ROUTES} from "../../../config/navigation.ts";

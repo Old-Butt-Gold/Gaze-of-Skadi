@@ -1,5 +1,5 @@
 import { apiClient } from '../api/apiClient';
-import type { MatchFindDto, FindMatchesParams } from '../types/search';
+import type { MatchFindDto, FindMatchesParams } from '../types/combo.ts';
 import type {PlayerResponseDto, ProPlayerDto} from "../types/playerSearch.ts";
 
 export const searchService = {
@@ -13,10 +13,10 @@ export const searchService = {
     },
 
     searchPlayers: async (q: string): Promise<PlayerResponseDto[]> => {
-      return apiClient.get(`/players?q=${q}`);
+      return apiClient.get(`/search/players?q=${q}`);
     },
 
     searchProPlayers: async (q: string): Promise<ProPlayerDto[]> => {
-      return apiClient.get(`/proplayers?q=${q}`);
+      return apiClient.get(`/search/proplayers?q=${q}`);
     }
 };

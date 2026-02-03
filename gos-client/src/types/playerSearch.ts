@@ -1,7 +1,6 @@
 ﻿import {type BaseEnum, BooleanState } from './common';
 
 export interface PlayerResponseDto {
-  similarity: number;
   lastMatchTime: number | null;
   avatarFull: string | null;
   personaName: string;

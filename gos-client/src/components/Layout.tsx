@@ -62,7 +62,7 @@ export const Layout: React.FC = () => {
             </nav>
 
             {/* Main Content Area */}
-            <main className="flex-grow w-full max-w-[90%] mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <main className="flex-grow w-full max-w-[100%] mx-auto py-8 px-4 sm:px-6 lg:px-8">
                 <Outlet />
             </main>
 

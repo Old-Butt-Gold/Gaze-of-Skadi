@@ -2,7 +2,6 @@
 
 public class PlayerResponseDto
 {
-    public double Similarity { get; set; }
     public long? LastMatchTime { get; set; }
     public Uri? AvatarFull { get; set; }
     public string PersonaName { get; set; } = string.Empty;

@@ -9,7 +9,7 @@ export const usePlayerSearch = (initialQuery: string) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(query);
-    }, 1000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [query]);
 

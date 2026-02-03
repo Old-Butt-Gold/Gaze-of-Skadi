@@ -18,6 +18,8 @@ internal sealed class GetProPlayersByNameHandler(IRequester<OpenDotaHttpRequeste
         var term = request.Name.Trim();
 
         var filteredPlayers = proPlayers.Where(player =>
+            ContainsIgnoreCase(player.AccountId.ToString(), term) ||
+            ContainsIgnoreCase(player.SteamId, term) ||
             ContainsIgnoreCase(player.Name, term) ||
             ContainsIgnoreCase(player.PersonaName, term) ||
             ContainsIgnoreCase(player.TeamName, term)

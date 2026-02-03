@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { searchService } from '../../services/searchService';
-import type {FindMatchesParams, MatchFindDto} from '../../types/search';
+import type {FindMatchesParams, MatchFindDto} from '../../types/combo.ts';
 
 export const useFindMatches = (params: FindMatchesParams) => {
     return useQuery<MatchFindDto[], Error>({
