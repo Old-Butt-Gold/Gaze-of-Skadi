@@ -45,14 +45,23 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
                 <div className="md:col-span-7 flex items-center justify-between gap-2 md:gap-6">
 
                     <div className="flex-1 flex flex-col items-start md:items-end text-left md:text-right min-w-0">
-                        <div className={clsx(
-                            "font-serif font-bold text-sm md:text-lg w-full transition-colors relative pb-1",
-                            radiantWon ? "text-white text-shadow-glow-green" : "text-[#808fa6]"
-                        )}>
-                            {match.radiantName || 'Radiant'}
-                            {radiantWon && (
-                                <span className="absolute bottom-0 left-0 md:left-auto md:right-0 h-1 w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-70" />
-                            )}
+                        <div className="flex items-center gap-2 md:gap-3 mb-1">
+                            <div className="w-8 h-8 rounded-full border-2 border-[#2e353b] overflow-hidden shrink-0">
+                                <Icon
+                                    src={match.radiantImage}
+                                    fallbackSrc="/assets/images/icon_team_default.png"
+                                    alt={match.radiantName}
+                                />
+                            </div>
+                            <div className={clsx(
+                                "font-serif font-bold text-sm md:text-lg w-full transition-colors relative pb-1",
+                                radiantWon ? "text-white text-shadow-glow-green" : "text-[#808fa6]"
+                            )}>
+                                {match.radiantName || 'Radiant'}
+                                {radiantWon && (
+                                    <span className="absolute bottom-0 left-0 md:left-auto md:right-0 h-1 w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-70" />
+                                )}
+                            </div>
                         </div>
                         <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-500/70 hidden md:block">Radiant</span>
                     </div>
@@ -75,15 +84,24 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
 
                     {/* Dire Team */}
                     <div className="flex-1 flex flex-col items-end md:items-start text-right md:text-left min-w-0">
-                        <div className={clsx(
-                            "font-serif font-bold text-sm md:text-lg truncate w-full transition-colors relative pb-1",
-                            !radiantWon ? "text-white text-shadow-glow-red" : "text-[#808fa6]"
-                        )}>
-                            {match.direName || 'Dire'}
-                            {/* Winner Underline */}
-                            {!radiantWon && (
-                                <span className="absolute bottom-0 right-0 md:right-auto md:left-0 h-1 w-full bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-70" />
-                            )}
+                        <div className="flex items-center gap-2 md:gap-3 mb-1">
+                            <div className="w-8 h-8 rounded-full border-2 border-[#2e353b] overflow-hidden shrink-0">
+                                <Icon
+                                    src={match.direImage}
+                                    fallbackSrc="/assets/images/icon_team_default.png"
+                                    alt={match.direName}
+                                />
+                            </div>
+                            <div className={clsx(
+                                "font-serif font-bold text-sm md:text-lg w-full transition-colors relative pb-1",
+                                !radiantWon ? "text-white text-shadow-glow-red" : "text-[#808fa6]"
+                            )}>
+                                {match.direName || 'Dire'}
+                                {/* Winner Underline */}
+                                {!radiantWon && (
+                                    <span className="absolute bottom-0 right-0 md:right-auto md:left-0 h-1 w-full bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-70" />
+                                )}
+                            </div>
                         </div>
                         <span className="text-[10px] uppercase font-bold tracking-widest text-red-500/70 hidden md:block">Dire</span>
                     </div>
