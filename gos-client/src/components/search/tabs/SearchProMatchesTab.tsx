@@ -17,19 +17,21 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
     return (
         <div className="group relative bg-[#15171c] border border-[#2e353b] hover:border-[#e7d291]/50 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] w-full">
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500">
-                    <Icon src={match.leagueImageUrl} alt={match.leagueName} fallbackSrc="/assets/images/unknown-league.png"/>
-                </div>
+                <div
+                    className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500 bg-cover bg-center bg-no-repeat md:hidden"
+                    style={{backgroundImage: `url(${match.leagueImageUrl || '/assets/images/unknown-league.png'})`}}
+                />
+
+                <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-500 bg-contain bg-left bg-no-repeat hidden md:block"
+                    style={{backgroundImage: `url(${match.leagueImageUrl || '/assets/images/unknown-league.png'})`}}
+                />
             </div>
 
             <div className="relative z-10 p-4 md:p-5 grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
 
                 <div className="md:col-span-3 flex flex-row md:flex-col items-center md:items-start gap-3 md:gap-1 border-b md:border-b-0 border-[#2e353b]/50 pb-3 md:pb-0">
-                    <div className="w-8 h-8 md:hidden rounded bg-[#1a1d24] border border-[#2e353b] flex items-center justify-center p-1">
-                        <Icon src={match.leagueImageUrl} fallbackSrc="/assets/images/unknown-league.png" />
-                    </div>
                     <div className="flex flex-col min-w-0">
-                        <h4 className="text-[#e3e3e3] font-bold text-sm leading-tight truncate w-full group-hover:text-[#e7d291] transition-colors" title={match.leagueName}>
+                        <h4 className="text-[#e3e3e3] font-bold text-sm leading-tight w-full group-hover:text-[#e7d291] transition-colors text-wrap" title={match.leagueName}>
                             {match.leagueName || 'Unknown League'}
                         </h4>
                         <div className="flex items-center gap-2 mt-1">
@@ -44,12 +46,12 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
 
                     <div className="flex-1 flex flex-col items-start md:items-end text-left md:text-right min-w-0">
                         <div className={clsx(
-                            "font-serif font-bold text-sm md:text-lg truncate w-full transition-colors relative pb-1",
+                            "font-serif font-bold text-sm md:text-lg w-full transition-colors relative pb-1",
                             radiantWon ? "text-white text-shadow-glow-green" : "text-[#808fa6]"
                         )}>
                             {match.radiantName || 'Radiant'}
                             {radiantWon && (
-                                <span className="absolute bottom-0 left-0 md:left-auto md:right-0 h-0.5 w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-70" />
+                                <span className="absolute bottom-0 left-0 md:left-auto md:right-0 h-1 w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-70" />
                             )}
                         </div>
                         <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-500/70 hidden md:block">Radiant</span>
@@ -80,7 +82,7 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
                             {match.direName || 'Dire'}
                             {/* Winner Underline */}
                             {!radiantWon && (
-                                <span className="absolute bottom-0 right-0 md:right-auto md:left-0 h-0.5 w-full bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-70" />
+                                <span className="absolute bottom-0 right-0 md:right-auto md:left-0 h-1 w-full bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-70" />
                             )}
                         </div>
                         <span className="text-[10px] uppercase font-bold tracking-widest text-red-500/70 hidden md:block">Dire</span>
@@ -174,7 +176,7 @@ export const SearchProMatchesTab: React.FC = () => {
                         </button>
 
                         <button onClick={handleNextPage} disabled={!matches || matches.length === 0 || isFetching} className="px-8 py-3 bg-[#e7d291] hover:bg-[#c2a455] text-[#0f1114] font-bold uppercase tracking-widest rounded shadow-lg hover:shadow-[0_0_20px_rgba(231,210,145,0.3)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none transition-all flex items-center gap-2">
-                            {isFetching ? 'Loading...' : 'Load Previous Matches'}
+                            {isFetching ? 'Loading...' : 'Load More Matches'}
                             {!isFetching && (
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

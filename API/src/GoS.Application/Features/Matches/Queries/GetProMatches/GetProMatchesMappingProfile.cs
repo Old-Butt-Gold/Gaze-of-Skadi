@@ -7,9 +7,14 @@ public class GetProMatchesMappingProfile : Profile
 {
     public GetProMatchesMappingProfile()
     {
+        https://cdn.stratz.com/images/dota2/teams/7542075.png
         CreateMap<ProMatch, ProMatchDto>()
             .ForMember(dest => dest.LeagueImageUrl, opt => opt.MapFrom(src =>
-                $"https://cdn.stratz.com/images/dota2/leagues/{src.LeagueId}.png"));
+                $"https://cdn.stratz.com/images/dota2/leagues/{src.LeagueId}.png"))
+            .ForMember(dest => dest.RadiantImage, opt => opt.MapFrom(src =>
+                $"https://cdn.stratz.com/images/dota2/teams/{src.RadiantTeamId ?? 0}.png"))
+            .ForMember(dest => dest.DireImage, opt => opt.MapFrom(src =>
+                $"https://cdn.stratz.com/images/dota2/teams/{src.DireTeamId ?? 0}.png"));
     }
 }
 

@@ -12,8 +12,10 @@ public class ProMatchDto
 	public long StartTime { get; init; }
 
 	public string RadiantName { get; init; } = string.Empty;
+    public required string RadiantImage { get; init; }
 
 	public string DireName { get; init; } = string.Empty;
+    public required string DireImage { get; init; }
 
     public required string LeagueImageUrl { get; init; }
 
@@ -25,4 +27,3 @@ public class ProMatchDto
 
 	public required BaseEnumDto<BooleanState> RadiantWin { get; init; }
 }
-
