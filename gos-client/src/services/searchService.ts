@@ -2,6 +2,7 @@ import { apiClient } from '../api/apiClient';
 import type { MatchFindDto, FindMatchesParams } from '../types/combo.ts';
 import type {PlayerResponseDto, ProPlayerDto} from "../types/playerSearch.ts";
 import type {PublicMatchDto, PublicMatchesParams} from "../types/publicMatches.ts";
+import type {ProMatchDto} from "../types/proMatches.ts";
 
 export const searchService = {
     findMatches: async (params: FindMatchesParams): Promise<MatchFindDto[]> => {
@@ -23,5 +24,10 @@ export const searchService = {
 
     getPublicMatches: async (params: PublicMatchesParams): Promise<PublicMatchDto[]> => {
       return apiClient.get('/search/public', { params });
-    }
+    },
+
+  getProMatches: async (lessThanMatchId?: number | null): Promise<ProMatchDto[]> => {
+    const params = lessThanMatchId ? { lessThanMatchId } : {};
+    return apiClient.get('/search/pro', { params });
+  }
 };

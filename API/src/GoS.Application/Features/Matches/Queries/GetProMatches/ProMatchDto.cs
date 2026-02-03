@@ -11,15 +11,11 @@ public class ProMatchDto
 
 	public long StartTime { get; init; }
 
-	public long? RadiantTeamId { get; init; }
-
 	public string RadiantName { get; init; } = string.Empty;
-
-	public long? DireTeamId { get; init; }
 
 	public string DireName { get; init; } = string.Empty;
 
-	public long LeagueId { get; init; }
+    public required string LeagueImageUrl { get; init; }
 
 	public string LeagueName { get; init; } = string.Empty;
 
@@ -27,6 +23,6 @@ public class ProMatchDto
 
 	public int DireScore { get; init; }
 
-	public BaseEnumDto<BooleanState> RadiantWin { get; init; }
+	public required BaseEnumDto<BooleanState> RadiantWin { get; init; }
 }
 

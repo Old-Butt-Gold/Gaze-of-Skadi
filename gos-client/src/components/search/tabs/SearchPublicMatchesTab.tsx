@@ -58,7 +58,10 @@ export const SearchPublicMatchesTab: React.FC = () => {
     const handleReset = () => { setLessThanMatchId(null); window.scrollTo({ top: 0, behavior: 'smooth' }); };
 
     const isValid = !minRank || !maxRank || minRank <= maxRank;
-    const { data: matches, isLoading, isError, refetch, isFetching } = usePublicMatches({ minRank, maxRank, lessThanMatchId });
+    const { data: matches, isLoading, isError, refetch, isFetching } = usePublicMatches(
+        { minRank, maxRank, lessThanMatchId },
+        isValid,
+    );
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
