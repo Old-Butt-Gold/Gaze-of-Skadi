@@ -59,6 +59,6 @@ internal sealed class GetPlayersQueueHandler(IRequester<StratzHttpRequesterOptio
 
         var latestStats = playersRegions?.Data?.Stratz?.Page?.Matches?.MatchmakingStats ?? [];
 
-        return mapper.Map<IEnumerable<PlayersQueueDto>>(latestStats);
+        return mapper.Map<IEnumerable<PlayersQueueDto>>(latestStats.OrderBy(x => x.Timestamp));
     }
 }

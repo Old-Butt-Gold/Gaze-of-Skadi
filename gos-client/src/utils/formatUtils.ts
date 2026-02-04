@@ -63,3 +63,11 @@ export const formatDateLong = (unixSeconds: number): string => {
     year: 'numeric'
   }).format(date);
 };
+
+export const formatDateShort = (unixSeconds: number): string => {
+  const date = new Date(unixSeconds * 1000);
+  return new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'short',
+  }).format(date);
+};
