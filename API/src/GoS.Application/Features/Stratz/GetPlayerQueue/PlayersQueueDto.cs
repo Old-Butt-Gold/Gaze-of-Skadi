@@ -1,4 +1,4 @@
-﻿namespace GoS.Application.Features.Stratz;
+﻿namespace GoS.Application.Features.Stratz.GetPlayerQueue;
 
 public sealed class PlayersQueueDto
 {

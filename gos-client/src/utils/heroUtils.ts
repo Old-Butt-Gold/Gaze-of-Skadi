@@ -136,3 +136,14 @@ export const calculateDamage = (hero: HeroInfo): { min: number; max: number } =>
     max: Math.floor(hero.base_attack_max + bonusDamage),
   };
 };
+
+export const getHeroGradient = (heroId: number) => {
+  // Детерминированный генератор псевдослучайных чисел на основе ID
+  const hue = (heroId * 137.508) % 360;
+
+  // Используем темные, насыщенные тона
+  const color1 = `hsla(${hue}, 60%, 20%, 0.4)`;
+  const color2 = `hsla(${hue}, 70%, 10%, 0.1)`;
+
+  return `linear-gradient(135deg, ${color1}, ${color2})`;
+};

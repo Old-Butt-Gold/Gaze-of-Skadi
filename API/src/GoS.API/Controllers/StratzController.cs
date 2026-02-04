@@ -1,5 +1,6 @@
 ﻿using System.Net.Mime;
-using GoS.Application.Features.Stratz;
+using GoS.Application.Features.Stratz.GetHeroesMeta;
+using GoS.Application.Features.Stratz.GetPlayerQueue;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +12,15 @@ public class StratzController : ApiControllerBase
 {
     public StratzController(ISender sender) : base(sender) { }
 
-    [HttpGet("players-regions")]
+    [HttpGet("players-queue")]
     [ProducesResponseType(typeof(PlayersQueueDto), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
     public Task<IActionResult> GetPlayersRegions(CancellationToken ct = default)
         => HandleQueryAsync(new GetPlayersQueueQuery(), ct);
+
+    [HttpGet("heroes-meta")]
+    [ProducesResponseType(typeof(HeroesMetaDto), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetHeroesMeta(CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroesMetaQuery(), ct);
 }

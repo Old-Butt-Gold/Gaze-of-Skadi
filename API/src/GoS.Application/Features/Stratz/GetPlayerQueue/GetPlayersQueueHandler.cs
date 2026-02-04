@@ -5,7 +5,7 @@ using GoS.Application.Options;
 using GoS.Domain.Stratz;
 using MediatR;
 
-namespace GoS.Application.Features.Stratz;
+namespace GoS.Application.Features.Stratz.GetPlayerQueue;
 
 internal sealed class GetPlayersQueueHandler(IRequester<StratzHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPlayersQueueQuery, IEnumerable<PlayersQueueDto>?>

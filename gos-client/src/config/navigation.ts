@@ -20,6 +20,7 @@ export const APP_ROUTES = {
   PROMATCHES: 'pro-matches',
   FINDPLAYERS: 'find-players',
   PLAYERS_QUEUE: '/players-queue',
+  META: '/meta',
 } as const;
 
 export const MAIN_NAVIGATION: NavItem[] = [
@@ -31,4 +32,5 @@ export const MAIN_NAVIGATION: NavItem[] = [
   { name: 'Search', path: APP_ROUTES.SEARCH },
   { name: 'News', path: APP_ROUTES.NEWS },
   { name: 'Match Queue', path: APP_ROUTES.PLAYERS_QUEUE },
+  { name: 'Meta', path: APP_ROUTES.META },
 ];

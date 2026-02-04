@@ -17,6 +17,7 @@ import {SearchPlayersTab} from "./components/search/tabs/SearchPlayersTab.tsx";
 import {SearchPublicMatchesTab} from "./components/search/tabs/SearchPublicMatchesTab.tsx";
 import {SearchProMatchesTab} from "./components/search/tabs/SearchProMatchesTab.tsx";
 import {PlayersQueuePage} from "./pages/PlayersQueuePage.tsx";
+import {HeroesMetaPage} from "./pages/HeroesMetaPage.tsx";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                 <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
                 <Route path={APP_ROUTES.PLAYERS_QUEUE} element={<PlayersQueuePage />} />
+                <Route path={APP_ROUTES.META} element={<HeroesMetaPage />} />
 
                 <Route path={APP_ROUTES.SEARCH} element={<SearchPage />}>
                     <Route index element={<Navigate to={APP_ROUTES.COMBOS} replace />} />

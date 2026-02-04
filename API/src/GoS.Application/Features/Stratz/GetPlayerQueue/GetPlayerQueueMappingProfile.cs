@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GoS.Domain.Stratz;
 
-namespace GoS.Application.Features.Stratz;
+namespace GoS.Application.Features.Stratz.GetPlayerQueue;
 
 public class GetPlayerQueueMappingProfile : Profile
 {
