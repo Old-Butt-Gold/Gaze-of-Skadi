@@ -1,25 +1,21 @@
-﻿using System.Net;
-using System.Net.Http.Headers;
+﻿using System.Net.Http.Headers;
 using System.Text.Json;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace GoS.Infrastructure.Steam;
+namespace GoS.Infrastructure.StratzRequester;
 
-public class SteamHttpRequester : ISteamRequester
+public class StratzHttpRequester : IStratzRequester
 {
     private readonly HttpClient _httpClient;
-    private readonly IOptionsMonitor<SteamHttpRequesterOptions> _optionsMonitor;
+    private readonly IOptionsMonitor<StratzHttpRequesterOptions> _optionsMonitor;
     private readonly ISerializationOptionsProvider _serializationOptionsProvider;
-    private readonly ILogger<SteamHttpRequester> _logger;
+    private readonly ILogger<StratzHttpRequester> _logger;
 
-    public SteamHttpRequester(
-        HttpClient httpClient,
-        IOptionsMonitor<SteamHttpRequesterOptions> optionsMonitor,
-        ISerializationOptionsProvider serializationOptionsProvider,
-        ILogger<SteamHttpRequester> logger)
+    public StratzHttpRequester(
+        HttpClient httpClient, IOptionsMonitor<StratzHttpRequesterOptions> optionsMonitor, ISerializationOptionsProvider serializationOptionsProvider, ILogger<StratzHttpRequester> logger)
     {
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
         _optionsMonitor = optionsMonitor ?? throw new ArgumentNullException(nameof(optionsMonitor));
@@ -34,11 +30,15 @@ public class SteamHttpRequester : ISteamRequester
             var requestUri = BuildUri(url, parameters);
             using var request = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
-            // Настройка заголовков для Steam API
-            request.Headers.AcceptEncoding.Clear();
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
+            var opts = _optionsMonitor.CurrentValue;
+
+            if (!string.IsNullOrEmpty(opts.ApiKey))
+            {
+                request.Headers.Authorization = new AuthenticationHeaderValue(opts.ApiKey);
+            }
+
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.UserAgent.ParseAdd("STRATZ_API");
 
             using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
 
@@ -84,20 +84,20 @@ public class SteamHttpRequester : ISteamRequester
 
             switch (response.StatusCode)
             {
-                case HttpStatusCode.NotFound:
+                case System.Net.HttpStatusCode.NotFound:
                     _logger.LogWarning("Resource not found: {Url}", requestUri);
                     throw new KeyNotFoundException(message);
 
-                case HttpStatusCode.Unauthorized:
-                case HttpStatusCode.Forbidden:
+                case System.Net.HttpStatusCode.Unauthorized:
+                case System.Net.HttpStatusCode.Forbidden:
                     _logger.LogWarning("Unauthorized/Forbidden when requesting {Url}", requestUri);
                     throw new UnauthorizedAccessException(message);
 
-                case HttpStatusCode.BadRequest:
+                case System.Net.HttpStatusCode.BadRequest:
                     _logger.LogWarning("Bad request from upstream: {Url}", requestUri);
                     throw new HttpRequestException(message);
 
-                case HttpStatusCode.Conflict:
+                case System.Net.HttpStatusCode.Conflict:
                     _logger.LogWarning("Conflict returned from upstream: {Url}", requestUri);
                     throw new HttpRequestException(message);
 
@@ -116,11 +116,16 @@ public class SteamHttpRequester : ISteamRequester
             using var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
             request.Content = content;
 
-            // Настройка заголовков для Steam API
-            request.Headers.AcceptEncoding.Clear();
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var opts = _optionsMonitor.CurrentValue;
+
+            if (!string.IsNullOrEmpty(opts.ApiKey))
+            {
+                request.Headers.Add("Authorization", $"Bearer {opts.ApiKey}");
+            }
+
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("*/*"));
+            request.Headers.UserAgent.Clear();
+            request.Headers.UserAgent.ParseAdd("STRATZ_API");
 
             using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
 
@@ -164,17 +169,10 @@ public class SteamHttpRequester : ISteamRequester
             ? new List<KeyValuePair<string, string>>(parameters)
             : [];
 
-        var opts = _optionsMonitor.CurrentValue;
-
-        if (!string.IsNullOrWhiteSpace(opts.ApiKey))
-        {
-            paramList.Add(new KeyValuePair<string, string>(SteamAuthenticationConstants.Parameters.Key, opts.ApiKey));
-        }
-
         if (_httpClient.BaseAddress is null)
             throw new InvalidOperationException("HttpClient.BaseAddress is not configured.");
 
-        var uriBuilder = new UriBuilder(new Uri(_httpClient.BaseAddress!, url))
+        var uriBuilder = new UriBuilder(new Uri(_httpClient.BaseAddress!, url.Trim()))
         {
             Query = BuildQueryString(paramList)
         };

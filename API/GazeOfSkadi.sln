@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.Resource
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.OptionsProvider", "src\Infrastructure\GoS.Infrastructure.OptionsProvider\GoS.Infrastructure.OptionsProvider.csproj", "{ECF0F5F6-911A-4426-A835-924F289B881A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.Requester", "src\Infrastructure\GoS.Infrastructure.Requester\GoS.Infrastructure.Requester.csproj", "{ED7B420C-2893-4E7E-8F52-347983E3050C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.OpenDotaRequester", "src\Infrastructure\GoS.Infrastructure.OpenDotaRequester\GoS.Infrastructure.OpenDotaRequester.csproj", "{ED7B420C-2893-4E7E-8F52-347983E3050C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7D826EE3-20CC-4013-9F1E-06CE41A1F4E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{7D826E
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.Steam", "src\Infrastructure\GoS.Infrastructure.Steam\GoS.Infrastructure.Steam.csproj", "{8DA3EFE8-D7CE-4C33-B900-AF7AC278DF00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoS.Infrastructure.StratzRequester", "src\Infrastructure\GoS.Infrastructure.StratzRequester\GoS.Infrastructure.StratzRequester.csproj", "{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{8DA3EFE8-D7CE-4C33-B900-AF7AC278DF00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA3EFE8-D7CE-4C33-B900-AF7AC278DF00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA3EFE8-D7CE-4C33-B900-AF7AC278DF00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +76,6 @@ Global
 		{ECF0F5F6-911A-4426-A835-924F289B881A} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
 		{ED7B420C-2893-4E7E-8F52-347983E3050C} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
 		{8DA3EFE8-D7CE-4C33-B900-AF7AC278DF00} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
+		{BD2E2D31-1A4E-4BEA-B8B2-DEC3FD590496} = {F8DD6454-03C4-4440-800F-FADFB1B5D37B}
 	EndGlobalSection
 EndGlobal

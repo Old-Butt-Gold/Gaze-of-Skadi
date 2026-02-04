@@ -8,8 +8,7 @@ internal sealed class ParseMatchHandler(IRequester<OpenDotaHttpRequesterOptions>
 {
     public async Task<bool> Handle(ParseMatchCommand request, CancellationToken ct)
     {
-        var response = await requester.PostRequestAsync($"request/{request.MatchId}", null, ct);
-        response.EnsureSuccessStatusCode();
+        await requester.PostRequestAsync<object>($"request/{request.MatchId}", null, ct);
         return true;
     }
 }

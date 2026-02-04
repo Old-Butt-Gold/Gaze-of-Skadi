@@ -107,11 +107,56 @@ internal sealed class OpenDotaRequester : IOpenDotaRequester
 
     }
 
-    public Task<HttpResponseMessage> PostRequestAsync(string url, HttpContent? content = null, CancellationToken cancellationToken = default)
+    public async Task<T?> PostRequestAsync<T>(string url, HttpContent? content = null, CancellationToken ct = default) where T : class?
     {
-        var requestUri = BuildUri(url, null);
-        var request = new HttpRequestMessage(HttpMethod.Post, requestUri) { Content = content };
-        return _httpClient.SendAsync(request, cancellationToken);
+        try
+        {
+            var requestUri = BuildUri(url, null);
+            using var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
+            request.Content = content;
+
+            request.Headers.AcceptEncoding.Clear();
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("br"));
+            request.Headers.Accept.Add(new("*/*"));
+            request.Headers.Add("origin", "https://www.opendota.com");
+            request.Headers.Add("referer", "https://www.opendota.com");
+
+            using var response = await _httpClient.SendAsync(request, HttpCompletionOption.ResponseContentRead, ct);
+
+            EnsureSuccessCode(response, request.RequestUri!);
+
+            await using var stream = await response.Content.ReadAsStreamAsync(ct);
+
+            if (stream is null or { CanSeek: true, Length: 0 })
+            {
+                return null;
+            }
+
+            var options = _serializationOptionsProvider.CreateJsonSerializerOptions();
+            return await JsonSerializer.DeserializeAsync<T>(stream, options, ct);
+        }
+        catch (OperationCanceledException) when (ct.IsCancellationRequested)
+        {
+            _logger.LogDebug("Request to {Url} was canceled by caller.", url);
+            throw;
+        }
+        catch (TaskCanceledException ex) when (!ct.IsCancellationRequested)
+        {
+            _logger.LogWarning(ex.Message, "Request to {Url} timed out after {TimeoutSeconds}s.", url, _httpClient.Timeout.TotalSeconds);
+            throw new TimeoutException($"Request to '{url}' timed out after {_httpClient.Timeout.TotalSeconds} seconds.", ex);
+        }
+        catch (HttpRequestException ex)
+        {
+            _logger.LogWarning(ex, "HTTP request failed for {Url}", url);
+            throw;
+        }
+        catch (JsonException ex)
+        {
+            _logger.LogError(ex, "Failed to deserialize response for {Url}", url);
+            throw;
+        }
     }
 
     private Uri BuildUri(string url, IEnumerable<KeyValuePair<string, string>>? parameters)

@@ -1,0 +1,12 @@
+﻿using AutoMapper;
+using GoS.Domain.Stratz;
+
+namespace GoS.Application.Features.Stratz;
+
+public class GetPlayerQueueMappingProfile : Profile
+{
+    public GetPlayerQueueMappingProfile()
+    {
+        CreateMap<PlayersQueue, PlayersQueueDto>();
+    }
+}

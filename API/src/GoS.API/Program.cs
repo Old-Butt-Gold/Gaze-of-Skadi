@@ -4,6 +4,7 @@ using GoS.Infrastructure.OptionsProvider.Extensions;
 using GoS.Infrastructure.Requester.Extensions;
 using GoS.Infrastructure.ResourceManager.Extensions;
 using GoS.Infrastructure.Steam.Extensions;
+using GoS.Infrastructure.StratzRequester.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.ResponseCompression;
 
@@ -18,6 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
 builder.Services.ConfigureResourceManager();
 builder.Services.ConfigureRequester(builder.Configuration);
+builder.Services.ConfigureStratzServices(builder.Configuration);
 builder.Services.ConfigureMemoryCache();
 builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
