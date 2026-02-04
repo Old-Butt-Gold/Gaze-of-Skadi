@@ -20,7 +20,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                     query HeroesMetaPositions($bracketIds: [RankBracket], $gameModeIds: [GameModeEnumType]) {
                       heroesPos1: heroStats {
                         winDay(
-                          take: 1
+                          take: 30
                           positionIds: [POSITION_1]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -32,7 +32,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos2: heroStats {
                         winDay(
-                          take: 1
+                          take: 30
                           positionIds: [POSITION_2]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -44,7 +44,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos3: heroStats {
                         winDay(
-                          take: 1
+                          take: 30
                           positionIds: [POSITION_3]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -56,7 +56,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos4: heroStats {
                         winDay(
-                          take: 1
+                          take: 30
                           positionIds: [POSITION_4]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -68,7 +68,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos5: heroStats {
                         winDay(
-                          take: 1
+                          take: 30
                           positionIds: [POSITION_5]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -87,11 +87,11 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
 
         var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", content, cancellationToken);
 
-        var pos1 = response?.Data?.HeroesPos1?.WinDay ?? [];
-        var pos2 = response?.Data?.HeroesPos2?.WinDay ?? [];
-        var pos3 = response?.Data?.HeroesPos3?.WinDay ?? [];
-        var pos4 = response?.Data?.HeroesPos4?.WinDay ?? [];
-        var pos5 = response?.Data?.HeroesPos5?.WinDay ?? [];
+        var pos1 = GroupAndSumHeroes(response?.Data?.HeroesPos1?.WinDay);
+        var pos2 = GroupAndSumHeroes(response?.Data?.HeroesPos2?.WinDay);
+        var pos3 = GroupAndSumHeroes(response?.Data?.HeroesPos3?.WinDay);
+        var pos4 = GroupAndSumHeroes(response?.Data?.HeroesPos4?.WinDay);
+        var pos5 = GroupAndSumHeroes(response?.Data?.HeroesPos5?.WinDay);
 
         return new HeroesMetaDto
         {
@@ -101,5 +101,24 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
             HeroesPos4 = mapper.Map<IEnumerable<HeroStatsDto>>(pos4.OrderByDescending(x => x.WinRate)),
             HeroesPos5 = mapper.Map<IEnumerable<HeroStatsDto>>(pos5.OrderByDescending(x => x.WinRate)),
         };
+    }
+
+    private static IEnumerable<HeroWinDay> GroupAndSumHeroes(List<HeroWinDay>? winDays)
+    {
+        if (winDays == null || winDays.Count == 0)
+            return [];
+
+        var query = winDays
+            .GroupBy(x => x.HeroId)
+            .Select(g => new HeroWinDay
+            {
+                HeroId = g.Key,
+                MatchCount = g.Sum(x => x.MatchCount),
+                WinCount = g.Sum(x => x.WinCount)
+            })
+            .OrderByDescending(x => x.WinRate)
+            .ThenByDescending(x => x.MatchCount);
+
+        return query.ToList();
     }
 }

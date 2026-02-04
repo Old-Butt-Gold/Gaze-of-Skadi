@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { APP_ROUTES } from '../config/navigation';
 import { Icon } from '../components/Icon';
 import { getHeroGradientStyle } from '../utils/heroUtils';
-import type {HeroStatsDto} from "../types/heroesMeta.ts";
+import type { HeroStatsDto } from '../types/heroesMeta'; // Убедитесь, что путь верный
 
 const POSITIONS = [
     { key: 'heroesPos1', label: 'Safe Lane', icon: '/assets/images/pos-1.svg', color: '#e7d291' },
@@ -18,6 +18,7 @@ const POSITIONS = [
     { key: 'heroesPos5', label: 'Hard Support', icon: '/assets/images/pos-5.svg', color: '#fbbf24' },
 ] as const;
 
+// --- HERO CARD ---
 const HeroMetaCard = ({ stat, rank }: { stat: HeroStatsDto, rank: number }) => {
     const { getHero } = useHeroes();
     const hero = getHero(stat.heroId);
@@ -31,16 +32,17 @@ const HeroMetaCard = ({ stat, rank }: { stat: HeroStatsDto, rank: number }) => {
             style={getHeroGradientStyle(hero.id)}
             title={hero.localized_name}
         >
-            {/* Rank Badge */}
             <div className={clsx(
-                "absolute -left-[1px] -top-[1px] w-6 h-6 flex items-center justify-center text-[10px] font-bold z-10 clip-path-polygon",
-                rank <= 3 ? "bg-[#e7d291] text-black" : "bg-[#2e353b] text-[#808fa6]"
-            )} style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}>
-                <span className="absolute top-0.5 left-1">{rank}</span>
+                "absolute top-0 left-0 w-7 h-7 flex items-center justify-center text-xs font-bold z-20 shadow-md rounded-br-lg transition-colors",
+                rank <= 3
+                    ? "bg-[#e7d291] text-[#0f1114]"  // Gold for Top 3
+                    : "bg-[#1f242b] text-[#808fa6] border-r border-b border-[#2e353b]" // Dark for others
+            )}>
+                {rank}
             </div>
 
             {/* Hero Image */}
-            <div className="relative w-14 h-8 shrink-0 mr-3 shadow-md rounded-sm overflow-hidden border border-black/50 group-hover:border-[#e7d291]/50 ml-3">
+            <div className="relative w-14 h-8 shrink-0 mr-3 shadow-md rounded-sm overflow-hidden border border-black/50 group-hover:border-[#e7d291]/50 ml-6"> {/* ml-6 чтобы не наезжать на бейдж ранга */}
                 <img
                     src={hero.img}
                     alt={hero.localized_name}
@@ -71,6 +73,32 @@ const HeroMetaCard = ({ stat, rank }: { stat: HeroStatsDto, rank: number }) => {
     );
 };
 
+// --- TYPE DEFINITION FOR COLUMN LAYOUT ---
+interface ColumnLayoutProps {
+    title: string;
+    icon: string;
+    accentColor: string;
+    children: React.ReactNode;
+}
+
+const ColumnLayout = ({ title, icon, accentColor, children }: ColumnLayoutProps) => (
+    <div className="flex flex-col rounded-xl overflow-hidden h-full shadow-lg">
+        <div className="p-3 border-b border-[#2e353b] bg-[#15171c] flex items-center justify-center gap-2 relative">
+            <div
+                className="absolute inset-x-0 bottom-0 h-[2px] opacity-70"
+                style={{ backgroundColor: accentColor, boxShadow: `0 0 10px ${accentColor}` }}
+            />
+            <Icon src={icon} size={5} />
+            <h3 className="font-serif font-bold text-white uppercase tracking-widest text-xs text-center">
+                {title}
+            </h3>
+        </div>
+        <div className="space-y-1.5 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b]">
+            {children}
+        </div>
+    </div>
+);
+
 // --- COMPONENT: POSITION COLUMN ---
 const PositionColumn = ({ title, icon, data, accentColor, isExpanded }: {
     title: string,
@@ -83,11 +111,11 @@ const PositionColumn = ({ title, icon, data, accentColor, isExpanded }: {
         if (isExpanded) return data;
 
         // Берем топ 3
-        const top = data.slice(0, 3);
+        const top = data.slice(0, 5);
         // Берем последние 2 (если список достаточно длинный, чтобы они не пересеклись с топ-3)
-        const bottom = data.length > 5 ? data.slice(-2) : [];
+        const bottom = data.length > 8 ? data.slice(-3) : [];
 
-        return { top, bottom, hasHidden: data.length > 5 };
+        return { top, bottom, hasHidden: data.length > 8 };
     }, [data, isExpanded]);
 
     // Рендер полного списка
@@ -124,24 +152,6 @@ const PositionColumn = ({ title, icon, data, accentColor, isExpanded }: {
     );
 };
 
-const ColumnLayout = ({ title, icon, accentColor, children } : any) => (
-    <div className="flex flex-col rounded-xl overflow-hidden h-full shadow-lg">
-        <div className="p-3 border-b border-[#2e353b] bg-[#15171c] flex items-center justify-center gap-2 relative">
-            <div
-                className="absolute inset-x-0 bottom-0 h-[2px] opacity-70"
-                style={{ backgroundColor: accentColor, boxShadow: `0 0 10px ${accentColor}` }}
-            />
-            <Icon src={icon} size={5} />
-            <h3 className="font-serif font-bold text-white uppercase tracking-widest text-xs text-center">
-                {title}
-            </h3>
-        </div>
-        <div className="p-2 space-y-1.5 flex-grow overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b]">
-            {children}
-        </div>
-    </div>
-);
-
 // --- MAIN PAGE ---
 export const HeroesMetaPage: React.FC = () => {
     const { data: meta, isLoading, isError, refetch } = useHeroesMeta();
@@ -156,7 +166,7 @@ export const HeroesMetaPage: React.FC = () => {
         <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-10">
 
             {/* Header */}
-            <div className="relative h-48 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] border-b border-[#2e353b] mb-8">
+            <div className="relative h-36 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] border-b border-[#2e353b] mb-8">
                 <div className="absolute inset-0 bg-[url('https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/blog/730_bg.jpg')] bg-cover bg-top opacity-10 mix-blend-overlay" />
                 <div className="mx-auto px-4 h-full flex flex-col justify-center items-center text-center relative z-10">
                     <div className="flex items-center gap-3 mb-2">
@@ -168,7 +178,7 @@ export const HeroesMetaPage: React.FC = () => {
                         Current <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e7d291] to-[#b88a44]">Meta</span>
                     </h1>
                     <p className="text-[#808fa6] text-sm mt-3">
-                        Top performing heroes by position in daily matches.
+                        Top performing heroes by position in the last month matches.
                     </p>
                 </div>
             </div>
