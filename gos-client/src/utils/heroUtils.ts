@@ -137,13 +137,15 @@ export const calculateDamage = (hero: HeroInfo): { min: number; max: number } =>
   };
 };
 
-export const getHeroGradient = (heroId: number) => {
-  // Детерминированный генератор псевдослучайных чисел на основе ID
-  const hue = (heroId * 137.508) % 360;
+// Маппинг ID героя -> CSS String градиента
+export const HERO_GRADIENTS: Record<number, string> = {
+  67: "linear-gradient(135deg, rgba(24, 63, 129, 0.15), rgba(4, 50, 149, 0.15))",
+};
 
-  // Используем темные, насыщенные тона
-  const color1 = `hsla(${hue}, 60%, 20%, 0.4)`;
-  const color2 = `hsla(${hue}, 70%, 10%, 0.1)`;
-
-  return `linear-gradient(135deg, ${color1}, ${color2})`;
+export const getHeroGradientStyle = (heroId: number) => {
+  const gradient = HERO_GRADIENTS[heroId];
+  if (gradient) {
+    return { backgroundImage: gradient };
+  }
+  return undefined;
 };
