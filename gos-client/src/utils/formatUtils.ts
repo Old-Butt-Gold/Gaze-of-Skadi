@@ -44,6 +44,17 @@ export const formatTimeRange = (startSeconds: number, endSeconds: number): strin
   return `${formatDuration(startSeconds)} - ${formatDuration(endSeconds)}`;
 };
 
+export const formatDateFull = (unixSeconds : number) : string => {
+  return new Date(unixSeconds * 1000).toLocaleString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  });
+}
+
 export const formatDateLong = (unixSeconds: number): string => {
   const date = new Date(unixSeconds * 1000);
   return new Intl.DateTimeFormat('en-US', {
