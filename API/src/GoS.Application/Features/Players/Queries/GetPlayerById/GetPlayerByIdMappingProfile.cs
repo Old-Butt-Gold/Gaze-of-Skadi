@@ -9,5 +9,6 @@ public class GetPlayerByIdMappingProfile : Profile
     {
         CreateMap<Player, PlayerDto>();
         CreateMap<ProfileInfo, ProfileInfoDto>();
+        CreateMap<Alias, AliasDto>();
     }
 }

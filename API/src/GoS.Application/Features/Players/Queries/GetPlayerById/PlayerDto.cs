@@ -10,6 +10,8 @@ public class PlayerDto
     public int? LeaderboardRank { get; init; }
 
     public ProfileInfoDto Profile { get; init; } = new();
+
+    public IEnumerable<AliasDto> Aliases { get; init; } = [];
 }
 
 public class ProfileInfoDto
@@ -37,4 +39,11 @@ public class ProfileInfoDto
     public long? LastLogin { get; init; }
 
     public string? LocCountryCode { get; init; }
+}
+
+public class AliasDto
+{
+    public string PersonaName { get; init; } = string.Empty;
+
+    public long NameSince { get; init; }
 }

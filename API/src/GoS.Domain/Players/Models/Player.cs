@@ -22,4 +22,7 @@ public class Player
 	/// </summary>
 	[JsonPropertyName("profile")]
 	public ProfileInfo Profile { get; init; } = new();
+
+    [JsonPropertyName("aliases")]
+    public IEnumerable<Alias> Aliases { get; set; } = [];
 }

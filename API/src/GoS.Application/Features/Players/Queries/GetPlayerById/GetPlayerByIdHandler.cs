@@ -12,6 +12,7 @@ internal sealed class GetPlayerByIdHandler(IRequester<OpenDotaHttpRequesterOptio
     public async Task<PlayerDto?> Handle(GetPlayerByIdQuery request, CancellationToken ct)
     {
         var player = await requester.GetResponseAsync<Player>($"players/{request.AccountId}", ct: ct);
+        player.Aliases = player.Aliases.OrderBy(x => x.NameSince);
         return mapper.Map<PlayerDto?>(player);
     }
 }
