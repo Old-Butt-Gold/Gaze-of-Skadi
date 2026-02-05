@@ -103,9 +103,9 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
         };
     }
 
-    private static IEnumerable<HeroWinDay> GroupAndSumHeroes(List<HeroWinDay>? winDays)
+    private static IEnumerable<HeroWinDay> GroupAndSumHeroes(IEnumerable<HeroWinDay>? winDays)
     {
-        if (winDays == null || winDays.Count == 0)
+        if (winDays == null || !winDays.Any())
             return [];
 
         var query = winDays

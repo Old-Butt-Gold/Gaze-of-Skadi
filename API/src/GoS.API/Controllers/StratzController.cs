@@ -1,6 +1,9 @@
 ﻿using System.Net.Mime;
 using GoS.Application.Features.Stratz.GetHeroesMeta;
 using GoS.Application.Features.Stratz.GetHeroesMetaChange;
+using GoS.Application.Features.Stratz.GetMatchesByGameMode;
+using GoS.Application.Features.Stratz.GetMatchesByRank;
+using GoS.Application.Features.Stratz.GetMatchesByRegion;
 using GoS.Application.Features.Stratz.GetPlayerQueue;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,4 +33,24 @@ public class StratzController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     public Task<IActionResult> GetHeroesMeta(int heroId, CancellationToken ct = default)
         => HandleQueryAsync(new HeroMetaChangeQuery(heroId), ct);
+
+    [HttpGet("matches-game-mode")]
+    [ProducesResponseType(typeof(MatchesByGameModeDto), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetMatchesByGameMode(CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchesByGameModeQuery(), ct);
+
+    [HttpGet("matches-region")]
+    [ProducesResponseType(typeof(MatchesByRegionDto), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetMatchesByRegion(CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchesByRegionQuery(), ct);
+
+    [HttpGet("matches-rank")]
+    [ProducesResponseType(typeof(MatchesByRankDto), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetMatchesByRank(
+        [FromQuery] int take = 240,
+        CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchesByRankQuery(take), ct);
 }

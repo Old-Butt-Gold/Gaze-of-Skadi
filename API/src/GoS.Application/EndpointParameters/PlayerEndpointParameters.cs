@@ -80,6 +80,11 @@ public class PlayerEndpointParameters
 	/// </summary>
 	public int? Having { get; set; }
 
+    /// <summary>
+    /// Gets the size of the party player played with
+    /// </summary>
+    public int? PartySize { get; set; }
+
 	/// <summary>
 	/// Gets the field to return matches sorted by in descending order.
 	/// </summary>

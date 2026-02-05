@@ -25,6 +25,7 @@ internal static class PlayerQueryHelpers
         AddIfNotNull(args, "is_radiant", parameters.IsRadiant);
         AddIfNotNull(args, "significant", 0);
         AddIfNotNull(args, "having", parameters.Having);
+        AddIfNotNull(args, "party_size", parameters.PartySize);
 
         if (parameters.Sort.HasValue)
             args.Add(new KeyValuePair<string, string>("sort", parameters.Sort.ToSnakeCase()));

@@ -32,7 +32,7 @@ function App() {
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
                 <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
-                <Route path={APP_ROUTES.PLAYERS_QUEUE} element={<PlayersQueuePage />} />
+                <Route path={APP_ROUTES.MATCHES_QUEUE} element={<PlayersQueuePage />} />
                 <Route path={APP_ROUTES.META} element={<HeroesMetaPage />} />
 
                 <Route path={APP_ROUTES.SEARCH} element={<SearchPage />}>

@@ -97,7 +97,7 @@ internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOption
         };
     }
 
-    private static List<HeroMetaPointDto> GroupAndSumHeroes(IEnumerable<HeroWinDay>? winDays, int heroId)
+    private static IEnumerable<HeroMetaPointDto> GroupAndSumHeroes(IEnumerable<HeroWinDay>? winDays, int heroId)
     {
         if (winDays == null || !winDays.Any())
             return [];

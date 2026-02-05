@@ -2,11 +2,11 @@
 
 public sealed class HeroMetaTimelineDto
 {
-    public List<HeroMetaPointDto> Pos1 { get; set; } = [];
-    public List<HeroMetaPointDto> Pos2 { get; set; } = [];
-    public List<HeroMetaPointDto> Pos3 { get; set; } = [];
-    public List<HeroMetaPointDto> Pos4 { get; set; } = [];
-    public List<HeroMetaPointDto> Pos5 { get; set; } = [];
+    public IEnumerable<HeroMetaPointDto> Pos1 { get; set; } = [];
+    public IEnumerable<HeroMetaPointDto> Pos2 { get; set; } = [];
+    public IEnumerable<HeroMetaPointDto> Pos3 { get; set; } = [];
+    public IEnumerable<HeroMetaPointDto> Pos4 { get; set; } = [];
+    public IEnumerable<HeroMetaPointDto> Pos5 { get; set; } = [];
 }
 
 public sealed class HeroMetaPointDto

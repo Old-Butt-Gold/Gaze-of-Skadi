@@ -30,7 +30,7 @@ public sealed class HeroesMeta
 public sealed class HeroStatsQuery
 {
     [JsonPropertyName("winDay")]
-    public List<HeroWinDay>? WinDay { get; set; }
+    public IEnumerable<HeroWinDay>? WinDay { get; set; }
 }
 
 public sealed class HeroWinDay
