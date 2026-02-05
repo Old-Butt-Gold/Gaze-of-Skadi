@@ -23,10 +23,10 @@ export const HeroStatsPage: React.FC = () => {
 
     return (
         // Убрал overflow-hidden здесь, чтобы sticky работал
-        <div className="w-full min-h-screen animate-fade-in pb-20">
+        <div className="w-full min-h-screen animate-fade-in pb-10">
 
             {/* Sticky Header */}
-            <div className="sticky top-16 z-30 bg-[#1a1d24]/95 backdrop-blur-md border-b border-[#2e353b] shadow-lg transition-all">
+            <div className="sticky top-2 z-30 bg-[#1a1d24]/95 backdrop-blur-md border-b border-[#2e353b] shadow-lg transition-all">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
 

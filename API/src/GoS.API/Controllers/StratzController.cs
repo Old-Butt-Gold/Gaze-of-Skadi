@@ -1,5 +1,6 @@
 ﻿using System.Net.Mime;
 using GoS.Application.Features.Stratz.GetHeroesMeta;
+using GoS.Application.Features.Stratz.GetHeroesMetaChange;
 using GoS.Application.Features.Stratz.GetPlayerQueue;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -23,4 +24,10 @@ public class StratzController : ApiControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     public Task<IActionResult> GetHeroesMeta(CancellationToken ct = default)
         => HandleQueryAsync(new GetHeroesMetaQuery(), ct);
+
+    [HttpGet("heroes-meta/{heroId:int}")]
+    [ProducesResponseType(typeof(HeroMetaTimelineDto), StatusCodes.Status200OK)]
+    [Produces(MediaTypeNames.Application.Json)]
+    public Task<IActionResult> GetHeroesMeta(int heroId, CancellationToken ct = default)
+        => HandleQueryAsync(new HeroMetaChangeQuery(heroId), ct);
 }

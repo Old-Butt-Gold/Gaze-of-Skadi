@@ -13,8 +13,9 @@ import {HeroItemsTab} from "../components/heroes/tabs/HeroItemsTab.tsx";
 import {HeroDurationsTab} from "../components/heroes/tabs/HeroDurationsTab.tsx";
 import {HeroPlayersTab} from "../components/heroes/tabs/HeroPlayersTab.tsx";
 import {HeroMatchesTab} from "../components/heroes/tabs/HeroMatchesTab.tsx";
+import {HeroTrendsTab} from "../components/heroes/tabs/HeroTrendsTab.tsx";
 
-type HeroTab = 'overview' | 'rankings' | 'matches' | 'matchups' | 'items' | 'players' | 'benchmarks' | 'durations';
+type HeroTab = 'overview' | 'rankings' | 'matches' | 'matchups' | 'items' | 'players' | 'benchmarks' | 'durations' | 'trends';
 
 // --- Main Page ---
 
@@ -46,6 +47,7 @@ export const HeroDetailsPage: React.FC = () => {
         { id: 'items', label: 'Items' },
         { id: 'players', label: 'Players' },
         { id: 'durations', label: 'Durations' },
+        { id: 'trends', label: 'Meta' },
     ];
 
     return (
@@ -78,38 +80,15 @@ export const HeroDetailsPage: React.FC = () => {
 
             {/* === 3. CONTENT GRID === */}
             <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-
-                {activeTab === 'overview' && (
-                    <HeroOverviewTab hero={hero} />
-                )}
-
-                {activeTab === 'benchmarks' && (
-                    <HeroBenchmarksTab hero={hero} />
-                )}
-
-                {activeTab === 'rankings' && (
-                    <HeroRankingsTab hero={hero} />
-                )}
-
-                {activeTab === 'matchups' && (
-                    <HeroMatchupsTab hero={hero} />
-                )}
-
-                {activeTab === 'items' && (
-                    <HeroItemsTab hero={hero} />
-                )}
-
-                {activeTab === 'durations' && (
-                    <HeroDurationsTab hero={hero} />
-                )}
-
-                {activeTab === 'players' && (
-                    <HeroPlayersTab hero={hero} />
-                )}
-
-                {activeTab === 'matches' && (
-                    <HeroMatchesTab hero={hero} />
-                )}
+                {activeTab === 'overview' && (<HeroOverviewTab hero={hero} />)}
+                {activeTab === 'benchmarks' && (<HeroBenchmarksTab hero={hero} />)}
+                {activeTab === 'rankings' && (<HeroRankingsTab hero={hero} />)}
+                {activeTab === 'matchups' && (<HeroMatchupsTab hero={hero} />)}
+                {activeTab === 'items' && (<HeroItemsTab hero={hero} />)}
+                {activeTab === 'durations' && (<HeroDurationsTab hero={hero} />)}
+                {activeTab === 'players' && (<HeroPlayersTab hero={hero} />)}
+                {activeTab === 'matches' && (<HeroMatchesTab hero={hero} />)}
+                {activeTab === 'trends' && <HeroTrendsTab hero={hero} />}
             </div>
         </div>
     );
