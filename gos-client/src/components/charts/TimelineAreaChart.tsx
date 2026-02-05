@@ -1,36 +1,38 @@
 ﻿import React, { useMemo, useState } from 'react';
 import {
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, type TooltipProps
 } from 'recharts';
+import type { ValueType, NameType } from 'recharts/types/component/DefaultTooltipContent';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
-import type {TimeSeriesStat} from "../../types/matchesTimeline.ts";
-import {formatDateLong} from "../../utils/formatUtils.ts";
-import {LoadingSpinner} from "../ui/LoadingSpinner.tsx";
-import {ErrorDisplay} from "../ui/ErrorDisplay.tsx"; // Ваш компонент иконки
+import type { TimeSeriesStat } from '../../types/matchesTimeline';
+import { formatDateLong } from '../../utils/formatUtils';
 
-// Конфиг для одной серии данных (цвет, лейбл, иконка)
 export interface SeriesConfig {
     label: string;
     color: string;
-    icon?: string; // URL иконки (для рангов)
+    icon?: string;
 }
 
 interface Props {
     title: string;
     description?: string;
-    data: Record<string, TimeSeriesStat[]>; // Объект типа { herald: [...], guardian: [...] }
-    config: Record<string, SeriesConfig>;   // Конфиг цветов { herald: { color: '...', icon: '...' } }
+    data: Record<string, TimeSeriesStat[]> | undefined;
+    config: Record<string, SeriesConfig>;
     isLoading: boolean;
     isError: boolean;
 }
 
-const CustomTooltip = React.memo(({ active, payload, label, config }: any) => {
-    if (active && payload && payload.length) {
-        const dateStr = formatDateLong(label);
+interface ChartDataPoint {
+    timestamp: number;
+    [key: string]: number;
+}
 
-        // Сортировка по убыванию значения
-        const sortedPayload = [...payload].sort((a: any, b: any) => (b.value || 0) - (a.value || 0));
+const CustomTooltip = React.memo(({ active, payload, label, config }: TooltipProps<ValueType, NameType> & { config: Record<string, SeriesConfig> }) => {
+    if (active && payload && payload.length) {
+        const dateStr = formatDateLong(Number(label));
+
+        const sortedPayload = [...payload].sort((a, b) => (Number(b.value) || 0) - (Number(a.value) || 0));
 
         return (
             <div className="bg-[#15171c]/95 border border-[#2e353b] p-3 rounded shadow-xl backdrop-blur-md z-50 min-w-[200px]">
@@ -38,20 +40,25 @@ const CustomTooltip = React.memo(({ active, payload, label, config }: any) => {
                     {dateStr}
                 </p>
                 <div className="flex flex-col gap-1.5">
-                    {sortedPayload.map((entry: any) => {
-                        const key = entry.name;
+                    {sortedPayload.map((entry) => {
+                        const key = entry.name as string;
                         const conf = config[key];
+
+                        if (!conf) return null;
+
                         return (
                             <div key={key} className="flex items-center justify-between text-xs">
-                                <span className="flex items-center gap-2 text-[#a3aab8]">
-                                    {/* Если есть иконка (ранг), показываем её, иначе цветной кружок */}
-                                    {conf.icon ? (
-                                        <Icon src={conf.icon} size={4} />
-                                    ) : (
-                                        <span className="w-2 h-2 rounded-full" style={{ backgroundColor: conf.color }} />
-                                    )}
-                                    {conf.label}
-                                </span>
+                                <div className="flex items-center gap-2 text-[#a3aab8]">
+                                    <span
+                                        className="w-2 h-2 rounded-full shrink-0 shadow-[0_0_4px]"
+                                        style={{
+                                            backgroundColor: conf.color,
+                                            boxShadow: `0 0 4px ${conf.color}`
+                                        }}
+                                    />
+                                    {conf.icon && (<Icon src={conf.icon} size={6} />)}
+                                    <span>{conf.label}</span>
+                                </div>
                                 <span className="font-mono font-bold text-white ml-4">
                                     {Number(entry.value).toLocaleString()}
                                 </span>
@@ -65,14 +72,12 @@ const CustomTooltip = React.memo(({ active, payload, label, config }: any) => {
     return null;
 });
 
-export const StatsAreaChart: React.FC<Props> = ({ title, description, data, config, isLoading, isError }) => {
-    // Состояние фильтров
+export const TimelineAreaChart: React.FC<Props> = ({ title, description, data, config, isLoading, isError }) => {
     const [activeKeys, setActiveKeys] = useState<string[]>(Object.keys(config));
 
-    // Трансформация данных: превращаем { key: [stat] } в [{ timestamp, key1: val, key2: val }]
     const chartData = useMemo(() => {
         if (!data) return [];
-        const dataMap = new Map<number, any>();
+        const dataMap = new Map<number, ChartDataPoint>();
 
         Object.keys(data).forEach(key => {
             const series = data[key];
@@ -82,7 +87,7 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
                 if (!dataMap.has(stat.monthUnix)) {
                     dataMap.set(stat.monthUnix, { timestamp: stat.monthUnix });
                 }
-                const entry = dataMap.get(stat.monthUnix);
+                const entry = dataMap.get(stat.monthUnix)!;
                 entry[key] = stat.matchCount;
             });
         });
@@ -98,8 +103,8 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
         setActiveKeys(prev => prev.length === Object.keys(config).length ? [] : Object.keys(config));
     };
 
-    if (isLoading) return <LoadingSpinner />;
-    if (isError) return <ErrorDisplay />;
+    if (isLoading) return <div className="h-[75vh] w-full bg-[#15171c] rounded-xl animate-pulse border border-[#2e353b]" />;
+    if (isError) return null;
 
     return (
         <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 shadow-lg flex flex-col h-full">
@@ -118,7 +123,7 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
             </div>
 
             {/* Chart */}
-            <div className="h-[300px] w-full select-none mb-4">
+            <div className="h-[50vh] w-full select-none mb-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                         <defs>
@@ -148,7 +153,10 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
                             tickLine={false}
                             dx={-10}
                         />
-                        <Tooltip content={(props) => <CustomTooltip {...props} config={config} />} cursor={{ stroke: '#e7d291', strokeWidth: 1, strokeDasharray: '4 4' }} />
+                        <Tooltip
+                            content={(props) => <CustomTooltip {...props} config={config} />}
+                            cursor={{ stroke: '#e7d291', strokeWidth: 1, strokeDasharray: '4 4' }}
+                        />
 
                         {Object.keys(config).map(key => {
                             if (!activeKeys.includes(key)) return null;
@@ -163,7 +171,7 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
                                     fill={`url(#grad-${key})`}
                                     fillOpacity={1}
                                     strokeWidth={2}
-                                    animationDuration={1000}
+                                    animationDuration={500}
                                     activeDot={{ r: 4, strokeWidth: 0, fill: '#fff' }}
                                 />
                             );
@@ -188,12 +196,15 @@ export const StatsAreaChart: React.FC<Props> = ({ title, description, data, conf
                                     : "bg-transparent border-transparent text-[#58606e] opacity-50 grayscale"
                             )}
                         >
-                            {/* Иконка или точка */}
-                            {conf.icon ? (<Icon src={conf.icon} size={4} />)
-                                : (
+                            {conf.icon ? (
+                                <Icon src={conf.icon} size={6} />
+                            ) : (
                                 <span
                                     className="w-2 h-2 rounded-full shadow-[0_0_5px]"
-                                    style={{ backgroundColor: conf.color, boxShadow: isActive ? `0 0 5px ${conf.color}` : 'none' }}
+                                    style={{
+                                        backgroundColor: conf.color,
+                                        boxShadow: isActive ? `0 0 5px ${conf.color}` : 'none'
+                                    }}
                                 />
                             )}
                             {conf.label}

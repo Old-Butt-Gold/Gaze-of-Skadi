@@ -1,32 +1,31 @@
 ﻿import React from 'react';
-import { StatsAreaChart, type SeriesConfig } from '../components/charts/StatsAreaChart';
-import {useMatchesTimeline} from "../hooks/queries/useMatchesTimeline.ts";
+import { TimelineAreaChart, type SeriesConfig } from '../components/charts/TimelineAreaChart';
+import { useMatchesTimeline } from '../hooks/queries/useMatchesTimeline';
 
 const MODE_CONFIG: Record<string, SeriesConfig> = {
-    allPickRanked: { label: 'All Pick (Ranked)', color: '#e7d291' }, // Gold
-    allPick: { label: 'All Pick (Unranked)', color: '#60a5fa' },     // Blue
-    turbo: { label: 'Turbo', color: '#f87171' },                     // Red
-    captainsMode: { label: 'Captains Mode', color: '#c084fc' },      // Purple
+    allPickRanked: { label: 'All Pick (Ranked)', color: '#e7d291' },
+    allPick: { label: 'All Pick (Unranked)', color: '#60a5fa' },
+    turbo: { label: 'Turbo', color: '#f87171' },
+    captainsMode: { label: 'Captains Mode', color: '#c084fc' },
 };
 
 const REGION_CONFIG: Record<string, SeriesConfig> = {
-    europe: { label: 'Europe', color: '#66bb6a' },        // Green
-    sea: { label: 'SE Asia', color: '#ffa726' },              // Orange
-    china: { label: 'China', color: '#ef5350' },          // Red
-    northAmerica: { label: 'North America', color: '#42a5f5' }, // Blue
-    southAmerica: { label: 'South America', color: '#ab47bc' }, // Purple
+    europe: { label: 'Europe', color: '#66bb6a' },
+    sea: { label: 'SE Asia', color: '#ffa726' },
+    china: { label: 'China', color: '#ef5350' },
+    northAmerica: { label: 'North America', color: '#42a5f5' },
+    southAmerica: { label: 'South America', color: '#ab47bc' },
 };
 
-// Пути к иконкам рангов (убедитесь, что они есть в public/assets/ranks/ или замените на свои URL)
 const RANK_CONFIG: Record<string, SeriesConfig> = {
-    herald: { label: 'Herald', color: '#8c9ab3', icon: '/assets/images/rank_icon_1.png' },
-    guardian: { label: 'Guardian', color: '#bf8f6b', icon: '/assets/images/rank_icon_2.png' },
-    crusader: { label: 'Crusader', color: '#d83a3a', icon: '/assets/images/rank_icon_3.png' },
-    archon: { label: 'Archon', color: '#5f8da8', icon: '/assets/images/rank_icon_4.png' },
-    legend: { label: 'Legend', color: '#e6cc80', icon: '/assets/images/rank_icon_5.png' },
-    ancient: { label: 'Ancient', color: '#8884c5', icon: '/assets/images/rank_icon_6.png' },
-    divine: { label: 'Divine', color: '#41b6b0', icon: '/assets/images/rank_icon_7.png' },
-    immortal: { label: 'Immortal', color: '#ffec8b', icon: '/assets/images/rank_icon_8.png' },
+    herald:   { label: 'Herald',   color: 'rgb(98, 162, 52)',   icon: '/assets/images/rank_icon_1.png' },
+    guardian: { label: 'Guardian', color: 'rgb(139, 94, 39)',   icon: '/assets/images/rank_icon_2.png' },
+    crusader: { label: 'Crusader', color: 'rgb(19, 115, 134)',  icon: '/assets/images/rank_icon_3.png' },
+    archon:   { label: 'Archon',   color: 'rgb(32, 177, 155)',  icon: '/assets/images/rank_icon_4.png' },
+    legend:   { label: 'Legend',   color: 'rgb(179, 30, 70)',   icon: '/assets/images/rank_icon_5.png' },
+    ancient:  { label: 'Ancient',  color: 'rgb(150, 77, 179)',  icon: '/assets/images/rank_icon_6.png' },
+    divine:   { label: 'Divine',   color: 'rgb(104, 122, 202)', icon: '/assets/images/rank_icon_7.png' },
+    immortal: { label: 'Immortal', color: 'rgb(230, 77, 26)',   icon: '/assets/images/rank_icon_8.png' },
 };
 
 export const MatchesTimelinePage: React.FC = () => {
@@ -35,7 +34,6 @@ export const MatchesTimelinePage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-12">
 
-            {/* Header */}
             <div className="relative h-48 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] border-b border-[#2e353b] mb-8">
                 <div className="absolute inset-0 bg-[url('/assets/images/dashboard_bg_2.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
                 <div className="mx-auto px-4 h-full flex flex-col justify-center items-center text-center relative z-10">
@@ -53,13 +51,11 @@ export const MatchesTimelinePage: React.FC = () => {
                 </div>
             </div>
 
-            {/* Grid Layout */}
             <div className="mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-8">
 
-                    {/* 1. Game Modes (Full Width on mobile, half on large) */}
-                    <div className="lg:col-span-1">
-                        <StatsAreaChart
+                    <div className="w-full">
+                        <TimelineAreaChart
                             title="Popularity by Game Mode"
                             description="Monthly matches played per mode"
                             data={gameModes.data}
@@ -69,9 +65,8 @@ export const MatchesTimelinePage: React.FC = () => {
                         />
                     </div>
 
-                    {/* 2. Regions */}
-                    <div className="lg:col-span-1">
-                        <StatsAreaChart
+                    <div className="w-full">
+                        <TimelineAreaChart
                             title="Activity by Region"
                             description="Monthly matches played per region"
                             data={regions.data}
@@ -81,9 +76,8 @@ export const MatchesTimelinePage: React.FC = () => {
                         />
                     </div>
 
-                    {/* 3. Ranks (Full Width) */}
-                    <div className="lg:col-span-2">
-                        <StatsAreaChart
+                    <div className="w-full">
+                        <TimelineAreaChart
                             title="Distribution by Rank"
                             description="Monthly matches played per rank tier"
                             data={ranks.data}
@@ -92,6 +86,7 @@ export const MatchesTimelinePage: React.FC = () => {
                             isError={ranks.isError}
                         />
                     </div>
+
                 </div>
             </div>
         </div>

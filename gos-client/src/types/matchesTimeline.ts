@@ -3,7 +3,6 @@
   matchCount: number;
 }
 
-// DTO для режимов
 export interface MatchesByGameModeDto {
   allPick: TimeSeriesStat[];
   captainsMode: TimeSeriesStat[];
@@ -11,7 +10,6 @@ export interface MatchesByGameModeDto {
   turbo: TimeSeriesStat[];
 }
 
-// DTO для регионов
 export interface MatchesByRegionDto {
   china: TimeSeriesStat[];
   sea: TimeSeriesStat[];
@@ -20,7 +18,6 @@ export interface MatchesByRegionDto {
   europe: TimeSeriesStat[];
 }
 
-// DTO для рангов
 export interface MatchesByRankDto {
   herald: TimeSeriesStat[];
   guardian: TimeSeriesStat[];
