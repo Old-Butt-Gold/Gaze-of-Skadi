@@ -49,8 +49,6 @@ public class StratzController : ApiControllerBase
     [HttpGet("matches-rank")]
     [ProducesResponseType(typeof(MatchesByRankDto), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetMatchesByRank(
-        [FromQuery] int take = 240,
-        CancellationToken ct = default)
-        => HandleQueryAsync(new GetMatchesByRankQuery(take), ct);
+    public Task<IActionResult> GetMatchesByRank(CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchesByRankQuery(), ct);
 }

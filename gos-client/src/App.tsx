@@ -18,6 +18,7 @@ import {SearchPublicMatchesTab} from "./components/search/tabs/SearchPublicMatch
 import {SearchProMatchesTab} from "./components/search/tabs/SearchProMatchesTab.tsx";
 import {PlayersQueuePage} from "./pages/PlayersQueuePage.tsx";
 import {HeroesMetaPage} from "./pages/HeroesMetaPage.tsx";
+import {MatchesTimelinePage} from "./pages/MatchesTimelinePage.tsx";
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
                 <Route path={APP_ROUTES.MATCHES_QUEUE} element={<PlayersQueuePage />} />
                 <Route path={APP_ROUTES.META} element={<HeroesMetaPage />} />
+                <Route path={APP_ROUTES.MATCHES} element={<MatchesTimelinePage />} />
 
                 <Route path={APP_ROUTES.SEARCH} element={<SearchPage />}>
                     <Route index element={<Navigate to={APP_ROUTES.COMBOS} replace />} />

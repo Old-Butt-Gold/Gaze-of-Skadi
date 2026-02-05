@@ -29,6 +29,7 @@ export const MAIN_NAVIGATION: NavItem[] = [
   { name: 'Scenarios', path: APP_ROUTES.SCENARIOS },
   { name: 'Team', path: APP_ROUTES.TEAMS },
   { name: 'Heroes', path: APP_ROUTES.HEROES },
+  { name: 'Matches', path: APP_ROUTES.MATCHES },
   { name: 'Search', path: APP_ROUTES.SEARCH },
   { name: 'News', path: APP_ROUTES.NEWS },
   { name: 'Match Queue', path: APP_ROUTES.MATCHES_QUEUE },
