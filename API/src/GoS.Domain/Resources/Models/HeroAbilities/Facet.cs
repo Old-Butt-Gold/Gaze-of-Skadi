@@ -17,9 +17,6 @@ public class Facet
     [JsonPropertyName("color")]
     public string Color { get; set; }
 
-    [JsonPropertyName("gradient_id")]
-    public int GradientId { get; set; }
-
     [JsonPropertyName("title")]
     public string Title { get; set; }
 

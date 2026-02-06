@@ -33,13 +33,9 @@ public interface IResourceManager
 
     public Task<Dictionary<string, string>?> GetItemIdsAsync();
 	
-    public Task<Dictionary<ItemType, string>?> GetItemColorsAsync();
-	
     public Task<Dictionary<string, NeutralAbility>?> GetNeutralAbilitiesAsync();
 	
     public Task<Dictionary<PlayerSlot, string>?> GetPlayerColorsAsync();
-
-    public Task<Dictionary<string, BooleanState>?> GetSkillshotsAsync();
 
     public Task<List<int>?> GetXpLevelAsync();
 	

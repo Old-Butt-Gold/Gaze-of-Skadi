@@ -86,11 +86,6 @@ internal sealed class CachedFileResourceManager : IResourceManager
         return GetOrCreateAsync(Resource.ItemIds, () => _fileResourceManager.GetItemIdsAsync());
     }
 
-    public Task<Dictionary<ItemType, string>?> GetItemColorsAsync()
-    {
-        return GetOrCreateAsync(Resource.ItemColors, () => _fileResourceManager.GetItemColorsAsync());
-    }
-
     public Task<Dictionary<string, NeutralAbility>?> GetNeutralAbilitiesAsync()
     {
         return GetOrCreateAsync(Resource.NeutralAbilities, () => _fileResourceManager.GetNeutralAbilitiesAsync());
@@ -99,11 +94,6 @@ internal sealed class CachedFileResourceManager : IResourceManager
     public Task<Dictionary<PlayerSlot, string>?> GetPlayerColorsAsync()
     {
         return GetOrCreateAsync(Resource.PlayerColors, () => _fileResourceManager.GetPlayerColorsAsync());
-    }
-
-    public Task<Dictionary<string, BooleanState>?> GetSkillshotsAsync()
-    {
-        return GetOrCreateAsync(Resource.Skillshots, () => _fileResourceManager.GetSkillshotsAsync());
     }
 
     public Task<List<int>?> GetXpLevelAsync()

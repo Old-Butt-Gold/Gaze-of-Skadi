@@ -105,15 +105,6 @@ public sealed class ResourceController : ControllerBase
         return result is null ? NotFound() : Ok(result);
     }
 
-    [HttpGet("item-colors")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<ItemType, string>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetItemColors()
-    {
-        var result = await _resourceManager.GetItemColorsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
     [HttpGet("neutral-abilities")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Dictionary<string, NeutralAbility>), StatusCodes.Status200OK)]
@@ -129,15 +120,6 @@ public sealed class ResourceController : ControllerBase
     public async Task<IActionResult> GetPlayerColors()
     {
         var result = await _resourceManager.GetPlayerColorsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("skillshots")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, BooleanState>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetSkillshots()
-    {
-        var result = await _resourceManager.GetSkillshotsAsync();
         return result is null ? NotFound() : Ok(result);
     }
 

@@ -46,11 +46,6 @@ public enum Resource
 	Heroes,
 
 	/// <summary>
-	/// Item colors.
-	/// </summary>
-	ItemColors,
-
-	/// <summary>
 	/// Item IDs.
 	/// </summary>
 	ItemIds,

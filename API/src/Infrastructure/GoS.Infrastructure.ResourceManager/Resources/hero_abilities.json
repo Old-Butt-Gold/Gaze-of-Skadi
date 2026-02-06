@@ -48,7 +48,6 @@
         "name": "antimage_magebanes_mirror",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Magebane's Mirror",
         "description": "Spells countered by Counterspell will immediately burn a percentage of its mana cost from the enemy and deal damage based on the burned mana cost."
       },
@@ -57,7 +56,6 @@
         "name": "antimage_mana_thirst",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Mana Thirst",
         "description": "Anti-Mage gains damage when his enemies are at low mana."
       }
@@ -113,7 +111,6 @@
         "name": "axe_one_man_army",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "One Man Army",
         "description": "Axe gains Strength based on his armor as long as he's away from his allies.",
         "abilities": [
@@ -125,7 +122,6 @@
         "name": "axe_call_out",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Call Out",
         "description": "Berserker's Call gives attacking enemies more attack speed and Axe more armor for the duration."
       }
@@ -182,7 +178,6 @@
         "name": "bane_dream_stalker",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Dream Stalker",
         "description": "Bane has increased attack speed when attacking Nightmared units."
       },
@@ -191,7 +186,6 @@
         "name": "bane_sleepwalk",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Sleepwalk",
         "description": "Nightmared units walk in Bane's chosen direction."
       }
@@ -246,7 +240,6 @@
         "name": "bloodseeker_arterial_spray",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Arterial Spray",
         "description": "Ruptured units are pushed when attacked by Bloodseeker."
       },
@@ -256,7 +249,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Bloodrush",
         "description": "Bloodseeker can supercharge the movement speed from Thirst temporarily."
       },
@@ -265,7 +257,6 @@
         "name": "bloodseeker_old_blood",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Old Blood",
         "description": "Bloodrage silences the target and can be applied to enemies. Bloodrage increases base attack damage instead of spell damage."
       }
@@ -322,7 +313,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Frozen Expanse",
         "description": "Freezing Field also passively increases Crystal Maiden's cast range and area of effect."
       },
@@ -332,7 +322,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Cold Comfort",
         "description": "Crystal Maiden restores her allies' Mana when casting spells. Increases innate Mana Regen Amplification."
       },
@@ -341,7 +330,6 @@
         "name": "crystal_maiden_glacial_guard",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Glacial Guard",
         "description": "Crystal Nova has increased radius and grants allied heroes a physical damage barrier. Barrier is increased for Crystal Maiden."
       },
@@ -350,7 +338,6 @@
         "name": "crystal_maiden_arcane_overflow",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Arcane Overflow",
         "description": "Activating Arcane Aura temporarily increases Crystal Maiden's spell amplification and mana costs. During the duration, Crystal Maiden restores her and her allies' Mana when casting spells."
       }
@@ -405,7 +392,6 @@
         "name": "drow_ranger_high_ground",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Vantage Point",
         "description": "Drow deals 30% more damage when attacking from high ground.",
         "abilities": [
@@ -417,7 +403,6 @@
         "name": "drow_ranger_sidestep",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/multi_arrow.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Sidestep",
         "description": "Drow can move slowly and use items while casting Multishot."
       }
@@ -473,7 +458,6 @@
         "name": "earthshaker_tectonic_buildup",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Tectonic Buildup",
         "description": "Aftershock radius is increased by 30 for every level of Echo Slam."
       },
@@ -483,7 +467,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Slugger Facet",
         "description": "Enemies killed with Enchant Totem or Earthshaker's other abilities are sent flying, dealing damage to enemies they hit.",
         "abilities": [
@@ -495,7 +478,6 @@
         "name": "earthshaker_reverberating_ridge",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
-        "gradient_id": 2,
         "title": "Resonating Ridge",
         "description": "Enemy heroes stunned by Fissure emit an echo to each nearby unit."
       }
@@ -550,7 +532,6 @@
         "name": "juggernaut_bladestorm",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Bladestorm",
         "description": "Blade Fury can now critically strike based on the level of Blade Dance."
       },
@@ -559,7 +540,6 @@
         "name": "juggernaut_agigain",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Bladeform",
         "description": "Juggernaut gains Agility and Movement Speed as long as he's not taking damage.",
         "abilities": [
@@ -618,7 +598,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/moon.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Moonlight Shadow Facet",
         "description": "Mirana's Ultimate grants allies invisibility and movement speed.",
         "abilities": [
@@ -631,7 +610,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/sun.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Solar Flare",
         "description": "Mirana's Ultimate grants allies increasing attack speed and damage over time.",
         "abilities": [
@@ -643,7 +621,6 @@
         "name": "mirana_starstruck",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Starstruck",
         "description": "Starstorm's second meteor deals more damage and blinds the target."
       },
@@ -652,7 +629,6 @@
         "name": "mirana_leaps_and_bounds",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Leaps and Bounds",
         "description": "Upon landing, Leap roots targets in a 250 radius for 1.5 =1.75 =2.0 =2.25s."
       }
@@ -708,7 +684,6 @@
         "name": "nevermore_lasting_presence",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Lasting Presence",
         "description": "Presence of the Dark Lord temporarily reduces more armor after nearby enemy heroes are killed. Every hero kill increases Necromastery's max souls by 1 until Shadow Fiend dies."
       },
@@ -717,7 +692,6 @@
         "name": "nevermore_shadowmire",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Shadowmire",
         "description": "Shadowraze slows enemies."
       }
@@ -775,7 +749,6 @@
         "name": "morphling_agi",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Ebb",
         "description": "Morphling's Primary Attribute is now Agility. Waveform attacks enemies in his path.",
         "abilities": [
@@ -787,7 +760,6 @@
         "name": "morphling_str",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Flow",
         "description": "Morphling's Primary Attribute is now Strength. Morphling gains 1% Spell Amp per 4 Agility.",
         "abilities": [
@@ -846,7 +818,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Convergence",
         "description": "Doppelganger spawns additional illusions, with the amount depending on Phantom Lancer's current health."
       },
@@ -856,7 +827,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Divergence",
         "description": "Juxtapose Illusions spawn on random nearby units and deal more damage but can't be controlled."
       },
@@ -866,7 +836,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_lance.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Lancelot",
         "description": "Spirit Lances from Phantom Lancer's illusions deal 25% Lance Damage."
       },
@@ -875,7 +844,6 @@
         "name": "phantom_lancer_lancer",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_lance.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Fractured",
         "description": "This facet doesn't do anything. Azwraith is out spear fishing..."
       }
@@ -931,7 +899,6 @@
         "icon": "movement",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Jostling Rift",
         "description": "Waning Rift can push or pull targets."
       },
@@ -941,7 +908,6 @@
         "icon": "curve_ball",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/curve_ball.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Curveball",
         "description": "Puck's Illusory Orb can be curved in any direction, moves faster, deals more damage and lasts longer."
       }
@@ -996,7 +962,6 @@
         "name": "pudge_fresh_meat",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/meat.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Fresh Meat",
         "description": "Dismember increases Strength when dealing damage to heroes."
       },
@@ -1006,7 +971,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/pudge_hook.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Flayer's Hook",
         "description": "Meat Hook deals bonus damage based on the distance pulled, but base damage is reduced."
       },
@@ -1015,7 +979,6 @@
         "name": "pudge_rotten_core",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Green",
-        "gradient_id": 3,
         "title": "Rotten Core",
         "description": "While Rot is activated, Pudge gains bonus attack damage every second."
       }
@@ -1070,7 +1033,6 @@
         "name": "razor_thunderhead",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Thunderhead",
         "description": "Storm Surge lightning strikes more often and hits all units within Eye of the Storm's area of effect when it is active."
       },
@@ -1079,7 +1041,6 @@
         "name": "razor_spellamp",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Dynamo",
         "description": "Razor gains 1.25% spell amplification for every 20 points of attack damage.",
         "abilities": [
@@ -1138,7 +1099,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Sandshroud",
         "description": "Sand Storm has increased radius and grants Sand King Invisibility while in it."
       },
@@ -1148,7 +1108,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Dust Devil",
         "description": "Sand Storm follows Sand King when he moves."
       },
@@ -1157,7 +1116,6 @@
         "name": "sand_king_obscurity",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "Sandblast",
         "description": "When Sand King attacks enemies in Sand Storm, he applies a blinding debuff to his target."
       },
@@ -1166,7 +1124,6 @@
         "name": "sand_king_pinpoint",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Final Sting",
         "description": "A Caustic Finale explosion is created around every enemy hero hit in Stinger's innermost radius."
       }
@@ -1222,7 +1179,6 @@
         "name": "storm_spirit_shock_collar",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Shock Collar",
         "description": "Electric Vortex applies a debuff that triggers an Overload Charge if they attack."
       },
@@ -1231,7 +1187,6 @@
         "name": "storm_spirit_static_slide",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Static Slide",
         "description": "Static Remnants spawn at Storm Spirit and move to the target position."
       }
@@ -1287,7 +1242,6 @@
         "name": "sven_heavy_plate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Heavy Plate",
         "description": "Warcry provides a physical damage barrier."
       },
@@ -1296,7 +1250,6 @@
         "name": "sven_strscaling",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Wrath of God",
         "description": "Sven gains additional attack damage from Strength.",
         "abilities": [
@@ -1355,7 +1308,6 @@
         "name": "tiny_crash_landing",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
-        "gradient_id": 2,
         "title": "Crash Landing",
         "description": "Tossed units slow and deal bonus damage to other targets at the Toss destination."
       },
@@ -1364,7 +1316,6 @@
         "name": "tiny_insurmountable",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
-        "gradient_id": 4,
         "title": "Insurmountable",
         "description": "Tiny gains Status and Slow Resistance from Strength. Slow Resistance also reduces the impact of Attack Speed slows.",
         "abilities": [
@@ -1422,7 +1373,6 @@
         "name": "vengefulspirit_avenging_missile",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Avenging Missile",
         "description": "Magic Missile deals 0.75 bonus damage for every creep the enemy has killed."
       },
@@ -1431,7 +1381,6 @@
         "name": "vvengefulspirit_melee",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Soul Strike",
         "description": "Vengeful Spirit's ranged attacks behave as if they were melee attacks.",
         "abilities": [
@@ -1491,7 +1440,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "",
         "description": ""
       },
@@ -1501,7 +1449,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/focus_fire.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Focus Fire Facet",
         "description": "Focus Fire rapidly attacks a single target."
       },
@@ -1511,7 +1458,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/multi_arrow.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Whirlwind",
         "description": "Focus Fire randomly attacks enemies within range."
       },
@@ -1520,7 +1466,6 @@
         "name": "windrunner_tangled",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Tangled",
         "description": "Shackleshot affects more enemies and grants damage per unit shackled."
       },
@@ -1529,7 +1474,6 @@
         "name": "windrunner_killshot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/execute.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Killshot",
         "description": "Powershot executes low health enemy heroes."
       }
@@ -1585,7 +1529,6 @@
         "name": "zuus_livewire",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Livewire",
         "description": "Static Field deals more damage to nearby enemies."
       },
@@ -1594,7 +1537,6 @@
         "name": "zuus_divine_rampage",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Divine Rampage",
         "description": "When Thundergod's Wrath kills an enemy, it deals more damage to the other enemies."
       }
@@ -1650,7 +1592,6 @@
         "name": "kunkka_high_tide",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "High Tide",
         "description": "Tidebringer cooldown is reduced per enemy hero it hits."
       },
@@ -1659,7 +1600,6 @@
         "name": "kunkka_grog",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Grog Blossom",
         "description": "When X Marks the Spot returns its target, Kunkka and all nearby allies gain Ghostship's Admiral's Rum buff."
       }
@@ -1714,7 +1654,6 @@
         "name": "lina_supercharge",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Thermal Runaway",
         "description": "Casting Laguna Blade temporarily supercharges Lina, granting her stacks of Fiery Soul."
       },
@@ -1723,7 +1662,6 @@
         "name": "lina_dot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Slow Burn",
         "description": "Lina's spells deal extra damage over time.",
         "abilities": [
@@ -1782,7 +1720,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Frostbound",
         "description": "Chain Frost lingers on its last target if it fails to bounce and can bounce again if new targets become available."
       },
@@ -1791,7 +1728,6 @@
         "name": "lich_growing_cold",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Growing Cold",
         "description": "When an enemy is killed by Chain Frost or while under the effect of Frost Shield, the duration of these abilities is extended."
       },
@@ -1800,7 +1736,6 @@
         "name": "lich_cryophobia",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Evil Eye",
         "description": "Sinister Gaze applies a lingering effect to the target, causing it to take extra magic damage from Lich and amplify incoming movement slows."
       }
@@ -1855,7 +1790,6 @@
         "name": "lion_essence_eater",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Essence Eater",
         "description": "Mana Drain deals damage equal to 100% of mana stolen."
       },
@@ -1864,7 +1798,6 @@
         "name": "lion_fist_of_death",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Fist of Death",
         "description": "Lion gains a strong Melee cleaving attack after casting Finger of Death."
       }
@@ -1920,7 +1853,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chicken.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Cluster Cluck",
         "description": "Hex can turn allies into a flock of chickens, removing other negative effects."
       },
@@ -1929,7 +1861,6 @@
         "name": "shadow_shaman_voodoo_hands",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chicken.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Chicken Fingers",
         "description": "Shadow Shaman's attacks can transform enemies into a chicken.",
         "abilities": [
@@ -1941,7 +1872,6 @@
         "name": "shadow_shaman_massive_serpent_ward",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snake.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Massive Serpent Ward",
         "description": "Summons a single massive Serpent Ward with 12x damage and 9x health and bounty values."
       }
@@ -1996,7 +1926,6 @@
         "name": "slardar_leg_day",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Leg Day",
         "description": "Slardar has slow resistance and even more movement speed at the beginning of Guardian Sprint."
       },
@@ -2005,7 +1934,6 @@
         "name": "slardar_brineguard",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Brineguard",
         "description": "Corrosive Haze increases Slardar's armor by 50% of the total armor reduced."
       }
@@ -2061,7 +1989,6 @@
         "name": "tidehunter_kraken_swell",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Kraken Swell",
         "description": "Kraken Shell gains permanent Damage Block when an enemy hero dies under the effects of Anchor Smash."
       },
@@ -2070,7 +1997,6 @@
         "name": "tidehunter_sizescale",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/overshadow.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Krill Eater",
         "description": "Tidehunter grows larger and gains extra bonuses per level.",
         "abilities": [
@@ -2129,7 +2055,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Headhunter",
         "description": "Paralyzing Cask deals more damage each bounce."
       },
@@ -2139,7 +2064,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Voodoo Festeration",
         "description": "Voodoo Restoration deals damage to enemies and only heals Witch Doctor."
       },
@@ -2148,7 +2072,6 @@
         "name": "witch_doctor_cleft_death",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/death_ward.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Cleft Death",
         "description": "Death Ward attacks multiple targets with reduced damage."
       },
@@ -2157,7 +2080,6 @@
         "name": "witch_doctor_malpractice",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Malpractice",
         "description": "Enemies dying while Maledicted explode."
       }
@@ -2213,7 +2135,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Contract Killer",
         "description": "Riki receives bonus experience for assists and kills."
       },
@@ -2223,7 +2144,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Exterminator",
         "description": "Tricks of the Trade has 4.5x Agility Bonus when attacking non-hero units. When Riki kills a non-hero unit during Tricks of the Trade, the cooldown is reduced by 0.75s."
       },
@@ -2232,7 +2152,6 @@
         "name": "riki_riki",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/execute.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Cutthroat",
         "description": "This facet doesn't do anything. Riki is still looking to avenge the House of Tahlin..."
       }
@@ -2287,7 +2206,6 @@
         "name": "enigma_gravity",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Event Horizon",
         "description": "Units in a 600 radius moving away from Enigma have a 8% movespeed penalty.",
         "abilities": [
@@ -2299,7 +2217,6 @@
         "name": "enigma_fragment",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Splitting Image",
         "description": "Enigma spawns Eidolons upon receiving damage.",
         "abilities": [
@@ -2358,7 +2275,6 @@
         "name": "tinker_repair_bots",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Repair Bots",
         "description": "March of the Machines applies a non-stacking heal over time when passing through allied heroes."
       },
@@ -2367,7 +2283,6 @@
         "name": "tinker_translocator",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Translocator",
         "description": "When a Self-Defense Matrix barrier on Tinker is fully absorbed, he blinks in a random forward direction.\n\nDISPEL TYPE: Basic Dispel"
       }
@@ -2422,7 +2337,6 @@
         "name": "sniper_ghillie_suit",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vision.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Ghillie Suit",
         "description": "While Take Aim is active, Sniper's attacks do not reveal him from fog of war."
       },
@@ -2431,7 +2345,6 @@
         "name": "sniper_scattershot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Scattershot",
         "description": "Shrapnel slow and damage are increased, but duration is decreased."
       }
@@ -2486,7 +2399,6 @@
         "name": "necrolyte_profane_potency",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Profane Potency",
         "description": "Sadist also grants Necrophos' AoE abilities and items bonus Radius per kill."
       },
@@ -2495,7 +2407,6 @@
         "name": "necrolyte_rapid_decay",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Green",
-        "gradient_id": 3,
         "title": "Rapid Decay",
         "description": "Ghost Shroud steals speed from his enemies and decreases their restorative powers."
       }
@@ -2550,7 +2461,6 @@
         "name": "warlock_golem",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Champion of Gorroth",
         "description": "Chaotic Offering Golems deal more burn damage based on Warlock's health and mana regeneration."
       },
@@ -2559,7 +2469,6 @@
         "name": "warlock_grimoire",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Black Grimoire",
         "description": "Grants Warlock the item Black Grimoire, which can be consumed to gain experience for each kill Warlock participated in. Starts with 1 charge.",
         "abilities": [
@@ -2618,7 +2527,6 @@
         "name": "beastmaster_wild_hunt",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Wild Hunt",
         "description": "Beastmaster attacks faster when his units are nearby."
       },
@@ -2627,7 +2535,6 @@
         "name": "beastmaster_beast_mode",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Beast Mode",
         "description": "Beastmaster can get a self attack speed and damage amplification boost."
       }
@@ -2683,7 +2590,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Succubus Facet",
         "description": "All sources of Spell Lifesteal also apply to Pure Damage. Queen of Pain gains Spell Lifesteal that increases with proximity to her enemies. Lifesteal is at its maximum when the enemy is 150 units or closer to her and at its minimum when the enemy is 800 units or further from her.",
         "abilities": [
@@ -2695,7 +2601,6 @@
         "name": "queenofpain_selfdmg",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Masochist",
         "description": "Queen of Pain has bonus Spell Amplification but a percentage of her spell damage is reflected back to her.",
         "abilities": [
@@ -2707,7 +2612,6 @@
         "name": "queenofpain_facet_bondage",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Bondage",
         "description": "Queen of Pain returns spell damage back to enemies. Succubus's Spell Lifesteal also applies to Pure & Magical reflected damage.",
         "abilities": [
@@ -2765,7 +2669,6 @@
         "name": "venomancer_patient_zero",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snot.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Patient Zero",
         "description": "Noxious Plague spreads again."
       },
@@ -2774,7 +2677,6 @@
         "name": "venomancer_plague_carrier",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Plague Carrier",
         "description": "When Venomous Gale impacts enemy heroes, 2 Plague Wards are created around them. Plague Wards also deal Septic Shock damage based on their attack damage."
       }
@@ -2830,7 +2732,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "",
         "description": ""
       },
@@ -2839,7 +2740,6 @@
         "name": "faceless_void_chronosphere",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Chronosphere",
         "description": "Faceless Void can cast Chronosphere, trapping enemies in a sphere.",
         "abilities": [
@@ -2851,7 +2751,6 @@
         "name": "faceless_void_time_zone",
         "icon": "chrono_cube",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Time Zone",
         "description": "Faceless Void can cast Time Zone, dramatically slowing down enemies and speeding up allies in an area.",
         "abilities": [
@@ -2909,7 +2808,6 @@
         "name": "skeleton_king_facet_bone_guard",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Bone Guard",
         "description": "Wraith King can summon skeletons to fight for him.",
         "abilities": [
@@ -2921,7 +2819,6 @@
         "name": "skeleton_king_facet_cursed_blade",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Spectral Blade",
         "description": "Wraith King's attacks curse enemies, dealing additional damage after a delay.",
         "abilities": [
@@ -2980,7 +2877,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Suppress",
         "description": "Silenced enemies are also slowed."
       },
@@ -2989,7 +2885,6 @@
         "name": "death_prophet_ghosts",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Spirit Collector",
         "description": "Hero deaths empower your next Exorcism.",
         "abilities": [
@@ -3001,7 +2896,6 @@
         "name": "death_prophet_delayed_damage",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Mourning Ritual",
         "description": "Death Prophet delays a percentage of incoming damage, taking the damage in even intervals over a short duration.",
         "abilities": [
@@ -3060,7 +2954,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Veiled One",
         "description": "Blur is no longer dispelled when attacking and reduces mana costs during and after Blur."
       },
@@ -3069,7 +2962,6 @@
         "name": "phantom_assassin_methodical",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/skull.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Methodical",
         "description": "Coup de Grace procs every [object Object] attacks on the same hero or [object Object] attacks on non hero units."
       },
@@ -3078,7 +2970,6 @@
         "name": "phantom_assassin_sweet_release",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_ass_dagger.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Sweet Release",
         "description": "Stifling Dagger re-casts when an enemy dies."
       }
@@ -3133,7 +3024,6 @@
         "name": "pugna_siphoning_ward",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Siphoning Ward",
         "description": "Nether Ward restores mana and health to Pugna based on how much damage is dealt."
       },
@@ -3142,7 +3032,6 @@
         "name": "pugna_rewards_of_ruin",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/siege.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Rewards of Ruin",
         "description": "Pugna receives 1.5% spell amplification per destroyed tower."
       }
@@ -3198,7 +3087,6 @@
         "name": "templar_assassin_voidblades",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Voidblades",
         "description": "Meld bonus damage and armor reductions are applied to all enemies in the Psi Blades split range."
       },
@@ -3207,7 +3095,6 @@
         "name": "templar_assassin_refractor",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Refractor",
         "description": "Refraction gains a damage charge every time a shield charge gets consumed."
       },
@@ -3216,7 +3103,6 @@
         "name": "templar_assassin_hidden_reach",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Hidden Reach",
         "description": "When in Meld, Templar increases her attack range by up to an additional 400 range over 1s."
       }
@@ -3271,7 +3157,6 @@
         "name": "viper_poison_burst",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Poison Burst",
         "description": "After Poison Attack stacks expire, enemies around the target take additional damage."
       },
@@ -3280,7 +3165,6 @@
         "name": "viper_caustic_bath",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Caustic Bath",
         "description": "Viper's Corrosive Skin effects are increased while he is in Nethertoxin."
       }
@@ -3337,7 +3221,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "",
         "description": ""
       },
@@ -3346,7 +3229,6 @@
         "name": "luna_moonshield",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Moonshield",
         "description": "Lunar Orbit provide damage reduction while active."
       },
@@ -3355,7 +3237,6 @@
         "name": "luna_moonstorm",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Moonstorm",
         "description": "Hitting enemies with Lucent Beams or Eclipse grants Luna bonus attack damage."
       }
@@ -3411,7 +3292,6 @@
         "name": "dragon_knight_fire_dragon",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_fire.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Fire Dragon",
         "description": "Dragon Knight deals additional Magic Damage with his attacks. Dragon Knight's abilities have increased Area of Effect that get stronger when in Elder Dragon Form."
       },
@@ -3420,7 +3300,6 @@
         "name": "dragon_knight_corrosive_dragon",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_poison.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Corrosive Dragon",
         "description": "Dragon Knight has Corrosive Powers on his attacks that get stronger when in Elder Dragon Form. All of his abilities deal Physical damage."
       },
@@ -3429,7 +3308,6 @@
         "name": "dragon_knight_frost_dragon",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dragon_frost.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Frost Dragon",
         "description": "Dragon Knight has Slow and Health Restoration Reduction Effects on his attacks that get stronger when in Elder Dragon Form."
       }
@@ -3485,7 +3363,6 @@
         "name": "dazzle_facet_nothl_boon",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Nothl Boon",
         "description": "Dazzle's overhealing is converted into a barrier. Weave is stronger on allies and amplifies incoming heals from Dazzle.",
         "abilities": [
@@ -3497,7 +3374,6 @@
         "name": "dazzle_poison_bloom",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Poison Bloom",
         "description": "Dazzle can spread his Poison Touch when attacking enemies. Weave is stronger on enemies."
       }
@@ -3554,7 +3430,6 @@
         "name": "rattletrap_hookup",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 2,
         "title": "Hookup",
         "description": "If there's another allied hero within 350 of Hookshot's hit target, Clockwerk and all allies in the area receive bonus armor, while refunding a portion of Hookshot's cooldown and manacost."
       },
@@ -3563,7 +3438,6 @@
         "name": "rattletrap_expanded_armature",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Expanded Armature",
         "description": "Power Cogs form in a larger radius."
       },
@@ -3572,7 +3446,6 @@
         "name": "rattletrap_junk_mail",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Chainmeal",
         "description": "Clockwerk can consume Chainmails to permanently gain +4 armor."
       }
@@ -3627,7 +3500,6 @@
         "name": "leshrac_attacks_mana",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Chronoptic Nourishment",
         "description": "Leshrac's attacks restore mana.",
         "abilities": [
@@ -3639,7 +3511,6 @@
         "name": "leshrac_misanthropy",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Misanthropy",
         "description": "Diabolic Edict explosion rate increased but it no longer damages buildings."
       }
@@ -3694,7 +3565,6 @@
         "name": "furion_soothing_saplings",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Soothing Saplings",
         "description": "After Sprout is cast, all trees in a 900 radius heal nearby allies."
       },
@@ -3704,7 +3574,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/siege.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Ironwood Treant",
         "description": "Nature's Call creates only 1 =1 =1 =1 Treant that has more health, more damage, increased vision, increased movement speed, and is Reinforced."
       },
@@ -3713,7 +3582,6 @@
         "name": "furion_natures_profit",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Nature's Profit",
         "description": "Whenever Nature's Prophet kills an enemy hero or one dies nearby, a money tree is created in their place that drops gold bags to be collected.",
         "abilities": [
@@ -3773,7 +3641,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "",
         "description": "",
         "abilities": [
@@ -3786,7 +3653,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/lifestealer_rage.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "Rage",
         "description": "Lifestealer can cast Rage, becoming Debuff Immune and increasing magic resistance.",
         "abilities": [
@@ -3799,7 +3665,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Unfettered",
         "description": "Lifestealer can cast Unfettered to dispel himself and become more resilient. Can cast while stunned.",
         "abilities": [
@@ -3811,7 +3676,6 @@
         "name": "life_stealer_fleshfeast",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/full_heart.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Fleshfeast",
         "description": "Feast's max HP per hero kill is increased. Open Wounds' cooldown is refreshed if a unit dies while afflicted by Open Wounds."
       },
@@ -3820,7 +3684,6 @@
         "name": "life_stealer_gorestorm",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Gorestorm",
         "description": "Consuming a creep with Infest drenches enemies in blood which deals damage over time based on the host's remaining health. Infest can be used on Ancient creeps."
       }
@@ -3875,7 +3738,6 @@
         "name": "dark_seer_atkspd",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Quick Wit",
         "description": "Dark Seer also gains Attack Speed from Intelligence.",
         "abilities": [
@@ -3887,7 +3749,6 @@
         "name": "dark_seer_movespd",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Heart of Battle",
         "description": "Dark Seer moves faster when near other heroes.",
         "abilities": [
@@ -3947,7 +3808,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Suppressive Fire",
         "description": "Strafe attacks cause enemies to miss more often."
       },
@@ -3957,7 +3817,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Engulfing Step",
         "description": "Death Pact teleports Clinkz towards his victim. Reduces Death Pact cooldown."
       },
@@ -3966,7 +3825,6 @@
         "name": "clinkz_clinkz",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Trial By Pyre",
         "description": "This facet doesn't do anything. Clinkz is still burning with revenge..."
       }
@@ -4021,7 +3879,6 @@
         "name": "omniknight_omnipresent",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Omnipresent",
         "description": "Omniknight deals more damage to heroes inside his Degen Aura."
       },
@@ -4030,7 +3887,6 @@
         "name": "omniknight_dmgheals",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Healing Hammer",
         "description": "Ability damage done to enemies by Omniknight heals him over time.",
         "abilities": [
@@ -4089,7 +3945,6 @@
         "name": "enchantress_overprotective_wisps",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Overprotective Wisps",
         "description": "Summon Healing Wisps upon receiving damage."
       },
@@ -4098,7 +3953,6 @@
         "name": "enchantress_spellbound",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Spellbound",
         "description": "Enchant and attacks on Enchanted targets have extra range."
       }
@@ -4154,7 +4008,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Bloodbath",
         "description": "Life Break also slows enemies in a radius around the target."
       },
@@ -4164,7 +4017,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Nothl Transfusion",
         "description": "Life Break also heals friendly units in a radius around the target."
       },
@@ -4173,7 +4025,6 @@
         "name": "huskar_cauterize",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Cauterize",
         "description": "Berserker's Blood can be activated for a health cost. Dispels Huskar, then after a delay, heals for the amount of health consumed plus an additional bonus per debuff dispelled."
       },
@@ -4182,7 +4033,6 @@
         "name": "huskar_nothl_conflagration",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Incendiary",
         "description": "Burning Spears also burns enemies for a percentage of their max health. Costs Max Health instead of Current Health."
       }
@@ -4239,7 +4089,6 @@
         "deprecated": "True",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Blinding Void",
         "description": "Enemies affected by Void do not share vision with their allies. Affected enemies take damage per second when they are not visible to their allies."
       },
@@ -4248,7 +4097,6 @@
         "name": "night_stalker_dayswap",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/moon.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Night Reign",
         "description": "The game now starts at night instead of day. Night is longer than day. Night Stalker starts with a bonus level of Hunter in the Night.",
         "abilities": [
@@ -4260,7 +4108,6 @@
         "name": "night_stalker_voidbringer",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Voidbringer",
         "description": "Increases the max level of Void. Level 5 Void at night becomes ground targeted and applies to an area."
       }
@@ -4315,7 +4162,6 @@
         "name": "broodmother_necrotic_webs",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/web.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Necrotic Webs",
         "description": "Reduces health restoration of enemies on webs."
       },
@@ -4324,7 +4170,6 @@
         "name": "broodmother_feeding_frenzy",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Feeding Frenzy",
         "description": "Insatiable Hunger also applies to nearby Spiderlings."
       }
@@ -4379,7 +4224,6 @@
         "name": "bounty_hunter_shuriken",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Through and Through",
         "description": "Shuriken Toss applies its damage and slow to all enemies it passes through."
       },
@@ -4388,7 +4232,6 @@
         "name": "bounty_hunter_mugging",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Cutpurse",
         "description": "Bounty Hunter steals gold when targeting enemy heroes with his abilities or items.",
         "abilities": [
@@ -4447,7 +4290,6 @@
         "name": "weaver_skitterstep",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Skitterstep",
         "description": "Shukuchi movespeed increased and slows enemies when passing through them."
       },
@@ -4456,7 +4298,6 @@
         "name": "weaver_hivemind",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/xp.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Hivemind",
         "description": "Weaver gains experience when The Swarm beetles attack heroes."
       }
@@ -4512,7 +4353,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Liquid Fire Facet",
         "description": "Jakiro can imbue his attacks with Attack Speed Slow and Damage over Time in an AoE.",
         "abilities": [
@@ -4525,7 +4365,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Liquid Frost Facet",
         "description": "Jakiro can imbue his attacks with Movement Speed Slow and a debuff that amplifies damage from his other spells.",
         "abilities": [
@@ -4537,7 +4376,6 @@
         "name": "jakiro_twin_terror",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Twin Terror",
         "description": "Jakiro deals more damage with his double attacks."
       },
@@ -4546,7 +4384,6 @@
         "name": "jakiro_ice_breaker",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snowflake.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Ice Breaker",
         "description": "Ice Path lasts longer and detonates upon expiration, dealing damage and stunning enemies a second time. Ice Path can be manually detonated early.",
         "abilities": [
@@ -4604,7 +4441,6 @@
         "name": "batrider_buff_on_displacement",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Stoked",
         "description": "Firefly also lights Batrider on fire. He gains increasingly more Move Speed and Spell Amplification and burns away a portion of his max health each second."
       },
@@ -4613,7 +4449,6 @@
         "name": "batrider_arsonist",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Arsonist",
         "description": "Increases the max level of Sticky Napalm. Level 5 Sticky Napalm causes every attack to apply 1 stack of Sticky Napalm."
       }
@@ -4668,7 +4503,6 @@
         "name": "chen_centaur_convert",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "Centaur Convert",
         "description": "Summon Convert calls forth either a Centaur Courser or Centaur Conqueror."
       },
@@ -4678,7 +4512,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Wolf Convert",
         "description": "Summon Convert calls forth either a Giant Wolf or Alpha Wolf."
       },
@@ -4687,7 +4520,6 @@
         "name": "chen_hellbear_convert",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Hellbear Convert",
         "description": "Summon Convert calls forth either a Hellbear or Hellbear Smasher."
       },
@@ -4696,7 +4528,6 @@
         "name": "chen_troll_convert",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Troll Convert",
         "description": "Summon Convert calls forth either a Hill Troll or Dark Troll Summoner."
       },
@@ -4705,7 +4536,6 @@
         "name": "chen_satyr_convert",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Satyr Convert",
         "description": "Summon Convert calls forth either a Satyr Mindstealer or Satyr Tormenter."
       },
@@ -4714,7 +4544,6 @@
         "name": "chen_frog_convert",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/bubbles.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Marshmage Convert",
         "description": "Summon Convert calls forth either a Marshmage Apprentice or a Marshmage."
       }
@@ -4770,7 +4599,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spectre.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Forsaken",
         "description": "Spectre deals 2x damage with Desolate. Spectre's illusions no longer have Desolate."
       },
@@ -4780,7 +4608,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Twist the Knife",
         "description": "Reality also casts Spectral Dagger on the Haunt illusion's target."
       },
@@ -4789,7 +4616,6 @@
         "name": "spectre_spectre",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Ephemeral",
         "description": "This facet doesn't do anything. Spectre is still transcending between Planes..."
       }
@@ -4845,7 +4671,6 @@
         "name": "doom_bringer_gluttony",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/meat.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Gluttony",
         "description": "Devour now has 2 charges and stolen creep abilities are upgraded by one level."
       },
@@ -4855,7 +4680,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Devil's Bargain",
         "description": "Doom can sell items for 85% of their value, but his buyback costs are increased by 20%.",
         "abilities": [
@@ -4867,7 +4691,6 @@
         "name": "doom_bringer_impending_doom",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Impending Doom",
         "description": "Every 6.66 minutes, Doom's duration is increased by 0.66s."
       }
@@ -4923,7 +4746,6 @@
         "name": "ancient_apparition_bone_chill",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Bone Chill",
         "description": "Ancient Apparition's abilities reduce the enemy's Strength."
       },
@@ -4932,7 +4754,6 @@
         "name": "ancient_apparition_exposure",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Exposure",
         "description": "Cold Feet applies in an AoE, depending on the current level of Ice Blast."
       }
@@ -4987,7 +4808,6 @@
         "name": "ursa_grudge_bearer",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Grudge Bearer",
         "description": "When damaged during Enrage, Ursa gains bonus attack damage."
       },
@@ -4996,7 +4816,6 @@
         "name": "ursa_debuff_reduce",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Bear Down",
         "description": "Debuffs inflicted by Ursa last longer.",
         "abilities": [
@@ -5054,7 +4873,6 @@
         "name": "spirit_breaker_bull_rush",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Bull Rush",
         "description": "Charge of Darkness bonus movement speed lingers after charge ends."
       },
@@ -5064,7 +4882,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Imbalanced",
         "description": "Enemy targets hit by Nether Strike will be moved further by allied forced movement effects."
       },
@@ -5073,7 +4890,6 @@
         "name": "spirit_breaker_bulls_hit",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Bull's Hit",
         "description": "Greater Bash chance is increased if you've bashed more than one hero recently."
       }
@@ -5130,7 +4946,6 @@
         "name": "gyrocopter_secondary_strikes",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Secondary Strikes",
         "description": "Call Down creates delayed secondary explosions around heroes it hits."
       },
@@ -5139,7 +4954,6 @@
         "name": "gyrocopter_afterburner",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Afterburner",
         "description": "Every successful hit of a Rocket Barrage rocket on an enemy hero increases Gyrocopter's movement speed."
       }
@@ -5195,7 +5009,6 @@
         "name": "alchemist_seed_money",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Seed Money",
         "description": "Alchemist starts with 250 more gold."
       },
@@ -5204,7 +5017,6 @@
         "name": "alchemist_mixologist",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Mixologist",
         "description": "Unstable Concoction and Berserk Potion recharge faster when in Chemical Rage."
       },
@@ -5213,7 +5025,6 @@
         "name": "alchemist_dividends",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/aghs.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Dividends",
         "description": "Alchemist gains +70 GPM for each Aghanim's Scepter he has granted to allies."
       }
@@ -5278,7 +5089,6 @@
         "name": "invoker_quas_focus",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_quas.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Scholar of Koryx",
         "description": "Quas gains an additional max level. When Invoker reaches level 6, Quas gains an additional level.\n\nAghanim's Scepter upgrades Ice Wall.\n\nAghanim's Shard upgrades Ghost Walk."
       },
@@ -5287,7 +5097,6 @@
         "name": "invoker_wex_focus",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_wex.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Mind of Tornarus",
         "description": "Wex gains an additional max level. When Invoker reaches level 6, Wex gains an additional level.\n\nAghanim's Scepter upgrades Tornado.\n\nAghanim's Shard upgrades E.M.P."
       },
@@ -5296,7 +5105,6 @@
         "name": "invoker_exort_focus",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/invoker_exort.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Agent of Gallaron",
         "description": "Exort gains an additional max level. When Invoker reaches level 6, Exort gains an additional level.\n\nAghanim's Scepter upgrades Sun Strike.\n\nAghanim's Shard upgrades Sun Strike."
       }
@@ -5352,7 +5160,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/silencer.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Irrepressible",
         "description": "Silencer cannot be silenced.",
         "abilities": [
@@ -5365,7 +5172,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Reverberating Silence",
         "description": "The first time Global Silence ends on a unit it is applied again."
       },
@@ -5374,7 +5180,6 @@
         "name": "silencer_spread_the_knowledge",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Synaptic Split",
         "description": "Increases the max level of Glaives of Wisdom. Level 5 Glaives of Wisdom bounce 1 time to a random target within 450 range."
       },
@@ -5383,7 +5188,6 @@
         "name": "silencer_oppressive_silence",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Suffer In Silence",
         "description": "Silencer takes less damage from and deals more damage to silenced targets.",
         "abilities": [
@@ -5441,7 +5245,6 @@
         "name": "obsidian_destroyer_obsidian_decimator",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Obsidian Decimator",
         "description": "When Essence Flux restores mana, it also temporarily increases maximum mana."
       },
@@ -5450,7 +5253,6 @@
         "name": "obsidian_destroyer_overwhelming_devourer",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Overwhelming Devourer",
         "description": "Heroes affected by Astral Imprisonment and Sanity's Eclipse heal Outworld Destroyer every time they cast a spell."
       }
@@ -5505,7 +5307,6 @@
         "name": "lycan_pack_leader",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Pack Leader",
         "description": "Enemy heroes killed by Lycan or his units extend Shapeshift duration."
       },
@@ -5514,7 +5315,6 @@
         "name": "lycan_spirit_wolves",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Spirit Wolves",
         "description": "Summon Wolves creates invulnerable non-attacking wolves that buff Lycan's health and attack damage."
       },
@@ -5523,7 +5323,6 @@
         "name": "lycan_alpha_wolves",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/wolf.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Alpha Wolves",
         "description": "Increases the max level of Summon Wolves while lowering the max level of Howl and Feral Impulse."
       }
@@ -5579,7 +5378,6 @@
         "deprecated": "True",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Roll Out the Barrel",
         "description": "Throw a barrel at enemies, damaging them and applying Cinder Brew."
       },
@@ -5589,7 +5387,6 @@
         "deprecated": "True",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Drunken Master",
         "description": "When brewed up, Brewmaster moves with a varying amount of movement speed, altering between {s:bonus_min_movement}% slower and {s:bonus_max_movement}% faster for the duration."
       },
@@ -5598,7 +5395,6 @@
         "name": "brewmaster_brewmaster",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/bubbles.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Hungover",
         "description": "This facet doesn't do anything. Brewmaster is still recovering from a drunken stupor..."
       }
@@ -5654,7 +5450,6 @@
         "name": "shadow_demon_promulgate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Promulgate",
         "description": "Disseminate instantly removes a percentage of the opponent's health for its duration."
       },
@@ -5663,7 +5458,6 @@
         "name": "shadow_demon_facet_soul_mastery",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Shadow Servant",
         "description": "Shadow Demon creates illusions of heroes that die near him.",
         "abilities": [
@@ -5723,7 +5517,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Bear with Me",
         "description": "Spirit Link's Shared Armor is increased and Lone Druid's attacks heal the Spirit Bear."
       },
@@ -5733,7 +5526,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/overshadow.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Unbearable",
         "description": "True Form transforms the Spirit Bear instead of Lone Druid. Increases the distance from Lone Druid at which the Spirit Bear can attack."
       },
@@ -5743,7 +5535,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Bear Necessities",
         "description": "Lone Druid's items are more powerful and his inventory is smaller.",
         "abilities": [
@@ -5755,7 +5546,6 @@
         "name": "lone_druid_lone_druid",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/overshadow.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Forbearance",
         "description": "This facet doesn't do anything. Lone Druid is still attuning to nature..."
       }
@@ -5811,7 +5601,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Phantasmagoria",
         "description": "All Chaos Knight Illusions are Strong Illusions and take less damage when near him.",
         "abilities": [
@@ -5823,7 +5612,6 @@
         "name": "chaos_knight_irrationality",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Irrationality",
         "description": "Reality Rift has equal chances of applying Break, Disarm, or Silence for 50% of the base debuff duration in addition to its normal effects."
       },
@@ -5832,7 +5620,6 @@
         "name": "chaos_knight_facet_fundamental_forging",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Fundamental Forging",
         "description": "Chaos Knight can craft artifacts from the next tier when making a Neutral Item.",
         "abilities": [
@@ -5844,7 +5631,6 @@
         "name": "chaos_knight_cloven_chaos",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Cloven Chaos",
         "description": "Chaos Bolt splits in half upon striking its target, stunning one additional enemy and damaging another."
       }
@@ -5901,7 +5687,6 @@
         "name": "meepo_more_meepo",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "More Meepo",
         "description": "Obtain extra Meepos sooner and get 1 extra Meepo."
       },
@@ -5910,7 +5695,6 @@
         "name": "meepo_codependent",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Codependent",
         "description": "Meepos increase other Meepos' attack speed and armor."
       },
@@ -5920,7 +5704,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Pack Rat",
         "description": "All Meepos can use the item in the neutral item slot. ",
         "abilities": [
@@ -5979,7 +5762,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Primeval Power",
         "description": "Treant gains +{s:attack_damage_per_level} base attack damage per hero level.",
         "abilities": [
@@ -5992,7 +5774,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Sapling",
         "description": "Leech Seed can be ground targeted to plant a tree."
       },
@@ -6001,7 +5782,6 @@
         "name": "treant_treant",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Uprooted",
         "description": "This facet doesn't do anything. Treant Protector is still finding his roots..."
       }
@@ -6057,7 +5837,6 @@
         "name": "ogre_magi_fat_chance",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rng.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Fat Chance",
         "description": "Each point of Ogre Magi's Strength adds 0.06% to Ogre Magi's Multicast chance."
       },
@@ -6066,7 +5845,6 @@
         "name": "ogre_magi_learning_curve",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ogre.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Learning Curve",
         "description": "Level requirement of all spells and talents reduced by 1. You get 0 Ability Points at level one and 3 Ability Points at level two."
       }
@@ -6121,7 +5899,6 @@
         "name": "undying_rotting_mitts",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Green",
-        "gradient_id": 4,
         "title": "Rotting Mitts",
         "description": "While transformed into a Flesh Golem, attacks spawn a zombie."
       },
@@ -6130,7 +5907,6 @@
         "name": "undying_ripped",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Ripped",
         "description": "Casting Soul Rip on allies increases their Strength by a percentage of Undying's Strength."
       }
@@ -6198,7 +5974,6 @@
         "name": "rubick_frugal_filch",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Purple",
-        "gradient_id": 2,
         "title": "Frugal Filch",
         "description": "Stolen spells also have lower mana cost."
       },
@@ -6207,7 +5982,6 @@
         "name": "rubick_arcane_accumulation",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Arcane Accumulation",
         "description": "Casting a spell temporarily increases the area of effect for all subsequent spells."
       }
@@ -6262,7 +6036,6 @@
         "name": "disruptor_thunderstorm",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Thunderstorm",
         "description": "Thunder Strike additionally hits all enemies within Kinetic Field. Thunder Strike Slow duration is increased."
       },
@@ -6271,7 +6044,6 @@
         "name": "disruptor_line_walls",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fence.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Kinetic Fence",
         "description": "Replaces Kinetic Field with the ability to create impassable walls.",
         "abilities": [
@@ -6283,7 +6055,6 @@
         "name": "disruptor_conduit",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_out.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Transference",
         "description": "Electromagnetic Repulsion can be activated manually, be cast on allies and deals damage equal to a percentage of Disruptor's current health."
       }
@@ -6339,7 +6110,6 @@
         "name": "nyx_assassin_burn_mana",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Mana Burn",
         "description": "Mind Flare burns a percentage of the target's max mana."
       },
@@ -6348,7 +6118,6 @@
         "name": "nyx_assassin_scuttle",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Scuttle",
         "description": "For the first 15s of Vendetta, Nyx Assassin is hasted and has unobstructed pathing."
       }
@@ -6404,7 +6173,6 @@
         "name": "naga_siren_passive_riptide",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Rip Tide",
         "description": "Every 6 attacks from Naga and her illusions, enemies around them are damaged and their Armor is reduced.",
         "abilities": [
@@ -6416,7 +6184,6 @@
         "name": "naga_siren_active_riptide",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Deluge",
         "description": "Naga Siren can create a splash around herself and her illusions, damaging enemies and capping their max movement speed.",
         "abilities": [
@@ -6478,7 +6245,6 @@
         "name": "keeper_of_the_light_facet_solar_bind",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Solar Bind",
         "description": "Grants the Solar Bind ability while active.",
         "abilities": [
@@ -6490,7 +6256,6 @@
         "name": "keeper_of_the_light_facet_recall",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Recall",
         "description": "After a short delay, teleports the targeted friendly hero to your location. If the targeted friendly hero takes player based damage during this time, the ability is interrupted. When cast, the teleport target's movement speed is increased. Upon teleporting, the increased movement speed buff are applied to both Keeper of the Light and the teleport target, and the latter also receives a Chakra Magic.\n\n If alt-cast, teleports Keeper of the Light to the target Ally instead. \n\n Ability Level increases with levels of Spirit Form.",
         "abilities": [
@@ -6550,7 +6315,6 @@
         "name": "wisp_kritzkrieg",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Kritzkrieg",
         "description": "Overcharge grants attack speed and spell amplification to Io and any Tethered allies."
       },
@@ -6559,7 +6323,6 @@
         "name": "wisp_medigun",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Medigun",
         "description": "Overcharge grants armor and magic resistance to Io and any Tethered allies."
       }
@@ -6616,7 +6379,6 @@
         "name": "visage_sepulchre",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Sepulchre",
         "description": "Grave Chill also affects units around the target. Visage can also recall his familiars."
       },
@@ -6625,7 +6387,6 @@
         "name": "visage_faithful_followers",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Faithful Followers",
         "description": "Familiars automatically move with Visage and attack his targets."
       },
@@ -6634,7 +6395,6 @@
         "name": "visage_gold_assumption",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/gold.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Death Toll",
         "description": "Soul Assumption kills give bonus gold. Visage can also recall his familiars."
       }
@@ -6690,7 +6450,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/agility.png",
         "color": "Green",
-        "gradient_id": 2,
         "title": "Leeching Leash",
         "description": "Pounce applies stacks of Essence Shift when striking enemy heroes."
       },
@@ -6700,7 +6459,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Dark Reef Renegade",
         "description": "Barracuda lingers after being revealed to the enemy if Slark is not nearby allied heroes. Slark's attacks reduce the target's armor while Slark is under the effects of Barracuda."
       },
@@ -6709,7 +6467,6 @@
         "name": "slark_slark",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Fugitive",
         "description": "This facet doesn't do anything. Slark is still reeling from nightmares about Dark Reef..."
       }
@@ -6764,7 +6521,6 @@
         "name": "medusa_engorged",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snake.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Engorged",
         "description": "Mystic Snake grants Medusa attack damage."
       },
@@ -6774,7 +6530,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Mana Pact",
         "description": "Medusa can gain attack speed at the cost of mana over time."
       },
@@ -6783,7 +6538,6 @@
         "name": "medusa_slow_attacks",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Venomous Volley",
         "description": "Every 6 attacks, Medusa applies poison to her arrow that briefly reduces movement speed and attack speed.",
         "abilities": [
@@ -6795,7 +6549,6 @@
         "name": "medusa_undulation",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Undulation",
         "description": "Medusa's movement speed is fixed at 310 (465 during Stone Gaze). Medusa is unslowable and does not benefit from movement speed increases.",
         "abilities": [
@@ -6853,7 +6606,6 @@
         "name": "troll_warlord_insensitive",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Insensitive",
         "description": "Fervor grants armor per stack while in melee form."
       },
@@ -6862,7 +6614,6 @@
         "name": "troll_warlord_bad_influence",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Bad Influence",
         "description": "During Battle Trance, Troll Warlord has increased max Fervor stacks and no attack speed limit. Battle Trance grants allied heroes 50% of the attack speed bonus. "
       }
@@ -6918,7 +6669,6 @@
         "name": "centaur_counter_strike",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Counter-Strike",
         "description": "Double Edge damage is increased when Centaur is damage by enemies."
       },
@@ -6927,7 +6677,6 @@
         "name": "centaur_horsepower",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Horsepower",
         "description": "Centaur Warrunner gains Movement Speed based on his Strength.",
         "abilities": [
@@ -6986,7 +6735,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "",
         "description": ""
       },
@@ -6996,7 +6744,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_in.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Reverse Polarity",
         "description": "Reverse Polarity pulls all nearby enemies in."
       },
@@ -7005,7 +6752,6 @@
         "name": "magnataur_eternal_empowerment",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/empower.png",
         "color": "Gray",
-        "gradient_id": 1,
         "title": "Eternal Empowerment",
         "description": "Empower is always on Magnus. Each subsequent attack increases its power."
       },
@@ -7014,7 +6760,6 @@
         "name": "magnataur_diminishing_return",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Diminishing Return",
         "description": "Increases the max level of Shockwave. Level 5 Shockwave causes it to return towards Magnus's location."
       },
@@ -7024,7 +6769,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/vortex_out.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Reverse Reverse Polarity",
         "description": "Reverse Polarity pushes enemies away all around Magnus."
       }
@@ -7082,7 +6826,6 @@
         "name": "shredder_shredder",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Shredder",
         "description": "Timber Chain splinters the tree into all directions around Timbersaw."
       },
@@ -7091,7 +6834,6 @@
         "name": "shredder_second_chakram",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Twisted Chakram",
         "description": "Launches a second independent Chakram that follows a curved path and returns to Timbersaw, damaging and slowing enemies it passes through. Enemies caught in the saw blade will move more slowly for every 5% of health missing.",
         "abilities": [
@@ -7151,7 +6893,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Berserk",
         "description": "Warpath grants scaling Attack Speed instead of Damage."
       },
@@ -7160,7 +6901,6 @@
         "name": "bristleback_snot_rocket",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/snot.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Snot Rocket",
         "description": "Bristleback now fires Viscous Nasal Goo instead of Quills when damaged. Viscous Nasal Goo effects are stronger."
       },
@@ -7169,7 +6909,6 @@
         "name": "bristleback_seeing_red",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Seeing Red",
         "description": "Warpath can be activated to gain extra bonuses. While Seeing Red, Bristleback's vision is limited and he does not receive vision from his allies."
       }
@@ -7225,7 +6964,6 @@
         "name": "tusk_facet_tag_team",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Tag Team",
         "description": "Tusk can cast Tag Team causing nearby enemies to receive bonus damage from attacks.",
         "abilities": [
@@ -7237,7 +6975,6 @@
         "name": "tusk_facet_fist_bump",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Drinking Buddies",
         "description": "Tusk can cast Drinking Buddies, pulling him and a teammate closer and granting both bonus Movement Speed and Attack Damage.",
         "abilities": [
@@ -7295,7 +7032,6 @@
         "name": "skywrath_mage_shield",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Shield of the Scion",
         "description": "Skywrath Mage gains a magic damage barrier when dealing damage to heroes.",
         "abilities": [
@@ -7307,7 +7043,6 @@
         "name": "skywrath_mage_staff",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Yellow",
-        "gradient_id": 2,
         "title": "Staff of the Scion",
         "description": "Skywrath Mage's Cooldowns are reduced when he deals spell damage to enemy heroes.",
         "abilities": [
@@ -7365,7 +7100,6 @@
         "name": "abaddon_death_dude",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "The Quickening",
         "description": "Units dying nearby Abaddon lower his cooldowns.",
         "abilities": [
@@ -7378,7 +7112,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Mephitic Shroud",
         "description": "Aphotic Shield absorbs more damage and reflects damage when received instead of exploding at the end."
       },
@@ -7387,7 +7120,6 @@
         "name": "abaddon_mists_of_fate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_ass_dagger.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Malignant Mist",
         "description": "Mist Coil also deals 40 =60 =80 =100% attack damage and applies effects from items and abilities. Self Damage increased when targeting enemies."
       }
@@ -7444,7 +7176,6 @@
         "name": "elder_titan_deconstruction",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor_broken.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Deconstruction",
         "description": "Natural Order drains Magic Resistance and Armor over time."
       },
@@ -7453,7 +7184,6 @@
         "name": "elder_titan_boost_atkspd",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Momentum",
         "description": "Elder Titan's Base Attack Speed is reduced but his Movement Speed also grants Attack Speed.",
         "abilities": [
@@ -7511,7 +7241,6 @@
         "name": "legion_commander_stonehall_plate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Stonehall Plate",
         "description": "Overwhelming Odds grants an all damage barrier based on the damage it deals to enemy heroes."
       },
@@ -7520,7 +7249,6 @@
         "name": "legion_commander_spoils_of_war",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Spoils of War",
         "description": "When a Duel is won, units that damaged the loser during the Duel will gain permanent bonus damage. If Legion Commander won the Duel, she will automatically cast Press the Attack on herself and assisting allies."
       }
@@ -7575,7 +7303,6 @@
         "name": "ember_spirit_double_impact",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Double Impact",
         "description": "Sleight of Fist hits one of its targets an extra time."
       },
@@ -7584,7 +7311,6 @@
         "name": "ember_spirit_chain_gang",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/debuff.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Chain Gang",
         "description": "Searing Chains can affect two additional enemies. When Searing Chains are cast, they are also cast around each Fire Remnant."
       }
@@ -7640,7 +7366,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Resonance",
         "description": "Gain bonus Attack Damage when Magnetizing Stone Remnants."
       },
@@ -7650,7 +7375,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 2,
         "title": "Stepping Stone",
         "description": "Stone Remnant has a {s:bonus_AbilityCooldown}s cooldown instead of Charges and Remnants don't get destroyed by Rolling Boulder."
       },
@@ -7660,7 +7384,6 @@
         "deprecated": "true",
         "icon": "spinning",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Ready to Roll",
         "description": "Rolling Boulder can roll over allied heroes for additional bonuses."
       },
@@ -7669,7 +7392,6 @@
         "name": "earth_spirit_earth_spirit",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Reformation",
         "description": "This facet doesn't do anything. Earth Spirit is still not fully grounded..."
       }
@@ -7725,7 +7447,6 @@
         "name": "terrorblade_condemned",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Condemned",
         "description": "There is no minimum health threshold for Sundered enemies."
       },
@@ -7734,7 +7455,6 @@
         "name": "terrorblade_soul_fragment",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Soul Fragment",
         "description": "Conjure Image illusions always spawn at full health and cost health instead of mana."
       }
@@ -7792,7 +7512,6 @@
         "name": "phoenix_facet_immolate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Dying Light",
         "description": "Phoenix deals 4.5% of his missing health as magic damage to all enemies in a 400 radius every second.",
         "abilities": [
@@ -7804,7 +7523,6 @@
         "name": "phoenix_hotspot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Hotspot",
         "description": "Sun Ray deals more damage and applies more Blinding Sun stacks towards the tip of the ray."
       }
@@ -7859,7 +7577,6 @@
         "name": "oracle_facet_dmg",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Clairvoyant Curse",
         "description": "Spell amplification increased by 1% per hero level.",
         "abilities": [
@@ -7871,7 +7588,6 @@
         "name": "oracle_facet_heal",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Clairvoyant Cure",
         "description": "Heal amplification increased by 0.75% per hero level.",
         "abilities": [
@@ -7930,7 +7646,6 @@
         "name": "techies_atk_range",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Squee's Scope",
         "description": "Techies gains 1 attack range and attack projectile speed for each point of attack speed.",
         "abilities": [
@@ -7942,7 +7657,6 @@
         "name": "techies_spleens_secret_sauce",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Spleen's Secret Sauce",
         "description": "Increased Blast Off! damage and self damage."
       },
@@ -7951,7 +7665,6 @@
         "name": "techies_backpack",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Spoon's Stash",
         "description": "Techies stack all previously selected Enchantments onto newly crafted Neutral Items.",
         "abilities": [
@@ -8010,7 +7723,6 @@
         "deprecated": "True",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Essence of the Blueheart",
         "description": "Winter Wyvern's heals also restore mana.",
         "abilities": [
@@ -8023,7 +7735,6 @@
         "deprecated": "True",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Dragon Sight",
         "description": "Winter Wyvern gains bonus damage when her attack range is over 400.",
         "abilities": [
@@ -8035,7 +7746,6 @@
         "name": "winter_wyvern_winterproof",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tower.png",
         "color": "Blue",
-        "gradient_id": 2,
         "title": "Winterproof",
         "description": "Cold Embrace can be cast on buildings. Does not heal buildings. Allied units and buildings gain bonus attack damage when emerging from the icy cocoon."
       },
@@ -8044,7 +7754,6 @@
         "name": "winter_wyvern_recursive",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
-        "gradient_id": 0,
         "title": "Recursive",
         "description": "Winter's Curse is recast on the lowest health enemy hero if the primary target dies."
       }
@@ -8100,7 +7809,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Order",
         "description": ""
       },
@@ -8110,7 +7818,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden_alt.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Disorder",
         "description": ""
       },
@@ -8119,7 +7826,6 @@
         "name": "arc_warden_runed_replica",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/arc_warden_alt.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Runed Replica",
         "description": "The Tempest Double is infused with the bonuses of Power Runes for 12s when created.\n\nLevel 1 - Arcane Rune.\n\nLevel 2 - Arcane and Invisibility Runes.\n\nLevel 3 - Arcane, Invisibility, and Haste Runes."
       },
@@ -8128,7 +7834,6 @@
         "name": "arc_warden_power_capture",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/rune.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Power Capture",
         "description": "Magnetic Field pulls runes. Arc Warden gains +1.5 all attributes permanently upon activating a Power Rune."
       }
@@ -8183,7 +7888,6 @@
         "name": "abyssal_underlord_demons_reach",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Demon's Reach",
         "description": "Underlord's attacks cleave while he has bonus damage from Atrophy Aura."
       },
@@ -8192,7 +7896,6 @@
         "name": "abyssal_underlord_summons",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "Abyssal Horde",
         "description": "Fiend's Gate periodically summons minions.",
         "abilities": [
@@ -8253,7 +7956,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Wukong's Faithful",
         "description": "Monkey King's soldiers last longer and do not disperse unless he spends more than 4.0 seconds outside the area."
       },
@@ -8262,7 +7964,6 @@
         "name": "monkey_king_simian_stride",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
-        "gradient_id": 4,
         "title": "Simian Stride",
         "description": "Increases the max level of Tree Dance. Level 5 Tree Dance reduces the cooldown to zero."
       },
@@ -8271,7 +7972,6 @@
         "name": "monkey_king_transfiguration",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/summons.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Changing of the Guard",
         "description": "Monkey King can transform into one of his soldiers during Wukong's command.",
         "abilities": [
@@ -8333,7 +8033,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/double_bounce.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Double Jump",
         "description": "Pangolier can double jump with Shield Crash dealing more damage and gaining more barrier."
       },
@@ -8343,7 +8042,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Thunderbolt",
         "description": "Rolling Thunder movement and turn speed increased, but duration is decreased."
       },
@@ -8352,7 +8050,6 @@
         "name": "pangolier_pangolier",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Dangerous Liaisons",
         "description": "This facet doesn't do anything. Pangolier is still recovering from a heroic exploit..."
       }
@@ -8407,7 +8104,6 @@
         "name": "dark_willow_throwing_shade",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Throwing Shade",
         "description": "Dark Willow deals more damage to nearby heroes when she's in the Shadow Realm."
       },
@@ -8417,7 +8113,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Green",
-        "gradient_id": 4,
         "title": "Thorny Thicket",
         "description": "Bramble Maze creates extra brambles."
       },
@@ -8426,7 +8121,6 @@
         "name": "dark_willow_shattering_crown",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/barrier.png",
         "color": "Green",
-        "gradient_id": 4,
         "title": "Shattering Crown",
         "description": "Cursed Crown accumulates all damage dealt by Dark Willow and attack damage dealt by her allies. A percentage of that damage is dealt again as magical damage to the whole area when the counter expires."
       }
@@ -8482,7 +8176,6 @@
         "name": "grimstroke_inkstigate",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Gray",
-        "gradient_id": 0,
         "title": "Inkstigate",
         "description": "Ink Swell can be manually detonated early."
       },
@@ -8491,7 +8184,6 @@
         "name": "grimstroke_fine_art",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/brush.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Fine Art",
         "description": "Stroke of Fate additionally launches a reflected curved stroke from the right hand."
       }
@@ -8546,7 +8238,6 @@
         "name": "mars_victory_feast",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Red",
-        "gradient_id": 2,
         "title": "Victory Feast",
         "description": "Mars and his allies gain health, mana, and attack damage when an enemy inside his Arena of Blood dies."
       },
@@ -8555,7 +8246,6 @@
         "name": "mars_arena",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/no_vision.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Blood Sport",
         "description": "Enemies inside the Arena of Blood don't have vision outside the arena."
       }
@@ -8610,7 +8300,6 @@
         "name": "void_spirit_sanctuary",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Purple",
-        "gradient_id": 1,
         "title": "Sanctuary",
         "description": "Resonant Pulse creates a larger all damage barrier instead of a physical barrier."
       },
@@ -8620,7 +8309,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Symmetry",
         "description": "Void Spirit gains a physical damage barrier when dealing magic damage to enemy heroes.",
         "abilities": [
@@ -8632,7 +8320,6 @@
         "name": "void_spirit_aether_artifice",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/illusion.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Call of the Void",
         "description": "Upon exiting Dissimilate, Aether Remnants are created at the 3 portals furthest from Void Spirit."
       }
@@ -8688,7 +8375,6 @@
         "name": "snapfire_ricochet_ii",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Ricochet II",
         "description": "Whenever Snapfire glances or misses an attack, 2 ricochet attacks will bounce towards nearby enemies."
       },
@@ -8697,7 +8383,6 @@
         "name": "snapfire_full_bore",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Full Bore",
         "description": "Scatterblast is narrower and longer. Bonus damage and slow when enemies are not in point blank range."
       }
@@ -8754,7 +8439,6 @@
         "name": "hoodwink_hunter",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Go Nuts",
         "description": "Scurry also provides bonus attack and cast range."
       },
@@ -8764,7 +8448,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/tree.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Treebounce Trickshot",
         "description": "Acorn Shot can bounce once on trees."
       },
@@ -8773,7 +8456,6 @@
         "name": "hoodwink_hipshot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Green",
-        "gradient_id": 0,
         "title": "Hipshot",
         "description": "Sharpshooter has a greatly reduced cooldown. Damage, debuff duration, turn time, and wind-up times are also reduced."
       }
@@ -8829,7 +8511,6 @@
         "name": "dawnbreaker_solar_charged",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/cooldown.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Solar Charged",
         "description": "Whenever Dawnbreaker hits a target with a powered up Luminosity, she decreases the cooldowns of all of her abilities."
       },
@@ -8839,7 +8520,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/dawnbreaker_hammer.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Gleaming Hammer",
         "description": "Celestial Hammer heals allies and damages enemies when on the ground."
       },
@@ -8848,7 +8528,6 @@
         "name": "dawnbreaker_blaze",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Starsurge",
         "description": "Dawnbreaker and nearby allies gain bonus attack speed at the end of Starbreaker for each swipe that hit enemy heroes."
       },
@@ -8857,7 +8536,6 @@
         "name": "dawnbreaker_hearthfire",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Trailblazer",
         "description": "Walking along Celestial Hammer's fire trail gives bonus movespeed."
       }
@@ -8913,7 +8591,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Sidekick",
         "description": "Marci can protect an ally, granting them shared lifesteal and damage. Effect is stronger if she's close to the ally.",
         "abilities": [
@@ -8926,7 +8603,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Bodyguard Facet",
         "description": "Marci can protect an ally, countering attacks directed towards them if she's in range of the enemy.",
         "abilities": [
@@ -8938,7 +8614,6 @@
         "name": "marci_buddy_system",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/twin_hearts.png",
         "color": "Blue",
-        "gradient_id": 1,
         "title": "Buddy System",
         "description": "While bodyguarded, Marci and her partner share a portion of health healed by this ability with each other."
       },
@@ -8947,7 +8622,6 @@
         "name": "marci_pickmeup",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Purple",
-        "gradient_id": 0,
         "title": "Pick-me-up",
         "description": "Rebound can be alt-cast to bring Marci's ally with her after the jump."
       },
@@ -8957,7 +8631,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Fleeting Fury",
         "description": "Upon landing with Rebound, Marci gains a Fury combo. "
       }
@@ -9014,7 +8687,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Romp n' Stomp",
         "description": "Trample grants bonus movement speed to Primal Beast and his allies when activated."
       },
@@ -9023,7 +8695,6 @@
         "name": "primal_beast_provoke_the_beast",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/broken_chain.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Provoke the Beast",
         "description": "Gain 3 Uproar stacks upon being disabled by an enemy hero."
       },
@@ -9032,7 +8703,6 @@
         "name": "primal_beast_ferocity",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/area_of_effect.png",
         "color": "Yellow",
-        "gradient_id": 3,
         "title": "Ferocity",
         "description": "Each Pulverize slam increase Primal Beast's AoE."
       }
@@ -9090,7 +8760,6 @@
         "name": "muerta_dance_of_the_dead",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Dance of the Dead",
         "description": "The Calling becomes stronger when heroes die inside it."
       },
@@ -9100,7 +8769,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/teleport.png",
         "color": "Yellow",
-        "gradient_id": 0,
         "title": "Ofrenda",
         "description": "Muerta can place a beneficial Ofrenda on the map to respawn there instead of the fountain.",
         "abilities": [
@@ -9112,7 +8780,6 @@
         "name": "muerta_slingshot",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/ricochet.png",
         "color": "Red",
-        "gradient_id": 1,
         "title": "Quickdraw",
         "description": "Dead Shot fears increase Gunslinger chance.\n\nGunslinger procs reduce Dead Shot cooldown. "
       }
@@ -9185,7 +8852,6 @@
         "deprecated": "true",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Gray",
-        "gradient_id": 3,
         "title": "Center Stage",
         "description": "Ringmaster is still new to the spotlight. This facet doesn't do anything... yet."
       },
@@ -9194,7 +8860,6 @@
         "name": "ringmaster_carny_classics",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/whoopee_cushion.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Carny Classics",
         "description": "Ringmaster's Souvenirs are Funhouse Mirror, Strongman Tonic, and Whoopee Cushion.",
         "abilities": [
@@ -9208,7 +8873,6 @@
         "name": "ringmaster_sideshow_secrets",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/pie.png",
         "color": "Red",
-        "gradient_id": 0,
         "title": "Sideshow Secrets",
         "description": "Ringmaster's Souvenirs are Crystal Ball, Unicycle, and Weighted Pie.",
         "abilities": [
@@ -9273,7 +8937,6 @@
         "name": "kez_flutter",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/kez_flutter.png",
         "color": "Yellow",
-        "gradient_id": 1,
         "title": "Flutter",
         "description": "Kez deals extra damage on the first attack after switching to Katana, and gains bonus movement speed after switching to Sai."
       },
@@ -9282,7 +8945,6 @@
         "name": "kez_shadowhawk",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/kez_shadowhawk.png",
         "color": "Blue",
-        "gradient_id": 3,
         "title": "Shadowhawk",
         "description": "Triggering a Shodo Sai Mark from invisibility deals bonus critical damage. Increases Raven's Veil invisibility duration.",
         "abilities": [
@@ -9348,7 +9010,6 @@
         "name": "largo_largo",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/guitar.png",
         "color": "Green",
-        "gradient_id": 1,
         "title": "Musical pilgrimmage",
         "description": "This facet doesn't do anything. Largo just arrived from the island of Velu'Mar..."
       }

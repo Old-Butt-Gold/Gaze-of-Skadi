@@ -82,11 +82,6 @@ internal sealed class FileResourceManager : IResourceManager
 		return LoadResourceAsync<Dictionary<string, string>?>(Resource.ItemIds);
 	}
 
-	public Task<Dictionary<ItemType, string>?> GetItemColorsAsync()
-	{
-		return LoadResourceAsync<Dictionary<ItemType, string>?>(Resource.ItemColors);
-	}
-
 	public Task<Dictionary<string, NeutralAbility>?> GetNeutralAbilitiesAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, NeutralAbility>?>(Resource.NeutralAbilities);
@@ -95,11 +90,6 @@ internal sealed class FileResourceManager : IResourceManager
 	public Task<Dictionary<PlayerSlot, string>?> GetPlayerColorsAsync()
 	{
 		return LoadResourceAsync<Dictionary<PlayerSlot, string>?>(Resource.PlayerColors);
-	}
-
-	public Task<Dictionary<string, BooleanState>?> GetSkillshotsAsync()
-	{
-		return LoadResourceAsync<Dictionary<string, BooleanState>?>(Resource.Skillshots);
 	}
 
 	public Task<List<int>?> GetXpLevelAsync()
