@@ -50,11 +50,11 @@ export const RecordsPage: React.FC = () => {
     };
 
     return (
-        <div className="relative min-h-screen w-full flex flex-col md:flex-row gap-6 animate-fade-in">
+        <div className="relative min-h-screen w-full flex flex-col md:flex-row gap-6 animate-fade-in pb-6 pt-2 pl-1">
 
             {/* --- Sidebar Navigation --- */}
             <aside className="w-full md:w-64 flex-shrink-0">
-                <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden sticky top-24">
+                <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden sticky">
                     <div className="p-4 bg-slate-50 border-b border-slate-200">
                         <h3 className="font-bold text-slate-700 uppercase tracking-wider text-xs">Categories</h3>
                     </div>

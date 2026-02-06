@@ -25,7 +25,7 @@ export const DistributionPage: React.FC = () => {
     const chartData = data?.rows ?? [];
 
     return (
-        <div className="space-y-6 w-full animate-fade-in">
+        <div className="space-y-6 w-full animate-fade-in p-1">
             {/* Page Header */}
             <div className="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-slate-200 pb-4">
                 <div>

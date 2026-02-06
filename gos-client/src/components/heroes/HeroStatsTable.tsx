@@ -3,10 +3,11 @@ import clsx from 'clsx';
 import {useHeroes} from '../../hooks/queries/useHeroes';
 import {HeroCell} from './HeroCell';
 import {Icon} from '../Icon';
-import {getRankIconUrl} from '../../utils/rankUtils';
-import {calculateWinRate, getWinRateColor, RANK_ICON_IDS, RANK_KEYS} from '../../utils/heroStatsUtils';
+import {getRankIconUrl, getRankNameBase } from '../../utils/rankUtils';
+import {calculateWinRate, getWinRateColor, RANK_KEYS} from '../../utils/heroStatsUtils';
 import type {HeroStatsGroupedDto, RankedStatsDto} from "../../types/heroStats.ts";
 import {SortIndicator} from "./SortIndicator.tsx";
+import {Rank} from "../../types/common.ts";
 
 interface Props {
     stats: HeroStatsGroupedDto[];
@@ -36,6 +37,16 @@ const StatCell = React.memo(({ pick, win, isCompact = false }: { pick: number, w
         </div>
     );
 });
+
+export const RANK_ICON_IDS: Record<keyof Omit<RankedStatsDto, 'pub'>, Rank> = {
+    herald: Rank.Herald1,
+    guardian: Rank.Guardian1,
+    crusader: Rank.Crusader1,
+    archon: Rank.Archon1,
+    legend: Rank.Legend1,
+    ancient: Rank.Ancient1,
+    divine: Rank.Divine1
+};
 
 // Reusable Header Cell Component
 interface HeaderCellProps {
@@ -198,7 +209,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                                         className="px-2 py-3 text-center border-r border-[#2e353b]/30 cursor-pointer hover:bg-[#1e222b] relative group/th select-none align-middle"
                                         onClick={() => handleSort(key)}
                                     >
-                                        <div className="flex flex-col items-center justify-center gap-1 w-full h-full">
+                                        <div className="flex flex-col items-center justify-center gap-1 w-full h-full" title={getRankNameBase(RANK_ICON_IDS[key as keyof Omit<RankedStatsDto, 'pub'>])}>
                                             <Icon src={getRankIconUrl(RANK_ICON_IDS[key as keyof Omit<RankedStatsDto, 'pub'>])} size={8} />
                                             <div className="flex items-center justify-center mt-1">
                                                 <span className="text-[9px] opacity-70 group-hover/th:text-white transition-colors">Win%</span>

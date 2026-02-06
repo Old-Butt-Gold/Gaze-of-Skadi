@@ -32,10 +32,9 @@ export const ScenariosPage: React.FC = () => {
         actions.setTime(val === 'all' ? 'all' : Number(val));
     };
 
-    // === RENDER: EMPTY STATE ===
     if (!filters.selectedHeroId) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in text-center space-y-8 bg-[#0f1114]">
+            <div className="flex flex-col items-center justify-center min-h-[100vh] animate-fade-in text-center space-y-8 bg-[#0f1114]">
                 <div className="relative">
                     <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
                     <div className="relative w-24 h-24 bg-[#1a1d24] rounded-full flex items-center justify-center border border-[#2e353b] shadow-2xl">
@@ -68,12 +67,11 @@ export const ScenariosPage: React.FC = () => {
         );
     }
 
-    // === RENDER: MAIN CONTENT ===
     return (
-        <div className="w-full space-y-6 animate-fade-in pb-20">
+        <div className="w-full space-y-6 animate-fade-in pb-6">
 
             {/* Control Panel */}
-            <div className="bg-[#1a1d24] rounded-lg border border-[#2e353b] p-5 sticky top-20 z-30 shadow-xl">
+            <div className="bg-[#1a1d24] rounded-lg border border-[#2e353b] p-5 sticky top-3 z-30 shadow-xl">
                 <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-6">
 
                     {/* Hero Info */}

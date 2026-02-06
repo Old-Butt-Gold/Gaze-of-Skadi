@@ -10,15 +10,7 @@ export const RANK_KEYS: (keyof RankedStatsDto)[] = [
   'divine'
 ];
 
-export const RANK_ICON_IDS: Record<keyof Omit<RankedStatsDto, 'pub'>, number> = {
-  herald: 10,
-  guardian: 20,
-  crusader: 30,
-  archon: 40,
-  legend: 50,
-  ancient: 60,
-  divine: 70
-};
+
 
 export const calculateWinRate = (wins: number, picks: number): number => {
   if (!picks || picks <= 0) return 0;

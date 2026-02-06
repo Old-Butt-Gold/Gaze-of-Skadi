@@ -23,7 +23,7 @@ export const HeroStatsPage: React.FC = () => {
 
     return (
         // Убрал overflow-hidden здесь, чтобы sticky работал
-        <div className="w-full min-h-screen animate-fade-in pb-10">
+        <div className="w-full min-h-screen animate-fade-in pb-6">
 
             {/* Sticky Header */}
             <div className="sticky top-2 z-30 bg-[#1a1d24]/95 backdrop-blur-md border-b border-[#2e353b] shadow-lg transition-all">
@@ -89,7 +89,7 @@ export const HeroStatsPage: React.FC = () => {
                     <>
                         <HeroStatsTable stats={stats} activeTab={activeTab} searchQuery={searchQuery} />
 
-                        <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-2 text-center pb-10">
+                        <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-2 text-center">
                             <p className="text-[#58606e] text-[10px] uppercase tracking-widest">
                                 Winrates calculated as <span className="font-mono text-[#808fa6]">(Wins / Picks) * 100</span>
                             </p>

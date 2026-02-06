@@ -34,8 +34,7 @@ export const Layout: React.FC = () => {
                     {/* CENTER: Desktop Navigation */}
                     <div className="hidden lg:flex items-center space-x-1">
                         {MAIN_NAVIGATION.map((item) => {
-                            const isActive = location.pathname === item.path ||
-                                (item.path !== '/' && location.pathname.startsWith(item.path));
+                            const isActive = location.pathname === item.path;
 
                             return (
                                 <Link
@@ -123,7 +122,7 @@ export const Layout: React.FC = () => {
             </main>
 
             {/* --- FOOTER --- */}
-            <footer className="bg-[#0f1114] border-t border-[#2e353b] py-8 mt-auto relative z-10">
+            <footer className="bg-[#0f1114] border-t border-[#2e353b] py-8 mt-auto relative">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-2">
                         <img src="/gaze-of-skadi.png" alt="Logo" className="w-6 h-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all" />

@@ -16,10 +16,10 @@ export const TeamsPage: React.FC = () => {
     if (isError) return <ErrorDisplay message="Failed to load teams data" onRetry={refetch} />;
 
     return (
-        <div className="w-full space-y-8 animate-fade-in pb-20">
+        <div className="w-full space-y-8 animate-fade-in pb-6">
 
             {/* Header & Controls */}
-            <div className="bg-[#1a1d24] border-b border-[#2e353b] sticky top-16 z-20 shadow-xl backdrop-blur-md bg-opacity-95">
+            <div className="bg-[#1a1d24] border-b border-[#2e353b] sticky top-4 z-20 shadow-xl backdrop-blur-md bg-opacity-95">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
 
@@ -105,7 +105,7 @@ export const TeamsPage: React.FC = () => {
 
                         {/* Pagination Footer */}
                         {totalPages > 1 && (
-                            <div className="mt-12 flex flex-col items-center gap-3 pb-10">
+                            <div className="mt-6 flex flex-col items-center gap-3">
                                 <div className="join bg-[#1a1d24] border border-[#2e353b] rounded-lg p-1 shadow-lg">
                                     <button
                                         className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider w-24"
