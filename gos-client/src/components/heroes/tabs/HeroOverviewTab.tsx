@@ -1,20 +1,24 @@
-﻿import {
+﻿import React from 'react';
+import {
     calculateArmor, calculateDamage, calculateMagicResistance, getStatsIcon
 } from "../../../utils/heroUtils.ts";
-import {type HeroInfo, HeroPrimaryAttribute} from "../../../types/heroes.ts";
-import {ExpandableBio} from "../ExpandableBio.tsx";
-import {AttributeBox} from "../AttributeBox.tsx";
-import {StatRow} from "../StatRow.tsx";
+import { type HeroInfo, HeroPrimaryAttribute } from "../../../types/heroes.ts";
+import { ExpandableBio } from "../ExpandableBio.tsx";
+import { AttributeBox } from "../AttributeBox.tsx";
+import { StatRow } from "../StatRow.tsx";
+import { useHeroAbilities } from "../../../hooks/queries/useHeroAbilities.ts";
+import { FacetsSection } from "../FacetsSection.tsx";
 
 export interface HeroOverviewTabProps {
     hero: HeroInfo;
 }
 
 export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
-    // Calculations
     const damage = calculateDamage(hero);
     const armor = calculateArmor(hero);
     const magicResist = calculateMagicResistance(hero);
+
+    const { data: abilitiesData } = useHeroAbilities(hero.name);
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-8 duration-500">
@@ -65,29 +69,27 @@ export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
 
                 {/* RIGHT: Abilities & Future Content */}
                 <div className="lg:col-span-9 space-y-8">
-                    {/* Abilities (Placeholder with Style) */}
-                    <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-8 relative overflow-hidden min-h-[300px] flex flex-col justify-center items-center text-center shadow-lg group">
+
+                    {/* --- 1. FACETS (NEW - TOP PRIORITY) --- */}
+                    {abilitiesData && abilitiesData.facets && abilitiesData.facets.length > 0 && (
+                        <FacetsSection facets={abilitiesData.facets} />
+                    )}
+
+                    {/* --- 2. Abilities (Placeholder) --- */}
+                    <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-8 relative overflow-hidden min-h-[250px] flex flex-col justify-center items-center text-center shadow-lg group">
                         <div className="absolute inset-0 bg-[url('/assets/images/ability_bg_texture.png')] opacity-5 mix-blend-overlay pointer-events-none group-hover:opacity-10 transition-opacity" />
-                        <div className="w-20 h-20 rounded-full bg-[#2e353b]/30 flex items-center justify-center mb-4 border border-[#2e353b] shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-                            <span className="text-4xl opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">⚡</span>
+                        <div className="w-16 h-16 rounded-full bg-[#2e353b]/30 flex items-center justify-center mb-4 border border-[#2e353b] shadow-[0_0_20px_rgba(0,0,0,0.3)]">
+                            <span className="text-3xl opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">⚡</span>
                         </div>
-                        <h3 className="text-2xl font-serif font-bold text-[#e7d291] uppercase tracking-widest mb-2">Abilities</h3>
-                        <p className="text-[#808fa6] max-w-md text-sm">Detailed ability breakdown, mana costs, and cooldowns are currently being parsed from the Ancient.</p>
-                        <span className="mt-6 px-4 py-1.5 bg-[#2e353b] text-[#58606e] text-[10px] uppercase font-bold tracking-widest rounded border border-white/5">Work in Progress</span>
+                        <h3 className="text-xl font-serif font-bold text-[#e7d291] uppercase tracking-widest mb-2">Abilities</h3>
+                        <p className="text-[#808fa6] max-w-md text-sm">Detailed ability breakdown is currently being parsed from the Ancient.</p>
                     </div>
 
-                    {/* Talent Tree / Facets Row */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-[#15171c]/50 border border-[#2e353b] border-dashed rounded-xl p-6 flex flex-col items-center justify-center h-48 group hover:bg-[#15171c] hover:border-[#e7d291]/30 transition-all cursor-default">
-                            <span className="text-4xl text-[#58606e] mb-3 group-hover:text-[#e7d291] group-hover:scale-110 transition-all duration-300">❖</span>
-                            <h4 className="text-[#e3e3e3] font-bold uppercase tracking-wider text-sm">Facets</h4>
-                            <p className="text-[#58606e] text-xs mt-1">Gameplay Aspects</p>
-                        </div>
-                        <div className="bg-[#15171c]/50 border border-[#2e353b] border-dashed rounded-xl p-6 flex flex-col items-center justify-center h-48 group hover:bg-[#15171c] hover:border-[#e7d291]/30 transition-all cursor-default">
-                            <span className="text-4xl text-[#58606e] mb-3 group-hover:text-[#e7d291] group-hover:scale-110 transition-all duration-300">🌳</span>
-                            <h4 className="text-[#e3e3e3] font-bold uppercase tracking-wider text-sm">Talent Tree</h4>
-                            <p className="text-[#58606e] text-xs mt-1">Level Progression</p>
-                        </div>
+                    {/* --- 3. Talent Tree (Placeholder) --- */}
+                    <div className="bg-[#15171c]/50 border border-[#2e353b] border-dashed rounded-xl p-6 flex flex-col items-center justify-center h-32 group hover:bg-[#15171c] hover:border-[#e7d291]/30 transition-all cursor-default">
+                        <span className="text-3xl text-[#58606e] mb-2 group-hover:text-[#e7d291] group-hover:scale-110 transition-all duration-300">🌳</span>
+                        <h4 className="text-[#e3e3e3] font-bold uppercase tracking-wider text-sm">Talent Tree</h4>
+                        <p className="text-[#58606e] text-xs mt-1">Level 10 / 15 / 20 / 25</p>
                     </div>
                 </div>
             </div>

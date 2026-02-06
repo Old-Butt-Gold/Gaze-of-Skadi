@@ -1,11 +1,11 @@
-﻿import {itemService} from "../../services/itemService.ts";
+﻿import {resourceService} from "../../services/resourceService.ts";
 import {useQuery} from "@tanstack/react-query";
 import type {Item, ItemDictionary} from "../../types/items.ts";
 
 export const useItems = () => {
   const query = useQuery<ItemDictionary, Error>({
     queryKey: ['items'],
-    queryFn: itemService.getItemsByName,
+    queryFn: resourceService.getItemsByName,
     staleTime: 1000 * 60 * 60, // 24 hours cache
   });
 
