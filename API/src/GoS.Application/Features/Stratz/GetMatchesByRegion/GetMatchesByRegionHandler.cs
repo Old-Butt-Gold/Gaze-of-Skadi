@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
 using GoS.Domain.Stratz;

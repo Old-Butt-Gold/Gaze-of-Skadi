@@ -3,12 +3,10 @@ using GoS.Domain.BaseEnums;
 using GoS.Domain.Extensions;
 using GoS.Domain.Resources.Enums;
 using GoS.Domain.Resources.Models.Abilities;
-using GoS.Domain.Resources.Models.AghanimDescriptions;
 using GoS.Domain.Resources.Models.ChatWheels;
 using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
 using GoS.Domain.Resources.Models.Heroes;
-using GoS.Domain.Resources.Models.ItemColors;
 using GoS.Domain.Resources.Models.Items;
 using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.Extensions.Caching.Memory;
@@ -19,13 +17,13 @@ internal sealed class CachedFileResourceManager : IResourceManager
 {
     private readonly FileResourceManager _fileResourceManager;
     private readonly IMemoryCache _memoryCache;
-    
+
     public CachedFileResourceManager(FileResourceManager fileResourceManager, IMemoryCache memoryCache)
     {
         _fileResourceManager = fileResourceManager;
         _memoryCache = memoryCache;
     }
-    
+
     private Task<T> GetOrCreateAsync<T>(Resource resource, Func<Task<T>> factory)
     {
         var key = resource.ToSnakeCase();
@@ -35,7 +33,7 @@ internal sealed class CachedFileResourceManager : IResourceManager
             return await factory();
         })!;
     }
-    
+
     public Task<Dictionary<string, Ability>?> GetAbilitiesAsync()
     {
         return GetOrCreateAsync(Resource.Abilities, () => _fileResourceManager.GetAbilitiesAsync());
@@ -44,11 +42,6 @@ internal sealed class CachedFileResourceManager : IResourceManager
     public Task<Dictionary<string, string>?> GetAbilityIdsAsync()
     {
         return GetOrCreateAsync(Resource.AbilityIds, () => _fileResourceManager.GetAbilityIdsAsync());
-    }
-
-    public Task<Dictionary<string, AghanimDescription>?> GetAghanimDescriptionsAsync()
-    {
-        return GetOrCreateAsync(Resource.AghsDesc, () => _fileResourceManager.GetAghanimDescriptionsAsync());
     }
 
     public Task<Dictionary<string, int>?> GetAncientsAsync()

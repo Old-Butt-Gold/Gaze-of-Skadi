@@ -454,7 +454,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Dispels positive buffs from enemies and slows their movement speed.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Dispels positive buffs from enemies and slows their movement speed. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "purge_rate",
@@ -1630,17 +1630,21 @@
     "dmg_type": "Magical",
     "dispellable": "Strong Dispels Only",
     "desc": "The Centaur Conqueror's powerful hooves stomp the ground, stunning and damaging nearby enemies. Heroes recover more quickly.",
-    "dmg": [
-      "25",
-      "50",
-      "75",
-      "150"
-    ],
     "attrib": [
       {
         "key": "radius",
         "header": "RADIUS:",
         "value": "250"
+      },
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "25",
+          "50",
+          "75",
+          "150"
+        ]
       },
       {
         "key": "non_hero_stun_duration",
@@ -2401,7 +2405,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "The Satyr Banisher knows every trick in the book, allowing him to dispel debuffs from allies or buffs from enemies. His trickery also slows the enemy's movement.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "The Satyr Banisher knows every trick in the book, allowing him to dispel debuffs from allies or buffs from enemies. His trickery also slows the enemy's movement. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "purge_rate",
@@ -2743,13 +2747,17 @@
     "dmg_type": "Magical",
     "dispellable": "Yes",
     "desc": "The Hellbear Smasher claps his massive hands together, creating a deafening blast. The blast damages nearby enemies and throws them off their footing.",
-    "dmg": [
-      "150",
-      "200",
-      "250",
-      "350"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "150",
+          "200",
+          "250",
+          "350"
+        ]
+      },
       {
         "key": "radius",
         "header": "RADIUS:",
@@ -10117,7 +10125,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Bloodseeker sprays his blood continuously in the area around him, losing health to damage and slow his enemies. While active, Sanguivore's healing is increased. Cannot be turned off while on cooldown. \n\nAdditionally, passively turns all your overheal from your own abilities into an all damage barrier up to 50% of Bloodseeker's Max Health. Barrier amount decays by 0.5% per second.",
+    "desc": "Bloodseeker sprays his blood continuously in the area around him, losing health to damage and slow his enemies. While active, Sanguivore's healing is increased. Cannot be turned off while on cooldown. Additionally, passively turns all your overheal from your own abilities into an all damage barrier up to 50% of Bloodseeker's Max Health. Barrier amount decays by 0.5% per second.",
     "attrib": [
       {
         "key": "hp_cost_per_second",
@@ -10161,7 +10169,7 @@
     "is_innate": true,
     "behavior": "Passive",
     "bkbpierce": "Yes",
-    "desc": "Bloodseeker restores some life when he kills a unit, equal to 30 health plus a percentage of the units max health.\n\nRestores for half values if an ally kills a nearby enemy hero.",
+    "desc": "Bloodseeker restores some life when he kills a unit, equal to 30 health plus a percentage of the units max health. Restores for half values if an ally kills a nearby enemy hero.",
     "attrib": [
       {
         "key": "base_heal",
@@ -11829,7 +11837,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "attack_rate_multiplier",
@@ -12060,13 +12068,17 @@
     "bkbpierce": "No",
     "dispellable": "Strong Dispels Only",
     "desc": "Fires a long-range arrow with deadly precision, which stuns and damages the first enemy unit it strikes. The stun duration ranges from 0.01 to 2.6 seconds, with bonus damage up to 180 added, based on the distance the arrow travels to its target. Instantly kills the first non-ancient creep it hits.",
-    "dmg": [
-      "60",
-      "150",
-      "240",
-      "330"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "60",
+          "150",
+          "240",
+          "330"
+        ]
+      },
       {
         "key": "arrow_speed",
         "header": "ARROW SPEED:",
@@ -12217,7 +12229,7 @@
     "behavior": "No Target",
     "bkbpierce": "Yes",
     "dispellable": "No",
-    "desc": "Gradually increases attack speed and damage of Mirana and all allied heroes, reaching maximum power after 6s. \n\n Allies receive 50% of the bonus.",
+    "desc": "Gradually increases attack speed and damage of Mirana and all allied heroes, reaching maximum power after 6s.  Allies receive 50% of the bonus.",
     "attrib": [
       {
         "key": "smoothness",
@@ -12924,13 +12936,17 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Any unit damaged by Requiem of Souls will be feared and have its movement speed and magic resistance reduced for 0.6 seconds for each line hit up to a maximum of 2.15. Lines of energy are created for every soul captured through Necromastery. \n\n Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.",
-    "dmg": [
-      "80",
-      "120",
-      "160"
-    ],
+    "desc": "Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Any unit damaged by Requiem of Souls will be feared and have its movement speed and magic resistance reduced for 0.6 seconds for each line hit up to a maximum of 2.15. Lines of energy are created for every soul captured through Necromastery.  Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.",
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "80",
+          "120",
+          "160"
+        ]
+      },
       {
         "key": "requiem_radius",
         "header": "REQUIEM RADIUS:",
@@ -13020,13 +13036,17 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "desc": "Morphling dissolves into liquid and surges forward, damaging enemy units in his path. Morphling is invulnerable during Waveform.",
-    "dmg": [
-      "75",
-      "150",
-      "225",
-      "300"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "60",
+          "150",
+          "240",
+          "330"
+        ]
+      },
       {
         "key": "speed",
         "header": "SPEED:",
@@ -13094,7 +13114,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Launches a surge of water toward an enemy unit, dealing base damage plus additional damage based on Morphling's agility times a multiplier. If Morphling's agility is 50% higher than strength, the maximum agility multiplier is used.\n\nThe target is also knocked back and stunned based on Morphling's strength. If his strength is 50% higher than his agility, the maximum knockback distance and stun is used.",
+    "desc": "Launches a surge of water toward an enemy unit, dealing base damage plus additional damage based on Morphling's agility times a multiplier. If Morphling's agility is 50% higher than strength, the maximum agility multiplier is used. The target is also knocked back and stunned based on Morphling's strength. If his strength is 50% higher than his agility, the maximum knockback distance and stun is used.",
     "attrib": [
       {
         "key": "damage_base",
@@ -13567,7 +13587,7 @@
       "Point Target",
       "AOE"
     ],
-    "desc": "Phantom Lancer briefly vanishes from the battlefield. After 1 second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 500% bonus damage and deals -80% less damage.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Phantom Lancer briefly vanishes from the battlefield. After 1 second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 500% bonus damage and deals -80% less damage. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "illusion_1_damage_out_pct",
@@ -14879,14 +14899,18 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Sand King burrows into the ground and tunnels forward, damaging and stunning enemy units above him as he resurfaces. Adds Caustic Finale poison to heroes hit\n\n Can be put on alt-cast to immediately cast in the desired direction, without walking towards the targeted location.",
-    "dmg": [
-      "80",
-      "150",
-      "220",
-      "290"
-    ],
+    "desc": "Sand King burrows into the ground and tunnels forward, damaging and stunning enemy units above him as he resurfaces. Adds Caustic Finale poison to heroes hit Can be put on alt-cast to immediately cast in the desired direction, without walking towards the targeted location.",
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "80",
+          "150",
+          "220",
+          "290"
+        ]
+      },
       {
         "key": "burrow_width",
         "header": "BURROW WIDTH:",
@@ -15505,12 +15529,16 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "desc": "Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. The activation mana cost is 25+7.5% of his total mana pool, and the cost per 100 units traveled is 10+0.65% of his total mana pool. Damage is expressed in damage per 100 units traveled.",
-    "dmg": [
-      "6",
-      "10",
-      "14"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "6",
+          "10",
+          "14"
+        ]
+      },
       {
         "key": "ball_lightning_initial_mana_percentage",
         "header": "BALL LIGHTNING INITIAL MANA PERCENTAGE:",
@@ -15631,13 +15659,17 @@
       "Basic"
     ],
     "desc": "Sven unleashes his magical gauntlet that deals damage and stuns enemy units in a small area around the target.",
-    "dmg": [
-      "80",
-      "160",
-      "240",
-      "320"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "80",
+          "160",
+          "240",
+          "320"
+        ]
+      },
       {
         "key": "abilitycastrange",
         "header": "CAST RANGE:",
@@ -17543,7 +17575,7 @@
     "behavior": "No Target",
     "dmg_type": "Magical",
     "bkbpierce": "No",
-    "desc": "Strikes all enemy heroes with a bolt of lightning, dealing damage, no matter where they may be.\n\nThundergod's Wrath also provides True Sight around each hero struck. If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location.",
+    "desc": "Strikes all enemy heroes with a bolt of lightning, dealing damage, no matter where they may be. Thundergod's Wrath also provides True Sight around each hero struck. If an enemy hero is invisible, it takes no damage, but the True Sight is still created at that hero's location.",
     "attrib": [
       {
         "key": "sight_radius_day",
@@ -18011,12 +18043,16 @@
     "bkbpierce": "No",
     "dispellable": "No",
     "desc": "Summons a ghostly ship that sails through the battle before smashing apart, damaging and stunning all enemies caught near the wreckage. Allied heroes touched by the Ghostship are given a strong swig of The Admiral's Rum, receiving bonus movement speed and a delayed reaction to incoming damage.",
-    "dmg": [
-      "350",
-      "475",
-      "600"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "350",
+          "475",
+          "600"
+        ]
+      },
       {
         "key": "tooltip_delay",
         "header": "IMPACT DELAY:",
@@ -19183,7 +19219,7 @@
     ],
     "bkbpierce": "No",
     "dispellable": "No",
-    "desc": "Creates an Ice Spire at the target spot, slowing enemies around it. Can take 4 hero hits or 8 creep hits and when destroyed it will create a Frost Blast around it.\n\nChain Frost can be cast on the Spire and can bounce to the Spire and damage the spire by 1 hero attack if there are no other enemies in range.\n\nLich can cast Frost Shield on the Spire. Each Frost Shield tick will heal the spire by 1 hero attack.",
+    "desc": "Creates an Ice Spire at the target spot, slowing enemies around it. Can take 4 hero hits or 8 creep hits and when destroyed it will create a Frost Blast around it. Chain Frost can be cast on the Spire and can bounce to the Spire and damage the spire by 1 hero attack if there are no other enemies in range. Lich can cast Frost Shield on the Spire. Each Frost Shield tick will heal the spire by 1 hero attack.",
     "attrib": [
       {
         "key": "bonus_movespeed",
@@ -19410,7 +19446,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "CHANNELED - Channels magical energy, taking mana and slowing enemies over time. If the enemy has no mana remaining, the slow is increased by 15%. \n\n Can target allies to give them mana and movement speed at a 50% rate.",
+    "desc": "CHANNELED - Channels magical energy, taking mana and slowing enemies over time. If the enemy has no mana remaining, the slow is increased by 15%.  Can target allies to give them mana and movement speed at a 50% rate.",
     "attrib": [
       {
         "key": "duration",
@@ -19977,7 +20013,7 @@
     "dname": "Fowl Play",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "When taking lethal damage, Shadow Shaman receives a strong dispel and survives as a 1 HP chicken. Incoming damage is reduced to zero for 1s.Cooldown is reset upon respawning.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "When taking lethal damage, Shadow Shaman receives a strong dispel and survives as a 1 HP chicken. Incoming damage is reduced to zero for 1s.Cooldown is reset upon respawning. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "hex_duration",
@@ -20514,7 +20550,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "Thickens Tidehunter's hide to passively block a portion of any incoming physical attack damage. Reduced block amount versus creeps.\n\nCan be activated to double the block amount at the cost of 40% movement speed. Lasts 4s.",
+    "desc": "Thickens Tidehunter's hide to passively block a portion of any incoming physical attack damage. Reduced block amount versus creeps. Can be activated to double the block amount at the cost of 40% movement speed. Lasts 4s.",
     "attrib": [
       {
         "key": "damage_reduction",
@@ -20645,12 +20681,16 @@
     "bkbpierce": "No",
     "dispellable": "Strong Dispels Only",
     "desc": "Slams the ground, causing tentacles to erupt in all directions, damaging and stunning all nearby enemy units.",
-    "dmg": [
-      "275",
-      "375",
-      "475"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "275",
+          "375",
+          "475"
+        ]
+      },
       {
         "key": "radius",
         "header": "RADIUS:",
@@ -20860,7 +20900,7 @@
     "dname": "Blubber",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "Tidehunter's hide removes negative status effects if he takes more than 450 damage. Removes most debuffs, even if they are generally not purgable.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Tidehunter's hide removes negative status effects if he takes more than 450 damage. Removes most debuffs, even if they are generally not purgable. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "damage_cleanse",
@@ -21056,13 +21096,17 @@
     "dispellable": "No",
     "target_type": "Hero",
     "desc": "Curses all enemy Heroes and player-controlled units in a small area, causing them to take a set amount of damage each second, as well as bursts of damage every 4 seconds based on how much health they have lost since the curse began.",
-    "dmg": [
-      "18",
-      "22",
-      "26",
-      "30"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "18",
+          "22",
+          "26",
+          "30"
+        ]
+      },
       {
         "key": "radius",
         "header": "RADIUS:",
@@ -21246,7 +21290,7 @@
     "dname": "Gris-Gris",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "Witch Doctor gets a Gris-Gris, an item that cannot be dropped or placed in the backpack. When the owner dies, 100% of the gold lost from death is added to the item, and will be refunded when the item is consumed. The value of the Gris-Gris is increased by 1 every 3s. \n\n Right-click to consume and permanently remove the item.",
+    "desc": "Witch Doctor gets a Gris-Gris, an item that cannot be dropped or placed in the backpack. When the owner dies, 100% of the gold lost from death is added to the item, and will be refunded when the item is consumed. The value of the Gris-Gris is increased by 1 every 3s.  Right-click to consume and permanently remove the item.",
     "attrib": [
       {
         "key": "death_gold_lost_reduction_pct_tooltip",
@@ -22785,7 +22829,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Throws a flare towards an enemy, dealing damage, teleporting them away, rooting them and reducing their Cast and Attack Range for 2 seconds.\n\n The teleport location is always the ability's current cast range + 100 from Tinker's position when he threw the flare.",
+    "desc": "Throws a flare towards an enemy, dealing damage, teleporting them away, rooting them and reducing their Cast and Attack Range for 2 seconds.  The teleport location is always the ability's current cast range + 100 from Tinker's position when he threw the flare.",
     "attrib": [
       {
         "key": "damage",
@@ -23296,13 +23340,17 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "desc": "Necrophos releases a wave of death around him, dealing damage to enemy units and healing allied units.",
-    "dmg": [
-      "100",
-      "160",
-      "220",
-      "280"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "100",
+          "160",
+          "220",
+          "280"
+        ]
+      },
       {
         "key": "area_of_effect",
         "header": "RADIUS:",
@@ -24981,7 +25029,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "No",
-    "desc": "Attacks from Beastmaster or a nearby unit he controls will cause him bang his drum, dealing damage to nearby units and healing Beastmaster and units under his control for a portion of the damage dealt. Every attack decreases the interval between drum hits down to a minimum of 0.5s between hits after 20 attacks. If no attacks are made, the intervals gradually increase.\n\nUsing Primal Roar counts as 10 attacks.",
+    "desc": "Attacks from Beastmaster or a nearby unit he controls will cause him bang his drum, dealing damage to nearby units and healing Beastmaster and units under his control for a portion of the damage dealt. Every attack decreases the interval between drum hits down to a minimum of 0.5s between hits after 20 attacks. If no attacks are made, the intervals gradually increase. Using Primal Roar counts as 10 attacks.",
     "attrib": [
       {
         "key": "radius",
@@ -27387,7 +27435,7 @@
   "phantom_assassin_immaterial": {
     "dname": "Immaterial",
     "behavior": "Passive",
-    "desc": "Phantom Assassin focuses inward, increasing her ability to evade enemy attacks. Evasion improves with Phantom Assassin's levels. \n\nStacks diminishingly with other sources of Evasion.",
+    "desc": "Phantom Assassin focuses inward, increasing her ability to evade enemy attacks. Evasion improves with Phantom Assassin's levels. Stacks diminishingly with other sources of Evasion.",
     "attrib": [
       {
         "key": "evasion",
@@ -27783,7 +27831,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "CHANNELED - When cast on an enemy, Pugna drains health from the target enemy unit to heal himself and granting vision over the target.\n\nWhen cast on an ally, Pugna will drain his own health into his ally.",
+    "desc": "CHANNELED - When cast on an enemy, Pugna drains health from the target enemy unit to heal himself and granting vision over the target. When cast on an ally, Pugna will drain his own health into his ally.",
     "attrib": [
       {
         "key": "health_drain",
@@ -28198,7 +28246,7 @@
     ],
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Springs the trap nearest to Templar Assassin, slowing nearby enemies. \n\nIf the ability is in alt-cast state, springs the trap that is closest to the mouse cursor.",
+    "desc": "Springs the trap nearest to Templar Assassin, slowing nearby enemies. If the ability is in alt-cast state, springs the trap that is closest to the mouse cursor.",
     "attrib": [],
     "mc": "0",
     "cd": "0.5",
@@ -30289,7 +30337,7 @@
     "behavior": "No Target",
     "dmg_type": "Magical",
     "bkbpierce": "Yes",
-    "desc": "Forms a ring of energized cogs around Clockwerk, trapping any units that are near. Enemies outside the trap that touch a cog are knocked back, losing health and mana. Once a cog has delivered a shock, it will power down. Damage is increased by 50% of the mana burned.\n\n Cogs can be destroyed by enemy attacks, but Clockwerk can push them up to 1000 distance away with one hit.",
+    "desc": "Forms a ring of energized cogs around Clockwerk, trapping any units that are near. Enemies outside the trap that touch a cog are knocked back, losing health and mana. Once a cog has delivered a shock, it will power down. Damage is increased by 50% of the mana burned.  Cogs can be destroyed by enemy attacks, but Clockwerk can push them up to 1000 distance away with one hit.",
     "attrib": [
       {
         "key": "duration",
@@ -30626,13 +30674,17 @@
       "Basic"
     ],
     "desc": "Splits the earth under enemies. Deals damage and stuns for a short duration.",
-    "dmg": [
-      "115",
-      "170",
-      "225",
-      "280"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "115",
+          "170",
+          "225",
+          "280"
+        ]
+      },
       {
         "key": "delay",
         "header": "STUN DELAY:",
@@ -31772,7 +31824,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "Launch into a maddened rage, becoming Debuff Immune and increasing magic resistance.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Launch into a maddened rage, becoming Debuff Immune and increasing magic resistance. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -31842,7 +31894,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "Descend into a violent fury, gaining increased status and magic resistance. Applies a dispel and can be cast while disabled.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Descend into a violent fury, gaining increased status and magic resistance. Applies a dispel and can be cast while disabled. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -32093,7 +32145,7 @@
     "dispellable": "No",
     "target_team": [],
     "target_type": [],
-    "desc": "Lifestealer infests the body of a target unit, becoming undetectable, and healing for a portion of his max hitpoints every second while inside. He can then explode from the host body, dealing damage to nearby enemies. If the infested unit is an enemy creep or a neutral creep, he can take control of the unit's ability to move and attack, and the creep loses a portion of their max hitpoints over time. Does not work on enemy heroes.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Lifestealer infests the body of a target unit, becoming undetectable, and healing for a portion of his max hitpoints every second while inside. He can then explode from the host body, dealing damage to nearby enemies. If the infested unit is an enemy creep or a neutral creep, he can take control of the unit's ability to move and attack, and the creep loses a portion of their max hitpoints over time. Does not work on enemy heroes. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "radius",
@@ -32772,7 +32824,7 @@
       "Basic",
       "Building"
     ],
-    "desc": "Clinkz gains attack speed and has bonus attack range. Any current Skeleton Archers within a 1200 radius of Clinkz also gain bonus attack range and 50% of the attack speed bonus. \n\n Casting Strafe does not break Skeleton Walk invisibility.",
+    "desc": "Clinkz gains attack speed and has bonus attack range. Any current Skeleton Archers within a 1200 radius of Clinkz also gain bonus attack range and 50% of the attack speed bonus. Casting Strafe does not break Skeleton Walk invisibility.",
     "attrib": [
       {
         "key": "attack_speed_bonus",
@@ -32920,7 +32972,7 @@
       "Basic",
       "Building"
     ],
-    "desc": "Imbues Clinkz's arrows with fire for extra damage.\n\nSkeleton Archers will fire Searing Arrows at targets Clinkz attacks for 50% damage.",
+    "desc": "Imbues Clinkz's arrows with fire for extra damage. Skeleton Archers will fire Searing Arrows at targets Clinkz attacks for 50% damage.",
     "attrib": [
       {
         "key": "damage_bonus",
@@ -32963,7 +33015,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "Clinkz moves invisibly through units until the moment he attacks or uses items. Leaving Skeleton Walk creates Skeleton Archers.\n\nSkeleton Archers are immobile and die within multiple attacks from a hero or tower. Skeleton Archers deal a percentage of Clinkz' damage, and deal 25% less damage to buildings. Attack range is equal to Clinkz' attack range.",
+    "desc": "Clinkz moves invisibly through units until the moment he attacks or uses items. Leaving Skeleton Walk creates Skeleton Archers. Skeleton Archers are immobile and die within multiple attacks from a hero or tower. Skeleton Archers deal a percentage of Clinkz' damage, and deal 25% less damage to buildings. Attack range is equal to Clinkz' attack range.",
     "attrib": [
       {
         "key": "duration",
@@ -33280,7 +33332,7 @@
       "Basic",
       "Building"
     ],
-    "desc": "Clinkz throws a projectile filled with tar at the target enemy, dealing Magic damage on impact. After impact, the tar spills onto the ground and stays there for 5 seconds. Any enemy that walks across it gets slowed, and attacks from Clinkz or his Skeleton Archers will deal bonus physical damage.\n\n When the Tar Bomb hits, any Skeleton Archers within attack range will attack the target. If autocast is activated, Clinkz will throw a tar bomb when attacking the target, if it is available.",
+    "desc": "Clinkz throws a projectile filled with tar at the target enemy, dealing Magic damage on impact. After impact, the tar spills onto the ground and stays there for 5 seconds. Any enemy that walks across it gets slowed, and attacks from Clinkz or his Skeleton Archers will deal bonus physical damage.  When the Tar Bomb hits, any Skeleton Archers within attack range will attack the target. If autocast is activated, Clinkz will throw a tar bomb when attacking the target, if it is available.",
     "attrib": [
       {
         "key": "radius",
@@ -33371,7 +33423,7 @@
     "is_innate": true,
     "behavior": "Passive",
     "dispellable": "No",
-    "desc": "Clinkz and his skeletons apply a stacking debuff that causes their attacks to pierce up to 20% of the target's total physical armor (does not reduce their armor). Clinkz applies 2% per attack, and skeletons apply 1%. \n\nLasts 5 seconds.",
+    "desc": "Clinkz and his skeletons apply a stacking debuff that causes their attacks to pierce up to 20% of the target's total physical armor (does not reduce their armor). Clinkz applies 2% per attack, and skeletons apply 1%. Lasts 5 seconds.",
     "attrib": [
       {
         "key": "duration",
@@ -34081,7 +34133,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Enchantress charms an enemy. If the enemy is a hero, they are dispelled and slowed for 3.5s.\n\n If the enemy is a creep, she brings it under her control and receives 40% of their experience bounty. Enchantress can control creeps for up to 30s. \n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Enchantress charms an enemy. If the enemy is a hero, they are dispelled and slowed for 3.5s.  If the enemy is a creep, she brings it under her control and receives 40% of their experience bounty. Enchantress can control creeps for up to 30s. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "abilitycastrange",
@@ -34714,7 +34766,7 @@
     "dispellable": "Yes",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "desc": "Huskar draws upon his health to break an enemy's life, leaping at a target to shatter a percentage of that hero's current health and slow both their movement and attack speed. While leaping, Huskar is Debuff Immune and has 60% increased magic resistance.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Huskar draws upon his health to break an enemy's life, leaping at a target to shatter a percentage of that hero's current health and slow both their movement and attack speed. While leaping, Huskar is Debuff Immune and has 60% increased magic resistance. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "health_cost_percent",
@@ -35320,7 +35372,7 @@
       "AOE"
     ],
     "dispellable": "No",
-    "desc": "Spins a large web that grants Broodmother a passive movement speed increase and increases her Turn Rate, while in its vicinity, as well as giving free movement.\n\nSpin Web can be cast from anywhere as long as the new web touches an existing web. Webs never expire, and can be manually destroyed. When the maximum limit of webs is exceeded, the oldest web disappears.",
+    "desc": "Spins a large web that grants Broodmother a passive movement speed increase and increases her Turn Rate, while in its vicinity, as well as giving free movement. Spin Web can be cast from anywhere as long as the new web touches an existing web. Webs never expire, and can be manually destroyed. When the maximum limit of webs is exceeded, the oldest web disappears.",
     "attrib": [
       {
         "key": "radius",
@@ -36359,7 +36411,7 @@
     "behavior": "No Target",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Weaver warps backward to whatever position it was in five seconds earlier--regaining the HP and mana from that time. No effect on cooldown, gold or experience.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Weaver warps backward to whatever position it was in five seconds earlier--regaining the HP and mana from that time. No effect on cooldown, gold or experience. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "targets_allies",
@@ -37588,7 +37640,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Passively provides an aura that grants increased health regeneration. Can be cast on allies to provide them with bonus armor and increasing the healing and health regeneration they receive.\n\nIf cast on Chen, all units controlled by Chen receive the buff and will be teleported to him. Taking damage from enemy heroes or their units will cancel the teleport.",
+    "desc": "Passively provides an aura that grants increased health regeneration. Can be cast on allies to provide them with bonus armor and increasing the healing and health regeneration they receive. If cast on Chen, all units controlled by Chen receive the buff and will be teleported to him. Taking damage from enemy heroes or their units will cancel the teleport.",
     "attrib": [
       {
         "key": "armor",
@@ -37890,7 +37942,7 @@
     "dname": "Summon Convert",
     "is_innate": true,
     "behavior": "No Target",
-    "desc": "Chen summons a convert to fight for him. The convert gains bonuses from Holy Persuasion and dies if Chen dies. Its maximum health is set to 220 + 80 per Chen Level.\n\n The spell stays on cooldown while the convert is alive, but refreshes whenever Chen respawns. The Convert counts towards Holy Persuasion max unit count. The Convert's ability level increases with Chen's level of Holy Persuasion.",
+    "desc": "Chen summons a convert to fight for him. The convert gains bonuses from Holy Persuasion and dies if Chen dies. Its maximum health is set to 220 + 80 per Chen Level.  The spell stays on cooldown while the convert is alive, but refreshes whenever Chen respawns. The Convert counts towards Holy Persuasion max unit count. The Convert's ability level increases with Chen's level of Holy Persuasion.",
     "attrib": [
       {
         "key": "health_min",
@@ -38124,7 +38176,7 @@
     "dname": "Haunt",
     "behavior": "No Target",
     "bkbpierce": "Yes",
-    "desc": "Creates a spectral nemesis to haunt all enemy Heroes.\n\nHaunt illusions are uncontrollable, take extra damage, and deal less damage than Spectre herself. They ignore terrain.\n\nThe Reality sub-ability may be used to teleport to the illusion, destroying it.",
+    "desc": "Creates a spectral nemesis to haunt all enemy Heroes. Haunt illusions are uncontrollable, take extra damage, and deal less damage than Spectre herself. They ignore terrain. The Reality sub-ability may be used to teleport to the illusion, destroying it.",
     "attrib": [
       {
         "key": "scepter_cooldown_reduction_tooltip",
@@ -38223,7 +38275,7 @@
     "bkbpierce": "Yes",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "desc": "Creates a spectral nemesis to haunt a single visible enemy hero. At any moment during the duration, Spectre can use Reality to exchange places with any haunting illusion.\n\nHaunt illusions are uncontrollable, take extra damage, and deal less damage than Spectre herself. They ignore terrain.",
+    "desc": "Creates a spectral nemesis to haunt a single visible enemy hero. At any moment during the duration, Spectre can use Reality to exchange places with any haunting illusion. Haunt illusions are uncontrollable, take extra damage, and deal less damage than Spectre herself. They ignore terrain.",
     "attrib": [
       {
         "key": "duration",
@@ -38297,7 +38349,7 @@
     "bkbpierce": "Yes",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "desc": "Thrusts an uncontrollable illusion at the target. The illusion receives 200% damage.\n\nThe Reality sub-ability may be used to teleport to the illusion, destroying it.",
+    "desc": "Thrusts an uncontrollable illusion at the target. The illusion receives 200% damage. The Reality sub-ability may be used to teleport to the illusion, destroying it.",
     "attrib": [
       {
         "key": "abilitycastrange",
@@ -38421,7 +38473,7 @@
     "dname": "Spectral",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "When targeting a unit for attack, Spectre gains phased collision. If she moves through a unit, she gains 50 movement speed. This effect lingers for 0.3s.\n\nSpectre's illusions always have phased collision, and cannot gain the speed bonus.",
+    "desc": "When targeting a unit for attack, Spectre gains phased collision. If she moves through a unit, she gains 50 movement speed. This effect lingers for 0.3s. Spectre's illusions always have phased collision, and cannot gain the speed bonus.",
     "attrib": [
       {
         "key": "radius",
@@ -38692,7 +38744,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Inflicts a curse that dispels an enemy and prevents them from casting spells or healing in any way, while taking damage over time.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Inflicts a curse that dispels an enemy and prevents them from casting spells or healing in any way, while taking damage over time. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -39107,12 +39159,16 @@
     "bkbpierce": "Yes",
     "dispellable": "No",
     "desc": "Launches a tracer toward any location on the battlefield, which must be triggered again to mark the area to be blasted by a damaging explosion of hail. The further the tracer travels, the larger the explosion will be. Enemies caught in the explosion, or who touch the icy ball of hail as it travels, are Frostbitten, gaining Death Rime Stacks and prevented from regenerating or healing. If a Frostbitten unit's health drops below a certain percentage, they will instantly shatter.",
-    "dmg": [
-      "250",
-      "325",
-      "400"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "250",
+          "325",
+          "400"
+        ]
+      },
       {
         "key": "radius_min",
         "header": "RADIUS MIN:",
@@ -39314,13 +39370,17 @@
     "bkbpierce": "No",
     "dispellable": "Yes",
     "desc": "Ursa leaps forward 250 units and slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area for 4 seconds.",
-    "dmg": [
-      "75",
-      "125",
-      "175",
-      "225"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "75",
+          "125",
+          "175",
+          "225"
+        ]
+      },
       {
         "key": "shock_radius",
         "header": "RADIUS:",
@@ -39510,7 +39570,7 @@
     ],
     "bkbpierce": "Yes",
     "dispellable": "No",
-    "desc": "Ursa goes into a frenzy, providing damage reduction and status resistance. Removes any existing debuffs.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Ursa goes into a frenzy, providing damage reduction and status resistance. Removes any existing debuffs. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "damage_reduction",
@@ -39609,7 +39669,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Spirit Breaker fixes his sight on an enemy unit and starts charging through all objects, starting at 25% of the bonus speed and reaching his max speed after 1.5s.\n\nAll enemy units passed through and the targeted unit will be hit by a Greater Bash. If the targeted unit dies, Spirit Breaker will change his target to the nearest enemy unit to that location.",
+    "desc": "Spirit Breaker fixes his sight on an enemy unit and starts charging through all objects, starting at 25% of the bonus speed and reaching his max speed after 1.5s. All enemy units passed through and the targeted unit will be hit by a Greater Bash. If the targeted unit dies, Spirit Breaker will change his target to the nearest enemy unit to that location.",
     "attrib": [
       {
         "key": "movement_speed",
@@ -40446,7 +40506,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Alchemist throws a potion at an ally, applying a basic dispel and giving them attack speed, movement speed and HP regen.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Alchemist throws a potion at an ally, applying a basic dispel and giving them attack speed, movement speed and HP regen. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -40815,7 +40875,7 @@
     "dname": "Chemical Rage",
     "behavior": "No Target",
     "dispellable": "No",
-    "desc": "Alchemist causes his Ogre to enter a chemically induced rage, reducing base attack cooldown and increasing movement speed and health regeneration.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Alchemist causes his Ogre to enter a chemically induced rage, reducing base attack cooldown and increasing movement speed and health regeneration. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -40887,7 +40947,7 @@
     "dname": "Corrosive Weaponry",
     "behavior": "Passive",
     "bkbpierce": "No",
-    "desc": "Alchemist coats his weapons and empowers his spells with an acid that applies a stacking slow and base attack damage reduction to enemies hit.\n\nAttacks apply 2 stacks. Unstable Concoction applies 1 stack per second of brew time.",
+    "desc": "Alchemist coats his weapons and empowers his spells with an acid that applies a stacking slow and base attack damage reduction to enemies hit. Attacks apply 2 stacks. Unstable Concoction applies 1 stack per second of brew time.",
     "attrib": [
       {
         "key": "max_stacks",
@@ -41154,7 +41214,7 @@
       "No Target",
       "Instant Cast"
     ],
-    "desc": "Combines the properties of the elements currently being manipulated to create a new spell for Invoker to use. Invoke cooldown is reduced by 0.3 seconds for each orb level. \n\n Click the help button to see the list of possible spells.",
+    "desc": "Combines the properties of the elements currently being manipulated to create a new spell for Invoker to use. Invoke cooldown is reduced by 0.3 seconds for each orb level.  Click the help button to see the list of possible spells.",
     "attrib": [
       {
         "key": "max_invoked_spells",
@@ -41204,7 +41264,7 @@
     "attrib": [
       {
         "key": "duration",
-        "header": "COLD SNAP DURATION (QUAS):\\n",
+        "header": "COLD SNAP DURATION (QUAS):",
         "value": [
           "3",
           "3.4",
@@ -41308,7 +41368,7 @@
       },
       {
         "key": "enemy_slow",
-        "header": "ENEMY SLOW (QUAS):\\n",
+        "header": "ENEMY SLOW (QUAS):",
         "value": [
           "-20%",
           "-25%",
@@ -41324,7 +41384,7 @@
       },
       {
         "key": "self_slow",
-        "header": "SELF SPEED (WEX):\\n",
+        "header": "SELF SPEED (WEX):",
         "value": [
           "-20%",
           "-15%",
@@ -41362,7 +41422,7 @@
       },
       {
         "key": "mana_regen",
-        "header": "MANA REGENERATION (WEX):\\n",
+        "header": "MANA REGENERATION (WEX):",
         "value": [
           "2",
           "4",
@@ -41403,11 +41463,11 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Unleashes a fast moving tornado that picks up enemy units in its path, suspending them helplessly in the air shortly before allowing them to plummet to their doom. Travels further based on the level of Wex. Holds enemies in the air for a duration based on the level of Quas. Deals base damage plus added damage based on levels in Wex.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Unleashes a fast moving tornado that picks up enemy units in its path, suspending them helplessly in the air shortly before allowing them to plummet to their doom. Travels further based on the level of Wex. Holds enemies in the air for a duration based on the level of Quas. Deals base damage plus added damage based on levels in Wex. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "travel_distance",
-        "header": "TRAVEL DISTANCE (WEX):\\n",
+        "header": "TRAVEL DISTANCE (WEX):",
         "value": [
           "1500",
           "1800",
@@ -41446,7 +41506,7 @@
       },
       {
         "key": "lift_duration",
-        "header": "LIFT TIME (QUAS):\\n",
+        "header": "LIFT TIME (QUAS):",
         "value": [
           "1.2",
           "1.4",
@@ -41556,7 +41616,7 @@
       },
       {
         "key": "mana_burned",
-        "header": "MAX MANA BURNED (WEX):\\n",
+        "header": "MAX MANA BURNED (WEX):",
         "value": [
           "100",
           "175",
@@ -41625,7 +41685,7 @@
     "attrib": [
       {
         "key": "bonus_attack_speed",
-        "header": "BONUS ATTACK SPEED (WEX):\\n",
+        "header": "BONUS ATTACK SPEED (WEX):",
         "value": [
           "10",
           "22",
@@ -41641,7 +41701,7 @@
       },
       {
         "key": "bonus_damage",
-        "header": "BONUS DAMAGE (EXORT):\\n",
+        "header": "BONUS DAMAGE (EXORT):",
         "value": [
           "10",
           "22",
@@ -41706,7 +41766,7 @@
       },
       {
         "key": "travel_distance",
-        "header": "TRAVEL DISTANCE (WEX):\\n",
+        "header": "TRAVEL DISTANCE (WEX):",
         "value": [
           "465",
           "615",
@@ -41745,7 +41805,7 @@
       },
       {
         "key": "main_damage",
-        "header": "CONTACT DAMAGE (EXORT):\\n",
+        "header": "CONTACT DAMAGE (EXORT):",
         "value": [
           "55",
           "80",
@@ -41766,7 +41826,7 @@
       },
       {
         "key": "burn_dps",
-        "header": "BURN DAMAGE PER SECOND (EXORT):\\n",
+        "header": "BURN DAMAGE PER SECOND (EXORT):",
         "value": [
           "10",
           "15",
@@ -41832,7 +41892,7 @@
       },
       {
         "key": "damage",
-        "header": "DAMAGE (EXORT):\\n",
+        "header": "DAMAGE (EXORT):",
         "value": [
           "175",
           "225",
@@ -41923,7 +41983,7 @@
     "attrib": [
       {
         "key": "spirit_damage",
-        "header": "DAMAGE (EXORT):\\n",
+        "header": "DAMAGE (EXORT):",
         "value": [
           "20",
           "30",
@@ -41956,7 +42016,7 @@
       },
       {
         "key": "spirit_armor",
-        "header": "ARMOR (EXORT):\\n",
+        "header": "ARMOR (EXORT):",
         "value": [
           "0",
           "1",
@@ -41972,7 +42032,7 @@
       },
       {
         "key": "spirit_attack_range",
-        "header": "ATTACK RANGE (QUAS):\\n",
+        "header": "ATTACK RANGE (QUAS):",
         "value": [
           "305",
           "360",
@@ -41988,7 +42048,7 @@
       },
       {
         "key": "spirit_hp",
-        "header": "HEALTH (QUAS):\\n",
+        "header": "HEALTH (QUAS):",
         "value": [
           "300",
           "400",
@@ -42004,7 +42064,7 @@
       },
       {
         "key": "spirit_duration",
-        "header": "DURATION (QUAS):\\n",
+        "header": "DURATION (QUAS):",
         "value": [
           "24",
           "30",
@@ -42037,7 +42097,7 @@
       },
       {
         "key": "extra_spirit_count_quas",
-        "header": "SPIRIT COUNT (QUAS):\\n",
+        "header": "SPIRIT COUNT (QUAS):",
         "value": [
           "1",
           "1",
@@ -42053,7 +42113,7 @@
       },
       {
         "key": "extra_spirit_count_exort",
-        "header": "SPIRIT COUNT (EXORT):\\n",
+        "header": "SPIRIT COUNT (EXORT):",
         "value": [
           "1",
           "1",
@@ -42128,7 +42188,7 @@
     "attrib": [
       {
         "key": "duration",
-        "header": "WALL DURATION (QUAS):\\n",
+        "header": "WALL DURATION (QUAS):",
         "value": [
           "3",
           "4",
@@ -42144,7 +42204,7 @@
       },
       {
         "key": "slow",
-        "header": "MOVEMENT SLOW (QUAS):\\n",
+        "header": "MOVEMENT SLOW (QUAS):",
         "value": [
           "-20%",
           "-40%",
@@ -42165,7 +42225,7 @@
       },
       {
         "key": "damage_per_second",
-        "header": "DAMAGE PER SECOND (EXORT):\\n",
+        "header": "DAMAGE PER SECOND (EXORT):",
         "value": [
           "30",
           "36",
@@ -42289,7 +42349,7 @@
       },
       {
         "key": "damage",
-        "header": "DAMAGE (EXORT):\\n",
+        "header": "DAMAGE (EXORT):",
         "value": [
           "70",
           "110",
@@ -42305,7 +42365,7 @@
       },
       {
         "key": "knockback_duration",
-        "header": "KNOCKBACK DURATION (QUAS):\\n",
+        "header": "KNOCKBACK DURATION (QUAS):",
         "value": [
           "1.1",
           "1.2",
@@ -42321,7 +42381,7 @@
       },
       {
         "key": "disarm_duration",
-        "header": "DISARM DURATION (WEX):\\n",
+        "header": "DISARM DURATION (WEX):",
         "value": [
           "1.5",
           "2",
@@ -42389,7 +42449,7 @@
     "attrib": [
       {
         "key": "duration",
-        "header": "COLD SNAP DURATION:\\n",
+        "header": "COLD SNAP DURATION:",
         "value": [
           "3.5",
           "4.3",
@@ -42468,7 +42528,7 @@
       },
       {
         "key": "enemy_slow",
-        "header": "ENEMY SLOW:\\n",
+        "header": "ENEMY SLOW:",
         "value": [
           "-20%",
           "-30%",
@@ -42478,7 +42538,7 @@
       },
       {
         "key": "self_slow",
-        "header": "SELF SPEED:\\n",
+        "header": "SELF SPEED:",
         "value": [
           "-15%",
           "-5%",
@@ -42510,11 +42570,11 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Unleashes a fast moving tornado that picks up enemy units in its path, suspending them helplessly in the air shortly before allowing them to plummet to their doom. Travels further based on the level and holds enemies in the air for a duration.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Unleashes a fast moving tornado that picks up enemy units in its path, suspending them helplessly in the air shortly before allowing them to plummet to their doom. Travels further based on the level and holds enemies in the air for a duration. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "travel_distance",
-        "header": "TRAVEL DISTANCE:\\n",
+        "header": "TRAVEL DISTANCE:",
         "value": [
           "1200",
           "1865",
@@ -42547,7 +42607,7 @@
       },
       {
         "key": "lift_duration",
-        "header": "LIFT TIME:\\n",
+        "header": "LIFT TIME:",
         "value": [
           "1.1",
           "1.6",
@@ -42616,7 +42676,7 @@
       },
       {
         "key": "mana_burned",
-        "header": "MAX MANA BURNED:\\n",
+        "header": "MAX MANA BURNED:",
         "value": [
           "100",
           "250",
@@ -42664,7 +42724,7 @@
     "attrib": [
       {
         "key": "bonus_attack_speed",
-        "header": "BONUS ATTACK SPEED:\\n",
+        "header": "BONUS ATTACK SPEED:",
         "value": [
           "22",
           "42",
@@ -42674,7 +42734,7 @@
       },
       {
         "key": "bonus_damage",
-        "header": "BONUS DAMAGE:\\n",
+        "header": "BONUS DAMAGE:",
         "value": [
           "22",
           "42",
@@ -42727,7 +42787,7 @@
       },
       {
         "key": "damage",
-        "header": "DAMAGE:\\n",
+        "header": "DAMAGE:",
         "value": [
           "162",
           "266",
@@ -42797,7 +42857,7 @@
     "attrib": [
       {
         "key": "spirit_damage",
-        "header": "DAMAGE:\\n",
+        "header": "DAMAGE:",
         "value": [
           "32",
           "49",
@@ -42807,7 +42867,7 @@
       },
       {
         "key": "spirit_mana",
-        "header": "MANA:\\n",
+        "header": "MANA:",
         "value": [
           "150",
           "233",
@@ -42817,7 +42877,7 @@
       },
       {
         "key": "spirit_armor",
-        "header": "ARMOR:\\n",
+        "header": "ARMOR:",
         "value": [
           "1",
           "2",
@@ -42827,7 +42887,7 @@
       },
       {
         "key": "spirit_attack_range",
-        "header": "ATTACK RANGE:\\n",
+        "header": "ATTACK RANGE:",
         "value": [
           "365",
           "470",
@@ -42837,7 +42897,7 @@
       },
       {
         "key": "spirit_hp",
-        "header": "HEALTH:\\n",
+        "header": "HEALTH:",
         "value": [
           "400",
           "566",
@@ -42847,7 +42907,7 @@
       },
       {
         "key": "spirit_duration",
-        "header": "DURATION:\\n",
+        "header": "DURATION:",
         "value": [
           "30",
           "47",
@@ -42893,7 +42953,7 @@
       },
       {
         "key": "travel_distance",
-        "header": "TRAVEL DISTANCE:\\n",
+        "header": "TRAVEL DISTANCE:",
         "value": [
           "615",
           "880",
@@ -42926,7 +42986,7 @@
       },
       {
         "key": "main_damage",
-        "header": "CONTACT DAMAGE:\\n",
+        "header": "CONTACT DAMAGE:",
         "value": [
           "71",
           "103",
@@ -42941,7 +43001,7 @@
       },
       {
         "key": "burn_dps",
-        "header": "BURN DAMAGE PER SECOND:\\n",
+        "header": "BURN DAMAGE PER SECOND:",
         "value": [
           "14",
           "20",
@@ -42983,7 +43043,7 @@
     "attrib": [
       {
         "key": "duration",
-        "header": "WALL DURATION:\\n",
+        "header": "WALL DURATION:",
         "value": [
           "3",
           "6",
@@ -42993,7 +43053,7 @@
       },
       {
         "key": "slow",
-        "header": "MOVEMENT SLOW:\\n",
+        "header": "MOVEMENT SLOW:",
         "value": [
           "-20%",
           "-80%",
@@ -43008,7 +43068,7 @@
       },
       {
         "key": "damage_per_second",
-        "header": "DAMAGE PER SECOND:\\n",
+        "header": "DAMAGE PER SECOND:",
         "value": [
           "30",
           "45",
@@ -43109,7 +43169,7 @@
       },
       {
         "key": "damage",
-        "header": "DAMAGE:\\n",
+        "header": "DAMAGE:",
         "value": [
           "60",
           "127",
@@ -43119,7 +43179,7 @@
       },
       {
         "key": "knockback_duration",
-        "header": "KNOCKBACK DURATION:\\n",
+        "header": "KNOCKBACK DURATION:",
         "value": [
           "0.4",
           "0.74",
@@ -43129,7 +43189,7 @@
       },
       {
         "key": "disarm_duration",
-        "header": "DISARM DURATION:\\n",
+        "header": "DISARM DURATION:",
         "value": [
           "2",
           "3.25",
@@ -44507,7 +44567,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Rolls a barrel of ale at enemies that damages enemies along its path and spills out at the target location.\n\nAny enemy in the path or the spill area is drenched in cinder brew, becoming slowed. If the enemy receives Magic or Pure damage, they will be ignited, extending the duration by 3s and causing them to take damage over time.",
+    "desc": "Rolls a barrel of ale at enemies that damages enemies along its path and spills out at the target location. Any enemy in the path or the spill area is drenched in cinder brew, becoming slowed. If the enemy receives Magic or Pure damage, they will be ignited, extending the duration by 3s and causing them to take damage over time.",
     "attrib": [
       {
         "key": "duration",
@@ -44619,7 +44679,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "Brewmaster can switch stances based on the elements he controls.\n\nWhenever Brewmaster casts an ability, he becomes Brewed Up, increasing his stance power by 150% for 5s. If he casts another ability while Brewed Up, the duration is extended by 1s. After Brewed Up expires, he is hungover and cannot Brew Up again for 9s.\n\nEarth Brawler gains bonus Magic Resistance and Armor.\n\nStorm Brawler gains bonus Evasion and Movement Speed.\n\nFire Brawler gains bonus Attack Speed and chance to critical strike.",
+    "desc": "Brewmaster can switch stances based on the elements he controls. Whenever Brewmaster casts an ability, he becomes Brewed Up, increasing his stance power by 150% for 5s. If he casts another ability while Brewed Up, the duration is extended by 1s. After Brewed Up expires, he is hungover and cannot Brew Up again for 9s. Earth Brawler gains bonus Magic Resistance and Armor. Storm Brawler gains bonus Evasion and Movement Speed. Fire Brawler gains bonus Attack Speed and chance to critical strike.",
     "attrib": [
       {
         "key": "magic_resist",
@@ -44976,7 +45036,7 @@
     "dname": "Primal Companion",
     "behavior": "No Target",
     "dispellable": "No",
-    "desc": "Creates a Brewling based on Brewmaster's current Drunken Brawler Stance.\n\nA new Brewling cannot be resummoned for 3s if the current one takes damage from enemy Heroes or hero-controlled units. If the Brewling dies, the ability goes on cooldown for 70 seconds.\n\nOnly one Brewling can exist at a time. If Brewmaster uses Primal Split, the existing Brewling disappears.",
+    "desc": "Creates a Brewling based on Brewmaster's current Drunken Brawler Stance. A new Brewling cannot be resummoned for 3s if the current one takes damage from enemy Heroes or hero-controlled units. If the Brewling dies, the ability goes on cooldown for 70 seconds. Only one Brewling can exist at a time. If Brewmaster uses Primal Split, the existing Brewling disappears.",
     "attrib": [
       {
         "key": "cooldown_on_death",
@@ -45133,7 +45193,7 @@
     ],
     "bkbpierce": "No",
     "target_team": "Enemy",
-    "desc": "Damages summoned units in an area and dispels most buffs or debuffs.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Damages summoned units in an area and dispels most buffs or debuffs. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "damage",
@@ -45781,7 +45841,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Purges the target enemy unit, removing positive buffs, and slowing the target for the duration. The unit slowly regains its speed until the end of the duration, upon which damage is dealt. Units under the effect of Disruption can still be affected by Demonic Purge.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Purges the target enemy unit, removing positive buffs, and slowing the target for the duration. The unit slowly regains its speed until the end of the duration, upon which damage is dealt. Units under the effect of Disruption can still be affected by Demonic Purge. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "purge_damage",
@@ -45845,7 +45905,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Cleanses the target allied unit, removing negative buffs for the duration. At the end of the duration, the unit is healed. Units under the effect of Disruption can still be affected by Demonic Cleanse.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Cleanses the target allied unit, removing negative buffs for the duration. At the end of the duration, the unit is healed. Units under the effect of Disruption can still be affected by Demonic Cleanse. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "purge_damage",
@@ -46012,7 +46072,7 @@
     "dname": "Summon Spirit Bear",
     "is_innate": true,
     "behavior": "No Target",
-    "desc": "Summons a powerful Spirit Bear companion that can equip items.\n\nIf the bear moves 1100 distance away from the Lone Druid, it cannot attack. Lone Druid suffers 20% of his max health as backlash damage if the Spirit Bear dies.\nSpirit Bear has Demolish, Return, Entangling Claws, Savage Roar, and Spirit Link abilities.",
+    "desc": "Summons a powerful Spirit Bear companion that can equip items. If the bear moves 1100 distance away from the Lone Druid, it cannot attack. Lone Druid suffers 20% of his max health as backlash damage if the Spirit Bear dies. Spirit Bear has Demolish, Return, Entangling Claws, Savage Roar, and Spirit Link abilities.",
     "attrib": [
       {
         "key": "bear_hp",
@@ -46536,7 +46596,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "Yes",
     "dispellable": "Yes",
-    "desc": "Allows Spirit Bear to Entangle enemy heroes once they gain 5 stacks. Entangled enemies are rooted and take damage over time.\n\nSpirit Bear's attacks are permanently empowered, making them apply 1 stack with each attack on enemy heroes. Enemies cannot gain stacks while Entangled.",
+    "desc": "Allows Spirit Bear to Entangle enemy heroes once they gain 5 stacks. Entangled enemies are rooted and take damage over time. Spirit Bear's attacks are permanently empowered, making them apply 1 stack with each attack on enemy heroes. Enemies cannot gain stacks while Entangled.",
     "attrib": [
       {
         "key": "entangle_duration",
@@ -46592,7 +46652,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Allows Lone Druid to Entangle enemies once they gain 5 stacks. Entangled enemies are rooted and take damage over time.\n\nWhen cast, applies 2 stacks to each enemy hero in the area and 5 stacks to enemy creeps. Also empowers Lone Druid for 10s, making him apply 1 stack with each attack on enemy heroes. Enemies cannot gain stacks while Entangled.\n\nLeveling this ability also levels Spirit Bear's Entangling Claws ability.",
+    "desc": "Allows Lone Druid to Entangle enemies once they gain 5 stacks. Entangled enemies are rooted and take damage over time. When cast, applies 2 stacks to each enemy hero in the area and 5 stacks to enemy creeps. Also empowers Lone Druid for 10s, making him apply 1 stack with each attack on enemy heroes. Enemies cannot gain stacks while Entangled. Leveling this ability also levels Spirit Bear's Entangling Claws ability.",
     "attrib": [
       {
         "key": "active_radius",
@@ -47033,7 +47093,7 @@
     "behavior": "No Target",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Summons several phantasmal copies of the Chaos Knight from alternate dimensions. The phantasms are illusions that deal 100% damage, but take 350% damage.\nDISPEL TYPE: Basic Dispel",
+    "desc": "Summons several phantasmal copies of the Chaos Knight from alternate dimensions. The phantasms are illusions that deal 100% damage, but take 350% damage. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "images_count",
@@ -47185,7 +47245,7 @@
     ],
     "bkbpierce": "Yes",
     "dispellable": "No",
-    "desc": "Digs into the ground for a short duration, dispelling Meepo and causing him to become invulnerable and untargetable for 3s. Restores 25% of his max health over that duration.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Digs into the ground for a short duration, dispelling Meepo and causing him to become invulnerable and untargetable for 3s. Restores 25% of his max health over that duration. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -47281,7 +47341,7 @@
     "bkbpierce": "No",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Drawing mystical energies from the earth, a Meepo can teleport to another Meepo or itself after channeling for 1.5 seconds, damaging the enemy in both the departure and arrival locations. \n\nIf the ability is in alt-cast state, all Meepos will also cast Poof to the target. When cast on the ground, all Meepos except the selected one will Poof to the closest location.",
+    "desc": "Drawing mystical energies from the earth, a Meepo can teleport to another Meepo or itself after channeling for 1.5 seconds, damaging the enemy in both the departure and arrival locations. If the ability is in alt-cast state, all Meepos will also cast Poof to the target. When cast on the ground, all Meepos except the selected one will Poof to the closest location.",
     "attrib": [
       {
         "key": "cast_duration",
@@ -47491,7 +47551,7 @@
       "No Target"
     ],
     "dispellable": "No",
-    "desc": "Primary Meepo mounts all other Meepos in a 600 radius around him on top of his shoulders. While in this form, he gains 40% of the other Meepo stats and can Fling them at enemies, dealing damage and slowing them.\n\n When cast, Earthbind generates additional nets and Poof deals bonus damage based on the amount of Meepos riding on top.",
+    "desc": "Primary Meepo mounts all other Meepos in a 600 radius around him on top of his shoulders. While in this form, he gains 40% of the other Meepo stats and can Fling them at enemies, dealing damage and slowing them.  When cast, Earthbind generates additional nets and Poof deals bonus damage based on the amount of Meepos riding on top.",
     "attrib": [
       {
         "key": "radius",
@@ -50227,7 +50287,7 @@
     ],
     "bkbpierce": "No",
     "dispellable": "No",
-    "desc": "When activated while above ground, Spiked Carapace reflects and negates damage dealt to Nyx Assassin (max once from each source), as well as stunning the source of the damage. Activating Spiked Carapace will not break Vendetta invisibility.\n\nWhile Burrowed, Spiked Carapace instantly stuns nearby enemies when cast.",
+    "desc": "When activated while above ground, Spiked Carapace reflects and negates damage dealt to Nyx Assassin (max once from each source), as well as stunning the source of the damage. Activating Spiked Carapace will not break Vendetta invisibility. While Burrowed, Spiked Carapace instantly stuns nearby enemies when cast.",
     "attrib": [
       {
         "key": "reflect_duration",
@@ -50458,7 +50518,7 @@
   "naga_siren_mirror_image": {
     "dname": "Mirror Image",
     "behavior": "No Target",
-    "desc": "Creates multiple images of Naga Siren under her control.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Creates multiple images of Naga Siren under her control. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "illusion_duration",
@@ -51381,7 +51441,7 @@
     "dispellable": "Yes",
     "target_team": "Friendly",
     "target_type": [],
-    "desc": "After a short delay, teleports the targeted friendly hero to your location. If the targeted friendly hero takes player based damage during this time, the ability is interrupted. When cast, the teleport target's movement speed is increased. Upon teleporting, the increased movement speed buff are applied to both Keeper of the Light and the teleport target, and the latter also receives a Chakra Magic.\n\n If alt-cast, teleports Keeper of the Light to the target Ally instead. \n\n Ability Level increases with levels of Spirit Form.",
+    "desc": "After a short delay, teleports the targeted friendly hero to your location. If the targeted friendly hero takes player based damage during this time, the ability is interrupted. When cast, the teleport target's movement speed is increased. Upon teleporting, the increased movement speed buff are applied to both Keeper of the Light and the teleport target, and the latter also receives a Chakra Magic.  If alt-cast, teleports Keeper of the Light to the target Ally instead.  Ability Level increases with levels of Spirit Form.",
     "attrib": [
       {
         "key": "teleport_delay",
@@ -52411,7 +52471,7 @@
     ],
     "bkbpierce": "No",
     "dispellable": "No",
-    "desc": "Orders the Familiar closest to Visage to cast Stone Form in its current location, turning into stone and smashing into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form.\n\n Can be alt-cast to order the closest Familiar to the target location to move there and cast Stone Form.",
+    "desc": "Orders the Familiar closest to Visage to cast Stone Form in its current location, turning into stone and smashing into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form.  Can be alt-cast to order the closest Familiar to the target location to move there and cast Stone Form.",
     "attrib": [
       {
         "key": "stun_radius",
@@ -52484,7 +52544,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Strong Dispels Only",
-    "desc": "After a short delay, the Familiar turns into stone and smashes into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form. \n\n Can be alt-cast to order the Familiar to move to the target location and cast Stone Form.",
+    "desc": "After a short delay, the Familiar turns into stone and smashes into the ground, stunning and damaging all targets in the area. The Familiar becomes invulnerable, and will regain its health very rapidly. After 6 seconds, the Familiar will automatically leave Stone Form.  Can be alt-cast to order the Familiar to move to the target location and cast Stone Form.",
     "attrib": [
       {
         "key": "stun_radius",
@@ -52549,7 +52609,7 @@
     "dname": "Lurker",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "Visage's ability cooldown durations are accelerated as long as he's not taking damage.\n\nGrants a stack every 2s that Visage does not take damage. Each stack grants 2% cooldown acceleration with a max of 8 stacks. Stacks fade after 2s upon taking any damage.",
+    "desc": "Visage's ability cooldown durations are accelerated as long as he's not taking damage. Grants a stack every 2s that Visage does not take damage. Each stack grants 2% cooldown acceleration with a max of 8 stacks. Stacks fade after 2s upon taking any damage.",
     "attrib": [
       {
         "key": "max_stacks",
@@ -52693,7 +52753,7 @@
     ],
     "dmg_type": "Magical",
     "bkbpierce": "No",
-    "desc": "After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself. Slark only takes 30% of the damage.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself. Slark only takes 30% of the damage. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "delay",
@@ -52879,7 +52939,7 @@
       "No Target"
     ],
     "dispellable": "No",
-    "desc": "When not visible to the enemy team, Slark passively gains bonus movement speed and health regeneration. If Slark is damaged by a neutral unit, the passive movement and health regeneration bonuses are lost for 2 seconds.\n\nWhen activated, Slark hides himself in a cloud of shadows, becoming immune to detection. Attacking, casting spells, and using items will not reveal Slark, but enemies can see the cloud itself.",
+    "desc": "When not visible to the enemy team, Slark passively gains bonus movement speed and health regeneration. If Slark is damaged by a neutral unit, the passive movement and health regeneration bonuses are lost for 2 seconds. When activated, Slark hides himself in a cloud of shadows, becoming immune to detection. Attacking, casting spells, and using items will not reveal Slark, but enemies can see the cloud itself.",
     "attrib": [
       {
         "key": "bonus_movement_speed",
@@ -53059,7 +53119,7 @@
     ],
     "bkbpierce": "Yes",
     "dispellable": "No",
-    "desc": "Medusa magically splits her shot into several arrows. These arrows deal a lower percent of her normal damage.\n\nThe extra targets will not receive other attack effects (such as critical strike).",
+    "desc": "Medusa magically splits her shot into several arrows. These arrows deal a lower percent of her normal damage. The extra targets will not receive other attack effects (such as critical strike).",
     "attrib": [
       {
         "key": "damage_modifier",
@@ -53596,7 +53656,7 @@
     "behavior": "Passive",
     "dmg_type": "Physical",
     "bkbpierce": "Yes",
-    "desc": "While in melee form, Troll Warlord's attacks have a chance to ensnare, preventing the target from moving or using mobility spells and has additional movement speed and armor.\n\nWhen in ranged form, Troll Warlord's attacks have a chance to Maim the target, dealing bonus damage, and slowing the target's movement and attack speed.",
+    "desc": "While in melee form, Troll Warlord's attacks have a chance to ensnare, preventing the target from moving or using mobility spells and has additional movement speed and armor. When in ranged form, Troll Warlord's attacks have a chance to Maim the target, dealing bonus damage, and slowing the target's movement and attack speed.",
     "attrib": [
       {
         "key": "bonus_move_speed",
@@ -53959,7 +54019,7 @@
     "dispellable": "No",
     "target_team": "Both",
     "target_type": "Hero",
-    "desc": "Troll unleashes a powerful battle trance, that forces you to continuously attack the closest enemy unit within 900 range, prioritizing heroes. Damage does not kill you during this mode. Grants you bonus lifesteal, attack speed and movement speed. Applies a Basic Dispel.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Troll unleashes a powerful battle trance, that forces you to continuously attack the closest enemy unit within 900 range, prioritizing heroes. Damage does not kill you during this mode. Grants you bonus lifesteal, attack speed and movement speed. Applies a Basic Dispel. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "trance_duration",
@@ -57292,7 +57352,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Summons dark energies around an ally unit, dispelling them and creating an all damage barrier that absorbs a set amount of damage before expiring. When the barrier is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Summons dark energies around an ally unit, dispelling them and creating an all damage barrier that absorbs a set amount of damage before expiring. When the barrier is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -57493,7 +57553,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "When activated, dispels you and all damage dealt to you will heal instead of harm. If the ability is not on cooldown, it will automatically activate if your health falls below 400.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "When activated, dispels you and all damage dealt to you will heal instead of harm. If the ability is not on cooldown, it will automatically activate if your health falls below 400. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "hp_threshold",
@@ -57737,7 +57797,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "Yes",
     "dispellable": "Yes",
-    "desc": "Elder Titan sends forth his Astral Spirit, damaging any units it passes through. When the spirit rejoins the Titan, it grants bonus damage, armor, and movement speed for each unit it passed through.\n\nThe Astral Spirit possesses the Echo Stomp, Return Spirit, and Natural Order abilities.",
+    "desc": "Elder Titan sends forth his Astral Spirit, damaging any units it passes through. When the spirit rejoins the Titan, it grants bonus damage, armor, and movement speed for each unit it passed through. The Astral Spirit possesses the Echo Stomp, Return Spirit, and Natural Order abilities.",
     "attrib": [
       {
         "key": "abilitycastrange",
@@ -58220,7 +58280,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Removes debuffs and disables from the target friendly unit, and grants bonus movement speed and health regen for a short time.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Removes debuffs and disables from the target friendly unit, and grants bonus movement speed and health regen for a short time. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -59081,7 +59141,7 @@
     "dispellable": "Yes",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Earth Spirit pulls the target Stone Remnant or Allied Unit. Enemies struck by the gripped target will be silenced.\n\nPulled Remnants also deal damage to struck enemies.\n\nCast range is reduced when targeting an ally.",
+    "desc": "Earth Spirit pulls the target Stone Remnant or Allied Unit. Enemies struck by the gripped target will be silenced. Pulled Remnants also deal damage to struck enemies. Cast range is reduced when targeting an ally.",
     "attrib": [
       {
         "key": "radius",
@@ -59168,7 +59228,7 @@
     "dname": "Stone Remnant",
     "is_innate": true,
     "behavior": "Point Target",
-    "desc": "Call a Stone Remnant to the target location. Stone Remnants have no vision and are invulnerable, and can be used with Earth Spirit's abilities. Calling a Stone Remnant consumes a charge, which recharge over time. Stone Remnant has 7 charges.\n\nEarth Spirit passively gains 2.5% bonus damage per unused Stone Remnant charge, and gains an additional 7.5% bonus damage for 10s when a Stone Remnant is targeted with an ability (does not stack).",
+    "desc": "Call a Stone Remnant to the target location. Stone Remnants have no vision and are invulnerable, and can be used with Earth Spirit's abilities. Calling a Stone Remnant consumes a charge, which recharge over time. Stone Remnant has 7 charges. Earth Spirit passively gains 2.5% bonus damage per unused Stone Remnant charge, and gains an additional 7.5% bonus damage for 10s when a Stone Remnant is targeted with an ability (does not stack).",
     "attrib": [
       {
         "key": "duration",
@@ -59258,7 +59318,7 @@
     "dispellable": "No",
     "target_team": [],
     "target_type": [],
-    "desc": "Earth Spirit temporarily enchants a hero, granting them the properties of a Stone Remnant. After a short duration the remnant shatters, releasing the hero and damaging nearby enemies. \nCan be cast on Stone Remnants. Has a 5 second cooldown when used that way.\nHas a larger cast range when cast on an ally hero.",
+    "desc": "Earth Spirit temporarily enchants a hero, granting them the properties of a Stone Remnant. After a short duration the remnant shatters, releasing the hero and damaging nearby enemies. Can be cast on Stone Remnants. Has a 5 second cooldown when used that way. Has a larger cast range when cast on an ally hero.",
     "attrib": [
       {
         "key": "duration",
@@ -60244,7 +60304,7 @@
     "dispellable": "No",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "The Phoenix willingly ends its current life for the chance to be reborn. Transforms into a burning sun that scorches enemies in a huge area. The sun can be destroyed by attacks from enemy Heroes. After 6 seconds the sun explodes, stunning all nearby enemies while restoring Phoenix to full health and mana with refreshed abilities.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "The Phoenix willingly ends its current life for the chance to be reborn. Transforms into a burning sun that scorches enemies in a huge area. The sun can be destroyed by attacks from enemy Heroes. After 6 seconds the sun explodes, stunning all nearby enemies while restoring Phoenix to full health and mana with refreshed abilities. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "aura_radius",
@@ -60476,7 +60536,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "CHANNELED - Gathers Oracle's power into a bolt of scouring energy that, when released, damages, roots, and dispels enemies of buffs in an area around the target. If target is an ally it will only dispel debuffs. The root duration increases with channeling time.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "CHANNELED - Gathers Oracle's power into a bolt of scouring energy that, when released, damages, roots, and dispels enemies of buffs in an area around the target. If target is an ally it will only dispel debuffs. The root duration increases with channeling time. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "channel_time",
@@ -60691,7 +60751,7 @@
     "dispellable": "No",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Temporarily alters an ally's destiny, delaying any healing or damage taken until False Promise ends. Any healing that is delayed by False Promise is amplified. Removes most negative status effects and disables on initial cast.\n\nDISPEL TYPE: Strong Dispel",
+    "desc": "Temporarily alters an ally's destiny, delaying any healing or damage taken until False Promise ends. Any healing that is delayed by False Promise is amplified. Removes most negative status effects and disables on initial cast. DISPEL TYPE: Strong Dispel",
     "attrib": [
       {
         "key": "duration",
@@ -62309,7 +62369,7 @@
   "arc_warden_tempest_double": {
     "dname": "Tempest Double",
     "behavior": "Point Target",
-    "desc": "Briefly refocusing its fractured elements into a single form, the Arc Warden is able to create a perfect electrical duplication of itself. The duplicate can use all of Arc Warden's current items and special Tempest Double versions of his spells, except most consumables and items that drop on death. The duplicate has separate item and ability cooldowns.\n\nThe Tempest Double loses its sense of self and fractures over time, becoming slower and less accurate.",
+    "desc": "Briefly refocusing its fractured elements into a single form, the Arc Warden is able to create a perfect electrical duplication of itself. The duplicate can use all of Arc Warden's current items and special Tempest Double versions of his spells, except most consumables and items that drop on death. The duplicate has separate item and ability cooldowns. The Tempest Double loses its sense of self and fractures over time, becoming slower and less accurate.",
     "attrib": [
       {
         "key": "bounty",
@@ -62782,7 +62842,7 @@
     "dname": "Fiend's Gate",
     "behavior": "Point Target",
     "dispellable": "Yes",
-    "desc": "Opens 2 portals, one next to Underlord and one in the target location. Heroes can channel a portal for 3.5 seconds to teleport to the other side. Portals have to be at least 1500 away from each other.\n\nDouble-click to teleport to your team's base, in front of your fountain.",
+    "desc": "Opens 2 portals, one next to Underlord and one in the target location. Heroes can channel a portal for 3.5 seconds to teleport to the other side. Portals have to be at least 1500 away from each other. Double-click to teleport to your team's base, in front of your fountain.",
     "attrib": [
       {
         "key": "duration",
@@ -62913,7 +62973,7 @@
       "Passive",
       "Hidden"
     ],
-    "desc": "After teleporting through the Fiend's Gate, Underlord brings forth a Warrior or an Archer to aid him every 2s that last for the duration of the Fiend's Gate.\n\nThe Warrior burns mana every hit, and deals magical damage to whoever kills it. The Archer has a passive movement speed aura.",
+    "desc": "After teleporting through the Fiend's Gate, Underlord brings forth a Warrior or an Archer to aid him every 2s that last for the duration of the Fiend's Gate. The Warrior burns mana every hit, and deals magical damage to whoever kills it. The Archer has a passive movement speed aura.",
     "attrib": [
       {
         "key": "warrior_health",
@@ -63682,7 +63742,7 @@
     "behavior": "Point Target",
     "dmg_type": "Physical",
     "bkbpierce": "Yes",
-    "desc": "Pangolier dashes along the target line, then slashes and briefly slows all enemies in the drawn direction with several quick swipes.\n\nLucky Shot has a chance to activate from this damage.",
+    "desc": "Pangolier dashes along the target line, then slashes and briefly slows all enemies in the drawn direction with several quick swipes. Lucky Shot has a chance to activate from this damage.",
     "attrib": [
       {
         "key": "dash_range",
@@ -63807,7 +63867,7 @@
     "dmg_type": "Physical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Pangolier jumps in the air and slams back to the ground in front of his current position damaging all enemies in a radius. Pangolier gains an all damage barrier for a short time if Shield Crash hits an enemy hero.\n\nForward movement is maintained if Shield Crash is used while Rolling Thunder is active, and allows Rolling Thunder to clear walls or cliffs.",
+    "desc": "Pangolier jumps in the air and slams back to the ground in front of his current position damaging all enemies in a radius. Pangolier gains an all damage barrier for a short time if Shield Crash hits an enemy hero. Forward movement is maintained if Shield Crash is used while Rolling Thunder is active, and allows Rolling Thunder to clear walls or cliffs.",
     "attrib": [
       {
         "key": "damage",
@@ -63984,13 +64044,18 @@
     "dmg_type": "Physical",
     "bkbpierce": "No",
     "dispellable": "No",
-    "desc": "Pangolier curls into a debuff immune ball with 60% additional magic resistance and rolls out. When rolling, he moves at an increased speed and can move through trees, but has a decreased ability to turn. Striking enemies knocks them back, inflicting damage proportional to his attack damage and stunning them when they land. \n\nColliding with walls or cliffs will cause a temporary pause while Pangolier reverses in direction.\n\nDISPEL TYPE: Basic Dispel",
-    "dmg": [
-      "75",
-      "150",
-      "225"
-    ],
+    "desc": "Pangolier curls into a debuff immune ball with 60% additional magic resistance and rolls out. When rolling, he moves at an increased speed and can move through trees, but has a decreased ability to turn. Striking enemies knocks them back, inflicting damage proportional to his attack damage and stunning them when they land. Colliding with walls or cliffs will cause a temporary pause while Pangolier reverses in direction. DISPEL TYPE: Basic Dispel",
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "75",
+          "125",
+          "175",
+          "225"
+        ]
+      },
       {
         "key": "damage_pct",
         "header": "TOTAL ATTACK DAMAGE AS DAMAGE:",
@@ -64922,7 +64987,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Summons a phantom that moves quickly towards the target, latching to it when she arrives. Once latched, the phantom damages and silences. If she survives the full latch duration she rends her victim for heavy damage and refreshes Phantom's Embrace's cooldown.\n\nHero attacks against the phantom count as 3 attacks each.",
+    "desc": "Summons a phantom that moves quickly towards the target, latching to it when she arrives. Once latched, the phantom damages and silences. If she survives the full latch duration she rends her victim for heavy damage and refreshes Phantom's Embrace's cooldown. Hero attacks against the phantom count as 3 attacks each.",
     "attrib": [
       {
         "key": "spawn_time",
@@ -65581,7 +65646,7 @@
   "mars_bulwark": {
     "dname": "Bulwark",
     "behavior": "No Target",
-    "desc": "Mars wields his massive shield to block a portion of each physical attack when hit from the front or sides.\n\n Can be toggled, granting phased movement, removing Mars's ability to attack, and locking the direction he is facing. When active, reduces movement speed and re-directs 70% of the attack projectiles aimed at Mars's allies towards Mars instead.",
+    "desc": "Mars wields his massive shield to block a portion of each physical attack when hit from the front or sides.  Can be toggled, granting phased movement, removing Mars's ability to attack, and locking the direction he is facing. When active, reduces movement speed and re-directs 70% of the attack projectiles aimed at Mars's allies towards Mars instead.",
     "attrib": [
       {
         "key": "physical_damage_reduction",
@@ -65972,13 +66037,17 @@
       "Basic"
     ],
     "desc": "Void Spirit temporarily fades into the aether, creating a number of portals through which he can reassemble himself. Upon exiting a portal, he damages all enemies in the area.",
-    "dmg": [
-      "120",
-      "200",
-      "280",
-      "360"
-    ],
     "attrib": [
+      {
+        "key": "damage",
+        "header": "DAMAGE:",
+        "value": [
+          "120",
+          "200",
+          "280",
+          "360"
+        ]
+      },
       {
         "key": "phase_duration",
         "header": "PHASE DURATION:",
@@ -67148,7 +67217,7 @@
     "bkbpierce": "No",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "desc": "Fires Hoodwink's attack with an acorn at the target unit. The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage.\nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets. The ability may be placed on alt-cast to force this behavior.",
+    "desc": "Fires Hoodwink's attack with an acorn at the target unit. The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. If point targeted, a tree is created at the target position and the acorn will bounce to nearby targets. The ability may be placed on alt-cast to force this behavior.",
     "attrib": [
       {
         "key": "bonus_range",
@@ -67475,7 +67544,7 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "desc": "Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage, break and slow to an enemy Hero. The damage and debuff duration scale up to max after x0.75 seconds, and the bolt is fired automatically after x0.75 seconds.\nHoodwink is knocked backwards for a distance of 350 from the force of the shot. Creeps hit by the bolt are damaged for half the values.",
+    "desc": "Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage, break and slow to an enemy Hero. The damage and debuff duration scale up to max after x0.75 seconds, and the bolt is fired automatically after x0.75 seconds. Hoodwink is knocked backwards for a distance of 350 from the force of the shot. Creeps hit by the bolt are damaged for half the values.",
     "attrib": [
       {
         "key": "arrow_speed",
@@ -68292,7 +68361,7 @@
     "behavior": "No Target",
     "dmg_type": "Magical",
     "dispellable": "No",
-    "desc": "Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes that slow movement and attack speed of the target for 2s. The last strike in every Fury combo creates a damaging pulse around the target. In between Fury combos, Marci is unable to attack for 1.5s.\n\nMarci gains 15% movement speed when Unleash is cast.",
+    "desc": "Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes that slow movement and attack speed of the target for 2s. The last strike in every Fury combo creates a damaging pulse around the target. In between Fury combos, Marci is unable to attack for 1.5s. Marci gains 15% movement speed when Unleash is cast.",
     "attrib": [
       {
         "key": "duration",
@@ -68405,7 +68474,7 @@
     "dispellable": "Strong Dispels Only",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Marci bounds to the targeted allied unit, choosing a direction and distance she will spring away from it. Upon reaching the unit, Marci lunges to her final destination, damaging and stunning enemies in a 275 radius where she lands.\n\n The ally receives 15% bonus movement speed for 4s.",
+    "desc": "Marci bounds to the targeted allied unit, choosing a direction and distance she will spring away from it. Upon reaching the unit, Marci lunges to her final destination, damaging and stunning enemies in a 275 radius where she lands.  The ally receives 15% bonus movement speed for 4s.",
     "attrib": [
       {
         "key": "move_speed",
@@ -68637,7 +68706,7 @@
     "dispellable": "No",
     "target_team": "Friendly",
     "target_type": "Hero",
-    "desc": "Passively grants Marci lifesteal and bonus attack damage.\n\nMarci protects an allied hero. For 1s, the ally also gains 75% of lifesteal and attack damage bonus. Whenever the ally attacks or is attacked by an enemy, Marci counter-attacks that target if they are within her attack range plus 125.",
+    "desc": "Passively grants Marci lifesteal and bonus attack damage. Marci protects an allied hero. For 1s, the ally also gains 75% of lifesteal and attack damage bonus. Whenever the ally attacks or is attacked by an enemy, Marci counter-attacks that target if they are within her attack range plus 125.",
     "attrib": [
       {
         "key": "bodyguard_duration",
@@ -68711,7 +68780,7 @@
     "dname": "Special Delivery",
     "is_innate": true,
     "behavior": "No Target",
-    "desc": "Marci whistles to instantly summon her courier to her.\n\nPassively grants all allied couriers 3 bonus levels and 1 bonus health.",
+    "desc": "Marci whistles to instantly summon her courier to her. Passively grants all allied couriers 3 bonus levels and 1 bonus health.",
     "attrib": [
       {
         "key": "bonus_levels",
@@ -68789,7 +68858,7 @@
       "Basic",
       "Hero"
     ],
-    "desc": "Primal Beast charges up and then runs in the chosen direction, knocking back enemies and allies alike. Enemy units are damaged and stunned on impact. The longer the charge duration, the farther Primal Beast's momentum will carry him. \n\n Can be cancelled at any time with the Stop command.",
+    "desc": "Primal Beast charges up and then runs in the chosen direction, knocking back enemies and allies alike. Enemy units are damaged and stunned on impact. The longer the charge duration, the farther Primal Beast's momentum will carry him. Can be cancelled at any time with the Stop command.",
     "attrib": [
       {
         "key": "charge_speed",
@@ -68975,7 +69044,7 @@
       "Instant Cast"
     ],
     "dispellable": "No",
-    "desc": "The Beast's temper causes every instance of 50 hero damage or more to grant a stack of Uproar. \n\n When activated, Primal Beast releases a roar that slows surrounding enemies and grants the Beast additional attack damage and armor for 7 seconds based on his current stacks of Uproar.",
+    "desc": "The Beast's temper causes every instance of 50 hero damage or more to grant a stack of Uproar.  When activated, Primal Beast releases a roar that slows surrounding enemies and grants the Beast additional attack damage and armor for 7 seconds based on his current stacks of Uproar.",
     "attrib": [
       {
         "key": "bonus_damage_per_stack",
@@ -69196,7 +69265,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Primal Beast throws a rock at the target location that stuns and damages enemies. The rock cannot be thrown within a minimum range of Primal Beast. After landing, the rock splits into 3 additional fragments that land behind the initial target location.\n\n Rock Throw increases stacks of Uproar for each hero hit.",
+    "desc": "Primal Beast throws a rock at the target location that stuns and damages enemies. The rock cannot be thrown within a minimum range of Primal Beast. After landing, the rock splits into 3 additional fragments that land behind the initial target location.  Rock Throw increases stacks of Uproar for each hero hit.",
     "attrib": [
       {
         "key": "base_damage",
@@ -69684,7 +69753,7 @@
   "muerta_ofrenda": {
     "dname": "Ofrenda",
     "behavior": "Point Target",
-    "desc": "Muerta places a sacred altar at the targeted location that increases her attack speed when she is near it.\n\nWhen respawning, Muerta will gain the benefits of Pierce The Veil's corporeal form for 50% of the duration and respawn at the Ofrenda.\n\nMuerta can select the Ofrenda and force it to destroy itself. Only one Ofrenda can exist at a time.",
+    "desc": "Muerta places a sacred altar at the targeted location that increases her attack speed when she is near it. When respawning, Muerta will gain the benefits of Pierce The Veil's corporeal form for 50% of the duration and respawn at the Ofrenda. Muerta can select the Ofrenda and force it to destroy itself. Only one Ofrenda can exist at a time.",
     "attrib": [
       {
         "key": "pierce_the_veil_duration_pct",
@@ -70216,7 +70285,7 @@
     "bkbpierce": "No",
     "dispellable": "No",
     "target_type": "Hero",
-    "desc": "Ringmaster rolls the Wheel of Wonder to the targeted location, knocking aside enemies along the way. After it reaches its target, enemies in range of the wheel take damage over time and are slowed by -50%.\n\nEnemy heroes who face the wheel for more than 0.5 seconds are mesmerized and drawn towards it. The first enemy to be mesmerized triggers a timer for the wheel to explode. If the timer is not triggered, it will automatically explode after 4 seconds.",
+    "desc": "Ringmaster rolls the Wheel of Wonder to the targeted location, knocking aside enemies along the way. After it reaches its target, enemies in range of the wheel take damage over time and are slowed by -50%. Enemy heroes who face the wheel for more than 0.5 seconds are mesmerized and drawn towards it. The first enemy to be mesmerized triggers a timer for the wheel to explode. If the timer is not triggered, it will automatically explode after 4 seconds.",
     "attrib": [
       {
         "key": "min_range",
@@ -70478,7 +70547,7 @@
     "dname": "Dark Carnival Barker",
     "is_innate": true,
     "behavior": "Passive",
-    "desc": "Ringmaster receives a random single-use Dark Carnival Souvenir whenever an enemy hero dies within 925 units of him. Additional Souvenirs are held as charges.\n\nIf Ringmaster does not have a Souvenir when he dies he will be granted one.",
+    "desc": "Ringmaster receives a random single-use Dark Carnival Souvenir whenever an enemy hero dies within 925 units of him. Additional Souvenirs are held as charges. If Ringmaster does not have a Souvenir when he dies he will be granted one.",
     "attrib": [
       {
         "key": "souvenir_collection_range",
@@ -71061,7 +71130,7 @@
       "No Target",
       "Instant Cast"
     ],
-    "desc": "Kez switches between his Kazurai Katana and Shodo Sai.\n\nHe gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown.",
+    "desc": "Kez switches between his Kazurai Katana and Shodo Sai. He gains different attack capabilities and abilities based on the weapon equipped. The abilities level up together, and when an ability is used, the associated alternate weapon ability also goes on cooldown.",
     "attrib": [
       {
         "key": "katana_attack_range",
@@ -71292,7 +71361,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Katana attacks and abilities apply a stacking damage over time to enemies that deals a percentage of the original attack's damage as additional damage over time. \n\nKez may activate the ability to impale the target with his attack, preventing them from moving or turning. The target's Katana debuff bursts, causing some of the stacks to deal damage instantly.",
+    "desc": "Katana attacks and abilities apply a stacking damage over time to enemies that deals a percentage of the original attack's damage as additional damage over time. Kez may activate the ability to impale the target with his attack, preventing them from moving or turning. The target's Katana debuff bursts, causing some of the stacks to deal damage instantly.",
     "attrib": [
       {
         "key": "katana_bleed_duration",
@@ -71378,7 +71447,7 @@
       "Hero",
       "Basic"
     ],
-    "desc": "Kez enters into an uncontrollable state for 1 second, becoming invulnerable for 0.2s and receiving a basic dispel, remaining immune to magic damage for the remainder of the cast time and the duration of the slashes.\n\n If the cast completes successfully, Kez performs a series of deadly radial slashes around him that deal damage based on the max health of the target and heal Kez for a percentage of all damage dealt.",
+    "desc": "Kez enters into an uncontrollable state for 1 second, becoming invulnerable for 0.2s and receiving a basic dispel, remaining immune to magic damage for the remainder of the cast time and the duration of the slashes.  If the cast completes successfully, Kez performs a series of deadly radial slashes around him that deal damage based on the max health of the target and heal Kez for a percentage of all damage dealt.",
     "attrib": [
       {
         "key": "strike_interval",
@@ -71663,7 +71732,7 @@
     ],
     "bkbpierce": "Yes",
     "dispellable": "Strong Dispels Only",
-    "desc": "Kez's attacks and abilities with the Sai have a chance to Mark enemies. The next attack or ability damage from Kez will stun the enemy and deal a critical strike, consuming the buff.\n\nKez may activate the ability to disarm himself, lock his facing, and parry attacks and attack effects from the targeted direction for 2 seconds. If an attack is parried from an enemy Hero in this way, that Hero is stunned and gains a stronger Mark that stuns for longer and deals 4% * Target Hero Level bonus critical strike.\n\nThe sub-ability may be used to cancel the blocking early.",
+    "desc": "Kez's attacks and abilities with the Sai have a chance to Mark enemies. The next attack or ability damage from Kez will stun the enemy and deal a critical strike, consuming the buff. Kez may activate the ability to disarm himself, lock his facing, and parry attacks and attack effects from the targeted direction for 2 seconds. If an attack is parried from an enemy Hero in this way, that Hero is stunned and gains a stronger Mark that stuns for longer and deals 4% * Target Hero Level bonus critical strike. The sub-ability may be used to cancel the blocking early.",
     "attrib": [
       {
         "key": "sai_proc_vuln_chance",
@@ -71906,7 +71975,7 @@
       "Instant Cast"
     ],
     "dmg_type": "Magical",
-    "desc": "Largo gets ready to groove. He is disarmed and his ability bar switches to 3 song abilities, each with different effects. Songs are only effective if strummed on the beat.\n\nEvery time he strums successfully, he gains a stack of Groovin'. Each stack gives him bonus armor and reduces the mana cost of every song, but he loses a stack if he misses a beat. Stacks linger for a short duration when Largo's song ends.",
+    "desc": "Largo gets ready to groove. He is disarmed and his ability bar switches to 3 song abilities, each with different effects. Songs are only effective if strummed on the beat. Every time he strums successfully, he gains a stack of Groovin'. Each stack gives him bonus armor and reduces the mana cost of every song, but he loses a stack if he misses a beat. Stacks linger for a short duration when Largo's song ends.",
     "attrib": [
       {
         "key": "duration",
@@ -72461,7 +72530,7 @@
       "Enemy"
     ],
     "target_type": "Hero",
-    "desc": "Largo licks the targeted unit with his tongue, pulling it back a short distance, applying a basic dispel, and dealing damage if it's an enemy.\n\nDispelling an effect from a target grants Largo temporary health regeneration.\n\nDISPEL TYPE: Basic Dispel",
+    "desc": "Largo licks the targeted unit with his tongue, pulling it back a short distance, applying a basic dispel, and dealing damage if it's an enemy. Dispelling an effect from a target grants Largo temporary health regeneration. DISPEL TYPE: Basic Dispel",
     "attrib": [
       {
         "key": "abilitycastrange",

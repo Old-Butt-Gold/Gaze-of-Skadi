@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import { useAbilities } from '../../hooks/queries/useAbilities';
 import { Icon } from '../Icon';
@@ -12,6 +12,7 @@ import {
     getDispellableName,
     getTargetTeamName, getTargetTypeName
 } from "../../utils/itemUtils.ts";
+import {getAbilityIconUrl} from "../../utils/abilityUtils.ts";
 
 interface Props {
     heroAbilities: HeroAbility;
@@ -31,14 +32,7 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
         return Array.from(new Set([...base, ...facetAbilities]));
     }, [heroAbilities]);
 
-    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(null);
-
-    // Устанавливаем первую способность активной по умолчанию
-    useEffect(() => {
-        if (allAbilityNames.length > 0 && !selectedAbilityName) {
-            setSelectedAbilityName(allAbilityNames[0]);
-        }
-    }, [allAbilityNames, selectedAbilityName]);
+    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(allAbilityNames[0] ?? null);
 
     if (isLoading) return <LoadingSpinner />;
 
@@ -54,12 +48,7 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
                     if (!ability) return null;
 
                     const isSelected = name === selectedAbilityName;
-                    const isInnate = ability.is_innate === BooleanState.True;
-
-                    // Fallback icons
-                    const iconSrc = isInnate
-                        ? '/assets/images/innate_icon.png'
-                        : ability.img;
+                    const iconSrc = getAbilityIconUrl(name, ability.is_innate, ability.img);
 
                     return (
                         <button
@@ -85,28 +74,24 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
 
                     {/* VIDEO HEADER (If available) */}
                     {selectedAbility.video && (
-                        <div className="relative w-full bg-black border-b border-[#2e353b]">
+                        <div className="relative w-full bg-black border-b border-[#2e353b] aspect-video max-h-[60vh]">
                             <video
                                 src={selectedAbility.video}
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="w-full h-full object-cover opacity-80"
+                                className="w-full h-full object-cover"
                             />
                         </div>
                     )}
 
-                    <div className="p-6 md:p-8 relative">
+                    <div className="p-4 md:p-6 relative">
                         {/* Header Info */}
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-[#2e353b] pb-4">
                             <div className="flex items-center gap-4">
-                                <div className="w-16 h-16 rounded border border-[#2e353b] shadow-lg overflow-hidden shrink-0">
-                                    <img
-                                        src={selectedAbility.img ?? (selectedAbility.is_innate === BooleanState.True ? '/assets/images/innate_icon.png' : '/assets/images/spell_placeholder.png')}
-                                        alt={selectedAbility.dname ?? "Ability"}
-                                        className="w-full h-full object-cover"
-                                    />
+                                <div className="w-16 h-16 rounded shadow-lg overflow-hidden shrink-0">
+                                    <Icon src={getAbilityIconUrl(selectedAbilityName, selectedAbility.is_innate, selectedAbility.img) ?? "unknown"} />
                                 </div>
                                 <div>
                                     <h3 className="text-2xl font-serif font-bold text-white uppercase tracking-widest drop-shadow-md">

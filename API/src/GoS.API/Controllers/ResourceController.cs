@@ -2,11 +2,9 @@
 using GoS.Application.Abstractions;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Resources.Models.Abilities;
-using GoS.Domain.Resources.Models.AghanimDescriptions;
 using GoS.Domain.Resources.Models.ChatWheels;
 using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
-using GoS.Domain.Resources.Models.ItemColors;
 using GoS.Domain.Resources.Models.Items;
 using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.AspNetCore.Mvc;
@@ -39,15 +37,6 @@ public sealed class ResourceController : ControllerBase
     public async Task<IActionResult> GetAbilityIds()
     {
         var result = await _resourceManager.GetAbilityIdsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("aghanim-descriptions")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, AghanimDescription>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetAghanimDescriptions()
-    {
-        var result = await _resourceManager.GetAghanimDescriptionsAsync();
         return result is null ? NotFound() : Ok(result);
     }
 

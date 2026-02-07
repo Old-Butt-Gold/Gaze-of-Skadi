@@ -1,5 +1,4 @@
 ﻿using GoS.Application.Abstractions.Queries;
-using MediatR;
 
 namespace GoS.Application.Features.Stratz.GetMatchesByGameMode;
 

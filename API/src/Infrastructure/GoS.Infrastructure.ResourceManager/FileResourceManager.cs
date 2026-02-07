@@ -1,11 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using GoS.Application.Abstractions;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Extensions;
 using GoS.Domain.Resources.Enums;
 using GoS.Domain.Resources.Models.Abilities;
-using GoS.Domain.Resources.Models.AghanimDescriptions;
 using GoS.Domain.Resources.Models.ChatWheels;
 using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
@@ -21,14 +21,14 @@ internal sealed class FileResourceManager : IResourceManager
 	private const string ResourcesFolder = "Resources";
 	private readonly JsonSerializerOptions _defaultOptions;
 	private readonly ILogger<FileResourceManager> _logger;
-	
+
 	public FileResourceManager(ISerializationOptionsProvider serializationOptionsProvider, ILogger<FileResourceManager> logger)
 	{
 		_logger = logger;
 		_defaultOptions = serializationOptionsProvider.CreateJsonSerializerOptions();
 		_defaultOptions.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow;
 	}
-	
+
 	public Task<Dictionary<string, Ability>?> GetAbilitiesAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, Ability>?>(Resource.Abilities);
@@ -39,18 +39,11 @@ internal sealed class FileResourceManager : IResourceManager
 		return LoadResourceAsync<Dictionary<string, string>?>(Resource.AbilityIds);
 	}
 
-	public async Task<Dictionary<string, AghanimDescription>?> GetAghanimDescriptionsAsync()
-	{
-		var list = await LoadResourceAsync<List<AghanimDescription>>(Resource.AghsDesc);
-
-		return list.ToDictionary(x => x.HeroName);
-	}
-
 	public Task<Dictionary<string, int>?> GetAncientsAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, int>?>(Resource.Ancients);
 	}
-	
+
 	public Task<Dictionary<string, ChatWheel>?> GetChatWheelsAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, ChatWheel>?>(Resource.ChatWheel);
@@ -104,9 +97,9 @@ internal sealed class FileResourceManager : IResourceManager
 	private async Task<T> LoadResourceAsync<T>(Resource resource)
 	{
 		var jsonPath = GetPathToResource(resource);
-		
+
 		_logger.LogInformation("Getting file {JsonPath} with resource — {Resource}", jsonPath, resource);
-		
+
 		if (!File.Exists(jsonPath))
 		{
 			throw new FileNotFoundException($"Resource '{resource.ToSnakeCase()}.json' not found at path '{jsonPath}'.");
