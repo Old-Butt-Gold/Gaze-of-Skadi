@@ -5,7 +5,7 @@ export const ExpandableBio = ({ lore }: { lore: string }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     // Get first paragraph or truncate for preview
-    const preview = lore.split('\n')[0];
+    const preview = lore.split('.')[0];
 
     return (
         <div className="bg-[#15171c] border-y border-[#2e353b] md:border md:rounded-xl p-6 md:p-8 relative overflow-hidden transition-all duration-500 shadow-lg group">

@@ -8,6 +8,7 @@ export interface Facet {
     title: string;
     description: string;
     deprecated: BooleanState | null;
+    abilities: string[] | null;
 }
 
 export interface Talent {

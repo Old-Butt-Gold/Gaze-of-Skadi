@@ -4,7 +4,6 @@
       "antimage_mana_break",
       "antimage_blink",
       "antimage_counterspell",
-      "generic_hidden",
       "antimage_persectur",
       "antimage_mana_void"
     ],
@@ -66,8 +65,6 @@
       "axe_berserkers_call",
       "axe_battle_hunger",
       "axe_counter_helix",
-      "generic_hidden",
-      "generic_hidden",
       "axe_culling_blade",
       "axe_coat_of_blood"
     ],
@@ -132,8 +129,6 @@
       "bane_enfeeble",
       "bane_brain_sap",
       "bane_nightmare",
-      "generic_hidden",
-      "generic_hidden",
       "bane_fiends_grip",
       "bane_nightmare_end",
       "bane_ichor_of_nyctasha"
@@ -196,7 +191,6 @@
       "bloodseeker_bloodrage",
       "bloodseeker_blood_bath",
       "bloodseeker_thirst",
-      "generic_hidden",
       "bloodseeker_sanguivore",
       "bloodseeker_rupture"
     ],
@@ -413,8 +407,6 @@
       "earthshaker_fissure",
       "earthshaker_enchant_totem",
       "earthshaker_aftershock",
-      "generic_hidden",
-      "generic_hidden",
       "earthshaker_echo_slam",
       "earthshaker_slugger"
     ],
@@ -554,7 +546,6 @@
       "mirana_arrow",
       "mirana_leap",
       "mirana_selemenes_faithful",
-      "generic_hidden",
       "mirana_invis"
     ],
     "talents": [
@@ -630,7 +621,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/slow.png",
         "color": "Gray",
         "title": "Leaps and Bounds",
-        "description": "Upon landing, Leap roots targets in a 250 radius for 1.5 =1.75 =2.0 =2.25s."
+        "description": "Upon landing, Leap roots targets in a 250 radius for 1.5/1.75/2.0/2.25s."
       }
     ]
   },
@@ -701,12 +692,10 @@
     "abilities": [
       "morphling_waveform",
       "morphling_adaptive_strike_agi",
-      "generic_hidden",
       "morphling_morph_agi",
       "morphling_morph_str",
       "morphling_replicate",
       "morphling_morph_replicate",
-      "generic_hidden",
       "morphling_accumulation"
     ],
     "talents": [
@@ -774,7 +763,6 @@
       "phantom_lancer_doppelwalk",
       "phantom_lancer_phantom_edge",
       "phantom_lancer_illusory_armaments",
-      "generic_hidden",
       "phantom_lancer_juxtapose"
     ],
     "talents": [
@@ -918,7 +906,6 @@
       "pudge_meat_hook",
       "pudge_rot",
       "pudge_flesh_heap",
-      "generic_hidden",
       "pudge_innate_graft_flesh",
       "pudge_dismember"
     ],
@@ -990,7 +977,6 @@
       "razor_static_link",
       "razor_storm_surge",
       "razor_unstable_current",
-      "generic_hidden",
       "razor_eye_of_the_storm"
     ],
     "talents": [
@@ -1055,7 +1041,6 @@
       "sandking_sand_storm",
       "sandking_scorpion_strike",
       "sandking_caustic_finale",
-      "generic_hidden",
       "sandking_epicenter"
     ],
     "talents": [
@@ -1134,8 +1119,6 @@
       "storm_spirit_static_remnant",
       "storm_spirit_electric_vortex",
       "storm_spirit_overload",
-      "generic_hidden",
-      "generic_hidden",
       "storm_spirit_ball_lightning",
       "storm_spirit_galvanized"
     ],
@@ -1197,8 +1180,6 @@
       "sven_storm_bolt",
       "sven_great_cleave",
       "sven_warcry",
-      "generic_hidden",
-      "generic_hidden",
       "sven_gods_strength",
       "sven_vanquisher"
     ],
@@ -1330,7 +1311,6 @@
       "vengefulspirit_wave_of_terror",
       "vengefulspirit_command_aura",
       "vengefulspirit_retribution",
-      "generic_hidden",
       "vengefulspirit_nether_swap"
     ],
     "talents": [
@@ -1747,7 +1727,6 @@
       "lion_voodoo",
       "lion_mana_drain",
       "lion_to_hell_and_back",
-      "generic_hidden",
       "lion_finger_of_death"
     ],
     "talents": [
@@ -1809,7 +1788,6 @@
       "shadow_shaman_voodoo",
       "shadow_shaman_shackles",
       "shadow_shaman_fowl_play",
-      "generic_hidden",
       "shadow_shaman_mass_serpent_ward"
     ],
     "talents": [
@@ -1883,7 +1861,6 @@
       "slardar_slithereen_crush",
       "slardar_bash",
       "slardar_seaborn_sentinel",
-      "generic_hidden",
       "slardar_amplify_damage"
     ],
     "talents": [
@@ -1945,7 +1922,6 @@
       "tidehunter_kraken_shell",
       "tidehunter_anchor_smash",
       "tidehunter_dead_in_the_water",
-      "generic_hidden",
       "tidehunter_ravage",
       "tidehunter_blubber"
     ],
@@ -2091,7 +2067,6 @@
       "riki_blink_strike",
       "riki_tricks_of_the_trade",
       "riki_innate_backstab",
-      "generic_hidden",
       "riki_backstab"
     ],
     "talents": [
@@ -2163,7 +2138,6 @@
       "enigma_demonic_conversion",
       "enigma_midnight_pulse",
       "enigma_gravity_well",
-      "generic_hidden",
       "enigma_black_hole"
     ],
     "talents": [
@@ -2418,7 +2392,6 @@
       "warlock_shadow_word",
       "warlock_upheaval",
       "warlock_eldritch_summoning",
-      "generic_hidden",
       "warlock_rain_of_chaos"
     ],
     "talents": [
@@ -2546,7 +2519,6 @@
       "queenofpain_blink",
       "queenofpain_scream_of_pain",
       "queenofpain_succubus",
-      "generic_hidden",
       "queenofpain_sonic_wave"
     ],
     "talents": [
@@ -2626,7 +2598,6 @@
       "venomancer_poison_sting",
       "venomancer_plague_ward",
       "venomancer_sepsis",
-      "generic_hidden",
       "venomancer_noxious_plague"
     ],
     "talents": [
@@ -2688,8 +2659,7 @@
       "faceless_void_time_dilation",
       "faceless_void_time_lock",
       "faceless_void_time_walk_reverse",
-      "faceless_void_distortion_field",
-      "generic_hidden"
+      "faceless_void_distortion_field"
     ],
     "talents": [
       {
@@ -2762,10 +2732,8 @@
   "npc_dota_hero_skeleton_king": {
     "abilities": [
       "skeleton_king_hellfire_blast",
-      "generic_hidden",
       "skeleton_king_mortal_strike",
       "skeleton_king_vampiric_spirit",
-      "generic_hidden",
       "skeleton_king_reincarnation"
     ],
     "talents": [
@@ -2833,7 +2801,6 @@
       "death_prophet_silence",
       "death_prophet_spirit_siphon",
       "death_prophet_witchcraft",
-      "generic_hidden",
       "death_prophet_exorcism"
     ],
     "talents": [
@@ -2981,7 +2948,6 @@
       "pugna_decrepify",
       "pugna_nether_ward",
       "pugna_oblivion_savant",
-      "generic_hidden",
       "pugna_life_drain"
     ],
     "talents": [
@@ -3176,9 +3142,7 @@
       "luna_lunar_orbit",
       "luna_moon_glaive",
       "luna_lunar_blessing",
-      "generic_hidden",
-      "luna_eclipse",
-      "generic_hidden"
+      "luna_eclipse"
     ],
     "talents": [
       {
@@ -3248,7 +3212,6 @@
       "dragon_knight_dragon_tail",
       "dragon_knight_dragon_blood",
       "dragon_knight_fireball",
-      "generic_hidden",
       "dragon_knight_elder_dragon_form",
       "dragon_knight_inherited_vigor"
     ],
@@ -3319,7 +3282,6 @@
       "dazzle_shallow_grave",
       "dazzle_shadow_wave",
       "dazzle_innate_weave",
-      "generic_hidden",
       "dazzle_nothl_projection",
       "dazzle_nothl_projection_end"
     ],
@@ -3575,7 +3537,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/siege.png",
         "color": "Blue",
         "title": "Ironwood Treant",
-        "description": "Nature's Call creates only 1 =1 =1 =1 Treant that has more health, more damage, increased vision, increased movement speed, and is Reinforced."
+        "description": "Nature's Call creates only 1 Treant that has more health, more damage, increased vision, increased movement speed, and is Reinforced."
       },
       {
         "id": 2,
@@ -3596,7 +3558,6 @@
       "life_stealer_open_wounds",
       "life_stealer_ghoul_frenzy",
       "life_stealer_feast",
-      "generic_hidden",
       "life_stealer_infest",
       "life_stealer_consume"
     ],
@@ -3836,7 +3797,6 @@
       "omniknight_martyr",
       "omniknight_hammer_of_purity",
       "omniknight_degen_aura",
-      "generic_hidden",
       "omniknight_guardian_angel"
     ],
     "talents": [
@@ -3964,7 +3924,6 @@
       "huskar_burning_spear",
       "huskar_berserkers_blood",
       "huskar_blood_magic",
-      "generic_hidden",
       "huskar_life_break"
     ],
     "talents": [
@@ -4043,8 +4002,6 @@
       "night_stalker_void",
       "night_stalker_crippling_fear",
       "night_stalker_hunter_in_the_night",
-      "generic_hidden",
-      "generic_hidden",
       "night_stalker_darkness",
       "night_stalker_heart_of_darkness"
     ],
@@ -4245,8 +4202,6 @@
       "weaver_the_swarm",
       "weaver_shukuchi",
       "weaver_geminate_attack",
-      "generic_hidden",
-      "generic_hidden",
       "weaver_time_lapse",
       "weaver_rewoven"
     ],
@@ -4460,7 +4415,6 @@
       "chen_holy_persuasion",
       "chen_divine_favor",
       "chen_summon_convert",
-      "generic_hidden",
       "chen_hand_of_god"
     ],
     "talents": [
@@ -4702,7 +4656,6 @@
       "ancient_apparition_ice_vortex",
       "ancient_apparition_chilling_touch",
       "ancient_apparition_death_rime",
-      "generic_hidden",
       "ancient_apparition_ice_blast",
       "ancient_apparition_ice_blast_release"
     ],
@@ -4765,7 +4718,6 @@
       "ursa_overpower",
       "ursa_fury_swipes",
       "ursa_maul",
-      "generic_hidden",
       "ursa_enrage"
     ],
     "talents": [
@@ -4901,10 +4853,7 @@
       "gyrocopter_homing_missile",
       "gyrocopter_flak_cannon",
       "gyrocopter_chop_shop",
-      "generic_hidden",
-      "gyrocopter_call_down",
-      "generic_hidden",
-      "generic_hidden"
+      "gyrocopter_call_down"
     ],
     "talents": [
       {
@@ -5116,7 +5065,6 @@
       "silencer_glaives_of_wisdom",
       "silencer_last_word",
       "silencer_brain_drain",
-      "generic_hidden",
       "silencer_global_silence"
     ],
     "talents": [
@@ -5201,7 +5149,6 @@
       "obsidian_destroyer_arcane_orb",
       "obsidian_destroyer_astral_imprisonment",
       "obsidian_destroyer_equilibrium",
-      "generic_hidden",
       "obsidian_destroyer_ominous_discernment",
       "obsidian_destroyer_sanity_eclipse"
     ],
@@ -5334,7 +5281,6 @@
       "brewmaster_cinder_brew",
       "brewmaster_drunken_brawler",
       "brewmaster_liquid_courage",
-      "generic_hidden",
       "brewmaster_primal_split"
     ],
     "talents": [
@@ -5472,9 +5418,7 @@
       "lone_druid_spirit_link",
       "lone_druid_savage_roar",
       "lone_druid_spirit_bear",
-      "generic_hidden",
-      "lone_druid_true_form",
-      "generic_hidden"
+      "lone_druid_true_form"
     ],
     "talents": [
       {
@@ -5556,7 +5500,6 @@
       "chaos_knight_chaos_bolt",
       "chaos_knight_reality_rift",
       "chaos_knight_chaos_strike",
-      "generic_hidden",
       "chaos_knight_reins_of_chaos",
       "chaos_knight_phantasm"
     ],
@@ -5856,7 +5799,6 @@
       "undying_soul_rip",
       "undying_tombstone",
       "undying_ceaseless_dirge",
-      "generic_hidden",
       "undying_flesh_golem"
     ],
     "talents": [
@@ -5958,14 +5900,6 @@
       {
         "name": "special_bonus_unique_rubick_5",
         "level": 4
-      },
-      {
-        "name": "rubick_hidden3",
-        "level": 5
-      },
-      {
-        "name": "rubick_hidden4",
-        "level": 5
       }
     ],
     "facets": [
@@ -5993,7 +5927,6 @@
       "disruptor_glimpse",
       "disruptor_kinetic_field",
       "disruptor_electromagnetic_repulsion",
-      "generic_hidden",
       "disruptor_static_storm"
     ],
     "talents": [
@@ -6127,7 +6060,6 @@
     "abilities": [
       "naga_siren_mirror_image",
       "naga_siren_ensnare",
-      "generic_hidden",
       "naga_siren_reel_in",
       "naga_siren_eelskin",
       "naga_siren_song_of_the_siren",
@@ -6197,13 +6129,10 @@
       "keeper_of_the_light_illuminate",
       "keeper_of_the_light_blinding_light",
       "keeper_of_the_light_chakra_magic",
-      "generic_hidden",
       "keeper_of_the_light_will_o_wisp",
       "keeper_of_the_light_spirit_form",
       "keeper_of_the_light_illuminate_end",
-      "keeper_of_the_light_special_reserve",
-      "generic_hidden",
-      "generic_hidden"
+      "keeper_of_the_light_special_reserve"
     ],
     "talents": [
       {
@@ -6779,7 +6708,6 @@
       "shredder_whirling_death",
       "shredder_timber_chain",
       "shredder_reactive_armor",
-      "generic_hidden",
       "shredder_flamethrower",
       "shredder_chakram",
       "shredder_return_chakram",
@@ -6848,7 +6776,6 @@
       "bristleback_quill_spray",
       "bristleback_bristleback",
       "bristleback_hairball",
-      "generic_hidden",
       "bristleback_warpath",
       "bristleback_prickly"
     ],
@@ -6918,7 +6845,6 @@
     "abilities": [
       "tusk_ice_shards",
       "tusk_snowball",
-      "generic_hidden",
       "tusk_walrus_kick",
       "tusk_bitter_chill",
       "tusk_walrus_punch",
@@ -6988,7 +6914,6 @@
       "skywrath_mage_arcane_bolt",
       "skywrath_mage_concussive_shot",
       "skywrath_mage_ancient_seal",
-      "generic_hidden",
       "skywrath_mage_ruin_and_restoration",
       "skywrath_mage_mystic_flare"
     ],
@@ -7057,7 +6982,6 @@
       "abaddon_aphotic_shield",
       "abaddon_frostmourne",
       "abaddon_withering_mist",
-      "generic_hidden",
       "abaddon_borrowed_time"
     ],
     "talents": [
@@ -7121,7 +7045,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/phantom_ass_dagger.png",
         "color": "Blue",
         "title": "Malignant Mist",
-        "description": "Mist Coil also deals 40 =60 =80 =100% attack damage and applies effects from items and abilities. Self Damage increased when targeting enemies."
+        "description": "Mist Coil also deals 40/60/80/100% attack damage and applies effects from items and abilities. Self Damage increased when targeting enemies."
       }
     ]
   },
@@ -7131,7 +7055,6 @@
       "elder_titan_ancestral_spirit",
       "elder_titan_natural_order",
       "elder_titan_move_spirit",
-      "generic_hidden",
       "elder_titan_earth_splitter",
       "elder_titan_return_spirit",
       "elder_titan_tip_the_scales"
@@ -7198,7 +7121,6 @@
       "legion_commander_press_the_attack",
       "legion_commander_moment_of_courage",
       "legion_commander_outfight_them",
-      "generic_hidden",
       "legion_commander_duel"
     ],
     "talents": [
@@ -7601,7 +7523,6 @@
       "techies_sticky_bomb",
       "techies_reactive_tazer",
       "techies_suicide",
-      "generic_hidden",
       "techies_minefield_sign",
       "techies_land_mines",
       "techies_reactive_tazer_stop"
@@ -7679,7 +7600,6 @@
       "winter_wyvern_splinter_blast",
       "winter_wyvern_cold_embrace",
       "winter_wyvern_eldwurm_scholar",
-      "generic_hidden",
       "winter_wyvern_winters_curse"
     ],
     "talents": [
@@ -7765,7 +7685,6 @@
       "arc_warden_magnetic_field",
       "arc_warden_spark_wraith",
       "arc_warden_runic_infusion",
-      "generic_hidden",
       "arc_warden_tempest_double"
     ],
     "talents": [
@@ -7845,7 +7764,6 @@
       "abyssal_underlord_pit_of_malice",
       "abyssal_underlord_atrophy_aura",
       "abyssal_underlord_raid_boss",
-      "generic_hidden",
       "abyssal_underlord_dark_portal"
     ],
     "talents": [
@@ -7985,7 +7903,6 @@
       "pangolier_swashbuckle",
       "pangolier_shield_crash",
       "pangolier_lucky_shot",
-      "generic_hidden",
       "pangolier_rollup",
       "pangolier_gyroshell",
       "pangolier_gyroshell_stop",
@@ -8195,7 +8112,6 @@
       "mars_gods_rebuke",
       "mars_bulwark",
       "mars_dauntless",
-      "generic_hidden",
       "mars_arena_of_blood"
     ],
     "talents": [
@@ -8257,7 +8173,6 @@
       "void_spirit_dissimilate",
       "void_spirit_resonant_pulse",
       "void_spirit_intrinsic_edge",
-      "generic_hidden",
       "void_spirit_astral_step"
     ],
     "talents": [
@@ -8547,7 +8462,6 @@
       "marci_companion_run",
       "marci_bodyguard",
       "marci_special_delivery",
-      "generic_hidden",
       "marci_unleash"
     ],
     "talents": [
@@ -8713,12 +8627,8 @@
       "muerta_dead_shot",
       "muerta_the_calling",
       "muerta_gunslinger",
-      "generic_hidden",
-      "generic_hidden",
       "muerta_pierce_the_veil",
-      "muerta_supernatural",
-      "generic_hidden",
-      "generic_hidden"
+      "muerta_supernatural"
     ],
     "talents": [
       {
@@ -8827,22 +8737,6 @@
       {
         "name": "special_bonus_unique_ringmaster_the_box_strong_dispel_and_flying",
         "level": 4
-      },
-      {
-        "name": "ringmaster_dark_carnival_souvenirs",
-        "level": 5
-      },
-      {
-        "name": "generic_hidden",
-        "level": 5
-      },
-      {
-        "name": "generic_hidden",
-        "level": 6
-      },
-      {
-        "name": "generic_hidden",
-        "level": 6
       }
     ],
     "facets": [
@@ -8889,7 +8783,6 @@
       "kez_grappling_claw",
       "kez_kazurai_katana",
       "kez_switch_weapons",
-      "generic_hidden",
       "kez_raptor_dance",
       "kez_falcon_rush",
       "kez_talon_toss",
@@ -8959,16 +8852,10 @@
       "largo_frogstomp",
       "largo_croak_of_genius",
       "largo_encore",
-      "generic_hidden",
       "largo_amphibian_rhapsody",
-      "generic_hidden",
       "largo_song_fight_song",
       "largo_song_double_time",
-      "largo_song_good_vibrations",
-      "generic_hidden",
-      "generic_hidden",
-      "generic_hidden",
-      "generic_hidden"
+      "largo_song_good_vibrations"
     ],
     "talents": [
       {

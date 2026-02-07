@@ -27,15 +27,17 @@ export const HeroDetailsHeader: React.FC<HeroHeaderProps> = ({ hero }) => {
                 <img
                     src={hero.img}
                     alt={hero.localized_name}
-                    className="absolute inset-0 bg-no-repeat blur-[50px] h-[125%] w-[125%]  object-cover opacity-30"
+                    className="absolute inset-0 bg-no-repeat blur-[50px] h-[125%] w-[125%] object-cover opacity-50"
                 />
 
+                <div className="absolute inset-0 w-full left-[10vh] h-full z-0">
                 {/* Video Overlay */}
-                <video
-                    autoPlay muted loop playsInline
-                    className="w-full h-full object-contain transition-opacity duration-700 opacity-70"
-                    src={hero.video}
-                />
+                    <video
+                        autoPlay muted loop playsInline
+                        className="w-full h-full object-contain transition-opacity duration-700 opacity-70"
+                        src={hero.video}
+                    />
+                </div>
             </div>
 
             {/* === 2. CONTENT CONTAINER (Left Aligned) === */}
@@ -114,7 +116,7 @@ export const HeroDetailsHeader: React.FC<HeroHeaderProps> = ({ hero }) => {
                             {/* 3. Short Lore */}
                             <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
                                 <p className="text-[#a3aab8] text-lg font-serif italic leading-relaxed border-l-4 border-[#e7d291] pl-6 py-2 bg-gradient-to-r from-[#e7d291]/5 to-transparent rounded-r-lg max-w-lg">
-                                    "{hero.lore.split('.')[0]}..."
+                                    "{hero.lore.split(' ').slice(0, 15).join(' ') + (hero.lore.split(' ').length > 15 ? '...' : '')}"
                                 </p>
                             </div>
 
