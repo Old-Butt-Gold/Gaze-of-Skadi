@@ -10,7 +10,6 @@ using GoS.Domain.Resources.Models.ChatWheels;
 using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
 using GoS.Domain.Resources.Models.Heroes;
-using GoS.Domain.Resources.Models.ItemColors;
 using GoS.Domain.Resources.Models.Items;
 using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.Extensions.Logging;

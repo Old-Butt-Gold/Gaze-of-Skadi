@@ -1,11 +1,8 @@
 ﻿import {
   AbilityType,
-  Behavior,
   DamageType,
-  Dispellable,
-  TargetTeam,
-  TargetType
 } from "../types/items";
+import {Behavior, Dispellable, TargetTeam, TargetType} from "../types/common.ts";
 
 export const getDamageTypeName = (type: DamageType): string => {
   switch (type) {

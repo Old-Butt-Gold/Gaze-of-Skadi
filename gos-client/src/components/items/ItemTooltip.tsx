@@ -13,8 +13,8 @@ import {
     getTargetTeamName,
     getTargetTypeName
 } from '../../utils/itemUtils';
-import { BooleanState } from '../../types/common';
-import { AbilityType, Behavior } from "../../types/items";
+import {Behavior, BooleanState} from '../../types/common';
+import { AbilityType } from "../../types/items";
 
 interface Props {
     itemName: string;

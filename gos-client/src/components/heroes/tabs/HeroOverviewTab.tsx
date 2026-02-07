@@ -8,6 +8,7 @@ import { AttributeBox } from "../AttributeBox.tsx";
 import { StatRow } from "../StatRow.tsx";
 import { useHeroAbilities } from "../../../hooks/queries/useHeroAbilities.ts";
 import { FacetsSection } from "../FacetsSection.tsx";
+import {TalentTree} from "../TalentTree.tsx";
 
 export interface HeroOverviewTabProps {
     hero: HeroInfo;
@@ -75,6 +76,10 @@ export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
                         <FacetsSection facets={abilitiesData.facets} />
                     )}
 
+                    {abilitiesData && abilitiesData.talents && abilitiesData.talents.length > 0 && (
+                        <TalentTree talents={abilitiesData.talents} />
+                    )}
+
                     {/* --- 2. Abilities (Placeholder) --- */}
                     <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-8 relative overflow-hidden min-h-[250px] flex flex-col justify-center items-center text-center shadow-lg group">
                         <div className="absolute inset-0 bg-[url('/assets/images/ability_bg_texture.png')] opacity-5 mix-blend-overlay pointer-events-none group-hover:opacity-10 transition-opacity" />
@@ -83,13 +88,6 @@ export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
                         </div>
                         <h3 className="text-xl font-serif font-bold text-[#e7d291] uppercase tracking-widest mb-2">Abilities</h3>
                         <p className="text-[#808fa6] max-w-md text-sm">Detailed ability breakdown is currently being parsed from the Ancient.</p>
-                    </div>
-
-                    {/* --- 3. Talent Tree (Placeholder) --- */}
-                    <div className="bg-[#15171c]/50 border border-[#2e353b] border-dashed rounded-xl p-6 flex flex-col items-center justify-center h-32 group hover:bg-[#15171c] hover:border-[#e7d291]/30 transition-all cursor-default">
-                        <span className="text-3xl text-[#58606e] mb-2 group-hover:text-[#e7d291] group-hover:scale-110 transition-all duration-300">🌳</span>
-                        <h4 className="text-[#e3e3e3] font-bold uppercase tracking-wider text-sm">Talent Tree</h4>
-                        <p className="text-[#58606e] text-xs mt-1">Level 10 / 15 / 20 / 25</p>
                     </div>
                 </div>
             </div>

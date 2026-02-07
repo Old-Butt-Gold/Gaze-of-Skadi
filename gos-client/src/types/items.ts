@@ -1,4 +1,4 @@
-﻿import { BooleanState } from './common'; // Предполагаем, что этот тип уже существует
+﻿import {type Behavior, BooleanState, type Dispellable, type TargetTeam, type TargetType} from './common'; // Предполагаем, что этот тип уже существует
 
 export const ItemType = {
   Rare: 0,
@@ -35,43 +35,6 @@ export const NeutralItemTier = {
   FifthTier: 5,
 } as const;
 export type NeutralItemTier = typeof NeutralItemTier[keyof typeof NeutralItemTier];
-
-export const TargetType = {
-  Hero: 0,
-  Basic: 1,
-  Building: 2,
-  Tree: 3,
-} as const;
-export type TargetType = typeof TargetType[keyof typeof TargetType];
-
-export const TargetTeam = {
-  Enemy: 0,
-  Friendly: 1,
-  Both: 2,
-} as const;
-export type TargetTeam = typeof TargetTeam[keyof typeof TargetTeam];
-
-export const Behavior = {
-  UnitTarget: 0,
-  Channeled: 1,
-  Hidden: 2,
-  Passive: 3,
-  NoTarget: 4,
-  Autocast: 5,
-  InstantCast: 6,
-  AreaOfEffect: 7,
-  PointTarget: 8,
-  AttackModifier: 9,
-} as const;
-export type Behavior = typeof Behavior[keyof typeof Behavior];
-
-export const Dispellable =
-{
-  No: 0,
-  StrongDispelsOnly: 1,
-  Yes: 2,
-} as const;
-export type Dispellable = typeof Dispellable[keyof typeof Dispellable];
 
 export interface ItemAbility {
   type: AbilityType;

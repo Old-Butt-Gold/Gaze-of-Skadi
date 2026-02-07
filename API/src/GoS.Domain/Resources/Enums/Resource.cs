@@ -66,11 +66,6 @@ public enum Resource
 	PlayerColors,
 
 	/// <summary>
-	/// Skillshots.
-	/// </summary>
-	Skillshots,
-
-	/// <summary>
 	/// XP Level.
 	/// </summary>
 	XpLevel,

@@ -121,7 +121,7 @@
         "id": 1,
         "name": "axe_call_out",
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
-        "color": "Red",
+        "color": "Yellow",
         "title": "Call Out",
         "description": "Berserker's Call gives attacking enemies more attack speed and Axe more armor for the duration."
       }
