@@ -5775,7 +5775,7 @@
     ],
     "shard": {
       "shard_desc": "",
-      "shard_skill_name": "",
+      "shard_skill_name": "invoker_ghost_walk",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/invoker/invoker_aghanims_shard.webm"
     },
     "aghanim_scepter": {

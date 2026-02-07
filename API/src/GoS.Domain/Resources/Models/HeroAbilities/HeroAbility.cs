@@ -19,27 +19,3 @@ public class HeroAbility
     [JsonPropertyName("aghanim_scepter")]
     public required AghanimScepter AghanimScepter { get; set; }
 }
-
-public class AghanimScepter
-{
-    [JsonPropertyName("scepter_desc")]
-    public string ScepterDesc { get; set; }
-
-    [JsonPropertyName("scepter_skill_name")]
-    public string ScepterSkillName { get; set; }
-
-    [JsonPropertyName("video")]
-    public string Video { get; set; }
-}
-
-public class Shard
-{
-    [JsonPropertyName("shard_desc")]
-    public string ShardDesc { get; set; }
-
-    [JsonPropertyName("shard_skill_name")]
-    public string ShardSkillName { get; set; }
-
-    [JsonPropertyName("video")]
-    public string Video { get; set; }
-}

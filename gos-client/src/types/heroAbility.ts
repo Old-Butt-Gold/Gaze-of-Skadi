@@ -18,8 +18,22 @@ export interface Talent {
 
 export type TalentLevel = 1 | 2 | 3 | 4;
 
+export interface Shard {
+  shard_desc: string;
+  shard_skill_name: string;
+  video: string;
+}
+
+export interface AghanimScepter {
+  scepter_desc: string;
+  scepter_skill_name: string;
+  video: string;
+}
+
 export interface HeroAbility {
-    abilities: string[];
-    talents: Talent[];
-    facets: Facet[];
+  abilities: string[];
+  talents: Talent[];
+  facets: Facet[];
+  shard: Shard;
+  aghanim_scepter: AghanimScepter;
 }

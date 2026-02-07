@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { useAbilities } from '../../hooks/queries/useAbilities';
 import { Icon } from '../Icon';
-import {Behavior, BooleanState} from '../../types/common';
-import type { HeroAbility } from '../../types/heroAbility';
+import { Behavior, BooleanState } from '../../types/common';
+import type { HeroAbility, Shard, AghanimScepter } from '../../types/heroAbility';
 import { LoadingSpinner } from '../ui/LoadingSpinner';
 import {
     getBehaviorName,
     getDamageTypeColor,
     getDamageTypeName,
     getDispellableName,
-    getTargetTeamName, getTargetTypeName
-} from "../../utils/itemUtils.ts";
-import {getAbilityIconUrl} from "../../utils/abilityUtils.ts";
+    getTargetTeamName,
+    getTargetTypeName
+} from "../../utils/itemUtils";
+import { getAbilityIconUrl } from "../../utils/abilityUtils";
 
 interface Props {
     heroAbilities: HeroAbility;
+}
+
+type AbilityType = 'regular' | 'shard' | 'scepter';
+
+interface SelectedAbilityInfo {
+    key: string;
+    type: AbilityType;
+    specialData?: Shard | AghanimScepter;
 }
 
 const formatValue = (val: string | string[] | null) => {
@@ -26,43 +35,120 @@ const formatValue = (val: string | string[] | null) => {
 export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
     const { getAbility, isLoading } = useAbilities();
 
-    const allAbilityNames = React.useMemo(() => {
+    const abilityList = useMemo(() => {
+        const list: SelectedAbilityInfo[] = [];
+
         const base = heroAbilities.abilities || [];
         const facetAbilities = heroAbilities.facets?.flatMap(f => f.abilities || []) || [];
-        return Array.from(new Set([...base, ...facetAbilities]));
+        const uniqueNames = Array.from(new Set([...base, ...facetAbilities]));
+
+        uniqueNames.forEach(name => {
+            list.push({ key: name, type: 'regular' });
+        });
+
+        if (heroAbilities.shard) {
+            list.push({
+                key: heroAbilities.shard.shard_skill_name,
+                type: 'shard',
+                specialData: heroAbilities.shard
+            });
+        }
+
+        if (heroAbilities.aghanim_scepter) {
+            list.push({
+                key: heroAbilities.aghanim_scepter.scepter_skill_name,
+                type: 'scepter',
+                specialData: heroAbilities.aghanim_scepter
+            });
+        }
+
+        return list;
     }, [heroAbilities]);
 
-    const [selectedAbilityName, setSelectedAbilityName] = useState<string | null>(allAbilityNames[0] ?? null);
+    const [selectedAbilityInfo, setSelectedAbilityInfo] = useState<SelectedAbilityInfo | null>(() =>
+        abilityList.length > 0 ? abilityList[0] : null
+    );
 
     if (isLoading) return <LoadingSpinner />;
 
-    const selectedAbility = getAbility(selectedAbilityName);
+    const getDisplayData = () => {
+        if (!selectedAbilityInfo) return null;
+
+        const abilityData = getAbility(selectedAbilityInfo.key);
+        if (!abilityData) return null;
+
+        if (selectedAbilityInfo.type === 'shard') {
+            const shardData = selectedAbilityInfo.specialData as Shard;
+            return {
+                ...abilityData,
+                desc: shardData.shard_desc,
+                video: shardData.video,
+                headerTitle: "Upgrade from Aghanim's Shard",
+                headerIcon: '/assets/images/shard_active.png'
+            };
+        }
+
+        if (selectedAbilityInfo.type === 'scepter') {
+            const scepterData = selectedAbilityInfo.specialData as AghanimScepter;
+            return {
+                ...abilityData,
+                desc: scepterData.scepter_desc,
+                video: scepterData.video,
+                headerTitle: "Upgrade from Aghanim's Scepter",
+                headerIcon: '/assets/images/scepter_active.png'
+            };
+        }
+
+        return {
+            ...abilityData,
+            headerTitle: abilityData.is_innate === BooleanState.True ? 'Innate Ability' : undefined,
+            headerIcon: undefined
+        };
+    };
+
+    const selectedAbility = getDisplayData();
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-8 animate-in fade-in duration-700">
 
             {/* --- 1. ABILITY ICONS ROW --- */}
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                {allAbilityNames.map((name) => {
-                    const ability = getAbility(name);
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                {abilityList.map((item) => {
+                    const ability = getAbility(item.key);
                     if (!ability) return null;
 
-                    const isSelected = name === selectedAbilityName;
-                    const iconSrc = getAbilityIconUrl(name, ability.is_innate, ability.img);
+                    const isSelected = selectedAbilityInfo?.key === item.key && selectedAbilityInfo?.type === item.type;
+                    const iconSrc = getAbilityIconUrl(item.key, ability.is_innate, ability.img);
+
+                    let borderClass = "border-[#2e353b]";
+                    let activeBorderClass = "border-[#e7d291]";
+                    let overlayIcon = null;
+
+                    if (item.type === 'shard' || item.type === 'scepter') {
+                        borderClass = "border-blue-500/50";
+                        activeBorderClass = "border-blue-400";
+                        overlayIcon = item.type === 'shard' ? '/assets/images/shard_active.png' : '/assets/images/scepter_active.png';
+                    }
 
                     return (
                         <button
-                            key={name}
-                            onClick={() => setSelectedAbilityName(name)}
+                            key={`${item.key}-${item.type}`}
+                            onClick={() => setSelectedAbilityInfo(item)}
                             className={clsx(
-                                "relative w-16 h-16 md:w-20 md:h-20 rounded shadow-lg transition-all duration-300 group overflow-hidden",
+                                "relative w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-lg transition-all duration-300 group overflow-hidden",
                                 isSelected
-                                    ? "scale-110 z-10 shadow-[0_0_15px_rgba(231,210,145,0.4)]"
-                                    : "opacity-60 hover:opacity-100 hover:scale-105 hover:border-[#58606e] grayscale hover:grayscale-0"
+                                    ? `${activeBorderClass} shadow-[0_0_20px_rgba(231,210,145,0.4)] z-10 scale-110`
+                                    : `${borderClass} opacity-60 hover:opacity-100 hover:scale-105 hover:border-[#58606e] grayscale hover:grayscale-0`
                             )}
                             title={ability.dname ?? "unknown"}
                         >
-                            <Icon src={iconSrc ?? "unknown"} />
+                            <Icon src={iconSrc ?? "unknown"} alt={item.key} fallbackSrc={"/assets/images/ability_unknown.png"}/>
+
+                            {overlayIcon && (
+                                <div className="absolute bottom-0 right-0 p-1">
+                                    <img src={overlayIcon} className="w-6 h-6 object-contain" alt="Upgrade" />
+                                </div>
+                            )}
                         </button>
                     );
                 })}
@@ -74,7 +160,7 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
 
                     {/* VIDEO HEADER (If available) */}
                     {selectedAbility.video && (
-                        <div className="relative w-full bg-black border-b border-[#2e353b] aspect-video max-h-[60vh]">
+                        <div className="relative w-full bg-black border-b border-[#2e353b] aspect-video max-h-[50vh]">
                             <video
                                 src={selectedAbility.video}
                                 autoPlay
@@ -91,15 +177,25 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b border-[#2e353b] pb-4">
                             <div className="flex items-center gap-4">
                                 <div className="w-16 h-16 rounded shadow-lg overflow-hidden shrink-0">
-                                    <Icon src={getAbilityIconUrl(selectedAbilityName, selectedAbility.is_innate, selectedAbility.img) ?? "unknown"} />
+                                    <Icon src={getAbilityIconUrl(selectedAbilityInfo?.key ?? null, selectedAbility.is_innate, selectedAbility.img) ?? "unknown"} fallbackSrc={"/assets/images/ability_unknown.png"} />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-serif font-bold text-white uppercase tracking-widest drop-shadow-md">
+                                    {selectedAbility.headerTitle && (
+                                        <div className="flex items-center gap-2 mb-1 animate-pulse">
+                                            {selectedAbility.headerIcon && (<Icon src={selectedAbility.headerIcon} size={4} />)}
+                                            <span className={clsx(
+                                                "text-[10px] font-bold uppercase tracking-[0.2em]",
+                                                selectedAbilityInfo?.type === 'shard' || selectedAbilityInfo?.type === 'scepter'
+                                                    ? "text-blue-400"
+                                                    : "text-[#e7d291]"
+                                            )}>
+                                                {selectedAbility.headerTitle}
+                                            </span>
+                                        </div>
+                                    )}
+                                    <h3 className="text-3xl md:text-4xl font-serif font-black text-white uppercase tracking-wider drop-shadow-lg leading-none">
                                         {selectedAbility.dname}
                                     </h3>
-                                    {selectedAbility.is_innate === BooleanState.True && (
-                                        <span className="text-[#e7d291] text-xs font-bold uppercase tracking-widest">Innate Ability</span>
-                                    )}
                                 </div>
                             </div>
 
@@ -112,7 +208,7 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
                                     </div>
                                 )}
                                 {selectedAbility.cd && (
-                                    <div className="flex items-center gap-1.5 text-white font-bold font-mono text-sm bg-white/10 px-2 py-1 rounded">
+                                    <div className="flex items-center gap-1.5 text-white font-bold font-mono text-sm px-2 py-1 rounded">
                                         <Icon src="/assets/images/ability_cooldown.png" size={4} />
                                         <span>{formatValue(selectedAbility.cd)}</span>
                                     </div>
@@ -209,7 +305,7 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
 
                         {/* Lore */}
                         {selectedAbility.lore && (
-                            <div className="text-[#596b85] text-sm italic border-t border-[#2e353b] pt-4 mt-2 leading-relaxed text-center font-serif">
+                            <div className="text-[#596b85] text-lg italic border-t border-[#2e353b] pt-4 mt-2 leading-relaxed text-center font-serif">
                                 "{selectedAbility.lore}"
                             </div>
                         )}
