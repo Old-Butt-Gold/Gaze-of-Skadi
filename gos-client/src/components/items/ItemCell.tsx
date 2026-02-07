@@ -12,7 +12,7 @@ export const ItemCell: React.FC<{
     if (!item) {
         return (
             <div className="flex items-center gap-3 opacity-50">
-                <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e]"></div>
+                <div className="w-10 h-8 bg-[#262b36] rounded border border-[#3a414e]"></div>
                 {showName && (
                     <span className="font-serif text-slate-200 text-[15px] tracking-wide">
                         {itemName.replace(/_/g, ' ')}
@@ -25,11 +25,11 @@ export const ItemCell: React.FC<{
     return (
         <ItemTooltip itemName={itemName}>
             <div className="flex items-center gap-3 group-hover/item:opacity-80 transition-opacity cursor-help">
-                <div className="w-8 h-6 bg-[#262b36] rounded border border-[#3a414e] flex items-center justify-center text-[10px] text-[#58606e] overflow-hidden">
+                <div className="w-10 h-8 bg-[#262b36] rounded border border-[#3a414e] flex items-center justify-center text-[10px] text-[#58606e] overflow-hidden">
                     <img
                         src={`${item.img}`}
                         alt={item.dname ?? "unknown"}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 </div>
                 {showName && (
