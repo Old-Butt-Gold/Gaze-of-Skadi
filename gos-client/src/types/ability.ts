@@ -1,22 +1,21 @@
-import type {Behavior, BooleanState, Dispellable, TargetTeam, TargetType} from "./common.ts";
-import type {DamageType} from "./items.ts";
+import type {Behavior, BooleanState, DamageType, Dispellable, TargetTeam, TargetType} from "./common.ts";
 
 export interface AbilityAttribute {
     key: string;
     header: string;
     value: string[];
-    generated?: boolean | null;
+    generated: boolean | null;
 }
 
 export interface Ability {
     dname: string | null;
     img: string | null;
+    video: string | null;
     attrib: AbilityAttribute[] | null;
     behavior: Behavior[] | null;
     target_type: TargetType[] | null;
-    dmg_type: DamageType[] | null;
+    dmg_type: DamageType | null;
     desc: string | null;
-    dmg: string[] | null;
     mc: string[] | null;
     cd: string[] | null;
     lore: string | null;

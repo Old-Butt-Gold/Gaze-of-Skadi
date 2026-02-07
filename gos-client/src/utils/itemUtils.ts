@@ -1,8 +1,7 @@
 ﻿import {
   AbilityType,
-  DamageType,
 } from "../types/items";
-import {Behavior, Dispellable, TargetTeam, TargetType} from "../types/common.ts";
+import {Behavior, DamageType, Dispellable, TargetTeam, TargetType} from "../types/common.ts";
 
 export const getDamageTypeName = (type: DamageType): string => {
   switch (type) {
@@ -23,7 +22,7 @@ export const getDamageTypeColor = (type: DamageType): string => {
 };
 
 export const getDispellableName = (dispellable: Dispellable): string => {
-  switch (dispellable) {
+    switch (dispellable) {
     case Dispellable.Yes: return 'Yes';
     case Dispellable.No: return 'No';
     case Dispellable.StrongDispelsOnly: return 'Strong Dispels Only';

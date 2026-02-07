@@ -140,3 +140,10 @@ export type Rank = typeof Rank[keyof typeof Rank];
 export type GameMode = typeof GameMode[keyof typeof GameMode];
 
 export type LobbyType = typeof LobbyType[keyof typeof LobbyType];
+
+export const DamageType = {
+    Magical: 0,
+    Physical: 1,
+    Pure: 2,
+} as const;
+export type DamageType = typeof DamageType[keyof typeof DamageType];

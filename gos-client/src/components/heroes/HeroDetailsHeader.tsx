@@ -42,7 +42,7 @@ export const HeroDetailsHeader: React.FC<HeroHeaderProps> = ({ hero }) => {
 
             {/* === 2. CONTENT CONTAINER (Left Aligned) === */}
             <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="lg:h-[50vh] flex flex-col justify-center py-12 lg:py-0">
+                <div className="lg:h-[70vh] flex flex-col justify-center py-12 lg:py-0">
 
                     <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
 

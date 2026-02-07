@@ -12,6 +12,9 @@ public class Ability
     [JsonPropertyName("img")]
     public string? Image { get; init; }
     
+    [JsonPropertyName("video")]
+    public string? Video { get; init; }
+    
     [JsonPropertyName("attrib")]
     public List<Attribute>? Attributes { get; set; }
     
@@ -22,13 +25,10 @@ public class Ability
     public List<TargetType>? TargetType { get; set; }
     
     [JsonPropertyName("dmg_type")]
-    public List<DamageType>? DamageType { get; set; }
+    public DamageType? DamageType { get; set; }
 
     [JsonPropertyName("desc")]
     public string? Description { get; set; }
-    
-    [JsonPropertyName("dmg")]
-    public List<string>? Damage { get; set; }
     
     [JsonPropertyName("mc")]
     public List<string>? ManaCost { get; set; }

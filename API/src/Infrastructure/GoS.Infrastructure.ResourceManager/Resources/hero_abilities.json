@@ -109,10 +109,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/strength.png",
         "color": "Red",
         "title": "One Man Army",
-        "description": "Axe gains Strength based on his armor as long as he's away from his allies.",
-        "abilities": [
-          "axe_one_man_army"
-        ]
+        "description": "Axe gains Strength based on his armor as long as he's away from his allies."
       },
       {
         "id": 1,

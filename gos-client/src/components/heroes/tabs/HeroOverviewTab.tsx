@@ -9,6 +9,7 @@ import { StatRow } from "../StatRow.tsx";
 import { useHeroAbilities } from "../../../hooks/queries/useHeroAbilities.ts";
 import { FacetsSection } from "../FacetsSection.tsx";
 import {TalentTree} from "../TalentTree.tsx";
+import {AbilitiesSection} from "../AbilitiesSection.tsx";
 
 export interface HeroOverviewTabProps {
     hero: HeroInfo;
@@ -80,15 +81,9 @@ export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
                         <TalentTree talents={abilitiesData.talents} />
                     )}
 
-                    {/* --- 2. Abilities (Placeholder) --- */}
-                    <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-8 relative overflow-hidden min-h-[250px] flex flex-col justify-center items-center text-center shadow-lg group">
-                        <div className="absolute inset-0 bg-[url('/assets/images/ability_bg_texture.png')] opacity-5 mix-blend-overlay pointer-events-none group-hover:opacity-10 transition-opacity" />
-                        <div className="w-16 h-16 rounded-full bg-[#2e353b]/30 flex items-center justify-center mb-4 border border-[#2e353b] shadow-[0_0_20px_rgba(0,0,0,0.3)]">
-                            <span className="text-3xl opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">⚡</span>
-                        </div>
-                        <h3 className="text-xl font-serif font-bold text-[#e7d291] uppercase tracking-widest mb-2">Abilities</h3>
-                        <p className="text-[#808fa6] max-w-md text-sm">Detailed ability breakdown is currently being parsed from the Ancient.</p>
-                    </div>
+                    {abilitiesData && (
+                        <AbilitiesSection heroAbilities={abilitiesData} />
+                    )}
                 </div>
             </div>
         </div>

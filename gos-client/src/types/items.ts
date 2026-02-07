@@ -1,4 +1,11 @@
-﻿import {type Behavior, BooleanState, type Dispellable, type TargetTeam, type TargetType} from './common'; // Предполагаем, что этот тип уже существует
+﻿import {
+    type Behavior,
+    BooleanState,
+    type DamageType,
+    type Dispellable,
+    type TargetTeam,
+    type TargetType
+} from './common'; // Предполагаем, что этот тип уже существует
 
 export const ItemType = {
   Rare: 0,
@@ -19,13 +26,6 @@ export const AbilityType = {
   Toggle: 4,
 } as const;
 export type AbilityType = typeof AbilityType[keyof typeof AbilityType];
-
-export const DamageType = {
-  Magical: 0,
-  Physical: 1,
-  Pure: 2,
-} as const;
-export type DamageType = typeof DamageType[keyof typeof DamageType];
 
 export const NeutralItemTier = {
   FirstTier: 1,

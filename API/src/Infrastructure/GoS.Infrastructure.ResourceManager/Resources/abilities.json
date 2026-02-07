@@ -2507,7 +2507,6 @@
     "target_team": "Enemy",
     "target_type": "Hero",
     "desc": "The Satyr Tormenter tears open an unstable rift to the underworld, creating a shockwave that travels in a line along the ground, dealing damage to enemies it hits.",
-    "dmg": "160",
     "attrib": [
       {
         "key": "speed",
@@ -2557,7 +2556,6 @@
     "dmg_type": "Magical",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "dmg": "200",
     "attrib": [
       {
         "key": "speed",
@@ -3126,7 +3124,6 @@
     "dmg_type": "Magical",
     "dispellable": "Yes",
     "desc": "The Ancient Thunderhide slams his mammoth body against the ground. The shock damages nearby enemies and throws them off their footing. Heroes regain their balance more quickly.",
-    "dmg": "250",
     "attrib": [
       {
         "key": "radius",
@@ -3722,7 +3719,6 @@
   "roshan_halloween_wave_of_force": {
     "behavior": "No Target",
     "dmg_type": "Magical",
-    "dmg": "600",
     "attrib": [
       {
         "key": "radius",
@@ -5024,7 +5020,6 @@
     "behavior": "Unit Target",
     "target_team": "Enemy",
     "target_type": "Hero",
-    "dmg": "20",
     "attrib": [
       {
         "key": "nightmare_invuln_time",
@@ -5063,7 +5058,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "200",
     "attrib": [
       {
         "key": "cast_animation",
@@ -5152,7 +5146,6 @@
   "greevil_miniboss_red_earthshock": {
     "behavior": "No Target",
     "dmg_type": "Magical",
-    "dmg": "240",
     "attrib": [
       {
         "key": "shock_radius",
@@ -5389,7 +5382,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "170",
     "attrib": [
       {
         "key": "dragon_slave_speed",
@@ -5432,7 +5424,6 @@
       "AOE"
     ],
     "dmg_type": "Magical",
-    "dmg": "150",
     "attrib": [
       {
         "key": "light_strike_array_aoe",
@@ -5581,7 +5572,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -5602,7 +5592,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -7303,7 +7292,6 @@
       "Basic"
     ],
     "desc": "Throw a snowball at an ally or enemy.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -7333,7 +7321,6 @@
     "dname": "Build Snowman",
     "behavior": "Point Target",
     "desc": "Construct a jolly snowman.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -7381,7 +7368,6 @@
     "dname": "Summon Penguin",
     "behavior": "Point Target",
     "desc": "Summon a friendly penguin who slides around. Each time a hero bumps the penguin, it gains speed and lasts a bit longer.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "initial_lifetime",
@@ -7536,7 +7522,6 @@
     "dname": "Festive Firework",
     "behavior": "Point Target",
     "desc": "Shoot a firework into the air.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "radius",
@@ -7582,7 +7567,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "400",
     "attrib": [
       {
         "key": "snowball_speed",
@@ -7609,7 +7593,6 @@
   },
   "frostivus2018_summon_snowman": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -7643,7 +7626,6 @@
   "frostivus2018_decorate_tree": {
     "behavior": "Unit Target",
     "target_type": "Tree",
-    "dmg": "50",
     "attrib": [
       {
         "key": "duration",
@@ -7674,7 +7656,6 @@
     ],
     "dmg_type": "Magical",
     "bkbpierce": "No",
-    "dmg": "200",
     "attrib": [
       {
         "key": "radius",
@@ -7727,7 +7708,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -7790,7 +7770,6 @@
   },
   "seasonal_summon_dragon": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -7840,7 +7819,6 @@
       "No Target",
       "Instant Cast"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "radius",
@@ -7870,7 +7848,6 @@
       "No Target",
       "Instant Cast"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "think_interval",
@@ -7917,7 +7894,6 @@
       "Hero",
       "Basic"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -7980,7 +7956,6 @@
   },
   "seasonal_ti9_banner": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "size",
@@ -8010,7 +7985,6 @@
       "Point Target",
       "Channeled"
     ],
-    "dmg": "0",
     "attrib": [],
     "mc": "0",
     "cd": "20",
@@ -8018,7 +7992,6 @@
   },
   "seasonal_ti9_instruments": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "size",
@@ -8039,7 +8012,6 @@
   },
   "seasonal_ti9_monkey": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -8105,7 +8077,6 @@
       "No Target",
       "Instant Cast"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "think_interval",
@@ -8144,7 +8115,6 @@
   },
   "seasonal_ti10_guild_banner": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "size",
@@ -8171,7 +8141,6 @@
   },
   "seasonal_ti10_portal": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -8186,7 +8155,6 @@
   },
   "seasonal_ti10_disco_ball": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "size",
@@ -8211,7 +8179,6 @@
       "Channeled",
       "Hidden"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -8226,7 +8193,6 @@
   },
   "seasonal_ti10_soccer_ball": {
     "behavior": "Point Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "tick_interval",
@@ -8283,7 +8249,6 @@
   },
   "seasonal_ti10_hot_potato": {
     "behavior": "Unit Target",
-    "dmg_type": [],
     "dispellable": "No",
     "target_team": "Both",
     "target_type": "Hero",
@@ -8322,7 +8287,6 @@
       "Unit Target",
       "Hidden"
     ],
-    "dmg_type": [],
     "dispellable": "No",
     "target_team": "Both",
     "target_type": "Hero",
@@ -8349,7 +8313,6 @@
       "No Target",
       "Instant Cast"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "think_interval",
@@ -8400,7 +8363,6 @@
       "Basic"
     ],
     "desc": "CHANNELED. Steals an enemy hero's stack of Frostivus hats, or gives your stack to an allied hero.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "controlled_unit_search_radius",
@@ -8438,7 +8400,6 @@
       "Instant Cast"
     ],
     "desc": "Throw your hand (or handy appendage) in the air!",
-    "dmg": "0",
     "attrib": [
       {
         "key": "think_interval",
@@ -8485,7 +8446,6 @@
     "dname": "Guild Banner",
     "behavior": "Point Target",
     "desc": "Plant your guild's banner to mark this battleground for you all!",
-    "dmg": "0",
     "attrib": [
       {
         "key": "size",
@@ -8527,7 +8487,6 @@
       "Point Target",
       "Channeled"
     ],
-    "dmg": "0",
     "attrib": [
       {
         "key": "speed",
@@ -8614,7 +8573,6 @@
   },
   "seasonal_ti11_bubble_gun": {
     "behavior": "No Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "think_interval",
@@ -8637,7 +8595,6 @@
     "behavior": "Unit Target",
     "target_team": "Both",
     "target_type": "Hero",
-    "dmg": "0",
     "attrib": [
       {
         "key": "model_scale",
@@ -8658,7 +8615,6 @@
   },
   "seasonal_ti11_conga_line": {
     "behavior": "No Target",
-    "dmg": "0",
     "attrib": [
       {
         "key": "dance_interval",
@@ -9155,7 +9111,6 @@
     "bkbpierce": "Yes",
     "dispellable": "No",
     "desc": "Axe taunts nearby enemy units, forcing them to attack him while he gains bonus armor during the duration.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "radius",
@@ -9213,7 +9168,8 @@
       "14",
       "12"
     ],
-    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/axe_berserkers_call.png"
+    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/abilities/axe_berserkers_call.png",
+    "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/axe/axe_berserkers_call.webm"
   },
   "axe_battle_hunger": {
     "dname": "Battle Hunger",
@@ -10763,7 +10719,6 @@
       "Basic"
     ],
     "desc": "Adds a freezing effect to Drow's attacks, slowing enemy movement and dealing bonus damage. Slow lasts 1.5 seconds.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "frost_arrows_movement_speed",
@@ -10918,7 +10873,6 @@
     ],
     "bkbpierce": "No",
     "dispellable": "Yes",
-    "dmg": "0",
     "attrib": [
       {
         "key": "silence_radius",
@@ -11393,7 +11347,6 @@
       "Basic"
     ],
     "desc": "Empowers Earthshaker's totem, causing it to deal extra damage and have 100 bonus attack range on the next attack.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "totem_damage_percentage",
@@ -16860,7 +16813,6 @@
       "Basic"
     ],
     "desc": "Shackles the target to an enemy unit or tree in a line directly behind it. If no unit or tree is present, the stun duration is reduced to 0.6.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "fail_stun_duration",
@@ -20794,7 +20746,6 @@
     "target_team": "Enemy",
     "target_type": "Hero",
     "desc": "Tidehunter attaches a heavy anchor to an enemy hero. The hero is leashed while attached to the anchor. Attempting to move more than 350 units away from the anchor forces the hero to 100 move speed, dragging the anchor behind them. The anchor can be destroyed with 4 hero attacks.",
-    "dmg": "100",
     "attrib": [
       {
         "key": "attacks_to_destroy",
@@ -22165,7 +22116,6 @@
     "dname": "Gravity Well",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Allies within 500 distance from Enigma have up to 9% Damage Reduction. Effect starts at 0% at max distance and increases to its maximum strength when the ally is at 200 distance. Does not affect Enigma itself.",
     "attrib": [
       {
@@ -22678,7 +22628,6 @@
     "dmg_type": "Magical",
     "bkbpierce": "No",
     "desc": "Enlists an army of robotic minions to destroy enemy units in an area around Tinker.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "radius",
@@ -23656,7 +23605,6 @@
       "Basic"
     ],
     "desc": "Binds several visible enemy units together, causing a percentage of the damage dealt to one of them to be felt by the others.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "count",
@@ -23794,7 +23742,6 @@
     "bkbpierce": "No",
     "dispellable": "Yes",
     "desc": "CHANNELED - A powerful slowing and damaging current that grows stronger as it's channeled. Lasts up to 10 seconds. Enemies are slowed for 1 second after leaving the area or the spell ends.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "aoe",
@@ -28320,7 +28267,6 @@
       "Basic"
     ],
     "desc": "Intensifies Viper's venom, adding an effect to his normal attack that applies a stacking movement speed slow and magic resistance deduction while dealing damage over time. Stacks up to 6 times.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "duration",
@@ -32787,7 +32733,6 @@
     "dname": "Mental Fortitude",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Dark Seer's Intelligence cannot be lower than the average of his Strength and Agility.",
     "attrib": [],
     "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/dark_seer_mental_fortitude.png"
@@ -32796,7 +32741,6 @@
     "dname": "Aggrandize",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "When Dark Seer levels up, he restores a percentage of his max health and mana. Restore percentage is equal to 10% + 1.5% per hero level.",
     "attrib": [
       {
@@ -33472,7 +33416,6 @@
       "Basic"
     ],
     "desc": "Omniknight imbues his hammer with holy power, causing his attack to have increased range, deal pure damage based on a percentage of his base damage and slow his target for a short duration.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "base_damage",
@@ -34759,7 +34702,6 @@
     "dname": "Blood Magic",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Huskar does not have mana. Mana costs of items are converted into health costs.Huskar's Health Costs are Magical Damage and can be reduced by Magic Resist.",
     "attrib": [],
     "img": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/abilities/huskar_blood_magic.png"
@@ -36490,7 +36432,6 @@
       "Basic"
     ],
     "desc": "An icy blast followed by a wave of fire launches out in a path in front of Jakiro. The ice slows enemies, while the fire delivers damage over time.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "start_radius",
@@ -36590,7 +36531,6 @@
       "Basic"
     ],
     "desc": "Creates a path of ice that stuns and damages enemies that touch it.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "path_delay",
@@ -38583,7 +38523,6 @@
     "dname": "Lvl ? Pain",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Doom's attacks deal 25% bonus damage to heroes whose level is lower than Doom's level.",
     "attrib": [
       {
@@ -44789,7 +44728,6 @@
     "dname": "Liquid Courage",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "When Brewmaster drops below 50% Health he gains a Status Resistance buff and his movement speed alternates every 1s between being faster and being slower. The effect becomes stronger at lower health, scaling from 0 up to max values at 20% Health.",
     "attrib": [
       {
@@ -47454,7 +47392,6 @@
     "dname": "Divided We Stand",
     "behavior": "Passive",
     "desc": "Meepo summons an imperfect, semi-autonomous duplicate of himself, which can gain gold and experience as he does and shares his experience, attributes and abilities. However, the clones cannot wield any items but the boots that Meepo himself wears. If any of the clones die, they all die. Divided We Stand grants all Meepos bonus Magic Resistance.",
-    "dmg": "0",
     "attrib": [
       {
         "key": "tooltip_clones",
@@ -48227,7 +48164,6 @@
     "dname": "Dumb Luck",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "attrib": [
       {
         "key": "mana_per_str",
@@ -50796,7 +50732,6 @@
     "dname": "Eelskin",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Naga Siren gets 8% evasion per other Naga Siren within 900 radius.",
     "attrib": [
       {
@@ -55168,7 +55103,6 @@
   },
   "magnus_magnetic_horn": {
     "behavior": "Passive",
-    "dmg_type": [],
     "attrib": [
       {
         "key": "pull_duration",
@@ -55195,7 +55129,6 @@
     "dname": "Solid Core",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Magnus has slow resistance and suffers less knockback from enemy's abilities and items.",
     "attrib": [
       {
@@ -60487,7 +60420,6 @@
     "dname": "Blinding Sun",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Phoenix ability debuffs apply a stackable 2% Miss chance per second. Lasts 4 seconds.",
     "attrib": [
       {
@@ -61521,7 +61453,6 @@
       "Point Target",
       "AOE"
     ],
-    "dmg_type": [],
     "desc": "Plant a warning sign, causing Sticky Bombs and Proximity Mines within its radius to be invulnerable and deal 15% more damage. Only one sign can exist at a time. Lasts 60 seconds. ",
     "attrib": [
       {
@@ -64798,7 +64729,6 @@
     "dname": "Pixie Dust",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Whenever a skill makes Dark Willow become untargetable, she gains +150% HP Regen and +150% Mana Regen while in that state.",
     "attrib": [
       {
@@ -66349,7 +66279,6 @@
     "dname": "Intrinsic Edge",
     "is_innate": true,
     "behavior": "Passive",
-    "dmg_type": [],
     "desc": "Void Spirit gains 25% more HP regen from Strength, armor from Agility, and mana regen and magic resistance from Intelligence.",
     "attrib": [
       {
@@ -69850,7 +69779,6 @@
     "dispellable": "No",
     "target_team": "Both",
     "target_type": "Hero",
-    "dmg": "300",
     "attrib": [
       {
         "key": "projectile_speed",
