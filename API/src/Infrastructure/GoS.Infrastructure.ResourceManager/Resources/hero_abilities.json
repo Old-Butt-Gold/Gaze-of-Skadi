@@ -298,7 +298,6 @@
       "crystal_maiden_crystal_nova",
       "crystal_maiden_frostbite",
       "crystal_maiden_brilliance_aura",
-      "crystal_maiden_crystal_clone",
       "crystal_maiden_blueheart_floe",
       "crystal_maiden_freezing_field",
       "crystal_maiden_freezing_field_stop"
@@ -389,7 +388,6 @@
       "drow_ranger_frost_arrows",
       "drow_ranger_wave_of_silence",
       "drow_ranger_multishot",
-      "drow_ranger_glacier",
       "drow_ranger_trueshot",
       "drow_ranger_marksmanship"
     ],
@@ -434,10 +432,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/damage.png",
         "color": "Gray",
         "title": "Vantage Point",
-        "description": "Drow deals 30% more damage when attacking from high ground.",
-        "abilities": [
-          "drow_ranger_vantage_point"
-        ]
+        "description": "Drow deals 30% more damage when attacking from high ground."
       },
       {
         "id": 1,
@@ -451,12 +446,12 @@
     "shard": {
       "shard_desc": "Drow creates a hill of ice beneath her. While standing on the hill, attackers gain bonus attack range and high ground advantage - they cannot miss and gain flying vision. Drow additionally gets bonus Multishot arrows per wave while on the hill. The front of the hill obscures vision and cannot be moved through except by Drow. Does not interrupt Multishot when cast.",
       "shard_skill_name": "drow_ranger_glacier",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/drow ranger/drow ranger_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/drow_ranger/drow_ranger_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Frost Arrows now apply a Hypothermia stack to enemies, increasing damage from Frost Arrows and reducing their regeneration per stack. If an enemy dies with Hypothermia stacks, they burst and deal damage per stack and slow in an area around it.",
       "scepter_skill_name": "drow_ranger_frost_arrows",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/drow ranger/drow ranger_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/drow_ranger/drow_ranger_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_earthshaker": {
@@ -777,12 +772,12 @@
     "shard": {
       "shard_desc": "Cooldown reduced by 2s per enemy hero.",
       "shard_skill_name": "nevermore_shadowraze1",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow fiend/shadow fiend_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nevermore/nevermore_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases max souls.",
       "scepter_skill_name": "nevermore_necromastery",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow fiend/shadow fiend_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nevermore/nevermore_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_morphling": {
@@ -946,12 +941,12 @@
     "shard": {
       "shard_desc": "Adds an active ability to Juxtapose. Renders Phantom Lancer invisible for up to 8 seconds while generating a duplicate image to confuse enemies. His movement speed is increased by 15% during this invisibility.",
       "shard_skill_name": "phantom_lancer_juxtapose",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom lancer/phantom lancer_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom_lancer/phantom_lancer_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases Range. Whenever Phantom Lancer Rushes through enemies, he creates Juxtapose illusions that attack them. Additionally, every 600 units rushed creates a Juxtapose illusion that rushes to the target alongside Phantom Lancer.",
       "scepter_skill_name": "phantom_lancer_phantom_edge",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom lancer/phantom lancer_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom_lancer/phantom_lancer_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_puck": {
@@ -1163,10 +1158,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Blue",
         "title": "Dynamo",
-        "description": "Razor gains 1.25% spell amplification for every 20 points of attack damage.",
-        "abilities": [
-          "razor_dynamo"
-        ]
+        "description": "Razor gains 1.25% spell amplification for every 20 points of attack damage."
       }
     ],
     "shard": {
@@ -1261,12 +1253,12 @@
     "shard": {
       "shard_desc": "Increases Epicenter damage per pulse. Every 3s causes a small single Epicenter Pulse around Sand King.",
       "shard_skill_name": "sandking_epicenter",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/sand king/sand king_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/sand_king/sand_king_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "When the pulses start, 3 Stinger attack areas are created every =0.5s at random locations, each measuring 35% of the Epicenter's current radius, that apply =50% of Stinger damage to enemies hit. Shard pulses cause 1 attack(s).",
       "scepter_skill_name": "sandking_epicenter",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/sand king/sand king_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/sand_king/sand_king_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_storm_spirit": {
@@ -1332,12 +1324,12 @@
     "shard": {
       "shard_desc": "Can be activated to grant Storm Spirit and nearby allied heroes 3 Overload charges. Provides bonus Attack Speed. Lasts up to 12 seconds or until the charges are depleted.",
       "shard_skill_name": "storm_spirit_overload",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/storm spirit/storm spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/storm_spirit/storm_spirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Electric Vortex affects all enemies within a radius around Storm Spirit.",
       "scepter_skill_name": "storm_spirit_electric_vortex",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/storm spirit/storm spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/storm_spirit/storm_spirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_sven": {
@@ -1419,7 +1411,6 @@
       "tiny_avalanche",
       "tiny_toss",
       "tiny_tree_grab",
-      "tiny_tree_channel",
       "tiny_craggy_exterior",
       "tiny_grow",
       "tiny_toss_tree"
@@ -1480,8 +1471,8 @@
       }
     ],
     "shard": {
-      "shard_desc": "Increases damage dealt by thrown trees by %bonus_bonus_damage%.",
-      "shard_skill_name": "tiny_toss_tree",
+      "shard_desc": "Removes the limit on the number of attacks with a tree.",
+      "shard_skill_name": "tiny_tree_grab",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/tiny/tiny_aghanims_shard.webm"
     },
     "aghanim_scepter": {
@@ -1547,21 +1538,18 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/fist.png",
         "color": "Blue",
         "title": "Soul Strike",
-        "description": "Vengeful Spirit's ranged attacks behave as if they were melee attacks.",
-        "abilities": [
-          "vengefulspirit_soul_strike"
-        ]
+        "description": "Vengeful Spirit's ranged attacks behave as if they were melee attacks."
       }
     ],
     "shard": {
       "shard_desc": "Bounces once on an enemy, prioritizing heroes, within 75% of Magic Missile's current cast range from the first target.",
       "shard_skill_name": "vengefulspirit_magic_missile",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful spirit/vengeful spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful_spirit/vengeful_spirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Upon death, creates a strong illusion of Vengeful Spirit that deals full damage, takes increased damage, and can cast all of her spells. If the illusion is alive when Vengeful Spirit respawn, she will take its place. XP earned by her illusion is given to her. Strong Illusions are not instantly killed by spells.",
       "scepter_skill_name": "vengefulspirit_command_aura",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful spirit/vengeful spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful_spirit/vengeful_spirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_windrunner": {
@@ -1569,7 +1557,6 @@
       "windrunner_shackleshot",
       "windrunner_powershot",
       "windrunner_windrun",
-      "windrunner_gale_force",
       "windrunner_focusfire_cancel",
       "windrunner_focusfire",
       "windrunner_easy_breezy"
@@ -1656,12 +1643,12 @@
     "shard": {
       "shard_desc": "Vector Targeted. Summons a strong wind that pushes all enemies in the target area towards the target direction.",
       "shard_skill_name": "windrunner_gale_force",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/windranger/windranger_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/windrunner/windrunner_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Windrun reduces physical damage taken by 45%, and grants invisibility that is not broken by attacking or casting spells.",
       "scepter_skill_name": "windrunner_windrun",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/windranger/windranger_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/windrunner/windrunner_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_zuus": {
@@ -1669,8 +1656,6 @@
       "zuus_arc_lightning",
       "zuus_lightning_bolt",
       "zuus_heavenly_jump",
-      "zuus_cloud",
-      "zuus_lightning_hands",
       "zuus_thundergods_wrath",
       "zuus_static_field"
     ],
@@ -1729,12 +1714,12 @@
     "shard": {
       "shard_desc": "Zeus gains bonus attack speed and his attacks create Arc Lightnings that deal a percentage of its damage. Can be toggled off to stop this effect.",
       "shard_skill_name": "zuus_lightning_hands",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/zeus/zeus_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/zuus/zuus_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Creates a storm cloud anywhere on the map that automatically casts Lightning Bolt on nearby enemies.",
       "scepter_skill_name": "zuus_cloud",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/zeus/zeus_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/zuus/zuus_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_kunkka": {
@@ -1743,7 +1728,6 @@
       "kunkka_tidebringer",
       "kunkka_x_marks_the_spot",
       "kunkka_admirals_rum",
-      "kunkka_tidal_wave",
       "kunkka_ghostship",
       "kunkka_return"
     ],
@@ -1815,7 +1799,6 @@
       "lina_dragon_slave",
       "lina_light_strike_array",
       "lina_fiery_soul",
-      "lina_flame_cloak",
       "lina_combustion",
       "lina_laguna_blade"
     ],
@@ -1890,7 +1873,6 @@
       "lich_frost_nova",
       "lich_frost_shield",
       "lich_sinister_gaze",
-      "lich_ice_spire",
       "lich_death_charge",
       "lich_chain_frost"
     ],
@@ -2110,14 +2092,14 @@
       }
     ],
     "shard": {
-      "shard_desc": "Increases the amount of time incoming damage is reduced to 1.5 seconds. When Fowl Play is triggered, Shadow Shaman becomes invulnerable for .1 seconds and 3 additional uncontrollable chickens are created that last for 3 seconds. While Shadow Shaman is transformed, he can now use items.",
+      "shard_desc": "Increases the amount of time incoming damage is reduced to 1.5 seconds. When Fowl Play is triggered, Shadow Shaman becomes invulnerable for 1 seconds and 3 additional uncontrollable chickens are created that last for 3 seconds. While Shadow Shaman is transformed, he can now use items.",
       "shard_skill_name": "shadow_shaman_fowl_play",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow shaman/shadow shaman_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow_shaman/shadow_shaman_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increase cast range. Every 0.9 seconds, shackled units emit a radial Ether Shock hitting all other units within 600 of the target for 100% of Ether Shock's normal damage. Shackles can now also be cast on allies and Mass Serpent Wards that stay within 2000 units of Shadow Shaman. Allied units are not disabled by Shackle.",
       "scepter_skill_name": "shadow_shaman_shackles",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow shaman/shadow shaman_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow_shaman/shadow_shaman_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_slardar": {
@@ -2196,7 +2178,6 @@
       "tidehunter_gush",
       "tidehunter_kraken_shell",
       "tidehunter_anchor_smash",
-      "tidehunter_dead_in_the_water",
       "tidehunter_ravage",
       "tidehunter_blubber"
     ],
@@ -2271,7 +2252,6 @@
       "witch_doctor_paralyzing_cask",
       "witch_doctor_voodoo_restoration",
       "witch_doctor_maledict",
-      "witch_doctor_voodoo_switcheroo",
       "witch_doctor_gris_gris",
       "witch_doctor_death_ward"
     ],
@@ -2348,12 +2328,12 @@
     "shard": {
       "shard_desc": "Turns Witch Doctor into a Death Ward briefly with reduced attack speed. He is hidden during this time.",
       "shard_skill_name": "witch_doctor_voodoo_switcheroo",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/witch doctor/witch doctor_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/witch_doctor/witch_doctor_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Death Ward attacks bounce between nearby enemies.",
       "scepter_skill_name": "witch_doctor_death_ward",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/witch doctor/witch doctor_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/witch_doctor/witch_doctor_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_riki": {
@@ -2519,7 +2499,6 @@
       "tinker_laser",
       "tinker_march_of_the_machines",
       "tinker_defense_matrix",
-      "tinker_warp_grenade",
       "tinker_keen_teleport",
       "tinker_rearm",
       "tinker_eureka"
@@ -2592,7 +2571,6 @@
       "sniper_shrapnel",
       "sniper_headshot",
       "sniper_take_aim",
-      "sniper_concussive_grenade",
       "sniper_keen_scope",
       "sniper_assassinate"
     ],
@@ -2664,7 +2642,6 @@
       "necrolyte_death_pulse",
       "necrolyte_ghost_shroud",
       "necrolyte_heartstopper_aura",
-      "necrolyte_death_seeker",
       "necrolyte_sadist",
       "necrolyte_reapers_scythe"
     ],
@@ -2723,12 +2700,12 @@
     "shard": {
       "shard_desc": "Necrophos turns into a large Death Pulse towards the target unit's position. Once it arrives to the location, the Death Pulse spreads towards nearby enemies and allies.",
       "shard_skill_name": "necrolyte_death_seeker",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/necrophos/necrophos_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/necrolyte/necrolyte_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Heartstopper Aura's Health Decay is increased by 50% of Necrophos's current health regeneration.",
       "scepter_skill_name": "necrolyte_heartstopper_aura",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/necrophos/necrophos_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/necrolyte/necrolyte_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_warlock": {
@@ -2811,7 +2788,6 @@
       "beastmaster_call_of_the_wild_boar",
       "beastmaster_call_of_the_wild_hawk",
       "beastmaster_inner_beast",
-      "beastmaster_drums_of_slom",
       "beastmaster_primal_roar",
       "beastmaster_rugged"
     ],
@@ -2958,13 +2934,13 @@
     ],
     "shard": {
       "shard_desc": "Releases a sonic boom when Queen of Pain blinks, at both her starting and ending locations. Deals 125 damage in a 300 AoE and silences the target for 1.75 seconds.",
-      "shard_skill_name": "antimage_blink",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/queen of pain/queen of pain_aghanims_shard.webm"
+      "shard_skill_name": "queenofpain_blink",
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/queenofpain/queenofpain_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Shadow Strike to become a 375 AoE Spell. When Shadow Strike ends or is re-applied to an enemy Hero, the target emits a Scream of Pain, hitting any nearby enemies.",
       "scepter_skill_name": "queenofpain_shadow_strike",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/queen of pain/queen of pain_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/queenofpain/queenofpain_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_venomancer": {
@@ -3043,7 +3019,6 @@
       "faceless_void_time_walk",
       "faceless_void_time_dilation",
       "faceless_void_time_lock",
-      "faceless_void_time_walk_reverse",
       "faceless_void_distortion_field"
     ],
     "talents": [
@@ -3116,12 +3091,12 @@
     "shard": {
       "shard_desc": "Available for 1.5 seconds after landing Time Walk. If used in this period, you will reverse your time walk back to your previous cast location. Does not affect health or proc scepter hits.",
       "shard_skill_name": "faceless_void_time_walk_reverse",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/faceless void/faceless void_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/faceless_void/faceless_void_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Applies a Time Lock to all units at the landing destination.",
       "scepter_skill_name": "faceless_void_time_walk",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/faceless void/faceless void_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/faceless_void/faceless_void_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_skeleton_king": {
@@ -3190,14 +3165,14 @@
       }
     ],
     "shard": {
-      "shard_desc": "Causes Reincarnation to have no mana cost.",
-      "shard_skill_name": "skeleton_king_reincarnation",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/wraith king/wraith king_aghanims_shard.webm"
+      "shard_desc": "This ability deals 50% more damage when its owner is in ghost form.",
+      "shard_skill_name": "skeleton_king_mortal_strike",
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skeleton_king/skeleton_king_aghanims_shard.jpg"
     },
     "aghanim_scepter": {
-      "scepter_desc": "Reduces cooldown.",
-      "scepter_skill_name": "skeleton_king_reincarnation",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/wraith king/wraith king_aghanims_scepter.webm"
+      "scepter_desc": "Grants the ability to transform fallen allied heroes into ghosts. Increases the duration of the ghost form.",
+      "scepter_skill_name": "skeleton_king_vampiric_spirit",
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skeleton_king/skeleton_king_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_death_prophet": {
@@ -3258,10 +3233,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spirit.png",
         "color": "Green",
         "title": "Spirit Collector",
-        "description": "Hero deaths empower your next Exorcism.",
-        "abilities": [
-          "death_prophet_spirit_collector"
-        ]
+        "description": "Hero deaths empower your next Exorcism."
       },
       {
         "id": 2,
@@ -3278,12 +3250,12 @@
     "shard": {
       "shard_desc": "Increases Spirit Siphon charges by 1 and causes enemies to be feared for 1.0 seconds if they are siphoned for 3 seconds consecutively.",
       "shard_skill_name": "death_prophet_spirit_siphon",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/death prophet/death prophet_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/death_prophet/death_prophet_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Whenever an enemy is affected by Death Prophet's spells or when she attacks an enemy, a ghost will fly out and hit the enemy for an increased bonus of its usual damage then return to her with life.",
       "scepter_skill_name": "death_prophet_exorcism",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/death prophet/death prophet_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/death_prophet/death_prophet_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_phantom_assassin": {
@@ -3359,12 +3331,12 @@
     "shard": {
       "shard_desc": "Decreases Cooldown. Any time Phantom Assassin gets a hero kill, her ability cooldowns advance 60% of their max cooldown values.",
       "shard_skill_name": "phantom_assassin_blur",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom assassin/phantom assassin_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom_assassin/phantom_assassin_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Phantom Assassin releases sharp blades around her, dealing a percentage of each victim's max health on impact and applying Break.",
       "scepter_skill_name": "phantom_assassin_fan_of_knives",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom assassin/phantom assassin_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/phantom_assassin/phantom_assassin_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_pugna": {
@@ -3444,7 +3416,6 @@
       "templar_assassin_meld",
       "templar_assassin_psi_blades",
       "templar_assassin_trap",
-      "templar_assassin_trap_teleport",
       "templar_assassin_psionic_trap",
       "templar_assassin_third_eye"
     ],
@@ -3511,12 +3482,12 @@
     "shard": {
       "shard_desc": "Increases max trap count and trap vision range.  When activated, traps now silence affected enemies.",
       "shard_skill_name": "templar_assassin_psionic_trap",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/templar assassin/templar assassin_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/templar_assassin/templar_assassin_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "CHANNELED - Allows Templar Assassin to teleport to any Psionic Trap after channeling for 2 seconds, detonating it upon arrival as if it was fully charged and instantly dealing 400 bonus damage. Channeling Psionic Projection does not break Meld.",
       "scepter_skill_name": "templar_assassin_trap_teleport",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/templar assassin/templar assassin_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/templar_assassin/templar_assassin_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_viper": {
@@ -3524,7 +3495,6 @@
       "viper_poison_attack",
       "viper_nethertoxin",
       "viper_corrosive_skin",
-      "viper_nose_dive",
       "viper_predator",
       "viper_viper_strike"
     ],
@@ -3676,7 +3646,6 @@
       "dragon_knight_breathe_fire",
       "dragon_knight_dragon_tail",
       "dragon_knight_dragon_blood",
-      "dragon_knight_fireball",
       "dragon_knight_elder_dragon_form",
       "dragon_knight_inherited_vigor"
     ],
@@ -3742,13 +3711,13 @@
     ],
     "shard": {
       "shard_desc": "Ignites an area, dealing damage over time that lingers on enemies in it. Has reduced cast range when melee.",
-      "shard_skill_name": "black_dragon_fireball",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dragon knight/dragon knight_aghanims_shard.webm"
+      "shard_skill_name": "dragon_knight_fireball",
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dragon_knight/dragon_knight_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases the level of Dragon Form by adding a Level 4 Black Dragon, that provides free pathing, increases damage, and increases effectiveness of the Wyrm's Wrath attacks.",
       "scepter_skill_name": "dragon_knight_elder_dragon_form",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dragon knight/dragon knight_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dragon_knight/dragon_knight_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_dazzle": {
@@ -3801,10 +3770,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/armor.png",
         "color": "Red",
         "title": "Nothl Boon",
-        "description": "Dazzle's overhealing is converted into a barrier. Weave is stronger on allies and amplifies incoming heals from Dazzle.",
-        "abilities": [
-          "dazzle_nothl_boon"
-        ]
+        "description": "Dazzle's overhealing is converted into a barrier. Weave is stronger on allies and amplifies incoming heals from Dazzle."
       },
       {
         "id": 1,
@@ -3831,8 +3797,6 @@
       "rattletrap_battery_assault",
       "rattletrap_power_cogs",
       "rattletrap_rocket_flare",
-      "rattletrap_overclocking",
-      "rattletrap_jetpack",
       "rattletrap_hookshot",
       "rattletrap_armor_power",
       "rattletrap_jetpack_toggle"
@@ -3913,7 +3877,6 @@
       "leshrac_split_earth",
       "leshrac_diabolic_edict",
       "leshrac_lightning_storm",
-      "leshrac_greater_lightning_storm",
       "leshrac_defilement",
       "leshrac_pulse_nova"
     ],
@@ -3988,7 +3951,6 @@
       "furion_sprout",
       "furion_teleportation",
       "furion_force_of_nature",
-      "furion_curse_of_the_forest",
       "furion_spirit_of_the_forest",
       "furion_wrath_of_nature"
     ],
@@ -4059,12 +4021,12 @@
     "shard": {
       "shard_desc": "Applies a curse on all enemy heroes within 900 range, displaying them in fog, slowing them, and dealing damage over time based on the number of trees within 250 radius. Treants count as trees for this purpose.",
       "shard_skill_name": "furion_curse_of_the_forest",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nature's prophet/nature's prophet_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/furion/furion_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Entangles all enemies it hits. Duration scales from 1.5s up to 3.0s seconds at max bounce.",
       "scepter_skill_name": "furion_wrath_of_nature",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nature's prophet/nature's prophet_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/furion/furion_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_life_stealer": {
@@ -4118,9 +4080,6 @@
         "color": "Yellow",
         "title": "",
         "description": "",
-        "abilities": [
-          "life_stealer_corpse_eater"
-        ],
         "deprecated": 1
       },
       {
@@ -4167,12 +4126,12 @@
     "shard": {
       "shard_desc": "Infest explosion applies a 50% duration Open Wounds to enemies in the damage radius.",
       "shard_skill_name": "life_stealer_infest",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lifestealer/lifestealer_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/life_stealer/life_stealer_aghanims_shard.webm"
     },
     "aghanim_scepter": {
-      "scepter_desc": "Increases cast range and reduces cooldown to =20s.  Infest may target enemy heroes for a short duration, attacking them from the inside while increasing Lifestealer's regeneration rate.",
+      "scepter_desc": "Increases cast range and reduces cooldown to 20s. Infest may target enemy heroes for a short duration, attacking them from the inside while increasing Lifestealer's regeneration rate.",
       "scepter_skill_name": "life_stealer_infest",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lifestealer/lifestealer_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/life_stealer/life_stealer_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_dark_seer": {
@@ -4180,7 +4139,6 @@
       "dark_seer_vacuum",
       "dark_seer_ion_shell",
       "dark_seer_surge",
-      "dark_seer_normal_punch",
       "dark_seer_aggrandize",
       "dark_seer_wall_of_replica"
     ],
@@ -4245,12 +4203,12 @@
     "shard": {
       "shard_desc": "Surged units leave behind a 150 radius trail that lasts 7s, slows enemies around it by 35% and deals 40 damage per second in 0.5s intervals. Can be put on alt-cast to disable the trail.",
       "shard_skill_name": "dark_seer_surge",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark seer/dark seer_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark_seer/dark_seer_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Passive ability. Causes Dark Seer's next attack on a hero to have True Strike, knock a replica out of the victim, damaging and stunning them based on how far Dark Seer has moved in the past 3.0 seconds. Max power is reached after 1100 distance moved.",
       "scepter_skill_name": "dark_seer_normal_punch",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark seer/dark seer_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark_seer/dark_seer_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_clinkz": {
@@ -4258,8 +4216,6 @@
       "clinkz_strafe",
       "clinkz_searing_arrows",
       "clinkz_death_pact",
-      "clinkz_burning_barrage",
-      "clinkz_burning_army",
       "clinkz_wind_walk",
       "clinkz_infernal_shred"
     ],
@@ -4331,8 +4287,8 @@
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/clinkz/clinkz_aghanims_shard.webm"
     },
     "aghanim_scepter": {
-      "scepter_desc": "Increases Skeleton Archer health.",
-      "scepter_skill_name": "clinkz_wind_walk",
+      "scepter_desc": "Summon a number of skeleton archers at the specified location.",
+      "scepter_skill_name": "clinkz_burning_army",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/clinkz/clinkz_aghanims_scepter.webm"
     }
   },
@@ -4415,8 +4371,6 @@
       "enchantress_impetus",
       "enchantress_enchant",
       "enchantress_natures_attendants",
-      "enchantress_bunny_hop",
-      "enchantress_little_friends",
       "enchantress_untouchable",
       "enchantress_rabblerouser"
     ],
@@ -4647,12 +4601,12 @@
     "shard": {
       "shard_desc": "Hunter in the Night may be cast on a creep, instantly killing it and restoring some of Night Stalker's maximum health and mana. Cannot target ancients during the daytime.",
       "shard_skill_name": "night_stalker_hunter_in_the_night",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/night stalker/night stalker_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/night_stalker/night_stalker_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Reduces cooldown of Crippling Fear and it becomes a toggled ability that takes a percentage of max mana per second to maintain after the initial duration time.",
       "scepter_skill_name": "night_stalker_crippling_fear",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/night stalker/night stalker_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/night_stalker/night_stalker_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_broodmother": {
@@ -4660,7 +4614,6 @@
       "broodmother_insatiable_hunger",
       "broodmother_spin_web",
       "broodmother_incapacitating_bite",
-      "broodmother_sticky_snare",
       "broodmother_spiders_milk",
       "broodmother_spawn_spiderlings"
     ],
@@ -4732,7 +4685,6 @@
       "bounty_hunter_shuriken_toss",
       "bounty_hunter_jinada",
       "bounty_hunter_wind_walk",
-      "bounty_hunter_wind_walk_ally",
       "bounty_hunter_big_game_hunter",
       "bounty_hunter_track"
     ],
@@ -4794,12 +4746,12 @@
     "shard": {
       "shard_desc": "Applies Shadow Walk and all of its bonuses to the target ally. Allied fade time is 0.5s. Does not break Bounty Hunter's invisibility when cast.",
       "shard_skill_name": "bounty_hunter_wind_walk_ally",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/bounty hunter/bounty hunter_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/bounty_hunter/bounty_hunter_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases cast range and applies Jinada on hit.",
       "scepter_skill_name": "bounty_hunter_shuriken_toss",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/bounty hunter/bounty hunter_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/bounty_hunter/bounty_hunter_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_weaver": {
@@ -4977,7 +4929,6 @@
       "batrider_sticky_napalm",
       "batrider_flamebreak",
       "batrider_firefly",
-      "batrider_sticky_napalm_application_damage",
       "batrider_smoldering_resin",
       "batrider_flaming_lasso"
     ],
@@ -5148,14 +5099,13 @@
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/chen/chen_aghanims_scepter.webm"
     }
   },
-  "npc_dota_hero_spectre": {
+  "npc_dota_hero_spectre":{
     "abilities": [
       "spectre_spectral_dagger",
       "spectre_shadow_step",
       "spectre_dispersion",
       "spectre_reality",
-      "spectre_desolate",
-      "spectre_haunt"
+      "spectre_desolate"
     ],
     "talents": [
       {
@@ -5290,9 +5240,6 @@
         "color": "Yellow",
         "title": "Devil's Bargain",
         "description": "Doom can sell items for 85% of their value, but his buyback costs are increased by 20%.",
-        "abilities": [
-          "doom_bringer_devils_bargain"
-        ],
         "deprecated": 1
       },
       {
@@ -5307,12 +5254,12 @@
     "shard": {
       "shard_desc": "Heals Doom and his controlled units for 60% of the damage value.",
       "shard_skill_name": "doom_bringer_scorched_earth",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/doom/doom_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/doom_bringer/doom_bringer_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Allies in a 350 radius around the doomed target also suffer the effects of Doom. Allows Doom to be self-cast to affect enemies around himself with Doom. Increases Doom's damage per second.",
       "scepter_skill_name": "doom_bringer_doom",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/doom/doom_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/doom_bringer/doom_bringer_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_ancient_apparition": {
@@ -5379,12 +5326,12 @@
     "shard": {
       "shard_desc": "Freezes enemies hit with the current level of Cold Feet for 50% of the duration.",
       "shard_skill_name": "ancient_apparition_ice_blast",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ancient apparition/ancient apparition_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ancient_apparition/ancient_apparition_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Removes cooldown and reduces manacost by 40%.",
       "scepter_skill_name": "ancient_apparition_chilling_touch",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ancient apparition/ancient apparition_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ancient_apparition/ancient_apparition_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_ursa": {
@@ -5466,7 +5413,6 @@
       "spirit_breaker_charge_of_darkness",
       "spirit_breaker_bulldoze",
       "spirit_breaker_greater_bash",
-      "spirit_breaker_planar_pocket",
       "spirit_breaker_herd_mentality",
       "spirit_breaker_nether_strike"
     ],
@@ -5534,12 +5480,12 @@
     "shard": {
       "shard_desc": "Increases Charge of Darkness Bonus Speed by 85.",
       "shard_skill_name": "spirit_breaker_charge_of_darkness",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/spirit breaker/spirit breaker_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/spirit_breaker/spirit_breaker_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Barathrum gains magic resistance and distorts reality around the selected hero, making any unit-targeted spells cast by enemy heroes get redirected towards Spirit Breaker. Can be cast on both allied and enemy heroes, but only spells cast by enemies of Spirit Breaker will be redirected.",
       "scepter_skill_name": "spirit_breaker_planar_pocket",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/spirit breaker/spirit breaker_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/spirit_breaker/spirit_breaker_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_gyrocopter": {
@@ -5834,9 +5780,6 @@
         "color": "Purple",
         "title": "Irrepressible",
         "description": "Silencer cannot be silenced.",
-        "abilities": [
-          "silencer_irrepressible"
-        ],
         "deprecated": 1
       },
       {
@@ -5942,12 +5885,12 @@
     "shard": {
       "shard_desc": "Astral Imprisonment now deals damage in an area. Also allows allies to move at 70% movement speed during Astral Imprisonment (they are visible, but untargettable and can't perform any other actions).",
       "shard_skill_name": "obsidian_destroyer_astral_imprisonment",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/outworld devourer/outworld devourer_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/obsidian_destroyer/obsidian_destroyer_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Damage that would bring Outworld Destroyer below 20% health triggers a strong dispel. In addition, when the effect is triggered Outworld Destroyer consumes of all his mana to create an all damage barrier equal to 65% of his maximum mana that lasts for 15 seconds. This effect can occur every 80 seconds and cannot be refreshed.",
       "scepter_skill_name": "obsidian_destroyer_equilibrium",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/outworld devourer/outworld devourer_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/obsidian_destroyer/obsidian_destroyer_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_lycan": {
@@ -5955,7 +5898,6 @@
       "lycan_summon_wolves",
       "lycan_howl",
       "lycan_feral_impulse",
-      "lycan_wolf_bite",
       "lycan_apex_predator",
       "lycan_shapeshift"
     ],
@@ -6117,7 +6059,6 @@
       "shadow_demon_disseminate",
       "shadow_demon_shadow_poison",
       "shadow_demon_shadow_poison_release",
-      "shadow_demon_demonic_cleanse",
       "shadow_demon_demonic_purge",
       "shadow_demon_menace"
     ],
@@ -6179,12 +6120,12 @@
     "shard": {
       "shard_desc": "Cleanses the target allied unit, removing negative buffs for the duration.  At the end of the duration, the unit is healed. Units under the effect of Disruption can still be affected by Demonic Cleanse. DISPEL TYPE: Basic Dispel",
       "shard_skill_name": "shadow_demon_demonic_cleanse",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow demon/shadow demon_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow_demon/shadow_demon_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Demonic Purge to break and gain 2 charges.",
       "scepter_skill_name": "shadow_demon_demonic_purge",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow demon/shadow demon_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shadow_demon/shadow_demon_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_lone_druid": {
@@ -6272,12 +6213,12 @@
     "shard": {
       "shard_desc": "Applies a basic dispel and grants allies in an area around the caster bonus movement and attack speed. Replicates between Lone Druid and Spirit Bear regardless of castability on the other. DISPEL TYPE: Basic Dispel",
       "shard_skill_name": "lone_druid_savage_roar",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lone druid/lone druid_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lone_druid/lone_druid_aghanims_shard.webm"
     },
     "aghanim_scepter": {
-      "scepter_desc": "Entangle applies %hits_required% stacks to enemy heroes in the area and has increased radius. Enemies no longer have protection from gaining stacks while Entangled.",
+      "scepter_desc": "Entangle applies 5 stacks to enemy heroes in the area and has increased radius. Enemies no longer have protection from gaining stacks while Entangled.",
       "scepter_skill_name": "lone_druid_entangle",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lone druid/lone druid_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/lone_druid/lone_druid_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_chaos_knight": {
@@ -6330,9 +6271,6 @@
         "color": "Red",
         "title": "Phantasmagoria",
         "description": "All Chaos Knight Illusions are Strong Illusions and take less damage when near him.",
-        "abilities": [
-          "chaos_knight_phantasmagoria"
-        ],
         "deprecated": 1
       },
       {
@@ -6349,10 +6287,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Yellow",
         "title": "Fundamental Forging",
-        "description": "Chaos Knight can craft artifacts from the next tier when making a Neutral Item.",
-        "abilities": [
-          "chaos_knight_fundamental_forging"
-        ]
+        "description": "Chaos Knight can craft artifacts from the next tier when making a Neutral Item."
       },
       {
         "id": 3,
@@ -6366,12 +6301,12 @@
     "shard": {
       "shard_desc": "Causes Chaos Bolt to create a Phantasm illusion to attack the target. This illusion deals =15% less damage.",
       "shard_skill_name": "chaos_knight_chaos_bolt",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/chaos knight/chaos knight_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/chaos_knight/chaos_knight_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Creates an illusion of allied heroes globally. Creates an additional illusion for Chaos Knight as well.",
       "scepter_skill_name": "chaos_knight_phantasm",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/chaos knight/chaos knight_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/chaos_knight/chaos_knight_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_meepo": {
@@ -6379,8 +6314,6 @@
       "meepo_earthbind",
       "meepo_poof",
       "meepo_ransack",
-      "meepo_petrify",
-      "meepo_megameepo",
       "meepo_divided_we_stand",
       "meepo_megameepo_fling",
       "meepo_sticky_fingers"
@@ -6443,9 +6376,6 @@
         "color": "Yellow",
         "title": "Pack Rat",
         "description": "All Meepos can use the item in the neutral item slot. ",
-        "abilities": [
-          "meepo_pack_rat"
-        ],
         "deprecated": 1
       }
     ],
@@ -6456,7 +6386,7 @@
     },
     "aghanim_scepter": {
       "scepter_desc": "In MegaMeepo form, Meepo flings the topmost meepo towards a target within a %AbilityCastRange% range, dealing damage and slowing their movement speed.",
-      "scepter_skill_name": "meepo_megameepo_fling",
+      "scepter_skill_name": "meepo_megameepo",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/meepo/meepo_aghanims_scepter.webm"
     }
   },
@@ -6511,9 +6441,6 @@
         "color": "Yellow",
         "title": "Primeval Power",
         "description": "Treant gains +{s:attack_damage_per_level} base attack damage per hero level.",
-        "abilities": [
-          "treant_innate_attack_damage"
-        ],
         "deprecated": 1
       },
       {
@@ -6537,12 +6464,12 @@
     "shard": {
       "shard_desc": "Treant Protector enchants a tree, which grants him unobstructed vision in that location. The eyes last for 300 seconds and are invisible, but are destroyed if their host tree is destroyed or if they are attacked directly.",
       "shard_skill_name": "treant_eyes_in_the_forest",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/treant protector/treant protector_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/treant/treant_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Decreases Cooldown to 80 seconds. When casting Overgrowth, Treant Protector draws power from the soil, gaining an undispellable buff that greatly increasing his size for 16 seconds. While enlarged, he gains phased movement with a fixed speed of 345, 100% bonus Strength, and a splashing attack that deals 60% of his attack damage in a 300 unit radius.",
       "scepter_skill_name": "treant_overgrowth",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/treant protector/treant protector_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/treant/treant_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_ogre_magi": {
@@ -6550,9 +6477,7 @@
       "ogre_magi_fireblast",
       "ogre_magi_ignite",
       "ogre_magi_bloodlust",
-      "ogre_magi_unrefined_fireblast",
-      "ogre_magi_smash",
-      "ogre_magi_dumb_luck",
+      "ogre_magi_dumb_l_ck",
       "ogre_magi_multicast"
     ],
     "talents": [
@@ -6610,12 +6535,12 @@
     "shard": {
       "shard_desc": "Creates a shield around the target ally, absorbing a percentage of the damage of next 3 attacks from enemy heroes. When damage is absorbed, a fireball is launched at the attacker. Can be cast on towers.",
       "shard_skill_name": "ogre_magi_smash",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ogre magi/ogre magi_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ogre_magi/ogre_magi_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Blasts an enemy unit with a wave of fire, dealing 150 + 1.5x Ogre's Strength in damage and stunning the target. Its mana cost is 35% of Ogre Magi's current mana.",
       "scepter_skill_name": "ogre_magi_unrefined_fireblast",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ogre magi/ogre magi_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ogre_magi/ogre_magi_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_undying": {
@@ -6698,8 +6623,6 @@
       "rubick_empty2",
       "rubick_spell_steal",
       "rubick_telekinesis_land",
-      "rubick_hidden1",
-      "rubick_hidden2",
       "rubick_might_and_magus",
       "rubick_telekinesis_land_self"
     ],
@@ -6853,7 +6776,6 @@
       "nyx_assassin_impale",
       "nyx_assassin_jolt",
       "nyx_assassin_spiked_carapace",
-      "nyx_assassin_burrow",
       "nyx_assassin_nyxth_sense",
       "nyx_assassin_vendetta",
       "nyx_assassin_unburrow"
@@ -6913,19 +6835,18 @@
     "shard": {
       "shard_desc": "Vendetta applies Break on attack.",
       "shard_skill_name": "nyx_assassin_vendetta",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nyx assassin/nyx assassin_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nyx_assassin/nyx_assassin_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Nyx Assassin buries himself beneath the battlefield over a short duration. Once burrowed, Spiked Carapace instantly stuns nearby enemies when cast, the range of Mind Flare and Impale is increased, and Impale's cooldown is decreased. While burrowed, Nyx Assassin is stationary, unable to attack, and invisible. Nyx Assassin gains damage reduction from all damage sources.",
       "scepter_skill_name": "nyx_assassin_burrow",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/nyx assassin/nyx assassin_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ny_ assassin/nyx_assassin_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_naga_siren": {
     "abilities": [
       "naga_siren_mirror_image",
       "naga_siren_ensnare",
-      "naga_siren_reel_in",
       "naga_siren_eelskin",
       "naga_siren_song_of_the_siren",
       "naga_siren_song_of_the_siren_cancel"
@@ -6991,12 +6912,12 @@
     "shard": {
       "shard_desc": "Increases Song of the Siren's regen and adds mana regeneration for allies.",
       "shard_skill_name": "naga_siren_song_of_the_siren",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/naga siren/naga siren_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/naga_siren/naga_siren_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases cast range and projectile speed.  Allows Ensnare to target and affect Debuff Immune units. Ensnare applies Break.",
       "scepter_skill_name": "naga_siren_ensnare",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/naga siren/naga siren_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/naga_siren/naga_siren_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_keeper_of_the_light": {
@@ -7004,7 +6925,6 @@
       "keeper_of_the_light_illuminate",
       "keeper_of_the_light_blinding_light",
       "keeper_of_the_light_chakra_magic",
-      "keeper_of_the_light_will_o_wisp",
       "keeper_of_the_light_spirit_form",
       "keeper_of_the_light_illuminate_end",
       "keeper_of_the_light_special_reserve"
@@ -7070,12 +6990,12 @@
     "shard": {
       "shard_desc": "Increases illuminate heal.",
       "shard_skill_name": "keeper_of_the_light_spirit_form",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/keeper of the light/keeper of the light_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/keeper_of_the_light/keeper_of_the_light_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Summons Ignis Fatuus at the targeted area. Alternates on and off, drawing enemies closer with its mesmerising flicker.",
       "scepter_skill_name": "keeper_of_the_light_will_o_wisp",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/keeper of the light/keeper of the light_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/keeper_of_the_light/keeper_of_the_light_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_wisp": {
@@ -7144,12 +7064,12 @@
     "shard": {
       "shard_desc": "Tether damages enemies touching it. Io is healed for 50% of the damage done.",
       "shard_skill_name": "wisp_tether",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/io/io_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/wisp/wisp_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Spirits now passively spawn around Io constantly every second up to the max. Spirits colliding with enemy Heroes slows them briefly. Can be activated to explode spirits.",
       "scepter_skill_name": "wisp_spirits",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/io/io_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/wisp/wisp_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_visage": {
@@ -7158,7 +7078,6 @@
       "visage_soul_assumption",
       "visage_gravekeepers_cloak",
       "visage_stone_form_self_cast",
-      "visage_silent_as_the_grave",
       "visage_summon_familiars",
       "visage_summon_familiars_stone_form",
       "visage_lurker"
@@ -7321,7 +7240,6 @@
       "medusa_split_shot",
       "medusa_mystic_snake",
       "medusa_gorgon_grasp",
-      "medusa_cold_blooded",
       "medusa_mana_shield",
       "medusa_stone_gaze"
     ],
@@ -7394,10 +7312,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/speed.png",
         "color": "Red",
         "title": "Undulation",
-        "description": "Medusa's movement speed is fixed at 310 (465 during Stone Gaze). Medusa is unslowable and does not benefit from movement speed increases.",
-        "abilities": [
-          "medusa_undulation"
-        ]
+        "description": "Medusa's movement speed is fixed at 310 (465 during Stone Gaze). Medusa is unslowable and does not benefit from movement speed increases."
       }
     ],
     "shard": {
@@ -7475,12 +7390,12 @@
     "shard": {
       "shard_desc": "Grants Troll 16% + 3% chance per Fervor stack of firing an additional ranged attack to any unit within its ranged attack range plus =175 when attacking an enemy unit.",
       "shard_skill_name": "troll_warlord_fervor",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/troll warlord/troll warlord_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/troll_warlord/troll_warlord_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Whirling Axes (Melee) to dispel Troll Warlord. Reduces cooldown and mana cost. DISPEL TYPE: Basic Dispel",
       "scepter_skill_name": "troll_warlord_whirling_axes_melee",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/troll warlord/troll warlord_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/troll_warlord/troll_warlord_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_centaur": {
@@ -7488,10 +7403,9 @@
       "centaur_hoof_stomp",
       "centaur_double_edge",
       "centaur_return",
-      "centaur_work_horse",
-      "centaur_mount",
       "centaur_stampede",
-      "centaur_rawhide"
+      "centaur_rawhide",
+      "centaur_mount"
     ],
     "talents": [
       {
@@ -7551,12 +7465,12 @@
     "shard": {
       "shard_desc": "Causes Double Edge to slow enemy heroes and increase Centaur's strength per hero hit for a short time. Duration refreshes per stack, up to a max of 5 stacks.",
       "shard_skill_name": "centaur_double_edge",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/centaur warrunner/centaur warrunner_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/centaur/centaur_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Centaur hitches a cart behind him. While active, Centaur gains the benefit of Stampede for the current level of Stampede, and can cast Hitch a Ride on a target ally.",
       "scepter_skill_name": "centaur_work_horse",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/centaur warrunner/centaur warrunner_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/centaur/centaur_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_magnataur": {
@@ -7564,7 +7478,6 @@
       "magnataur_shockwave",
       "magnataur_empower",
       "magnataur_skewer",
-      "magnataur_horn_toss",
       "magnataur_solid_core",
       "magnataur_reverse_polarity"
     ],
@@ -7663,10 +7576,8 @@
       "shredder_whirling_death",
       "shredder_timber_chain",
       "shredder_reactive_armor",
-      "shredder_flamethrower",
       "shredder_chakram",
       "shredder_return_chakram",
-      "shredder_return_chakram_2",
       "shredder_exposure_therapy"
     ],
     "talents": [
@@ -7720,19 +7631,20 @@
         "title": "Twisted Chakram",
         "description": "Launches a second independent Chakram that follows a curved path and returns to Timbersaw, damaging and slowing enemies it passes through. Enemies caught in the saw blade will move more slowly for every 5% of health missing.",
         "abilities": [
-          "shredder_twisted_chakram"
+          "shredder_twisted_chakram",
+          "shredder_return_chakram_2"
         ]
       }
     ],
     "shard": {
       "shard_desc": "Releases a flame in the direction Timbersaw is facing. Applies a debuff that deals damage per second and slows enemy movement speed. Affects buildings for reduced damage.",
       "shard_skill_name": "shredder_flamethrower",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/timbersaw/timbersaw_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shredder/shredder_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Reactive Armor can now be activated to get max stacks and 150 damage barrier. Grants Timbersaw 100 + 75 barrier amount per second for each enemy hero within 600 radius of Timbersaw up to a maximum of 800. After 8 seconds, Timbersaw deals damage to every hero within 600 radius equal to 200 + his remaining barrier amount and loses all of his barrier.",
       "scepter_skill_name": "shredder_reactive_armor",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/timbersaw/timbersaw_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/shredder/shredder_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_bristleback": {
@@ -7740,7 +7652,6 @@
       "bristleback_viscous_nasal_goo",
       "bristleback_quill_spray",
       "bristleback_bristleback",
-      "bristleback_hairball",
       "bristleback_warpath",
       "bristleback_prickly"
     ],
@@ -7820,10 +7731,8 @@
     "abilities": [
       "tusk_ice_shards",
       "tusk_snowball",
-      "tusk_walrus_kick",
       "tusk_bitter_chill",
-      "tusk_walrus_punch",
-      "tusk_launch_snowball"
+      "tusk_walrus_punch"
     ],
     "talents": [
       {
@@ -7963,12 +7872,12 @@
     "shard": {
       "shard_desc": "When Skywrath Mage casts Arcane Bolt, 3 bolts are created, one aimed at the original target, and two others aimed at random enemies within %extra_bolt_search_radius% range of the original target. Heroes will take priority.",
       "shard_skill_name": "skywrath_mage_arcane_bolt",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skywrath mage/skywrath mage_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skywrath_mage/skywrath_mage_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "When Skywrath Mage casts Mystic Flare, another Mystic Flare will be created on the position of a different random target enemy within 500 range of the original target. Heroes will take priority.",
       "scepter_skill_name": "skywrath_mage_mystic_flare",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skywrath mage/skywrath mage_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skywrath_mage/skywrath_mage_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_abaddon": {
@@ -8122,12 +8031,12 @@
     "shard": {
       "shard_desc": "Lowers Cooldown. Echo Stomp may be placed on alt-cast to allow Elder Titan to take the place of the Astral Spirit as it completes its stomp.",
       "shard_skill_name": "elder_titan_echo_stomp",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/elder titan/elder titan_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/elder_titan/elder_titan_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Elder Titan to become debuff immune and gain 50% magic resistance for 2 seconds per affected enemy Hero when the spirit returns.",
       "scepter_skill_name": "elder_titan_ancestral_spirit",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/elder titan/elder titan_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/elder_titan/elder_titan_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_legion_commander": {
@@ -8193,12 +8102,12 @@
     "shard": {
       "shard_desc": "Increases Duel damage by 5 per win. Applies retroactively.",
       "shard_skill_name": "legion_commander_duel",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/legion commander/legion commander_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/legion_commander/legion_commander_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases Duel duration.  Legion Commander is debuff immune for the duration of the Duel.",
       "scepter_skill_name": "legion_commander_duel",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/legion commander/legion commander_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/legion_commander/legion_commander_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_ember_spirit": {
@@ -8265,12 +8174,12 @@
     "shard": {
       "shard_desc": "If an enemy hero dies near Ember Spirit, a Fire Remnant charge will be replenished.",
       "shard_skill_name": "ember_spirit_fire_remnant",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ember spirit/ember spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ember_spirit/ember_spirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Increases cast range, initial remnant speed, and maximum charges.",
       "scepter_skill_name": "ember_spirit_fire_remnant",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ember spirit/ember spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ember_spirit/ember_spirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_earth_spirit": {
@@ -8338,7 +8247,7 @@
       {
         "id": 2,
         "name": "earth_spirit_ready_to_roll",
-        "icon": "spinning",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/spinning.png",
         "color": "Yellow",
         "title": "Ready to Roll",
         "description": "Rolling Boulder can roll over allied heroes for additional bonuses.",
@@ -8356,12 +8265,12 @@
     "shard": {
       "shard_desc": "Decreases cooldown to 10s and increases allied unit cast range and pull speed.",
       "shard_skill_name": "earth_spirit_geomagnetic_grip",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/earth spirit/earth spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/earth_spirit/earth_spirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Earth Spirit temporarily enchants a hero, granting them the properties of a Stone Remnant. After a short duration the remnant shatters, releasing the hero and damaging nearby enemies. Can be cast on Stone Remnants. Has a 5 second cooldown when used that way. Has a larger cast range when cast on an ally hero.",
       "scepter_skill_name": "earth_spirit_petrify",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/earth spirit/earth spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/earth_spirit/earth_spirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_terrorblade": {
@@ -8369,8 +8278,6 @@
       "terrorblade_reflection",
       "terrorblade_conjure_image",
       "terrorblade_metamorphosis",
-      "terrorblade_demon_zeal",
-      "terrorblade_terror_wave",
       "terrorblade_sunder",
       "terrorblade_dark_unity"
     ],
@@ -8520,7 +8427,6 @@
       "oracle_fortunes_end",
       "oracle_fates_edict",
       "oracle_purifying_flames",
-      "oracle_rain_of_destiny",
       "oracle_prognosticate",
       "oracle_false_promise"
     ],
@@ -8565,10 +8471,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Red",
         "title": "Clairvoyant Curse",
-        "description": "Spell amplification increased by 1% per hero level.",
-        "abilities": [
-          "oracle_clairvoyant_curse"
-        ]
+        "description": "Spell amplification increased by 1% per hero level."
       },
       {
         "id": 1,
@@ -8576,10 +8479,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Green",
         "title": "Clairvoyant Cure",
-        "description": "Heal amplification increased by 0.75% per hero level.",
-        "abilities": [
-          "oracle_clairvoyant_cure"
-        ]
+        "description": "Heal amplification increased by 0.75% per hero level."
       }
     ],
     "shard": {
@@ -8643,10 +8543,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/range.png",
         "color": "Gray",
         "title": "Squee's Scope",
-        "description": "Techies gains 1 attack range and attack projectile speed for each point of attack speed.",
-        "abilities": [
-          "techies_squees_scope"
-        ]
+        "description": "Techies gains 1 attack range and attack projectile speed for each point of attack speed."
       },
       {
         "id": 1,
@@ -8662,10 +8559,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/item.png",
         "color": "Blue",
         "title": "Spoon's Stash",
-        "description": "Techies stack all previously selected Enchantments onto newly crafted Neutral Items.",
-        "abilities": [
-          "techies_spoons_stash"
-        ]
+        "description": "Techies stack all previously selected Enchantments onto newly crafted Neutral Items."
       }
     ],
     "shard": {
@@ -8729,9 +8623,6 @@
         "color": "Blue",
         "title": "Essence of the Blueheart",
         "description": "Winter Wyvern's heals also restore mana.",
-        "abilities": [
-          "winter_wyvern_essence_of_the_blueheart"
-        ],
         "deprecated": 1
       },
       {
@@ -8766,12 +8657,12 @@
     "shard": {
       "shard_desc": "When Cold Embrace ends, a Splinter Blast goes off at that location, hitting enemies within 1150 range. Reduces cooldown by 4.0 seconds.",
       "shard_skill_name": "winter_wyvern_cold_embrace",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/winter wyvern/winter wyvern_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/winter_wyvern/winter_wyvern_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Arctic Burn to be a toggle ability, draining mana every second when active. Removes limit on number of attacks per target. Increases Winter Wyvern's movement speed.",
       "scepter_skill_name": "winter_wyvern_arctic_burn",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/winter wyvern/winter wyvern_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/winter_wyvern/winter_wyvern_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_arc_warden": {
@@ -8855,12 +8746,12 @@
     "shard": {
       "shard_desc": "When Spark Wraith activates, a secondary Spark Wraith will fuse to the next closest target that deals =80.0% damage. Increases Spark Wraith search radius.",
       "shard_skill_name": "arc_warden_spark_wraith",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/arc warden/arc warden_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/arc_warden/arc_warden_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Flux silences when the target is alone, deals more damage, and lasts longer.",
       "scepter_skill_name": "arc_warden_flux",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/arc warden/arc warden_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/arc_warden/arc_warden_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_abyssal_underlord": {
@@ -8929,12 +8820,12 @@
     "shard": {
       "shard_desc": "Firestorm can be allied targeted. When used that way, the Firestorm follows the hero around.  The wave count is increased, and tick rate / duration time occur more quickly.",
       "shard_skill_name": "abyssal_underlord_firestorm",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/underlord/underlord_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/abyssal_underlord/abyssal_underlord_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Summons a Pit of Malice around each of the portals. Reduces cooldown.",
       "scepter_skill_name": "abyssal_underlord_dark_portal",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/underlord/underlord_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/abyssal_underlord/abyssal_underlord_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_monkey_king": {
@@ -8945,7 +8836,6 @@
       "monkey_king_jingu_mastery",
       "monkey_king_mischief",
       "monkey_king_wukongs_command",
-      "monkey_king_primal_spring_early",
       "monkey_king_untransform"
     ],
     "talents": [
@@ -9015,12 +8905,12 @@
     "shard": {
       "shard_desc": "Boundless Strike applies Primal Spring with 35% of the max channeling duration power to enemies along the staff and at the end of the staff. When Boundless Strike is set to alt-cast, Monkey King leaps to the end of his staff.",
       "shard_skill_name": "monkey_king_boundless_strike",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/monkey king/monkey king_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/monkey_king/monkey_king_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Spawns a monkey soldier near Monkey King at regular intervals. Soldiers do not spawn while invisible or on trees. Soldiers only attack buildings when Monkey King himself is nearby. Soldiers can now gain Jingu Mastery charges independently.",
       "scepter_skill_name": "monkey_king_wukongs_command",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/monkey king/monkey king_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/monkey_king/monkey_king_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_pangolier": {
@@ -9180,12 +9070,12 @@
     "shard": {
       "shard_desc": "Cursed Crown creates 4 brambles in a 175 radius around the target after the counter ends. Triggers even upon dispel. Cursed Crown cooldown reduced by 1.5 seconds.",
       "shard_skill_name": "dark_willow_cursed_crown",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark willow/dark willow_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark_willow/dark_willow_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Attacking no longer takes Dark Willow out of Shadow Realm. Each attack still has bonus damage based on the duration of the buff.",
       "scepter_skill_name": "dark_willow_shadow_realm",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark willow/dark willow_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/dark_willow/dark_willow_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_grimstroke": {
@@ -9193,7 +9083,6 @@
       "grimstroke_dark_artistry",
       "grimstroke_ink_creature",
       "grimstroke_spirit_walk",
-      "grimstroke_dark_portrait",
       "grimstroke_return",
       "grimstroke_soul_chain",
       "grimstroke_ink_trail"
@@ -9390,9 +9279,6 @@
         "color": "Gray",
         "title": "Symmetry",
         "description": "Void Spirit gains a physical damage barrier when dealing magic damage to enemy heroes.",
-        "abilities": [
-          "void_spirit_symmetry"
-        ],
         "deprecated": 1
       },
       {
@@ -9407,12 +9293,12 @@
     "shard": {
       "shard_desc": "Creates an additional watcher path that rotates around the remnant.  The remnant now provides True Sight, and no longer triggers on creeps, instead dealing 50% damage to them every second in both paths.",
       "shard_skill_name": "void_spirit_aether_remnant",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/void spirit/void spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/void_spirit/void_spirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Causes Resonant Pulse to silence and gain 2 charges.",
       "scepter_skill_name": "void_spirit_resonant_pulse",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/void spirit/void spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/void_spirit/void_spirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_snapfire": {
@@ -9420,10 +9306,9 @@
       "snapfire_scatterblast",
       "snapfire_firesnap_cookie",
       "snapfire_lil_shredder",
-      "snapfire_gobble_up",
-      "snapfire_spit_creep",
       "snapfire_mortimer_kisses",
-      "snapfire_buckshot"
+      "snapfire_buckshot",
+      "snapfire_spit_creep"
     ],
     "talents": [
       {
@@ -9484,7 +9369,7 @@
     },
     "aghanim_scepter": {
       "scepter_desc": "Mortimer spits out the unit that's in his mouth, causing impact damage and stun in a large area. The glob leaves a pool of firespit based on the current level of Mortimer Kisses, that slows and applies damage over time. Spit Out has a no minimum launch range.",
-      "scepter_skill_name": "snapfire_spit_creep",
+      "scepter_skill_name": "snapfire_gobble_up",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/snapfire/snapfire_aghanims_scepter.webm"
     }
   },
@@ -9493,8 +9378,6 @@
       "hoodwink_acorn_shot",
       "hoodwink_bushwhack",
       "hoodwink_scurry",
-      "hoodwink_decoy",
-      "hoodwink_hunters_boomerang",
       "hoodwink_sharpshooter",
       "hoodwink_sharpshooter_release",
       "hoodwink_mistwoods_wayfarer"
@@ -9566,8 +9449,8 @@
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/hoodwink/hoodwink_aghanims_shard.webm"
     },
     "aghanim_scepter": {
-      "scepter_desc": "Increases arrow speed and movement speed slow.",
-      "scepter_skill_name": "hoodwink_sharpshooter",
+      "scepter_desc": "The hero becomes invisible, moves faster, and creates an illusion that targets the nearest enemy hero with the Sharpshooter ability, dealing reduced damage. If the enemy attacks this illusion or uses a targeted ability on it, it will disappear, but will throw a weak version of the trap net from the Bushwhack ability at the attacker.",
+      "scepter_skill_name": "hoodwink_decoy",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/hoodwink/hoodwink_aghanims_scepter.webm"
     }
   },
@@ -9578,8 +9461,7 @@
       "dawnbreaker_luminosity",
       "dawnbreaker_converge",
       "dawnbreaker_break_of_dawn",
-      "dawnbreaker_solar_guardian",
-      "dawnbreaker_land"
+      "dawnbreaker_solar_guardian"
     ],
     "talents": [
       {
@@ -9711,9 +9593,6 @@
         "color": "Gray",
         "title": "Sidekick",
         "description": "Marci can protect an ally, granting them shared lifesteal and damage. Effect is stronger if she's close to the ally.",
-        "abilities": [
-          "marci_guardian"
-        ],
         "deprecated": 1
       },
       {
@@ -9770,7 +9649,6 @@
       "primal_beast_onslaught",
       "primal_beast_trample",
       "primal_beast_uproar",
-      "primal_beast_rock_throw",
       "primal_beast_onslaught_release",
       "primal_beast_pulverize",
       "primal_beast_colossal"
@@ -9839,12 +9717,12 @@
     "shard": {
       "shard_desc": "Primal Beast throws a rock at the target location that stuns and damages enemies. The rock cannot be thrown within a minimum range of Primal Beast. After landing, the rock splits into 3 additional fragments that land behind the initial target location.  Rock Throw increases stacks of Uproar for each hero hit.",
       "shard_skill_name": "primal_beast_rock_throw",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/primal beast/primal beast_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/primal_beast/primal_beast_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "When Primal Beast activates Uproar, he releases 3 waves of 2 projectiles per stack of uproar each in a circle around him. Projectiles deal damage and Break enemies hit. After a short delay, each projectile splinters in two.",
       "scepter_skill_name": "primal_beast_uproar",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/primal beast/primal beast_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/primal_beast/primal_beast_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_muerta": {
@@ -10014,12 +9892,12 @@
     "shard": {
       "shard_desc": "Ringmaster shines 3 spotlights that sweep over an area. Enemies in the light have a chance to miss their attacks and are revealed if invisible. Illusions hit by the beam fade away, losing a percentage of their maximum health each second. These effects linger for 0.3 seconds after leaving the light.",
       "shard_skill_name": "ringmaster_spotlight",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ring master/ring master_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ringmaster/ringmaster_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Escape Act has 2 charges. When the box pops open, Impalement Art daggers are thrown in all directions, and all enemies in an =225 radius take =300 damage.",
       "scepter_skill_name": "ringmaster_the_box",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ring master/ring master_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/ringmaster/ringmaster_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_kez": {

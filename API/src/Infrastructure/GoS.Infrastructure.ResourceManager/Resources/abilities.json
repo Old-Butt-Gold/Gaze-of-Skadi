@@ -18152,6 +18152,7 @@
   },
   "kunkka_admirals_rum": {
     "dname": "Admiral's Rum",
+    "desc": "If damage from a hero, structure, or Roshan reduces the ability owner's health to a certain level, they douse themselves in Admiral's Rum, causing them to move faster and take damage over time.",
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [
@@ -69333,6 +69334,7 @@
   },
   "primal_beast_colossal": {
     "dname": "Colossal",
+    "desc": "The hero deals 40% more damage to buildings.",
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [
