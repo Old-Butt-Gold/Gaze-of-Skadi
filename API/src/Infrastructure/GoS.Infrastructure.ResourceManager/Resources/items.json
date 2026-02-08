@@ -3872,8 +3872,7 @@
     "lore": "A busted old shield that seems to block more than it should.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "satchel": {
     "id": 731,
@@ -12616,8 +12615,7 @@
     "lore": "The original demonic favorite that served as basis for the beloved mortal design.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "phoenix_ash": {
     "abilities": [
@@ -13649,8 +13647,7 @@
     "lore": "A horrifying yet useful mixture of necromancy and artificing.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "helm_of_the_undying": {
     "abilities": [
@@ -14052,8 +14049,7 @@
     "lore": "An ancient bauble blessed by the breath of Verodicia.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "clumsy_net": {
     "abilities": [
@@ -14535,8 +14531,7 @@
     "lore": "A record of the final reckoning. With one page torn out.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "fallen_sky": {
     "abilities": [
@@ -14621,8 +14616,7 @@
     "lore": "One of the few surviving creations of the acolytes of the Wyrmforge.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "pirate_hat": {
     "abilities": [
@@ -14819,8 +14813,7 @@
     "lore": "The trophy from a mighty beast ambushed and slain in the recesses of its own home.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "orb_of_destruction": {
     "abilities": [
@@ -15010,8 +15003,7 @@
     "lore": "It doesn't look like much, but it's oddly comfy.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "wizard_glass": {
     "id": 566,
@@ -15572,8 +15564,7 @@
     "lore": "A failed experiment in finer telekinetic control, still fit for other ends.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "ceremonial_robe": {
     "abilities": [
@@ -16279,8 +16270,7 @@
     "lore": "An antique plaything found in the ruins of an Ozenja circus bazaar.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "paintball": {
     "abilities": [
@@ -16473,8 +16463,7 @@
     "lore": "A band that bears effigy of the dark goddess Eloshar's unsleeping eye.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "tome_of_omniscience": {
     "id": 948,
@@ -16814,8 +16803,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "arcane_scout": {
     "id": 968,
@@ -17472,8 +17460,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "ancient_guardian": {
     "abilities": [
@@ -17582,8 +17569,7 @@
     "lore": "The air that passes through this amulet makes a dreadful sound.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "nemesis_curse": {
     "abilities": [
@@ -18019,8 +18005,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "doubloon": {
     "abilities": [
@@ -18825,8 +18810,7 @@
     "lore": "A serpent's eye the size of a melon (and just as moist).",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "mana_draught": {
     "abilities": [
@@ -18877,8 +18861,7 @@
     "lore": "A refreshing drink best shared with friends.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "rippers_lash": {
     "abilities": [
@@ -18976,8 +18959,7 @@
     "lore": "The ever-weeping woodgrain of this crossbow coats every bolt in a potent but short-lived narcotic sap.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "gale_guard": {
     "abilities": [
@@ -19057,8 +19039,7 @@
     "lore": "A 'harmless' prank that went entirely too far.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "searing_signet": {
     "abilities": [
@@ -19106,8 +19087,7 @@
     "lore": "To torture a magic user, one must devise means far beyond the mundane.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 2
+    "charges": null
   },
   "serrated_shiv": {
     "abilities": [
@@ -19143,8 +19123,7 @@
     "lore": "Too dangerous for taskwork, this blade's only purpose is vile murder.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "polliwog_charm": {
     "abilities": [
@@ -19189,8 +19168,7 @@
     "lore": "A tiny trinket that wriggles when wet.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "magnifying_monocle": {
     "abilities": [
@@ -19470,8 +19448,7 @@
     "lore": "The Kobold King will sip when he damn well pleases.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "dormant_curio": {
     "abilities": [
@@ -19499,8 +19476,7 @@
     "lore": "Everyone has an idea, but no one has a clue.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "sisters_shroud": {
     "abilities": [
@@ -19597,8 +19573,7 @@
     "lore": "Very dangerous. Very difficult to obtain more.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 3
+    "charges": null
   },
   "outworld_staff": {
     "abilities": [
@@ -19666,8 +19641,7 @@
     "lore": "The gateway to a lost lineage of power, unlocked only with blood.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "giant_maul": {
     "abilities": [
@@ -19716,8 +19690,7 @@
     "lore": "Crude but smashingly effective.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "divine_regalia": {
     "abilities": [
@@ -19745,8 +19718,7 @@
     "lore": "So magnificent, it cannot abide failure.",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "divine_regalia_broken": {
     "abilities": [
@@ -20086,8 +20058,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "ash_legion_shield": {
     "abilities": [
@@ -20131,8 +20102,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 1
+    "charges": null
   },
   "riftshadow_prism": {
     "abilities": [
@@ -20176,8 +20146,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 5
+    "charges": null
   },
   "metamorphic_mandible": {
     "abilities": [
@@ -20223,8 +20192,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "idol_of_screeauk": {
     "abilities": [
@@ -20262,8 +20230,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "flayers_bota": {
     "abilities": [
@@ -20310,8 +20277,7 @@
     "lore": "",
     "components": null,
     "created": false,
-    "charges": null,
-    "tier": 4
+    "charges": null
   },
   "diffusal_blade_2": {
     "id": 196,

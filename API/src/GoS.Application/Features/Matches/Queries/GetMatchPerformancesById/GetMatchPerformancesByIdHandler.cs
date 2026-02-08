@@ -19,13 +19,13 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IMapper ma
         {
             return null;
         }
-        
+
         var heroes = await resourceManager.GetHeroInfosAsync();
 
         return match.Players
             .Select(player => new PlayerPerformanceDto
             {
-                PlayerInfo = mapper.Map<PlayerInfoDto>(player), 
+                PlayerInfo = mapper.Map<PlayerInfoDto>(player),
                 Performance = GetPerformanceForPlayer(heroes!, player),
             })
             .ToList();
@@ -43,6 +43,7 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IMapper ma
             Pings = player.Pings,
             MaxHeroHitAbilityName = player.MaxHeroHit.Inflictor,
             MaxHeroHitHeroId = heroes.First(x => x.Value.Name == player.MaxHeroHit.Key).Value.Id,
-            MaxHeroHitValue = player.MaxHeroHit.Value
+            MaxHeroHitValue = player.MaxHeroHit.Value,
+            PerfomanceOthers = player.PerfomanceOthers,
         };
 }

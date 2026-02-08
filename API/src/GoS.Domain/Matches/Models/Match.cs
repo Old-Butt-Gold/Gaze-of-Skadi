@@ -35,46 +35,16 @@ public class Match
 	public List<Chat> Chat { get; init; } = [];
 
 	/// <summary>
-	/// Gets cosmetics
-	/// </summary>
-	[JsonPropertyName("cosmetics")]
-	public Dictionary<string, PlayerSlot> Cosmetics { get; init; } = [];
-
-	/// <summary>
 	/// Gets the number of kills of dire team
 	/// </summary>
 	[JsonPropertyName("dire_score")]
 	public int DireScore { get; init; }
 
 	/// <summary>
-	/// Gets the ID of dire team
-	/// </summary>
-	[JsonPropertyName("dire_team_id")]
-	public int? DireTeamId { get; init; }
-
-	/// <summary>
-	/// Gets draft (pick) timings and info
-	/// </summary>
-	[JsonPropertyName("draft_timings")]
-	public List<DraftTiming> DraftTimings { get; init; } = [];
-
-	/// <summary>
 	/// Gets duration of the game in seconds
 	/// </summary>
 	[JsonPropertyName("duration")]
 	public int Duration { get; init; }
-
-	/// <summary>
-	/// Gets the ID of radiant team
-	/// </summary>
-	[JsonPropertyName("engine")]
-	public int Engine { get; init; }
-
-	/// <summary>
-	/// Gets the time (in seconds) of game when first blood was drawn
-	/// </summary>
-	[JsonPropertyName("first_blood_time")]
-	public long? FirstBloodTime { get; init; }
 
 	/// <summary>
 	/// Gets an integer corresponding to game mode played.
@@ -84,35 +54,11 @@ public class Match
 	public GameMode GameMode { get; init; }
 
 	/// <summary>
-	/// Gets number of human players in the game
-	/// </summary>
-	[JsonPropertyName("human_players")]
-	public int HumanPlayers { get; init; }
-
-	/// <summary>
-	/// Gets the ID of league
-	/// </summary>
-	[JsonPropertyName("leagueid")]
-	public int LeagueId { get; init; }
-
-	/// <summary>
 	/// Gets integer corresponding to lobby type of match.
 	/// List of constants can be found here: https://github.com/odota/dotaconstants/blob/master/json/lobby_type.json.
 	/// </summary>
 	[JsonPropertyName("lobby_type")]
 	public LobbyType LobbyType { get; init; }
-
-	/// <summary>
-	/// Gets the match sequence number
-	/// </summary>
-	[JsonPropertyName("match_seq_num")]
-	public long MatchSeqNum { get; init; }
-
-	/// <summary>
-	/// Gets number of negative votes the replay received in the in-game client
-	/// </summary>
-	[JsonPropertyName("negative_votes")]
-	public long NegativeVotes { get; init; }
 
 	/// <summary>
 	/// Gets game objectives
@@ -127,12 +73,6 @@ public class Match
 	public List<PickBan> PicksBans { get; init; } = [];
 
 	/// <summary>
-	/// Gets number of positive votes the replay received in the in-game client
-	/// </summary>
-	[JsonPropertyName("positive_votes")]
-	public int PositiveVotes { get; init; }
-
-	/// <summary>
 	/// Gets array of the Radiant gold advantage at each minute in the game. A negative number means that Radiant is behind, and thus it is their gold disadvantage.
 	/// </summary>
 	[JsonPropertyName("radiant_gold_adv")]
@@ -143,12 +83,6 @@ public class Match
 	/// </summary>
 	[JsonPropertyName("radiant_score")]
 	public int RadiantScore { get; init; }
-
-	/// <summary>
-	/// Gets ID of the Radiant team
-	/// </summary>
-	[JsonPropertyName("radiant_team_id")]
-	public int? RadiantTeamId { get; init; }
 
 	/// <summary>
 	/// Gets boolean indicating whether Radiant won the match
@@ -230,18 +164,6 @@ public class Match
 	public Region Region { get; init; }
 
 	/// <summary>
-	/// Gets word counts of the all chat messages in the player's games (string - message, int - amount of times used).
-	/// </summary>
-	[JsonPropertyName("all_word_counts")]
-	public Dictionary<string, int> AllWordCounts { get; init; } = new();
-
-	/// <summary>
-	/// Gets word counts of the player's all chat messages
-	/// </summary>
-	[JsonPropertyName("my_word_counts")]
-	public Dictionary<string, int> MyWordCounts { get; init; } = new();
-
-	/// <summary>
 	/// Gets the maximum gold advantage of the player's team if they lost the match.
 	/// </summary>
 	[JsonPropertyName("throw")]
@@ -252,18 +174,6 @@ public class Match
 	/// </summary>
 	[JsonPropertyName("comeback")]
 	public int Comeback { get; init; }
-
-	/// <summary>
-	/// Gets the maximum gold disadvantage of the player's team if they lost the match.
-	/// </summary>
-	[JsonPropertyName("loss")]
-	public int Loss { get; init; }
-
-	/// <summary>
-	/// Gets the maximum gold advantage of the player's team if they won the match.
-	/// </summary>
-	[JsonPropertyName("win")]
-	public int Win { get; init; }
 
 	/// <summary>
 	/// Gets the replay URL.

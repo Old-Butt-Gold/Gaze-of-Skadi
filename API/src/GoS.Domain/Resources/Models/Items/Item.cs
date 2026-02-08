@@ -72,7 +72,4 @@ public class Item
 
     [JsonPropertyName("bkbpierce")]
     public BooleanState? BkbPierce { get; set; }
-
-    [JsonPropertyName("tier")]
-    public NeutralItemTire? Tier { get; set; }
 }

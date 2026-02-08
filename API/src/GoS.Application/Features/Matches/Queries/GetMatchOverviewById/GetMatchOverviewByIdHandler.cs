@@ -50,9 +50,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             DireTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusDire),
             IsParsed = match.Version is not null,
             Patch = mapper.Map<BaseEnumDto<Patch>>(match.Patch),
-            DireTeamId = match.DireTeamId,
-            RadiantTeamId = match.RadiantTeamId,
-            LeagueId = match.LeagueId > 0 ? match.LeagueId : null,
         };
 
     private IEnumerable<PickBanDto> MapPicksBans(IEnumerable<PickBan>? picksBans)
@@ -68,16 +65,16 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         });
     }
 
-    private const string ShardKey = "aghanims_shard";
-    private const string AghanimKey = "ultimate_scepter";
-
     private PlayerOverviewDto MapPlayerOverview(MatchPlayer player)
     {
+        const string shardKey = "aghanims_shard";
+        const string aghanimKey = "ultimate_scepter";
+
         var aghanimShardBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.AghanimsShard)
-                               || player.PurchaseLog.Any(x => x.Key == ShardKey);
+                               || player.PurchaseLog.Any(x => x.Key == shardKey);
 
         var aghanimBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.UltimateScepter)
-                               || player.PurchaseLog.Any(x => x.Key == AghanimKey);
+                               || player.PurchaseLog.Any(x => x.Key == aghanimKey);
 
         return new PlayerOverviewDto
         {

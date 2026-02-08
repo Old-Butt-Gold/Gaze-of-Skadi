@@ -22,15 +22,15 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;
-        
+
         var heroes = await resourceManager.GetHeroInfosAsync();
         var objectives = await resourceManager.GetObjectiveNamesAsync();
-        
+
         _heroNameToId = heroes!.ToDictionary(
             h => h.Value.Name,
             h => h.Value.Id
         );
-        
+
         _validHeroNames = new HashSet<string>(_heroNameToId.Keys);
 
         _objectiveKeyToName = objectives!.ToDictionary(
@@ -51,6 +51,8 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<ObjectiveEventDto> MapObjectives(IEnumerable<Objective> objectives, IReadOnlyList<MatchPlayer> players)
     {
+        objectives = objectives.Where(x => x.Type != ObjectiveType.ChatMessageCourierLost);
+
         List<ObjectiveEventDto> objectiveEventDtos = [];
         foreach (var objective in objectives)
         {

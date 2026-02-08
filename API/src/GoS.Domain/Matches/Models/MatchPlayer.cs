@@ -395,6 +395,12 @@ public class MatchPlayer
 	[JsonPropertyName("permanent_buffs")]
 	public List<PermanentBuff> PermanentBuffs { get; init; } = [];
 
+    /// <summary>
+    /// Gets a list of abilities for Other section in Perfomance tab
+    /// </summary>
+    [JsonPropertyName("performance_others")]
+    public Dictionary<string, int> PerfomanceOthers { get; init; } = [];
+
 	/// <summary>
 	/// Gets a total number of pings
 	/// </summary>

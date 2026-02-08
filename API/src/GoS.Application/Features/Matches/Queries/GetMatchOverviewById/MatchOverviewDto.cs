@@ -93,7 +93,4 @@ public record MatchOverviewDto
     public required BaseEnumDto<TowerStatus> DireTowersStatus { get; init; }
     public required bool IsParsed { get; set; }
     public required BaseEnumDto<Patch> Patch { get; set; }
-    public required int? LeagueId { get; set; }
-    public required int? RadiantTeamId { get; set; }
-    public required int? DireTeamId { get; set; }
 }

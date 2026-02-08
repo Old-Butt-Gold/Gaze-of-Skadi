@@ -1,12 +1,9 @@
 ﻿using System.Net.Mime;
 using GoS.Application.Abstractions;
-using GoS.Domain.BaseEnums;
 using GoS.Domain.Resources.Models.Abilities;
 using GoS.Domain.Resources.Models.ChatWheels;
-using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
 using GoS.Domain.Resources.Models.Items;
-using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GoS.API.Controllers;
@@ -40,30 +37,12 @@ public sealed class ResourceController : ControllerBase
         return result is null ? NotFound() : Ok(result);
     }
 
-    [HttpGet("ancients")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, int>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetAncients()
-    {
-        var result = await _resourceManager.GetAncientsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
     [HttpGet("chat-wheels")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(Dictionary<string, ChatWheel>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetChatWheels()
     {
         var result = await _resourceManager.GetChatWheelsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("countries")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, Country>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetCountries()
-    {
-        var result = await _resourceManager.GetCountriesAsync();
         return result is null ? NotFound() : Ok(result);
     }
 
@@ -91,33 +70,6 @@ public sealed class ResourceController : ControllerBase
     public async Task<IActionResult> GetItemIds()
     {
         var result = await _resourceManager.GetItemIdsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("neutral-abilities")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, NeutralAbility>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetNeutralAbilities()
-    {
-        var result = await _resourceManager.GetNeutralAbilitiesAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("player-colors")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<PlayerSlot, string>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetPlayerColors()
-    {
-        var result = await _resourceManager.GetPlayerColorsAsync();
-        return result is null ? NotFound() : Ok(result);
-    }
-
-    [HttpGet("xp-level")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(List<int>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetXpLevel()
-    {
-        var result = await _resourceManager.GetXpLevelAsync();
         return result is null ? NotFound() : Ok(result);
     }
 

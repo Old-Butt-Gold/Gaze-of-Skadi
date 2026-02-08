@@ -14,11 +14,12 @@ public record PerformanceDataDto
     public string? MaxHeroHitAbilityName { get; set; } // if null then its auto-attack, may be item or ability key from .json
     public int MaxHeroHitHeroId { get; set; }
     public long MaxHeroHitValue { get; set; }
+    public Dictionary<string, int>? PerfomanceOthers { get; set; }
 }
 
 public record PlayerPerformanceDto
 {
     public required PlayerInfoDto PlayerInfo { get; init; }
-    
+
     public required PerformanceDataDto Performance { get; init; }
 }

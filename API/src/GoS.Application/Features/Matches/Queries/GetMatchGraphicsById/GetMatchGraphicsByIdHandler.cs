@@ -38,7 +38,7 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             var killerIndex = (int)firstBlood.Slot;
             PlayerInfoDto? victimPlayer = null;
 
-            if (int.TryParse(firstBlood.Key?.GetRawText(), out var victimIndex) &&
+            if (int.TryParse(firstBlood.Key?.GetRawText().Trim('"'), out var victimIndex) &&
                 victimIndex >= 0 && victimIndex < match.Players.Count)
             {
                 victimPlayer = mapper.Map<PlayerInfoDto>(match.Players[victimIndex]);
@@ -66,7 +66,25 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             VictimPlayer = null
         }));
 
-        return objectives;
+        var tormentorKills = match.Objectives
+            .Where(x => x is { Type: ObjectiveType.ChatMessageTormentorKill, Time: not null, Slot: not null });
+
+        objectives.AddRange(tormentorKills.Select(tormentorKill =>
+        {
+            var killerIndex = (int)tormentorKill.Slot!;
+
+            return new ObjectiveDto
+            {
+                Time = tormentorKill.Time!.Value,
+                Type = mapper.Map<BaseEnumDto<ObjectiveType>>(tormentorKill.Type),
+                KillerPlayer = killerIndex >= 0 && killerIndex < match.Players.Count
+                    ? mapper.Map<PlayerInfoDto>(match.Players[killerIndex])
+                    : null,
+                VictimPlayer = null
+            };
+        }));
+
+        return objectives.OrderBy(x => x.Time);
     }
 
     private IEnumerable<TeamfightDto> MapTeamfights(Match match) =>

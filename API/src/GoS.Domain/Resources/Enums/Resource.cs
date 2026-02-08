@@ -15,25 +15,10 @@ public enum Resource
 	/// </summary>
 	AbilityIds,
 
-    /// <summary>
-    /// Aghanim's description
-    /// </summary>
-    AghsDesc,
-
-	/// <summary>
-	/// Ancients.
-	/// </summary>
-	Ancients,
-
 	/// <summary>
 	/// Chat wheel.
 	/// </summary>
 	ChatWheel,
-
-	/// <summary>
-	/// Countries.
-	/// </summary>
-	Countries,
 
 	/// <summary>
 	/// Hero abilities.
@@ -55,21 +40,6 @@ public enum Resource
 	/// </summary>
 	Items,
 
-	/// <summary>
-	/// Neutral abilities.
-	/// </summary>
-	NeutralAbilities,
-
-	/// <summary>
-	/// Player colors.
-	/// </summary>
-	PlayerColors,
-
-	/// <summary>
-	/// XP Level.
-	/// </summary>
-	XpLevel,
-	
 	/// <summary>
 	/// Objectives on the map
 	/// </summary>

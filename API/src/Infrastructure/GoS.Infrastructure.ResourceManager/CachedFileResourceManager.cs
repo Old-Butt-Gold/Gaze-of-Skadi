@@ -1,14 +1,11 @@
 using GoS.Application.Abstractions;
-using GoS.Domain.BaseEnums;
 using GoS.Domain.Extensions;
 using GoS.Domain.Resources.Enums;
 using GoS.Domain.Resources.Models.Abilities;
 using GoS.Domain.Resources.Models.ChatWheels;
-using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
 using GoS.Domain.Resources.Models.Heroes;
 using GoS.Domain.Resources.Models.Items;
-using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace GoS.Infrastructure.ResourceManager;
@@ -44,19 +41,9 @@ internal sealed class CachedFileResourceManager : IResourceManager
         return GetOrCreateAsync(Resource.AbilityIds, () => _fileResourceManager.GetAbilityIdsAsync());
     }
 
-    public Task<Dictionary<string, int>?> GetAncientsAsync()
-    {
-        return GetOrCreateAsync(Resource.Ancients, () => _fileResourceManager.GetAncientsAsync());
-    }
-
     public Task<Dictionary<string, ChatWheel>?> GetChatWheelsAsync()
     {
         return GetOrCreateAsync(Resource.ChatWheel, () => _fileResourceManager.GetChatWheelsAsync());
-    }
-
-    public Task<Dictionary<string, Country>?> GetCountriesAsync()
-    {
-        return GetOrCreateAsync(Resource.Countries, () => _fileResourceManager.GetCountriesAsync());
     }
 
     public Task<Dictionary<string, HeroAbility>?> GetHeroAbilitiesAsync()
@@ -77,21 +64,6 @@ internal sealed class CachedFileResourceManager : IResourceManager
     public Task<Dictionary<string, string>?> GetItemIdsAsync()
     {
         return GetOrCreateAsync(Resource.ItemIds, () => _fileResourceManager.GetItemIdsAsync());
-    }
-
-    public Task<Dictionary<string, NeutralAbility>?> GetNeutralAbilitiesAsync()
-    {
-        return GetOrCreateAsync(Resource.NeutralAbilities, () => _fileResourceManager.GetNeutralAbilitiesAsync());
-    }
-
-    public Task<Dictionary<PlayerSlot, string>?> GetPlayerColorsAsync()
-    {
-        return GetOrCreateAsync(Resource.PlayerColors, () => _fileResourceManager.GetPlayerColorsAsync());
-    }
-
-    public Task<List<int>?> GetXpLevelAsync()
-    {
-        return GetOrCreateAsync(Resource.XpLevel, () => _fileResourceManager.GetXpLevelAsync());
     }
 
     public Task<Dictionary<string, string>?> GetObjectiveNamesAsync()

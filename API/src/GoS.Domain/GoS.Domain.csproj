@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Search\Enums\" />
-      <Folder Include="Teams\Enums\" />
-    </ItemGroup>
-
 </Project>

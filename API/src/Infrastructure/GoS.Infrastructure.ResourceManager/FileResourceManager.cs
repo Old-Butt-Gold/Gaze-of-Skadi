@@ -1,16 +1,13 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using GoS.Application.Abstractions;
-using GoS.Domain.BaseEnums;
 using GoS.Domain.Extensions;
 using GoS.Domain.Resources.Enums;
 using GoS.Domain.Resources.Models.Abilities;
 using GoS.Domain.Resources.Models.ChatWheels;
-using GoS.Domain.Resources.Models.Countries;
 using GoS.Domain.Resources.Models.HeroAbilities;
 using GoS.Domain.Resources.Models.Heroes;
 using GoS.Domain.Resources.Models.Items;
-using GoS.Domain.Resources.Models.NeutralAbilities;
 using Microsoft.Extensions.Logging;
 
 namespace GoS.Infrastructure.ResourceManager;
@@ -38,19 +35,9 @@ internal sealed class FileResourceManager : IResourceManager
 		return LoadResourceAsync<Dictionary<string, string>?>(Resource.AbilityIds);
 	}
 
-	public Task<Dictionary<string, int>?> GetAncientsAsync()
-	{
-		return LoadResourceAsync<Dictionary<string, int>?>(Resource.Ancients);
-	}
-
 	public Task<Dictionary<string, ChatWheel>?> GetChatWheelsAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, ChatWheel>?>(Resource.ChatWheel);
-	}
-
-	public Task<Dictionary<string, Country>?> GetCountriesAsync()
-	{
-		return LoadResourceAsync<Dictionary<string, Country>?>(Resource.Countries);
 	}
 
 	public Task<Dictionary<string, HeroAbility>?> GetHeroAbilitiesAsync()
@@ -71,21 +58,6 @@ internal sealed class FileResourceManager : IResourceManager
 	public Task<Dictionary<string, string>?> GetItemIdsAsync()
 	{
 		return LoadResourceAsync<Dictionary<string, string>?>(Resource.ItemIds);
-	}
-
-	public Task<Dictionary<string, NeutralAbility>?> GetNeutralAbilitiesAsync()
-	{
-		return LoadResourceAsync<Dictionary<string, NeutralAbility>?>(Resource.NeutralAbilities);
-	}
-
-	public Task<Dictionary<PlayerSlot, string>?> GetPlayerColorsAsync()
-	{
-		return LoadResourceAsync<Dictionary<PlayerSlot, string>?>(Resource.PlayerColors);
-	}
-
-	public Task<List<int>?> GetXpLevelAsync()
-	{
-		return LoadResourceAsync<List<int>?>(Resource.XpLevel);
 	}
 
 	public Task<Dictionary<string, string>?> GetObjectiveNamesAsync()
