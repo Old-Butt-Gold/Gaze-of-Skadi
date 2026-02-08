@@ -34,12 +34,6 @@ public class PlayerRecord
 	public BooleanState? RadiantWin { get; init; }
 
 	/// <summary>
-	/// Gets the duration of the game in seconds.
-	/// </summary>
-	[JsonPropertyName("duration")]
-	public int Duration { get; init; }
-
-	/// <summary>
 	/// Gets an integer corresponding to game mode played.
 	/// List of constants can be found here: https://github.com/odota/dotaconstants/blob/master/json/game_mode.json.
 	/// </summary>
@@ -66,24 +60,6 @@ public class PlayerRecord
 	public long StartTime { get; init; }
 
 	/// <summary>
-	/// Gets total kills the player had at the end of the game.
-	/// </summary>
-	[JsonPropertyName("kills")]
-	public int Kills { get; init; }
-
-	/// <summary>
-	/// Gets total deaths the player had at the end of the game.
-	/// </summary>
-	[JsonPropertyName("deaths")]
-	public int Deaths { get; init; }
-
-	/// <summary>
-	/// Gets total assists the player had at the end of the game.
-	/// </summary>
-	[JsonPropertyName("assists")]
-	public int Assists { get; init; }
-
-	/// <summary>
 	/// Gets integer describing whether or not the player left the game. 0: didn't leave. 1: left safely. 2+: Abandoned.
 	/// </summary>
 	[JsonPropertyName("leaver_status")]
@@ -102,5 +78,5 @@ public class PlayerRecord
     public int? PartySize { get; init; }
 
     [JsonExtensionData]
-    public Dictionary<string, object>? RecordFields { get; set; }
+    public Dictionary<string, object> RecordFields { get; set; } = [];
 }

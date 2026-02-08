@@ -5,9 +5,7 @@ namespace GoS.Application.Features.Players.Queries.GetPlayerTotals;
 
 public class PlayerTotalDto
 {
-    public BaseEnumDto<PlayerTotalField> Field { get; init; }
-
-    public long Number { get; init; }
+    public required BaseEnumDto<PlayerTotalField> Field { get; init; }
 
     public double Sum { get; init; }
 }

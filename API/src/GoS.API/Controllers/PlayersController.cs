@@ -4,7 +4,6 @@ using GoS.Application.Features.Players.Queries.GetPlayerActivity;
 using GoS.Application.Features.Players.Queries.GetPlayerById;
 using GoS.Application.Features.Players.Queries.GetPlayerCounts;
 using GoS.Application.Features.Players.Queries.GetPlayerHeroes;
-using GoS.Application.Features.Players.Queries.GetPlayerHeroRankings;
 using GoS.Application.Features.Players.Queries.GetPlayerHistograms;
 using GoS.Application.Features.Players.Queries.GetPlayerMatches;
 using GoS.Application.Features.Players.Queries.GetPlayerPeers;
@@ -144,12 +143,6 @@ public sealed class PlayersController : ApiControllerBase
         [FromQuery] PlayerEndpointParameters parameters,
         CancellationToken ct = default)
         => HandleQueryAsync(new GetPlayerWordCloudQuery(accountId, parameters), ct);
-
-    [HttpGet("rankings")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerHeroRankingDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetPlayerHeroRankings([FromRoute] long accountId, CancellationToken ct = default)
-        => HandleQueryAsync(new GetPlayerHeroRankingsQuery(accountId), ct);
 
     [HttpGet("activity")]
     [Produces(MediaTypeNames.Application.Json)]

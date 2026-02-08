@@ -1,4 +1,6 @@
-﻿const PLAYER_SLOT_COLORS: Record<number, string> = {
+﻿import type {BaseEnum, BooleanState} from "../types/common.ts";
+
+const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
   1: "#66FFBF",
   2: "#BF00BF",
@@ -70,3 +72,11 @@
 export const getPlayerColor = (playerSlot: number): string => {
   return PLAYER_SLOT_COLORS[playerSlot] ?? "#FFFFFF";
 };
+
+export const isRadiantTeam = (radiant : BaseEnum<BooleanState>) : boolean => {
+  return radiant.value === 1;
+}
+
+export const isTeamWon = (radiant : BaseEnum<BooleanState>, win : BaseEnum<BooleanState>) : boolean => {
+  return (isRadiantTeam(radiant) && win.value === 1) || (!isRadiantTeam(radiant) && win.value === 0);
+}

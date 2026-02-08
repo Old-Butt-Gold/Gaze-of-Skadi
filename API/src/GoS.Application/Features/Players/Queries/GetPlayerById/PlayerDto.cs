@@ -20,25 +20,15 @@ public class ProfileInfoDto
 
     public string PersonaName { get; init; } = string.Empty;
 
-    public string Name { get; init; } = string.Empty;
-
     public BaseEnumDto<BooleanState>? Plus { get; init; }
 
     public string SteamId { get; init; } = string.Empty;
-
-    public Uri? Avatar { get; init; }
-
-    public Uri? AvatarMedium { get; init; }
 
     public Uri? AvatarFull { get; init; }
 
     public BaseEnumDto<BooleanState>? FhUnavailable { get; init; }
 
     public Uri? ProfileUrl { get; init; }
-
-    public long? LastLogin { get; init; }
-
-    public string? LocCountryCode { get; init; }
 }
 
 public class AliasDto

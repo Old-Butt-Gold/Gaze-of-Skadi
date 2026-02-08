@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
 using GoS.Domain.Stratz;
@@ -7,7 +6,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Stratz.GetHeroesMetaChange;
 
-internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOptions> requester, IMapper mapper)
+internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOptions> requester)
     : IRequestHandler<HeroMetaChangeQuery, HeroMetaTimelineDto?>
 {
     public async Task<HeroMetaTimelineDto?> Handle(HeroMetaChangeQuery request, CancellationToken cancellationToken)

@@ -1,5 +1,4 @@
 ﻿using System.Net.Http.Json;
-using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
 using GoS.Domain.Stratz;
@@ -7,7 +6,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Stratz.GetMatchesByGameMode;
 
-internal sealed class GetMatchesByGameModeHandler(IRequester<StratzHttpRequesterOptions> requester, IMapper mapper)
+internal sealed class GetMatchesByGameModeHandler(IRequester<StratzHttpRequesterOptions> requester)
     : IRequestHandler<GetMatchesByGameModeQuery, MatchesByGameModeDto?>
 {
     public async Task<MatchesByGameModeDto?> Handle(GetMatchesByGameModeQuery request, CancellationToken cancellationToken)

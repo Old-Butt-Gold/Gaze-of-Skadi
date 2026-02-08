@@ -24,12 +24,6 @@ public class PlayerPeerDto
 
 	public string Personaname { get; init; } = string.Empty;
 
-	public string Name { get; init; } = string.Empty;
-
-	public long? LastLogin { get; init; }
-
-	public Uri? Avatar { get; init; }
-
 	public Uri? AvatarFull { get; init; }
 }
 

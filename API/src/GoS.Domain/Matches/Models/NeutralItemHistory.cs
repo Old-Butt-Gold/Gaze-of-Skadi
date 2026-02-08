@@ -11,5 +11,5 @@ public class NeutralItemHistory
     public string? ItemNeutral { get; set; }
 
     [JsonPropertyName("item_neutral_enhancement")]
-    public string ItemNeutralEnhancement { get; set; }
+    public required string ItemNeutralEnhancement { get; set; }
 }

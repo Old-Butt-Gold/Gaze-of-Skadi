@@ -5,11 +5,11 @@ namespace GoS.Domain.Resources.Models.HeroAbilities;
 public class Shard
 {
     [JsonPropertyName("shard_desc")]
-    public string ShardDesc { get; set; }
+    public required string ShardDesc { get; set; }
 
     [JsonPropertyName("shard_skill_name")]
-    public string ShardSkillName { get; set; }
+    public required string ShardSkillName { get; set; }
 
     [JsonPropertyName("video")]
-    public string Video { get; set; }
+    public required string Video { get; set; }
 }

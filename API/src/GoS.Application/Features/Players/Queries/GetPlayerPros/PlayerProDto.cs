@@ -15,17 +15,7 @@ public class PlayerProDto
 
 	public string? TeamName { get; init; }
 
-	public string? TeamTag { get; init; }
-
-	public BaseEnumDto<BooleanState>? IsLocked { get; init; }
-
-	public BaseEnumDto<BooleanState>? IsPro { get; init; }
-
 	public string SteamId { get; init; } = string.Empty;
-
-	public Uri? Avatar { get; init; }
-
-	public Uri? AvatarMedium { get; init; }
 
 	public Uri? AvatarFull { get; init; }
 
@@ -33,21 +23,11 @@ public class PlayerProDto
 
 	public string PersonaName { get; init; } = string.Empty;
 
-	public long? LastLogin { get; init; }
-
-	public long? FullHistoryTime { get; init; }
-
 	public BaseEnumDto<BooleanState>? FhUnavailable { get; init; }
 
-	public string? LocCountryCode { get; init; }
-
-	public long LastMatchTime { get; init; }
-
-	public BaseEnumDto<BooleanState> Plus { get; init; }
+	public required BaseEnumDto<BooleanState> Plus { get; init; }
 
 	public long LastPlayed { get; init; }
-
-	public long Win { get; init; }
 
 	public long Games { get; init; }
 
@@ -59,4 +39,3 @@ public class PlayerProDto
 
 	public long AgainstGames { get; init; }
 }
-

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
+using GoS.Domain.Extensions;
 using GoS.Domain.Players.Models;
 using MediatR;
 
@@ -16,6 +17,24 @@ internal sealed class GetPlayerRecordHandler(IRequester<OpenDotaHttpRequesterOpt
 
         var parameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
         var playerMatches = await requester.GetResponseAsync<IEnumerable<PlayerRecord>>($"players/{request.AccountId}/matches", parameters, ct);
-        return mapper.Map<IEnumerable<PlayerRecordDto>>(playerMatches);
+        var result = mapper.Map<List<PlayerRecordDto>>(playerMatches);
+
+        var index = 0;
+
+        foreach (var playerMatch in playerMatches!)
+        {
+            if (playerMatch.RecordFields.Count > 0)
+            {
+                var key = request.Field.ToSnakeCase();
+                if (playerMatch.RecordFields.TryGetValue(key, out var recordValue))
+                {
+                    result[index].RecordField = recordValue?.ToString() ?? "0";
+                }
+            }
+
+            index++;
+        }
+
+        return result;
     }
 }

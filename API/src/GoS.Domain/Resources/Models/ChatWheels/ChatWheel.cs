@@ -9,7 +9,7 @@ public class ChatWheel
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonPropertyName("label")]
     public string? Label { get; set; }

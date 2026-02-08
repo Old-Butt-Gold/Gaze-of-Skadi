@@ -15,12 +15,6 @@ public class PlayerTotal
 	public PlayerTotalField Field { get; init; }
 
 	/// <summary>
-	/// Gets or sets the number.
-	/// </summary>
-	[JsonPropertyName("n")]
-	public long Number { get; init; }
-
-	/// <summary>
 	/// Gets or sets the sum.
 	/// </summary>
 	[JsonPropertyName("sum")]

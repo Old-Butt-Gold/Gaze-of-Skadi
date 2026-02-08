@@ -9,23 +9,23 @@ public class Facet
     public int Id { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [JsonPropertyName("icon")]
-    public string Icon { get; set; }
+    public required string Icon { get; set; }
 
     [JsonPropertyName("color")]
-    public string Color { get; set; }
+    public required string Color { get; set; }
 
     [JsonPropertyName("title")]
-    public string Title { get; set; }
+    public required string Title { get; set; }
 
     [JsonPropertyName("description")]
-    public string Description { get; set; }
+    public required string Description { get; set; }
 
     [JsonPropertyName("abilities")]
     public List<string>? Abilities { get; set; }
-    
+
     [JsonPropertyName("deprecated")]
     public BooleanState? Deprecated { get; set; }
 }

@@ -17,7 +17,7 @@ public class Item
     public int Id { get; set; }
 
     [JsonPropertyName("img")]
-    public string ImageUrl { get; set; }
+    public required string ImageUrl { get; set; }
 
     [JsonPropertyName("dname")]
     public string? DisplayName { get; set; }
@@ -35,7 +35,7 @@ public class Item
     public string? Notes { get; set; }
 
     [JsonPropertyName("attrib")]
-    public List<ItemAttribute> Attributes { get; set; }
+    public required List<ItemAttribute> Attributes { get; set; }
 
     [JsonPropertyName("mc")]
     public int? UsesMana { get; set; }

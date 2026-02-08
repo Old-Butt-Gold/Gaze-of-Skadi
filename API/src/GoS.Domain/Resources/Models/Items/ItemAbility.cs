@@ -9,8 +9,8 @@ public class ItemAbility
     public AbilityType Type { get; set; }
 
     [JsonPropertyName("title")]
-    public string Title { get; set; }
+    public required string Title { get; set; }
 
     [JsonPropertyName("description")]
-    public string Description { get; set; }
+    public required string Description { get; set; }
 }

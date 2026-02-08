@@ -62,13 +62,13 @@ public class PublicMatch
 	/// Gets a list of player IDs in the radiant team.
 	/// </summary>
 	[JsonPropertyName("radiant_team")]
-	public List<int> RadiantTeam { get; init; }
+	public required List<int> RadiantTeam { get; init; }
 
 	/// <summary>
 	/// Gets a list of player IDs in the dire team.
 	/// </summary>
 	[JsonPropertyName("dire_team")]
-	public List<int> DireTeam { get; init; }
+	public required List<int> DireTeam { get; init; }
 }
 
 

@@ -34,7 +34,7 @@ public sealed class SearchController : ApiControllerBase
     [HttpGet("proplayers")]
     [ProducesResponseType(typeof(IEnumerable<ProPlayerDto>), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetProPlayersByName([FromQuery] string? q, CancellationToken ct = default)
+    public Task<IActionResult> GetProPlayersByName([FromQuery] string q, CancellationToken ct = default)
         => HandleQueryAsync(new GetProPlayersByNameQuery(q), ct);
 
     [HttpGet("public")]
