@@ -6,8 +6,7 @@ export const usePlayer = (accountId: number) => {
     queryKey: ['player', accountId],
     queryFn: () => playerService.getPlayerById(accountId),
     enabled: !!accountId && !isNaN(accountId),
-    staleTime: 1000 * 60 * 5,
-    retry: 1,
+    staleTime: 1000 * 60 * 5
   });
 };
 

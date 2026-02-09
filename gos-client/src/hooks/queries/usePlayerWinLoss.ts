@@ -7,5 +7,6 @@ export const usePlayerWinLoss = (accountId: number, params: PlayerEndpointParame
     queryKey: ['player_wl', accountId, params],
     queryFn: () => playerService.getPlayerWinLoss(accountId, params),
     enabled: enabled && !!accountId && !isNaN(accountId),
+    staleTime: 1000 * 60 * 5,
   });
 };

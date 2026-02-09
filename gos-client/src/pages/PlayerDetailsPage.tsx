@@ -7,9 +7,10 @@ import { NotFoundPage } from './NotFoundPage';
 import { PlayerHeader } from '../components/players/PlayerHeader';
 import type { PlayerEndpointParameters } from '../types/player';
 import { BooleanState } from '../types/common';
-import {usePlayerWinLoss} from "../hooks/queries/usePlayerWinLoss.ts";
+import { usePlayerWinLoss } from "../hooks/queries/usePlayerWinLoss";
+import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx"; // Import
 
-export type PlayerTabType = 'statistics';
+export type PlayerTabType = 'statistics' | 'matches' | 'heroes'; // Expandable
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -26,6 +27,7 @@ export const PlayerDetailsPage: React.FC = () => {
 
     const { data: player, isLoading, isError } = usePlayer(parsedId);
 
+    // Pass '!!player' to ensure WL waits for player to exist (though logically parsedId is enough)
     const { data: wl } = usePlayerWinLoss(parsedId, filters, !!player);
 
     useEffect(() => {
@@ -78,15 +80,7 @@ export const PlayerDetailsPage: React.FC = () => {
                         </div>
                     ) : (
                         <>
-                            {activeTab === 'statistics' && (
-                                <div className="text-center py-12">
-                                    <div className="inline-block p-4 rounded-full bg-[#2e353b] mb-4">
-                                        <span className="text-4xl">📊</span>
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-2">Overview Dashboard</h3>
-                                    <p className="text-[#808fa6]">Summary stats will be here.</p>
-                                </div>
-                            )}
+                            {activeTab === 'statistics' && <PlayerStatsTab accountId={parsedId} filters={filters}/>}
                         </>
                     )}
                 </div>
@@ -94,8 +88,6 @@ export const PlayerDetailsPage: React.FC = () => {
         </div>
     );
 };
-
-// Reusable Tab Button
 const TabButton = ({ label, isActive, disabled, onClick }: { label: string, isActive: boolean, disabled?: boolean, onClick?: () => void }) => (
     <button
         onClick={onClick}
