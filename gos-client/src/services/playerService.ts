@@ -2,6 +2,7 @@
 import type { PlayerDto, PlayerEndpointParameters } from '../types/player';
 import type {PlayerWinLossDto} from "../types/playerWinLoss.ts";
 import type {PlayerTotalDto} from "../types/playerStats.ts";
+import type {PlayerWordCloudDto} from "../types/wordcloud.ts";
 
 export const playerService = {
   getPlayerById: async (accountId: number): Promise<PlayerDto> => {
@@ -15,4 +16,8 @@ export const playerService = {
   getPlayerTotals: async (accountId: number, params?: PlayerEndpointParameters): Promise<PlayerTotalDto[]> => {
     return apiClient.get(`/players/${accountId}/totals`, { params });
   },
+
+  getPlayerWordCloud: async (accountId: number, params?: PlayerEndpointParameters): Promise<PlayerWordCloudDto> => {
+    return apiClient.get(`/players/${accountId}/wordcloud`, { params });
+  }
 };

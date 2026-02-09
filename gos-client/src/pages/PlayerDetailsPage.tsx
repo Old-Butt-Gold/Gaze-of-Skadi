@@ -8,9 +8,10 @@ import { PlayerHeader } from '../components/players/PlayerHeader';
 import type { PlayerEndpointParameters } from '../types/player';
 import { BooleanState } from '../types/common';
 import { usePlayerWinLoss } from "../hooks/queries/usePlayerWinLoss";
-import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx"; // Import
+import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx";
+import {PlayerWordCloudTab} from "../components/players/tabs/PlayerWordCloudTab.tsx"; // Import
 
-export type PlayerTabType = 'statistics' | 'matches' | 'heroes'; // Expandable
+export type PlayerTabType = 'statistics' | 'wordcloud';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -43,6 +44,7 @@ export const PlayerDetailsPage: React.FC = () => {
 
     const tabs: PlayerTab[] = [
         { id: 'statistics', label: 'Stats', disabled: isPrivate },
+        { id: 'wordcloud', label: 'Word Cloud', disabled: isPrivate },
     ];
 
     return (
@@ -81,6 +83,7 @@ export const PlayerDetailsPage: React.FC = () => {
                     ) : (
                         <>
                             {activeTab === 'statistics' && <PlayerStatsTab accountId={parsedId} filters={filters}/>}
+                            {activeTab === 'wordcloud' && (<PlayerWordCloudTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>
