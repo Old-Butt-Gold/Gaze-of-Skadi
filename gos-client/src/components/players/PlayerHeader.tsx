@@ -143,11 +143,7 @@ export const PlayerHeader: React.FC<Props> = ({ player, filters }) => {
                         {/* Rank Badge */}
                         {player.rankTier && (
                             <div className="relative group cursor-help transition-transform hover:scale-105">
-                                <RankIcon
-                                    rank={player.rankTier.value}
-                                    leaderboardRank={player.leaderboardRank}
-                                    size={32}
-                                />
+                                <RankIcon rank={player.rankTier.value} leaderboardRank={player.leaderboardRank} size={36} />
                             </div>
                         )}
 

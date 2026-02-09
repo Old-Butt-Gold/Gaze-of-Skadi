@@ -131,7 +131,7 @@ export const SearchPublicMatchesTab: React.FC = () => {
 
                                         {/* Col 2: Rank (Desktop only) */}
                                         <div className="hidden md:flex md:col-span-2 flex-col items-center justify-center gap-1">
-                                            <div className="scale-110 drop-shadow-md"><RankIcon rank={match.avgRankTier.value} size={10} /></div>
+                                            <div className="scale-110 drop-shadow-md"><RankIcon rank={match.avgRankTier.value} size={12} /></div>
                                         </div>
 
                                         {/* Col 3: Mode (Desktop) */}

@@ -26,8 +26,8 @@ interface CloudWord extends cloud.Word {
 }
 
 const WORD_COLORS = [
-    '#ffffff', // White (High contrast)
-    '#e7d291', // Gold (Rare)
+    '#ffffff', // White
+    '#e7d291', // Gold
     '#5bcefa', // Blue
     '#ff4c4c', // Red
     '#a356ff', // Purple
@@ -59,6 +59,15 @@ export const PlayerWordCloudTab: React.FC<Props> = ({ accountId, filters }) => {
     }, [data, viewMode]);
 
     useEffect(() => {
+        if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+                setDimensions({ width: rect.width, height: rect.height });
+            }
+        }
+    }, []);
+
+    useEffect(() => {
         if (!containerRef.current) return;
 
         const resizeObserver = new ResizeObserver((entries) => {
@@ -74,8 +83,22 @@ export const PlayerWordCloudTab: React.FC<Props> = ({ accountId, filters }) => {
 
         resizeObserver.observe(containerRef.current);
 
+        const initialRect = containerRef.current.getBoundingClientRect();
+        if (initialRect.width > 0 && initialRect.height > 0) {
+            setDimensions({ width: initialRect.width, height: initialRect.height });
+        }
+
         return () => resizeObserver.disconnect();
     }, []);
+
+    useEffect(() => {
+        if (containerRef.current && wordsInput.length > 0) {
+            const rect = containerRef.current.getBoundingClientRect();
+            if (rect.width > 0 && rect.height > 0) {
+                setDimensions({ width: rect.width, height: rect.height });
+            }
+        }
+    }, [wordsInput]);
 
     useEffect(() => {
         if (!wordsInput.length || !svgRef.current || dimensions.width === 0) return;
@@ -105,9 +128,7 @@ export const PlayerWordCloudTab: React.FC<Props> = ({ accountId, filters }) => {
             .size([width, height])
             .words(cloudData)
             .padding(2)
-            .rotate(() => {
-                return (~~(Math.random() * 6) === 0) ? 90 : 0;
-            })
+            .rotate(() => (~~(Math.random() * 6) === 0) ? 90 : 0)
             .font("Radiance, serif")
             .fontSize(d => d.size as number)
             .spiral('archimedean')
@@ -207,7 +228,6 @@ export const PlayerWordCloudTab: React.FC<Props> = ({ accountId, filters }) => {
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-2xl overflow-hidden relative flex-grow min-h-[75vh] flex flex-col">
 
                 <div className="absolute inset-0 bg-[#0a0b10]" />
-                <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[url('/assets/images/dashboard_bg_2.jpg')] bg-cover bg-center mix-blend-overlay" />
 
                 {isEmpty ? (
                     <div className="flex-grow flex flex-col items-center justify-center text-[#58606e] relative z-10">

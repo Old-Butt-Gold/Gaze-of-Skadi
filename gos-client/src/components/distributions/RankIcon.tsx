@@ -5,7 +5,7 @@ import type { Rank } from "../../types/common";
 interface RankIconProps {
     rank: Rank;
     leaderboardRank?: number | null;
-    size?: number;
+    size?: number; // Tailwind spacing units (e.g., 32 = 8rem)
     className?: string;
 }
 
@@ -22,8 +22,17 @@ export const RankIcon: React.FC<RankIconProps> = ({ rank, leaderboardRank, size 
         }
     }
 
+    const sizeStyle = {
+        width: `${size * 0.25}rem`,
+        height: `${size * 0.25}rem`
+    };
+
     return (
-        <div className={`relative w-${size} h-${size} flex items-center justify-center shrink-0 ${className}`} title={getRankNameFull(rank)}>
+        <div
+            className={`relative flex items-center justify-center shrink-0 ${className || ''}`}
+            style={sizeStyle}
+            title={getRankNameFull(rank)}
+        >
             <img
                 src={iconUrl}
                 alt="Rank"
