@@ -32,6 +32,7 @@ internal static class PlayerQueryHelpers
 
         AddListParameters(args, "with_hero_id", parameters.WithHeroIds);
         AddListParameters(args, "against_hero_id", parameters.AgainstHeroIds);
+        AddListParameters(args, "included_account_id", parameters.IncludedPlayersIds);
         AddListParameters(args, "project", parameters.Project);
 
         return args.Count == 0 ? null : args;

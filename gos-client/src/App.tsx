@@ -19,6 +19,7 @@ import {SearchProMatchesTab} from "./components/search/tabs/SearchProMatchesTab.
 import {PlayersQueuePage} from "./pages/PlayersQueuePage.tsx";
 import {HeroesMetaPage} from "./pages/HeroesMetaPage.tsx";
 import {MatchesTimelinePage} from "./pages/MatchesTimelinePage.tsx";
+import {PlayerDetailsPage} from "./pages/PlayerDetailsPage.tsx";
 
 function App() {
     return (
@@ -46,6 +47,7 @@ function App() {
                     <Route path={APP_ROUTES.PROMATCHES} element={<SearchProMatchesTab />} />
                 </Route>
 
+                <Route path={`${APP_ROUTES.PLAYERS}/:playerId`} element={<PlayerDetailsPage />} />
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>

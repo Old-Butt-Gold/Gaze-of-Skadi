@@ -20,9 +20,9 @@ public class ProfileInfoDto
 
     public string PersonaName { get; init; } = string.Empty;
 
-    public BaseEnumDto<BooleanState>? Plus { get; init; }
+    public string? Name { get; init; }
 
-    public string SteamId { get; init; } = string.Empty;
+    public BaseEnumDto<BooleanState>? Plus { get; init; }
 
     public Uri? AvatarFull { get; init; }
 

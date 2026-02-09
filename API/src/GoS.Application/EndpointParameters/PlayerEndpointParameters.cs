@@ -80,6 +80,8 @@ public class PlayerEndpointParameters
 	/// </summary>
 	public int? Having { get; set; }
 
+    public List<int>? IncludedPlayersIds { get; set; }
+
     /// <summary>
     /// Gets the size of the party player played with
     /// </summary>
