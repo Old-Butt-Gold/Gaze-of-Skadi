@@ -2,7 +2,7 @@
 
 public class PlayerHistogramDto
 {
-    public long? X { get; init; }
+    public long X { get; init; }
 
     public int Games { get; init; }
 

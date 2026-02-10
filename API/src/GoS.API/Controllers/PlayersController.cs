@@ -93,7 +93,7 @@ public sealed class PlayersController : ApiControllerBase
     [ProducesResponseType(typeof(IEnumerable<PlayerRecordDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerRecords(
         [FromRoute] long accountId,
-        [FromRoute] PlayerFieldHistogram field,
+        [FromRoute] PlayerField field,
         [FromQuery] PlayerEndpointParameters parameters,
         CancellationToken ct = default) =>
         HandleQueryAsync(new GetPlayerRecordsQuery(accountId, field, parameters), ct);
@@ -121,7 +121,7 @@ public sealed class PlayersController : ApiControllerBase
     [ProducesResponseType(typeof(IEnumerable<PlayerHistogramDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerHistograms(
         [FromRoute] long accountId,
-        [FromRoute] PlayerFieldHistogram field,
+        [FromRoute] PlayerField field,
         [FromQuery] PlayerEndpointParameters parameters,
         CancellationToken ct = default)
         => HandleQueryAsync(new GetPlayerHistogramsQuery(accountId, field, parameters), ct);

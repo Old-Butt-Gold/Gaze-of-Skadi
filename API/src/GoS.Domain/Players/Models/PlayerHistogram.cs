@@ -11,7 +11,7 @@ public class PlayerHistogram
 	/// Gets the X factor of the histogram.
 	/// </summary>
 	[JsonPropertyName("x")]
-	public long? X { get; init; }
+	public long X { get; init; }
 
 	/// <summary>
 	/// Gets the factor of the histogram.

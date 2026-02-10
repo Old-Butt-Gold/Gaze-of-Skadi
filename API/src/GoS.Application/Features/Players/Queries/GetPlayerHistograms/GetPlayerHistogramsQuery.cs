@@ -6,7 +6,7 @@ using GoS.Domain.Players.Enums;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerHistograms;
 
-public record GetPlayerHistogramsQuery(long AccountId, PlayerFieldHistogram Field, PlayerEndpointParameters Parameters)
+public record GetPlayerHistogramsQuery(long AccountId, PlayerField Field, PlayerEndpointParameters Parameters)
     : ICacheableQuery<IEnumerable<PlayerHistogramDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:histograms", new { accountId = AccountId, field = Field, p = Parameters });

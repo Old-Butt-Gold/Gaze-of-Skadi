@@ -12,7 +12,7 @@ public class PlayerTotal
 	/// Gets or sets the field.
 	/// </summary>
 	[JsonPropertyName("field")]
-	public PlayerTotalField Field { get; init; }
+	public PlayerField Field { get; init; }
 
 	/// <summary>
 	/// Gets or sets the sum.

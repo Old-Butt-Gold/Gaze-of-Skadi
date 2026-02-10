@@ -1,8 +1,7 @@
 ﻿import React from 'react';
 import { usePlayerTotals } from '../../../hooks/queries/usePlayerTotals';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
-import {PlayerTotalField} from "../../../types/playerStats.ts";
+import {type PlayerEndpointParameters, PlayerField} from '../../../types/player';
 
 interface Props {
     accountId: number;
@@ -11,35 +10,35 @@ interface Props {
 
 // Configuration: Label and Grouping
 const FIELD_CONFIG: Record<string, { label: string; group: string; isDuration?: boolean; tooltip?: string; }> = {
-    [PlayerTotalField.Kills]: { label: 'Kills', group: 'Combat' },
-    [PlayerTotalField.Deaths]: { label: 'Deaths', group: 'Combat' },
-    [PlayerTotalField.Assists]: { label: 'Assists', group: 'Combat' },
-    [PlayerTotalField.Kda]: { label: 'KDA Sum', group: 'Combat' },
-    [PlayerTotalField.Stuns]: { label: 'Stuns Duration', group: 'Combat', isDuration: true},
+    [PlayerField.Kills]: { label: 'Kills', group: 'Combat' },
+    [PlayerField.Deaths]: { label: 'Deaths', group: 'Combat' },
+    [PlayerField.Assists]: { label: 'Assists', group: 'Combat' },
+    [PlayerField.Kda]: { label: 'KDA Sum', group: 'Combat' },
+    [PlayerField.Stuns]: { label: 'Stuns Duration', group: 'Combat', isDuration: true},
 
-    [PlayerTotalField.GoldPerMin]: { label: 'Total GPM', group: 'Farming', tooltip: "Gold earned per minute" },
-    [PlayerTotalField.XpPerMin]: { label: 'Total XPM', group: 'Farming', tooltip: "Experience earned per minute" },
-    [PlayerTotalField.LastHits]: { label: 'Last Hits', group: 'Farming' },
-    [PlayerTotalField.Denies]: { label: 'Denies', group: 'Farming' },
+    [PlayerField.GoldPerMin]: { label: 'Total GPM', group: 'Farming', tooltip: "Gold earned per minute" },
+    [PlayerField.XpPerMin]: { label: 'Total XPM', group: 'Farming', tooltip: "Experience earned per minute" },
+    [PlayerField.LastHits]: { label: 'Last Hits', group: 'Farming' },
+    [PlayerField.Denies]: { label: 'Denies', group: 'Farming' },
 
-    [PlayerTotalField.HeroDamage]: { label: 'Hero Damage', group: 'Performance' },
-    [PlayerTotalField.TowerDamage]: { label: 'Tower Damage', group: 'Performance' },
-    [PlayerTotalField.HeroHealing]: { label: 'Hero Healing', group: 'Performance' },
-    [PlayerTotalField.Level]: { label: 'Total Levels', group: 'Performance' },
-    [PlayerTotalField.ActionsPerMin]: { label: 'Total APM', group: 'Performance', tooltip: "Actions per minute" },
+    [PlayerField.HeroDamage]: { label: 'Hero Damage', group: 'Performance' },
+    [PlayerField.TowerDamage]: { label: 'Tower Damage', group: 'Performance' },
+    [PlayerField.HeroHealing]: { label: 'Hero Healing', group: 'Performance' },
+    [PlayerField.Level]: { label: 'Total Levels', group: 'Performance' },
+    [PlayerField.ActionsPerMin]: { label: 'Total APM', group: 'Performance', tooltip: "Actions per minute" },
 
-    [PlayerTotalField.TowerKills]: { label: 'Towers Destroyed', group: 'Objectives' },
-    [PlayerTotalField.NeutralKills]: { label: 'Neutrals Killed', group: 'Objectives' },
-    [PlayerTotalField.CourierKills]: { label: 'Couriers Killed', group: 'Objectives' },
+    [PlayerField.TowerKills]: { label: 'Towers Destroyed', group: 'Objectives' },
+    [PlayerField.NeutralKills]: { label: 'Neutrals Killed', group: 'Objectives' },
+    [PlayerField.CourierKills]: { label: 'Couriers Killed', group: 'Objectives' },
 
-    [PlayerTotalField.PurchaseWardObserver]: { label: 'Observer Wards', group: 'Items', tooltip: "Observer wards" },
-    [PlayerTotalField.PurchaseWardSentry]: { label: 'Sentry Wards', group: 'Items', tooltip: "Sentry wards" },
-    [PlayerTotalField.PurchaseTpScroll]: { label: 'TP Scrolls', group: 'Items', tooltip: "Town Portal Scrolls" },
-    [PlayerTotalField.PurchaseGem]: { label: 'Gems', group: 'Items', tooltip: "Gems of True Sight" },
-    [PlayerTotalField.PurchaseRapier]: { label: 'Rapiers', group: 'Items', tooltip: "Divine Rapiers" },
+    [PlayerField.PurchaseWardObserver]: { label: 'Observer Wards', group: 'Items', tooltip: "Observer wards" },
+    [PlayerField.PurchaseWardSentry]: { label: 'Sentry Wards', group: 'Items', tooltip: "Sentry wards" },
+    [PlayerField.PurchaseTpScroll]: { label: 'TP Scrolls', group: 'Items', tooltip: "Town Portal Scrolls" },
+    [PlayerField.PurchaseGem]: { label: 'Gems', group: 'Items', tooltip: "Gems of True Sight" },
+    [PlayerField.PurchaseRapier]: { label: 'Rapiers', group: 'Items', tooltip: "Divine Rapiers" },
 
-    [PlayerTotalField.Duration]: { label: 'Time Played', group: 'Misc', isDuration: true },
-    [PlayerTotalField.Pings]: { label: 'Map Pings', group: 'Misc' },
+    [PlayerField.Duration]: { label: 'Time Played', group: 'Misc', isDuration: true },
+    [PlayerField.Pings]: { label: 'Map Pings', group: 'Misc' },
 };
 
 const formatDuration = (totalSeconds: number): string => {

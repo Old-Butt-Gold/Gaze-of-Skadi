@@ -90,7 +90,7 @@ public class PlayerEndpointParameters
 	/// <summary>
 	/// Gets the field to return matches sorted by in descending order.
 	/// </summary>
-	public PlayerFieldHistogram? Sort { get; set; }
+	public PlayerField? Sort { get; set; }
 
 	/// <summary>
 	/// Gets the fields to project (array).
