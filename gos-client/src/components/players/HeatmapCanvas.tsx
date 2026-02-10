@@ -1,26 +1,49 @@
 ﻿import React, { useEffect, useRef } from 'react';
-import {parseWardData, renderHeatmap} from "../../utils/heatmapUtils.ts";
+import h337 from '@mars3d/heatmap.js';
+import { parseWardData } from '../../utils/heatmapUtils';
 
 interface Props {
     data: Record<string, Record<string, number>>;
     width: number;
 }
 
+interface HeatmapInstance {
+    setData: (data: { max: number; data: Array<{ x: number; y: number; value: number }> }) => void;
+    repaint: () => void;
+}
+
 export const HeatmapCanvas: React.FC<Props> = ({ data, width }) => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const heatmapInstance = useRef<HeatmapInstance | null>(null);
 
     useEffect(() => {
-        if (!canvasRef.current) return;
+        if (!containerRef.current) return;
 
-        // 1. Парсим данные (координаты)
+        containerRef.current.innerHTML = '';
+
+        heatmapInstance.current = h337.create({
+            container: containerRef.current,
+            radius: width * 0.05,
+            maxOpacity: 0.55,
+            minOpacity: 0,
+            blur: 0.90,
+            backgroundColor: 'rgba(0,0,0,0)',
+            gradient: {
+                '.25': 'rgb(0,0,255)',   // Deep Blue
+                '.55': 'rgb(0,255,0)',   // Green
+                '.85': 'yellow',         // Yellow
+                '1.0': 'rgb(255,0,0)'    // Red
+            }
+        }) as unknown as HeatmapInstance; // Cast to our interface
+
         const points = parseWardData(data, width, width);
 
-        // 2. Настраиваем радиус точки в зависимости от размера карты
-        // Для 500px -> radius ~15, blur ~25 дает мягкий результат как на скрине
-        const radius = Math.max(8, width * 0.03);
-        const blur = Math.max(15, width * 0.05);
+        const heatmapData = {
+            max: 1,
+            data: points
+        };
 
-        renderHeatmap(canvasRef.current, points, radius, blur);
+        heatmapInstance.current.setData(heatmapData);
 
     }, [data, width]);
 
@@ -29,28 +52,15 @@ export const HeatmapCanvas: React.FC<Props> = ({ data, width }) => {
             className="relative rounded-sm overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] bg-[#0f1114]"
             style={{ width, height: width }}
         >
-            {/* Background Map */}
             <img
                 src="/assets/images/detailed_740.webp"
                 alt="Minimap"
-                className="absolute inset-0 w-full h-full object-cover z-0"
+                className="absolute inset-0 w-full h-full object-cover opacity-90 z-0 pointer-events-none"
             />
 
-            {/* Heatmap Layer (Screen blend mode makes it glow) */}
-            <canvas
-                ref={canvasRef}
-                width={width}
-                height={width}
-                className="absolute inset-0 z-10 pointer-events-none mix-blend-screen opacity-90"
-            />
-
-            {/* Subtle Grid Overlay (Optional, adds pro feel) */}
             <div
-                className="absolute inset-0 z-20 pointer-events-none border border-white/5"
-                style={{
-                    backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
-                    backgroundSize: `${width / 8}px ${width / 8}px`
-                }}
+                ref={containerRef}
+                className="absolute inset-0 z-10 w-full h-full pointer-events-none"
             />
         </div>
     );

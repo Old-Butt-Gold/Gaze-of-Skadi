@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+﻿import React from 'react';
 import { usePlayerWardMap } from '../../../hooks/queries/usePlayerWardMap';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import type { PlayerEndpointParameters } from '../../../types/player';
@@ -12,21 +12,6 @@ interface Props {
 
 export const PlayerWardMapTab: React.FC<Props> = ({ accountId, filters }) => {
     const { data, isLoading, isError } = usePlayerWardMap(accountId, filters);
-
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [mapSize, setMapSize] = useState(500);
-
-    useEffect(() => {
-        if (!containerRef.current) return;
-        const resizeObserver = new ResizeObserver((entries) => {
-            const { width } = entries[0].contentRect;
-            const isDesktop = width > 768;
-            const calculatedSize = isDesktop ? (width - 40) / 2 : width;
-            setMapSize(Math.floor(calculatedSize));
-        });
-        resizeObserver.observe(containerRef.current);
-        return () => resizeObserver.disconnect();
-    }, []);
 
     if (isLoading) return <LoadingSpinner text="Analyzing Vision..." />;
     if (isError || !data) return <div className="text-center text-[#808fa6] py-20">Ward data unavailable.</div>;
@@ -43,11 +28,11 @@ export const PlayerWardMapTab: React.FC<Props> = ({ accountId, filters }) => {
         );
     }
 
+    // TODO Make HeatmapCanvas adaptible to parent container
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 w-full" ref={containerRef}>
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 w-full">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center justify-between bg-[#15171c] border-l-4 border-[#e7d291] p-3 rounded-r-lg shadow-md">
                         <div className="flex items-center gap-3">
@@ -59,11 +44,12 @@ export const PlayerWardMapTab: React.FC<Props> = ({ accountId, filters }) => {
                         </div>
                     </div>
 
-                    <HeatmapCanvas data={data.obs} width={mapSize}/>
+                    <div className="flex justify-center">
+                        <HeatmapCanvas data={data.obs} width={500} />
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-4">
-                    {/* Header */}
                     <div className="flex items-center justify-between bg-[#15171c] border-l-4 border-[#60a5fa] p-3 rounded-r-lg shadow-md">
                         <div className="flex items-center gap-3">
                             <Icon src="/assets/images/ward_sentry.png" size={12} />
@@ -74,13 +60,12 @@ export const PlayerWardMapTab: React.FC<Props> = ({ accountId, filters }) => {
                         </div>
                     </div>
 
-                    {/* Map */}
-                    <HeatmapCanvas data={data.sen} width={mapSize}/>
+                    <div className="flex justify-center">
+                        <HeatmapCanvas data={data.sen} width={500} />
+                    </div>
                 </div>
-
             </div>
 
-            {/* Legend */}
             <div className="mt-8 flex justify-center">
                 <div className="flex items-center gap-3 bg-[#15171c] px-6 py-2 rounded-full border border-[#2e353b] shadow-lg">
                     <span className="text-[10px] uppercase font-bold text-[#58606e] tracking-widest">Frequency</span>
