@@ -4,6 +4,7 @@ import type {PlayerWinLossDto} from "../types/playerWinLoss.ts";
 import type {PlayerTotalDto} from "../types/playerStats.ts";
 import type {PlayerWordCloudDto} from "../types/wordcloud.ts";
 import type {PlayerHistogramDto} from "../types/playerHistogram.ts";
+import type {PlayerHeroDto} from "../types/playerHero.ts";
 
 export const playerService = {
   getPlayerById: async (accountId: number): Promise<PlayerDto> => {
@@ -24,5 +25,9 @@ export const playerService = {
 
   getPlayerHistograms: async (accountId: number, field: PlayerField, params?: PlayerEndpointParameters): Promise<PlayerHistogramDto[]> => {
     return apiClient.get(`/players/${accountId}/histograms/${field}`, { params });
+  },
+
+  getPlayerHeroes: async (accountId: number, params?: PlayerEndpointParameters): Promise<PlayerHeroDto[]> => {
+      return apiClient.get(`/players/${accountId}/heroes`, { params });
   },
 };
