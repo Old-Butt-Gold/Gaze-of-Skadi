@@ -75,4 +75,4 @@ export const PlayerField = {
   ActionsPerMin: 28
 } as const;
 
-export type PlayerTotalField = (typeof PlayerField)[keyof typeof PlayerField];
+export type PlayerField = (typeof PlayerField)[keyof typeof PlayerField];

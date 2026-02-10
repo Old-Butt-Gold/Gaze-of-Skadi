@@ -9,9 +9,10 @@ import type { PlayerEndpointParameters } from '../types/player';
 import { BooleanState } from '../types/common';
 import { usePlayerWinLoss } from "../hooks/queries/usePlayerWinLoss";
 import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx";
-import {PlayerWordCloudTab} from "../components/players/tabs/PlayerWordCloudTab.tsx"; // Import
+import {PlayerWordCloudTab} from "../components/players/tabs/PlayerWordCloudTab.tsx";
+import {PlayerHistogramsTab} from "../components/players/tabs/PlayerHistogramsTab.tsx"; // Import
 
-export type PlayerTabType = 'statistics' | 'wordcloud';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -45,10 +46,11 @@ export const PlayerDetailsPage: React.FC = () => {
     const tabs: PlayerTab[] = [
         { id: 'statistics', label: 'Stats', disabled: isPrivate },
         { id: 'wordcloud', label: 'Word Cloud', disabled: isPrivate },
+        { id: 'histogram', label: 'Histograms', disabled: isPrivate },
     ];
 
     return (
-        <div className="min-h-screen bg-[#0f1114] text-white pb-20">
+        <div className="min-h-screen bg-[#0f1114] text-white pb-10">
 
             <PlayerHeader player={player} filters={filters} />
 
@@ -84,6 +86,7 @@ export const PlayerDetailsPage: React.FC = () => {
                         <>
                             {activeTab === 'statistics' && <PlayerStatsTab accountId={parsedId} filters={filters}/>}
                             {activeTab === 'wordcloud' && (<PlayerWordCloudTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'histogram' && (<PlayerHistogramsTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>
