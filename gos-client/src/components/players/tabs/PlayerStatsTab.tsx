@@ -8,7 +8,6 @@ interface Props {
     filters: PlayerEndpointParameters;
 }
 
-// Configuration: Label and Grouping
 const FIELD_CONFIG: Record<string, { label: string; group: string; isDuration?: boolean; tooltip?: string; }> = {
     [PlayerField.Kills]: { label: 'Kills', group: 'Combat' },
     [PlayerField.Deaths]: { label: 'Deaths', group: 'Combat' },
@@ -66,7 +65,7 @@ const formatValue = (num: number, isDuration?: boolean): string => {
     if (isDuration) {
         return formatDuration(num);
     }
-    return formatNumber(num);
+    return formatNumber(~~num);
 };
 
 export const PlayerStatsTab: React.FC<Props> = ({ accountId, filters }) => {

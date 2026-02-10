@@ -12,9 +12,10 @@ import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx";
 import {PlayerWordCloudTab} from "../components/players/tabs/PlayerWordCloudTab.tsx";
 import {PlayerHistogramsTab} from "../components/players/tabs/PlayerHistogramsTab.tsx";
 import {PlayerHeroesTab} from "../components/players/tabs/PlayerHeroesTab.tsx";
-import {PlayerWardMapTab} from "../components/players/tabs/PlayerWardMapTab.tsx"; // Import
+import {PlayerWardMapTab} from "../components/players/tabs/PlayerWardMapTab.tsx";
+import {PlayerPeersTab} from "../components/players/tabs/PlayerPeersTab.tsx";
 
-export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -43,6 +44,7 @@ export const PlayerDetailsPage: React.FC = () => {
     if (isError || !player) return <NotFoundPage />;
 
     const isStatsEmpty = wl && wl.wins === 0 && wl.losses === 0;
+    // TODO maybe check only by isStatsEmpty?
     const isPrivate = player.profile.fhUnavailable?.value === BooleanState.True || isStatsEmpty;
 
     const tabs: PlayerTab[] = [
@@ -51,6 +53,7 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'histogram', label: 'Histograms', disabled: isPrivate },
         { id: 'heroes', label: 'Heroes', disabled: isPrivate },
         { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
+        { id: 'peer', label: 'Peers', disabled: isPrivate },
     ];
 
     return (
@@ -93,6 +96,7 @@ export const PlayerDetailsPage: React.FC = () => {
                             {activeTab === 'histogram' && (<PlayerHistogramsTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'heroes' && (<PlayerHeroesTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'wardmap' && (<PlayerWardMapTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'peer' && (<PlayerPeersTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>
