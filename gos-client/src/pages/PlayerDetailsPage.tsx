@@ -11,9 +11,10 @@ import { usePlayerWinLoss } from "../hooks/queries/usePlayerWinLoss";
 import { PlayerStatsTab } from "../components/players/tabs/PlayerStatsTab.tsx";
 import {PlayerWordCloudTab} from "../components/players/tabs/PlayerWordCloudTab.tsx";
 import {PlayerHistogramsTab} from "../components/players/tabs/PlayerHistogramsTab.tsx";
-import {PlayerHeroesTab} from "../components/players/tabs/PlayerHeroesTab.tsx"; // Import
+import {PlayerHeroesTab} from "../components/players/tabs/PlayerHeroesTab.tsx";
+import {PlayerWardMapTab} from "../components/players/tabs/PlayerWardMapTab.tsx"; // Import
 
-export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -49,6 +50,7 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'wordcloud', label: 'Word Cloud', disabled: isPrivate },
         { id: 'histogram', label: 'Histograms', disabled: isPrivate },
         { id: 'heroes', label: 'Heroes', disabled: isPrivate },
+        { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
     ];
 
     return (
@@ -90,6 +92,7 @@ export const PlayerDetailsPage: React.FC = () => {
                             {activeTab === 'wordcloud' && (<PlayerWordCloudTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'histogram' && (<PlayerHistogramsTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'heroes' && (<PlayerHeroesTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'wardmap' && (<PlayerWardMapTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>

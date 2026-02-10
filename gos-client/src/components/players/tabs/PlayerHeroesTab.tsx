@@ -7,6 +7,7 @@ import { formatRelativeTime } from '../../../utils/formatUtils';
 import type { SortDirection } from '../../../store/teamStore';
 import {SortIndicator} from "../../heroes/SortIndicator.tsx";
 import {HeroCell} from "../../heroes/HeroCell.tsx";
+import {useHeroes} from "../../../hooks/queries/useHeroes.ts";
 
 interface Props {
     accountId: number;
@@ -17,6 +18,7 @@ type SortKey = 'hero' | 'matches' | 'winPercent' | 'withMatches' | 'withWinPerce
 
 export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
     const { data: heroesData, isLoading: isHeroesLoading } = usePlayerHeroes(accountId, filters);
+    const { getHero } = useHeroes();
 
     const [sortKey, setSortKey] = useState<SortKey>('matches');
     const [sortDir, setSortDir] = useState<SortDirection>('desc');
@@ -34,12 +36,16 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
         if (!heroesData) return [];
 
         const dataWithStats = heroesData.map(hero => {
+            const heroInfo = getHero(hero.heroId);
+
+            // Calculate rates
             const winPercent = hero.games > 0 ? (hero.win / hero.games) * 100 : 0;
             const withWinPercent = hero.withGames > 0 ? (hero.withWin / hero.withGames) * 100 : 0;
             const againstWinPercent = hero.againstGames > 0 ? (hero.againstWin / hero.againstGames) * 100 : 0;
 
             return {
                 ...hero,
+                heroName: heroInfo?.localized_name ?? 'Unknown', // Fallback for sorting
                 winPercent,
                 withWinPercent,
                 againstWinPercent
@@ -47,29 +53,39 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
         });
 
         return dataWithStats.sort((a, b) => {
-            let valA: number = 0;
-            let valB: number = 0;
+            const modifier = sortDir === 'asc' ? 1 : -1;
 
-            // For sorting, we use raw numeric values.
-            // Hero ID sorting is implicit via API usually, but here we can sort by ID if key is 'hero'
-            // or we could fetch hero names here if we wanted alphabetical sorting.
-            // Since HeroCell handles the name fetching, sorting by ID is a safe fallback for 'hero' key
-            // without bringing useHeroes hook into the sort logic directly (optimization).
             switch (sortKey) {
-                case 'hero': valA = a.heroId; valB = b.heroId; break;
-                case 'matches': valA = a.games; valB = b.games; break;
-                case 'winPercent': valA = a.winPercent; valB = b.winPercent; break;
-                case 'withMatches': valA = a.withGames; valB = b.withGames; break;
-                case 'withWinPercent': valA = a.withWinPercent; valB = b.withWinPercent; break;
-                case 'againstMatches': valA = a.againstGames; valB = b.againstGames; break;
-                case 'againstWinPercent': valA = a.againstWinPercent; valB = b.againstWinPercent; break;
-                case 'lastPlayed': valA = a.lastPlayed; valB = b.lastPlayed; break;
-            }
+                case 'hero':
+                    return a.heroName.localeCompare(b.heroName) * modifier;
 
-            return sortDir === 'asc' ? valA - valB : valB - valA;
+                case 'matches':
+                    return (a.games - b.games) * modifier;
+
+                case 'winPercent':
+                    return (a.winPercent - b.winPercent) * modifier;
+
+                case 'withMatches':
+                    return (a.withGames - b.withGames) * modifier;
+
+                case 'withWinPercent':
+                    return (a.withWinPercent - b.withWinPercent) * modifier;
+
+                case 'againstMatches':
+                    return (a.againstGames - b.againstGames) * modifier;
+
+                case 'againstWinPercent':
+                    return (a.againstWinPercent - b.againstWinPercent) * modifier;
+
+                case 'lastPlayed':
+                    return (a.lastPlayed - b.lastPlayed) * modifier;
+
+                default:
+                    return 0;
+            }
         });
 
-    }, [heroesData, sortKey, sortDir]);
+    }, [heroesData, getHero, sortKey, sortDir]);
 
     if (isHeroesLoading) return <LoadingSpinner text="Loading Heroes..." />;
     if (!heroesData || heroesData.length === 0) return <div className="text-center text-[#808fa6] py-10">No heroes played found.</div>;

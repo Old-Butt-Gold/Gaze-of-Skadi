@@ -114,7 +114,7 @@ export const PlayerHistogramsTab: React.FC<Props> = ({ accountId, filters }) => 
         return data.map(item => {
             const winRate = item.games > 0 ? ((item.win / item.games) * 100) : 0;
             // Color Logic: High winrate = Green, Low = Red/Purple
-            const color = winRate >= 50 ? '#10b981' : '#60a5fa'; // Emerald vs Blue
+            const color = winRate >= 50 ? '#10b981' : '#ef4444'; // Emerald vs Blue
 
             return {
                 ...item,
