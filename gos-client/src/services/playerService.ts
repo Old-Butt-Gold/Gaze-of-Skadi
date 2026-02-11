@@ -8,6 +8,7 @@ import type {PlayerHeroDto} from "../types/playerHero.ts";
 import type {PlayerWardMapDto} from "../types/playerWardMap.ts";
 import type {PlayerPeerDto} from "../types/playerPeer.ts";
 import type {PlayerProDto} from "../types/playerPro.ts";
+import type {PlayerCountDto} from "../types/playerCount.ts";
 
 export const playerService = {
   getPlayerById: async (accountId: number): Promise<PlayerDto> => {
@@ -44,5 +45,9 @@ export const playerService = {
 
   getPlayerPros: async (accountId: number, params?: PlayerEndpointParameters): Promise<PlayerProDto[]> => {
     return apiClient.get(`/players/${accountId}/pros`, { params });
+  },
+
+  getPlayerCounts: async (accountId: number, params?: PlayerEndpointParameters): Promise<PlayerCountDto> => {
+    return apiClient.get(`/players/${accountId}/counts`, { params });
   }
 };

@@ -15,8 +15,9 @@ import {PlayerHeroesTab} from "../components/players/tabs/PlayerHeroesTab.tsx";
 import {PlayerWardMapTab} from "../components/players/tabs/PlayerWardMapTab.tsx";
 import {PlayerPeersTab} from "../components/players/tabs/PlayerPeersTab.tsx";
 import {PlayerProsTab} from "../components/players/tabs/PlayerProsTab.tsx";
+import {PlayerCountsTab} from "../components/players/tabs/PlayerCountsTab.tsx";
 
-export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer' | 'pro';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer' | 'pro' | 'counts';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -56,6 +57,7 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
         { id: 'peer', label: 'Peers', disabled: isPrivate }, // TODO add pagination
         { id: 'pro', label: 'Pros', disabled: isPrivate }, // TODO add pagination
+        { id: 'counts', label: 'Counts', disabled: isPrivate }, // TODO add pagination
     ];
 
     return (
@@ -100,6 +102,7 @@ export const PlayerDetailsPage: React.FC = () => {
                             {activeTab === 'wardmap' && (<PlayerWardMapTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'peer' && (<PlayerPeersTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'pro' && (<PlayerProsTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'counts' && (<PlayerCountsTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>

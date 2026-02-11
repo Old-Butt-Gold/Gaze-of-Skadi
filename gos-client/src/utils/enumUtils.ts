@@ -1,4 +1,4 @@
-﻿import { GameMode, LobbyType } from '../types/common';
+﻿import {GameMode, LaneRole, LeaverStatus, LobbyType, Patch, Region, TeamEnum} from '../types/common';
 
 const GAME_MODE_NAMES: Record<GameMode, string> = {
   [GameMode.Unknown]: 'Unknown',
@@ -29,9 +29,7 @@ const GAME_MODE_NAMES: Record<GameMode, string> = {
   [GameMode.CoachesChallenge]: 'Coach’s Challenge',
 };
 
-export const getGameModeName = (mode: GameMode): string => {
-  return GAME_MODE_NAMES[mode] ?? 'Unknown Mode';
-};
+export const getGameModeName = (mode: GameMode): string => GAME_MODE_NAMES[mode] ?? 'Unknown Mode';
 
 const LOBBY_TYPE_NAMES: Record<LobbyType, string> = {
   [LobbyType.LobbyNormal]: 'Normal',
@@ -52,6 +50,67 @@ const LOBBY_TYPE_NAMES: Record<LobbyType, string> = {
   [LobbyType.LobbyFeatured]: 'Featured',
 };
 
-export const getLobbyTypeName = (type: LobbyType): string => {
-  return LOBBY_TYPE_NAMES[type] ?? 'Unknown Lobby';
+export const getLobbyTypeName = (type: LobbyType): string => LOBBY_TYPE_NAMES[type] ?? 'Unknown Lobby';
+
+const REGION_NAMES: Record<Region, string> = {
+  [Region.Nan]: 'Unknown',
+  [Region.UsWest]: 'US West',
+  [Region.UsEast]: 'US East',
+  [Region.Europe]: 'Europe',
+  [Region.Singapore]: 'SE Asia (Singapore)',
+  [Region.Dubai]: 'Dubai',
+  [Region.Australia]: 'Australia',
+  [Region.Stockholm]: 'Russia (Stockholm)',
+  [Region.Austria]: 'Europe West (Austria)',
+  [Region.Brazil]: 'South America (Brazil)',
+  [Region.SouthAfrica]: 'South Africa',
+  [Region.PwTelecomShanghai]: 'PW Telecom Shanghai',
+  [Region.PwUnicom]: 'PW Unicom',
+  [Region.Chile]: 'Chile',
+  [Region.Peru]: 'Peru',
+  [Region.India]: 'India',
+  [Region.PwTelecomGuangdong]: 'PW Telecom Guangdong',
+  [Region.PwTelecomZhejiang]: 'PW Telecom Zhejiang',
+  [Region.Japan]: 'Japan',
+  [Region.PwTelecomWuhan]: 'PW Telecom Wuhan',
+  [Region.PwUnicomTianjin]: 'PW Unicom Tianjin',
+  [Region.Taiwan]: 'Taiwan',
+  [Region.Argentina]: 'Argentina',
+};
+
+export const getRegionName = (region: Region): string => REGION_NAMES[region] ?? 'Unknown Region';
+
+const LEAVER_STATUS_NAMES: Record<LeaverStatus, string> = {
+  [LeaverStatus.Stayed]: 'Finished Match',
+  [LeaverStatus.LeftSafely]: 'Safe Leave',
+  [LeaverStatus.AbandonedDisconnect]: 'Abandoned (DC)',
+  [LeaverStatus.Abandoned]: 'Abandoned',
+  [LeaverStatus.AbandonedAfk]: 'Abandoned (AFK)',
+};
+
+export const getLeaverStatusName = (status: LeaverStatus): string => LEAVER_STATUS_NAMES[status] ?? 'Unknown';
+
+const LANE_ROLE_NAMES: Record<LaneRole, string> = {
+  [LaneRole.None]: 'Unknown / Roam',
+  [LaneRole.Safe]: 'Safe Lane',
+  [LaneRole.Mid]: 'Mid Lane',
+  [LaneRole.Offlane]: 'Offlane',
+  [LaneRole.Jungle]: 'Jungle',
+};
+
+export const getLaneRoleName = (role: LaneRole): string => LANE_ROLE_NAMES[role] ?? 'Unknown';
+
+const TEAM_NAMES: Record<TeamEnum, string> = {
+  [TeamEnum.Radiant]: 'Radiant',
+  [TeamEnum.Dire]: 'Dire',
+};
+
+export const getTeamName = (team: TeamEnum): string => TEAM_NAMES[team] ?? 'Unknown Team';
+
+export const getPatchName = (patch: Patch): string => {
+  const entry = Object.entries(Patch).find(([, val]) => val === patch);
+  if (entry) {
+    return entry[0].replace('v', '').replace('_', '.');
+  }
+  return 'Unknown Patch';
 };

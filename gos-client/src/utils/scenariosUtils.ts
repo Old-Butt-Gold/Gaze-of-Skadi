@@ -1,22 +1,22 @@
-﻿import { LaneRole } from "../types/scenarios";
+﻿import {LaneRole} from "../types/common.ts";
 
 export const getLaneConfig = (roleValue: number) => {
   const baseStyle = "border backdrop-blur-md bg-opacity-20";
 
   switch (roleValue) {
-    case LaneRole.SafeLane:
+    case LaneRole.Safe:
       return {
         label: 'Safe Lane',
         style: `${baseStyle} bg-emerald-500/10 text-emerald-400 border-emerald-500/30`,
         iconSrc: '/assets/images/lane_safe.svg'
       };
-    case LaneRole.MidLane:
+    case LaneRole.Mid:
       return {
         label: 'Mid Lane',
         style: `${baseStyle} bg-red-500/10 text-red-400 border-red-500/30`,
         iconSrc: '/assets/images/lane_mid.svg'
       };
-    case LaneRole.OffLane:
+    case LaneRole.Offlane:
       return {
         label: 'Off Lane',
         style: `${baseStyle} bg-orange-500/10 text-orange-400 border-orange-500/30`,
@@ -38,8 +38,8 @@ export const getLaneConfig = (roleValue: number) => {
 };
 
 export const LANE_OPTIONS = [
-  { value: LaneRole.SafeLane, label: 'Safe Lane' },
-  { value: LaneRole.MidLane, label: 'Mid Lane' },
-  { value: LaneRole.OffLane, label: 'Off Lane' },
+  { value: LaneRole.Safe, label: 'Safe Lane' },
+  { value: LaneRole.Mid, label: 'Mid Lane' },
+  { value: LaneRole.Offlane, label: 'Off Lane' },
   { value: LaneRole.Jungle, label: 'Jungle' },
 ];

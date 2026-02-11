@@ -1,4 +1,4 @@
-﻿import type {BaseEnum} from "./common";
+﻿import type {BaseEnum, LaneRole} from "./common";
 
 export interface BaseScenarioData {
   games: number;
@@ -16,13 +16,3 @@ export interface LaneRolesDto extends BaseScenarioData {
 }
 
 export type ScenarioData = ItemTimingDto | LaneRolesDto;
-
-export const LaneRole = {
-  None: 0,
-  SafeLane: 1,
-  MidLane: 2,
-  OffLane: 3,
-  Jungle: 4,
-} as const;
-
-export type LaneRole = typeof LaneRole[keyof typeof LaneRole];
