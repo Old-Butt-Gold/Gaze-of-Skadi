@@ -125,11 +125,11 @@ export const Behavior = {
 export type Behavior = typeof Behavior[keyof typeof Behavior];
 
 export const Dispellable =
-    {
-        No: 0,
-        StrongDispelsOnly: 1,
-        Yes: 2,
-    } as const;
+{
+  No: 0,
+  StrongDispelsOnly: 1,
+  Yes: 2,
+} as const;
 export type Dispellable = typeof Dispellable[keyof typeof Dispellable];
 
 export type BooleanState = typeof BooleanState[keyof typeof BooleanState];

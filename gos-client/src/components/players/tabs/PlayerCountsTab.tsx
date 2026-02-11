@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { usePlayerCounts } from '../../../hooks/queries/usePlayerCounts';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import type { PlayerEndpointParameters } from '../../../types/player';
-import type { PlayerCountStats } from '../../../types/playerCount'; // Убедитесь в пути
+import type { PlayerCountStats } from '../../../types/playerCount';
 import {
     getGameModeName,
     getLobbyTypeName,
@@ -114,48 +114,13 @@ export const PlayerCountsTab: React.FC<Props> = ({ accountId, filters }) => {
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
 
-                <StatCard
-                    title="Side"
-                    data={data.isRadiant}
-                    nameMap={getTeamName}
-                />
-
-                <StatCard
-                    title="Lane Role"
-                    data={data.laneRole}
-                    nameMap={getLaneRoleName}
-                />
-
-                <StatCard
-                    title="Game Mode"
-                    data={data.gameMode}
-                    nameMap={getGameModeName}
-                />
-
-                <StatCard
-                    title="Lobby Type"
-                    data={data.lobbyType}
-                    nameMap={getLobbyTypeName}
-                />
-
-                <StatCard
-                    title="Match Status"
-                    data={data.leaverStatus}
-                    nameMap={getLeaverStatusName}
-                />
-
-                <StatCard
-                    title="Region"
-                    data={data.region}
-                    nameMap={getRegionName}
-                />
-
-                <StatCard
-                    title="Game Version"
-                    data={data.patch}
-                    nameMap={getPatchName}
-                />
-
+                <StatCard title="Side" data={data.isRadiant} nameMap={getTeamName}/>
+                <StatCard title="Lane Role" data={data.laneRole} nameMap={getLaneRoleName}/>
+                <StatCard title="Game Mode" data={data.gameMode} nameMap={getGameModeName}/>
+                <StatCard title="Lobby Type" data={data.lobbyType} nameMap={getLobbyTypeName}/>
+                <StatCard title="Match Status" data={data.leaverStatus} nameMap={getLeaverStatusName}/>
+                <StatCard title="Region" data={data.region} nameMap={getRegionName}/>
+                <StatCard title="Game Version" data={data.patch} nameMap={getPatchName}/>
             </div>
         </div>
     );

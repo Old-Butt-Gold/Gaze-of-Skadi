@@ -1,4 +1,5 @@
 using System.Reflection;
+using GoS.Infrastructure.OptionsProvider.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
@@ -17,7 +18,10 @@ public static class ServiceExtensions
         {
             config.RespectBrowserAcceptHeader = true;
             config.ReturnHttpNotAcceptable = true;
-
+        })
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ConfigureGoSSerializerOptions();
         });
     }
 

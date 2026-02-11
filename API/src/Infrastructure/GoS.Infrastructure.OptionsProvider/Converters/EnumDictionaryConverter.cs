@@ -81,9 +81,7 @@ internal sealed class EnumDictionaryConverter<TEnum, TValue> : JsonConverter<Dic
         writer.WriteStartObject();
         foreach (var (enumKey, val) in value)
         {
-            var propName = _toString.TryGetValue(enumKey, out var s)
-                ? s
-                : enumKey.ToString()!;
+            var propName = Convert.ChangeType(enumKey, Enum.GetUnderlyingType(typeof(TEnum))).ToString()!;
             writer.WritePropertyName(propName);
             JsonSerializer.Serialize(writer, val, options);
         }

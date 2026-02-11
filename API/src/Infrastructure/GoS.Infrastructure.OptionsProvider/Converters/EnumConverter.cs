@@ -43,8 +43,6 @@ internal sealed class EnumConverter<TEnum> : JsonConverter<TEnum> where TEnum : 
 
     public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
     {
-        var member = typeof(TEnum).GetMember(value.ToString())[0];
-        var attr = member.GetCustomAttribute<JsonPropertyNameAttribute>();
-        writer.WriteStringValue(attr?.Name ?? value.ToString());
+        writer.WriteNumberValue(Convert.ToInt32(value));
     }
 }

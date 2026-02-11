@@ -14,13 +14,13 @@ internal sealed class EnumListConverter<TEnum> : JsonConverter<List<TEnum>> wher
             var value = ParseEnumValue(jsonValue);
             return [value];
         }
-        
+
 
         if (reader.TokenType != JsonTokenType.StartArray)
             throw new JsonException($"Expected array start but got {reader.TokenType}");
 
         var list = new List<TEnum>();
-        
+
         while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
         {
             switch (reader.TokenType)
@@ -53,9 +53,7 @@ internal sealed class EnumListConverter<TEnum> : JsonConverter<List<TEnum>> wher
         writer.WriteStartArray();
         foreach (var item in value)
         {
-            var member = typeof(TEnum).GetMember(item.ToString())[0];
-            var attr = member.GetCustomAttribute<JsonPropertyNameAttribute>();
-            writer.WriteStringValue(attr?.Name ?? item.ToString());
+            writer.WriteNumberValue(Convert.ToInt32(item));
         }
         writer.WriteEndArray();
     }
