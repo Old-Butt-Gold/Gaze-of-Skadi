@@ -57,7 +57,7 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
         { id: 'peer', label: 'Peers', disabled: isPrivate }, // TODO add pagination
         { id: 'pro', label: 'Pros', disabled: isPrivate }, // TODO add pagination
-        { id: 'counts', label: 'Counts', disabled: isPrivate }, // TODO add pagination
+        { id: 'counts', label: 'Counts', disabled: isPrivate },
     ];
 
     return (

@@ -1,6 +1,5 @@
-﻿// store/recordsStore.ts
-import { create } from 'zustand';
-import type {RecordField} from '../types/records';
+﻿import { create } from 'zustand';
+import {RecordField} from '../types/records';
 
 interface RecordsState {
   activeCategory: RecordField;
@@ -8,6 +7,6 @@ interface RecordsState {
 }
 
 export const useRecordsStore = create<RecordsState>((set) => ({
-  activeCategory: 'Duration',
+  activeCategory: RecordField.Duration,
   setActiveCategory: (category) => set({ activeCategory: category }),
 }));

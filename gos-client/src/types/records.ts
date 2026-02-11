@@ -1,20 +1,18 @@
-﻿// src/types/records.ts
+﻿export const RecordField = {
+  Duration: 0,
+  Kills: 1,
+  Deaths: 2,
+  Assists: 3,
+  GoldPerMin: 4,
+  XpPerMin: 5,
+  LastHits: 6,
+  Denies: 7,
+  HeroDamage: 8,
+  TowerDamage: 9,
+  HeroHealing: 10,
+} as const;
 
-export const RECORD_FIELDS = [
-  'Duration',
-  'Kills',
-  'Deaths',
-  'Assists',
-  'GoldPerMin',
-  'XpPerMin',
-  'LastHits',
-  'Denies',
-  'HeroDamage',
-  'TowerDamage',
-  'HeroHealing',
-] as const;
-
-export type RecordField = typeof RECORD_FIELDS[number];
+export type RecordField = typeof RecordField[keyof typeof RecordField];
 
 export interface RecordDto {
   matchId: number;
@@ -23,16 +21,17 @@ export interface RecordDto {
   score: number;
 }
 
+// Map using the numeric values
 export const RECORD_CATEGORIES: Record<RecordField, { label: string; format: 'number' | 'duration' }> = {
-  Duration: { label: 'Duration', format: 'duration' },
-  Kills: { label: 'Kills', format: 'number' },
-  Deaths: { label: 'Deaths', format: 'number' },
-  Assists: { label: 'Assists', format: 'number' },
-  GoldPerMin: { label: 'Gold/min', format: 'number' },
-  XpPerMin: { label: 'XP/min', format: 'number' },
-  LastHits: { label: 'Last Hits', format: 'number' },
-  Denies: { label: 'Denies', format: 'number' },
-  HeroDamage: { label: 'Hero Damage', format: 'number' },
-  TowerDamage: { label: 'Tower Damage', format: 'number' },
-  HeroHealing: { label: 'Hero Healing', format: 'number' },
+  [RecordField.Duration]: { label: 'Duration', format: 'duration' },
+  [RecordField.Kills]: { label: 'Kills', format: 'number' },
+  [RecordField.Deaths]: { label: 'Deaths', format: 'number' },
+  [RecordField.Assists]: { label: 'Assists', format: 'number' },
+  [RecordField.GoldPerMin]: { label: 'Gold/min', format: 'number' },
+  [RecordField.XpPerMin]: { label: 'XP/min', format: 'number' },
+  [RecordField.LastHits]: { label: 'Last Hits', format: 'number' },
+  [RecordField.Denies]: { label: 'Denies', format: 'number' },
+  [RecordField.HeroDamage]: { label: 'Hero Damage', format: 'number' },
+  [RecordField.TowerDamage]: { label: 'Tower Damage', format: 'number' },
+  [RecordField.HeroHealing]: { label: 'Hero Healing', format: 'number' },
 } as const;

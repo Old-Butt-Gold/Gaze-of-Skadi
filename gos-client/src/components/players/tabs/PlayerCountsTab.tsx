@@ -13,6 +13,7 @@ import {
     getTeamName,
     getPatchName
 } from '../../../utils/enumUtils';
+import type {GameMode, LaneRole, LeaverStatus, LobbyType, Patch, Region, TeamEnum} from "../../../types/common.ts";
 
 interface Props {
     accountId: number;
@@ -113,14 +114,13 @@ export const PlayerCountsTab: React.FC<Props> = ({ accountId, filters }) => {
             </div>
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-
-                <StatCard title="Side" data={data.isRadiant} nameMap={getTeamName}/>
-                <StatCard title="Lane Role" data={data.laneRole} nameMap={getLaneRoleName}/>
-                <StatCard title="Game Mode" data={data.gameMode} nameMap={getGameModeName}/>
-                <StatCard title="Lobby Type" data={data.lobbyType} nameMap={getLobbyTypeName}/>
-                <StatCard title="Match Status" data={data.leaverStatus} nameMap={getLeaverStatusName}/>
-                <StatCard title="Region" data={data.region} nameMap={getRegionName}/>
-                <StatCard title="Game Version" data={data.patch} nameMap={getPatchName}/>
+                <StatCard title="Side" data={data.isRadiant} nameMap={(key: number) => getTeamName(key as TeamEnum)}/>
+                <StatCard title="Lane Role" data={data.laneRole} nameMap={(key: number) => getLaneRoleName(key as LaneRole)}/>
+                <StatCard title="Game Mode" data={data.gameMode} nameMap={(key: number) => getGameModeName(key as GameMode)}/>
+                <StatCard title="Lobby Type" data={data.lobbyType} nameMap={(key: number) => getLobbyTypeName(key as LobbyType)}/>
+                <StatCard title="Match Status" data={data.leaverStatus} nameMap={(key: number) => getLeaverStatusName(key as LeaverStatus)}/>
+                <StatCard title="Region" data={data.region} nameMap={(key: number) => getRegionName(key as Region)}/>
+                <StatCard title="Game Version" data={data.patch} nameMap={(key: number) => getPatchName(key as Patch)}/>
             </div>
         </div>
     );

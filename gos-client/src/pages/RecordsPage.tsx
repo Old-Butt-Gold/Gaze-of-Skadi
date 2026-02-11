@@ -1,7 +1,7 @@
 ﻿import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useRecords } from '../hooks/queries/useRecords';
-import { RECORD_CATEGORIES, type RecordField } from '../types/records';
+import { RECORD_CATEGORIES, RecordField } from '../types/records';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { formatRelativeTime, formatDuration } from '../utils/formatUtils';
@@ -59,7 +59,7 @@ export const RecordsPage: React.FC = () => {
                         <h3 className="font-bold text-slate-700 uppercase tracking-wider text-xs">Categories</h3>
                     </div>
                     <nav className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible p-2 gap-1 custom-scrollbar">
-                        {(Object.keys(RECORD_CATEGORIES) as RecordField[]).map((field) => (
+                        {(Object.values(RecordField)).map((field) => (
                             <button
                                 key={field}
                                 onClick={() => setActiveField(field)}
