@@ -9,21 +9,11 @@ public class PlayerProDto
 
 	public string Name { get; init; } = string.Empty;
 
-	public string CountryCode { get; init; } = string.Empty;
-
-	public long? TeamId { get; init; }
-
 	public string? TeamName { get; init; }
-
-	public string SteamId { get; init; } = string.Empty;
 
 	public Uri? AvatarFull { get; init; }
 
-	public Uri? ProfileUrl { get; init; }
-
 	public string PersonaName { get; init; } = string.Empty;
-
-	public BaseEnumDto<BooleanState>? FhUnavailable { get; init; }
 
 	public required BaseEnumDto<BooleanState> Plus { get; init; }
 

@@ -14,8 +14,9 @@ import {PlayerHistogramsTab} from "../components/players/tabs/PlayerHistogramsTa
 import {PlayerHeroesTab} from "../components/players/tabs/PlayerHeroesTab.tsx";
 import {PlayerWardMapTab} from "../components/players/tabs/PlayerWardMapTab.tsx";
 import {PlayerPeersTab} from "../components/players/tabs/PlayerPeersTab.tsx";
+import {PlayerProsTab} from "../components/players/tabs/PlayerProsTab.tsx";
 
-export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer' | 'pro';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -51,9 +52,10 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'statistics', label: 'Stats', disabled: isPrivate },
         { id: 'wordcloud', label: 'Word Cloud', disabled: isPrivate },
         { id: 'histogram', label: 'Histograms', disabled: isPrivate },
-        { id: 'heroes', label: 'Heroes', disabled: isPrivate },
+        { id: 'heroes', label: 'Heroes', disabled: isPrivate }, // TODO add pagination
         { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
-        { id: 'peer', label: 'Peers', disabled: isPrivate },
+        { id: 'peer', label: 'Peers', disabled: isPrivate }, // TODO add pagination
+        { id: 'pro', label: 'Pros', disabled: isPrivate }, // TODO add pagination
     ];
 
     return (
@@ -97,6 +99,7 @@ export const PlayerDetailsPage: React.FC = () => {
                             {activeTab === 'heroes' && (<PlayerHeroesTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'wardmap' && (<PlayerWardMapTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'peer' && (<PlayerPeersTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'pro' && (<PlayerProsTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>
