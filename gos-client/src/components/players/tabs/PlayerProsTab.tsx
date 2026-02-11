@@ -9,7 +9,7 @@ import { formatRelativeTime } from '../../../utils/formatUtils';
 import type { SortDirection } from '../../../store/teamStore';
 import { SortIndicator } from '../../heroes/SortIndicator';
 import { APP_ROUTES } from '../../../config/navigation';
-import {Icon} from "../../Icon.tsx";
+import { Icon } from '../../Icon';
 
 interface Props {
     accountId: number;
@@ -44,7 +44,6 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
                 ...pro,
                 withWinPercent,
                 againstWinPercent,
-                // Fallback for sorting names
                 displayName: pro.personaName || pro.name || 'Unknown'
             };
         });
@@ -89,53 +88,47 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
             </div>
 
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-2xl">
+                <div className="grid grid-cols-14 gap-2 px-4 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
 
-                {/* --- HEADER --- */}
-                <div className="grid grid-cols-12 gap-2 px-4 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase font-bold text-[#58606e] tracking-widest sticky top-0 z-10">
-
-                    {/* Pro Player */}
-                    <div className="col-span-4 md:col-span-3 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('pro')}>
+                    <div className="col-span-3 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('pro')}>
                         Player <SortIndicator active={sortKey === 'pro'} dir={sortDir} />
                     </div>
 
-                    <div className="hidden md:block md:col-span-2 flex items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('team')}>
+                    <div className="col-span-2 flex justify-center items-center cursor-pointer hover:text-white transition-colors text-center" onClick={() => handleSort('team')}>
                         Team <SortIndicator active={sortKey === 'team'} dir={sortDir} />
                     </div>
 
-                    {/* Total Games */}
-                    <div className="col-span-2 md:col-span-1 text-center flex justify-center items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('matches')}>
+                    <div className="col-span-1 flex justify-center items-center cursor-pointer hover:text-white transition-colors text-center" onClick={() => handleSort('matches')}>
                         Games <SortIndicator active={sortKey === 'matches'} dir={sortDir} />
                     </div>
 
-                    {/* With Stats */}
-                    <div className="col-span-2 text-center flex flex-col justify-center items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('withMatches')}>
+                    <div className="col-span-1" />
+
+                    <div className="col-span-2 flex flex-col justify-center items-center cursor-pointer hover:text-white transition-colors text-center" onClick={() => handleSort('withMatches')}>
                         <span>With</span>
                         <span className="text-[8px] opacity-60">Games / WR</span>
                         <SortIndicator active={sortKey === 'withMatches'} dir={sortDir} />
                     </div>
 
-                    {/* Against Stats */}
-                    <div className="col-span-2 text-center flex flex-col justify-center items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('againstMatches')}>
+                    <div className="col-span-1" />
+
+                    <div className="col-span-2 flex flex-col justify-center items-center cursor-pointer hover:text-white transition-colors text-center" onClick={() => handleSort('againstMatches')}>
                         <span>Against</span>
                         <span className="text-[8px] opacity-60">Games / WR</span>
                         <SortIndicator active={sortKey === 'againstMatches'} dir={sortDir} />
                     </div>
 
-                    {/* Last Played */}
-                    <div className="col-span-2 text-right flex justify-end items-center cursor-pointer hover:text-white transition-colors" onClick={() => handleSort('lastPlayed')}>
+                    <div className="col-span-2 flex justify-end items-center cursor-pointer hover:text-white transition-colors text-right" onClick={() => handleSort('lastPlayed')}>
                         Last <SortIndicator active={sortKey === 'lastPlayed'} dir={sortDir} />
                     </div>
                 </div>
 
-                {/* --- ROWS --- */}
                 <div className="divide-y divide-[#2e353b]/30 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#15171c]">
                     {processedData.map((row) => (
-                        <div key={row.accountId} className="grid grid-cols-12 gap-2 px-4 py-2.5 items-center hover:bg-[#1e222b] transition-colors group">
-
-                            {/* 1. Player Info */}
-                            <div className="col-span-4 md:col-span-3 overflow-hidden">
+                        <div key={row.accountId} className="grid grid-cols-14 gap-2 px-4 py-2.5 items-center hover:bg-[#1e222b] transition-colors group">
+                            <div className="col-span-3 overflow-hidden">
                                 <Link to={`${APP_ROUTES.PLAYERS}/${row.accountId}`} className="flex items-center gap-3 group/link">
-                                    <div className="w-12 h-12 shrink-0 rounded bg-[#0f1114] border border-[#2e353b] overflow-hidden relative">
+                                    <div className="w-10 h-10 shrink-0 rounded bg-[#0f1114] border border-[#2e353b] overflow-hidden relative">
                                         <Icon src={row.avatarFull?.toString() || '/assets/images/unknown_player.png'} />
                                     </div>
                                     <div className="flex flex-col min-w-0">
@@ -143,7 +136,6 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
                                             <span className="text-sm font-bold text-white group-hover/link:text-[#e7d291] transition-colors">
                                                 {row.personaName || row.personaName}
                                             </span>
-                                            {/* Dota Plus Icon */}
                                             {row.plus?.value === BooleanState.True && (
                                                 <Icon src={"/assets/images/dota_plus_icon.png"} size={4}/>
                                             )}
@@ -155,7 +147,7 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
                                 </Link>
                             </div>
 
-                            <div className="hidden md:block md:col-span-2">
+                            <div className="col-span-2 text-center">
                                 {row.teamName ? (
                                     <span className="text-xs text-[#a3aab8] font-medium">{row.teamName}</span>
                                 ) : (
@@ -163,12 +155,13 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
                                 )}
                             </div>
 
-                            {/* 3. Total Games */}
-                            <div className="col-span-2 md:col-span-1 text-center font-mono text-white font-bold">
+                            <div className="col-span-1 text-center font-mono text-white font-bold">
                                 {row.games}
                             </div>
 
-                            {/* 4. With Stats */}
+                            <div className="col-span-1" />
+
+                            {/* 4. With Stats (2 cols) */}
                             <div className="col-span-2 text-center">
                                 {row.withGames > 0 ? (
                                     <div className="flex flex-col items-center">
@@ -190,7 +183,8 @@ export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
                                 )}
                             </div>
 
-                            {/* 5. Against Stats */}
+                            <div className="col-span-1" />
+
                             <div className="col-span-2 text-center">
                                 {row.againstGames > 0 ? (
                                     <div className="flex flex-col items-center">
