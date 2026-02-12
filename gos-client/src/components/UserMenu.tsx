@@ -57,9 +57,6 @@ export const UserMenu: React.FC = () => {
                     )}>
                         {user?.steam_steamname}
                     </div>
-                    <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">
-                        Online
-                    </div>
                 </div>
 
                 {/* Avatar Wrapper */}
@@ -91,7 +88,6 @@ export const UserMenu: React.FC = () => {
                     {/* Header for Mobile only */}
                     <div className="px-4 py-3 border-b border-[#2e353b] sm:hidden bg-[#0f1114]/50">
                         <p className="text-sm font-bold text-white truncate">{user?.steam_steamname}</p>
-                        <p className="text-xs text-[#808fa6]">Steam ID: {accountId}</p>
                     </div>
 
                     <div className="py-1">

@@ -109,6 +109,7 @@ const RecordRow: React.FC<{
     field: PlayerField;
 }> = ({ record, field }) => {
 
+    // TODO record.radiantWin can be null
     const isWin = isTeamWon(record.isRadiant, record.radiantWin);
     const isRadiant = isRadiantTeam(record.isRadiant);
 

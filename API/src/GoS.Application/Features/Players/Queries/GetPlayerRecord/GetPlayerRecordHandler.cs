@@ -28,7 +28,7 @@ internal sealed class GetPlayerRecordHandler(IRequester<OpenDotaHttpRequesterOpt
                 var key = request.Field.ToSnakeCase();
                 if (playerMatch.RecordFields.TryGetValue(key, out var recordValue))
                 {
-                    result[index].RecordField = recordValue != null ? int.Parse(recordValue?.ToString()) : 0;
+                    result[index].RecordField = int.Parse(recordValue?.ToString() ?? "0");
                 }
             }
 
