@@ -6,8 +6,8 @@ import { HeroTooltip } from './HeroTooltip';
 import { FacetTooltip } from './FacetTooltip';
 import { APP_ROUTES } from '../../config/navigation';
 import { Icon } from '../Icon';
-import { LeaverStatus, BooleanState } from '../../types/common';
-import {IsPlayerLeft} from "../../utils/enumUtils.ts";
+import {BooleanState, LeaverStatus} from '../../types/common';
+import {getLeaverStatusName, IsPlayerLeft} from "../../utils/enumUtils.ts";
 
 interface Props {
     matchId: number;
@@ -24,6 +24,8 @@ export const HeroImage: React.FC<Props> = ({
     const { getHero, isLoading } = useHeroes();
     const hero = getHero(heroId);
 
+    heroVariant = 1;
+
     const { data: abilityData } = useHeroAbilities(heroVariant ? (hero?.name ?? '') : '');
 
     const facet = useMemo(() => {
@@ -32,7 +34,7 @@ export const HeroImage: React.FC<Props> = ({
     }, [abilityData, heroVariant]);
 
     if (isLoading) {
-        return <div className="w-16 h-9 bg-[#2e353b] rounded animate-pulse" />;
+        return <div className="w-22 h-12 bg-[#2e353b] rounded animate-pulse" />;
     }
 
     if (!hero) {
@@ -48,17 +50,17 @@ export const HeroImage: React.FC<Props> = ({
             <div className="flex items-center gap-3">
                 <div className="relative group/hero">
                     {isParsedMatch && (
-                        <div className="absolute -left-2 top-1/2 -translate-y-1/2 -translate-x-full z-10" title="Parsed Match">
+                        <div className="absolute -left-1 top-1/2 -translate-y-1/2 cursor-help -translate-x-full z-10" title="Parsed Match">
                             <Icon src="/assets/images/parsed_match.svg"/>
                         </div>
                     )}
 
                         <HeroTooltip heroId={heroId}>
-                            <div className="w-22 h-12 overflow-hidden relative transition-colors">
+                            <div className="w-22 h-12 overflow-hidden rounded-sm relative transition-colors">
                                 <Icon src={hero.img} alt={hero.localized_name} />
 
                                 {isLeaver && (
-                                    <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10">
+                                    <div className="absolute inset-0 flex items-center justify-center z-10" title={getLeaverStatusName(leaverStatus)}>
                                         <Icon src="/assets/images/disconnect_icon.png" />
                                     </div>
                                 )}

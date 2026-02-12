@@ -9,11 +9,11 @@ import {
     getLobbyTypeName
 } from '../../../utils/enumUtils';
 import { formatDuration, formatRelativeTime } from '../../../utils/formatUtils';
-import { BooleanState } from '../../../types/common';
 import PartySizeIcon from '../PartySizeIcon';
 import type { PlayerRecordDto } from "../../../types/playerRecord";
-import { HeroImage } from "../../heroes/HeroImage.tsx";
+import { HeroImage } from "../../heroes/HeroImage";
 import { RankIcon } from "../../distributions/RankIcon";
+import {isRadiantTeam, isTeamWon} from "../../../utils/matchUtils.ts";
 
 interface Props {
     accountId: number;
@@ -33,7 +33,7 @@ export const PlayerRecordsTab: React.FC<Props> = ({ accountId, filters }) => {
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6 bg-[#15171c] border border-[#2e353b] p-4 rounded-xl shadow-lg">
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#2e353b]/50 rounded-lg flex items-center justify-center border border-[#2e353b]">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                         <span className="text-xl">🏆</span>
                     </div>
                     <div>
@@ -64,11 +64,9 @@ export const PlayerRecordsTab: React.FC<Props> = ({ accountId, filters }) => {
                 </div>
             </div>
 
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-2xl">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-2xl">
                 {isLoading ? (
-                    <div className="h-96 flex items-center justify-center">
-                        <LoadingSpinner text="Fetching Records..." />
-                    </div>
+                    <LoadingSpinner text="Fetching Records..." />
                 ) : !records || records.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-20 text-[#58606e]">
                         <span className="text-4xl mb-4 opacity-50">📜</span>
@@ -79,12 +77,12 @@ export const PlayerRecordsTab: React.FC<Props> = ({ accountId, filters }) => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                             <tr className="bg-[#1a1d24] text-[#808fa6] text-[10px] uppercase font-bold tracking-widest border-b border-[#2e353b]">
-                                <th className="px-4 py-3 w-16 text-center">Average Rank</th>
-                                <th className="px-4 py-3">Hero</th>
+                                <th className="px-4 py-3 whitespace-nowrap">Hero</th>
+                                <th className="px-4 py-3 text-center">Average Rank</th>
                                 <th className="px-4 py-3 text-center">Result</th>
                                 <th className="px-4 py-3 text-center">Mode</th>
                                 <th className="px-4 py-3 text-right">Date / Side</th>
-                                <th className="px-4 py-3 text-right text-white">
+                                <th className="px-4 py-3 text-right ">
                                     {FIELD_LABELS[selectedField]}
                                 </th>
                             </tr>
@@ -111,10 +109,8 @@ const RecordRow: React.FC<{
     field: PlayerField;
 }> = ({ record, field }) => {
 
-    const isWin = (record.isRadiant.value === BooleanState.True && record.radiantWin.value === BooleanState.True) ||
-        (record.isRadiant.value === BooleanState.False && record.radiantWin.value === BooleanState.False);
-
-    const isRadiant = record.isRadiant.value === BooleanState.True;
+    const isWin = isTeamWon(record.isRadiant, record.radiantWin);
+    const isRadiant = isRadiantTeam(record.isRadiant);
 
     const formatValue = (val: number) => {
         if (field === PlayerField.Duration) return formatDuration(val);
@@ -124,13 +120,7 @@ const RecordRow: React.FC<{
     return (
         <tr className="hover:bg-[#1e222b] transition-colors group text-sm">
 
-            <td className="px-4 py-3">
-                <div className="flex justify-center items-center">
-                    <RankIcon rank={record.averageRank?.value} />
-                </div>
-            </td>
-
-            <td className="px-4 py-3">
+            <td className="px-4 py-3 w-px whitespace-nowrap">
                 <HeroImage
                     matchId={record.matchId}
                     heroId={record.heroId}
@@ -140,15 +130,18 @@ const RecordRow: React.FC<{
                 />
             </td>
 
-            {/* Result & Party */}
+            <td className="px-4 py-3">
+                <div className="flex justify-center items-center">
+                    <RankIcon rank={record.averageRank?.value} />
+                </div>
+            </td>
+
             <td className="px-4 py-3">
                 <div className="flex items-center justify-center gap-3">
-                    {/* Party Icon Left */}
                     <div className="w-4 flex justify-center">
                         <PartySizeIcon partySize={record.partySize} />
                     </div>
 
-                    {/* Result Badge */}
                     <span className={clsx(
                         "text-xs font-bold uppercase tracking-wider px-2 py-1 rounded border text-center",
                         isWin
@@ -176,7 +169,6 @@ const RecordRow: React.FC<{
                 </div>
             </td>
 
-            {/* Record Value */}
             <td className="px-4 py-3 text-right font-mono">
                 <span className="text-lg font-bold text-[#e7d291] group-hover:text-white transition-colors">
                     {formatValue(record.recordField)}

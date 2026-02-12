@@ -1,7 +1,4 @@
-﻿import type {BaseEnum, GameMode, LeaverStatus, LobbyType, Rank} from "./common.ts";
-
-class BooleanState {
-}
+﻿import type {BaseEnum, BooleanState, GameMode, LeaverStatus, LobbyType, Rank} from "./common.ts";
 
 export interface PlayerRecordDto {
   matchId: number;

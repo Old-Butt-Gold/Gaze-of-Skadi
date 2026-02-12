@@ -38,9 +38,9 @@ export const HeroCell: React.FC<{
             <div className="flex items-center gap-3 group/hero cursor-help">
                 <Link
                     to={`${APP_ROUTES.HEROES}/${heroId}`}
-                    className="relative block shrink-0 overflow-hidden rounded-lg shadow-sm border border-slate-200 group-hover/hero:border-blue-400 transition-colors"
+                    className="relative block shrink-0 overflow-hidden rounded-lg  group-hover/hero:border-blue-400 transition-colors"
                 >
-                    <div className="w-10 h-10 bg-slate-800">
+                    <div className="w-10 h-10">
                         <img
                             src={hero.icon}
                             alt={hero.localized_name}
@@ -51,7 +51,7 @@ export const HeroCell: React.FC<{
                 {showName && (
                     <Link
                         to={`${APP_ROUTES.HEROES}/${heroId}`}
-                        className="font-semibold text-slate-700 group-hover/hero:text-blue-600 transition-colors text-sm"
+                        className="font-semibold text-[#e3e3e3] group-hover/hero:text-blue-600 transition-colors text-sm"
                     >
                         {hero.localized_name}
                     </Link>
