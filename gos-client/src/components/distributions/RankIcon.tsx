@@ -3,13 +3,34 @@ import { getRankIconUrl, getRankNameFull, getRankStarUrl } from "../../utils/ran
 import type { Rank } from "../../types/common";
 
 interface RankIconProps {
-    rank: Rank;
+    rank?: Rank | null;
     leaderboardRank?: number | null;
     size?: number; // Tailwind spacing units (e.g., 32 = 8rem)
     className?: string;
 }
 
 export const RankIcon: React.FC<RankIconProps> = ({ rank, leaderboardRank, size = 12, className }) => {
+    if (!rank) {
+        const sizeStyle = {
+            width: `${size * 0.25}rem`,
+            height: `${size * 0.25}rem`
+        };
+
+        return (
+            <div
+                className={`relative flex items-center justify-center shrink-0 ${className || ''}`}
+                style={sizeStyle}
+                title="No Rank"
+            >
+                <img
+                    src="/assets/images/rank_icon_unknown.png"
+                    alt="No Rank"
+                    className="absolute inset-0 w-full h-full object-contain z-10"
+                />
+            </div>
+        );
+    }
+
     let iconUrl = getRankIconUrl(rank);
     let starUrl = getRankStarUrl(rank);
 

@@ -14,6 +14,9 @@ public class PlayerRecord
 	[JsonPropertyName("match_id")]
 	public long MatchId { get; init; }
 
+    [JsonPropertyName("average_rank")]
+    public int? AverageRank { get; init; }
+
     /// <summary>
     /// Gets parse version, used internally by OpenDota
     /// </summary>

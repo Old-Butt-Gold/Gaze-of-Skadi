@@ -7,8 +7,9 @@ public class PlayerRecordDto
 {
 	public long MatchId { get; init; }
 
-    /// TODO if match parsed or not. if not then it's null
-    public int? Version { get; init; }
+    public required BaseEnumDto<BooleanState> IsParsedMatch { get; init; }
+
+    public BaseEnumDto<Rank>? AverageRank { get; init; }
 
 	public required BaseEnumDto<BooleanState> IsRadiant { get; init; }
 
@@ -28,5 +29,5 @@ public class PlayerRecordDto
 
     public int? PartySize { get; init; }
 
-    public string RecordField { get; set; } = string.Empty;
+    public int RecordField { get; set; }
 }

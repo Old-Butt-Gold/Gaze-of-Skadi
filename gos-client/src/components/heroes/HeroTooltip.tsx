@@ -198,21 +198,21 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
                     <div className="flex justify-around items-center px-1">
                         <div className="text-center">
                             <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Attack</div>
-                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
+                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm rounded py-0.5">
                                 <Icon src={getStatsIcon('attack')} alt={'attack'} size={4}/>
                                 <span>{damage.min}-{damage.max}</span>
                             </div>
                         </div>
                         <div className="text-center">
                             <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Armor</div>
-                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
+                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm rounded py-0.5">
                                 <Icon src={getStatsIcon('armor')} alt={'armor'} size={4}/>
                                 <span>{armor}</span>
                             </div>
                         </div>
                         <div className="text-center">
                             <div className="text-[9px] text-slate-500 tracking-wider mb-0.5">Speed</div>
-                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm bg-white/5 rounded py-0.5 border border-white/5">
+                            <div className="flex items-center justify-center gap-1.5 text-slate-200 font-semibold text-sm rounded py-0.5">
                                 <Icon src={getStatsIcon("move_speed")} alt={'speed'} size={4}/>
                                 <span>{hero.move_speed}</span>
                             </div>

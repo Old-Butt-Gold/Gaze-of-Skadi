@@ -140,12 +140,9 @@ export const PlayerHeader: React.FC<Props> = ({ player, filters }) => {
                     </div>
 
                     <div className="flex flex-row md:flex-col items-center md:items-end gap-4 shrink-0 mt-4 md:mt-0 w-full md:w-auto justify-center md:justify-end">
-                        {/* Rank Badge */}
-                        {player.rankTier && (
-                            <div className="relative group cursor-help transition-transform hover:scale-105">
-                                <RankIcon rank={player.rankTier.value} leaderboardRank={player.leaderboardRank} size={36} />
-                            </div>
-                        )}
+                        <div className="relative group cursor-help transition-transform hover:scale-105">
+                            <RankIcon rank={player.rankTier?.value} leaderboardRank={player.leaderboardRank} size={36} />
+                        </div>
 
                         {profile.plus?.value === BooleanState.True && (
                             <div className="flex items-center gap-2 px-3 py-1.5 bg-[#1a1d24]/80 border border-[#b78946]/30 rounded-lg shadow-lg backdrop-blur-sm group hover:border-[#b78946]/60 transition-colors" title="Dota Plus Member">

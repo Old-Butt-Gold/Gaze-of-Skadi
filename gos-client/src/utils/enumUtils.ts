@@ -1,4 +1,5 @@
 ﻿import {GameMode, LaneRole, LeaverStatus, LobbyType, Patch, Region, TeamEnum} from '../types/common';
+import {PlayerField} from "../types/player.ts";
 
 const GAME_MODE_NAMES: Record<GameMode, string> = {
   [GameMode.Unknown]: 'Unknown',
@@ -114,3 +115,41 @@ export const getPatchName = (patch: Patch): string => {
   }
   return 'Unknown Patch';
 };
+
+export const FIELD_LABELS: Record<PlayerField, string> = {
+  [PlayerField.Kills]: 'Kills',
+  [PlayerField.Deaths]: 'Deaths',
+  [PlayerField.Assists]: 'Assists',
+  [PlayerField.Kda]: 'KDA',
+  [PlayerField.GoldPerMin]: 'GPM',
+  [PlayerField.XpPerMin]: 'XPM',
+  [PlayerField.LastHits]: 'Last Hits',
+  [PlayerField.Denies]: 'Denies',
+  [PlayerField.LaneEfficiencyPct]: 'Lane Efficiency %',
+  [PlayerField.Duration]: 'Duration (min)',
+  [PlayerField.Level]: 'Level',
+  [PlayerField.HeroDamage]: 'Hero Damage',
+  [PlayerField.TowerDamage]: 'Tower Damage',
+  [PlayerField.HeroHealing]: 'Hero Healing',
+  [PlayerField.Stuns]: 'Stuns Duration',
+  [PlayerField.TowerKills]: 'Tower Kills',
+  [PlayerField.NeutralKills]: 'Neutral Kills',
+  [PlayerField.CourierKills]: 'Courier Kills',
+  [PlayerField.PurchaseTpScroll]: 'TP Scrolls',
+  [PlayerField.PurchaseWardObserver]: 'Observer Wards',
+  [PlayerField.PurchaseWardSentry]: 'Sentry Wards',
+  [PlayerField.PurchaseGem]: 'Gem Purchases',
+  [PlayerField.PurchaseRapier]: 'Rapier Purchases',
+  [PlayerField.Pings]: 'Map Pings',
+  [PlayerField.Throw]: 'Throw (Gold Swing)',
+  [PlayerField.Comeback]: 'Comeback (Gold Swing)',
+  [PlayerField.Stomp]: 'Stomp (Gold Lead)',
+  [PlayerField.Loss]: 'Loss (Gold Deficit)',
+  [PlayerField.ActionsPerMin]: 'Actions Per Min (APM)',
+};
+
+export const getPlayerField = (field : PlayerField) : string => FIELD_LABELS[field] ?? "Unknown Field";
+
+export const IsPlayerLeft = (leaverStatus : LeaverStatus | null | undefined) => leaverStatus !== undefined && leaverStatus !== null &&
+  leaverStatus !== LeaverStatus.Stayed &&
+  leaverStatus !== LeaverStatus.LeftSafely;

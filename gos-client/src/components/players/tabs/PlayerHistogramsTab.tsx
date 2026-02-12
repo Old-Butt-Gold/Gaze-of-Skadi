@@ -12,43 +12,12 @@ import {
 import { usePlayerHistograms } from '../../../hooks/queries/usePlayerHistograms';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { PlayerField, type PlayerEndpointParameters } from '../../../types/player';
+import {FIELD_LABELS} from "../../../utils/enumUtils.ts";
 
 interface Props {
     accountId: number;
     filters: PlayerEndpointParameters;
 }
-
-const FIELD_LABELS: Record<PlayerField, string> = {
-    [PlayerField.Kills]: 'Kills',
-    [PlayerField.Deaths]: 'Deaths',
-    [PlayerField.Assists]: 'Assists',
-    [PlayerField.Kda]: 'KDA',
-    [PlayerField.GoldPerMin]: 'GPM',
-    [PlayerField.XpPerMin]: 'XPM',
-    [PlayerField.LastHits]: 'Last Hits',
-    [PlayerField.Denies]: 'Denies',
-    [PlayerField.LaneEfficiencyPct]: 'Lane Efficiency %',
-    [PlayerField.Duration]: 'Duration (min)',
-    [PlayerField.Level]: 'Level',
-    [PlayerField.HeroDamage]: 'Hero Damage',
-    [PlayerField.TowerDamage]: 'Tower Damage',
-    [PlayerField.HeroHealing]: 'Hero Healing',
-    [PlayerField.Stuns]: 'Stuns Duration',
-    [PlayerField.TowerKills]: 'Tower Kills',
-    [PlayerField.NeutralKills]: 'Neutral Kills',
-    [PlayerField.CourierKills]: 'Courier Kills',
-    [PlayerField.PurchaseTpScroll]: 'TP Scrolls',
-    [PlayerField.PurchaseWardObserver]: 'Observer Wards',
-    [PlayerField.PurchaseWardSentry]: 'Sentry Wards',
-    [PlayerField.PurchaseGem]: 'Gem Purchases',
-    [PlayerField.PurchaseRapier]: 'Rapier Purchases',
-    [PlayerField.Pings]: 'Map Pings',
-    [PlayerField.Throw]: 'Throw (Gold Swing)',
-    [PlayerField.Comeback]: 'Comeback (Gold Swing)',
-    [PlayerField.Stomp]: 'Stomp (Gold Lead)',
-    [PlayerField.Loss]: 'Loss (Gold Deficit)',
-    [PlayerField.ActionsPerMin]: 'Actions Per Min (APM)',
-};
 
 const OPTIONS = Object.entries(FIELD_LABELS).map(([value, label]) => ({
     value: Number(value) as PlayerField,
