@@ -1,7 +1,7 @@
 ﻿import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import { useHeroes } from '../hooks/queries/useHeroes';
-import { useScenarioLogic } from '../hooks/useScenarioLogic'; // Наш новый хук
+import { useScenarioLogic } from '../hooks/useScenarioLogic';
 import { HeroCell } from '../components/heroes/HeroCell';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ScenarioTable } from '../components/scenarios/ScenarioTable';

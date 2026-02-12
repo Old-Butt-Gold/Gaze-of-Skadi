@@ -35,12 +35,12 @@ internal sealed class BooleanStateConverter : JsonConverter<BooleanState>
                 };
             }
         }
-        
+
         throw new JsonException($"Expected BooleanState, got {reader.TokenType}");
     }
 
     public override void Write(Utf8JsonWriter writer, BooleanState value, JsonSerializerOptions options)
     {
-        writer.WriteStringValue(value == BooleanState.True ? "True" : "False");
+        writer.WriteNumberValue(Convert.ToInt32(value));
     }
 }
