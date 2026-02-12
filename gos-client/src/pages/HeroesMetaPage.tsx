@@ -34,15 +34,13 @@ const HeroMetaCard = ({ stat, rank }: { stat: HeroStatsDto, rank: number }) => {
         >
             <div className={clsx(
                 "absolute top-0 left-0 w-7 h-7 flex items-center justify-center text-xs font-bold z-20 shadow-md rounded-br-lg transition-colors",
-                rank <= 3
-                    ? "bg-[#e7d291] text-[#0f1114]"  // Gold for Top 3
-                    : "bg-[#1f242b] text-[#808fa6] border-r border-b border-[#2e353b]" // Dark for others
+                    "bg-[#1f242b] text-[#808fa6] border-r border-b border-[#2e353b]" // Dark for others
             )}>
                 {rank}
             </div>
 
             {/* Hero Image */}
-            <div className="relative w-14 h-8 shrink-0 mr-3 shadow-md rounded-sm overflow-hidden border border-black/50 group-hover:border-[#e7d291]/50 ml-6"> {/* ml-6 чтобы не наезжать на бейдж ранга */}
+            <div className="relative w-14 h-8 shrink-0 mr-3 shadow-md rounded-sm overflow-hidden border border-black/50 ml-6"> {/* ml-6 чтобы не наезжать на бейдж ранга */}
                 <img
                     src={hero.img}
                     alt={hero.localized_name}

@@ -38,7 +38,7 @@ export const ScenariosPage: React.FC = () => {
                 <div className="relative">
                     <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
                     <div className="relative w-24 h-24 bg-[#1a1d24] rounded-full flex items-center justify-center border border-[#2e353b] shadow-2xl">
-                        <img src="/assets/images/medal_0.png" alt="" className="w-12 h-12 opacity-50 grayscale" />
+                        <img src="/assets/images/rank_icon_unknown.png" alt="" className="w-12 h-12 opacity-50 grayscale" />
                     </div>
                 </div>
 

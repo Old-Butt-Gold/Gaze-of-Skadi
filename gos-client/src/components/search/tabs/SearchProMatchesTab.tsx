@@ -151,7 +151,7 @@ export const SearchProMatchesTab: React.FC = () => {
             <div className="flex items-center justify-between mb-8">
                 <div className="flex flex-col">
                     <h2 className="text-2xl font-serif font-bold text-white uppercase tracking-widest flex items-center gap-3">
-                        <span className="w-8 h-8 rounded bg-gradient-to-br from-[#e7d291] to-[#b88a44] flex items-center justify-center text-black text-sm">🏆</span>
+                        <span className="w-8 h-8 rounded flex items-center justify-center text-black text-md">🏆</span>
                         Professional Circuit
                     </h2>
                     <p className="text-[#808fa6] text-sm mt-1">

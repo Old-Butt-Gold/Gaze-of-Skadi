@@ -94,7 +94,7 @@ export const SearchPublicMatchesTab: React.FC = () => {
                         {/* Desktop Header (Hidden on Mobile) */}
                         <div className="hidden md:grid grid-cols-12 gap-4 px-6 py-4 bg-[#0f1114] border-b border-[#2e353b] text-[10px] uppercase text-[#58606e] font-bold tracking-wider">
                             <div className="col-span-2">Match ID</div>
-                            <div className="col-span-2 text-center">Avg Rank</div>
+                            <div className="col-span-2 text-center">Average Rank</div>
                             <div className="col-span-2 text-center">Game Mode</div>
                             <div className="col-span-2 text-center">Radiant</div>
                             <div className="col-span-2 text-center">Dire</div>

@@ -8,25 +8,25 @@ import { formatRelativeTime, formatDuration } from '../utils/formatUtils';
 import clsx from 'clsx';
 import { HeroCell } from "../components/heroes/HeroCell";
 import { useRecordsStore } from '../store/recordsStore';
-import {APP_ROUTES} from "../config/navigation.ts";
+import { APP_ROUTES } from "../config/navigation";
 
 const getRankStyle = (rank: number) => {
     switch (rank) {
         case 1: return {
-            badge: "bg-yellow-400 text-yellow-900 ring-4 ring-yellow-400/20 shadow-lg shadow-yellow-400/20",
-            row: "bg-gradient-to-r from-yellow-50/80 to-white hover:to-yellow-50/50 border-l-4 border-l-yellow-400"
+            badge: "bg-[#e7d291] text-[#1a1d24] ring-4 ring-[#e7d291]/20 shadow-[0_0_15px_rgba(231,210,145,0.3)]",
+            row: "bg-gradient-to-r from-[#e7d291]/10 to-transparent border-l-4 border-l-[#e7d291]"
         };
         case 2: return {
-            badge: "bg-slate-200 text-slate-700 ring-4 ring-slate-200/50",
-            row: "bg-gradient-to-r from-slate-50/80 to-white hover:to-slate-50/50 border-l-4 border-l-slate-300"
+            badge: "bg-[#a3aab8] text-[#1a1d24] ring-4 ring-[#a3aab8]/20",
+            row: "bg-gradient-to-r from-[#a3aab8]/10 to-transparent border-l-4 border-l-[#a3aab8]"
         };
         case 3: return {
-            badge: "bg-orange-300 text-orange-900 ring-4 ring-orange-300/20",
-            row: "bg-gradient-to-r from-orange-50/80 to-white hover:to-orange-50/50 border-l-4 border-l-orange-300"
+            badge: "bg-[#cd7f32] text-[#1a1d24] ring-4 ring-[#cd7f32]/20 shadow-[0_0_10px_rgba(205,127,50,0.2)]",
+            row: "bg-gradient-to-r from-[#cd7f32]/10 to-transparent border-l-4 border-l-[#cd7f32]"
         };
         default: return {
-            badge: "bg-transparent text-slate-400 font-mono text-sm",
-            row: "hover:bg-slate-50 border-l-4 border-l-transparent transition-colors"
+            badge: "bg-[#2e353b] text-[#808fa6] font-mono text-sm border border-[#58606e]/30",
+            row: "hover:bg-[#1e222b] border-l-4 border-l-transparent transition-colors"
         };
     }
 };
@@ -50,13 +50,13 @@ export const RecordsPage: React.FC = () => {
     };
 
     return (
-        <div className="relative min-h-screen w-full flex flex-col md:flex-row gap-6 animate-fade-in pb-6 pt-2 pl-1">
+        <div className="relative min-h-screen w-full flex flex-col md:flex-row gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6 pt-2 pl-1">
 
             {/* --- Sidebar Navigation --- */}
             <aside className="w-full md:w-64 flex-shrink-0">
-                <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden sticky">
-                    <div className="p-4 bg-slate-50 border-b border-slate-200">
-                        <h3 className="font-bold text-slate-700 uppercase tracking-wider text-xs">Categories</h3>
+                <div className="bg-[#15171c] rounded-xl shadow-2xl border border-[#2e353b] overflow-hidden sticky top-4">
+                    <div className="p-4 bg-[#1a1d24] border-b border-[#2e353b]">
+                        <h3 className="font-bold text-[#e3e3e3] uppercase tracking-widest text-xs font-serif">Categories</h3>
                     </div>
                     <nav className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible p-2 gap-1 custom-scrollbar">
                         {(Object.values(RecordField)).map((field) => (
@@ -64,10 +64,10 @@ export const RecordsPage: React.FC = () => {
                                 key={field}
                                 onClick={() => setActiveField(field)}
                                 className={clsx(
-                                    "flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 whitespace-nowrap",
+                                    "flex items-center px-4 py-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-all duration-200 whitespace-nowrap text-left",
                                     activeField === field
-                                        ? "bg-slate-900 text-white shadow-md"
-                                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                                        ? "bg-[#2e353b] text-[#e7d291] shadow-md border border-[#e7d291]/20"
+                                        : "text-[#808fa6] hover:bg-white/5 hover:text-white"
                                 )}
                             >
                                 {RECORD_CATEGORIES[field].label}
@@ -78,97 +78,92 @@ export const RecordsPage: React.FC = () => {
             </aside>
 
             {/* --- Main Content --- */}
-            <main className="flex-grow min-w-0"> {/* min-w-0 prevents flex overflow issues */}
+            <main className="flex-grow min-w-0">
 
                 {/* Header Card */}
-                <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl p-8 mb-6 text-white shadow-xl overflow-hidden border border-slate-700">
-
-                    {/* Background Texture/Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 mix-blend-overlay"></div>
-
-                    {/* Decorative Trophy Icon */}
+                <div className="relative bg-[#15171c] rounded-xl p-8 mb-6 shadow-2xl overflow-hidden border border-[#2e353b]">
+                    {/* Background Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#e7d291]/5 to-transparent pointer-events-none" />
 
                     <div className="relative z-10">
-                        <h1 className="text-4xl font-extrabold tracking-tight text-white mb-2 drop-shadow-md">
+                        <h1 className="text-3xl font-serif font-bold tracking-widest uppercase text-white mb-2 drop-shadow-md">
                             {activeCategory.label}
                         </h1>
-                        <div className="flex items-center gap-2 text-slate-300 text-sm font-medium">
-                            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <div className="flex items-center gap-2 text-[#808fa6] text-sm font-medium">
+                            <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_#10b981]"></span>
                             Global ranked match records. Resets weekly.
                         </div>
                     </div>
                 </div>
 
                 {/* --- Content Table --- */}
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 min-h-[500px] overflow-hidden">
+                <div className="bg-[#15171c] rounded-xl shadow-2xl border border-[#2e353b] min-h-[500px] overflow-hidden">
                     {isLoading ? (
-                        <LoadingSpinner text={`Scanning matches for ${activeCategory.label}...`} />
+                        <div className="h-96 flex items-center justify-center">
+                            <LoadingSpinner text={`Scanning matches for ${activeCategory.label}...`} />
+                        </div>
                     ) : isError ? (
                         <ErrorDisplay message={(error as Error).message} onRetry={refetch} />
                     ) : !data || data.length === 0 ? (
-                        <div className="flex flex-col items-center justify-center h-80 text-slate-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mb-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                            <p className="font-medium">No records found for this category</p>
+                        <div className="flex flex-col items-center justify-center h-80 text-[#58606e]">
+                            <span className="text-6xl mb-4 opacity-20">📜</span>
+                            <p className="font-bold uppercase tracking-widest text-xs">No records found for this category</p>
                         </div>
                     ) : (
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                <tr className="bg-slate-50/80 border-b border-slate-200 text-xs uppercase text-slate-500 font-bold tracking-wider">
+                                <tr className="bg-[#1a1d24] border-b border-[#2e353b] text-[10px] uppercase text-[#808fa6] font-bold tracking-widest">
                                     <th className="px-6 py-4 w-20 text-center">Rank</th>
 
-                                    {/* CONDITIONAL HEADER: Render only if heroes exist */}
                                     {hasHeroData && (
                                         <th className="px-6 py-4">Hero</th>
                                     )}
 
-                                    <th className="px-6 py-4 text-right">
+                                    <th className="px-6 py-4 text-right text-white">
                                         {activeCategory.label}
                                     </th>
                                     <th className="px-6 py-4 text-right">Played</th>
                                     <th className="px-6 py-4 text-right">Match ID</th>
                                 </tr>
                                 </thead>
-                                <tbody className="text-sm divide-y divide-slate-100">
+                                <tbody className="text-sm divide-y divide-[#2e353b]/50">
                                 {data.map((record, index) => {
                                     const rank = index + 1;
                                     const style = getRankStyle(rank);
 
                                     return (
-                                        <tr key={`${record.matchId}_${index}`} className={clsx("border-b border-slate-100 last:border-0", style.row)}>
+                                        <tr key={`${record.matchId}_${index}`} className={clsx("border-b border-[#2e353b]/30 last:border-0", style.row)}>
                                             <td className="px-6 py-4">
-                                                <div className={clsx("mx-auto w-8 h-8 flex items-center justify-center rounded-full font-bold", style.badge)}>
+                                                <div className={clsx("mx-auto w-8 h-8 flex items-center justify-center rounded-full font-bold shadow-md transition-transform hover:scale-110", style.badge)}>
                                                     {rank}
                                                 </div>
                                             </td>
 
-                                            {/* Hero (Conditional) */}
                                             {hasHeroData && (
                                                 <td className="px-6 py-4">
                                                     <HeroCell heroId={record.heroId} showName={true} />
                                                 </td>
                                             )}
 
-                                            <td className="px-6 py-4 text-right align-middle">
-                                                <span className={clsx(
-                                                    "font-mono font-bold text-lg tracking-tight",
-                                                    rank === 1 ? "text-yellow-600 drop-shadow-sm" : "text-slate-900",
-                                                )}>
-                                                    {formatScore(record.score)}
-                                                </span>
+                                            <td className="px-6 py-4 text-right align-middle font-mono border-[#2e353b]/50">
+                                                    <span className={clsx(
+                                                        "font-bold text-lg tracking-tight transition-colors",
+                                                        rank === 1 ? "text-[#e7d291] drop-shadow-[0_0_10px_rgba(231,210,145,0.3)]" : "text-white group-hover:text-[#e7d291]",
+                                                    )}>
+                                                        {formatScore(record.score)}
+                                                    </span>
                                             </td>
-                                            <td className="px-6 py-4 text-right text-slate-500 whitespace-nowrap align-middle text-xs uppercase tracking-wide font-medium">
+                                            <td className="px-6 py-4 text-right text-[#808fa6] whitespace-nowrap align-middle text-xs uppercase tracking-wide font-medium">
                                                 {formatRelativeTime(record.startTime)}
                                             </td>
                                             <td className="px-6 py-4 text-right align-middle">
                                                 <Link
                                                     to={`${APP_ROUTES.MATCHES}/${record.matchId}`}
-                                                    className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 px-2.5 py-1 rounded-md transition-colors border border-blue-100"
+                                                    className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-[#60a5fa] bg-[#60a5fa]/10 hover:bg-[#60a5fa]/20 px-2.5 py-1 rounded border border-[#60a5fa]/30 transition-colors"
                                                 >
                                                     {record.matchId}
-                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                                     </svg>
                                                 </Link>

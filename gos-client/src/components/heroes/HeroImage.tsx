@@ -24,8 +24,6 @@ export const HeroImage: React.FC<Props> = ({
     const { getHero, isLoading } = useHeroes();
     const hero = getHero(heroId);
 
-    heroVariant = 1;
-
     const { data: abilityData } = useHeroAbilities(heroVariant ? (hero?.name ?? '') : '');
 
     const facet = useMemo(() => {

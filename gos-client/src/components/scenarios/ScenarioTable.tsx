@@ -18,9 +18,9 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
                 <thead>
                 <tr className="bg-[#15171c] border-b border-[#2e353b] text-[10px] uppercase text-[#6d798a] font-bold tracking-wider">
                     <th className="px-4 md:px-6 py-4 w-1/3">Context</th>
-                    <th className="px-4 md:px-6 py-4 text-right">Timing</th>
-                    <th className="px-4 md:px-6 py-4 text-right hidden sm:table-cell">Matches</th>
-                    <th className="px-4 md:px-6 py-4 w-40 text-right">Win Rate</th>
+                    <th className="px-4 md:px-6 py-4 text-center">Timing</th>
+                    <th className="px-4 md:px-6 py-4 text-center hidden sm:table-cell">Matches</th>
+                    <th className="px-4 md:px-6 py-4 text-center">Win Rate</th>
                 </tr>
                 </thead>
                 <tbody className="text-sm divide-y divide-[#1e222b]">
@@ -58,19 +58,19 @@ export const ScenarioTable: React.FC<Props> = ({ data }) => {
                             </td>
 
                             {/* Timing */}
-                            <td className="px-4 md:px-6 py-3 text-right font-mono text-xs text-[#808fa6] align-middle">
+                            <td className="px-4 md:px-6 py-3 text-center font-mono text-xs text-[#808fa6] align-middle">
                                     <span className="bg-[#121417] px-2 py-1 rounded border border-[#2e353b]">
                                         {formatDuration(row.time)}
                                     </span>
                             </td>
 
                             {/* Matches */}
-                            <td className="px-4 md:px-6 py-3 text-right text-xs font-mono text-[#58606e] align-middle hidden sm:table-cell">
+                            <td className="px-4 md:px-6 py-3 text-center text-xs font-mono text-[#58606e] align-middle hidden sm:table-cell">
                                 {row.games.toLocaleString()}
                             </td>
 
                             {/* Win Rate */}
-                            <td className="px-4 md:px-6 py-3 align-middle">
+                            <td className="px-4 md:px-6 py-3 align-middle text-center">
                                 <div className="flex flex-col items-end gap-1.5 w-full">
                                         <span className={clsx("font-bold font-mono text-xs", textColor)}>
                                             {winRate.toFixed(1)}%

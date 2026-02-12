@@ -119,11 +119,11 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
     const domainRight: AxisDomain = [0, maxCumulative * 1.1];
 
     return (
-        <div className="w-full h-full min-h-125 bg-white rounded-2xl p-4 md:p-8 shadow-sm border border-slate-200">
+        <div className="w-full h-full min-h-125 rounded-2xl p-4 md:p-6 shadow-sm">
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart // Используем ComposedChart для комбинации графиков
                     data={data}
-                    margin={{ top: 20, right: 20, left: 20, bottom: 40 }}
+                    margin={{ top: 2, right: 2, left: 2, bottom: 4 }}
                 >
                     <defs>
                         {/* Градиент для линии */}
@@ -133,7 +133,7 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
                         </linearGradient>
                     </defs>
 
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} stroke="#f1f5f9" />
 
                     <XAxis
                         dataKey="rank.name"
