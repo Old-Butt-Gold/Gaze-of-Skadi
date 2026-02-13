@@ -1,5 +1,4 @@
-﻿
-import React from 'react';
+﻿import React from 'react';
 import {Icon} from "../Icon.tsx";
 
 interface PartySizeIconProps {
@@ -14,7 +13,7 @@ const PartySizeIcon: React.FC<PartySizeIconProps> = ({ partySize }) => {
     const isSolo = partySize === 1;
 
     return (
-        <div className="relative group/party cursor-help">
+        <div className="relative group/party cursor-help shrink-0">
             <Icon
                 src={isSolo ? "/assets/images/party_solo.svg" : "/assets/images/party.svg"}
                 size={4}

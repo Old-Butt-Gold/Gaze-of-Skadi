@@ -74,9 +74,12 @@ internal sealed class GetPlayerActivityHandler(ISender sender)
                 LeaverStatus = match.LeaverStatus,
                 HeroVariant = match.HeroVariant,
                 PartySize = match.PartySize,
-                IsMatchParsed = BaseEnumDto<BooleanState>.FromEnum(match.Version != null ? BooleanState.True : BooleanState.False),
+                IsMatchParsed = match.IsMatchParsed,
                 IsRadiant = match.IsRadiant,
-                RadiantWin = match.RadiantWin
+                RadiantWin = match.RadiantWin,
+                GameMode = match.GameMode,
+                LobbyType = match.LobbyType,
+                AverageRank = match.AverageRank,
             };
     }
 

@@ -12,10 +12,12 @@ import {
 } from 'date-fns';
 import clsx from 'clsx';
 import { HeroImage } from '../heroes/HeroImage';
-import { formatDuration, formatRelativeTime, formatDateLong } from '../../utils/formatUtils';
+import {formatDuration, formatRelativeTime, formatDateLong, formatTime} from '../../utils/formatUtils';
 import { isTeamWon } from '../../utils/matchUtils';
 import type { ActivityMatchDto } from '../../types/playerActivity';
 import PartySizeIcon from './PartySizeIcon';
+import {RankIcon} from "../distributions/RankIcon.tsx";
+import {getGameModeName, getLobbyTypeName} from "../../utils/enumUtils.ts";
 
 interface Props {
     matchesByDay: Record<string, ActivityMatchDto[]>;
@@ -244,9 +246,11 @@ const YearHeatmap = React.memo((
     );
 });
 
-const DailyMatchList = React.memo((
-{date, matches, onClose}
-: {
+const DailyMatchList = React.memo(({
+                                       date,
+                                       matches,
+                                       onClose
+                                   }: {
     date: string;
     matches: ActivityMatchDto[];
     onClose: () => void;
@@ -281,7 +285,9 @@ const DailyMatchList = React.memo((
                     <thead>
                     <tr className="text-[#58606e] text-[10px] uppercase font-bold tracking-widest bg-[#15171c] border-b border-[#2e353b]">
                         <th className="py-3 pl-4">Hero</th>
+                        <th className="py-3 text-center">Average Rank</th>
                         <th className="py-3 text-center">Result</th>
+                        <th className="py-3 pl-2 text-center">Mode</th>
                         <th className="py-3 text-right">Duration</th>
                         <th className="py-3 text-right pr-4">Time</th>
                     </tr>
@@ -301,24 +307,51 @@ const DailyMatchList = React.memo((
                                         showName={true}
                                     />
                                 </td>
-                                <td className="py-2.5 text-center">
+
+                                <td className="py-2.5 text-center whitespace-nowrap">
+                                    <div className="flex justify-center items-center scale-90">
+                                        <RankIcon rank={match.averageRank?.value} />
+                                    </div>
+                                </td>
+
+                                <td className="py-2.5 text-center whitespace-nowrap">
                                     <div className="flex items-center justify-center gap-3">
                                         <PartySizeIcon partySize={match.partySize} />
                                         <span className={clsx(
-                                            "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border text-center shadow-sm",
+                                            "text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded border text-center shadow-sm",
                                             isWin === true ? "text-emerald-400 border-emerald-500/20 bg-emerald-900/20" :
                                                 isWin === false ? "text-red-400 border-red-500/20 bg-red-900/20" :
                                                     "text-[#808fa6] border-[#58606e] bg-[#2e353b]/50"
                                         )}>
-                                                {isWin === true ? 'Won' : isWin === false ? 'Lost' : '-'}
-                                            </span>
+                                            {isWin === true ? 'Won' : isWin === false ? 'Lost' : '-'}
+                                        </span>
                                     </div>
                                 </td>
+
+                                <td className="py-2.5 pl-2">
+                                    <div className="flex flex-col text-center leading-tight">
+                                        <span className="text-[#e3e3e3] text-xs font-medium">
+                                            {getGameModeName(match.gameMode.value)}
+                                        </span>
+                                        <span className="text-[#58606e] text-xs">
+                                            {getLobbyTypeName(match.lobbyType.value)}
+                                        </span>
+                                    </div>
+                                </td>
+
                                 <td className="py-2.5 text-right font-mono text-[#e3e3e3]">
                                     {formatDuration(match.duration)}
                                 </td>
-                                <td className="py-2.5 text-right text-[#808fa6] text-xs pr-4 font-mono">
-                                    {formatRelativeTime(match.startTime)}
+
+                                <td className="py-2.5 text-right pr-4">
+                                    <div className="flex flex-col items-end leading-tight">
+                                        <span className="text-[#58606e] text-xs">
+                                            {formatRelativeTime(match.startTime)}
+                                        </span>
+                                        <span className="text-[#e3e3e3] font-mono text-xs font-bold">
+                                            {formatTime(match.startTime)}
+                                        </span>
+                                    </div>
                                 </td>
                             </tr>
                         );

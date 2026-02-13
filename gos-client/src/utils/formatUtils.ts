@@ -25,6 +25,14 @@ export const formatRelativeTime = (unixSeconds: number): string => {
   return `${years} year${years !== 1 ? 's' : ''} ago`;
 };
 
+export const formatTime = (unixSeconds: number): string => {
+  return new Date(unixSeconds * 1000).toLocaleTimeString('en-GB', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+};
+
 /**
  * Converts Seconds -> MM:SS or HH:MM:SS
  */

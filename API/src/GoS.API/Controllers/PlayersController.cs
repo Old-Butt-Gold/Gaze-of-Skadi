@@ -40,18 +40,6 @@ public sealed class PlayersController : ApiControllerBase
         CancellationToken ct = default)
         => HandleQueryAsync(new GetPlayerWinLossByIdQuery(accountId, parameters), ct);
 
-    [HttpGet("recentMatches")]
-    [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetPlayerRecentMatches(
-        [FromRoute] long accountId,
-        [FromQuery] PlayerEndpointParameters parameters,
-        CancellationToken ct = default)
-    {
-        parameters.Limit ??= 20;
-        return HandleQueryAsync(new GetPlayerMatchesQuery(accountId, parameters), ct);
-    }
-
     [HttpGet("matches")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerMatchDto>), StatusCodes.Status200OK)]

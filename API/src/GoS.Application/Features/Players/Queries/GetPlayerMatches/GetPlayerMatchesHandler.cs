@@ -31,7 +31,8 @@ internal sealed class GetPlayerMatchesHandler(IRequester<OpenDotaHttpRequesterOp
         "start_time",
         "lane_role",
         "level",
-        "version"
+        "version",
+        "average_rank"
     ];
 
     public async Task<IEnumerable<PlayerMatchDto>?> Handle(GetPlayerMatchesQuery request, CancellationToken ct)

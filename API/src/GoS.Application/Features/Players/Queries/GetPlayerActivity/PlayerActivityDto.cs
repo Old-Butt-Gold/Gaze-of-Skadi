@@ -24,6 +24,10 @@ public class ActivityMatchDto
     public required BaseEnumDto<BooleanState> IsMatchParsed { get; init; }
     public required BaseEnumDto<BooleanState> IsRadiant { get; init; }
     public BaseEnumDto<BooleanState>? RadiantWin { get; init; }
+
+    public required BaseEnumDto<GameMode> GameMode { get; init; }
+    public required BaseEnumDto<LobbyType> LobbyType { get; init; }
+    public BaseEnumDto<Rank>? AverageRank { get; init; }
 }
 
 public class ActivityStatsDto

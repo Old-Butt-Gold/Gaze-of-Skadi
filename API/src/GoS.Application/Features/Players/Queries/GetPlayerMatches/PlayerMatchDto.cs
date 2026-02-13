@@ -7,8 +7,7 @@ public class PlayerMatchDto
 {
 	public long MatchId { get; init; }
 
-    /// TODO if match parsed or not. if not then it's null
-    public int? Version { get; init; }
+    public required BaseEnumDto<BooleanState> IsMatchParsed { get; init; }
 
 	public required BaseEnumDto<BooleanState> IsRadiant { get; set; }
 
@@ -19,6 +18,8 @@ public class PlayerMatchDto
 	public required BaseEnumDto<GameMode> GameMode { get; init; }
 
 	public required BaseEnumDto<LobbyType> LobbyType { get; init; }
+
+    public BaseEnumDto<Rank>? AverageRank { get; init; }
 
 	public int HeroId { get; init; }
 

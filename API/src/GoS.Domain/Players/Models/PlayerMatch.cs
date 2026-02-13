@@ -21,6 +21,9 @@ public class PlayerMatch
     [JsonPropertyName("version")]
     public int? Version { get; init; }
 
+    [JsonPropertyName("average_rank")]
+    public int? AverageRank { get; init; }
+
 	/// <summary>
 	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
 	/// </summary>

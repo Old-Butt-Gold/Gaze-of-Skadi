@@ -1,4 +1,4 @@
-﻿import { type BaseEnum, BooleanState, LeaverStatus } from './common';
+﻿import {type BaseEnum, BooleanState, type GameMode, LeaverStatus, type LobbyType, type Rank} from './common';
 
 export interface WinLossStats {
   wins: number;
@@ -17,6 +17,9 @@ export interface ActivityMatchDto {
   isMatchParsed: BaseEnum<BooleanState>;
   isRadiant: BaseEnum<BooleanState>;
   radiantWin: BaseEnum<BooleanState> | null;
+  gameMode: BaseEnum<GameMode>;
+  lobbyType: BaseEnum<LobbyType>;
+  averageRank: BaseEnum<Rank> | null;
 }
 
 export interface ActivityStatsDto {
