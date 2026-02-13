@@ -5,6 +5,7 @@ import type { PlayerEndpointParameters } from '../../../types/player';
 import {ActivityCharts} from "../ActivityCharts.tsx";
 import {ErrorDisplay} from "../../ui/ErrorDisplay.tsx";
 import {formatDateLong} from "../../../utils/formatUtils.ts";
+import {ActivityCalendarSection} from "../ActivityCalendarSection.tsx";
 
 interface Props {
     accountId: number;
@@ -17,7 +18,7 @@ export const PlayerActivityTab: React.FC<Props> = ({ accountId, filters }) => {
     if (isLoading) return <LoadingSpinner text="Analyzing battle logs..." />;
     if (isError || !data) return <ErrorDisplay message={"Activity data unavailable."}/>;
 
-    const { stats, firstMatchStartTime } = data;
+    const { stats, firstMatchStartTime, matchesByDay } = data;
     const totalMatches = stats.overall.wins + stats.overall.losses;
 
     return (
@@ -64,6 +65,8 @@ export const PlayerActivityTab: React.FC<Props> = ({ accountId, filters }) => {
             </div>
 
             <ActivityCharts stats={stats} />
+
+            <ActivityCalendarSection matchesByDay={matchesByDay} />
 
         </div>
     );

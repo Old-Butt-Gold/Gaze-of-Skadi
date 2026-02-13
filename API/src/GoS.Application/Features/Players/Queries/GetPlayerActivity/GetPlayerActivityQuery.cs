@@ -2,7 +2,6 @@
 using GoS.Application.Caching;
 using GoS.Application.EndpointParameters;
 using GoS.Application.Features.Players.Common.Interfaces;
-using GoS.Application.Features.Players.Queries.GetPlayerMatches;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerActivity;
 
