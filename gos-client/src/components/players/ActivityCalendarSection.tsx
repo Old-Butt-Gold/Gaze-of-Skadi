@@ -21,25 +21,26 @@ interface Props {
     matchesByDay: Record<string, ActivityMatchDto[]>;
 }
 
-// Revised Dota-themed color scale and size logic
 const GET_ACTIVITY_STYLE = (count: number, isSelected: boolean) => {
-    // Selection style: Gold ring with glow
-    if (isSelected) return { size: 'w-3 h-3', color: 'bg-[#e7d291] ring-2 ring-white shadow-[0_0_8px_#e7d291] z-20 scale-125' };
+    if (isSelected) return {
+        size: 'w-3.5 h-3.5',
+        color: 'bg-[#ffd700] ring-2  shadow-[0_0_15px_#ffd700] z-30 scale-125'
+    };
 
-    // Empty day: Dark grey/black dot
     if (count === 0) return { size: 'w-1.5 h-1.5', color: 'bg-[#3b3f46]' };
 
-    // Activity levels: Dark Green -> Bright Green -> Gold
-    if (count <= 2) return { size: 'w-2 h-2', color: 'bg-[#1b4d3e]' }; // Very low
-    if (count <= 4) return { size: 'w-2 h-2', color: 'bg-[#266851]' };
-    if (count <= 6) return { size: 'w-2.5 h-2.5', color: 'bg-[#2d8563]' };
-    if (count <= 8) return { size: 'w-2.5 h-2.5', color: 'bg-[#3fae7e]' };
-    if (count <= 10) return { size: 'w-3 h-3', color: 'bg-[#53d698]' }; // Mid
-    if (count <= 14) return { size: 'w-3 h-3', color: 'bg-[#6effb3]' };
-    if (count <= 18) return { size: 'w-3.5 h-3.5', color: 'bg-[#a3ffcf]' };
+    if (count <= 3) return { size: 'w-2.5 h-2.5', color: 'bg-[#1a3a2a]' };
+    if (count <= 6) return { size: 'w-2.5 h-2.5', color: 'bg-[#2d5a3d]' };
+    if (count <= 9) return { size: 'w-3 h-3', color: 'bg-[#3d7a4d]' };
+    if (count <= 12) return { size: 'w-3 h-3', color: 'bg-[#4da75d]' };
+    if (count <= 15) return { size: 'w-3 h-3', color: 'bg-[#5dc46e]' };
+    if (count <= 18) return { size: 'w-3.5 h-3.5', color: 'bg-[#6ed17f]' };
+    if (count <= 21) return { size: 'w-3.5 h-3.5', color: 'bg-[#7fe08f]' };
+    if (count <= 24) return { size: 'w-3.5 h-3.5', color: 'bg-[#90f09f]' };
+    if (count <= 27) return { size: 'w-3.5 h-3.5', color: 'bg-[#a1ffa0]' };
+    if (count <= 30) return { size: 'w-3.5 h-3.5', color: 'bg-[#b2ffb1]' };
 
-    // Godlike streaks
-    return { size: 'w-full h-full', color: 'bg-[#e7d291] shadow-[0_0_4px_#e7d291]' };
+    return { size: 'w-full h-full', color: 'bg-[#e7d291]' };
 };
 
 export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
@@ -55,14 +56,13 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
     }, [matchesByDay]);
 
     return (
-        <div className="flex flex-col gap-12 w-full">
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 md:p-8 shadow-2xl w-full">
-                <div className="flex flex-col gap-7 w-full items-center">
+        <div className="flex flex-col gap-10 w-full relative z-0">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-6 md:p-8 shadow-2xl w-full relative overflow-visible">
+                <div className="flex flex-col gap-8 w-full items-center">
                     {years.map(year => (
-                        <div key={year} className="flex flex-col gap-4 w-full max-w-[1200px]">
-                            {/* Year Header */}
-                            <div className="flex items-center gap-3">
-                                <h4 className="text-lg font-bold text-[#e3e3e3] font-mono tracking-widest">
+                        <div key={year} className="flex flex-col gap-6 w-full max-w-[1300px]">
+                            <div className="flex items-center gap-4">
+                                <h4 className="text-2xl font-bold text-[#e3e3e3] font-mono tracking-widest opacity-90">
                                     {year}
                                 </h4>
                                 <div className="h-px bg-[#2e353b] flex-grow opacity-50" />
@@ -76,7 +76,7 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
                             />
 
                             {selectedDate && parseISO(selectedDate).getFullYear() === year && (
-                                <div className="mt-4 animate-in fade-in slide-in-from-top-4 duration-300">
+                                <div className="mt-2 animate-in fade-in slide-in-from-top-4 duration-300 origin-top">
                                     <DailyMatchList
                                         date={selectedDate}
                                         matches={matchesByDay[selectedDate] || []}
@@ -124,34 +124,30 @@ const YearHeatmap: React.FC<{
         return { days: daysList, months: monthLabels };
     }, [year]);
 
-    // Dimensions: Box size 12px + Gap 4px = 16px per cell
-    const CELL_SIZE = 12;
-    const GAP = 4;
+    const CELL_SIZE = 14;
+    const GAP = 5;
     const STEP = CELL_SIZE + GAP;
+    const GRID_HEIGHT = 7 * STEP - GAP;
 
     return (
-        <div className="w-full overflow-x-auto custom-scrollbar pb-6 pt-2 flex justify-center">
+        <div className="w-full overflow-x-auto custom-scrollbar pb-2 pt-2 flex justify-center relative z-10">
             <div className="flex flex-col min-w-max">
 
-                {/* Month Labels */}
-                <div className="relative h-6 mb-2 text-[10px] font-bold text-[#58606e] uppercase tracking-wider">
+                <div className="relative h-6 mb-2 text-[10px] font-bold text-[#808fa6] uppercase tracking-wider">
                     {months.map((m, i) => (
                         <div
                             key={i}
                             className="absolute top-0 transform"
-                            style={{ left: `${m.colIndex * STEP + 30}px` }}
+                            style={{ left: `${m.colIndex * STEP + 35}px` }}
                         >
                             {m.label}
                         </div>
                     ))}
                 </div>
 
-                <div className="flex gap-2">
-                    {/* Weekday Labels */}
-                    <div
-                        className="flex flex-col justify-between text-[9px] font-bold text-[#3e434b] pt-[2px] w-[25px] text-right pr-2"
-                        style={{ height: `${7 * STEP - GAP}px` }}
-                    >
+                <div className="flex gap-3">
+                    <div className="flex flex-col justify-between text-[10px] font-bold text-[#4a4f58] pt-[1px] w-[25px] text-right pr-2"
+                        style={{ height: `${GRID_HEIGHT}px` }}>
                         <span>Mon</span>
                         <span>Tue</span>
                         <span>Wed</span>
@@ -161,12 +157,11 @@ const YearHeatmap: React.FC<{
                         <span>Sun</span>
                     </div>
 
-                    {/* The Grid */}
                     <div
                         className="grid grid-rows-7 grid-flow-col"
                         style={{
                             gap: `${GAP}px`,
-                            height: `${7 * STEP - GAP}px` // Precise height calc
+                            height: `${GRID_HEIGHT}px`
                         }}
                     >
                         {days.map((day) => {
@@ -181,41 +176,51 @@ const YearHeatmap: React.FC<{
 
                             const { size, color } = GET_ACTIVITY_STYLE(count, isSelected);
 
+                            const dayOfWeek = getDay(day);
+                            const showTooltipBelow = dayOfWeek === 1 || dayOfWeek === 2;
+
                             return (
                                 <div
                                     key={dateStr}
                                     onClick={() => { if (count > 0) onSelectDate(dateStr); }}
                                     className={clsx(
-                                        "relative flex items-center justify-center group",
+                                        "relative flex items-center justify-center group z-0 hover:z-20",
                                         !isCurrentYear && "opacity-0 pointer-events-none",
                                         count > 0 ? "cursor-pointer" : "cursor-default"
                                     )}
                                     style={{ width: `${CELL_SIZE}px`, height: `${CELL_SIZE}px` }}
                                 >
-                                    {/* The Dot */}
                                     <div
                                         className={clsx(
                                             "rounded-full transition-all duration-300 ease-out",
                                             size,
                                             color,
-                                            count > 0 && "group-hover:scale-125" // Slight grow on hover
+                                            count > 0 && "group-hover:scale-110 group-hover:brightness-110"
                                         )}
                                     />
 
-                                    {/* Tooltip */}
                                     {isCurrentYear && count > 0 && (
-                                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max bg-[#1a1d24] border border-[#2e353b] rounded px-3 py-2 text-xs shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-                                            <div className="text-white font-bold mb-1">
+                                        <div
+                                            className={clsx(
+                                                "absolute left-1/2 -translate-x-1/2 w-max bg-[#15171c] border border-[#2e353b] rounded-md px-3 py-2 text-xs shadow-[0_5px_20px_rgba(0,0,0,0.9)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50",
+                                                showTooltipBelow ? "top-full mt-2" : "bottom-full mb-2"
+                                            )}
+                                        >
+                                            <div className="text-[#e3e3e3] font-bold mb-1 border-b border-[#2e353b] pb-1">
                                                 {formatDateLong(getUnixTime(day))}
                                             </div>
-                                            <div className="flex gap-3">
-                                                <span className="text-emerald-400 font-mono">{wins} Wins</span>
+                                            <div className="flex gap-4 items-center">
+                                                <span className="text-emerald-400 font-mono font-bold">{wins} W</span>
                                                 <span className="text-[#58606e]">-</span>
-                                                <span className="text-red-400 font-mono">{losses} Losses</span>
+                                                <span className="text-red-400 font-mono font-bold">{losses} L</span>
                                             </div>
-                                            <div className="w-2 h-2 bg-[#1a1d24] border-b border-r border-[#2e353b] absolute -bottom-1 left-1/2 -translate-x-1/2 rotate-45"></div>
+                                            <div
+                                                className={clsx(
+                                                    "w-2 h-2 bg-[#15171c] border-r border-[#2e353b] absolute left-1/2 -translate-x-1/2 rotate-45",
+                                                    showTooltipBelow ? "-top-1 border-t border-b-0" : "-bottom-1 border-b border-t-0"
+                                                )}
+                                            />
                                         </div>
-
                                     )}
                                 </div>
                             );
@@ -238,9 +243,8 @@ const DailyMatchList: React.FC<{
         [matches]);
 
     return (
-        <div className="bg-[#0b0c0f] border border-[#2e353b] rounded-xl p-5 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] relative mt-4 max-w-5xl mx-auto w-full">
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-5 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] relative w-full">
 
-            {/* Header */}
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#2e353b] relative z-10">
                 <div className="flex items-center gap-4">
                     <span className="text-[#e7d291] font-serif text-xl font-bold tracking-wide drop-shadow-sm">
@@ -252,21 +256,20 @@ const DailyMatchList: React.FC<{
                 </div>
                 <button
                     onClick={onClose}
-                    className="text-[#58606e] hover:text-white transition-colors p-1.5 rounded hover:bg-[#2e353b]"
+                    className="text-[#58606e] hover:text-white transition-colors p-2 rounded-full hover:bg-[#2e353b] leading-none text-lg"
                 >
-                    ✕
+                    &times;
                 </button>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto rounded-lg border border-[#2e353b]/50">
-                <table className="w-full text-left border-collapse bg-[#101215]">
+            <div className="overflow-x-auto rounded-lg border border-[#2e353b]/50 relative z-10">
+                <table className="w-full text-left border-collapse bg-[#15171c]">
                     <thead>
                     <tr className="text-[#58606e] text-[10px] uppercase font-bold tracking-widest bg-[#15171c] border-b border-[#2e353b]">
                         <th className="py-3 pl-4">Hero</th>
                         <th className="py-3 text-center">Result</th>
                         <th className="py-3 text-right">Duration</th>
-                        <th className="py-3 text-right pr-4 bg-[#1a1d24]/50">Time</th> {/* Different col bg example */}
+                        <th className="py-3 text-right pr-4">Time</th>
                     </tr>
                     </thead>
                     <tbody className="divide-y divide-[#2e353b]/30">
@@ -274,7 +277,6 @@ const DailyMatchList: React.FC<{
                         const isWin = isTeamWon(match.isRadiant, match.radiantWin);
                         return (
                             <tr key={match.matchId} className="hover:bg-[#1e222b] transition-colors group text-sm">
-                                {/* Hero Col */}
                                 <td className="py-2.5 pl-4 w-px whitespace-nowrap">
                                     <HeroImage
                                         matchId={match.matchId}
@@ -285,13 +287,11 @@ const DailyMatchList: React.FC<{
                                         showName={true}
                                     />
                                 </td>
-
-                                {/* Result Col */}
                                 <td className="py-2.5 text-center">
                                     <div className="flex items-center justify-center gap-3">
                                         <PartySizeIcon partySize={match.partySize} />
                                         <span className={clsx(
-                                            "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border min-w-[50px] text-center shadow-sm",
+                                            "text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border text-center shadow-sm",
                                             isWin === true ? "text-emerald-400 border-emerald-500/20 bg-emerald-900/20" :
                                                 isWin === false ? "text-red-400 border-red-500/20 bg-red-900/20" :
                                                     "text-[#808fa6] border-[#58606e] bg-[#2e353b]/50"
@@ -300,14 +300,10 @@ const DailyMatchList: React.FC<{
                                             </span>
                                     </div>
                                 </td>
-
-                                {/* Duration Col */}
                                 <td className="py-2.5 text-right font-mono text-[#e3e3e3]">
                                     {formatDuration(match.duration)}
                                 </td>
-
-                                {/* Time Col (Darker BG) */}
-                                <td className="py-2.5 text-right text-[#808fa6] text-xs pr-4 bg-[#1a1d24]/30 font-mono">
+                                <td className="py-2.5 text-right text-[#808fa6] text-xs pr-4 font-mono">
                                     {formatRelativeTime(match.startTime)}
                                 </td>
                             </tr>
