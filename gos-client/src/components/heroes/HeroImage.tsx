@@ -24,12 +24,14 @@ export const HeroImage: React.FC<Props> = ({
     const { getHero, isLoading } = useHeroes();
     const hero = getHero(heroId);
 
-    const { data: abilityData } = useHeroAbilities(heroVariant ? (hero?.name ?? '') : '');
+    const hasVariant = (heroVariant !== null && heroVariant !== undefined);
+
+    const { data: abilityData } = useHeroAbilities(hasVariant ? (hero?.name ?? '') : '');
 
     const facet = useMemo(() => {
-        if (!abilityData?.facets || !heroVariant) return null;
+        if (!abilityData?.facets || !hasVariant) return null;
         return abilityData.facets.find(f => f.id === heroVariant);
-    }, [abilityData, heroVariant]);
+    }, [abilityData, heroVariant, hasVariant]);
 
     if (isLoading) {
         return <div className="w-22 h-12 bg-[#2e353b] rounded animate-pulse" />;

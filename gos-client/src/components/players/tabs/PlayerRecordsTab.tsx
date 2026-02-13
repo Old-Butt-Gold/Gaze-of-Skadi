@@ -109,7 +109,6 @@ const RecordRow: React.FC<{
     field: PlayerField;
 }> = ({ record, field }) => {
 
-    // TODO record.radiantWin can be null
     const isWin = isTeamWon(record.isRadiant, record.radiantWin);
     const isRadiant = isRadiantTeam(record.isRadiant);
 
@@ -117,6 +116,17 @@ const RecordRow: React.FC<{
         if (field === PlayerField.Duration) return formatDuration(val);
         return val.toLocaleString();
     };
+
+    let resultText = 'Unknown';
+    let resultClass = 'text-[#808fa6] border-[#58606e] bg-[#2e353b]/50';
+
+    if (isWin === true) {
+        resultText = 'Won';
+        resultClass = 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10';
+    } else if (isWin === false) {
+        resultText = 'Lost';
+        resultClass = 'text-red-400 border-red-500/30 bg-red-500/10';
+    }
 
     return (
         <tr className="hover:bg-[#1e222b] transition-colors group text-sm">
@@ -145,11 +155,9 @@ const RecordRow: React.FC<{
 
                     <span className={clsx(
                         "text-xs font-bold uppercase tracking-wider px-2 py-1 rounded border text-center",
-                        isWin
-                            ? "text-emerald-400 border-emerald-500/30 bg-emerald-500/10"
-                            : "text-red-400 border-red-500/30 bg-red-500/10"
+                        resultClass
                     )}>
-                        {isWin ? 'Won' : 'Lost'}
+                        {resultText}
                     </span>
                 </div>
             </td>

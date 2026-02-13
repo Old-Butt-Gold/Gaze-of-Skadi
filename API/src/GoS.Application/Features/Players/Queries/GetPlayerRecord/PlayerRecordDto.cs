@@ -13,8 +13,7 @@ public class PlayerRecordDto
 
 	public required BaseEnumDto<BooleanState> IsRadiant { get; init; }
 
-    // TODO make it nullable ? and fix in frontend
-	public required BaseEnumDto<BooleanState> RadiantWin { get; init; }
+	public required BaseEnumDto<BooleanState>? RadiantWin { get; init; }
 
 	public required BaseEnumDto<GameMode> GameMode { get; init; }
 

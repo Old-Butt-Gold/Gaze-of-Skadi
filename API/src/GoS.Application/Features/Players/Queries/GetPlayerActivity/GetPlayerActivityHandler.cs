@@ -39,11 +39,9 @@ internal sealed class GetPlayerActivityHandler(ISender sender, IMapper mapper)
     {
         var playerMatches = await sender.Send(new GetPlayerMatchesQuery(request.AccountId, request.Parameters), cancellationToken);
 
-        var matchesDto = mapper.Map<IEnumerable<PlayerMatchDto>?>(playerMatches);
-
-        if (matchesDto == null || !matchesDto.Any())
+        if (playerMatches == null || !playerMatches.Any())
             return new Dictionary<DateOnly, IEnumerable<PlayerMatchDto>>();
 
-        return GroupMatchesByDay(matchesDto);
+        return GroupMatchesByDay(playerMatches);
     }
 }

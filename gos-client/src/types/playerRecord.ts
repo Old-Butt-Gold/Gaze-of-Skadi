@@ -5,7 +5,7 @@ export interface PlayerRecordDto {
   isParsedMatch: BaseEnum<BooleanState>;
   averageRank: BaseEnum<Rank> | null;
   isRadiant: BaseEnum<BooleanState>;
-  radiantWin: BaseEnum<BooleanState>;
+  radiantWin: BaseEnum<BooleanState> | null;
   gameMode: BaseEnum<GameMode>;
   lobbyType: BaseEnum<LobbyType>;
   heroId: number;

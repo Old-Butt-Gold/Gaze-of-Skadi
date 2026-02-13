@@ -77,6 +77,7 @@ export const isRadiantTeam = (radiant : BaseEnum<BooleanState>) : boolean => {
   return radiant.value === 1;
 }
 
-export const isTeamWon = (radiant : BaseEnum<BooleanState>, win : BaseEnum<BooleanState>) : boolean => {
+export const isTeamWon = (radiant: BaseEnum<BooleanState>, win: BaseEnum<BooleanState> | null): boolean | null => {
+  if (!win) return null; // If win status is missing
   return (isRadiantTeam(radiant) && win.value === 1) || (!isRadiantTeam(radiant) && win.value === 0);
-}
+};
