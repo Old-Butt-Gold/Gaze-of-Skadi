@@ -63,6 +63,7 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'records', label: 'Records', disabled: isPrivate },
         { id: 'activity', label: 'Activity', disabled: isPrivate },
     ];
+    // TODO remove winrate from top, just save for calculating isStatsEmpty because of incostistent state with activity
 
     return (
         <div className="min-h-screen bg-[#0f1114] text-white pb-10">

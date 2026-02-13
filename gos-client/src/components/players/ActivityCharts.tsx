@@ -1,61 +1,57 @@
 ﻿import React, { useMemo } from 'react';
-import {
-    BarChart,
-    Bar,
-    Tooltip,
-    ResponsiveContainer,
-    Cell,
-    CartesianGrid,
-    type TooltipProps
-} from 'recharts';
+import {BarChart, Bar, Tooltip, ResponsiveContainer, Cell, CartesianGrid,} from 'recharts';
 import type { WinLossStats } from '../../types/playerActivity';
-import type { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent';
 
-// 1. Precise Interface Definition
 interface ChartDataPoint extends WinLossStats {
     key: number;
     label: string;
 }
 
-const CHART_CONFIG = {
-    hour: { title: 'Hourly Activity', keys: Array.from({ length: 24 }, (_, i) => i) },
-    day: { title: 'Daily Activity', keys: [1, 2, 3, 4, 5, 6, 0], labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
-    month: { title: 'Monthly Activity', keys: Array.from({ length: 12 }, (_, i) => i + 1) },
-    year: { title: 'Yearly Activity', keys: [] as number[] }
-};
+const MONTHS = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+];
 
-// 2. Typed Custom Tooltip
-const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) => {
+const WEEKDAYS = [
+    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+];
+
+interface CustomTooltipPayload {
+    payload: ChartDataPoint;
+}
+
+interface CustomTooltipProps {
+    active?: boolean;
+    payload?: CustomTooltipPayload[];
+}
+
+const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
     if (!active || !payload || !payload.length) return null;
 
-    // Safe casting to our specific data type
     const data = payload[0].payload as ChartDataPoint;
     const isPositive = data.winRate >= 50;
-    const totalGames = data.wins + data.losses;
+    const total = data.wins + data.losses;
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] p-3 rounded-lg shadow-[0_10px_20px_rgba(0,0,0,0.5)] text-xs z-50 min-w-[140px]">
-            <div className="font-serif font-bold text-white mb-2 uppercase tracking-wider border-b border-[#2e353b] pb-1">
+        <div className="bg-[#15171c] border border-[#2e353b] p-3 rounded-lg shadow-xl text-xs z-50 min-w-[150px]">
+            <div className="font-bold text-[#e7d291] mb-2 uppercase tracking-wider text-center border-b border-[#2e353b] pb-2">
                 {data.label}
             </div>
 
-            <div className="space-y-1.5">
-                <div className="flex justify-between gap-4">
+            <div className="space-y-1.5 font-medium">
+                <div className="flex justify-between">
                     <span className="text-[#808fa6]">Matches</span>
-                    <span className="font-mono text-white font-bold">{totalGames}</span>
+                    <span className="text-white font-mono font-bold">{total}</span>
                 </div>
-
-                <div className="flex justify-between gap-4">
-                    <span className="text-emerald-400">Wins</span>
-                    <span className="font-mono text-white">{data.wins}</span>
+                <div className="flex justify-between text-emerald-400">
+                    <span>Wins</span>
+                    <span className="font-mono">{data.wins}</span>
                 </div>
-
-                <div className="flex justify-between gap-4">
-                    <span className="text-red-400">Losses</span>
-                    <span className="font-mono text-white">{data.losses}</span>
+                <div className="flex justify-between text-red-400">
+                    <span>Losses</span>
+                    <span className="font-mono">{data.losses}</span>
                 </div>
-
-                <div className="border-t border-[#2e353b] mt-1 pt-1 flex justify-between gap-4">
+                <div className="pt-2 mt-1 border-t border-[#2e353b] flex justify-between">
                     <span className="text-[#808fa6]">Win Rate</span>
                     <span className={`font-mono font-bold ${isPositive ? 'text-emerald-400' : 'text-red-400'}`}>
                         {data.winRate.toFixed(1)}%
@@ -66,74 +62,66 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
     );
 };
 
-const SingleChart = ({ title, data }: { title: string, data: ChartDataPoint[] }) => {
-    const startLabel = data.length > 0 ? data[0].label : '';
-    const endLabel = data.length > 0 ? data[data.length - 1].label : '';
+const ChartCard = ({ title, data }: { title: string, data: ChartDataPoint[] }) => {
+    if (!data.length) return null;
+
+    const getShortLabel = (label: string) => {
+        if (label.includes(':')) return label.split(' - ')[0];
+        if (label.length > 4 && isNaN(Number(label))) return label.substring(0, 3);
+        return label;
+    };
+
+    const startLabel = getShortLabel(data[0].label);
+    const endLabel = getShortLabel(data[data.length - 1].label);
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-5 shadow-lg flex flex-col h-[40vh] group hover:border-[#3e454d] transition-colors">
-            <h4 className="text-xs font-bold text-[#e3e3e3] uppercase tracking-widest mb-4 flex items-center gap-2">
-                <span className="w-1 h-4 bg-[#e7d291] rounded-sm"></span>
-                {title}
-            </h4>
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-5 shadow-lg flex flex-col h-[40vh]">
+            <div className="flex justify-between items-center mb-4">
+                <h4 className="text-xs font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1 h-3 bg-[#e7d291] rounded-sm" />
+                    {title}
+                </h4>
+            </div>
 
-            <div className="flex-grow relative">
+            <div className="flex-grow w-full relative">
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={data} barCategoryGap="20%">
+                    <BarChart data={data} barCategoryGap="15%" margin={{ top: 5, right: 0, left: 0, bottom: 0 }}>
                         <defs>
-                            <linearGradient id="gradientWin" x1="0" y1="0" x2="0" y2="1">
+                            <linearGradient id="gradWin" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#10b981" stopOpacity={0.9}/>
-                                <stop offset="95%" stopColor="#10b981" stopOpacity={0.4}/>
+                                <stop offset="95%" stopColor="#10b981" stopOpacity={0.5}/>
                             </linearGradient>
-
-                            <linearGradient id="gradientLoss" x1="0" y1="0" x2="0" y2="1">
+                            <linearGradient id="gradLoss" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="5%" stopColor="#ef4444" stopOpacity={0.9}/>
-                                <stop offset="95%" stopColor="#ef4444" stopOpacity={0.4}/>
+                                <stop offset="95%" stopColor="#ef4444" stopOpacity={0.5}/>
                             </linearGradient>
-
-                            <linearGradient id="gradientTop" x1="0" y1="0" x2="0" y2="1">
+                            <linearGradient id="gradTop" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stopColor="#3f444e" stopOpacity={1}/>
                                 <stop offset="100%" stopColor="#2e353b" stopOpacity={1}/>
                             </linearGradient>
                         </defs>
 
                         <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#2e353b" opacity={0.3} />
+                        <Tooltip cursor={{ fill: '#ffffff', opacity: 0.05 }} content={<CustomTooltip />} isAnimationActive={false} />
 
-                        <Tooltip
-                            cursor={{ fill: '#ffffff', opacity: 0.05 }}
-                            content={<CustomTooltip />}
-                            isAnimationActive={false}
-                        />
-
-                        <Bar dataKey="wins" stackId="a" animationDuration={500} radius={[0, 0, 2, 2]}>
-                            {data.map((entry, index) => {
-                                const isHighWr = entry.winRate >= 50;
-                                return (
-                                    <Cell
-                                        key={`cell-win-${index}`}
-                                        fill={isHighWr ? "url(#gradientWin)" : "url(#gradientLoss)"}
-                                        stroke={isHighWr ? "#10b981" : "#ef4444"}
-                                        strokeWidth={1}
-                                        strokeOpacity={0.5}
-                                    />
-                                );
-                            })}
+                        <Bar dataKey="wins" stackId="a" animationDuration={500} radius={[0, 0, 4, 4]}>
+                            {data.map((entry, index) => (
+                                <Cell
+                                    key={`cell-${index}`}
+                                    fill={entry.winRate >= 50 ? "url(#gradWin)" : "url(#gradLoss)"}
+                                    stroke={entry.winRate >= 50 ? "#10b981" : "#ef4444"}
+                                    strokeWidth={1}
+                                    strokeOpacity={0.6}
+                                />
+                            ))}
                         </Bar>
 
-                        <Bar
-                            dataKey="losses"
-                            stackId="a"
-                            fill="url(#gradientTop)"
-                            radius={[4, 4, 0, 0]}
-                            animationDuration={500}
-                        />
-
+                        <Bar dataKey="losses" stackId="a" fill="url(#gradTop)" radius={[4, 4, 0, 0]} animationDuration={500} />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
 
-            {/* X Axis Labels */}
-            <div className="flex justify-between text-[10px] text-[#58606e] font-mono mt-2 uppercase tracking-wider px-1 font-bold">
+            <div className="flex justify-between text-sm text-[#58606e] font-mono font-bold mt-2 uppercase tracking-wider px-1">
                 <span>{startLabel}</span>
                 <span>{endLabel}</span>
             </div>
@@ -152,34 +140,38 @@ interface Props {
 
 export const ActivityCharts: React.FC<Props> = ({ stats }) => {
 
-    const mapData = (source: Record<number, WinLossStats>, keys: number[], labelMap?: string[]): ChartDataPoint[] => {
-        return keys.map((key, idx) => {
-            const stat = source[key] || { wins: 0, losses: 0, winRate: 0 };
-            return {
-                key,
-                label: labelMap ? labelMap[idx] : key.toString(),
-                ...stat
-            };
-        });
-    };
-
-    const chartData = useMemo(() => {
-        const years = Object.keys(stats.byYear).map(Number).sort((a, b) => a - b);
-
-        return {
-            hour: mapData(stats.byHour, CHART_CONFIG.hour.keys),
-            day: mapData(stats.byDayOfWeek, CHART_CONFIG.day.keys, CHART_CONFIG.day.labels),
-            month: mapData(stats.byMonth, CHART_CONFIG.month.keys),
-            year: mapData(stats.byYear, years)
+    const processData = useMemo(() => {
+        const build = (keys: number[], labelFn: (k: number) => string, source: Record<number, WinLossStats>) => {
+            return keys.map(key => {
+                const stat = source[key] || { wins: 0, losses: 0, winRate: 0 };
+                return { key, label: labelFn(key), ...stat };
+            });
         };
+
+        const hours = Array.from({ length: 24 }, (_, i) => i);
+        const hourData = build(hours, (h) => `${h.toString().padStart(2, '0')}:00 - ${(h + 1).toString().padStart(2, '0')}:00`, stats.byHour);
+
+        const dayKeys = [1, 2, 3, 4, 5, 6, 0];
+        const dayData = build(dayKeys, (d) => {
+            const index = d === 0 ? 6 : d - 1;
+            return WEEKDAYS[index];
+        }, stats.byDayOfWeek);
+
+        const months = Array.from({ length: 12 }, (_, i) => i + 1);
+        const monthData = build(months, (m) => MONTHS[m - 1], stats.byMonth);
+
+        const years = Object.keys(stats.byYear).map(Number).sort((a, b) => a - b);
+        const yearData = build(years, (y) => y.toString(), stats.byYear);
+
+        return { hourData, dayData, monthData, yearData };
     }, [stats]);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
-            <SingleChart title={CHART_CONFIG.hour.title} data={chartData.hour} />
-            <SingleChart title={CHART_CONFIG.day.title} data={chartData.day} />
-            <SingleChart title={CHART_CONFIG.month.title} data={chartData.month} />
-            <SingleChart title={CHART_CONFIG.year.title} data={chartData.year} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <ChartCard title="Hourly Activity" data={processData.hourData} />
+            <ChartCard title="Daily Activity" data={processData.dayData} />
+            <ChartCard title="Monthly Activity" data={processData.monthData} />
+            <ChartCard title="Yearly Activity" data={processData.yearData} />
         </div>
     );
 };
