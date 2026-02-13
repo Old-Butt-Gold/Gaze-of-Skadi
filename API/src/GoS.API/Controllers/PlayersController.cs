@@ -146,10 +146,11 @@ public sealed class PlayersController : ApiControllerBase
 
     [HttpGet("activity")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<DateOnly, IEnumerable<PlayerMatchDto>>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(PlayerActivityDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetPlayerActivity(
         [FromRoute] long accountId,
         [FromQuery] PlayerEndpointParameters parameters,
+        [FromQuery] int? timezoneOffsetHours = null,
         CancellationToken ct = default)
-        => HandleQueryAsync(new GetPlayerActivityQuery(accountId, parameters), ct);
+        => HandleQueryAsync(new GetPlayerActivityQuery(accountId, parameters, timezoneOffsetHours), ct);
 }
