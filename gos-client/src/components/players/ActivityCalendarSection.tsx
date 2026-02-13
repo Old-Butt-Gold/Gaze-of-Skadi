@@ -1,4 +1,4 @@
-﻿import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo, useCallback } from 'react';
 import {
     format,
     eachDayOfInterval,
@@ -24,7 +24,7 @@ interface Props {
 const GET_ACTIVITY_STYLE = (count: number, isSelected: boolean) => {
     if (isSelected) return {
         size: 'w-3.5 h-3.5',
-        color: 'bg-[#ffd700] ring-2  shadow-[0_0_15px_#ffd700] z-30 scale-125'
+        color: 'bg-[#ffd700] ring-2 shadow-[0_0_15px_#ffd700] z-30 scale-125'
     };
 
     if (count === 0) return { size: 'w-1.5 h-1.5', color: 'bg-[#3b3f46]' };
@@ -55,6 +55,14 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
         return Array.from(uniqueYears).sort((a, b) => b - a);
     }, [matchesByDay]);
 
+    const handleSelectDate = useCallback((date: string) => {
+        setSelectedDate(prev => prev === date ? null : date);
+    }, []);
+
+    const handleClose = useCallback(() => {
+        setSelectedDate(null);
+    }, []);
+
     return (
         <div className="flex flex-col gap-10 w-full relative z-0">
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-6 md:p-8 shadow-2xl w-full relative overflow-visible">
@@ -72,7 +80,7 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
                                 year={year}
                                 matchesByDay={matchesByDay}
                                 selectedDate={selectedDate}
-                                onSelectDate={(date) => setSelectedDate(prev => prev === date ? null : date)}
+                                onSelectDate={handleSelectDate}
                             />
 
                             {selectedDate && parseISO(selectedDate).getFullYear() === year && (
@@ -80,7 +88,7 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
                                     <DailyMatchList
                                         date={selectedDate}
                                         matches={matchesByDay[selectedDate] || []}
-                                        onClose={() => setSelectedDate(null)}
+                                        onClose={handleClose}
                                     />
                                 </div>
                             )}
@@ -92,12 +100,13 @@ export const ActivityCalendarSection: React.FC<Props> = ({ matchesByDay }) => {
     );
 };
 
-const YearHeatmap: React.FC<{
+const YearHeatmap = React.memo((
+{year, matchesByDay, selectedDate, onSelectDate}: {
     year: number;
     matchesByDay: Record<string, ActivityMatchDto[]>;
     selectedDate: string | null;
     onSelectDate: (date: string) => void;
-}> = ({ year, matchesByDay, selectedDate, onSelectDate }) => {
+}) => {
 
     const { days, months } = useMemo(() => {
         const start = startOfYear(new Date(year, 0, 1));
@@ -130,8 +139,8 @@ const YearHeatmap: React.FC<{
     const GRID_HEIGHT = 7 * STEP - GAP;
 
     return (
-        <div className="w-full overflow-x-auto custom-scrollbar pb-2 pt-2 flex justify-center relative z-10">
-            <div className="flex flex-col min-w-max">
+        <div className="w-full relative overflow-x-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-transparent pb-4 pt-2">
+            <div className="flex flex-col min-w-max mx-auto px-4">
 
                 <div className="relative h-6 mb-2 text-[10px] font-bold text-[#808fa6] uppercase tracking-wider">
                     {months.map((m, i) => (
@@ -146,8 +155,10 @@ const YearHeatmap: React.FC<{
                 </div>
 
                 <div className="flex gap-3">
-                    <div className="flex flex-col justify-between text-[10px] font-bold text-[#4a4f58] pt-[1px] w-[25px] text-right pr-2"
-                        style={{ height: `${GRID_HEIGHT}px` }}>
+                    <div
+                        className="flex flex-col justify-between text-[10px] font-bold text-[#808fa6] pt-[1px] w-[25px] text-right pr-2 sticky left-0 z-20"
+                        style={{ height: `${GRID_HEIGHT}px` }}
+                    >
                         <span>Mon</span>
                         <span>Tue</span>
                         <span>Wed</span>
@@ -171,8 +182,9 @@ const YearHeatmap: React.FC<{
                             const isSelected = selectedDate === dateStr;
                             const isCurrentYear = day.getFullYear() === year;
 
-                            const wins = dayMatches.filter(m => isTeamWon(m.isRadiant, m.radiantWin) === true).length;
-                            const losses = dayMatches.filter(m => isTeamWon(m.isRadiant, m.radiantWin) === false).length;
+                            const hasMatches = count > 0;
+                            const wins = hasMatches ? dayMatches.filter(m => isTeamWon(m.isRadiant, m.radiantWin) === true).length : 0;
+                            const losses = hasMatches ? dayMatches.filter(m => isTeamWon(m.isRadiant, m.radiantWin) === false).length : 0;
 
                             const { size, color } = GET_ACTIVITY_STYLE(count, isSelected);
 
@@ -184,7 +196,7 @@ const YearHeatmap: React.FC<{
                                     key={dateStr}
                                     onClick={() => { if (count > 0) onSelectDate(dateStr); }}
                                     className={clsx(
-                                        "relative flex items-center justify-center group z-0 hover:z-20",
+                                        "relative flex items-center justify-center group z-0 hover:z-30",
                                         !isCurrentYear && "opacity-0 pointer-events-none",
                                         count > 0 ? "cursor-pointer" : "cursor-default"
                                     )}
@@ -230,13 +242,15 @@ const YearHeatmap: React.FC<{
             </div>
         </div>
     );
-};
+});
 
-const DailyMatchList: React.FC<{
+const DailyMatchList = React.memo((
+{date, matches, onClose}
+: {
     date: string;
     matches: ActivityMatchDto[];
     onClose: () => void;
-}> = ({ date, matches, onClose }) => {
+}) => {
 
     const sortedMatches = useMemo(() =>
             [...matches].sort((a, b) => b.startTime - a.startTime),
@@ -314,4 +328,4 @@ const DailyMatchList: React.FC<{
             </div>
         </div>
     );
-};
+});
