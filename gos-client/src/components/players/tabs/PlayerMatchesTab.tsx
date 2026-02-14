@@ -24,7 +24,7 @@ import type { PlayerMatchDto } from '../../../types/playerMatches';
 import { getLaneConfig } from "../../../utils/scenariosUtils";
 import PartySizeIcon from "../PartySizeIcon";
 import { PlayerSlot } from "../../../types/common";
-import {Icon} from "../../Icon.tsx";
+import { Icon } from "../../Icon.tsx";
 
 interface Props {
     accountId: number;
@@ -89,6 +89,7 @@ export const PlayerMatchesTab: React.FC<Props> = ({ accountId, filters }) => {
 
 const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
     const isWin = isTeamWon(match.isRadiant, match.radiantWin);
+    const isPlayerRadiant = match.isRadiant.value === 1;
 
     const borderColor = isWin === true ? "border-emerald-500/30" : isWin === false ? "border-red-500/30" : "border-[#2e353b]";
     const shadowColor = isWin === true ? "hover:shadow-emerald-900/20" : isWin === false ? "hover:shadow-red-900/20" : "";
@@ -101,7 +102,6 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
     const { allies, enemies } = useMemo(() => {
         const _allies: number[] = [];
         const _enemies: number[] = [];
-        const isPlayerRadiant = match.isRadiant.value === 1;
 
         if (match.heroes) {
             Object.entries(match.heroes).forEach(([slotStr, heroDto]) => {
@@ -119,7 +119,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
             });
         }
         return { allies: _allies, enemies: _enemies };
-    }, [match.heroes, match.isRadiant, match.heroId]);
+    }, [match.heroes, match.heroId, isPlayerRadiant]);
 
     return (
         <div className={clsx(
@@ -134,11 +134,11 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                 <span className="sr-only">View Match</span>
             </Link>
 
-            <div className="relative z-10 p-3 md:p-4 flex flex-col gap-4 pointer-events-none">
+            <div className="relative z-10 p-4 md:p-4 flex flex-col gap-4 pointer-events-none">
 
                 <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between pointer-events-auto w-full">
 
-                    <div className="flex items-center gap-4 min-w-[240px]">
+                    <div className="flex items-center gap-4">
                         <div className="scale-100 origin-left shrink-0 relative z-20">
                             <HeroImage
                                 matchId={match.matchId}
@@ -150,9 +150,18 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className={clsx("font-serif font-black text-xl uppercase tracking-wider leading-none", resultTextColor)}>
-                                {resultText}
-                            </span>
+                            <div className="flex items-center gap-2">
+                                <span className={clsx("font-serif font-black text-xl uppercase tracking-wider leading-none", resultTextColor)}>
+                                    {resultText}
+                                </span>
+                                <div className={clsx(
+                                    "text-xs font-bold uppercase px-1.5 py-0.5 rounded border flex items-center gap-1",
+                                    isPlayerRadiant ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30" : "bg-red-500/10 text-red-400 border-red-500/30"
+                                )}>
+                                    <Icon src={isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={3} />
+                                    <span>{isPlayerRadiant ? 'Radiant' : 'Dire'}</span>
+                                </div>
+                            </div>
                             <div className="flex items-center gap-2 mt-1 text-xs text-[#808fa6]">
                                 <span className="font-bold text-[#e3e3e3]">{getGameModeName(match.gameMode.value)}</span>
                                 <span className="text-[#58606e]">•</span>
@@ -184,7 +193,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                                 <div className="flex items-center gap-2">
                                     {match.lane && match.lane.value !== 0 && (
                                         <div className="flex items-center gap-1" title={laneConfig.label}>
-                                            <Icon src={laneConfig.iconSrc} />
+                                            <Icon src={laneConfig.iconSrc} size={4} />
                                         </div>
                                     )}
                                     <div className="text-xs text-[#e3e3e3] bg-[#0f1114] px-1.5 py-0.5 rounded border border-[#2e353b]">
@@ -201,7 +210,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                         </div>
                     </div>
 
-                    <div className="hidden md:flex flex-col items-end gap-2 min-w-[100px]">
+                    <div className="hidden md:flex flex-col items-end gap-2">
                         <div className="flex items-center gap-2">
                             {match.averageRank && (
                                 <div title="Average Rank">
@@ -228,8 +237,20 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-xs w-full lg:w-auto">
-                        <div className="flex items-center gap-2 w-full sm:w-auto">
-                            <span className="text-[#58606e] font-bold uppercase tracking-wider text-xs w-12 sm:w-auto">Allies</span>
+
+                        {/* Allies Section */}
+                        <div className={clsx(
+                            "flex items-center gap-2 w-full sm:w-auto px-2 py-1.5 rounded-lg border",
+                            isPlayerRadiant
+                                ? "bg-emerald-900/10 border-emerald-500/20"
+                                : "bg-red-900/10 border-red-500/20"
+                        )}>
+                            <div className="flex items-center gap-1">
+                                <Icon src={isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={3} />
+                                <span className={clsx("font-bold uppercase tracking-wider text-xs", isPlayerRadiant ? "text-emerald-400" : "text-red-400")}>
+                                    Allies
+                                </span>
+                            </div>
                             <div className="flex gap-1">
                                 {allies.map(heroId => (
                                     <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
@@ -239,10 +260,19 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                             </div>
                         </div>
 
-                        <span className="hidden sm:block text-[#2e353b] font-mono">/</span>
-
-                        <div className="flex items-center gap-2 w-full sm:w-auto">
-                            <span className="text-[#58606e] font-bold uppercase tracking-wider text-xs w-12 sm:w-auto">Enemy</span>
+                        {/* Enemy Section */}
+                        <div className={clsx(
+                            "flex items-center gap-2 w-full sm:w-auto px-2 py-1.5 rounded-lg border",
+                            !isPlayerRadiant
+                                ? "bg-emerald-900/10 border-emerald-500/20"
+                                : "bg-red-900/10 border-red-500/20"
+                        )}>
+                            <div className="flex items-center gap-1">
+                                <Icon src={!isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={3} />
+                                <span className={clsx("font-bold uppercase tracking-wider text-xs", !isPlayerRadiant ? "text-emerald-400" : "text-red-400")}>
+                                    Enemy
+                                </span>
+                            </div>
                             <div className="flex gap-1">
                                 {enemies.map(heroId => (
                                     <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
