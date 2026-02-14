@@ -262,3 +262,18 @@ export const Patch = {
   v7_40: 59,
 } as const;
 export type Patch = typeof Patch[keyof typeof Patch];
+
+export const PlayerSlot = {
+  PlayerRadiant1: 0,
+  PlayerRadiant2: 1,
+  PlayerRadiant3: 2,
+  PlayerRadiant4: 3,
+  PlayerRadiant5: 4,
+  PlayerDire1: 128,
+  PlayerDire2: 129,
+  PlayerDire3: 130,
+  PlayerDire4: 131,
+  PlayerDire5: 132,
+} as const;
+
+export type PlayerSlot = typeof PlayerSlot[keyof typeof PlayerSlot];

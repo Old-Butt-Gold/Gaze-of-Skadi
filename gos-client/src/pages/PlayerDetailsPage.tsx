@@ -18,8 +18,9 @@ import {PlayerProsTab} from "../components/players/tabs/PlayerProsTab.tsx";
 import {PlayerCountsTab} from "../components/players/tabs/PlayerCountsTab.tsx";
 import {PlayerRecordsTab} from "../components/players/tabs/PlayerRecordsTab.tsx";
 import {PlayerActivityTab} from "../components/players/tabs/PlayerActivityTab.tsx";
+import {PlayerMatchesTab} from "../components/players/tabs/PlayerMatchesTab.tsx";
 
-export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer' | 'pro' | 'counts' | 'records' | 'activity';
+export type PlayerTabType = 'statistics' | 'wordcloud' | 'histogram' | 'heroes' | 'wardmap' | 'peer' | 'pro' | 'counts' | 'records' | 'activity' | 'matches';
 
 export interface PlayerTab {
     id: PlayerTabType;
@@ -55,13 +56,14 @@ export const PlayerDetailsPage: React.FC = () => {
         { id: 'statistics', label: 'Stats', disabled: isPrivate },
         { id: 'wordcloud', label: 'Word Cloud', disabled: isPrivate },
         { id: 'histogram', label: 'Histograms', disabled: isPrivate },
-        { id: 'heroes', label: 'Heroes', disabled: isPrivate }, // TODO add pagination
+        { id: 'heroes', label: 'Heroes', disabled: isPrivate },
         { id: 'wardmap', label: 'Ward Map', disabled: isPrivate },
-        { id: 'peer', label: 'Peers', disabled: isPrivate }, // TODO add pagination
-        { id: 'pro', label: 'Pros', disabled: isPrivate }, // TODO add pagination
+        { id: 'peer', label: 'Peers', disabled: isPrivate },
+        { id: 'pro', label: 'Pros', disabled: isPrivate },
         { id: 'counts', label: 'Counts', disabled: isPrivate },
         { id: 'records', label: 'Records', disabled: isPrivate },
         { id: 'activity', label: 'Activity', disabled: isPrivate },
+        { id: 'matches', label: 'Matches', disabled: isPrivate },
     ];
     // TODO remove winrate from top, just save for calculating isStatsEmpty because of incostistent state with activity
 
@@ -110,6 +112,7 @@ export const PlayerDetailsPage: React.FC = () => {
                             {activeTab === 'counts' && (<PlayerCountsTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'records' && (<PlayerRecordsTab accountId={parsedId} filters={filters} />)}
                             {activeTab === 'activity' && (<PlayerActivityTab accountId={parsedId} filters={filters} />)}
+                            {activeTab === 'matches' && (<PlayerMatchesTab accountId={parsedId} filters={filters} />)}
                         </>
                     )}
                 </div>

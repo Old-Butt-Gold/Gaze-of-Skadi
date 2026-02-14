@@ -1,6 +1,4 @@
-﻿using GoS.Application.Dto;
-using GoS.Application.Features.Players.Queries.GetPlayerMatches;
-using GoS.Domain.BaseEnums;
+﻿using GoS.Application.Features.Players.Queries.GetPlayerMatches;
 using MediatR;
 
 namespace GoS.Application.Features.Players.Queries.GetPlayerActivity;
