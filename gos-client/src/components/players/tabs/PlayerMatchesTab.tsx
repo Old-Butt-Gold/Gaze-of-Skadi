@@ -24,6 +24,7 @@ import type { PlayerMatchDto } from '../../../types/playerMatches';
 import { getLaneConfig } from "../../../utils/scenariosUtils";
 import PartySizeIcon from "../PartySizeIcon";
 import { PlayerSlot } from "../../../types/common";
+import {Icon} from "../../Icon.tsx";
 
 interface Props {
     accountId: number;
@@ -89,10 +90,10 @@ export const PlayerMatchesTab: React.FC<Props> = ({ accountId, filters }) => {
 const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
     const isWin = isTeamWon(match.isRadiant, match.radiantWin);
 
-    // Theme Colors based on Result
-    const themeColor = isWin === true ? "emerald" : isWin === false ? "red" : "slate";
     const borderColor = isWin === true ? "border-emerald-500/30" : isWin === false ? "border-red-500/30" : "border-[#2e353b]";
     const shadowColor = isWin === true ? "hover:shadow-emerald-900/20" : isWin === false ? "hover:shadow-red-900/20" : "";
+    const resultText = isWin === true ? "Victory" : isWin === false ? "Defeat" : "Draw";
+    const resultTextColor = isWin === true ? "text-emerald-400" : isWin === false ? "text-red-400" : "text-[#808fa6]";
 
     const items = [match.item0, match.item1, match.item2, match.item3, match.item4, match.item5];
     const laneConfig = getLaneConfig(match.lane?.value ?? 0);
@@ -108,7 +109,6 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                 const isSlotRadiant = slot < PlayerSlot.PlayerDire1;
                 const heroId = Number(heroDto.heroId);
 
-                // Skip the player themselves in the lists (optional, keeping for context)
                 if (heroId === match.heroId) return;
 
                 if (isSlotRadiant === isPlayerRadiant) {
@@ -127,7 +127,6 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
             borderColor,
             shadowColor
         )}>
-            {/* Clickable Overlay Link (Z-0) */}
             <Link
                 to={`${APP_ROUTES.MATCHES}/${match.matchId}`}
                 className="absolute inset-0 z-0"
@@ -135,15 +134,12 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                 <span className="sr-only">View Match</span>
             </Link>
 
-            {/* Main Content (Z-10 relative) - Interactive Elements inside here will work */}
-            <div className="relative z-10 p-4 flex flex-col gap-4 pointer-events-none">
+            <div className="relative z-10 p-3 md:p-4 flex flex-col gap-4 pointer-events-none">
 
-                {/* --- TOP ROW: Hero, Result, KDA, Info --- */}
-                <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between pointer-events-auto">
+                <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between pointer-events-auto w-full">
 
-                    {/* Left: Hero & Result */}
-                    <div className="flex items-center gap-4 min-w-[200px]">
-                        <div className="scale-110 origin-left">
+                    <div className="flex items-center gap-4 min-w-[240px]">
+                        <div className="scale-100 origin-left shrink-0 relative z-20">
                             <HeroImage
                                 matchId={match.matchId}
                                 heroId={match.heroId}
@@ -154,63 +150,76 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className={clsx("font-serif font-black text-xl uppercase tracking-wider leading-none",
-                                isWin === true ? "text-emerald-400" : isWin === false ? "text-red-400" : "text-[#808fa6]"
-                            )}>
-                                {isWin === true ? 'Victory' : isWin === false ? 'Defeat' : 'Draw'}
+                            <span className={clsx("font-serif font-black text-xl uppercase tracking-wider leading-none", resultTextColor)}>
+                                {resultText}
                             </span>
-                            <span className="text-xs text-[#808fa6] font-mono mt-1">
+                            <div className="flex items-center gap-2 mt-1 text-xs text-[#808fa6]">
+                                <span className="font-bold text-[#e3e3e3]">{getGameModeName(match.gameMode.value)}</span>
+                                <span className="text-[#58606e]">•</span>
+                                <span>{getLobbyTypeName(match.lobbyType.value)}</span>
+                            </div>
+                            <span className="text-xs text-[#58606e] font-mono mt-0.5">
                                 {formatRelativeTime(match.startTime)}
                             </span>
                         </div>
                     </div>
 
-                    {/* Center: KDA & Stats */}
-                    <div className="flex items-center gap-6 md:gap-8">
-                        <div className="flex flex-col items-center">
-                            <div className="flex items-center gap-1 font-mono text-lg">
-                                <span className="text-white font-bold">{match.kills}</span>
-                                <span className="text-[#58606e] text-sm">/</span>
-                                <span className="text-red-400 font-bold">{match.deaths}</span>
-                                <span className="text-[#58606e] text-sm">/</span>
-                                <span className="text-white font-bold">{match.assists}</span>
+                    <div className="flex flex-row md:flex-col items-center md:items-end gap-6 md:gap-1 w-full md:w-auto justify-between md:justify-center border-t md:border-t-0 border-[#2e353b]/30 pt-3 md:pt-0">
+
+                        <div className="flex items-center gap-4">
+                            <div className="flex flex-col items-center">
+                                <div className="flex items-center gap-1 font-mono text-lg leading-none">
+                                    <span className="text-white font-bold">{match.kills}</span>
+                                    <span className="text-[#58606e] text-xs">/</span>
+                                    <span className="text-red-400 font-bold">{match.deaths}</span>
+                                    <span className="text-[#58606e] text-xs">/</span>
+                                    <span className="text-white font-bold">{match.assists}</span>
+                                </div>
+                                <span className="text-[9px] uppercase font-bold text-[#58606e] tracking-widest mt-0.5">KDA</span>
                             </div>
-                            <span className="text-xs uppercase font-bold text-[#58606e] tracking-wider">KDA</span>
+
+                            <div className="h-8 w-px bg-[#2e353b] hidden md:block" />
+
+                            <div className="flex flex-col gap-1 items-start md:items-end">
+                                <div className="flex items-center gap-2">
+                                    {match.lane && match.lane.value !== 0 && (
+                                        <div className="flex items-center gap-1" title={laneConfig.label}>
+                                            <Icon src={laneConfig.iconSrc} />
+                                        </div>
+                                    )}
+                                    <div className="text-xs text-[#e3e3e3] bg-[#0f1114] px-1.5 py-0.5 rounded border border-[#2e353b]">
+                                        Lvl <span className="font-bold">{match.level || '-'}</span>
+                                    </div>
+                                </div>
+                                <span className="text-xs font-mono text-[#808fa6]">{formatDuration(match.duration)}</span>
+                            </div>
                         </div>
 
-                        {/* Level & Duration */}
-                        <div className="flex flex-col items-end gap-1">
-                            <div className="text-xs text-[#e3e3e3] bg-[#0f1114]/80 px-2 py-0.5 rounded border border-[#2e353b]">
-                                Lvl <span className="font-bold text-white">{match.level || '-'}</span>
-                            </div>
-                            <span className="text-xs font-mono text-[#808fa6]">{formatDuration(match.duration)}</span>
+                        <div className="flex items-center gap-3 md:hidden">
+                            {match.averageRank && <RankIcon rank={match.averageRank.value} size={8} />}
+                            {match.partySize && match.partySize > 1 && <PartySizeIcon partySize={match.partySize} />}
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-end gap-1 text-right min-w-[150px]">
-                        <div className="text-sm font-bold text-[#e3e3e3]">
-                            {getLobbyTypeName(match.lobbyType.value)}
-                        </div>
-                        <div className="text-xs text-[#808fa6]">
-                            {getGameModeName(match.gameMode.value)}
-                        </div>
-                        <div className="flex items-center gap-2 mt-1">
-                            {match.averageRank && <RankIcon rank={match.averageRank.value} />}
-                            {match.partySize && match.partySize > 1 && <PartySizeIcon partySize={match.partySize} />}
+                    <div className="hidden md:flex flex-col items-end gap-2 min-w-[100px]">
+                        <div className="flex items-center gap-2">
+                            {match.averageRank && (
+                                <div title="Average Rank">
+                                    <RankIcon rank={match.averageRank.value} />
+                                </div>
+                            )}
+                            {match.partySize && match.partySize > 1 && (
+                                <PartySizeIcon partySize={match.partySize} />
+                            )}
                         </div>
                     </div>
                 </div>
 
-                {/* Separator */}
-                <div className="h-px w-full bg-[#2e353b]/50" />
+                <div className="flex flex-col lg:flex-row gap-4 justify-between items-start lg:items-center pointer-events-auto">
 
-                {/* --- BOTTOM ROW: Items & Teams --- */}
-                <div className="flex flex-col md:flex-row gap-4 justify-between items-center pointer-events-auto">
-
-                    {/* Items Grid */}
-                    <div className="flex gap-1">
+                    <div className="flex gap-1 overflow-x-auto pb-1 lg:pb-0 scrollbar-none w-full lg:w-auto">
                         {items.map((itemId, idx) => (
-                            <div key={idx} className="rounded-sm overflow-hidden shadow-inner relative group/item">
+                            <div key={idx} className="shrink-0 rounded-sm overflow-hidden relative group/item">
                                 {itemId ? (
                                     <ItemByIdCell itemId={String(itemId)} />
                                 ) : null}
@@ -218,28 +227,29 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                         ))}
                     </div>
 
-                    {/* Teams Display */}
-                    <div className="flex items-center gap-4 text-sm font-bold text-[#58606e]">
-                        {/* Allies */}
-                        <div className="flex items-center gap-1 bg-[#0f1114]/30 p-1 rounded-lg border border-[#2e353b]/30">
-                            <span className="text-xs uppercase tracking-wider mr-1 text-emerald-500/70">Allies</span>
-                            {allies.map(heroId => (
-                                <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform hover:border-emerald-500/50 hover:z-20 relative">
-                                    <HeroCell heroId={heroId} showName={false} />
-                                </div>
-                            ))}
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-xs w-full lg:w-auto">
+                        <div className="flex items-center gap-2 w-full sm:w-auto">
+                            <span className="text-[#58606e] font-bold uppercase tracking-wider text-xs w-12 sm:w-auto">Allies</span>
+                            <div className="flex gap-1">
+                                {allies.map(heroId => (
+                                    <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
+                                        <HeroCell heroId={heroId} showName={false} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
 
-                        <span className="text-[#2e353b] font-mono text-xs">VS</span>
+                        <span className="hidden sm:block text-[#2e353b] font-mono">/</span>
 
-                        {/* Enemies */}
-                        <div className="flex items-center gap-1 bg-[#0f1114]/30 p-1 rounded-lg border border-[#2e353b]/30">
-                            {enemies.map(heroId => (
-                                <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform hover:border-red-500/50 hover:z-20 relative">
-                                    <HeroCell heroId={heroId} showName={false} />
-                                </div>
-                            ))}
-                            <span className="text-xs uppercase tracking-wider ml-1 text-red-500/70">Enemy</span>
+                        <div className="flex items-center gap-2 w-full sm:w-auto">
+                            <span className="text-[#58606e] font-bold uppercase tracking-wider text-xs w-12 sm:w-auto">Enemy</span>
+                            <div className="flex gap-1">
+                                {enemies.map(heroId => (
+                                    <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
+                                        <HeroCell heroId={heroId} showName={false} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
