@@ -7,6 +7,5 @@ export const useRecords = (field: RecordField) => {
     queryKey: ['common', 'records', field],
     queryFn: () => commonService.getRecordsByField(field),
     staleTime: 1000 * 60 * 5, // 5 минут,
-    retry: 1,
   });
 };

@@ -7,6 +7,5 @@ export const useDistributions = () => {
     queryKey: ['common', 'distribution'],
     queryFn: commonService.getDistributions,
     staleTime: 1000 * 60 * 5, // Кешируем на 5 минут
-    retry: 1,
   });
 };
