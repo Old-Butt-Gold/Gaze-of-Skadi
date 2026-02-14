@@ -14,6 +14,7 @@ import {SortIndicator} from "../SortIndicator";
 import {Icon} from "../../Icon";
 import type {SteamPlayerDto} from "../../../types/steam";
 import {PlayerCellShort} from "../../players/PlayerCellShort.tsx";
+import { Pagination } from '../../ui/Pagination'; // Импорт
 
 interface Props {
     hero: HeroInfo;
@@ -94,11 +95,17 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
         setCurrentPage(1);
     };
 
+    const handlePageChange = (newPage: number) => {
+        setCurrentPage(newPage);
+        // Optional: Scroll to top of table
+        document.getElementById('matches-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
     if (isLoading) return <LoadingSpinner text="Loading match history..." />;
     if (isError) return <ErrorDisplay message="Match history unavailable" onRetry={refetch} />;
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" id="matches-table-top">
 
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
@@ -220,26 +227,14 @@ export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
                     )}
                 </div>
 
-                {/* Pagination Controls */}
+                {/* Pagination Footer */}
                 {totalPages > 1 && (
-                    <div className="flex justify-between items-center px-6 py-4 bg-[#0f1114] border-t border-[#2e353b]">
-                        <button
-                            disabled={currentPage === 1}
-                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                            className="text-xs font-bold uppercase tracking-wider text-[#808fa6] hover:text-white disabled:opacity-30 disabled:hover:text-[#808fa6] transition-colors"
-                        >
-                            ← Previous
-                        </button>
-                        <span className="text-xs font-mono text-[#58606e]">
-                            Page <span className="text-[#e3e3e3]">{currentPage}</span> of {totalPages}
-                        </span>
-                        <button
-                            disabled={currentPage === totalPages}
-                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                            className="text-xs font-bold uppercase tracking-wider text-[#808fa6] hover:text-white disabled:opacity-30 disabled:hover:text-[#808fa6] transition-colors"
-                        >
-                            Next →
-                        </button>
+                    <div className="border-t border-[#2e353b] bg-[#0f1114]/30">
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={handlePageChange}
+                        />
                     </div>
                 )}
             </div>

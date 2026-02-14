@@ -1,10 +1,10 @@
 ﻿import React, { useMemo, useState } from 'react';
-import clsx from 'clsx';
 import { useSteamNews } from '../hooks/queries/useSteamNews';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { formatDateLong } from '../utils/formatUtils';
 import { Icon } from '../components/Icon';
+import { Pagination } from '../components/ui/Pagination';
 
 const PAGE_SIZE = 20;
 const LENGTH = 5000;
@@ -34,7 +34,6 @@ export const NewsPage: React.FC = () => {
 
             {/* Hero Header */}
             <div className="relative h-64 md:h-80 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] overflow-hidden border-b border-[#2e353b]">
-                {/* Background Pattern / Image (Abstract Dota Pattern) */}
                 <div className="absolute inset-0 opacity-20 bg-[url('https://shared.akamai.steamstatic.com//store_item_assets/steam/apps/570/ss_27b6345f22243bd6b885cc64c5cda74e4bd9c3e8.jpg')] bg-cover bg-no-repeat bg-position-[center_top_9%]" />
 
                 <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
@@ -58,8 +57,8 @@ export const NewsPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {paginatedData.map((item, index) => (
                         <article key={`${item.date}-${index}`}
-                            className="group bg-[#15171c] border border-[#2e353b] hover:border-[#e7d291]/50 rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col h-full animate-in fade-in zoom-in duration-500"
-                            style={{ animationDelay: `${index * 50}ms` }}
+                                 className="group bg-[#15171c] border border-[#2e353b] hover:border-[#e7d291]/50 rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col h-full animate-in fade-in zoom-in duration-500"
+                                 style={{ animationDelay: `${index * 50}ms` }}
                         >
                             {/* Decorative Top Bar */}
                             <div className="h-1 w-full bg-gradient-to-r from-[#2e353b] to-[#15171c] group-hover:from-[#e7d291] group-hover:to-[#b88a44] transition-all duration-500" />
@@ -109,60 +108,12 @@ export const NewsPage: React.FC = () => {
                 </div>
 
                 {/* Pagination Controls */}
-                {totalPages > 1 && (
-                    <div className="mt-12 flex justify-center items-center gap-2">
-                        {/* Prev */}
-                        <button
-                            disabled={currentPage === 1}
-                            onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                            className="w-10 h-10 flex items-center justify-center rounded bg-[#15171c] border border-[#2e353b] text-[#808fa6] hover:text-white hover:border-[#58606e] disabled:opacity-30 disabled:hover:border-[#2e353b] transition-all"
-                        >
-                            ←
-                        </button>
-
-                        {/* Page Numbers (Simple Logic) */}
-                        <div className="flex gap-2">
-                            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                                // Logic to center current page if possible
-                                let pageNum = i + 1;
-                                if (totalPages > 5 && currentPage > 3) {
-                                    pageNum = currentPage - 2 + i;
-                                    if (pageNum > totalPages) pageNum -= (pageNum - totalPages);
-                                }
-
-                                // Adjust if logic pushed pageNum too low
-                                if (pageNum < 1) pageNum = i + 1;
-
-                                return (
-                                    <button
-                                        key={pageNum}
-                                        onClick={() => handlePageChange(pageNum)}
-                                        className={clsx(
-                                            "w-10 h-10 flex items-center justify-center rounded font-mono font-bold text-sm border transition-all",
-                                            currentPage === pageNum
-                                                ? "bg-[#e7d291] text-black border-[#e7d291] shadow-[0_0_10px_rgba(231,210,145,0.4)]"
-                                                : "bg-[#15171c] border-[#2e353b] text-[#808fa6] hover:text-white hover:border-[#58606e]"
-                                        )}
-                                    >
-                                        {pageNum}
-                                    </button>
-                                );
-                            })}
-                        </div>
-
-                        {/* Next */}
-                        <button
-                            disabled={currentPage === totalPages}
-                            onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-                            className="w-10 h-10 flex items-center justify-center rounded bg-[#15171c] border border-[#2e353b] text-[#808fa6] hover:text-white hover:border-[#58606e] disabled:opacity-30 disabled:hover:border-[#2e353b] transition-all"
-                        >
-                            →
-                        </button>
-                    </div>
-                )}
-
-                <div className="text-center mt-4 text-[#58606e] text-xs uppercase tracking-widest">
-                    Page {currentPage} of {totalPages}
+                <div className="mt-12">
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={handlePageChange}
+                    />
                 </div>
             </div>
         </div>

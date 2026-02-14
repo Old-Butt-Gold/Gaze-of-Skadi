@@ -6,15 +6,17 @@ import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
 import type { SortDirection } from "../../../store/teamStore";
-import type {HeroInfo} from "../../../types/heroes.ts";
-import {SortIndicator} from "../SortIndicator.tsx";
-import {HeroCell} from "../HeroCell.tsx";
+import type { HeroInfo } from "../../../types/heroes.ts";
+import { SortIndicator } from "../SortIndicator.tsx";
+import { HeroCell } from "../HeroCell.tsx";
+import { Pagination } from '../../ui/Pagination'; // Импорт
 
 interface Props {
     hero: HeroInfo;
 }
 
 type SortKey = 'games' | 'winrate' | 'hero';
+const PAGE_SIZE = 20;
 
 export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
     const { data: matchups, isLoading, isError, refetch } = useHeroMatchups(hero.id);
@@ -22,6 +24,7 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
 
     const [sortKey, setSortKey] = useState<SortKey>('games');
     const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
+    const [currentPage, setCurrentPage] = useState(1); // 1. State
 
     const processedData = useMemo(() => {
         if (!matchups) return [];
@@ -36,7 +39,6 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
                     winRate: wr
                 };
             })
-            // Убираем тех, кого не нашли в базе (на всякий случай)
             .filter(item => item.opponent !== null)
             .sort((a, b) => {
                 let valA: number | string = 0;
@@ -66,6 +68,14 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
             });
     }, [matchups, getHero, sortKey, sortDirection]);
 
+    // 2. Pagination Logic
+    const paginatedData = useMemo(() => {
+        const start = (currentPage - 1) * PAGE_SIZE;
+        return processedData.slice(start, start + PAGE_SIZE);
+    }, [processedData, currentPage]);
+
+    const totalPages = Math.ceil(processedData.length / PAGE_SIZE);
+
     const handleSort = (key: SortKey) => {
         if (sortKey === key) {
             setSortDirection(prev => prev === 'desc' ? 'asc' : 'desc');
@@ -73,14 +83,20 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
             setSortKey(key);
             setSortDirection('desc');
         }
+        setCurrentPage(1); // 3. Reset page on sort
+    };
+
+    const handlePageChange = (newPage: number) => {
+        setCurrentPage(newPage);
+        // Optional: Scroll to top
+        document.getElementById('matchups-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Analyzing battle records..." />;
     if (isError) return <ErrorDisplay message="Matchup data unavailable" onRetry={refetch} />;
 
-    // 4. Рендер
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" id="matchups-table-top">
 
             {/* Header / Disclaimer */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
@@ -136,7 +152,7 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
 
                 {/* Rows */}
                 <div className="divide-y divide-[#2e353b]/50 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#15171c]">
-                    {processedData.length > 0 ? processedData.map((item) => {
+                    {paginatedData.length > 0 ? paginatedData.map((item) => {
                         const isAdvantage = item.winRate >= 50;
                         const barColor = isAdvantage ? 'bg-emerald-500' : 'bg-red-500';
                         const barGlow = isAdvantage ? 'shadow-[0_0_10px_rgba(16,185,129,0.4)]' : 'shadow-[0_0_10px_rgba(239,68,68,0.4)]';
@@ -195,6 +211,17 @@ export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
                         </div>
                     )}
                 </div>
+
+                {/* 4. Pagination Footer */}
+                {totalPages > 1 && (
+                    <div className="border-t border-[#2e353b] bg-[#0f1114]/30">
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={handlePageChange}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );

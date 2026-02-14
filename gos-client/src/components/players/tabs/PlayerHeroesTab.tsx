@@ -8,6 +8,7 @@ import type { SortDirection } from '../../../store/teamStore';
 import {SortIndicator} from "../../heroes/SortIndicator.tsx";
 import {HeroCell} from "../../heroes/HeroCell.tsx";
 import {useHeroes} from "../../../hooks/queries/useHeroes.ts";
+import { Pagination } from '../../ui/Pagination';
 
 interface Props {
     accountId: number;
@@ -23,6 +24,9 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
     const [sortKey, setSortKey] = useState<SortKey>('matches');
     const [sortDir, setSortDir] = useState<SortDirection>('desc');
 
+    const [page, setPage] = useState(1);
+    const PAGE_SIZE = 20;
+
     const handleSort = (key: SortKey) => {
         if (sortKey === key) {
             setSortDir(sortDir === 'desc' ? 'asc' : 'desc');
@@ -30,6 +34,7 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
             setSortKey(key);
             setSortDir('desc');
         }
+        setPage(1);
     };
 
     const processedData = useMemo(() => {
@@ -87,6 +92,13 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
 
     }, [heroesData, getHero, sortKey, sortDir]);
 
+    const paginatedData = useMemo(() => {
+        const start = (page - 1) * PAGE_SIZE;
+        return processedData.slice(start, start + PAGE_SIZE);
+    }, [processedData, page]);
+
+    const totalPages = Math.ceil(processedData.length / PAGE_SIZE);
+
     if (isHeroesLoading) return <LoadingSpinner text="Loading Heroes..." />;
     if (!heroesData || heroesData.length === 0) return <div className="text-center text-[#808fa6] py-10">No heroes played found.</div>;
 
@@ -140,7 +152,7 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
 
                 {/* --- ROWS --- */}
                 <div className="divide-y divide-[#2e353b]/30 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#15171c]">
-                    {processedData.map((row) => (
+                    {paginatedData.map((row) => (
                         <div key={row.heroId} className="grid grid-cols-12 gap-2 px-4 py-2 items-center hover:bg-[#1e222b] transition-colors group">
 
                             {/* 1. Hero */}
@@ -198,6 +210,16 @@ export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
                         </div>
                     ))}
                 </div>
+
+                {totalPages > 1 && (
+                    <div className="border-t border-[#2e353b] bg-[#0f1114]/50">
+                        <Pagination
+                            currentPage={page}
+                            totalPages={totalPages}
+                            onPageChange={setPage}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );

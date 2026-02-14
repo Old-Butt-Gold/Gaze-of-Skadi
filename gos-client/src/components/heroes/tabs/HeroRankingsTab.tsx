@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { useHeroRankings } from '../../../hooks/queries/useHeroRankings';
@@ -7,11 +7,14 @@ import { RankIcon } from "../../distributions/RankIcon";
 import { LoadingSpinner } from "../../ui/LoadingSpinner";
 import type { HeroInfo } from "../../../types/heroes";
 import { Icon } from "../../Icon";
-import { APP_ROUTES } from "../../../config/navigation"; // Импорт конфига маршрутов
+import { APP_ROUTES } from "../../../config/navigation";
+import { Pagination } from '../../ui/Pagination'; // Import Pagination
 
 interface Props {
     hero: HeroInfo;
 }
+
+const PAGE_SIZE = 20;
 
 const RankBadge = ({ rank }: { rank: number }) => {
     if (rank === 1) return <span className="text-2xl drop-shadow-md">🥇</span>;
@@ -23,10 +26,28 @@ const RankBadge = ({ rank }: { rank: number }) => {
 
 export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
     const { data, isLoading, isError, refetch } = useHeroRankings(hero.id);
+    const [page, setPage] = useState(1);
+
+    // Calculate paginated data
+    const { paginatedRankings, totalPages } = useMemo(() => {
+        if (!data || !data.rankings) return { paginatedRankings: [], totalPages: 0 };
+
+        const total = Math.ceil(data.rankings.length / PAGE_SIZE);
+        const start = (page - 1) * PAGE_SIZE;
+        const sliced = data.rankings.slice(start, start + PAGE_SIZE);
+
+        return { paginatedRankings: sliced, totalPages: total };
+    }, [data, page]);
+
+    const handlePageChange = (newPage: number) => {
+        setPage(newPage);
+        // Optional: Scroll to top of table on page change
+        document.getElementById('rankings-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
     if (isLoading) return <LoadingSpinner text="Loading Leaderboard..." />;
 
-    // Check for empty array specifically, as API might return 200 OK but empty list
+    // Check for empty array specifically
     if (isError || !data || !data.rankings || data.rankings.length === 0) {
         return (
             <div className="py-12">
@@ -39,7 +60,7 @@ export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
     }
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" id="rankings-table-top">
 
             {/* Header */}
             <div className="mb-8 border-l-4 border-[#e7d291] pl-4 bg-gradient-to-r from-[#e7d291]/5 to-transparent py-3 rounded-r-lg">
@@ -64,8 +85,9 @@ export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
                         </tr>
                         </thead>
                         <tbody className="text-sm divide-y divide-[#2e353b]/50">
-                        {data.rankings.map((player, index) => {
-                            const rank = index + 1;
+                        {paginatedRankings.map((player, index) => {
+                            // Calculate global rank based on page
+                            const rank = (page - 1) * PAGE_SIZE + index + 1;
                             const isTop3 = rank <= 3;
 
                             return (
@@ -144,6 +166,17 @@ export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
                         </tbody>
                     </table>
                 </div>
+
+                {/* Pagination Footer */}
+                {totalPages > 1 && (
+                    <div className="border-t border-[#2e353b] bg-[#0f1114]/30">
+                        <Pagination
+                            currentPage={page}
+                            totalPages={totalPages}
+                            onPageChange={handlePageChange}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );

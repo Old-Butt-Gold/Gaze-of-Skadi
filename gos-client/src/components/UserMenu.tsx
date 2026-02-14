@@ -72,19 +72,14 @@ export const UserMenu: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
-
-            {/* Dropdown Menu */}
             {isOpen && (
                 <div className="absolute right-0 mt-2 w-60 bg-[#15171c] border border-[#2e353b] rounded-xl shadow-2xl py-2 z-50 animate-in fade-in zoom-in-95 duration-200 origin-top-right ring-1 ring-black/50">
-
-                    {/* Header: Имя показывается здесь (для всех экранов) */}
                     <div className="px-4 py-3 border-b border-[#2e353b] bg-[#0f1114]/50">
                         <p className="text-sm font-bold text-white truncate">{user?.steam_steamname}</p>
                         <p className="text-xs text-[#58606e] mt-0.5">Steam ID: {accountId}</p>
                     </div>
 
                     <div className="py-1">
-                        {/* 1. Internal Profile Link */}
                         <Link
                             to={`${APP_ROUTES.PLAYERS}/${accountId}`}
                             className="flex items-center gap-3 px-4 py-2.5 text-sm font-bold text-[#e3e3e3] hover:bg-[#e7d291] hover:text-[#0f1114] transition-all group/item"
@@ -96,7 +91,6 @@ export const UserMenu: React.FC = () => {
                             My Stats
                         </Link>
 
-                        {/* 2. External Steam Link */}
                         <a href={user?.steam_profileurl}
                            target="_blank"
                            rel="noopener noreferrer"
@@ -112,7 +106,6 @@ export const UserMenu: React.FC = () => {
 
                     <div className="my-1 border-t border-[#2e353b]"></div>
 
-                    {/* 3. Logout */}
                     <button
                         onClick={() => { setIsOpen(false); logout(); }}
                         className="w-full text-left px-4 py-2.5 text-sm font-bold text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-colors flex items-center gap-3"

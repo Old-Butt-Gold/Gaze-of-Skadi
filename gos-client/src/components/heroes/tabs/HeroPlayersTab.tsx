@@ -9,7 +9,8 @@ import type { HeroInfo } from '../../../types/heroes';
 import type { SortDirection } from "../../../store/teamStore";
 import { SortIndicator } from "../SortIndicator";
 import type { SteamPlayerDto } from "../../../types/steam";
-import {PlayerCellShort} from "../../players/PlayerCellShort.tsx";
+import { PlayerCellShort } from "../../players/PlayerCellShort.tsx";
+import { Pagination } from '../../ui/Pagination'; // Импорт
 
 interface Props {
     hero: HeroInfo;
@@ -82,14 +83,19 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
             setSortKey(key);
             setSortDirection('desc');
         }
-        setCurrentPage(1);
+        setCurrentPage(1); // Reset page
+    };
+
+    const handlePageChange = (newPage: number) => {
+        setCurrentPage(newPage);
+        document.getElementById('players-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Scouting professional players..." />;
     if (isError) return <ErrorDisplay message="Player data unavailable" onRetry={refetch} />;
 
     return (
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6">
+        <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 pb-6" id="players-table-top">
 
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-4">
@@ -144,28 +150,28 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
                                     <PlayerCellShort accountId={player.accountId} playerData={steamData} isLoading={isPlayersBusy} />
                                 </div>
 
-                            {/* Matches */}
-                            <div className="col-span-3 md:col-span-3 text-center">
-                                <span className="font-mono text-white font-bold text-sm">
-                                    {player.gamesPlayed.toLocaleString()}
-                                </span>
-                                <div className="w-full h-1 bg-[#2e353b] rounded-full mt-1 mx-auto overflow-hidden">
-                                    <div
-                                        className="h-full bg-[#60a5fa]"
-                                        style={{ width: `${Math.min((player.gamesPlayed / 50) * 100, 100)}%` }}
-                                    />
+                                {/* Matches */}
+                                <div className="col-span-3 md:col-span-3 text-center">
+                                    <span className="font-mono text-white font-bold text-sm">
+                                        {player.gamesPlayed.toLocaleString()}
+                                    </span>
+                                    <div className="w-full h-1 bg-[#2e353b] rounded-full mt-1 mx-auto overflow-hidden">
+                                        <div
+                                            className="h-full bg-[#60a5fa]"
+                                            style={{ width: `${Math.min((player.gamesPlayed / 50) * 100, 100)}%` }}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* Win Rate */}
-                            <div className="col-span-3 md:col-span-4 text-right">
-                                <span className={clsx("font-mono font-bold text-sm block", getWinRateColor(player.winRate))}>
-                                    {player.winRate.toFixed(1)}%
-                                </span>
-                                <span className="text-[10px] text-[#58606e]">
-                                    {player.wins} Wins
-                                </span>
-                            </div>
+                                {/* Win Rate */}
+                                <div className="col-span-3 md:col-span-4 text-right">
+                                    <span className={clsx("font-mono font-bold text-sm block", getWinRateColor(player.winRate))}>
+                                        {player.winRate.toFixed(1)}%
+                                    </span>
+                                    <span className="text-[10px] text-[#58606e]">
+                                        {player.wins} Wins
+                                    </span>
+                                </div>
 
                             </div>
                         );
@@ -178,24 +184,12 @@ export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
 
                 {/* Pagination Controls */}
                 {totalPages > 1 && (
-                    <div className="flex justify-between items-center px-6 py-4 bg-[#0f1114] border-t border-[#2e353b]">
-                        <button
-                            disabled={currentPage === 1}
-                            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                            className="text-xs font-bold uppercase tracking-wider text-[#808fa6] hover:text-white disabled:opacity-30 disabled:hover:text-[#808fa6] transition-colors"
-                        >
-                            ← Previous
-                        </button>
-                        <span className="text-xs font-mono text-[#58606e]">
-                            Page <span className="text-[#e3e3e3]">{currentPage}</span> of {totalPages}
-                        </span>
-                        <button
-                            disabled={currentPage === totalPages}
-                            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                            className="text-xs font-bold uppercase tracking-wider text-[#808fa6] hover:text-white disabled:opacity-30 disabled:hover:text-[#808fa6] transition-colors"
-                        >
-                            Next →
-                        </button>
+                    <div className="border-t border-[#2e353b] bg-[#0f1114]/30">
+                        <Pagination
+                            currentPage={currentPage}
+                            totalPages={totalPages}
+                            onPageChange={handlePageChange}
+                        />
                     </div>
                 )}
             </div>

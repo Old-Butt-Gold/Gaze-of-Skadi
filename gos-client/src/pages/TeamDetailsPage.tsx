@@ -28,7 +28,7 @@ export const TeamDetailsPage: React.FC = () => {
     if (isError || !team) return <ErrorDisplay message="Failed to load team details." />;
 
     return (
-        <div className="w-full min-h-screen pb-20 animate-fade-in">
+        <div className="w-full min-h-screen pb-10 animate-fade-in">
             <TeamHeader team={team} />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -53,7 +53,7 @@ export const TeamDetailsPage: React.FC = () => {
                 </div>
 
                 {/* Tab Content */}
-                <div className="min-h-[400px]">
+                <div className="min-h-[10vh]">
                     {activeTab === 'matches' && matches && (
                         <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
                             {/* Убрали заголовок "Recent Matches", так как вкладка уже говорит об этом, чище UI */}
