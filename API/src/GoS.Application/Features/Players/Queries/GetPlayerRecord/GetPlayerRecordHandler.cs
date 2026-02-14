@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Globalization;
+using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Options;
 using GoS.Domain.Extensions;
@@ -28,7 +29,7 @@ internal sealed class GetPlayerRecordHandler(IRequester<OpenDotaHttpRequesterOpt
                 var key = request.Field.ToSnakeCase();
                 if (playerMatch.RecordFields.TryGetValue(key, out var recordValue))
                 {
-                    result[index].RecordField = int.Parse(recordValue?.ToString() ?? "0");
+                    result[index].RecordField = (int)double.Parse(recordValue?.ToString() ?? "0", NumberStyles.Any, CultureInfo.InvariantCulture);
                 }
             }
 

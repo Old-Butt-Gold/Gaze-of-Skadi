@@ -1,9 +1,9 @@
 ﻿import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
-import {useAuth} from "../hooks/queries/useAuth.ts";
-import {Icon} from "./Icon.tsx";
-import {APP_ROUTES} from "../config/navigation.ts";
+import { useAuth } from "../hooks/queries/useAuth.ts";
+import { Icon } from "./Icon.tsx";
+import { APP_ROUTES } from "../config/navigation.ts";
 
 export const UserMenu: React.FC = () => {
     const { isAuthenticated, user, login, logout, isLoading } = useAuth();
@@ -45,19 +45,11 @@ export const UserMenu: React.FC = () => {
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={clsx(
-                    "group flex items-center gap-3 pl-4 pr-1 py-1 rounded-lg transition-all duration-200 outline-none",
+                    "group flex items-center gap-2 p-1 rounded-lg transition-all duration-200 outline-none", // Уменьшил padding
                     isOpen ? "bg-[#ffffff]/5" : "hover:bg-[#ffffff]/5"
                 )}
             >
-                {/* Text Info */}
-                <div className="text-right hidden sm:block">
-                    <div className={clsx(
-                        "text-sm font-bold transition-colors truncate max-w-[120px]",
-                        isOpen ? "text-white" : "text-[#e3e3e3] group-hover:text-white"
-                    )}>
-                        {user?.steam_steamname}
-                    </div>
-                </div>
+                {/* --- Имя удалено отсюда --- */}
 
                 {/* Avatar Wrapper */}
                 <div className={clsx(
@@ -85,9 +77,10 @@ export const UserMenu: React.FC = () => {
             {isOpen && (
                 <div className="absolute right-0 mt-2 w-60 bg-[#15171c] border border-[#2e353b] rounded-xl shadow-2xl py-2 z-50 animate-in fade-in zoom-in-95 duration-200 origin-top-right ring-1 ring-black/50">
 
-                    {/* Header for Mobile only */}
-                    <div className="px-4 py-3 border-b border-[#2e353b] sm:hidden bg-[#0f1114]/50">
+                    {/* Header: Имя показывается здесь (для всех экранов) */}
+                    <div className="px-4 py-3 border-b border-[#2e353b] bg-[#0f1114]/50">
                         <p className="text-sm font-bold text-white truncate">{user?.steam_steamname}</p>
+                        <p className="text-xs text-[#58606e] mt-0.5">Steam ID: {accountId}</p>
                     </div>
 
                     <div className="py-1">

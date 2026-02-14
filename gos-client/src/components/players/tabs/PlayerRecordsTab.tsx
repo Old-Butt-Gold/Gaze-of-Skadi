@@ -113,7 +113,7 @@ const RecordRow: React.FC<{
     const isRadiant = isRadiantTeam(record.isRadiant);
 
     const formatValue = (val: number) => {
-        if (field === PlayerField.Duration) return formatDuration(val);
+        if (field === PlayerField.Duration || field === PlayerField.Stuns) return formatDuration(val);
         return val.toLocaleString();
     };
 
