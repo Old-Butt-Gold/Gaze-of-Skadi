@@ -166,6 +166,8 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                                 <span className="font-bold text-[#e3e3e3]">{getGameModeName(match.gameMode.value)}</span>
                                 <span className="text-[#58606e]">•</span>
                                 <span>{getLobbyTypeName(match.lobbyType.value)}</span>
+                                <PartySizeIcon partySize={match.partySize} />
+
                             </div>
                             <span className="text-xs text-[#58606e] font-mono mt-0.5">
                                 {formatRelativeTime(match.startTime)}
@@ -205,21 +207,13 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                         </div>
 
                         <div className="flex items-center gap-3 md:hidden">
-                            {match.averageRank && <RankIcon rank={match.averageRank.value} size={8} />}
-                            {match.partySize && match.partySize > 1 && <PartySizeIcon partySize={match.partySize} />}
+                            <RankIcon rank={match.averageRank?.value} />
                         </div>
                     </div>
 
                     <div className="hidden md:flex flex-col items-end gap-2">
                         <div className="flex items-center gap-2">
-                            {match.averageRank && (
-                                <div title="Average Rank">
-                                    <RankIcon rank={match.averageRank.value} />
-                                </div>
-                            )}
-                            {match.partySize && match.partySize > 1 && (
-                                <PartySizeIcon partySize={match.partySize} />
-                            )}
+                            <RankIcon rank={match.averageRank?.value} />
                         </div>
                     </div>
                 </div>
