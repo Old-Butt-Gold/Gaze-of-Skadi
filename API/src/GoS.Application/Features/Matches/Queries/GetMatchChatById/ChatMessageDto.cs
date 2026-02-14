@@ -14,7 +14,6 @@ public class ChatDataDto
     public int Time { get; set; }
     public required BaseEnumDto<ChatType> Type { get; set; }
     public required string Message { get; set; }
-    public string? SoundExtension { get; set; }
-    public string? Url { get; set; }
-    public string? Image { get; set; }
+    public string? SoundUrl { get; set; }
+    public string? ImageUrl { get; set; }
 }

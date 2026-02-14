@@ -21,9 +21,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
         return GetChatDataForPlayers(chatResources!, match);
     }
 
-    private IEnumerable<ChatMessageDto> GetChatDataForPlayers(
-        Dictionary<string, ChatWheel> chatResources,
-        Match match)
+    private IEnumerable<ChatMessageDto> GetChatDataForPlayers(Dictionary<string, ChatWheel> chatResources, Match match)
     {
         foreach (var chat in match.Chat)
         {
@@ -54,9 +52,8 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
                             Time = chat.Time,
                             Message = resource.Message!,
                             Type = mapper.Map<BaseEnumDto<ChatType>>(chat.Type),
-                            SoundExtension = resource.SoundExtension,
-                            Url = resource.Url,
-                            Image = resource.Image,
+                            SoundUrl = resource.Url,
+                            ImageUrl = resource.Image,
                         }
                     };
                     break;

@@ -20,12 +20,6 @@ public class ChatWheel
     [JsonPropertyName("image")]
     public string? Image { get; set; }
 
-    [JsonPropertyName("sound_ext")]
-    public string? SoundExtension { get; set; }
-
     [JsonPropertyName("url")]
     public string? Url { get; set; }
-
-    [JsonPropertyName("all_chat")]
-    public BooleanState? AllChat { get; set; }
 }
