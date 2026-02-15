@@ -17,7 +17,6 @@ public class PlayerMatch
     /// <summary>
     /// Gets parse version, used internally by OpenDota
     /// </summary>
-    /// TODO if match parsed or not. if not then it's null
     [JsonPropertyName("version")]
     public int? Version { get; init; }
 

@@ -14,12 +14,6 @@ public class TeamHero
 	public int HeroId { get; init; }
 
 	/// <summary>
-	/// Gets hero name, e.g. 'Anti-Mage'.
-	/// </summary>
-	[JsonPropertyName("localized_name")]
-	public string? LocalizedName { get; init; }
-
-	/// <summary>
 	/// Gets number of games played.
 	/// </summary>
 	[JsonPropertyName("games_played")]

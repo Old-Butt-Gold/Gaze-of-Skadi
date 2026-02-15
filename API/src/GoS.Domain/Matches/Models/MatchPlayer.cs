@@ -54,12 +54,6 @@ public class MatchPlayer
 	public Dictionary<UnitOrder, long> Actions { get; init; } = new();
 
 	/// <summary>
-	/// Gets object containing information on additional units the player had under their control
-	/// </summary>
-	[JsonPropertyName("additional_units")]
-	public List<AdditionalUnit>? AdditionalUnits { get; init; }
-
-	/// <summary>
 	/// Gets number of assists the player had
 	/// </summary>
 	[JsonPropertyName("assists")]

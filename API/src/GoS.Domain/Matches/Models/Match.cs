@@ -164,26 +164,32 @@ public class Match
 	public Region Region { get; init; }
 
 	/// <summary>
-	/// Gets the maximum gold advantage of the player's team if they lost the match.
-	/// </summary>
-	[JsonPropertyName("throw")]
-	public int Throw { get; init; }
-
-	/// <summary>
-	/// Gets the maximum gold disadvantage of the player's team if they won the match.
-	/// </summary>
-	[JsonPropertyName("comeback")]
-	public int Comeback { get; init; }
-
-	/// <summary>
 	/// Gets the replay URL.
 	/// </summary>
 	[JsonPropertyName("replay_url")]
 	public Uri? ReplayUrl { get; init; }
 
     /// <summary>
-    /// Gets all pause times
+    /// Величина "закинутого" преимущества. Максимальное золото, которое вела проигравшая команда перед тем, как проиграть.
     /// </summary>
-    [JsonPropertyName("pauses")]
-    public List<PauseTime>? PauseTimes { get; init; }
+    [JsonPropertyName("throw")]
+    public int? Throw { get; init; }
+
+    /// <summary>
+    /// Величина камбэка. Максимальное отставание по золоту, которое успешно отыграла победившая команда.
+    /// </summary>
+    [JsonPropertyName("comeback")]
+    public int? Comeback { get; init; }
+
+    /// <summary>
+    /// Глубина поражения. Максимальное отставание по золоту, зафиксированное у проигравшей команды в любой момент игры.
+    /// </summary>
+    [JsonPropertyName("loss")]
+    public int? Loss { get; init; }
+
+    /// <summary>
+    /// Степень доминации (разгром). Максимальное преимущество по золоту, которого достигла победившая команда.
+    /// </summary>
+    [JsonPropertyName("win")]
+    public int? Stomp { get; init; }
 }

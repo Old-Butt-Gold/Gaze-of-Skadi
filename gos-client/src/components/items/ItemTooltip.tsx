@@ -114,7 +114,7 @@ export const ItemTooltip: React.FC<Props> = ({ itemName, children }) => {
                         <h4 className="text-[#e7d291] font-bold text-lg leading-tight font-serif uppercase tracking-wide">
                             {item.dname}
                         </h4>
-                        {item.cost && (
+                        {item.cost !== null && item.cost > 0 && (
                             <div className="flex items-center gap-1 text-[#e7d291] text-xs font-bold mt-1">
                                 <Icon src="/assets/images/gold.png" size={3} />
                                 <span>{item.cost}</span>

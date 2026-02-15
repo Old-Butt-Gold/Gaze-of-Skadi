@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using GoS.Domain.BaseEnums;
 
 namespace GoS.Domain.Resources.Models.ChatWheels;
 
