@@ -2,7 +2,7 @@
 import { useTeams } from './queries/useTeams';
 import {useTeamsStore} from "../store/teamStore.ts";
 
-const ITEMS_PER_PAGE = 30;
+const ITEMS_PER_PAGE = 20;
 
 export const useTeamsLogic = () => {
   const { data: teams, isLoading, isError, refetch } = useTeams();

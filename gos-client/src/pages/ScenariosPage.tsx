@@ -6,17 +6,16 @@ import { HeroCell } from '../components/heroes/HeroCell';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ScenarioTable } from '../components/scenarios/ScenarioTable';
 import { LANE_OPTIONS } from '../utils/scenariosUtils';
-import {Icon} from "../components/Icon.tsx";
+import { Icon } from "../components/Icon.tsx";
+import { Pagination } from '../components/ui/Pagination';
 
 export const ScenariosPage: React.FC = () => {
-    // --- Custom Logic Hook ---
     const {
         isLoading, paginatedData, timeOptions, hasData,
         currentPage, totalPages,
         actions, filters
     } = useScenarioLogic();
 
-    // --- Heroes Data for Select ---
     const { data: heroesDict, isLoading: isHeroesLoading } = useHeroes();
 
     const heroesList = useMemo(() => {
@@ -32,13 +31,18 @@ export const ScenariosPage: React.FC = () => {
         actions.setTime(val === 'all' ? 'all' : Number(val));
     };
 
+    const handlePageChange = (page: number) => {
+        actions.setPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     if (!filters.selectedHeroId) {
         return (
             <div className="flex flex-col items-center justify-center min-h-[100vh] animate-fade-in text-center space-y-8 bg-[#0f1114]">
                 <div className="relative">
-                    <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
+                    <div className="absolute inset-0 rounded-full"></div>
                     <div className="relative w-24 h-24 bg-[#1a1d24] rounded-full flex items-center justify-center border border-[#2e353b] shadow-2xl">
-                        <img src="/assets/images/rank_icon_unknown.png" alt="" className="w-12 h-12 opacity-50 grayscale" />
+                        <Icon src="/assets/images/rank_icon_unknown.png"/>
                     </div>
                 </div>
 
@@ -59,7 +63,7 @@ export const ScenariosPage: React.FC = () => {
                     >
                         <option value="" disabled>Choose Hero...</option>
                         {heroesList.map(h => (
-                            <option key={h.id} value={h.id}><Icon src={h.icon} size={5}/>{h.localized_name}</option>
+                            <option key={h.id} value={h.id}><Icon src={h.icon} size={6}/>{h.localized_name}</option>
                         ))}
                     </select>
                 )}
@@ -122,7 +126,7 @@ export const ScenariosPage: React.FC = () => {
                             <select
                                 className="select select-sm select-bordered w-full sm:w-56 bg-[#121417] border-[#2e353b] text-white focus:border-[#4a5568] focus:outline-none text-xs tracking-wider font-bold"
                                 onChange={handleLaneChange}
-                                value={filters.searchQuery} // Используем searchQuery для хранения выбранного lane name
+                                value={filters.searchQuery}
                             >
                                 <option value="">All lanes</option>
                                 {LANE_OPTIONS.map(opt => (
@@ -163,28 +167,16 @@ export const ScenariosPage: React.FC = () => {
                     <>
                         <ScenarioTable data={paginatedData} />
 
-                        {/* Footer Pagination */}
-                        <div className="mt-auto border-t border-[#2e353b] p-3 bg-[#15171c] flex items-center justify-between sticky bottom-0">
-                            <span className="text-[10px] font-bold text-[#58606e] uppercase tracking-wider pl-2">
-                                PAGE <span className="text-white">{currentPage}</span> OF {totalPages}
-                            </span>
-                            <div className="join">
-                                <button
-                                    onClick={() => actions.setPage(p => Math.max(1, p - 1))}
-                                    disabled={currentPage === 1}
-                                    className="join-item btn btn-xs h-8 bg-[#1a1d24] border-[#2e353b] text-[#808fa6] hover:bg-[#232730] hover:text-white disabled:opacity-30 disabled:bg-transparent"
-                                >
-                                    PREV
-                                </button>
-                                <button
-                                    onClick={() => actions.setPage(p => Math.min(totalPages, p + 1))}
-                                    disabled={currentPage === totalPages}
-                                    className="join-item btn btn-xs h-8 bg-[#1a1d24] border-[#2e353b] text-[#808fa6] hover:bg-[#232730] hover:text-white disabled:opacity-30 disabled:bg-transparent"
-                                >
-                                    NEXT
-                                </button>
+                        {/* Footer Pagination using Universal Component */}
+                        {totalPages > 1 && (
+                            <div className="mt-auto border-t border-[#2e353b] p-3 bg-[#15171c]">
+                                <Pagination
+                                    currentPage={currentPage}
+                                    totalPages={totalPages}
+                                    onPageChange={handlePageChange}
+                                />
                             </div>
-                        </div>
+                        )}
                     </>
                 )}
             </div>

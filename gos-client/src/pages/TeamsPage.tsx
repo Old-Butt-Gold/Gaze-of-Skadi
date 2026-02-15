@@ -3,14 +3,20 @@ import { TeamCard } from '../components/teams/TeamCard';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import clsx from 'clsx';
-import {useTeamsLogic} from "../hooks/useTeamLogic.ts";
-import type {TeamSortOption} from "../store/teamStore.ts";
+import { useTeamsLogic } from "../hooks/useTeamLogic.ts";
+import type { TeamSortOption } from "../store/teamStore.ts";
+import { Pagination } from '../components/ui/Pagination';
 
 export const TeamsPage: React.FC = () => {
     const {
-        teams, totalCount, isLoading, isError, refetch,
+        teams, isLoading, isError, refetch,
         totalPages, currentPage, searchQuery, sortBy, sortDirection, actions
     } = useTeamsLogic();
+
+    const handlePageChange = (page: number) => {
+        actions.setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     if (isLoading) return <LoadingSpinner text="Scouting Teams..." />;
     if (isError) return <ErrorDisplay message="Failed to load teams data" onRetry={refetch} />;
@@ -20,7 +26,7 @@ export const TeamsPage: React.FC = () => {
 
             {/* Header & Controls */}
             <div className="bg-[#1a1d24] border-b border-[#2e353b] sticky top-4 z-20 shadow-xl backdrop-blur-md bg-opacity-95">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
 
                         {/* Title */}
@@ -86,7 +92,7 @@ export const TeamsPage: React.FC = () => {
             </div>
 
             {/* Content Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 {teams.length === 0 ? (
                     <div className="flex flex-col items-center justify-center py-32 text-[#454c59]">
                         <div className="w-20 h-20 border-2 border-[#2e353b] rounded-full flex items-center justify-center mb-6">
@@ -105,31 +111,12 @@ export const TeamsPage: React.FC = () => {
 
                         {/* Pagination Footer */}
                         {totalPages > 1 && (
-                            <div className="mt-6 flex flex-col items-center gap-3">
-                                <div className="join bg-[#1a1d24] border border-[#2e353b] rounded-lg p-1 shadow-lg">
-                                    <button
-                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider w-24"
-                                        disabled={currentPage === 1}
-                                        onClick={() => actions.setCurrentPage(Math.max(1, currentPage - 1))}
-                                    >
-                                        Previous
-                                    </button>
-                                    <div className="join-item flex items-center px-4 text-sm font-mono text-[#e7d291] border-l border-r border-[#2e353b] min-w-[80px] justify-center">
-                                        {currentPage} / {totalPages}
-                                    </div>
-                                    <button
-                                        className="join-item btn btn-sm bg-transparent border-none text-[#808fa6] hover:text-white disabled:opacity-30 disabled:bg-transparent uppercase font-bold tracking-wider w-24"
-                                        disabled={currentPage === totalPages}
-                                        onClick={() => actions.setCurrentPage(Math.min(totalPages, currentPage + 1))}
-                                    >
-                                        Next
-                                    </button>
-                                </div>
-
-                                {/* Info Text Styled */}
-                                <span className="text-[#58606e] text-[10px] font-bold uppercase tracking-wider">
-                                    Total: {totalCount}; Showing <span className="text-[#e7d291]">{teams.length}</span> teams on this page
-                                </span>
+                            <div className="mt-8 flex flex-col items-center gap-3">
+                                <Pagination
+                                    currentPage={currentPage}
+                                    totalPages={totalPages}
+                                    onPageChange={handlePageChange}
+                                />
                             </div>
                         )}
                     </>

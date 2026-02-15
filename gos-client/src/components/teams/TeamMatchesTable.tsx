@@ -71,8 +71,8 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
                             {/* 1. League Banner Area (Left) */}
                             <div className="col-span-12 md:col-span-4 relative flex items-center p-4 overflow-hidden">
                                 {/* Subtle League BG Image */}
-                                <div className="absolute inset-0 opacity-10 pointer-events-none">
-                                    <img src={match.leagueImageUrl} className="w-full h-full object-cover scale-110" alt="" />
+                                <div className="absolute inset-0 opacity-40 pointer-events-none">
+                                    <img src={match.leagueImageUrl} className="w-full h-full scale-110" alt="" />
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-r from-[#15171c]/90 to-transparent pointer-events-none"></div>
 

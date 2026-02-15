@@ -31,7 +31,7 @@ export const TeamDetailsPage: React.FC = () => {
         <div className="w-full min-h-screen pb-10 animate-fade-in">
             <TeamHeader team={team} />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-8">
                 {/* Tabs Navigation */}
                 <div className="border-b border-[#2e353b] mb-8 overflow-x-auto">
                     <nav className="flex space-x-8 min-w-max" aria-label="Tabs">
