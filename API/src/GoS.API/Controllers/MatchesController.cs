@@ -21,102 +21,102 @@ using Microsoft.AspNetCore.Mvc;
 namespace GoS.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]/{matchId:long}")]
 public sealed class MatchesController : ApiControllerBase
 {
     public MatchesController(ISender sender) : base(sender) { }
 
-    [HttpGet("{matchId:long}/overview")]
+    [HttpGet("overview")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchOverviewDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchOverviewById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchOverviewByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/benchmarks")]
+    [HttpGet("benchmarks")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerBenchmarkDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchBenchmarksById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchBenchmarksByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/performances")]
+    [HttpGet("performances")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerPerformanceDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchPerformancesById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchPerformancesByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/items")]
+    [HttpGet("items")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerItemsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchItemsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchItemsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/lanes")]
+    [HttpGet("lanes")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerLaneDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchLaneById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchLaneByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/earnings")]
+    [HttpGet("earnings")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerEarningsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchEarningsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchEarningsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/graphics")]
+    [HttpGet("graphics")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchGraphicsDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchGraphicsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchGraphicsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/damage")]
+    [HttpGet("damage")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerDamageDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchDamageById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchDamageByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/objectives")]
+    [HttpGet("objectives")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerObjectivesDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchObjectivesById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchObjectivesByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/actions")]
+    [HttpGet("actions")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerActionsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchActionsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchActionsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/chat")]
+    [HttpGet("chat")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<ChatMessageDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchChatById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchChatByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/casts")]
+    [HttpGet("casts")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerCastsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCastsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchCastsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/teamfights")]
+    [HttpGet("teamfights")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<TeamfightDetailedDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchTeamfightsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchTeamfightsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/journal")]
+    [HttpGet("journal")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchJournalDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchJournalById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchJournalByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/cosmetics")]
+    [HttpGet("cosmetics")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerCosmeticsDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchCosmeticsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchCosmeticsByIdQuery(matchId), ct);
 
-    [HttpGet("{matchId:long}/vision")]
+    [HttpGet("vision")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(MatchVisionDto), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchVisionById([FromRoute] long matchId, CancellationToken ct = default)

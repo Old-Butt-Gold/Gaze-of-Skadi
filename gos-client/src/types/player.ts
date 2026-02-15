@@ -1,24 +1,29 @@
-﻿import {type BaseEnum, BooleanState, type Rank} from './common';
+﻿import {
+  type BaseEnum,
+  BooleanState,
+  type GameMode,
+  type LaneRole,
+  type LobbyType,
+  type Patch,
+  type Rank,
+  type Region
+} from './common';
 
 export interface PlayerEndpointParameters {
-  limit?: number;
-  offset?: number;
-  win?: number; // 0 or 1
-  patch?: number;
-  game_mode?: number;
-  lobby_type?: number;
-  region?: number;
-  date?: number;
-  lane_role?: number;
-  hero_id?: number;
-  is_radiant?: number; // 0 or 1
-  included_account_ids?: number[];
-  excluded_account_ids?: number[];
-  with_hero_ids?: number[];
-  against_hero_ids?: number[];
-  significant?: number;
-  having?: number;
-  sort?: string;
+  win?: BooleanState;
+  patch?: Patch;
+  gameMode?: GameMode;
+  lobbyType?: LobbyType;
+  region?: Region;
+  date?: number; // "days previous"
+  laneRole?: LaneRole;
+  heroId?: number;
+  isRadiant?: BooleanState;
+  withHeroIds?: number[];
+  againstHeroIds?: number[];
+  having?: number; // minimum games
+  includedPlayersIds?: number[];
+  partySize?: number;
 }
 
 export interface AliasDto {
