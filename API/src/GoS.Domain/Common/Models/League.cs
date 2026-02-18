@@ -3,9 +3,6 @@ using GoS.Domain.Common.Enums;
 
 namespace GoS.Domain.Common.Models;
 
-/// <summary>
-/// Represents a league.
-/// </summary>
 public class League
 {
 	/// <summary>

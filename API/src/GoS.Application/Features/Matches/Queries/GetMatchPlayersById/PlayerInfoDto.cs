@@ -15,6 +15,8 @@ public class PlayerInfoDto
 
     public required BaseEnumDto<PlayerSlot> PlayerSlot { get; init; }
 
+    public required BaseEnumDto<LeaverStatus>? LeaverStatus { get; init; }
+
     public required BaseEnumDto<LaneRole> LaneRole { get; init; }
 
     public BaseEnumDto<Rank>? RankTier { get; init; }
@@ -25,5 +27,5 @@ public class PlayerInfoDto
 
     public int? PartyId { get; init; }
 
-    public int PartySize { get; init; }
+    public int? PartySize { get; init; }
 }

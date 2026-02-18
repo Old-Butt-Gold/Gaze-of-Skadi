@@ -1,4 +1,5 @@
 ﻿using GoS.Application.Dto;
+using GoS.Application.Features.Common.Queries.GetLeagues;
 using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
@@ -47,6 +48,7 @@ public record PlayerOverviewDto
     public required long Kills { get; init; }
     public required int Deaths { get; init; }
     public required long Assists { get; init; }
+    public required double Kda { get; init; }
     public required int LastHits { get; init; }
     public required int Denies { get; init; }
     public required int NetWorth { get; init; }
@@ -57,6 +59,8 @@ public record PlayerOverviewDto
     public required long HeroHealing { get; init; }
     public required int? NeutralItem { get; init; }
     public required int? NeutralAura { get; init; }
+    public required BaseEnumDto<BooleanState>? PredVict { get; init; }
+    public required BaseEnumDto<BooleanState>? Randomed { get; init; }
     public required IEnumerable<ItemPurchaseDto> Items { get; init; }
     public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
     public required IEnumerable<AbilityUpgradeDto> AbilityUpgrades { get; init; }
@@ -70,12 +74,22 @@ public record PermanentBuffDto
     public required long StackCount { get; init; }
 }
 
+public class MatchTeamDto
+{
+    public int TeamId { get; init; }
+
+    public string Name { get; init; } = string.Empty;
+
+    public Uri? LogoUrl { get; init; }
+}
+
 public record MatchOverviewDto
 {
     public required BaseEnumDto<TeamEnum> Winner { get; init; }
     public required int RadiantScore { get; init; }
     public required int DireScore { get; init; }
     public required BaseEnumDto<GameMode> GameMode { get; init; }
+    public BaseEnumDto<LobbyType> LobbyType { get; set; }
     public required int Duration { get; init; }
     public long StartTime { get; set; }
     public required long EndTime { get; init; }
@@ -91,4 +105,11 @@ public record MatchOverviewDto
     public required BaseEnumDto<TowerStatus> DireTowersStatus { get; init; }
     public required BaseEnumDto<BooleanState> IsParsed { get; set; }
     public required BaseEnumDto<Patch> Patch { get; set; }
+    public required MatchTeamDto? RadiantTeam { get; set; }
+    public required MatchTeamDto? DireTeam { get; set; }
+    public required LeagueDto? League { get; set; }
+    public required int? Throw { get; init; }
+    public required int? Comeback { get; init; }
+    public required int? Loss { get; init; }
+    public required int? Stomp { get; init; }
 }

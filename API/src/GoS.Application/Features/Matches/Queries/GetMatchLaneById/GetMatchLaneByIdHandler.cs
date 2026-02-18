@@ -40,7 +40,7 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender, IMapper mapper)
         return new PlayerLaneDto {
             PlayerIndex = index,
             LaneRole = mapper.Map<BaseEnumDto<LaneRole>>(player.LaneRole),
-            LaneEfficiency = Math.Round(player.LaneEfficiency, 2),
+            LaneEfficiency = Math.Round(player.LaneEfficiency * 100, 2),
             LastHitsAt10Minutes = SafeGetMinuteValue(player.LastHitsEachMinute, 10),
             DeniesAt10Minutes = SafeGetMinuteValue(player.DeniesAtDifferentTimes, 10),
             LastHitsAndDeniesPerMinute = creepsPerMinute,

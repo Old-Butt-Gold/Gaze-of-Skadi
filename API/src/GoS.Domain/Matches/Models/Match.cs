@@ -189,6 +189,6 @@ public class Match
     /// <summary>
     /// Степень доминации (разгром). Максимальное преимущество по золоту, которого достигла победившая команда.
     /// </summary>
-    [JsonPropertyName("win")]
+    [JsonPropertyName("stomp")]
     public int? Stomp { get; init; }
 }

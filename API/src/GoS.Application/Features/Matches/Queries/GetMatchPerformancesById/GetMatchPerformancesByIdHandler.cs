@@ -37,6 +37,7 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IResourceM
             StunsDuration = player.Stuns,
             Stacks = player.CampsStacked,
             Dead = player.LifeStateDead,
+            PurchasedTpscroll = player.PurchaseTpscroll,
             Buybacks = player.BuybackCount,
             Pings = player.Pings,
             MaxHeroHitAbilityName = player.MaxHeroHit.Inflictor,

@@ -8,6 +8,8 @@ public record PlayerActionsDto
     public required int PlayerIndex { get; init; }
 
     public required IEnumerable<ActionsDataDto> Actions { get; init; }
+
+    public required int ActionsPerMin { get; init; }
 }
 
 public record ActionsDataDto

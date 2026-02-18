@@ -20,7 +20,12 @@ internal sealed class GetMatchActionsByIdHandler(ISender sender, IMapper mapper)
         }
 
         return match.Players
-            .Select((player, index) => new PlayerActionsDto { PlayerIndex = index, Actions = GetActionsForPlayer(player), }).ToList();
+            .Select((player, index) => new PlayerActionsDto
+            {
+                PlayerIndex = index,
+                Actions = GetActionsForPlayer(player),
+                ActionsPerMin = player.ActionsPerMin,
+            }).ToList();
     }
 
     private List<ActionsDataDto> GetActionsForPlayer(MatchPlayer player)

@@ -2,9 +2,6 @@
 
 namespace GoS.Domain.Matches.Models;
 
-/// <summary>
-/// Represents a match team.
-/// </summary>
 public class MatchTeam
 {
 	/// <summary>
@@ -18,12 +15,6 @@ public class MatchTeam
 	/// </summary>
 	[JsonPropertyName("name")]
 	public string Name { get; init; } = string.Empty;
-
-	/// <summary>
-	/// Gets tag of the team
-	/// </summary>
-	[JsonPropertyName("tag")]
-	public string Tag { get; init; } = string.Empty;
 
 	/// <summary>
 	/// Gets url of the team logo
