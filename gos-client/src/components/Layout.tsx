@@ -28,7 +28,8 @@ export const Layout: React.FC = () => {
                     {/* CENTER: Desktop Navigation */}
                     <div className="hidden xl:flex items-center space-x-1">
                         {MAIN_NAVIGATION.map((item) => {
-                            const isActive = location.pathname === item.path;
+                            const isActive = location.pathname === item.path ||
+                                (item.path !== '/' && location.pathname.startsWith(item.path));
                             return (
                                 <Link
                                     key={item.path}
