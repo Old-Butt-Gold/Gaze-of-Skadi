@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
+namespace GoS.Application.Features.Search.Queries.GetPublicMatches;
 
 public class PublicMatchesEndpointParametersValidator : AbstractValidator<GetPublicMatchesQuery>
 {

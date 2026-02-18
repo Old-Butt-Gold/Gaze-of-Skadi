@@ -1,6 +1,7 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
-namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
+
+namespace GoS.Application.Features.Search.Queries.GetPublicMatches;
 
 public class PublicMatchDto
 {

@@ -1,7 +1,7 @@
 using GoS.Application.Abstractions.Queries;
 using GoS.Application.Caching;
 
-namespace GoS.Application.Features.Matches.Queries.GetProMatches;
+namespace GoS.Application.Features.Search.Queries.GetProMatches;
 
 public record GetProMatchesQuery(long? LessThanMatchId) : ICacheableQuery<IEnumerable<ProMatchDto>?>
 {

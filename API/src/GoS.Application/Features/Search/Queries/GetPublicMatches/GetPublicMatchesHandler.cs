@@ -5,7 +5,7 @@ using GoS.Application.Options;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
-namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
+namespace GoS.Application.Features.Search.Queries.GetPublicMatches;
 
 internal sealed class GetPublicMatchesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetPublicMatchesQuery, IEnumerable<PublicMatchDto>?>

@@ -2,7 +2,7 @@ using GoS.Application.Abstractions.Queries;
 using GoS.Application.Caching;
 using GoS.Application.EndpointParameters;
 
-namespace GoS.Application.Features.Matches.Queries.GetPublicMatches;
+namespace GoS.Application.Features.Search.Queries.GetPublicMatches;
 
 public record GetPublicMatchesQuery(PublicMatchesEndpointParameters Parameters) : ICacheableQuery<IEnumerable<PublicMatchDto>?>
 {

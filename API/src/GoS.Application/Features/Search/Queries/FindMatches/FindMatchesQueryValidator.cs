@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using GoS.Application.Abstractions;
 
-namespace GoS.Application.Features.Matches.Queries.FindMatches;
+namespace GoS.Application.Features.Search.Queries.FindMatches;
 
 public class FindMatchesQueryValidator : AbstractValidator<FindMatchesQuery>
 {

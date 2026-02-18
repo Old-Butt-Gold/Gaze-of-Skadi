@@ -4,7 +4,7 @@ using GoS.Application.Options;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
-namespace GoS.Application.Features.Matches.Queries.GetProMatches;
+namespace GoS.Application.Features.Search.Queries.GetProMatches;
 
 internal sealed class GetProMatchesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper)
     : IRequestHandler<GetProMatchesQuery, IEnumerable<ProMatchDto>?>

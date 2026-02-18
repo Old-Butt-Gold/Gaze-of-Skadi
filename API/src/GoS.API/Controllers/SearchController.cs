@@ -1,10 +1,10 @@
 using System.Net.Mime;
 using GoS.Application.EndpointParameters;
-using GoS.Application.Features.Matches.Queries.FindMatches;
-using GoS.Application.Features.Matches.Queries.GetProMatches;
-using GoS.Application.Features.Matches.Queries.GetPublicMatches;
+using GoS.Application.Features.Search.Queries.FindMatches;
 using GoS.Application.Features.Search.Queries.GetPlayersByName;
+using GoS.Application.Features.Search.Queries.GetProMatches;
 using GoS.Application.Features.Search.Queries.GetProPlayersByName;
+using GoS.Application.Features.Search.Queries.GetPublicMatches;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

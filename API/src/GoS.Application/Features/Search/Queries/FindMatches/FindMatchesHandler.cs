@@ -4,7 +4,7 @@ using GoS.Application.Options;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
-namespace GoS.Application.Features.Matches.Queries.FindMatches;
+namespace GoS.Application.Features.Search.Queries.FindMatches;
 
 internal sealed class FindMatchesHandler(IRequester<OpenDotaHttpRequesterOptions> requester, IMapper mapper) : IRequestHandler<FindMatchesQuery, IEnumerable<MatchFindDto>?>
 {

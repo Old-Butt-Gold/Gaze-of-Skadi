@@ -1,7 +1,7 @@
 ﻿using GoS.Application.Abstractions.Queries;
 using GoS.Application.Caching;
 
-namespace GoS.Application.Features.Matches.Queries.FindMatches;
+namespace GoS.Application.Features.Search.Queries.FindMatches;
 
 public record FindMatchesQuery(int[] TeamA, int[] TeamB) : ICacheableQuery<IEnumerable<MatchFindDto>?>
 {

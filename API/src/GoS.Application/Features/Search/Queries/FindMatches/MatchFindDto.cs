@@ -1,7 +1,7 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
 
-namespace GoS.Application.Features.Matches.Queries.FindMatches;
+namespace GoS.Application.Features.Search.Queries.FindMatches;
 
 public class MatchFindDto
 {

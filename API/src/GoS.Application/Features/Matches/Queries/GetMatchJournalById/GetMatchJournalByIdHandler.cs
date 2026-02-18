@@ -16,9 +16,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
     private Dictionary<string, string> _objectiveKeyToName = [];
     private HashSet<string> _validHeroNames = [];
 
-    public async Task<MatchJournalDto?> Handle(
-        GetMatchJournalByIdQuery request,
-        CancellationToken ct)
+    public async Task<MatchJournalDto?> Handle(GetMatchJournalByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;

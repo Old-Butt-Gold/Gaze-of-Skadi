@@ -1,7 +1,7 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
 
-namespace GoS.Application.Features.Matches.Queries.GetProMatches;
+namespace GoS.Application.Features.Search.Queries.GetProMatches;
 
 public class ProMatchDto
 {

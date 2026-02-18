@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GoS.Domain.Matches.Models;
 
-namespace GoS.Application.Features.Matches.Queries.GetProMatches;
+namespace GoS.Application.Features.Search.Queries.GetProMatches;
 
 public class GetProMatchesMappingProfile : Profile
 {
