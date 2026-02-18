@@ -25,15 +25,14 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
     {
         foreach (var chat in match.Chat)
         {
-            var player = match.Players[(int)chat.Slot];
-            var playerInfo = mapper.Map<PlayerInfoDto>(player);
+            int index = (int)chat.Slot;
 
             switch (chat.Type)
             {
                 case ChatType.Chat:
                     yield return new ChatMessageDto
                     {
-                        PlayerInfo = playerInfo,
+                        PlayerIndex = index,
                         Data = new ChatDataDto
                         {
                             Time = chat.Time,
@@ -46,7 +45,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
                 case ChatType.ChatWheel when chatResources.TryGetValue(chat.Key, out var resource):
                     yield return new ChatMessageDto
                     {
-                        PlayerInfo = playerInfo,
+                        PlayerIndex = index,
                         Data = new ChatDataDto
                         {
                             Time = chat.Time,

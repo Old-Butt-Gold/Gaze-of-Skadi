@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using GoS.Application.Abstractions;
-using GoS.Application.Dto;
+﻿using GoS.Application.Abstractions;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Domain.Matches.Models;
 using GoS.Domain.Resources.Models.Heroes;
@@ -8,7 +6,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
 
-internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager)
+internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IResourceManager resourceManager)
     : IRequestHandler<GetMatchPerformancesByIdQuery, IEnumerable<PlayerPerformanceDto>?>
 {
     public async Task<IEnumerable<PlayerPerformanceDto>?> Handle(GetMatchPerformancesByIdQuery request, CancellationToken ct)
@@ -23,9 +21,9 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IMapper ma
         var heroes = await resourceManager.GetHeroInfosAsync();
 
         return match.Players
-            .Select(player => new PlayerPerformanceDto
+            .Select((player, index) => new PlayerPerformanceDto
             {
-                PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+                PlayerIndex = index,
                 Performance = GetPerformanceForPlayer(heroes!, player),
             })
             .ToList();

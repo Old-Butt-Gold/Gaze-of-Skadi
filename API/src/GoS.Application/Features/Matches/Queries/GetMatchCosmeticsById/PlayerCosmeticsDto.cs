@@ -1,10 +1,8 @@
-﻿using GoS.Application.Dto;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchCosmeticsById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchCosmeticsById;
 
 public record PlayerCosmeticsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required IEnumerable<CosmeticDto> Cosmetics { get; init; }
 }
 

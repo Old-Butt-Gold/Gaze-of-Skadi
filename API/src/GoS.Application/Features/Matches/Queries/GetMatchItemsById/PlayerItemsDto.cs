@@ -1,6 +1,4 @@
-﻿using GoS.Application.Dto;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchItemsById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchItemsById;
 
 public record ItemsDataDto
 {
@@ -11,7 +9,7 @@ public record ItemsDataDto
 
 public record PlayerItemsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
-    
+    public required int PlayerIndex { get; init; }
+
     public required IEnumerable<ItemsDataDto> Items { get; init; }
 }

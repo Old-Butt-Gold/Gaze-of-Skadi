@@ -2,6 +2,7 @@ using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Dto;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
+using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 using GoS.Domain.Matches.Models;
@@ -37,7 +38,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             GameMode = mapper.Map<BaseEnumDto<GameMode>>(match.GameMode),
             Duration = match.Duration,
             StartTime = match.StartTime,
-            EndTimeUnix = match.StartTime + match.Duration,
+            EndTime = match.StartTime + match.Duration,
             MatchId = match.MatchId,
             Region = mapper.Map<BaseEnumDto<Region>>(match.Region),
             ReplayUrl = match.ReplayUrl,
@@ -48,7 +49,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             RadiantBarracksStatus = mapper.Map<BaseEnumDto<BarracksStatus>>(match.BarracksStatusRadiant),
             RadiantTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusRadiant),
             DireTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusDire),
-            IsParsed = match.Version is not null,
+            IsParsed = mapper.Map<BaseEnumDto<BooleanState>>(match.Version is not null ? BooleanState.True : BooleanState.False),
             Patch = mapper.Map<BaseEnumDto<Patch>>(match.Patch),
         };
 
@@ -80,11 +81,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         {
             PermanentBuff = mapper.Map<IEnumerable<PermanentBuffDto>>(player.PermanentBuffs),
             PlayerInfo = mapper.Map<PlayerInfoDto>(player),
-            LaneRole = mapper.Map<BaseEnumDto<LaneRole>>(player.LaneRole),
-            RankTier = player.RankTier is not null
-                ? (int)player.RankTier
-                : null,
-            Level = player.Level,
             Kills = player.Kills,
             Deaths = player.Deaths,
             Assists = player.Assists,

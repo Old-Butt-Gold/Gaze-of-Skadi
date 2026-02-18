@@ -19,7 +19,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;
-        
+
         var heroes = await resourceManager.GetHeroInfosAsync();
         var abilities = await resourceManager.GetAbilitiesAsync();
 
@@ -27,7 +27,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
             h => h.Value.Name,
             h => h.Value.Id
         );
-        
+
         _validHeroNames = new HashSet<string>(_heroNameToIdMap.Keys);
         _validAbilityKeys = new HashSet<string>(abilities!.Keys);
 
@@ -45,23 +45,23 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
         {
             var tfPlayer = fight.Players[i];
             var isRadiantSide = i < 5;
-            
-            if (isRadiantSide) 
-            { 
-                radiantGold += tfPlayer.GoldDelta; 
-                radiantXp += tfPlayer.XpDelta; 
+
+            if (isRadiantSide)
+            {
+                radiantGold += tfPlayer.GoldDelta;
+                radiantXp += tfPlayer.XpDelta;
             }
-            else 
-            { 
-                direGold += tfPlayer.GoldDelta; 
-                direXp += tfPlayer.XpDelta; 
+            else
+            {
+                direGold += tfPlayer.GoldDelta;
+                direXp += tfPlayer.XpDelta;
             }
         }
 
         var netGold = radiantGold - direGold;
 
         BaseEnumDto<TeamEnum> winner;
-        
+
         switch (netGold)
         {
             case > 0:
@@ -94,14 +94,14 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
                 GoldAdvantage = Math.Abs(radiantGold - direGold),
                 XpAdvantage = Math.Abs(radiantXp - direXp)
             },
-            Players = fight.Players.Select((tfPlayer, index) => MapTeamfightPlayer(tfPlayer, allPlayers[index])),
+            Players = fight.Players.Select((tfPlayer, index) => MapTeamfightPlayer(tfPlayer, allPlayers[index], index)),
         };
     }
 
-    private TeamfightPlayerDto MapTeamfightPlayer(TeamfightPlayer playerState, MatchPlayer matchPlayer) =>
+    private TeamfightPlayerDto MapTeamfightPlayer(TeamfightPlayer playerState, MatchPlayer matchPlayer, int index) =>
         new()
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(matchPlayer),
+            PlayerIndex = index,
             WasDead = playerState.Deaths > 0,
             Damage = playerState.Damage,
             Healing = playerState.Healing,
@@ -117,7 +117,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
     private IEnumerable<AbilityUseDto> MapAbilityUses(IDictionary<string, int>? abilityUses)
     {
         if (abilityUses == null) return [];
-        
+
         return abilityUses
             .Where(ability => _validAbilityKeys.Contains(ability.Key))
             .Select(ability => new AbilityUseDto
@@ -130,7 +130,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
     private IEnumerable<ItemUseDto> MapItemUses(IDictionary<string, long>? itemUses)
     {
         if (itemUses == null) return [];
-        
+
         return itemUses.Select(item => new ItemUseDto
         {
             ItemKey = item.Key,
@@ -141,7 +141,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
     private IEnumerable<KilledHeroDto> MapKilledHeroes(IDictionary<string, long>? killedHeroes)
     {
         if (killedHeroes == null) return [];
-        
+
         return killedHeroes
             .Where(killed => _validHeroNames.Contains(killed.Key))
             .Select(killed => new KilledHeroDto

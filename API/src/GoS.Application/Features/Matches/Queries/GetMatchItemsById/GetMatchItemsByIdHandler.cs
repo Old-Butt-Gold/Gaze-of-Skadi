@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using GoS.Application.Abstractions;
-using GoS.Application.Dto;
+﻿using GoS.Application.Abstractions;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Domain.Matches.Models;
 using GoS.Domain.Resources.Models.ItemColors;
@@ -9,7 +7,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchItemsById;
 
-internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper, IResourceManager manager)
+internal sealed class GetMatchItemsByIdHandler(ISender sender, IResourceManager manager)
     : IRequestHandler<GetMatchItemsByIdQuery, IEnumerable<PlayerItemsDto>?>
 {
     private Dictionary<string, Item> _items = [];
@@ -25,8 +23,8 @@ internal sealed class GetMatchItemsByIdHandler(ISender sender, IMapper mapper, I
         _items = (await manager.GetItemsAsync())!;
 
         return match.Players
-            .Select(player => new PlayerItemsDto { 
-                PlayerInfo = mapper.Map<PlayerInfoDto>(player), 
+            .Select((player, index) => new PlayerItemsDto {
+                PlayerIndex = index,
                 Items = GetItemsForPlayer(player), })
             .ToList();
     }

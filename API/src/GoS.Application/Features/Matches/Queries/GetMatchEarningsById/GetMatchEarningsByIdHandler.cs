@@ -10,7 +10,7 @@ internal sealed class GetMatchEarningsByIdHandler(ISender sender, IMapper mapper
     : IRequestHandler<GetMatchEarningsByIdQuery, IEnumerable<PlayerEarningsDto>?>
 {
     public async Task<IEnumerable<PlayerEarningsDto>?> Handle(
-        GetMatchEarningsByIdQuery request, 
+        GetMatchEarningsByIdQuery request,
         CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
@@ -19,10 +19,10 @@ internal sealed class GetMatchEarningsByIdHandler(ISender sender, IMapper mapper
         return match.Players.Select(MapPlayerToDto).ToList();
     }
 
-    private PlayerEarningsDto MapPlayerToDto(MatchPlayer player) =>
+    private PlayerEarningsDto MapPlayerToDto(MatchPlayer player, int index) =>
         new()
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             HeroesKilled = player.Kills,
             LaneCreepsKilled = player.LaneKills,
             NeutralCreepsKilled = player.NeutralKills,
@@ -48,12 +48,12 @@ internal sealed class GetMatchEarningsByIdHandler(ISender sender, IMapper mapper
                 Amount = kvp.Value
             });
     }
-    
+
     private static IEnumerable<LastHitsSnapshotDto> GenerateLastHitsSnapshots(IReadOnlyList<int> lastHitsEachMinute)
     {
         if (lastHitsEachMinute.Count == 0)
             return [];
-        
+
         const int step = 5;
 
         var snapshots = new List<LastHitsSnapshotDto>();

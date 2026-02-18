@@ -1,11 +1,9 @@
-﻿using GoS.Application.Dto;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchCastsById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchCastsById;
 
 public record PlayerCastsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
-    
+    public required int PlayerIndex { get; init; }
+
     public required IEnumerable<AbilityCastDto> Abilities { get; set; }
     public required IEnumerable<ItemCastDto> Items { get; set; }
     public required IEnumerable<HitCastDto> Hits { get; set; }

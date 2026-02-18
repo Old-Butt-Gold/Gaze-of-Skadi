@@ -13,6 +13,7 @@ using GoS.Application.Features.Matches.Queries.GetMatchLaneById;
 using GoS.Application.Features.Matches.Queries.GetMatchObjectivesById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
+using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 using GoS.Application.Features.Matches.Queries.GetMatchVisionById;
 using MediatR;
@@ -25,6 +26,12 @@ namespace GoS.API.Controllers;
 public sealed class MatchesController : ApiControllerBase
 {
     public MatchesController(ISender sender) : base(sender) { }
+
+    [HttpGet("players")]
+    [Produces(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(IEnumerable<PlayerInfoDto>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetMatchPlayersById([FromRoute] long matchId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchPlayersByIdQuery(matchId), ct);
 
     [HttpGet("overview")]
     [Produces(MediaTypeNames.Application.Json)]

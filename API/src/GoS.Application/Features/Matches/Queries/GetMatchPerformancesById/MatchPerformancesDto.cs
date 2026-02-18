@@ -1,6 +1,4 @@
-﻿using GoS.Application.Dto;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
 
 public record PerformanceDataDto
 {
@@ -19,7 +17,7 @@ public record PerformanceDataDto
 
 public record PlayerPerformanceDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
 
     public required PerformanceDataDto Performance { get; init; }
 }

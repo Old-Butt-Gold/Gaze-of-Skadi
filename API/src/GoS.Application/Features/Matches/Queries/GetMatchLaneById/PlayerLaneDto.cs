@@ -18,7 +18,7 @@ public record LaneCreepsPerMinuteDto
 
 public record PlayerLaneDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required BaseEnumDto<LaneRole> LaneRole { get; init; }
     public required double LaneEfficiency { get; init; }
     public required int LastHitsAt10Minutes { get; init; }

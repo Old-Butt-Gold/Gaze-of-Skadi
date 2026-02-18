@@ -25,14 +25,14 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
         ["gem"] = VisionItemType.Gem,
         ["smoke_of_deceit"] = VisionItemType.Smoke
     };
-    
+
     private Dictionary<string, int> _heroNameToId = [];
 
     public async Task<MatchVisionDto?> Handle(GetMatchVisionByIdQuery request, CancellationToken ct)
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;
-        
+
         _heroNameToId = (await resourceManager.GetHeroInfosAsync())!.ToDictionary(x => x.Value.Name, x => x.Value.Id);
 
         return new MatchVisionDto
@@ -42,10 +42,10 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
         };
     }
 
-    private PlayerVisionDto MapPlayerVision(MatchPlayer player) =>
+    private PlayerVisionDto MapPlayerVision(MatchPlayer player, int playerIndex) =>
         new()
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = playerIndex,
             PurchasedItems = MapVisionItems(player.Purchase),
             UsedItems = MapVisionItems(player.ItemUses)
         };
@@ -53,7 +53,7 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
     private IEnumerable<VisionItemDto> MapVisionItems(IDictionary<string, int>? items)
     {
         if (items == null) return [];
-        
+
         return items
             .Where(item => VisibilityItemKeys.Contains(item.Key))
             .Select(item => new VisionItemDto
@@ -117,7 +117,7 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
             result.Add(new WardPlacementDto
             {
                 Type = mapper.Map<BaseEnumDto<WardType>>(wardType),
-                Owner = mapper.Map<PlayerInfoDto>(placementEntry.Player),
+                OwnerIndex = placementEntry.Index,
                 PlacementTime = placementTime,
                 RemovalTime = removalTime,
                 Duration = duration,
@@ -130,15 +130,15 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
         return result;
     }
 
-    private IEnumerable<(MatchPlayer Player, WardLog Log)> GetPlayerWardLogs(MatchPlayer player)
+    private IEnumerable<(int Index, WardLog Log)> GetPlayerWardLogs(MatchPlayer player, int index)
     {
         foreach (var log in player.ObsLog)
-            yield return (player, log);
+            yield return (index, log);
         foreach (var log in player.ObsLeftLog)
-            yield return (player, log);
+            yield return (index, log);
         foreach (var log in player.SenLog)
-            yield return (player, log);
+            yield return (index, log);
         foreach (var log in player.SenLeftLog)
-            yield return (player, log);
+            yield return (index, log);
     }
 }

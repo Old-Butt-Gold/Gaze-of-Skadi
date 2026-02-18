@@ -8,7 +8,7 @@ public record ObjectiveEventDto
 {
     public required long Time { get; init; }
     public required BaseEnumDto<ObjectiveType> Type { get; init; }
-    public required PlayerInfoDto? Player { get; init; }
+    public required int? PlayerIndex { get; init; }
     public required string? Target { get; init; }
     public required BaseEnumDto<TeamEnum>? TargetTeam { get; init; }
 }
@@ -16,20 +16,20 @@ public record ObjectiveEventDto
 public record BuybackEventDto
 {
     public required long Time { get; init; }
-    public required PlayerInfoDto Player { get; init; }
+    public required int PlayerIndex { get; init; }
 }
 
 public record ConnectionEventDto
 {
     public required long Time { get; init; }
     public required BaseEnumDto<ConnectionEvent> Event { get; init; }
-    public required PlayerInfoDto Player { get; init; }
+    public required int PlayerIndex { get; init; }
 }
 
 public record KillEventDto
 {
     public required long Time { get; init; }
-    public required PlayerInfoDto Killer { get; init; }
+    public required int KillerIndex { get; init; }
     public required int VictimHeroId { get; init; }
 }
 
@@ -37,7 +37,7 @@ public record RuneEventDto
 {
     public required long Time { get; init; }
     public required BaseEnumDto<Runes> Rune { get; init; }
-    public required PlayerInfoDto Player { get; init; }
+    public required int PlayerIndex { get; init; }
 }
 
 public record TeamFightEventDto

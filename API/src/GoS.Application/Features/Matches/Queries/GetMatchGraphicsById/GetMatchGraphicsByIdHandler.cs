@@ -36,22 +36,24 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
         if (firstBlood?.Slot is not null && firstBlood.Time.HasValue)
         {
             var killerIndex = (int)firstBlood.Slot;
-            PlayerInfoDto? victimPlayer = null;
 
-            if (int.TryParse(firstBlood.Key?.GetRawText().Trim('"'), out var victimIndex) &&
-                victimIndex >= 0 && victimIndex < match.Players.Count)
+            int? victimIndex = null;
+
+            if (int.TryParse(firstBlood.Key?.GetRawText().Trim('"'), out var keyIndex))
             {
-                victimPlayer = mapper.Map<PlayerInfoDto>(match.Players[victimIndex]);
+                victimIndex = keyIndex >= 0 && keyIndex < match.Players.Count
+                    ? keyIndex
+                    : null;
             }
 
             objectives.Add(new ObjectiveDto
             {
                 Time = firstBlood.Time.Value,
                 Type = mapper.Map<BaseEnumDto<ObjectiveType>>(firstBlood.Type),
-                KillerPlayer = killerIndex >= 0 && killerIndex < match.Players.Count
-                    ? mapper.Map<PlayerInfoDto>(match.Players[killerIndex])
+                KillerPlayerIndex = killerIndex >= 0 && killerIndex < match.Players.Count
+                    ? killerIndex
                     : null,
-                VictimPlayer = victimPlayer
+                VictimPlayerIndex = victimIndex
             });
         }
 
@@ -62,8 +64,8 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
         {
             Time = roshanKill.Time!.Value,
             Type = mapper.Map<BaseEnumDto<ObjectiveType>>(roshanKill.Type),
-            KillerPlayer = null,
-            VictimPlayer = null
+            KillerPlayerIndex = null,
+            VictimPlayerIndex = null
         }));
 
         var tormentorKills = match.Objectives
@@ -77,10 +79,10 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             {
                 Time = tormentorKill.Time!.Value,
                 Type = mapper.Map<BaseEnumDto<ObjectiveType>>(tormentorKill.Type),
-                KillerPlayer = killerIndex >= 0 && killerIndex < match.Players.Count
-                    ? mapper.Map<PlayerInfoDto>(match.Players[killerIndex])
+                KillerPlayerIndex = killerIndex >= 0 && killerIndex < match.Players.Count
+                    ? killerIndex
                     : null,
-                VictimPlayer = null
+                VictimPlayerIndex = null
             };
         }));
 
@@ -94,15 +96,15 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             Start = tf.Start,
             End = tf.End,
             Players = Enumerable.Range(0, tf.Players.Count)
-                .Select(i => CreateTeamfightPlayerState(tf.Players[i], match.Players[i]))
+                .Select(i => CreateTeamfightPlayerState(tf.Players[i], i))
                 .OrderByDescending(x => x.GoldDelta)
                 .ToList()
         });
 
-    private TeamfightPlayerStateDto CreateTeamfightPlayerState(TeamfightPlayer state, MatchPlayer player) =>
+    private TeamfightPlayerStateDto CreateTeamfightPlayerState(TeamfightPlayer state, int index) =>
         new()
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             GoldDelta = state.GoldDelta,
             WasDead = state.Deaths > 0
         };
@@ -123,9 +125,9 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
     }
 
     private IEnumerable<PlayerGraphsDto> MapPlayerGraphs(IReadOnlyList<MatchPlayer> players) =>
-        players.Select(player => new PlayerGraphsDto
+        players.Select((player, index) => new PlayerGraphsDto
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             GoldPerMinute = CreateMinuteValues(player.GoldEachMinute),
             XpPerMinute = CreateMinuteValues(player.XpEachMinute),
             LastHitsPerMinute = CreateMinuteValues(player.LastHitsEachMinute)

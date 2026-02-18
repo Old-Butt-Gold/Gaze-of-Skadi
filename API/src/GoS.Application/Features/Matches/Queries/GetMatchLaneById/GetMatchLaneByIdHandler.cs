@@ -18,10 +18,10 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender, IMapper mapper)
         return match.Players.Select(MapPlayerToDto).ToList();
     }
 
-    private PlayerLaneDto MapPlayerToDto(MatchPlayer player)
+    private PlayerLaneDto MapPlayerToDto(MatchPlayer player, int index)
     {
         var creepsPerMinute = Enumerable.Range(0, Math.Min(
-                player.LastHitsEachMinute.Count, 
+                player.LastHitsEachMinute.Count,
                 player.DeniesAtDifferentTimes.Count
             ))
             .Select(minute => new LaneCreepsPerMinuteDto {
@@ -38,9 +38,9 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender, IMapper mapper)
                 }));
 
         return new PlayerLaneDto {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             LaneRole = mapper.Map<BaseEnumDto<LaneRole>>(player.LaneRole),
-            LaneEfficiency = player.LaneEfficiency,
+            LaneEfficiency = Math.Round(player.LaneEfficiency, 2),
             LastHitsAt10Minutes = SafeGetMinuteValue(player.LastHitsEachMinute, 10),
             DeniesAt10Minutes = SafeGetMinuteValue(player.DeniesAtDifferentTimes, 10),
             LastHitsAndDeniesPerMinute = creepsPerMinute,

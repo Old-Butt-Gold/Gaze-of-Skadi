@@ -8,13 +8,13 @@ public record ObjectiveDto
 {
     public required long Time { get; init; }
     public required BaseEnumDto<ObjectiveType> Type { get; init; }
-    public required PlayerInfoDto? KillerPlayer { get; init; }
-    public required PlayerInfoDto? VictimPlayer { get; init; }
+    public required int? KillerPlayerIndex { get; init; }
+    public required int? VictimPlayerIndex { get; init; }
 }
 
 public record TeamfightPlayerStateDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required long GoldDelta { get; init; }
     public required bool WasDead { get; init; }
 }
@@ -35,7 +35,7 @@ public record MinuteValueDto
 
 public record PlayerGraphsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required IEnumerable<MinuteValueDto> GoldPerMinute { get; init; }
     public required IEnumerable<MinuteValueDto> XpPerMinute { get; init; }
     public required IEnumerable<MinuteValueDto> LastHitsPerMinute { get; init; }

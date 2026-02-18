@@ -30,7 +30,7 @@ public record KilledHeroDto
 
 public record TeamfightPlayerDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required bool WasDead { get; init; }
     public required long Damage { get; init; }
     public required long Healing { get; init; }
@@ -48,12 +48,6 @@ public record TeamfightResultDto
     public required BaseEnumDto<TeamEnum> Winner { get; init; }
     public required long GoldAdvantage { get; init; }
     public required long XpAdvantage { get; init; }
-}
-
-public enum FightSide
-{
-    Radiant,
-    Dire
 }
 
 public record TeamfightDetailedDto

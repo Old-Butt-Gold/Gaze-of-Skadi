@@ -20,7 +20,7 @@ internal sealed class GetMatchDamageByIdHandler(
     {
         var match = await sender.Send(new GetMatchByIdQuery(request.MatchId), ct);
         if (match is null) return null;
-        
+
         var heroes = await resourceManager.GetHeroInfosAsync();
         var abilities = await resourceManager.GetAbilitiesAsync();
         var items = await resourceManager.GetItemsAsync();
@@ -29,7 +29,7 @@ internal sealed class GetMatchDamageByIdHandler(
             h => h.Value.Name,
             h => h.Value.Id
         );
-        
+
         _validHeroNames = new HashSet<string>(_heroNameToIdMap.Keys);
         _validAbilityKeys = new HashSet<string>(abilities!.Keys);
         _validItemKeys = new HashSet<string>(items!.Keys);
@@ -37,10 +37,10 @@ internal sealed class GetMatchDamageByIdHandler(
         return match.Players.Select(MapPlayerDamage).ToList();
     }
 
-    private PlayerDamageDto MapPlayerDamage(MatchPlayer player) =>
+    private PlayerDamageDto MapPlayerDamage(MatchPlayer player, int index) =>
         new()
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             KilledHeroes = MapKilledHeroes(player.KillsLog),
             KilledByHeroes = MapKilledByHeroes(player.KilledBy),
             DamageDealtToHeroes = MapHeroDamage(player.Damage),
@@ -52,9 +52,9 @@ internal sealed class GetMatchDamageByIdHandler(
     private IEnumerable<HeroKillsDto> MapKilledHeroes(IEnumerable<KillLog>? killsLog)
     {
         if (killsLog == null) return [];
-        
+
         var killCounts = new Dictionary<string, int>();
-        
+
         foreach (var heroName in killsLog.Where(name => _validHeroNames.Contains(name.Key)))
         {
             killCounts.TryAdd(heroName.Key, 0);
@@ -71,7 +71,7 @@ internal sealed class GetMatchDamageByIdHandler(
     private IEnumerable<HeroKillsDto> MapKilledByHeroes(IDictionary<string, int>? killedBy)
     {
         if (killedBy == null) return [];
-        
+
         return killedBy
             .Where(kvp => _validHeroNames.Contains(kvp.Key))
             .Select(kvp => new HeroKillsDto
@@ -84,7 +84,7 @@ internal sealed class GetMatchDamageByIdHandler(
     private IEnumerable<HeroDamageDto> MapHeroDamage(IDictionary<string, int>? damageDictionary)
     {
         if (damageDictionary == null) return [];
-        
+
         return damageDictionary
             .Where(kvp => _validHeroNames.Contains(kvp.Key))
             .Select(kvp => new HeroDamageDto
@@ -96,12 +96,12 @@ internal sealed class GetMatchDamageByIdHandler(
 
     private IEnumerable<DamageInflictorDto> MapDamageInflictors(Dictionary<string, int>? damageInflictors, Dictionary<string, Dictionary<string, int>>? damageTargets)
     {
-        if (damageInflictors == null || damageTargets == null) 
+        if (damageInflictors == null || damageTargets == null)
             return [];
 
         return damageInflictors
             .Where(inflictor => damageTargets.ContainsKey(inflictor.Key))
-            .Select(inflictor => 
+            .Select(inflictor =>
             {
                 var targetBreakdown = damageTargets[inflictor.Key];
                 var validBreakdown = targetBreakdown
@@ -125,9 +125,9 @@ internal sealed class GetMatchDamageByIdHandler(
 
     private IEnumerable<DamageSummaryDto> MapDamageTaken(IDictionary<string, int>? damageTaken)
     {
-        if (damageTaken == null) 
+        if (damageTaken == null)
             return [];
-        
+
         return damageTaken
             .Where(kvp => kvp.Key == "null" || _validAbilityKeys.Contains(kvp.Key) || _validItemKeys.Contains(kvp.Key))
             .Select(kvp => new DamageSummaryDto
@@ -137,7 +137,7 @@ internal sealed class GetMatchDamageByIdHandler(
                 SourceType = mapper.Map<BaseEnumDto<DamageSourceType>>(DetermineDamageSourceType(kvp.Key)),
             }).ToList();
     }
-    
+
     private DamageSourceType DetermineDamageSourceType(string key)
     {
         if (key == "null")

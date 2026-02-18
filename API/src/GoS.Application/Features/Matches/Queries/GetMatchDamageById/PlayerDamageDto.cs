@@ -44,7 +44,7 @@ public enum DamageSourceType
 
 public record PlayerDamageDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required IEnumerable<HeroKillsDto> KilledHeroes { get; init; }
     public required IEnumerable<HeroKillsDto> KilledByHeroes { get; init; }
     public required IEnumerable<HeroDamageDto> DamageDealtToHeroes { get; init; }

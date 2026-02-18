@@ -1,12 +1,10 @@
-﻿using AutoMapper;
-using GoS.Application.Abstractions;
-using GoS.Application.Dto;
+﻿using GoS.Application.Abstractions;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchCastsById;
 
-internal sealed class GetMatchCastsByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager)
+internal sealed class GetMatchCastsByIdHandler(ISender sender, IResourceManager resourceManager)
     : IRequestHandler<GetMatchCastsByIdQuery, IEnumerable<PlayerCastsDto>?>
 {
     public async Task<IEnumerable<PlayerCastsDto>?> Handle(GetMatchCastsByIdQuery request, CancellationToken ct)
@@ -20,13 +18,13 @@ internal sealed class GetMatchCastsByIdHandler(ISender sender, IMapper mapper, I
 
         var heroes = await resourceManager.GetHeroInfosAsync();
 
-        var heroNameToId = heroes!.ToDictionary(x => x.Value.Name, 
-            x => int.Parse(x.Key), 
+        var heroNameToId = heroes!.ToDictionary(x => x.Value.Name,
+            x => int.Parse(x.Key),
             StringComparer.OrdinalIgnoreCase);
 
-        return match.Players.Select(player => new PlayerCastsDto
+        return match.Players.Select((player, index) => new PlayerCastsDto
             {
-                PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+                PlayerIndex = index,
                 Abilities = player.AbilityUses.Select(kvp => new AbilityCastDto
                     {
                         AbilityKey = kvp.Key,
@@ -39,14 +37,14 @@ internal sealed class GetMatchCastsByIdHandler(ISender sender, IMapper mapper, I
                 Items = player.ItemUses
                     .Select(kvp => new ItemCastDto { ItemKey = kvp.Key, TimesUsed = kvp.Value })
                     .OrderByDescending(x => x.TimesUsed),
-                
+
                 Hits = player.HeroHits
                     .Select(kvp => new HitCastDto { TargetHeroKey = kvp.Key, HitCount = kvp.Value })
                     .OrderByDescending(x => x.HitCount),
             })
             .ToList();
     }
-    
+
     private static Dictionary<int, int>? ConvertTargetsToInt(Dictionary<string, int> stringTargets, IReadOnlyDictionary<string, int> heroNameToId)
     {
         if (stringTargets.Count == 0) return null;

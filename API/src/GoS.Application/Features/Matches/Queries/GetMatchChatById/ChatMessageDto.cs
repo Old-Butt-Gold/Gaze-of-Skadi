@@ -5,7 +5,7 @@ namespace GoS.Application.Features.Matches.Queries.GetMatchChatById;
 
 public record ChatMessageDto
 {
-    public required PlayerInfoDto PlayerInfo { get; set; }
+    public required int PlayerIndex { get; set; }
     public required ChatDataDto Data { get; set; }
 }
 

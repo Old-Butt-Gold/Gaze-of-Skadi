@@ -1,4 +1,5 @@
 ﻿using GoS.Application.Dto;
+using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 
@@ -43,9 +44,6 @@ public record PlayerOverviewDto
     public required bool AghanimBuff { get; init; }
     public required IEnumerable<PermanentBuffDto> PermanentBuff { get; init; }
     public required PlayerInfoDto PlayerInfo { get; init; }
-    public required BaseEnumDto<LaneRole> LaneRole { get; init; }
-    public required int? RankTier { get; init; }
-    public required int Level { get; init; }
     public required long Kills { get; init; }
     public required int Deaths { get; init; }
     public required long Assists { get; init; }
@@ -57,10 +55,10 @@ public record PlayerOverviewDto
     public required long HeroDamage { get; init; }
     public required int TowerDamage { get; init; }
     public required long HeroHealing { get; init; }
-    public required IEnumerable<ItemPurchaseDto> Items { get; init; }
-    public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
     public required int? NeutralItem { get; init; }
     public required int? NeutralAura { get; init; }
+    public required IEnumerable<ItemPurchaseDto> Items { get; init; }
+    public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
     public required IEnumerable<AbilityUpgradeDto> AbilityUpgrades { get; init; }
     public required IEnumerable<ObjectiveDataDto> Objectives { get; init; }
 }
@@ -80,7 +78,7 @@ public record MatchOverviewDto
     public required BaseEnumDto<GameMode> GameMode { get; init; }
     public required int Duration { get; init; }
     public long StartTime { get; set; }
-    public required long EndTimeUnix { get; init; }
+    public required long EndTime { get; init; }
     public required long MatchId { get; init; }
     public required BaseEnumDto<Region> Region { get; init; }
     public required Uri? ReplayUrl { get; init; }
@@ -91,6 +89,6 @@ public record MatchOverviewDto
     public required BaseEnumDto<BarracksStatus> RadiantBarracksStatus { get; init; }
     public required BaseEnumDto<TowerStatus> RadiantTowersStatus { get; init; }
     public required BaseEnumDto<TowerStatus> DireTowersStatus { get; init; }
-    public required bool IsParsed { get; set; }
+    public required BaseEnumDto<BooleanState> IsParsed { get; set; }
     public required BaseEnumDto<Patch> Patch { get; set; }
 }

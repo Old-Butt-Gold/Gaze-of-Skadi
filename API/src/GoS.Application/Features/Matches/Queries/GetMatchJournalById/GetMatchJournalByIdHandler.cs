@@ -71,7 +71,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                             {
                                 Time = objective.Time.Value,
                                 Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                                Player = mapper.Map<PlayerInfoDto>(players[playerIndex]),
+                                PlayerIndex = playerIndex,
                                 Target = key,
                                 TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(isRadiant ? TeamEnum.Radiant : TeamEnum.Dire),
                             });
@@ -84,7 +84,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                         {
                             Time = objective.Time.Value,
                             Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                            Player = null,
+                            PlayerIndex = null,
                             Target = key,
                             TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(isRadiant ? TeamEnum.Radiant : TeamEnum.Dire),
                         });
@@ -103,7 +103,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                         {
                             Time = objective.Time.Value,
                             Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                            Player = mapper.Map<PlayerInfoDto>(players[playerIndex]),
+                            PlayerIndex = playerIndex,
                             Target = players[victimIndex].HeroId.ToString(),
                             TargetTeam = null,
                         });
@@ -114,7 +114,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                         {
                             Time = objective.Time.Value,
                             Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                            Player = mapper.Map<PlayerInfoDto>(players[playerIndex]),
+                            PlayerIndex = playerIndex,
                             Target = null,
                             TargetTeam = null,
                         });
@@ -127,7 +127,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                 {
                     Time = objective.Time.Value,
                     Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                    Player = null,
+                    PlayerIndex = null,
                     Target = null,
                     TargetTeam = null,
                 });
@@ -140,35 +140,45 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
     private static string? GetCleanedObjectiveKey(string? rawKey) => rawKey?.Trim('"').Trim();
 
     private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players) =>
-        (from player in players from buyback in player.BuybackLogs select new BuybackEventDto
-        {
-            Time = buyback.Time,
-            Player = mapper.Map<PlayerInfoDto>(player)
-        }).OrderBy(x => x.Time);
+        players
+            .SelectMany((player, index) => player.BuybackLogs.Select(log => new BuybackEventDto
+            {
+                Time = log.Time,
+                PlayerIndex = index
+            }))
+            .OrderBy(x => x.Time);
 
     private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players) =>
-        (from player in players from connection in player.ConnectionLog select new ConnectionEventDto
-        {
-            Time = connection.Time,
-            Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(connection.Event),
-            Player = mapper.Map<PlayerInfoDto>(player)
-        }).OrderBy(x => x.Time);
+        players
+            .SelectMany((player, index) => player.ConnectionLog.Select(log => new ConnectionEventDto
+            {
+                Time = log.Time,
+                Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(log.Event),
+                PlayerIndex = index
+            }))
+            .OrderBy(x => x.Time);
 
     private IEnumerable<KillEventDto> MapKills(IReadOnlyList<MatchPlayer> players) =>
-        (from player in players from kill in player.KillsLog where _validHeroNames.Contains(kill.Key) select new KillEventDto
-        {
-            Time = kill.Time,
-            Killer = mapper.Map<PlayerInfoDto>(player),
-            VictimHeroId = _heroNameToId[kill.Key]
-        }).OrderBy(x => x.Time);
+        players
+            .SelectMany((player, index) => player.KillsLog
+                .Where(kill => _validHeroNames.Contains(kill.Key))
+                .Select(kill => new KillEventDto
+                {
+                    Time = kill.Time,
+                    KillerIndex = index,
+                    VictimHeroId = _heroNameToId[kill.Key]
+                }))
+            .OrderBy(x => x.Time);
 
     private IEnumerable<RuneEventDto> MapRunes(IReadOnlyList<MatchPlayer> players) =>
-        (from player in players from rune in player.RuneLogs select new RuneEventDto
-        {
-            Time = rune.Time,
-            Rune = mapper.Map<BaseEnumDto<Runes>>(rune.Key),
-            Player = mapper.Map<PlayerInfoDto>(player)
-        }).OrderBy(x => x.Time);
+        players
+            .SelectMany((player, index) => player.RuneLogs.Select(rune => new RuneEventDto
+            {
+                Time = rune.Time,
+                Rune = mapper.Map<BaseEnumDto<Runes>>(rune.Key),
+                PlayerIndex = index
+            }))
+            .OrderBy(x => x.Time);
 
     private IEnumerable<TeamFightEventDto> MapTeamFights(IEnumerable<Teamfight> teamfights) =>
         teamfights.Select(fight => new TeamFightEventDto

@@ -5,8 +5,8 @@ namespace GoS.Application.Features.Matches.Queries.GetMatchObjectivesById;
 
 public record PlayerObjectivesDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
-    
+    public required int PlayerIndex { get; init; }
+
     public required ObjectivesDataDto Objectives { get; init; }
 }
 

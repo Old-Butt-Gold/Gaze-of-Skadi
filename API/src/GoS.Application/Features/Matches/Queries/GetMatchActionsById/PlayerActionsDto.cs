@@ -5,8 +5,8 @@ namespace GoS.Application.Features.Matches.Queries.GetMatchActionsById;
 
 public record PlayerActionsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
-    
+    public required int PlayerIndex { get; init; }
+
     public required IEnumerable<ActionsDataDto> Actions { get; init; }
 }
 

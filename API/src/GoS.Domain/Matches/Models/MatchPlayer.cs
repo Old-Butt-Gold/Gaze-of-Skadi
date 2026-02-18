@@ -722,12 +722,6 @@ public class MatchPlayer
 	public int LaneEfficiencyPct { get; init; }
 
 	/// <summary>
-	/// Gets integer referring to which lane the hero laned in
-	/// </summary>
-	[JsonPropertyName("lane")]
-	public LanePos? Lane { get; init; }
-
-	/// <summary>
 	/// Gets a lane role
 	/// !!! This is better !!!
 	/// </summary>

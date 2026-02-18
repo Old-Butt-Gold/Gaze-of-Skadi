@@ -23,9 +23,9 @@ internal sealed class GetMatchObjectivesByIdHandler(ISender sender, IMapper mapp
         var resources = await resourceManager.GetObjectiveNamesAsync();
 
         return match.Players
-            .Select(player => new PlayerObjectivesDto
+            .Select((player, index) => new PlayerObjectivesDto
             {
-                PlayerInfo = mapper.Map<PlayerInfoDto>(player), 
+                PlayerIndex = index,
                 Objectives = GetObjectivesForPlayer(resources!, player),
             })
             .ToList();

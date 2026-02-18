@@ -17,7 +17,7 @@ public record LastHitsSnapshotDto
 
 public record PlayerEarningsDto
 {
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required long HeroesKilled { get; init; }
     public required int LaneCreepsKilled { get; init; }
     public required int NeutralCreepsKilled { get; init; }
