@@ -502,84 +502,84 @@
     "name": "Rimshot",
     "label": "Ba-dum tishh",
     "message": "Ba-dum tishh",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fc/Misc_soundboard_rimshot.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fc/Misc_soundboard_rimshot.mp3"
   },
   "87": {
     "id": 87,
     "name": "Charge",
     "label": "Charge",
     "message": "Charge",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/Misc_soundboard_charge.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/Misc_soundboard_charge.mp3"
   },
   "88": {
     "id": 88,
     "name": "Frog",
     "label": "Frog",
     "message": "Frog",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_frog.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_frog.mp3"
   },
   "89": {
     "id": 89,
     "name": "Crash_and_Burn",
     "label": "Crash",
     "message": "Crash and burn",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/ba/Misc_soundboard_crash_burn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/ba/Misc_soundboard_crash_burn.mp3"
   },
   "90": {
     "id": 90,
     "name": "Applause",
     "label": "Applause",
     "message": "Applause",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_crowd_lv_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_crowd_lv_01.mp3"
   },
   "91": {
     "id": 91,
     "name": "Sad_Trombone",
     "label": "Sad trombone",
     "message": "Sad trombone",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_soundboard_sad_bone.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_soundboard_sad_bone.mp3"
   },
   "92": {
     "id": 92,
     "name": "Crickets",
     "label": "Crickets",
     "message": "Crickets",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_cricket.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_cricket.mp3"
   },
   "93": {
     "id": 93,
     "name": "Drum_Roll",
     "label": "Drum roll",
     "message": "Drum roll",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_drum_roll.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_drum_roll.mp3"
   },
   "94": {
     "id": 94,
     "name": "Headshake",
     "label": "Headshake",
     "message": "Headshake",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_headshake.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_headshake.mp3"
   },
   "95": {
     "id": 95,
     "name": "Crybaby",
     "label": "Crybaby",
     "message": "Crybaby",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/51/Misc_soundboard_crybaby.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/51/Misc_soundboard_crybaby.mp3"
   },
   "96": {
     "id": 96,
     "name": "Patience",
     "label": "Patience",
     "message": "Patience from Zhou",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_patience.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_patience.mp3"
   },
   "101": {
     "id": 101,
     "name": "Bozhe_Ti_Posmotri",
     "label": "Что Происходит",
     "message": "Боже, ты посмотри вокруг, что происходит!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6a/Misc_soundboard_bozhe_ti_posmotri.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6a/Misc_soundboard_bozhe_ti_posmotri.mp3"
   },
   "111": {
     "id": 111,
@@ -592,466 +592,466 @@
     "name": "Thats_Playing_to_Win",
     "label": "That's Playing to Win!",
     "message": "That's playing to win, baby!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_playing_to_win.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_playing_to_win.mp3"
   },
   "114": {
     "id": 114,
     "name": "Absolutely_Perfect",
     "label": "Absolutely Perfect",
     "message": "Absolutely Perfect",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3"
   },
   "115": {
     "id": 115,
     "name": "Looking_Spicy",
     "label": "Looking Spicy",
     "message": "It's looking Spicy!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3"
   },
   "116": {
     "id": 116,
     "name": "No_Chill",
     "label": "No Chill!",
     "message": "This guy has no chill",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_no_chill.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_no_chill.mp3"
   },
   "117": {
     "id": 117,
     "name": "Lets_Play_Dota",
     "label": "Let's Play Dota",
     "message": "Let's Play Some Dota",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_lets_play.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_lets_play.mp3"
   },
   "118": {
     "id": 118,
     "name": "Waow",
     "label": "Waow",
     "message": "Waow",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_wow.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_wow.mp3"
   },
   "119": {
     "id": 119,
     "name": "What_Just_Happened",
     "label": "What Just Happened?",
     "message": "I can't believe what we're seeing. What just happened?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3"
   },
   "120": {
     "id": 120,
     "name": "Youre_a_Hero",
     "label": "You're a Goddamn Hero!",
     "message": "You're a goddamn hero!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3"
   },
   "121": {
     "id": 121,
     "name": "All_Dead",
     "label": "All Dead",
     "message": "They're all dead!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_all_dead.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_all_dead.mp3"
   },
   "122": {
     "id": 122,
     "name": "Ding_Ding_Ding",
     "label": "Ding Ding Ding!",
     "message": "Ding Ding Ding Mother******",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/Misc_soundboard_ding_ding_ding.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/Misc_soundboard_ding_ding_ding.mp3"
   },
   "131": {
     "id": 131,
     "name": "Bockbock",
     "label": "Bock bock",
     "message": "Bock bock",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/19/Misc_soundboard_bockbock.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/19/Misc_soundboard_bockbock.mp3"
   },
   "132": {
     "id": 132,
     "name": "Kiss",
     "label": "Kiss",
     "message": "Kiss",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_kiss.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_kiss.mp3"
   },
   "133": {
     "id": 133,
     "name": "Ow",
     "label": "Oww",
     "message": "Oww",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a2/Misc_soundboard_ow.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a2/Misc_soundboard_ow.mp3"
   },
   "134": {
     "id": 134,
     "name": "Party_Horn",
     "label": "Party horn",
     "message": "Party horn",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_party_horn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_party_horn.mp3"
   },
   "135": {
     "id": 135,
     "name": "Snore",
     "label": "Snore",
     "message": "Snore",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a5/Misc_soundboard_snore.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a5/Misc_soundboard_snore.mp3"
   },
   "136": {
     "id": 136,
     "name": "Yahoo",
     "label": "Yahoo",
     "message": "Yahoo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_yahoo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_yahoo.mp3"
   },
   "137": {
     "id": 137,
     "name": "Happy_Tree",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI8_Spray_Liltree_Happy.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI8_Spray_Liltree_Happy.png"
   },
   "138": {
     "id": 138,
     "name": "High_Five",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI8_Spray_Furbolg_Highfive.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI8_Spray_Furbolg_Highfive.png"
   },
   "139": {
     "id": 139,
     "name": "Zen",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3f/TI8_Spray_Monkey_Zen.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3f/TI8_Spray_Monkey_Zen.png"
   },
   "140": {
     "id": 140,
     "name": "Thumbs_Up",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/TI8_Spray_Tide_Thumbsup.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/TI8_Spray_Tide_Thumbsup.png"
   },
   "141": {
     "id": 141,
     "name": "Funny",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/TI8_Spray_Lion_Xd.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/TI8_Spray_Lion_Xd.png"
   },
   "142": {
     "id": 142,
     "name": "Cry",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/TI8_Spray_Bear_Cry.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/TI8_Spray_Bear_Cry.png"
   },
   "143": {
     "id": 143,
     "name": "Shrug",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/TI8_Spray_Sf_Shrug.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/TI8_Spray_Sf_Shrug.png"
   },
   "144": {
     "id": 144,
     "name": "Sad_Tree",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/TI8_Spray_Liltree_Sad.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/TI8_Spray_Liltree_Sad.png"
   },
   "145": {
     "id": 145,
     "name": "Angry",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ef/TI8_Spray_Lina_Angry.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ef/TI8_Spray_Lina_Angry.png"
   },
   "146": {
     "id": 146,
     "name": "Question",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/TI8_Spray_Shaker_Confus.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/TI8_Spray_Shaker_Confus.png"
   },
   "147": {
     "id": 147,
     "name": "Shhh",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/TI8_Spray_Mirana_Shh.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/TI8_Spray_Mirana_Shh.png"
   },
   "148": {
     "id": 148,
     "name": "Nervous",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/TI8_Spray_Naturesprophet_O_O.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/TI8_Spray_Naturesprophet_O_O.png"
   },
   "149": {
     "id": 149,
     "name": "Thinking",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png"
   },
   "150": {
     "id": 150,
     "name": "Just_Right",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png"
   },
   "151": {
     "id": 151,
     "name": "Whoa",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/TI8_Spray_Monkeyking_Monkeychamp.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/TI8_Spray_Monkeyking_Monkeychamp.png"
   },
   "152": {
     "id": 152,
     "name": "Easiest_Money",
     "label": "Easiest Money",
     "message": "Easiest money of my life!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3"
   },
   "153": {
     "id": 153,
     "name": "Echo_Slama_Jama",
     "label": "Echo Slamma Jamma",
     "message": "Echo Slamma Jamma!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b7/Misc_soundboard_echo_slama_jama.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b7/Misc_soundboard_echo_slama_jama.mp3"
   },
   "154": {
     "id": 154,
     "name": "Next_Level",
     "label": "Next Level",
     "message": "The next level play!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3"
   },
   "155": {
     "id": 155,
     "name": "Oy_Oy_Oy",
     "label": "Oyoy oy oy",
     "message": "Oyoy oy oy, oy, oy, oy Oy OY!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_oy_oy_oy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_oy_oy_oy.mp3"
   },
   "156": {
     "id": 156,
     "name": "Lakad_Matataaaag",
     "label": "Lakad Matataaaag!",
     "message": "Lakad Matataaaag! Normalin Normalin.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3"
   },
   "157": {
     "id": 157,
     "name": "FavoriteTeam",
     "label": "Favorite Team Spray",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b8/Spray_Default.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b8/Spray_Default.png"
   },
   "158": {
     "id": 158,
     "name": "Greevil_Laughter",
     "label": "Greevil Laughter",
     "message": "Greevil Laughter",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/Misc_soundboard_greevil_laugh01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/Misc_soundboard_greevil_laugh01.mp3"
   },
   "159": {
     "id": 159,
     "name": "Sparkling_Celebration",
     "label": "Sparkling Celebration",
     "message": "Sparkling Celebration",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_champagne_celebration.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_champagne_celebration.mp3"
   },
   "160": {
     "id": 160,
     "name": "Frostivus_Magic",
     "label": "Frostivus Magic",
     "message": "Frostivus Magic",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e9/Misc_soundboard_frostivus_magic.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e9/Misc_soundboard_frostivus_magic.mp3"
   },
   "161": {
     "id": 161,
     "name": "Sleighbells",
     "label": "Sleighbells",
     "message": "Sleighbells",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_soundboard_sleighbells.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_soundboard_sleighbells.mp3"
   },
   "162": {
     "id": 162,
     "name": "NewBloom_Ceremonial_Drums",
     "label": "Ceremonial Drums",
     "message": "Ceremonial Drums",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/Misc_soundboard_ny_drums.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/Misc_soundboard_ny_drums.mp3"
   },
   "163": {
     "id": 163,
     "name": "NewBloom_Oink_Oink",
     "label": "Oink Oink!",
     "message": "Oink Oink!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/01/Misc_soundboard_ny_pig_snort.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/01/Misc_soundboard_ny_pig_snort.mp3"
   },
   "164": {
     "id": 164,
     "name": "NewBloom_Celebratory_Gong",
     "label": "Celebratory Gong",
     "message": "Celebratory Gong",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4d/Misc_soundboard_ny_gong.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4d/Misc_soundboard_ny_gong.mp3"
   },
   "165": {
     "id": 165,
     "name": "Kooka_Laugh",
     "label": "Kookaburra Laugh",
     "message": "Kookaburra Laugh",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/Misc_soundboard_ti9_kooka_laugh.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/Misc_soundboard_ti9_kooka_laugh.mp3"
   },
   "166": {
     "id": 166,
     "name": "Monkey_Business",
     "label": "Monkey Business",
     "message": "Monkey Business",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/de/Misc_soundboard_ti9_monkey_biz.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/de/Misc_soundboard_ti9_monkey_biz.mp3"
   },
   "167": {
     "id": 167,
     "name": "Orangutan_Kiss",
     "label": "Sloppy Orangutan Kiss",
     "message": "Sloppy Orangutan Kiss",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti9_orangutan_kiss.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti9_orangutan_kiss.mp3"
   },
   "168": {
     "id": 168,
     "name": "Mosquito_Buzz",
     "label": "Mosquito Buzz",
     "message": "Mosquito Buzz",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b7/Misc_soundboard_ti9_skeeter.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b7/Misc_soundboard_ti9_skeeter.mp3"
   },
   "169": {
     "id": 169,
     "name": "Crowd_Groan",
     "label": "Crowd Groan",
     "message": "Crowd Groan",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/be/Misc_soundboard_ti9_crowd_groan.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/be/Misc_soundboard_ti9_crowd_groan.mp3"
   },
   "170": {
     "id": 170,
     "name": "Head_Bonk",
     "label": "Head Bonk",
     "message": "Head Bonk",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Misc_soundboard_ti9_head_bonk.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Misc_soundboard_ti9_head_bonk.mp3"
   },
   "171": {
     "id": 171,
     "name": "Record_Scratch",
     "label": "Record Scratch",
     "message": "Record Scratch",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_ti9_record_scratch.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_ti9_record_scratch.mp3"
   },
   "172": {
     "id": 172,
     "name": "Ta_Daaaaaa",
     "label": "Ta Daaaaaa",
     "message": "Ta Daaaaaa",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_soundboard_ti9_ta_da.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_soundboard_ti9_ta_da.mp3"
   },
   "173": {
     "id": 173,
     "name": "Ay_Ay_Ay",
     "label": "Ай-ай-ай-ай-ай",
     "message": "Ай-ай-ай-ай-ай, что сейчас произошло",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3"
   },
   "174": {
     "id": 174,
     "name": "Ehto_G_G",
     "label": "Это ГГ",
     "message": "Это ГГ",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3"
   },
   "175": {
     "id": 175,
     "name": "Oy_Oy_Bezhat",
     "label": "Ой-ой-ой-ой-ой, бежать!",
     "message": "Ой-ой-ой-ой-ой, бежать!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ea/Misc_soundboard_oy_oy_bezhat.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ea/Misc_soundboard_oy_oy_bezhat.mp3"
   },
   "176": {
     "id": 176,
     "name": "Eto_Sochno",
     "label": "Как же это сочно, ах!",
     "message": "Как же это сочно, ах!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3"
   },
   "177": {
     "id": 177,
     "name": "Da_Da_Da_Nyet",
     "label": "Да? Да? Да? Нет.",
     "message": "Да? Да? Да? Нет.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3"
   },
   "178": {
     "id": 178,
     "name": "Wot_Eto_Bru",
     "label": "Вот Это Врыв!",
     "message": "Вот Это Врыв!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_wot_eto_bru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_wot_eto_bru.mp3"
   },
   "179": {
     "id": 179,
     "name": "Kreasa_Kreasa",
     "label": "Резать Резать Резать Резать",
     "message": "Резать Резать Резать Резать",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3"
   },
   "180": {
     "id": 180,
     "name": "Eto_Nenormalno",
     "label": "Это ненормально, это нечестно!",
     "message": "Это ненормально, это нечестно!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3"
   },
   "181": {
     "id": 181,
     "name": "Krasavchik",
     "label": "Красавчик!",
     "message": "Красавчик!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0f/Misc_soundboard_krasavchik.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0f/Misc_soundboard_krasavchik.mp3"
   },
   "182": {
     "id": 182,
     "name": "Eto_Prosto_Netchto",
     "label": "Это. Просто. Нечто.",
     "message": "Это. Просто. Нечто.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3"
   },
   "183": {
     "id": 183,
     "name": "Zhil_Do_Konsta",
     "label": "Как Герой",
     "message": "Жил до конца, умер как герой",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3"
   },
   "190": {
     "id": 190,
     "name": "Goodness_Gracious",
     "label": "Goodness Gracious",
     "message": "Sir Chief. Goodness Gracious Papable.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Misc_soundboard_goodness_gracious.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Misc_soundboard_goodness_gracious.mp3"
   },
   "191": {
     "id": 191,
     "name": "Nakupuuu",
     "label": "NAKUPUU",
     "message": "NAKUPUU",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c1/Misc_soundboard_nakupuuu.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c1/Misc_soundboard_nakupuuu.mp3"
   },
   "192": {
     "id": 192,
     "name": "Whats_Cooking",
     "label": "What's Cooking",
     "message": "You know what's cooking? BOOM!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_whats_cooking.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_whats_cooking.mp3"
   },
   "193": {
     "id": 193,
     "name": "Eughahaha_Aah_Ha_Ha_Ha_Ha",
     "label": "Eughahaha Aah Ha Ha Ha Ha",
     "message": "Eughahaha Aah Ha Ha Ha Ha",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/Misc_soundboard_eughahaha.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/Misc_soundboard_eughahaha.mp3"
   },
   "194": {
     "id": 194,
     "name": "TI9_GlaDOS_Estimate_99",
     "label": "99% Probability of Winning.",
     "message": "99% Probability of Winning.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/75/Misc_soundboard_glados_chat_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/75/Misc_soundboard_glados_chat_01.mp3"
   },
   "195": {
     "id": 195,
     "name": "TI9_GlaDOS_Disappointed",
     "label": "I'm Just Disappointed",
     "message": "I'm not angry, I'm Just Disappointed",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d1/Misc_soundboard_glados_chat_21.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d1/Misc_soundboard_glados_chat_21.mp3"
   },
   "196": {
     "id": 196,
     "name": "TI9_GlaDOS_Estimate_1",
     "label": "1% Probability of Winning.",
     "message": "1% Probability of Winning.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_glados_chat_04.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_glados_chat_04.mp3"
   },
   "197": {
     "id": 197,
     "name": "TI9_GlaDOS_Estimate_17",
     "label": "17% Probability of Winning.",
     "message": "17% Probability of Winning.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6f/Misc_soundboard_glados_chat_07.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6f/Misc_soundboard_glados_chat_07.mp3"
   },
   "199": {
     "id": 199,
@@ -1093,126 +1093,126 @@
     "name": "Ni_Qi_Bu_Qi",
     "label": "你气不气?",
     "message": "你气不气?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3"
   },
   "212": {
     "id": 212,
     "name": "Zai_Jian_Le_Bao_Bei",
     "label": "再见了宝贝儿！",
     "message": "再见了宝贝儿！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3"
   },
   "213": {
     "id": 213,
     "name": "Duiyou_Ne",
     "label": "队友呢？",
     "message": "啊，队友呢？队友呢？队友呢？！ 队友呢？！？！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3"
   },
   "214": {
     "id": 214,
     "name": "Piao_Liang",
     "label": "漂~ 亮！",
     "message": "漂~ 亮！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3"
   },
   "215": {
     "id": 215,
     "name": "Tian_Huo",
     "label": "天火！",
     "message": "天火！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_tian_huo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_tian_huo.mp3"
   },
   "216": {
     "id": 216,
     "name": "Gan_Ma_Ne_Xiong_Di",
     "label": "干嘛呢兄弟",
     "message": "干嘛呢兄弟",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_gan_ma_ne_xiong_di.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_gan_ma_ne_xiong_di.mp3"
   },
   "217": {
     "id": 217,
     "name": "Lian_Dou_Xiu_Wai_La",
     "label": "脸都秀歪啦",
     "message": "脸都秀歪啦",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a3/Misc_soundboard_lian_dou_xiu_wai_la.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a3/Misc_soundboard_lian_dou_xiu_wai_la.mp3"
   },
   "218": {
     "id": 218,
     "name": "Liu_Liu_Liu",
     "label": "这波不亏, 666",
     "message": "这波不亏, 666",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/Misc_soundboard_liu_liu_liu.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/Misc_soundboard_liu_liu_liu.mp3"
   },
   "219": {
     "id": 219,
     "name": "Jia_You",
     "label": "加油！",
     "message": "加油！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3"
   },
   "220": {
     "id": 220,
     "name": "Zou_Hao_Bu_Song",
     "label": "走好，不送",
     "message": "走好，不送",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_zou_hao_bu_song.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_zou_hao_bu_song.mp3"
   },
   "221": {
     "id": 221,
     "name": "Wan_Bu_Liao_La",
     "label": "玩不了啦！",
     "message": "玩不了啦！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_wan_bu_liao_la.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_wan_bu_liao_la.mp3"
   },
   "224": {
     "id": 224,
     "name": "Kor_Yes_No",
     "label": "네, 노, 네, 노 노 노!",
     "message": "네, 노, 네, 노 노 노!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3"
   },
   "225": {
     "id": 225,
     "name": "Kor_Scan",
     "label": "스캔",
     "message": "스캔 돌려야 되요 따라란따란따라라라란 스캔 돌려야 된다고요!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_kor_scan.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_kor_scan.mp3"
   },
   "226": {
     "id": 226,
     "name": "Kor_Immortality",
     "label": "Immortality",
     "message": "Mommy! I got me! Immortality!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_soundboard_kor_immortality.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_soundboard_kor_immortality.mp3"
   },
   "227": {
     "id": 227,
     "name": "Kor_Yolo",
     "label": "Yolo",
     "message": "골드 부활 못 해! YOLO! 골드 부활 못 해! YOLO!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3"
   },
   "228": {
     "id": 228,
     "name": "Kor_House",
     "label": "10억짜리 꿈의 고리! 15억짜리 꿈의 고리!",
     "message": "10억짜리 꿈의 고리! 15억짜리 꿈의 고리!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Misc_soundboard_kor_million_dollar_house.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Misc_soundboard_kor_million_dollar_house.mp3"
   },
   "229": {
     "id": 229,
     "name": "Kor_Roshan",
     "label": "Roshan! Roshan! Roshan!",
     "message": "Roshan! Roshan! Roshan!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_kor_roshan.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_kor_roshan.mp3"
   },
   "230": {
     "id": 230,
     "name": "TI10_Ceeeb",
     "label": "Ceeeb",
     "message": "Ceeeb",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_ceeeb_start.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_ceeeb_start.mp3"
   },
   "231": {
     "id": 231,
@@ -1231,843 +1231,843 @@
     "name": "HappyPenguin",
     "label": "Happy Penguin",
     "message": "Happy Penguin",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Weapons_hero_tusk_penguin01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Weapons_hero_tusk_penguin01.mp3"
   },
   "234": {
     "id": 234,
     "name": "NewBloom_Firecrackers",
     "label": "Firecrackers!",
     "message": "Pop pop pop!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c7/Misc_soundboard_ny_firework1.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c7/Misc_soundboard_ny_firework1.mp3"
   },
   "235": {
     "id": 235,
     "name": "TI10_Spray_1",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5d/TI10_Spray_grim_happy_tree.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5d/TI10_Spray_grim_happy_tree.png"
   },
   "236": {
     "id": 236,
     "name": "TI10_Spray_2",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI10_Spray_jugg.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI10_Spray_jugg.png"
   },
   "237": {
     "id": 237,
     "name": "TI10_Spray_3",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0d/TI10_Spray_mars_fightme.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0d/TI10_Spray_mars_fightme.png"
   },
   "238": {
     "id": 238,
     "name": "TI10_Spray_4",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/TI10_Spray_morphling.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/TI10_Spray_morphling.png"
   },
   "239": {
     "id": 239,
     "name": "TI10_Spray_5",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_ogre_think.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_ogre_think.png"
   },
   "240": {
     "id": 240,
     "name": "TI10_Spray_6",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/TI10_Spray_rubick.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/TI10_Spray_rubick.png"
   },
   "241": {
     "id": 241,
     "name": "TI10_Spray_7",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/TI10_Spray_sven.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/TI10_Spray_sven.png"
   },
   "242": {
     "id": 242,
     "name": "TI10_Spray_8",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/TI10_Spray_techies_barrel.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/TI10_Spray_techies_barrel.png"
   },
   "243": {
     "id": 243,
     "name": "TI10_Spray_9",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/TI10_Spray_wisp_strong.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/TI10_Spray_wisp_strong.png"
   },
   "244": {
     "id": 244,
     "name": "TI10_Spray_10",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/TI10_Spray_wraith_king_cdi.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/TI10_Spray_wraith_king_cdi.png"
   },
   "245": {
     "id": 245,
     "name": "TI10_Spray_11",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png"
   },
   "246": {
     "id": 246,
     "name": "TI10_Spray_12",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/29/TI10_Spray_dark_willow_wow.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/29/TI10_Spray_dark_willow_wow.png"
   },
   "247": {
     "id": 247,
     "name": "TI10_Spray_13",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/TI10_Spray_invoker_sunstrike.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/TI10_Spray_invoker_sunstrike.png"
   },
   "248": {
     "id": 248,
     "name": "TI10_Spray_14",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_jakiro.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_jakiro.png"
   },
   "249": {
     "id": 249,
     "name": "TI10_Spray_15",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI10_Spray_np_popcorn.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI10_Spray_np_popcorn.png"
   },
   "250": {
     "id": 250,
     "name": "TI10_Spray_16",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_roshan_cheese.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_roshan_cheese.png"
   },
   "251": {
     "id": 251,
     "name": "TI10_Spray_17",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/TI10_Spray_snapfire_cookie.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/TI10_Spray_snapfire_cookie.png"
   },
   "252": {
     "id": 252,
     "name": "TI10_Spray_18",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_kotl_mana.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_kotl_mana.png"
   },
   "253": {
     "id": 253,
     "name": "TI10_Spray_19",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/TI10_Spray_undying_rip.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/TI10_Spray_undying_rip.png"
   },
   "254": {
     "id": 254,
     "name": "TI10_Spray_20",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/TI10_Spray_troll_loser.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/TI10_Spray_troll_loser.png"
   },
   "255": {
     "id": 255,
     "name": "Boing",
     "label": "Boing",
     "message": "Boing",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_boing.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_boing.mp3"
   },
   "256": {
     "id": 256,
     "name": "Moo",
     "label": "Moo",
     "message": "Moo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ef/Misc_soundboard_moo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ef/Misc_soundboard_moo.mp3"
   },
   "257": {
     "id": 257,
     "name": "Orc_Hit",
     "label": "Orchestra Hit",
     "message": "Orchestra Hit",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/Misc_soundboard_orc_hit.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/Misc_soundboard_orc_hit.mp3"
   },
   "258": {
     "id": 258,
     "name": "HeeHaw",
     "label": "Heehaw",
     "message": "Heehaw",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_soundboard_heehaw.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_soundboard_heehaw.mp3"
   },
   "259": {
     "id": 259,
     "name": "Oops",
     "label": "Oops",
     "message": "Oops",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_oops.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_oops.mp3"
   },
   "260": {
     "id": 260,
     "name": "WoopWoo",
     "label": "WoopWoo",
     "message": "WoopWoo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_woopwoo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_woopwoo.mp3"
   },
   "263": {
     "id": 263,
     "name": "Holy_Moly",
     "label": "Holy Moly!",
     "message": "Holy Moly!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3"
   },
   "264": {
     "id": 264,
     "name": "Takaya_Haliava",
     "label": "Такая халява!",
     "message": "Такая халява...Ха!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3"
   },
   "265": {
     "id": 265,
     "name": "wo_shi_yi",
     "label": "我是一个没有感情的刷钱机器",
     "message": "我是一个没有感情的刷钱机器",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_wo_shi_yi.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_wo_shi_yi.mp3"
   },
   "266": {
     "id": 266,
     "name": "Oh_My_God_What",
     "label": "Oh My God. What?",
     "message": "Oh my god. What? Oh! Oh!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3"
   },
   "267": {
     "id": 267,
     "name": "Aaah_Aaah_Chto",
     "label": "А? Что?!",
     "message": "Ё! А? А? Что?!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0b/Misc_soundboard_aaah_aaah_chto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0b/Misc_soundboard_aaah_aaah_chto.mp3"
   },
   "268": {
     "id": 268,
     "name": "ni_xing_ni",
     "label": "你行你行，你上你上",
     "message": "你行你行，你上你上",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3"
   },
   "269": {
     "id": 269,
     "name": "Coming_Through",
     "label": "Coming Through",
     "message": "Coming through with the wooooo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3"
   },
   "270": {
     "id": 270,
     "name": "A_Net_Net_Da",
     "label": "Нет нет ДА!",
     "message": "А нет, нет, ДА!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/81/Misc_soundboard_a_net_net_da.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/81/Misc_soundboard_a_net_net_da.mp3"
   },
   "271": {
     "id": 271,
     "name": "hui_tian_mie",
     "label": "毁天灭地, NICE啊！",
     "message": "毁天灭地, NICE啊！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3"
   },
   "272": {
     "id": 272,
     "name": "What_The_F_Just_Happened",
     "label": "What the **** Just Happened",
     "message": "What the **** just happened?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_what_the_f_just_happened.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_what_the_f_just_happened.mp3"
   },
   "273": {
     "id": 273,
     "name": "Eto_Takaya_Dushka",
     "label": "Это такая душка!",
     "message": "Ух, это такая душка!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3"
   },
   "274": {
     "id": 274,
     "name": "lai_ni_da",
     "label": "来，你打我呀！",
     "message": "来，你打我呀！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/Misc_soundboard_lai_ni_da.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/Misc_soundboard_lai_ni_da.mp3"
   },
   "275": {
     "id": 275,
     "name": "See_You_Later_Nerds",
     "label": "See You Later Nerds",
     "message": "See you later nerds",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3"
   },
   "276": {
     "id": 276,
     "name": "Chto_Eto_Kakaya_Zhest",
     "label": "Какая Жесть!",
     "message": "Что это?! Какая жесть!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3"
   },
   "277": {
     "id": 277,
     "name": "tiao_zou_le",
     "label": "跳走了",
     "message": "跳走了",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Misc_soundboard_tiao_zou_le.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Misc_soundboard_tiao_zou_le.mp3"
   },
   "278": {
     "id": 278,
     "name": "Nothing_That_Can_Stop_This_Man",
     "label": "Nothing Can Stop This Man",
     "message": "There is nothing that can stop this man",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3"
   },
   "279": {
     "id": 279,
     "name": "A_Nu_Ka_Idi_Suda",
     "label": "Иди-ка сюда",
     "message": "А ну-ка иди-ка сюда. А вот все. Все.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_a_nu_ka_idi_suda.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_a_nu_ka_idi_suda.mp3"
   },
   "280": {
     "id": 280,
     "name": "ay_ay_ay_cn",
     "label": "唉唉唉！唉？唉 …",
     "message": "唉唉唉！唉？唉 …",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3"
   },
   "281": {
     "id": 281,
     "name": "TI10EventGameReward1",
     "label": "Let us skirmish!",
     "message": "Friends, let us skirmish!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f5/Misc_soundboard_ti10eventgame_reward1.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f5/Misc_soundboard_ti10eventgame_reward1.mp3"
   },
   "282": {
     "id": 282,
     "name": "TI10EventGameReward2",
     "label": "...Sadness that you're gone.",
     "message": "I admit nothing but my sadness that you're gone.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Addons_aghanim_vo_announcer_aghanim_agh_timetrial_team_wipe_follow_up_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Addons_aghanim_vo_announcer_aghanim_agh_timetrial_team_wipe_follow_up_01.mp3"
   },
   "283": {
     "id": 283,
     "name": "TI10EventGameReward3",
     "label": "The Ol' Razzle-Dazzle!",
     "message": "Now for the ol' razzle-dazzle!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/88/Misc_soundboard_ti10eventgame_reward3.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/88/Misc_soundboard_ti10eventgame_reward3.mp3"
   },
   "284": {
     "id": 284,
     "name": "TI10EventGameReward4",
     "label": "BOCK BOCK BOCK!",
     "message": "BOCK BOCK BOCK! That is what you sound like!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Addons_aghanim_vo_announcer_aghanim_agh_attack_not_in_room_05.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Addons_aghanim_vo_announcer_aghanim_agh_attack_not_in_room_05.mp3"
   },
   "285": {
     "id": 285,
     "name": "TI10EventGameReward5",
     "label": "Ahh ha ha ha hoo, let's do this!",
     "message": "Ahhhh ha ha ha ha ha ha ha ha hoo, let's do this!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Addons_aghanim_vo_announcer_aghanim_choose_difficulty_05.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Addons_aghanim_vo_announcer_aghanim_choose_difficulty_05.mp3"
   },
   "287": {
     "id": 287,
     "name": "Black_Cat",
     "label": "Black Cat",
     "message": "Meow!!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/47/Misc_soundboard_diretide_black_cat.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/47/Misc_soundboard_diretide_black_cat.mp3"
   },
   "288": {
     "id": 288,
     "name": "Ghost",
     "label": "Ghost",
     "message": "Boooooo!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_diretide_ghost.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_diretide_ghost.mp3"
   },
   "289": {
     "id": 289,
     "name": "Nightmare",
     "label": "Nightmare",
     "message": "*Nightmare Noises*",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/96/Misc_soundboard_diretide_nightmare.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/96/Misc_soundboard_diretide_nightmare.mp3"
   },
   "290": {
     "id": 290,
     "name": "Scream",
     "label": "Scream",
     "message": "Eeeeeeek!!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_diretide_scream.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_diretide_scream.mp3"
   },
   "291": {
     "id": 291,
     "name": "Stabby",
     "label": "Stabby",
     "message": "*Violin Stabs*",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_diretide_stabby.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_diretide_stabby.mp3"
   },
   "292": {
     "id": 292,
     "name": "Laugh",
     "label": "Laugh",
     "message": "Mwahahahaha!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/df/Addons_conquest_laugh_hallow01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/df/Addons_conquest_laugh_hallow01.mp3"
   },
   "293": {
     "id": 293,
     "name": "Diretide_Spray_1",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/76/Diretide_Spray_Apple.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/76/Diretide_Spray_Apple.png"
   },
   "294": {
     "id": 294,
     "name": "Diretide_Spray_2",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Diretide_Spray_Boo.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Diretide_Spray_Boo.png"
   },
   "295": {
     "id": 295,
     "name": "Diretide_Spray_3",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/Diretide_Spray_Brood.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/Diretide_Spray_Brood.png"
   },
   "296": {
     "id": 296,
     "name": "Diretide_Spray_4",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f5/Diretide_Spray_BS.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f5/Diretide_Spray_BS.png"
   },
   "297": {
     "id": 297,
     "name": "Diretide_Spray_5",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Diretide_Spray_Cat.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Diretide_Spray_Cat.png"
   },
   "298": {
     "id": 298,
     "name": "Diretide_Spray_6",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fc/Diretide_Spray_DP.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fc/Diretide_Spray_DP.png"
   },
   "299": {
     "id": 299,
     "name": "Diretide_Spray_7",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/Diretide_Spray_Gummy.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/Diretide_Spray_Gummy.png"
   },
   "300": {
     "id": 300,
     "name": "Guild_Question",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/TI8_Spray_Shaker_Confus.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/TI8_Spray_Shaker_Confus.png"
   },
   "301": {
     "id": 301,
     "name": "Guild_Just_Right",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png"
   },
   "302": {
     "id": 302,
     "name": "Guild_TI10_Spray_13",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png"
   },
   "303": {
     "id": 303,
     "name": "Guild_Lakad_Matataaaag",
     "label": "Lakad Matataaaag!",
     "message": "Lakad Matataaaag! Normalin Normalin.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3"
   },
   "304": {
     "id": 304,
     "name": "Guild_Kor_Yolo",
     "label": "Yolo",
     "message": "골드 부활 못 해! YOLO! 골드 부활 못 해! YOLO!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3"
   },
   "305": {
     "id": 305,
     "name": "Guild_Eto_Prosto_Netchto",
     "label": "Это. Просто. Нечто.",
     "message": "Это. Просто. Нечто.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3"
   },
   "306": {
     "id": 306,
     "name": "Diretide_Spray_8",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4f/Diretide_Spray_Lycan.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4f/Diretide_Spray_Lycan.png"
   },
   "307": {
     "id": 307,
     "name": "Diretide_Spray_9",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/Diretide_Spray_Roshan.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/Diretide_Spray_Roshan.png"
   },
   "308": {
     "id": 308,
     "name": "Diretide_Spray_10",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2f/Diretide_Spray_Taffy.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2f/Diretide_Spray_Taffy.png"
   },
   "309": {
     "id": 309,
     "name": "Candy_From_A_Baby",
     "label": "Like Stealing Candy",
     "message": "Like stealing candy from a baby. A no longer living baby.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/30/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_04.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/30/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_04.mp3"
   },
   "310": {
     "id": 310,
     "name": "Moon_Drives_You",
     "label": "The Moon Drives You",
     "message": "The moon drives you to delirium!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_01.mp3"
   },
   "311": {
     "id": 311,
     "name": "One_by_One",
     "label": "One By One",
     "message": "One by one they fall!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7f/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_02.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7f/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_kill_streak_mode_02.mp3"
   },
   "312": {
     "id": 312,
     "name": "Celebrate",
     "label": "Celebrate!",
     "message": "Celebrate in the mad moon light!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_win_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_win_01.mp3"
   },
   "313": {
     "id": 313,
     "name": "Something_Dire",
     "label": "Something Dire...",
     "message": "Something dire this way comes.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_roshan_target_01.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_roshan_target_01.mp3"
   },
   "314": {
     "id": 314,
     "name": "Woods_Begin",
     "label": "The Woods Begin",
     "message": "The woods begin to stir!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c2/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_start_02.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c2/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_start_02.mp3"
   },
   "315": {
     "id": 315,
     "name": "Reap_Your_Harvest",
     "label": "Reap Your Harvest",
     "message": "Reap your harvest and protect your soul!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/20/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_start_03.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/20/Vo_announcer_dlc_diretide2020_killing_spree_announcer_diretide_start_03.mp3"
   },
   "316": {
     "id": 316,
     "name": "Guild_Next_Level",
     "label": "Next Level",
     "message": "The next level play!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3"
   },
   "317": {
     "id": 317,
     "name": "Guild_Duiyou_Ne",
     "label": "队友呢？",
     "message": "啊，队友呢？队友呢？队友呢？！ 队友呢？！？！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3"
   },
   "318": {
     "id": 318,
     "name": "Guild_Ay_Ay_Ay",
     "label": "Ай-ай-ай-ай-ай",
     "message": "Ай-ай-ай-ай-ай, что сейчас произошло",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3"
   },
   "319": {
     "id": 319,
     "name": "Guild_Happy_Tree",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI8_Spray_Liltree_Happy.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/TI8_Spray_Liltree_Happy.png"
   },
   "320": {
     "id": 320,
     "name": "Guild_TI9_Earthshaker_Dunk",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/TI9_Spray_Dunk.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/TI9_Spray_Dunk.png"
   },
   "321": {
     "id": 321,
     "name": "Guild_TI10_Spray_11",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png"
   },
   "322": {
     "id": 322,
     "name": "Guild_Looking_Spicy",
     "label": "Looking Spicy",
     "message": "It's looking Spicy!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3"
   },
   "323": {
     "id": 323,
     "name": "Guild_ay_ay_ay_cn",
     "label": "唉唉唉！唉？唉 …",
     "message": "唉唉唉！唉？唉 …",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3"
   },
   "324": {
     "id": 324,
     "name": "Guild_Ehto_G_G",
     "label": "Это ГГ",
     "message": "Это ГГ",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3"
   },
   "325": {
     "id": 325,
     "name": "Guild_TI9_Wyvern_Kiss",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/TI9_Spray_Kiss.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/TI9_Spray_Kiss.png"
   },
   "326": {
     "id": 326,
     "name": "Guild_TI9_Monkeyking_Bananaphone",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/TI9_Spray_Bananaphone.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/TI9_Spray_Bananaphone.png"
   },
   "327": {
     "id": 327,
     "name": "Guild_Zen",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3f/TI8_Spray_Monkey_Zen.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3f/TI8_Spray_Monkey_Zen.png"
   },
   "328": {
     "id": 328,
     "name": "Guild_What_Just_Happened",
     "label": "What Just Happened?",
     "message": "I can't believe what we're seeing. What just happened?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3"
   },
   "329": {
     "id": 329,
     "name": "Guild_A_Net_Net_Da",
     "label": "Нет нет ДА!",
     "message": "А нет, нет, ДА!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/81/Misc_soundboard_a_net_net_da.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/81/Misc_soundboard_a_net_net_da.mp3"
   },
   "330": {
     "id": 330,
     "name": "Guild_Ni_Qi_Bu_Qi",
     "label": "你气不气?",
     "message": "你气不气?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3"
   },
   "331": {
     "id": 331,
     "name": "Guild_TI9_AA_Icecream",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/TI9_Spray_Ice_Cream.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/TI9_Spray_Ice_Cream.png"
   },
   "332": {
     "id": 332,
     "name": "Guild_Sad_Tree",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/TI8_Spray_Liltree_Sad.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/TI8_Spray_Liltree_Sad.png"
   },
   "333": {
     "id": 333,
     "name": "Guild_TI9_Skywrath_Dunno",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/be/TI9_Spray_Dunno.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/be/TI9_Spray_Dunno.png"
   },
   "334": {
     "id": 334,
     "name": "ti11_alchemist",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Nemestice_2021_Spray_ti11_alchemist.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/23/Nemestice_2021_Spray_ti11_alchemist.png"
   },
   "335": {
     "id": 335,
     "name": "ti11_arc_warden",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/TI10_Spray_ti11_arc_warden.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/TI10_Spray_ti11_arc_warden.png"
   },
   "336": {
     "id": 336,
     "name": "ti11_brewmaster",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b0/TI10_Spray_ti11_brewmaster.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b0/TI10_Spray_ti11_brewmaster.png"
   },
   "337": {
     "id": 337,
     "name": "ti11_darkseer_1",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/27/TI10_Spray_ti11_darkseer_1.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/27/TI10_Spray_ti11_darkseer_1.png"
   },
   "338": {
     "id": 338,
     "name": "ti11_doomzeus",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/TI10_Spray_ti11_doomzeus.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/99/TI10_Spray_ti11_doomzeus.png"
   },
   "339": {
     "id": 339,
     "name": "ti11_hoodwink",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_ti11_hoodwink.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_ti11_hoodwink.png"
   },
   "340": {
     "id": 340,
     "name": "ti11_lich",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/TI10_Spray_ti11_lich.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/TI10_Spray_ti11_lich.png"
   },
   "341": {
     "id": 341,
     "name": "ti11_necrophos",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/96/TI10_Spray_ti11_necrophos.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/96/TI10_Spray_ti11_necrophos.png"
   },
   "342": {
     "id": 342,
     "name": "ti11_pangolier",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ec/TI10_Spray_ti11_pangolier.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ec/TI10_Spray_ti11_pangolier.png"
   },
   "343": {
     "id": 343,
     "name": "ti11_phantom_assassin",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6c/TI10_Spray_ti11_phantom_assassin.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6c/TI10_Spray_ti11_phantom_assassin.png"
   },
   "344": {
     "id": 344,
     "name": "ti11_phantom_lancer",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI10_Spray_ti11_phantom_lancer.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI10_Spray_ti11_phantom_lancer.png"
   },
   "345": {
     "id": 345,
     "name": "ti11_pudge",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/TI10_Spray_ti11_pudge.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/TI10_Spray_ti11_pudge.png"
   },
   "346": {
     "id": 346,
     "name": "ti11_shadow_demon",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f7/TI10_Spray_ti11_shadow_demon.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f7/TI10_Spray_ti11_shadow_demon.png"
   },
   "347": {
     "id": 347,
     "name": "ti11_shadow_shaman",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/TI10_Spray_ti11_shadow_shaman.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/TI10_Spray_ti11_shadow_shaman.png"
   },
   "348": {
     "id": 348,
     "name": "ti11_shopkeeper",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/TI10_Spray_ti11_shopkeeper.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/TI10_Spray_ti11_shopkeeper.png"
   },
   "349": {
     "id": 349,
     "name": "ti11_spectre",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_ti11_spectre.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_ti11_spectre.png"
   },
   "350": {
     "id": 350,
     "name": "Guild_ti11_Tusk",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/TI10_Spray_ti11_tusk.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/TI10_Spray_ti11_tusk.png"
   },
   "351": {
     "id": 351,
     "name": "Guild_ti11_Visage",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/01/TI10_Spray_ti11_visage.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/01/TI10_Spray_ti11_visage.png"
   },
   "352": {
     "id": 352,
     "name": "Guild_ti11_Void_Spirit",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/TI10_Spray_ti11_void_spirit.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/06/TI10_Spray_ti11_void_spirit.png"
   },
   "353": {
     "id": 353,
     "name": "sprays_hey_zeus",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/TI9_Spray_Jump.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/TI9_Spray_Jump.png"
   },
   "354": {
     "id": 354,
     "name": "Banjo_Charge",
     "label": "Banjo Charge",
     "message": "Banjo Charge",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/63/Misc_soundboard_banjo_charge.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/63/Misc_soundboard_banjo_charge.mp3"
   },
   "355": {
     "id": 355,
     "name": "Choo_Choo",
     "label": "Choo Choo",
     "message": "Choo Choo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Misc_soundboard_choo_choo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Misc_soundboard_choo_choo.mp3"
   },
   "356": {
     "id": 356,
     "name": "Gong",
     "label": "Gong",
     "message": "Gong",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/60/Misc_soundboard_gong.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/60/Misc_soundboard_gong.mp3"
   },
   "357": {
     "id": 357,
     "name": "Slide",
     "label": "Slide",
     "message": "Slide",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Misc_soundboard_slide.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d8/Misc_soundboard_slide.mp3"
   },
   "358": {
     "id": 358,
     "name": "Uh_Oh",
     "label": "Uh Oh",
     "message": "Uh Oh",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_uh_oh.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_uh_oh.mp3"
   },
   "359": {
     "id": 359,
     "name": "Guild_TI9_Lion_Zap",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/TI9_Spray_Zap.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7e/TI9_Spray_Zap.png"
   },
   "360": {
     "id": 360,
     "name": "Guild_TI10_Morphling",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/TI10_Spray_morphling.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/TI10_Spray_morphling.png"
   },
   "361": {
     "id": 361,
     "name": "Guild_Furbolg_Highfive",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI8_Spray_Furbolg_Highfive.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI8_Spray_Furbolg_Highfive.png"
   },
   "362": {
     "id": 362,
     "name": "Guild_Easiest_Money",
     "label": "Easiest Money",
     "message": "Easiest money of my life!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3"
   },
   "367": {
     "id": 367,
     "name": "DDB_Let_Me_In",
     "label": "Let Me In",
     "message": "All you have to do is...let...me...in.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_chatwheel_ddb_let_me_in.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_chatwheel_ddb_let_me_in.mp3"
   },
   "368": {
     "id": 368,
     "name": "DDB_Run_Little_Mouse",
     "label": "Run Little Mouse",
     "message": "Run little mouse!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_chatwheel_ddb_run_little_mouse.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_chatwheel_ddb_run_little_mouse.mp3"
   },
   "370": {
     "id": 370,
     "name": "DDB_Stupid_Brave",
     "label": "Stupid. Brave but Stupid.",
     "message": "Stupid. Brave but stupid.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/Misc_chatwheel_ddb_stupid_brave.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8c/Misc_chatwheel_ddb_stupid_brave.mp3"
   },
   "373": {
     "id": 373,
     "name": "DDB_Do_You_Love_Me",
     "label": "Do You Love Me",
     "message": "Do you love me?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_chatwheel_ddb_do_you_love_me_2.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_chatwheel_ddb_do_you_love_me_2.mp3"
   },
   "374": {
     "id": 374,
     "name": "DDB_Do_You_Love_Me_2",
     "label": "Do You Love Me",
     "message": "Do. You. Love Me?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Misc_chatwheel_ddb_do_you_love_me.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Misc_chatwheel_ddb_do_you_love_me.mp3"
   },
   "378": {
     "id": 378,
     "name": "DDB_Death",
     "label": "Death",
     "message": "Death",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/95/Misc_chatwheel_ddb_death.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/95/Misc_chatwheel_ddb_death.mp3"
   },
   "379": {
     "id": 379,
     "name": "DDB_No",
     "label": "No",
     "message": "No",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_chatwheel_ddb_no.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_chatwheel_ddb_no.mp3"
   },
   "380": {
     "id": 380,
     "name": "DDB_Form_Up",
     "label": "Form Up",
     "message": "Form up! We're going back in.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d2/Misc_chatwheel_ddb_form_up.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d2/Misc_chatwheel_ddb_form_up.mp3"
   },
   "382": {
     "id": 382,
     "name": "DDB_You_Have_Failed_Me",
     "label": "You Have Failed Me",
     "message": "You have failed me.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/58/Misc_chatwheel_ddb_you_have_failed_me.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/58/Misc_chatwheel_ddb_you_have_failed_me.mp3"
   },
   "383": {
     "id": 383,
     "name": "DDB_Isnt_It_Magical_Papa",
     "label": "Isn't It Magical Papa",
     "message": "Isn't it magical papa?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_chatwheel_ddb_isnt_it_magical_papa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c4/Misc_chatwheel_ddb_isnt_it_magical_papa.mp3"
   },
   "384": {
     "id": 384,
     "name": "DDB_Very_Wise",
     "label": "Very Wise",
     "message": "Very wise",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_chatwheel_ddb_very_wise.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_chatwheel_ddb_very_wise.mp3"
   },
   "385": {
     "id": 385,
     "name": "DDB_For_Eternity",
     "label": "For Eternity",
     "message": "I could do this for eternity.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_chatwheel_ddb_for_eternity.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/90/Misc_chatwheel_ddb_for_eternity.mp3"
   },
   "386": {
     "id": 386,
@@ -2107,144 +2107,144 @@
   "393": {
     "id": 393,
     "name": "Guild_TI9_Spiritbreaker_ChooChoo",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/TI9_Spray_ChooChoo.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/TI9_Spray_ChooChoo.png"
   },
   "394": {
     "id": 394,
     "name": "Guild_Funny",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/TI8_Spray_Lion_Xd.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c6/TI8_Spray_Lion_Xd.png"
   },
   "395": {
     "id": 395,
     "name": "Guild_TI10_Spray_19",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/TI10_Spray_undying_rip.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/TI10_Spray_undying_rip.png"
   },
   "396": {
     "id": 396,
     "name": "Guild_Absolutely_Perfect",
     "label": "Absolutely Perfect",
     "message": "Absolutely Perfect",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3"
   },
   "397": {
     "id": 397,
     "name": "Guild_Eto_Sochno",
     "label": "Как же это сочно, ах!",
     "message": "Как же это сочно, ах!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3"
   },
   "398": {
     "id": 398,
     "name": "Guild_Piao_Liang",
     "label": "漂~ 亮！",
     "message": "漂~ 亮！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3"
   },
   "399": {
     "id": 399,
     "name": "Fall2021EventGameReward1",
     "label": "I like your style!",
     "message": "I like your moves, I like your style!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_fall2021eventgame_reward1.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_fall2021eventgame_reward1.mp3"
   },
   "400": {
     "id": 400,
     "name": "Fall2021EventGameRewardTeam1",
     "label": "Hello friend!",
     "message": "Friend! Hello friend!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_fall2021eventgame_reward6.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_fall2021eventgame_reward6.mp3"
   },
   "401": {
     "id": 401,
     "name": "Fall2021EventGameReward2",
     "label": "That's some hot chili!",
     "message": "Oooh that is some hot chili you're serving up down there!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_fall2021eventgame_reward2.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_fall2021eventgame_reward2.mp3"
   },
   "402": {
     "id": 402,
     "name": "Fall2021EventGameRewardTeam2",
     "label": "Pumped!",
     "message": "Oh I am pumped here!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/Misc_soundboard_fall2021eventgame_reward11.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/Misc_soundboard_fall2021eventgame_reward11.mp3"
   },
   "403": {
     "id": 403,
     "name": "Fall2021EventGameReward3",
     "label": "Retreat, retreat!",
     "message": "Better retreat, retreat!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_fall2021eventgame_reward3.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_fall2021eventgame_reward3.mp3"
   },
   "404": {
     "id": 404,
     "name": "Fall2021EventGameRewardTeam3",
     "label": "Whoopsie!",
     "message": "Whoopsie!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_fall2021eventgame_reward9.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_fall2021eventgame_reward9.mp3"
   },
   "405": {
     "id": 405,
     "name": "Fall2021EventGameReward4",
     "label": "Surprisingly good!",
     "message": "Good, good! Surprisingly good!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Misc_soundboard_fall2021eventgame_reward4.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/Misc_soundboard_fall2021eventgame_reward4.mp3"
   },
   "406": {
     "id": 406,
     "name": "Fall2021EventGameRewardTeam4",
     "label": "True savagery!",
     "message": "True savagery!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1d/Misc_soundboard_fall2021eventgame_reward10.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1d/Misc_soundboard_fall2021eventgame_reward10.mp3"
   },
   "407": {
     "id": 407,
     "name": "Fall2021EventGameReward5",
     "label": "No! Oh well.",
     "message": "Noooooo! Oh well.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/Misc_soundboard_fall2021eventgame_reward5.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/Misc_soundboard_fall2021eventgame_reward5.mp3"
   },
   "408": {
     "id": 408,
     "name": "Fall2021EventGameRewardTeam5",
     "label": "That's nice!",
     "message": "Ooooh, that's nice!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b2/Misc_soundboard_fall2021eventgame_reward7.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b2/Misc_soundboard_fall2021eventgame_reward7.mp3"
   },
   "409": {
     "id": 409,
     "name": "Guild_Invoker_Smart_Spray",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0a/TI8_Spray_Invoker_Smart.png"
   },
   "410": {
     "id": 410,
     "name": "Guild_MonkeyKing_MonkeyChamp_Spray",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/TI8_Spray_Monkeyking_Monkeychamp.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/TI8_Spray_Monkeyking_Monkeychamp.png"
   },
   "411": {
     "id": 411,
     "name": "Guild_Pudge_NailedIt_Spray",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ab/TI8_Spray_Pudge_Nailedit.png"
   },
   "412": {
     "id": 412,
     "name": "Guild_Zou_Hao_Bu_Song",
     "label": "走好，不送",
     "message": "走好，不送",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_zou_hao_bu_song.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_zou_hao_bu_song.mp3"
   },
   "413": {
     "id": 413,
     "name": "Guild_Liu_Liu_Liu",
     "label": "这波不亏, 666",
     "message": "这波不亏, 666",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/Misc_soundboard_liu_liu_liu.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/Misc_soundboard_liu_liu_liu.mp3"
   },
   "414": {
     "id": 414,
     "name": "Guild_All_Dead",
     "label": "All Dead",
     "message": "They're all dead!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_all_dead.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_all_dead.mp3"
   },
   "415": {
     "id": 415,
@@ -2284,31 +2284,31 @@
   "422": {
     "id": 422,
     "name": "Guild_Slark_Love",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/42/TI9_Spray_Slark.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/42/TI9_Spray_Slark.png"
   },
   "423": {
     "id": 423,
     "name": "Guild_Cry",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/TI8_Spray_Bear_Cry.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/TI8_Spray_Bear_Cry.png"
   },
   "424": {
     "id": 424,
     "name": "Guild_Tusk_Snowball",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/eb/TI9_Spray_Snowball.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/eb/TI9_Spray_Snowball.png"
   },
   "440": {
     "id": 440,
     "name": "TI11_Chat_Wheel_SFX_1",
     "label": "Bwaak",
     "message": "Bwaak bok bok bok bok",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/19/Misc_soundboard_bockbock.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/19/Misc_soundboard_bockbock.mp3"
   },
   "441": {
     "id": 441,
     "name": "TI11_Chat_Wheel_SFX_2",
     "label": "Elephant",
     "message": "Elephant",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/Misc_soundboard_elephant.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/Misc_soundboard_elephant.mp3"
   },
   "442": {
     "id": 442,
@@ -2329,1066 +2329,1066 @@
     "name": "TI11_Chat_Wheel_SFX_5",
     "label": "Tick tock",
     "message": "Tick tock tick tock tick tock",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_tick-tock.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_tick-tock.mp3"
   },
   "450": {
     "id": 450,
     "name": "TI11_Caster_English_1",
     "label": "Oh... Very Cute!",
     "message": "Oh... Very Cute!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3a/Misc_soundboard_ti11_overestimating_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3a/Misc_soundboard_ti11_overestimating_cn.mp3"
   },
   "451": {
     "id": 451,
     "name": "TI11_Caster_English_2",
     "label": "Oh my god! Woo!",
     "message": "Oh my god! Woo!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_oh_my_god_woo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_oh_my_god_woo.mp3"
   },
   "452": {
     "id": 452,
     "name": "TI11_Caster_English_3",
     "label": "Whoa! Juicy!",
     "message": "Whoa! Juicy!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/Misc_soundboard_ti11_whoa_juicy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8b/Misc_soundboard_ti11_whoa_juicy.mp3"
   },
   "453": {
     "id": 453,
     "name": "TI11_Caster_English_4",
     "label": "His brain is so big.",
     "message": "His brain is so big.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ac/Misc_soundboard_ti11_his_brain_is_so_big.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ac/Misc_soundboard_ti11_his_brain_is_so_big.mp3"
   },
   "454": {
     "id": 454,
     "name": "TI11_Caster_English_5",
     "label": "Fight. Fight. Fight.",
     "message": "Fight. Fight. Fight.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/Misc_soundboard_ti11_fight_fight_fight.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/59/Misc_soundboard_ti11_fight_fight_fight.mp3"
   },
   "455": {
     "id": 455,
     "name": "TI11_Caster_English_6",
     "label": "I love Dota so much.",
     "message": "I love Dota so much.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ti11_i_love_dota_so_much.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ti11_i_love_dota_so_much.mp3"
   },
   "456": {
     "id": 456,
     "name": "TI11_Caster_Chinese_1",
     "label": "一拳超人，他来了呀",
     "message": "一拳超人，他来了呀",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/68/Misc_soundboard_ti11_one_punch_man_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/68/Misc_soundboard_ti11_one_punch_man_cn.mp3"
   },
   "457": {
     "id": 457,
     "name": "TI11_Caster_Chinese_2",
     "label": "这大概就是年轻人的操作吧",
     "message": "这大概就是年轻人的操作吧",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b4/Misc_soundboard_ti11_youngster_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b4/Misc_soundboard_ti11_youngster_cn.mp3"
   },
   "458": {
     "id": 458,
     "name": "TI11_Caster_Chinese_3",
     "label": "有没有神之一勾? 嗯~哼~",
     "message": "有没有神之一勾? 嗯~哼~",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/Misc_soundboard_ti11_godly_hook_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/Misc_soundboard_ti11_godly_hook_cn.mp3"
   },
   "459": {
     "id": 459,
     "name": "TI11_Caster_Chinese_4",
     "label": "哇~哦！",
     "message": "哇~哦！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3"
   },
   "460": {
     "id": 460,
     "name": "TI11_Caster_Chinese_5",
     "label": "这一把要一战成神，打你们五个!",
     "message": "这一把要一战成神，打你们五个!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/Misc_soundboard_ti11_one_v_five_cn.mp3/revision/latest?cb=20231029151451"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/Misc_soundboard_ti11_one_v_five_cn.mp3"
   },
   "461": {
     "id": 461,
     "name": "TI11_Caster_Chinese_6",
     "label": "终于等到你",
     "message": "终于等到你",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_ti11_finally_got_you_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_ti11_finally_got_you_cn.mp3"
   },
   "462": {
     "id": 462,
     "name": "TI11_Caster_Russian_1",
     "label": "Да бей, бей просто, уничтожь!",
     "message": "Да бей, бей просто, уничтожь!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/Misc_soundboard_ti11_hit_just_hit_destroy_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a0/Misc_soundboard_ti11_hit_just_hit_destroy_ru.mp3"
   },
   "463": {
     "id": 463,
     "name": "TI11_Caster_Russian_2",
     "label": "Я всё видела! Это он виноват.",
     "message": "Я всё видела! Это он виноват.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti11_i_saw_everything_its_his_fault_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti11_i_saw_everything_its_his_fault_ru.mp3"
   },
   "464": {
     "id": 464,
     "name": "TI11_Caster_Russian_3",
     "label": "Брбрбрбр. Ладно, смотрим дальше.",
     "message": "Брбрбрбр. Ладно, смотрим дальше.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Misc_soundboard_ti11_ok_lets_see_whats_next_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Misc_soundboard_ti11_ok_lets_see_whats_next_ru.mp3"
   },
   "465": {
     "id": 465,
     "name": "TI11_Caster_Russian_4",
     "label": "Бить! Бить! Бить! Бить! Ещё бить!",
     "message": "Бить! Бить! Бить! Бить! Ещё бить!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1b/Misc_soundboard_ti11_hit_more_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1b/Misc_soundboard_ti11_hit_more_ru.mp3"
   },
   "466": {
     "id": 466,
     "name": "TI11_Caster_Russian_5",
     "label": "Смех",
     "message": "Смех",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/Misc_soundboard_ti11_casperrr_laugh_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e4/Misc_soundboard_ti11_casperrr_laugh_ru.mp3"
   },
   "467": {
     "id": 467,
     "name": "TI11_Caster_Russian_6",
     "label": "Ребята, I got this.",
     "message": "Ребята, I got this.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ti11_guys_ive_got_this_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ti11_guys_ive_got_this_ru.mp3"
   },
   "468": {
     "id": 468,
     "name": "TI11_Caster_Spanish_1",
     "label": "RRRRRRRRAMPAGE!",
     "message": "RRRRRRRRAMPAGE!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_ti11_rrrrrampage.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_ti11_rrrrrampage.mp3"
   },
   "469": {
     "id": 469,
     "name": "TI11_Caster_Spanish_2",
     "label": "Con el Wombo Combo perfecto!",
     "message": "Con el Wombo Combo perfecto!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3"
   },
   "470": {
     "id": 470,
     "name": "TI11_Caster_Spanish_3",
     "label": "3, 2, 1, aaaadios!",
     "message": "3, 2, 1, aaaadios!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3"
   },
   "471": {
     "id": 471,
     "name": "TI11_Caster_Spanish_4",
     "label": "Tiene que defender! Defiende la escuadra!",
     "message": "Tiene que defender! Defiende la escuadra!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ti11_tiene_que_defender.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ti11_tiene_que_defender.mp3"
   },
   "472": {
     "id": 472,
     "name": "TI11_Caster_Spanish_5",
     "label": "Ooooh, por dios!",
     "message": "Ooooh, por dios!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_ooh_por_dios.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_ooh_por_dios.mp3"
   },
   "473": {
     "id": 473,
     "name": "TI11_Caster_Spanish_6",
     "label": "Hasta Luego, pldldldldldldldldldldld!",
     "message": "Hasta Luego, pldldldldldldldldldldld!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti11_hasta_luego.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti11_hasta_luego.mp3"
   },
   "474": {
     "id": 474,
     "name": "TI11_Caster_Portuguese_1",
     "label": "Clica, clica, clica, clica... Pesado!",
     "message": "Clica, clica, clica, clica... Pesado!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_ti11_clica_clica_clica_clica_pesado.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_ti11_clica_clica_clica_clica_pesado.mp3"
   },
   "475": {
     "id": 475,
     "name": "TI11_Caster_Portuguese_2",
     "label": "A Canção da Sereia! OooOooO!",
     "message": "A Canção da Sereia! OooOooO!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Misc_soundboard_ti11_cancao_da_sereia.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/Misc_soundboard_ti11_cancao_da_sereia.mp3"
   },
   "476": {
     "id": 476,
     "name": "TI11_Caster_Portuguese_3",
     "label": "Tick, tick... Boom! É a shotgun da destruição!",
     "message": "Tick, tick... Boom! É a shotgun da destruição!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_ti11_chick_chick_boom.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_ti11_chick_chick_boom.mp3"
   },
   "477": {
     "id": 477,
     "name": "TI11_Caster_Portuguese_4",
     "label": "Partida tensa. Partida complicada.",
     "message": "Partida tensa. Partida complicada.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e1/Misc_soundboard_ti11_partida_tensa_partida_complicada.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e1/Misc_soundboard_ti11_partida_tensa_partida_complicada.mp3"
   },
   "478": {
     "id": 478,
     "name": "TI11_Caster_Portuguese_5",
     "label": "Que Dota é esse, cara?",
     "message": "Que Dota é esse, cara?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti11_que_dota_e_esse_cara.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti11_que_dota_e_esse_cara.mp3"
   },
   "479": {
     "id": 479,
     "name": "TI11_Caster_Portuguese_6",
     "label": "Wow, que dano!",
     "message": "Wow, que dano!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c7/Misc_soundboard_ti11_wow_que_dano.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c7/Misc_soundboard_ti11_wow_que_dano.mp3"
   },
   "490": {
     "id": 490,
     "name": "Guild_No_Chill",
     "label": "No Chill!",
     "message": "This guy has no chill",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_no_chill.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ca/Misc_soundboard_no_chill.mp3"
   },
   "491": {
     "id": 491,
     "name": "Guild_Krasavchik",
     "label": "Красавчик!",
     "message": "Красавчик!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0f/Misc_soundboard_krasavchik.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0f/Misc_soundboard_krasavchik.mp3"
   },
   "492": {
     "id": 492,
     "name": "Guild_Bai_Tuo_Shei_Qu",
     "label": "拜托谁去杀了他吧",
     "message": "拜托谁去杀了他吧",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3d/Misc_soundboard_bai_tuo_shei_qu.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3d/Misc_soundboard_bai_tuo_shei_qu.mp3"
   },
   "493": {
     "id": 493,
     "name": "Guild_Thats_Playing_to_Win",
     "label": "That's Playing to Win!",
     "message": "That's playing to win, baby!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_playing_to_win.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_playing_to_win.mp3"
   },
   "494": {
     "id": 494,
     "name": "Guild_Bozhe_Ti_Posmotri",
     "label": "Что Происходит",
     "message": "Боже, ты посмотри вокруг, что происходит!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6a/Misc_soundboard_bozhe_ti_posmotri.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6a/Misc_soundboard_bozhe_ti_posmotri.mp3"
   },
   "495": {
     "id": 495,
     "name": "Guild_Gao_Fu_Shuai",
     "label": "这就是高富帅啊",
     "message": "这就是高富帅啊",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/68/Misc_soundboard_gao_fu_shuai.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/68/Misc_soundboard_gao_fu_shuai.mp3"
   },
   "496": {
     "id": 496,
     "name": "Guild_Youre_a_Hero",
     "label": "You're a Goddamn Hero!",
     "message": "You're a goddamn hero!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3"
   },
   "497": {
     "id": 497,
     "name": "Guild_Zhil_Do_Konsta",
     "label": "Как Герой",
     "message": "Жил до конца, умер как герой",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3"
   },
   "498": {
     "id": 498,
     "name": "Guild_Hu_Lu_Wa",
     "label": "葫芦娃救爷爷",
     "message": "葫芦娃救爷爷",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/80/Misc_soundboard_hu_lu_wa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/80/Misc_soundboard_hu_lu_wa.mp3"
   },
   "500": {
     "id": 500,
     "name": "TI11_Patience",
     "label": "Patience",
     "message": "Patience from Zhou",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_patience.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_patience.mp3"
   },
   "501": {
     "id": 501,
     "name": "TI11_Youre_a_Hero",
     "label": "You're a Goddamn Hero!",
     "message": "You're a goddamn hero!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/11/Misc_soundboard_youre_a_hero.mp3"
   },
   "502": {
     "id": 502,
     "name": "TI11_What_Just_Happened",
     "label": "What Just Happened?",
     "message": "I can't believe what we're seeing. What just happened?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_what_just_happened.mp3"
   },
   "503": {
     "id": 503,
     "name": "TI11_Waow",
     "label": "Waow",
     "message": "Waow",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_wow.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_wow.mp3"
   },
   "504": {
     "id": 504,
     "name": "TI11_Ding_Ding_Ding",
     "label": "Ding Ding Ding!",
     "message": "Ding Ding Ding Mother******",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/Misc_soundboard_ding_ding_ding.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/Misc_soundboard_ding_ding_ding.mp3"
   },
   "505": {
     "id": 505,
     "name": "TI11_Lets_Play_Dota",
     "label": "Let's Play Dota",
     "message": "Let's Play Some Dota",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_lets_play.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/62/Misc_soundboard_lets_play.mp3"
   },
   "506": {
     "id": 506,
     "name": "TI11_Absolutely_Perfect",
     "label": "Absolutely Perfect",
     "message": "Absolutely Perfect",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/78/Misc_soundboard_absolutely_perfect.mp3"
   },
   "507": {
     "id": 507,
     "name": "TI11_Looking_Spicy",
     "label": "Looking Spicy",
     "message": "It's looking Spicy!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/ce/Misc_soundboard_looking_spicy.mp3"
   },
   "508": {
     "id": 508,
     "name": "TI11_What_The_F_Just_Happened",
     "label": "What the **** Just Happened",
     "message": "What the **** just happened?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_what_the_f_just_happened.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1e/Misc_soundboard_what_the_f_just_happened.mp3"
   },
   "509": {
     "id": 509,
     "name": "TI11_See_You_Later_Nerds",
     "label": "See You Later Nerds",
     "message": "See you later nerds",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3"
   },
   "510": {
     "id": 510,
     "name": "TI11_Holy_Moly",
     "label": "Holy Moly!",
     "message": "Holy Moly!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3"
   },
   "511": {
     "id": 511,
     "name": "TI11_Oh_My_God_What",
     "label": "Oh My God. What?",
     "message": "Oh my god. What? Oh! Oh!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3"
   },
   "512": {
     "id": 512,
     "name": "TI11_Questionable_at_Best",
     "label": "Questionable at Best",
     "message": "I...uh...That was questionable at the...at the best.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/03/Misc_soundboard_that_was_questionable.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/03/Misc_soundboard_that_was_questionable.mp3"
   },
   "513": {
     "id": 513,
     "name": "TI11_Coming_Through",
     "label": "Coming Through",
     "message": "Coming through with the wooooo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3"
   },
   "514": {
     "id": 514,
     "name": "TI11_Nothing_That_Can_Stop_This_Man",
     "label": "Nothing Can Stop This Man",
     "message": "There is nothing that can stop this man",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3"
   },
   "520": {
     "id": 520,
     "name": "TI11_Ay_Ay_Ay",
     "label": "Ай-ай-ай-ай-ай",
     "message": "Ай-ай-ай-ай-ай, что сейчас произошло",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3"
   },
   "521": {
     "id": 521,
     "name": "TI11_Ehto_G_G",
     "label": "Это ГГ",
     "message": "Это ГГ",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ehto_g_g.mp3"
   },
   "522": {
     "id": 522,
     "name": "TI11_Oy_Oy_Bezhat",
     "label": "Ой-ой-ой-ой-ой, бежать!",
     "message": "Ой-ой-ой-ой-ой, бежать!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ea/Misc_soundboard_oy_oy_bezhat.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ea/Misc_soundboard_oy_oy_bezhat.mp3"
   },
   "523": {
     "id": 523,
     "name": "TI11_Eto_Sochno",
     "label": "Как же это сочно, ах!",
     "message": "Как же это сочно, ах!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2a/Misc_soundboard_eto_sochno.mp3"
   },
   "524": {
     "id": 524,
     "name": "TI11_Eto_Prosto_Netchto",
     "label": "Это. Просто. Нечто.",
     "message": "Это. Просто. Нечто.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8f/Misc_soundboard_eto_prosto_netchto.mp3"
   },
   "525": {
     "id": 525,
     "name": "TI11_Zhil_Do_Konsta",
     "label": "Как Герой",
     "message": "Жил до конца, умер как герой",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3"
   },
   "526": {
     "id": 526,
     "name": "TI11_Kreasa_Kreasa",
     "label": "Резать Резать Резать Резать",
     "message": "Резать Резать Резать Резать",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3"
   },
   "527": {
     "id": 527,
     "name": "TI11_Wot_Eto_Bru",
     "label": "Вот Это Врыв!",
     "message": "Вот Это Врыв!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_wot_eto_bru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_wot_eto_bru.mp3"
   },
   "528": {
     "id": 528,
     "name": "TI11_Eto_Takaya_Dushka",
     "label": "Это такая душка!",
     "message": "Ух, это такая душка!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3"
   },
   "529": {
     "id": 529,
     "name": "TI11_Chto_Eto_Kakaya_Zhest",
     "label": "Какая Жесть!",
     "message": "Что это?! Какая жесть!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3"
   },
   "530": {
     "id": 530,
     "name": "TI11_Eto_Nenormalno",
     "label": "Это ненормально, это нечестно!",
     "message": "Это ненормально, это нечестно!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3"
   },
   "531": {
     "id": 531,
     "name": "TI11_Takaya_Haliava",
     "label": "Такая халява!",
     "message": "Такая халява...Ха!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3"
   },
   "532": {
     "id": 532,
     "name": "TI11_Aaah_Aaah_Chto",
     "label": "А? Что?!",
     "message": "Ё! А? А? Что?!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0b/Misc_soundboard_aaah_aaah_chto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/0b/Misc_soundboard_aaah_aaah_chto.mp3"
   },
   "533": {
     "id": 533,
     "name": "TI11_A_Nu_Ka_Idi_Suda",
     "label": "Иди-ка сюда",
     "message": "А ну-ка иди-ка сюда. А вот все. Все.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_a_nu_ka_idi_suda.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_a_nu_ka_idi_suda.mp3"
   },
   "534": {
     "id": 534,
     "name": "TI11_Da_Da_Da_Nyet",
     "label": "Да? Да? Да? Нет.",
     "message": "Да? Да? Да? Нет.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3"
   },
   "540": {
     "id": 540,
     "name": "TI11_Tian_Huo",
     "label": "天火！",
     "message": "天火！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_tian_huo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ed/Misc_soundboard_tian_huo.mp3"
   },
   "541": {
     "id": 541,
     "name": "TI11_Piao_Liang",
     "label": "漂~ 亮！",
     "message": "漂~ 亮！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cf/Misc_soundboard_piao_liang.mp3"
   },
   "542": {
     "id": 542,
     "name": "TI11_Gan_Ma_Ne_Xiong_Di",
     "label": "干嘛呢兄弟",
     "message": "干嘛呢兄弟",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_gan_ma_ne_xiong_di.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/Misc_soundboard_gan_ma_ne_xiong_di.mp3"
   },
   "543": {
     "id": 543,
     "name": "TI11_Duiyou_Ne",
     "label": "队友呢？",
     "message": "啊，队友呢？队友呢？队友呢？！ 队友呢？！？！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3"
   },
   "544": {
     "id": 544,
     "name": "TI11_Zai_Jian_Le_Bao_Bei",
     "label": "再见了宝贝儿！",
     "message": "再见了宝贝儿！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3"
   },
   "545": {
     "id": 545,
     "name": "TI11_Wan_Bu_Liao_La",
     "label": "玩不了啦！",
     "message": "玩不了啦！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_wan_bu_liao_la.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_wan_bu_liao_la.mp3"
   },
   "546": {
     "id": 546,
     "name": "TI11_Jia_You",
     "label": "加油！",
     "message": "加油！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3"
   },
   "547": {
     "id": 547,
     "name": "TI11_Lian_Dou_Xiu_Wai_La",
     "label": "脸都秀歪啦",
     "message": "脸都秀歪啦",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a3/Misc_soundboard_lian_dou_xiu_wai_la.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a3/Misc_soundboard_lian_dou_xiu_wai_la.mp3"
   },
   "548": {
     "id": 548,
     "name": "TI11_Ni_Qi_Bu_Qi",
     "label": "你气不气?",
     "message": "你气不气?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/db/Misc_soundboard_ni_qi_bu_qi.mp3"
   },
   "549": {
     "id": 549,
     "name": "TI11_lai_ni_da",
     "label": "来，你打我呀！",
     "message": "来，你打我呀！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/Misc_soundboard_lai_ni_da.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cb/Misc_soundboard_lai_ni_da.mp3"
   },
   "550": {
     "id": 550,
     "name": "TI11_wo_shi_yi",
     "label": "我是一个没有感情的刷钱机器",
     "message": "我是一个没有感情的刷钱机器",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_wo_shi_yi.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/Misc_soundboard_wo_shi_yi.mp3"
   },
   "551": {
     "id": 551,
     "name": "TI11_ni_xing_ni",
     "label": "你行你行，你上你上",
     "message": "你行你行，你上你上",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3"
   },
   "552": {
     "id": 552,
     "name": "TI11_hui_tian_mie",
     "label": "毁天灭地, NICE啊！",
     "message": "毁天灭地, NICE啊！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3"
   },
   "553": {
     "id": 553,
     "name": "TI11_tiao_zou_le",
     "label": "跳走了",
     "message": "跳走了",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Misc_soundboard_tiao_zou_le.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7b/Misc_soundboard_tiao_zou_le.mp3"
   },
   "554": {
     "id": 554,
     "name": "TI11_ay_ay_ay_cn",
     "label": "唉唉唉！唉？唉 …",
     "message": "唉唉唉！唉？唉 …",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_ay_ay_ay_cn.mp3"
   },
   "560": {
     "id": 560,
     "name": "TI11_Eughahaha_Aah_Ha_Ha_Ha_Ha",
     "label": "Eughahaha Aah Ha Ha Ha Ha",
     "message": "Eughahaha Aah Ha Ha Ha Ha",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/Misc_soundboard_eughahaha.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8a/Misc_soundboard_eughahaha.mp3"
   },
   "561": {
     "id": 561,
     "name": "TI11_Goodness_Gracious",
     "label": "Goodness Gracious",
     "message": "Sir Chief. Goodness Gracious Papable.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Misc_soundboard_goodness_gracious.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f3/Misc_soundboard_goodness_gracious.mp3"
   },
   "562": {
     "id": 562,
     "name": "TI11_Nakupuuu",
     "label": "NAKUPUU",
     "message": "NAKUPUU",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c1/Misc_soundboard_nakupuuu.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c1/Misc_soundboard_nakupuuu.mp3"
   },
   "563": {
     "id": 563,
     "name": "TI11_Whats_Cooking",
     "label": "What's Cooking",
     "message": "You know what's cooking? BOOM!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_whats_cooking.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_whats_cooking.mp3"
   },
   "564": {
     "id": 564,
     "name": "TI11_Easiest_Money",
     "label": "Easiest Money",
     "message": "Easiest money of my life!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3"
   },
   "565": {
     "id": 565,
     "name": "TI11_Echo_Slama_Jama",
     "label": "Echo Slamma Jamma",
     "message": "Echo Slamma Jamma!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1c/Misc_soundboard_easiest_money.mp3"
   },
   "566": {
     "id": 566,
     "name": "TI11_Next_Level",
     "label": "Next Level",
     "message": "The next level play!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/Misc_soundboard_next_level.mp3"
   },
   "567": {
     "id": 567,
     "name": "TI11_Oy_Oy_Oy",
     "label": "Oyoy oy oy",
     "message": "Oyoy oy oy, oy, oy, oy Oy OY!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_oy_oy_oy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bd/Misc_soundboard_oy_oy_oy.mp3"
   },
   "568": {
     "id": 568,
     "name": "TI11_Lakad_Matataaaag",
     "label": "Lakad Matataaaag!",
     "message": "Lakad Matataaaag! Normalin Normalin.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/28/Misc_soundboard_ta_daaaa.mp3"
   },
   "569": {
     "id": 569,
     "name": "TI11_Kor_Roshan",
     "label": "Roshan! Roshan! Roshan!",
     "message": "Roshan! Roshan! Roshan!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_kor_roshan.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_kor_roshan.mp3"
   },
   "570": {
     "id": 570,
     "name": "TI11_Kor_Yes_No",
     "label": "네, 노, 네, 노 노 노!",
     "message": "네, 노, 네, 노 노 노!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3"
   },
   "571": {
     "id": 571,
     "name": "TI11_Kor_Scan",
     "label": "스캔",
     "message": "스캔 돌려야 되요 따라란따란따라라라란 스캔 돌려야 된다고요!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_kor_scan.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/61/Misc_soundboard_kor_scan.mp3"
   },
   "572": {
     "id": 572,
     "name": "TI11_Kor_Immortality",
     "label": "Immortality",
     "message": "Mommy! I got me! Immortality!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_soundboard_kor_immortality.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/93/Misc_soundboard_kor_immortality.mp3"
   },
   "573": {
     "id": 573,
     "name": "TI11_Kor_Yolo",
     "label": "Yolo",
     "message": "골드 부활 못 해! YOLO! 골드 부활 못 해! YOLO!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2c/Misc_soundboard_kor_yolo.mp3"
   },
   "574": {
     "id": 574,
     "name": "TI11_Kor_House",
     "label": "10억짜리 꿈의 고리! 15억짜리 꿈의 고리!",
     "message": "10억짜리 꿈의 고리! 15억짜리 꿈의 고리!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Misc_soundboard_kor_million_dollar_house.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/77/Misc_soundboard_kor_million_dollar_house.mp3"
   },
   "575": {
     "id": 575,
     "name": "TI11_Truesight_StupidestWayToDie",
     "label": "Самая тупая смерть в жизни просто.",
     "message": "Самая тупая смерть в жизни просто.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_ti10_truesight_stupidest_way_to_die.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/40/Misc_soundboard_ti10_truesight_stupidest_way_to_die.mp3"
   },
   "577": {
     "id": 577,
     "name": "TI11_Truesight_Moolah",
     "label": "Moo-lah!",
     "message": "Moo-lah!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Misc_soundboard_ti10_truesight_moolah.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Misc_soundboard_ti10_truesight_moolah.mp3"
   },
   "578": {
     "id": 578,
     "name": "TI11_Truesight_NoMoreTips",
     "label": "没有打赏次数了吗？哦冷却",
     "message": "没有打赏次数了吗？哦冷却",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b3/Misc_soundboard_ti10_truesight_no_more_tips.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b3/Misc_soundboard_ti10_truesight_no_more_tips.mp3"
   },
   "579": {
     "id": 579,
     "name": "TI11_Truesight_DidWeActuallyWin",
     "label": "А чё, мы выиграли, что ли?",
     "message": "А чё, мы выиграли, что ли?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_ti10_truesight_did_we_actually_win.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_ti10_truesight_did_we_actually_win.mp3"
   },
   "581": {
     "id": 581,
     "name": "TI11_Truesight_SnailWalksIntoABar",
     "label": "Заходит улитка в бар!",
     "message": "Заходит улитка в бар!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/72/Misc_soundboard_ti10_truesight_snail_walks_into_a_bar.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/72/Misc_soundboard_ti10_truesight_snail_walks_into_a_bar.mp3"
   },
   "582": {
     "id": 582,
     "name": "TI11_Truesight_321LetsGo",
     "label": "3, 2, 1... 加油！",
     "message": "3, 2, 1... 加油！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti10_truesight_321_lets_go.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti10_truesight_321_lets_go.mp3"
   },
   "583": {
     "id": 583,
     "name": "TI11_Truesight_KeyboardNotWorking",
     "label": "Uh, my keyboard is not working.",
     "message": "Uh, my keyboard is not working.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e5/Misc_soundboard_ti10_truesight_keyboard_not_working.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e5/Misc_soundboard_ti10_truesight_keyboard_not_working.mp3"
   },
   "584": {
     "id": 584,
     "name": "TI11_Truesight_SoundsGood",
     "label": "可以啊",
     "message": "可以啊",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ee/Misc_soundboard_ti10_truesight_sounds_good.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/ee/Misc_soundboard_ti10_truesight_sounds_good.mp3"
   },
   "585": {
     "id": 585,
     "name": "TI11_Truesight_YoureDamnCrazy",
     "label": "Капец вы крейзи, парни. Ну ладно.",
     "message": "Капец вы крейзи, парни. Ну ладно.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6d/Misc_soundboard_ti10_truesight_youre_damn_crazy.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6d/Misc_soundboard_ti10_truesight_youre_damn_crazy.mp3"
   },
   "586": {
     "id": 586,
     "name": "TI11_Truesight_IveWonTheInternational",
     "label": "Добрый вечер, я Интернешнел выиграл.",
     "message": "Добрый вечер, я Интернешнел выиграл.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/25/Misc_soundboard_ti10_truesight_ive_won_the_international.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/25/Misc_soundboard_ti10_truesight_ive_won_the_international.mp3"
   },
   "587": {
     "id": 587,
     "name": "TI11_Truesight_SuchASmartIdea",
     "label": "Блин, ты очень умно придумал.",
     "message": "Блин, ты очень умно придумал.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/Misc_soundboard_ti10_truesight_such_a_smart_idea.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c5/Misc_soundboard_ti10_truesight_such_a_smart_idea.mp3"
   },
   "588": {
     "id": 588,
     "name": "TI11_Truesight_EveryGameLikeTheLast",
     "label": "每一把都当最后一把，然后也不要怕输",
     "message": "每一把都当最后一把，然后也不要怕输",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_ti10_truesight_every_game_like_the_last.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_ti10_truesight_every_game_like_the_last.mp3"
   },
   "589": {
     "id": 589,
     "name": "Guild_Lichsicle",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/TI10_Spray_ti11_lich.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d9/TI10_Spray_ti11_lich.png"
   },
   "590": {
     "id": 590,
     "name": "Guild_Puck_Dagoned",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI9_Spray_Dagoned.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI9_Spray_Dagoned.png"
   },
   "591": {
     "id": 591,
     "name": "Guild_Sven_Strength",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a8/TI9_Spray_Strength.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a8/TI9_Spray_Strength.png"
   },
   "592": {
     "id": 592,
     "name": "Guild_See_You_Later_Nerds",
     "label": "See You Later Nerds",
     "message": "See you later nerds",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3"
   },
   "593": {
     "id": 593,
     "name": "Guild_Que_Dota_E_Esse",
     "label": "Que Dota é esse, cara?",
     "message": "Que Dota é esse, cara?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti11_que_dota_e_esse_cara.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti11_que_dota_e_esse_cara.mp3"
   },
   "594": {
     "id": 594,
     "name": "Guild_Zai_Jian_Le_Bao_Bei",
     "label": "再见了宝贝儿！",
     "message": "再见了宝贝儿！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_zai_jian_le_bao_bei.mp3"
   },
   "595": {
     "id": 595,
     "name": "gabe_proud",
     "label": "I am very proud of you",
     "message": "You are doing very well, I am very proud of you!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_38.mp3/revision/latest?cb=20200423172837"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_38.mp3"
   },
   "596": {
     "id": 596,
     "name": "gabe_unreal",
     "label": "That was unreal!",
     "message": "That was unreal!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/25/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_wicked_03.mp3/revision/latest?cb=20200423172935"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/25/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_wicked_03.mp3"
   },
   "597": {
     "id": 597,
     "name": "gabe_goodness",
     "label": "Goodness!",
     "message": "Goodness!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cd/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_holy_01.mp3/revision/latest?cb=20200423172903"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cd/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_holy_01.mp3"
   },
   "598": {
     "id": 598,
     "name": "gabe_learn",
     "label": "This is a good opportunity to learn!",
     "message": "This is a good opportunity to learn!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_49.mp3/revision/latest?cb=20200423172852"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_49.mp3"
   },
   "599": {
     "id": 599,
     "name": "gabe_wisdom",
     "label": "Making mistakes is the path to wisdom.",
     "message": "Making mistakes is the path to wisdom.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/98/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_51.mp3/revision/latest?cb=20200423172855"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/98/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_51.mp3"
   },
   "600": {
     "id": 600,
     "name": "gabe_personality",
     "label": "You're a beautiful person with a charming personality",
     "message": "You're a beautiful person with a charming personality",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/83/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_32.mp3/revision/latest?cb=20200423172832"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/83/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_32.mp3"
   },
   "601": {
     "id": 601,
     "name": "gabe_mistakes",
     "label": "You can't improve until you make mistakes",
     "message": "You can't improve until you make mistakes",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_50.mp3/revision/latest?cb=20200423172853"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d6/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_50.mp3"
   },
   "602": {
     "id": 602,
     "name": "gabe_crab",
     "label": "I've always wanted to be a giant space crab",
     "message": "I've always wanted to be a giant space crab",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/53/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_13.mp3/revision/latest?cb=20200423172818"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/53/Vo_announcer_dlc_gaben_killing_spree_gaben_ann_kill_followup_13.mp3"
   },
   "603": {
     "id": 603,
     "name": "Guild_Kotl_Mana",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_kotl_mana.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/TI10_Spray_kotl_mana.png"
   },
   "604": {
     "id": 604,
     "name": "Guild_Shadowfiend_Shrug",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/TI8_Spray_Sf_Shrug.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/TI8_Spray_Sf_Shrug.png"
   },
   "605": {
     "id": 605,
     "name": "Guild_Arc_Warden_Stab",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/TI10_Spray_ti11_arc_warden.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/TI10_Spray_ti11_arc_warden.png"
   },
   "606": {
     "id": 606,
     "name": "Guild_Holy_Moly",
     "label": "Holy Moly!",
     "message": "Holy Moly!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_holy_moly.mp3"
   },
   "607": {
     "id": 607,
     "name": "Guild_Da_Da_Da_Nyet",
     "label": "Да? Да? Да? Нет.",
     "message": "Да? Да? Да? Нет.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1a/Misc_soundboard_da_da_da_nyet.mp3"
   },
   "608": {
     "id": 608,
     "name": "Guild_321_Adios",
     "label": "3, 2, 1, aaaadios!",
     "message": "3, 2, 1, aaaadios!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3"
   },
   "609": {
     "id": 609,
     "name": "TI12_Caster_English_1",
     "label": "Its Too Good",
     "message": "Omg its too good...but no, its not good enough at all, or wait, is it,maybe?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a8/Misc_soundboard_ti12_not_good_enough.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a8/Misc_soundboard_ti12_not_good_enough.wav"
   },
   "610": {
     "id": 610,
     "name": "TI12_Caster_English_2",
     "label": "Not Like This",
     "message": "Oh my god, no, not like this!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5a/Misc_soundboard_ti12_omg_no_not_like_this.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5a/Misc_soundboard_ti12_omg_no_not_like_this.wav"
   },
   "611": {
     "id": 611,
     "name": "TI12_Caster_English_3",
     "label": "What Is Happening",
     "message": "What in god's green earth is happening right now?!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_ti12_gods_green_earth.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_ti12_gods_green_earth.wav"
   },
   "612": {
     "id": 612,
     "name": "TI12_Caster_English_4",
     "label": "Nom nom nom",
     "message": "Nom nom nom nom nom nom nom",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ad/Misc_soundboard_ti12_omnomnomnomnomnom.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ad/Misc_soundboard_ti12_omnomnomnomnomnom.wav"
   },
   "613": {
     "id": 613,
     "name": "TI12_Caster_English_5",
     "label": "Respect Buybacks",
     "message": "They did not respect the buybacks once again!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e1/Misc_soundboard_ti12_respect_buybacks.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e1/Misc_soundboard_ti12_respect_buybacks.wav"
   },
   "614": {
     "id": 614,
     "name": "TI12_Caster_Spanish_1",
     "label": "El combo de la muerte",
     "message": "El combo de la muerte.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/73/Misc_soundboard_ti12_combo_de_la_muerte.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/73/Misc_soundboard_ti12_combo_de_la_muerte.wav"
   },
   "615": {
     "id": 615,
     "name": "TI12_Caster_Spanish_2",
     "label": "¡Trrraampa mortal!",
     "message": "¡En la trrraampa mortal!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/24/Misc_soundboard_ti12_la_trrrampa_mortal.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/24/Misc_soundboard_ti12_la_trrrampa_mortal.wav"
   },
   "616": {
     "id": 616,
     "name": "TI12_Caster_Spanish_3",
     "label": "¡Nooooo!",
     "message": "¡Nooooo!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_ti12_necca_noooo.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_ti12_necca_noooo.wav"
   },
   "617": {
     "id": 617,
     "name": "TI12_Caster_Spanish_4",
     "label": "Toma para que me respeten.",
     "message": "Toma para que me respeten.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_ti12_tomo_para_que_me_respeten.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5b/Misc_soundboard_ti12_tomo_para_que_me_respeten.wav"
   },
   "618": {
     "id": 618,
     "name": "TI12_Caster_Spanish_5",
     "label": "Cerca de la mueeerrrteee.",
     "message": "Cerca de la mueeerrrteee.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/Misc_soundboard_ti12_cerca_de_la_mueeerrrteee.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a9/Misc_soundboard_ti12_cerca_de_la_mueeerrrteee.wav"
   },
   "619": {
     "id": 619,
     "name": "TI12_Caster_Portuguese_1",
     "label": "Eita! BLBLBLBLBL!",
     "message": "Eita! BLBLBLBLBL!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Misc_soundboard_ti12_eita_blblbl.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/7/7a/Misc_soundboard_ti12_eita_blblbl.wav"
   },
   "620": {
     "id": 620,
     "name": "TI12_Caster_Portuguese_2",
     "label": "Naturalizado Deus.",
     "message": "Nascido homem, naturalizado deus.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3d/Misc_soundboard_ti12_naturalizado_deus.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3d/Misc_soundboard_ti12_naturalizado_deus.wav"
   },
   "621": {
     "id": 621,
     "name": "TI12_Caster_Portuguese_3",
     "label": "Chocada, Passada",
     "message": "Chocada, passada.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/dc/Misc_soundboard_ti12_chocada_passada.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/dc/Misc_soundboard_ti12_chocada_passada.wav"
   },
   "622": {
     "id": 622,
     "name": "TI12_Caster_Portuguese_4",
     "label": "Joga Fácil",
     "message": "Joga fácil, joga lindo.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti12_joga_facil_joga_lindo.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti12_joga_facil_joga_lindo.wav"
   },
   "623": {
     "id": 623,
     "name": "TI12_Caster_Portuguese_5",
     "label": "Controlado E Punido!",
     "message": "Encontrado, controlado e punido!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_soundboard_ti12_encontrado_controlado_e_punido.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/69/Misc_soundboard_ti12_encontrado_controlado_e_punido.wav"
   },
   "624": {
     "id": 624,
     "name": "TI12_Caster_Russian_1",
     "label": "Просто муа!",
     "message": "Это просто... Просто муа!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Misc_soundboard_ti12_prosto_mwuah.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/5f/Misc_soundboard_ti12_prosto_mwuah.wav"
   },
   "625": {
     "id": 625,
     "name": "TI12_Caster_Russian_2",
     "label": "В Зоне",
     "message": "В какой же они зоне!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/Misc_soundboard_ti12_v_kakoy_zone.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/15/Misc_soundboard_ti12_v_kakoy_zone.wav"
   },
   "626": {
     "id": 626,
     "name": "TI12_Caster_Russian_3",
     "label": "Не хватило!",
     "message": "Чуть-чуть не хватило!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/43/Misc_soundboard_ti12_chut_chut_ne_hvatilo.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/43/Misc_soundboard_ti12_chut_chut_ne_hvatilo.wav"
   },
   "627": {
     "id": 627,
     "name": "TI12_Caster_Russian_4",
     "label": "Здорово, парни!",
     "message": "Здорово, парни! Как дела?",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2f/Misc_soundboard_ti12_kak_dela.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2f/Misc_soundboard_ti12_kak_dela.wav"
   },
   "628": {
     "id": 628,
     "name": "TI12_Caster_Russian_5",
     "label": "Вот это да!",
     "message": "Хо-хо-хо! Вот это да!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/98/Misc_soundboard_ti12_vot_eto_da.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/98/Misc_soundboard_ti12_vot_eto_da.wav"
   },
   "629": {
     "id": 629,
     "name": "TI12_Caster_Chinese_1",
     "label": "啊？",
     "message": "啊？",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti12_aa_aaaaah.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/Misc_soundboard_ti12_aa_aaaaah.wav"
   },
   "630": {
     "id": 630,
     "name": "TI12_Caster_Chinese_2",
     "label": "喂喂喂？",
     "message": "喂喂喂？ Hello？队友呢？Hello？",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_ti12_hihihi_hello_team_hello.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/12/Misc_soundboard_ti12_hihihi_hello_team_hello.wav"
   },
   "631": {
     "id": 631,
@@ -3402,7 +3402,7 @@
     "name": "TI12_Caster_Chinese_4",
     "label": "乌龟也是很卖力的",
     "message": "乌龟也是很卖力的！ 哎！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_ti12_turtles_try.wav/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8e/Misc_soundboard_ti12_turtles_try.wav"
   },
   "633": {
     "id": 633,
@@ -3416,35 +3416,35 @@
     "name": "TI12_Caster_Legacy_1",
     "label": "Ай-ай-ай-ай-ай",
     "message": "Ай-ай-ай-ай-ай, что сейчас произошло",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/f4/Misc_soundboard_ay_ay_ay.mp3"
   },
   "635": {
     "id": 635,
     "name": "TI12_Caster_Legacy_2",
     "label": "队友呢？",
     "message": "啊，队友呢？队友呢？队友呢？！ 队友呢？！？！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a4/Misc_soundboard_duiyou_ne.mp3"
   },
   "636": {
     "id": 636,
     "name": "TI12_Caster_Legacy_3",
     "label": "네, 노, 네, 노 노 노!",
     "message": "네, 노, 네, 노 노 노!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_kor_yes_no.mp3"
   },
   "637": {
     "id": 637,
     "name": "TI12_Caster_Legacy_4",
     "label": "Coming Through",
     "message": "Coming through with the wooooo",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b6/Misc_soundboard_coming_through_with_the_woooo.mp3"
   },
   "638": {
     "id": 638,
     "name": "TI12_Caster_Legacy_5",
     "label": "Con el Wombo Combo perfecto!",
     "message": "Con el Wombo Combo perfecto!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3"
   },
   "639": {
     "id": 639,
@@ -3489,38 +3489,38 @@
   "647": {
     "id": 647,
     "name": "Guild_NP_Popcorn",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI10_Spray_np_popcorn.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/1f/TI10_Spray_np_popcorn.png"
   },
   "648": {
     "id": 648,
     "name": "Guild_Chicken",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/49/TI10_Spray_chicken.png"
   },
   "649": {
     "id": 649,
     "name": "Guild_Meepo_Dirt_Nap",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/TI9_Spray_Dirt_Nap.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3c/TI9_Spray_Dirt_Nap.png"
   },
   "650": {
     "id": 650,
     "name": "Guild_TI11_Caster_Spanish_2",
     "label": "Con el Wombo Combo perfecto!",
     "message": "Con el Wombo Combo perfecto!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Misc_soundboard_ti11_wombo_combo_perfecto.mp3"
   },
   "651": {
     "id": 651,
     "name": "Guild_Eto_Takaya_Dushka",
     "label": "Это такая душка!",
     "message": "Ух, это такая душка!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_eto_takaya_dushka.mp3"
   },
   "652": {
     "id": 652,
     "name": "Guild_TI11_Caster_Chinese_4",
     "label": "哇~哦！",
     "message": "哇~哦！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3"
   },
   "653": {
     "id": 653,
@@ -3530,33 +3530,33 @@
   "654": {
     "id": 654,
     "name": "Guild_TI9_Bountyhunter_Riches",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/de/TI9_Spray_Riches.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/de/TI9_Spray_Riches.png"
   },
   "655": {
     "id": 655,
     "name": "Guild_ti11_hoodwink",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_ti11_hoodwink.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_ti11_hoodwink.png"
   },
   "656": {
     "id": 656,
     "name": "Guild_TI11_Chto_Eto_Kakaya_Zhest",
     "label": "Какая Жесть!",
     "message": "Что это?! Какая жесть!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/41/Misc_soundboard_chto_eto_kakaya_zhest.mp3"
   },
   "657": {
     "id": 657,
     "name": "Guild_TI11_Caster_Spanish_5",
     "label": "Ooooh, por dios!",
     "message": "Ooooh, por dios!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_ooh_por_dios.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9c/Misc_soundboard_ti11_ooh_por_dios.mp3"
   },
   "658": {
     "id": 658,
     "name": "Guild_ni_xing_ni",
     "label": "你行你行，你上你上",
     "message": "你行你行，你上你上",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/97/Misc_soundboard_ni_xing_ni.mp3"
   },
   "659": {
     "id": 659,
@@ -3633,38 +3633,38 @@
   "671": {
     "id": 671,
     "name": "Guild_wisp_strong",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/TI10_Spray_wisp_strong.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6e/TI10_Spray_wisp_strong.png"
   },
   "672": {
     "id": 672,
     "name": "Guild_ti11_spectre",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_ti11_spectre.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/32/TI10_Spray_ti11_spectre.png"
   },
   "673": {
     "id": 673,
     "name": "Guild_TI9_Pugna_Magic",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bb/TI9_Spray_Magic.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/bb/TI9_Spray_Magic.png"
   },
   "674": {
     "id": 674,
     "name": "Guild_Eto_Nenormalno",
     "label": "Это ненормально, это нечестно!",
     "message": "Это ненормально, это нечестно!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b9/Misc_soundboard_eto_nenormalno.mp3"
   },
   "675": {
     "id": 675,
     "name": "Guild_TI11_Caster_Spanish_6",
     "label": "Hasta Luego, pldldldldldldldldldldld!",
     "message": "Hasta Luego, pldldldldldldldldldldld!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti11_hasta_luego.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/4b/Misc_soundboard_ti11_hasta_luego.mp3"
   },
   "676": {
     "id": 676,
     "name": "Guild_TI11_Nothing_That_Can_Stop_This_Man",
     "label": "Nothing Can Stop This Man",
     "message": "There is nothing that can stop this man",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/5/52/Misc_soundboard_nothing_that_can_stop_this_man.mp3"
   },
   "677": {
     "id": 677,
@@ -3691,71 +3691,71 @@
     "name": "TI13_Caster_Legacy_1",
     "label": "See You Later Nerds",
     "message": "See you later nerds",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/f/fe/Misc_soundboard_see_you_later_nerds.mp3"
   },
   "682": {
     "id": 682,
     "name": "TI13_Caster_Legacy_2",
     "label": "毁天灭地, NICE啊！",
     "message": "毁天灭地, NICE啊！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/c9/Misc_soundboard_hui_tian_mie.mp3"
   },
   "683": {
     "id": 683,
     "name": "TI13_Caster_Legacy_3",
     "label": "3, 2, 1, aaaadios!",
     "message": "3, 2, 1, aaaadios!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/1/17/Misc_soundboard_ti11_tres_dos_uno_adios.mp3"
   },
   "684": {
     "id": 684,
     "name": "TI13_Caster_Legacy_4",
     "label": "Резать Резать Резать Резать",
     "message": "Резать Резать Резать Резать",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/07/Misc_soundboard_kreasa_kreasa.mp3"
   },
   "685": {
     "id": 685,
     "name": "TI13_Caster_Legacy_5",
     "label": "哇~哦！",
     "message": "哇~哦！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/ae/Misc_soundboard_ti11_wow_cn.mp3"
   },
   "686": {
     "id": 686,
     "name": "Guild_TI10_Spray_14",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_jakiro.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/2d/TI10_Spray_jakiro.png"
   },
   "687": {
     "id": 687,
     "name": "Guild_ti11_phantom_lancer",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI10_Spray_ti11_phantom_lancer.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/TI10_Spray_ti11_phantom_lancer.png"
   },
   "688": {
     "id": 688,
     "name": "Guild_TI9_Ursa_Funny_Bear",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/TI9_Spray_Funny_Bear.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/38/TI9_Spray_Funny_Bear.png"
   },
   "689": {
     "id": 689,
     "name": "Guild_Jia_You",
     "label": "加油！",
     "message": "加油！",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/22/Misc_soundboard_jia_you.mp3"
   },
   "690": {
     "id": 690,
     "name": "Guild_Takaya_Haliava",
     "label": "Такая халява!",
     "message": "Такая халява...Ха!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/05/Misc_soundboard_takaya_haliava.mp3"
   },
   "691": {
     "id": 691,
     "name": "Guild_Oh_My_God_What",
     "label": "Oh My God. What?",
     "message": "Oh my god. What? Oh! Oh!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9f/Misc_soundboard_oh_my_god_what_oh_oh.mp3"
   },
   "692": {
     "id": 692,
@@ -3826,38 +3826,38 @@
   "704": {
     "id": 704,
     "name": "Guild_TI10_Spray_17",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/TI10_Spray_snapfire_cookie.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/89/TI10_Spray_snapfire_cookie.png"
   },
   "705": {
     "id": 705,
     "name": "Guild_ti11_shopkeeper",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/TI10_Spray_ti11_shopkeeper.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/9/9e/TI10_Spray_ti11_shopkeeper.png"
   },
   "706": {
     "id": 706,
     "name": "Guild_TI10_Spray_8",
-    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/TI10_Spray_techies_barrel.png/revision/latest"
+    "image": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/66/TI10_Spray_techies_barrel.png"
   },
   "707": {
     "id": 707,
     "name": "Guild_TI11_Caster_Chinese_6",
     "label": "终于等到你",
     "message": "终于等到你",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_ti11_finally_got_you_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Misc_soundboard_ti11_finally_got_you_cn.mp3"
   },
   "708": {
     "id": 708,
     "name": "Guild_TI11_Caster_Russian_2",
     "label": "Я всё видела! Это он виноват.",
     "message": "Я всё видела! Это он виноват.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti11_i_saw_everything_its_his_fault_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/67/Misc_soundboard_ti11_i_saw_everything_its_his_fault_ru.mp3"
   },
   "709": {
     "id": 709,
     "name": "Guild_TI11_Caster_English_6",
     "label": "I love Dota so much.",
     "message": "I love Dota so much.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ti11_i_love_dota_so_much.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ti11_i_love_dota_so_much.mp3"
   },
   "710": {
     "id": 710,
@@ -3899,20 +3899,20 @@
     "name": "Guild_TI11_Caster_English_1",
     "label": "Oh... Very Cute!",
     "message": "Oh... Very Cute!",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3a/Misc_soundboard_ti11_overestimating_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3a/Misc_soundboard_ti11_overestimating_cn.mp3"
   },
   "718": {
     "id": 718,
     "name": "Guild_TI11_Caster_Chinese_3",
     "label": "有没有神之一勾? 嗯~哼~",
     "message": "有没有神之一勾? 嗯~哼~",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/Misc_soundboard_ti11_godly_hook_cn.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b5/Misc_soundboard_ti11_godly_hook_cn.mp3"
   },
   "719": {
     "id": 719,
     "name": "Guild_TI11_Caster_Russian_3",
     "label": "Брбрбрбр. Ладно, смотрим дальше.",
     "message": "Брбрбрбр. Ладно, смотрим дальше.",
-    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Misc_soundboard_ti11_ok_lets_see_whats_next_ru.mp3/revision/latest"
+    "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Misc_soundboard_ti11_ok_lets_see_whats_next_ru.mp3"
   }
 }

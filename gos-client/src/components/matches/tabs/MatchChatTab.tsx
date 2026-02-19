@@ -21,7 +21,7 @@ export const MatchChatTab: React.FC = () => {
 
     if (!isParsed) {
         return (
-            <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#2e353b] rounded-2xl bg-[#15171c]/50 mt-6">
+            <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#2e353b] rounded-2xl bg-[#15171c]/50 mt-6 w-full lg:w-[90%] mx-auto">
                 <span className="text-6xl mb-4 opacity-50 grayscale">🔒</span>
                 <h2 className="text-2xl font-bold text-white mb-2">Parse Required</h2>
                 <p className="text-[#808fa6] max-w-md text-center leading-relaxed px-4">
@@ -33,7 +33,7 @@ export const MatchChatTab: React.FC = () => {
     if (isLoading) return <div className="mt-10"><LoadingSpinner text="Decrypting Chat Logs..." /></div>;
     if (isError) return <div className="mt-10"><ErrorDisplay message="Failed to load chat." /></div>;
     if (!chatData || chatData.length === 0) {
-        return <div className="text-center text-[#808fa6] py-10 bg-[#15171c] rounded-xl border border-[#2e353b] mt-6">No chat messages found in this match.</div>;
+        return <div className="text-center text-[#808fa6] py-10 bg-[#15171c] rounded-xl border border-[#2e353b] mt-6 w-full lg:w-[90%] mx-auto">No chat messages found in this match.</div>;
     }
 
     const filteredChat = chatData.filter(msg => {
@@ -51,8 +51,8 @@ export const MatchChatTab: React.FC = () => {
     };
 
     return (
-        // w-50-vw и центрирование
-        <div className="space-y-6 w-[50-vw]">
+        <div className="space-y-6 w-full lg:w-[90%] mx-auto">
+
             <div className="flex flex-wrap items-center justify-end gap-3 bg-[#15171c] p-4 rounded-xl border border-[#2e353b] shadow-sm">
                 <span className="text-xs font-bold text-[#58606e] uppercase tracking-widest mr-2">Filters:</span>
 
@@ -102,11 +102,12 @@ export const MatchChatTab: React.FC = () => {
                             const isRadiant = isRadiantTeam(player.isRadiant);
                             const isWheel = msg.data.type.value === ChatType.ChatWheel;
 
+                            // ...
                             return (
                                 <div
                                     key={idx}
                                     className={clsx(
-                                        "flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-3 md:p-4 hover:bg-[#1a1d24] transition-colors border-b border-[#2e353b]/30 last:border-0 relative group",
+                                        "flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-3 md:p-4 hover:bg-[#1a1d24] transition-colors border-b border-[#2e353b]/30 last:border-b-0 relative group", // <-- ИЗМЕНЕНИЕ ЗДЕСЬ (last:border-b-0)
                                         isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
                                     )}
                                 >
@@ -147,7 +148,7 @@ export const MatchChatTab: React.FC = () => {
 
                                             {msg.data.message && (
                                                 <span className={clsx(
-                                                    "text-sm wrap-break-word",
+                                                    "text-md wrap-break-word",
                                                     isWheel ? "text-[#e7d291] font-medium" : "text-white"
                                                 )}>
                                                     {msg.data.message}
@@ -159,7 +160,7 @@ export const MatchChatTab: React.FC = () => {
                                                     src={msg.data.imageUrl}
                                                     alt="Emoticon"
                                                     referrerPolicy="no-referrer"
-                                                    className="h-8 object-contain drop-shadow-md ml-2"
+                                                    className="h-24 drop-shadow-md"
                                                 />
                                             )}
                                         </div>
