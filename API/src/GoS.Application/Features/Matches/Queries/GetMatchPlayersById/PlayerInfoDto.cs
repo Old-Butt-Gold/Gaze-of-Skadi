@@ -3,10 +3,17 @@ using GoS.Domain.BaseEnums;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 
+public class MatchPlayerInformationDto
+{
+    public required BaseEnumDto<BooleanState> IsMatchParsed { get; init; }
+    public required IEnumerable<PlayerInfoDto> Players { get; init; }
+}
+
 public class PlayerInfoDto
 {
     public long HeroId { get; init; }
 
+    // May be unknown
     public string? PersonaName { get; init; }
 
     public int? HeroVariant { get; init; }

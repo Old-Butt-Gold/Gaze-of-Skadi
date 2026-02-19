@@ -29,7 +29,7 @@ public sealed class MatchesController : ApiControllerBase
 
     [HttpGet("players")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<PlayerInfoDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<MatchPlayerInformationDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchPlayersById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchPlayersByIdQuery(matchId), ct);
 
