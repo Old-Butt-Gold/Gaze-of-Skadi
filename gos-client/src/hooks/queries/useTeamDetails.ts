@@ -2,7 +2,6 @@
 import { teamService } from '../../services/teamService';
 
 export const useTeamDetails = (teamId: number) => {
-  // Common config
   const config = {
     enabled: !!teamId && !isNaN(teamId),
     staleTime: 1000 * 60 * 5, // 5 minutes

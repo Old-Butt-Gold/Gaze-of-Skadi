@@ -153,7 +153,7 @@ export const ScenariosPage: React.FC = () => {
             </div>
 
             {/* Table Container */}
-            <div className="bg-[#1a1d24] rounded-lg border border-[#2e353b] overflow-hidden flex flex-col shadow-lg min-h-[500px]">
+            <div className="bg-[#1a1d24] rounded-lg border border-[#2e353b] overflow-hidden flex flex-col shadow-lg">
                 {isLoading ? (
                     <div className="flex-grow flex items-center justify-center">
                         <LoadingSpinner text="ANALYZING BATTLE DATA..." />

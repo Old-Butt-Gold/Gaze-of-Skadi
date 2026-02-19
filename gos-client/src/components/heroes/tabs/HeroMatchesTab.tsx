@@ -1,5 +1,5 @@
 ﻿import React, {useMemo, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useOutletContext} from 'react-router-dom';
 import clsx from 'clsx';
 import {useHeroMatches} from '../../../hooks/queries/useHeroMatches';
 import {useSteamPlayers} from '../../../hooks/queries/useSteamPlayers';
@@ -8,22 +8,19 @@ import {ErrorDisplay} from '../../ui/ErrorDisplay';
 import {formatDuration, formatRelativeTime} from '../../../utils/formatUtils';
 import {isRadiantTeam, isTeamWon} from '../../../utils/matchUtils';
 import {APP_ROUTES} from '../../../config/navigation';
-import type {HeroInfo} from '../../../types/heroes';
 import type {SortDirection} from '../../../store/teamStore';
 import {SortIndicator} from "../SortIndicator";
 import {Icon} from "../../Icon";
 import type {SteamPlayerDto} from "../../../types/steam";
 import {PlayerCellShort} from "../../players/PlayerCellShort.tsx";
-import { Pagination } from '../../ui/Pagination'; // Импорт
-
-interface Props {
-    hero: HeroInfo;
-}
+import { Pagination } from '../../ui/Pagination';
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
 type SortKey = 'id' | 'league' | 'duration' | 'result' | 'kda' | 'time' | 'player';
 const PAGE_SIZE = 20;
 
-export const HeroMatchesTab: React.FC<Props> = ({ hero }) => {
+export const HeroMatchesTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: matches, isLoading, isError, refetch } = useHeroMatches(hero.id);
 
     const [sortKey, setSortKey] = useState<SortKey>('time');

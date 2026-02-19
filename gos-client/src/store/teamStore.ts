@@ -6,15 +6,13 @@ export type SortDirection = 'asc' | 'desc';
 interface TeamsState {
   searchQuery: string;
   sortBy: TeamSortOption;
-  sortDirection: SortDirection; // Новое поле
+  sortDirection: SortDirection;
   currentPage: number;
 
   setSearchQuery: (query: string) => void;
   setSortBy: (sort: TeamSortOption) => void;
-  setSortDirection: (dir: SortDirection) => void; // Новый экшен
-  toggleSortDirection: () => void; // Удобный переключатель
+  toggleSortDirection: () => void;
   setCurrentPage: (page: number) => void;
-  resetFilters: () => void;
 }
 
 export const useTeamsStore = create<TeamsState>((set) => ({
@@ -26,14 +24,10 @@ export const useTeamsStore = create<TeamsState>((set) => ({
   setSearchQuery: (query) => set({ searchQuery: query, currentPage: 1 }),
   setSortBy: (sort) => set({ sortBy: sort, currentPage: 1 }),
 
-  setSortDirection: (dir) => set({ sortDirection: dir, currentPage: 1 }),
-
   toggleSortDirection: () => set((state) => ({
     sortDirection: state.sortDirection === 'asc' ? 'desc' : 'asc',
     currentPage: 1
   })),
 
   setCurrentPage: (page) => set({ currentPage: page }),
-
-  resetFilters: () => set({ searchQuery: '', sortBy: 'rating', sortDirection: 'desc', currentPage: 1 }),
 }));

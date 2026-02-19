@@ -1,24 +1,20 @@
 ﻿import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useOutletContext} from 'react-router-dom';
 import clsx from 'clsx';
 import { usePlayerPeers } from '../../../hooks/queries/usePlayerPeers';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import { formatRelativeTime } from '../../../utils/formatUtils';
 import type { SortDirection } from '../../../store/teamStore';
 import { SortIndicator } from '../../heroes/SortIndicator';
 import { APP_ROUTES } from '../../../config/navigation';
 import {Icon} from "../../Icon.tsx";
 import { Pagination } from '../../ui/Pagination';
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 type SortKey = 'peer' | 'matches' | 'winPercent' | 'withMatches' | 'withWinPercent' | 'againstMatches' | 'againstWinPercent' | 'gpm' | 'xpm' | 'lastPlayed';
 
-export const PlayerPeersTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerPeersTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: peersData, isLoading } = usePlayerPeers(accountId, filters);
 
     const [sortKey, setSortKey] = useState<SortKey>('matches');

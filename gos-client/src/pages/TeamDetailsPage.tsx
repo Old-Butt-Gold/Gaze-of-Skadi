@@ -7,7 +7,7 @@ import { TeamRoster } from '../components/teams/TeamRoster';
 import { TeamHeroesGrid } from '../components/teams/TeamHeroesGrid';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
-import { NotFoundPage } from './NotFoundPage'; // Импорт NotFound
+import { NotFoundPage } from './NotFoundPage';
 import clsx from 'clsx';
 
 export type Tab = 'matches' | 'roster' | 'heroes';

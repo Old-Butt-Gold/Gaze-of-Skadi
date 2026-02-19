@@ -15,21 +15,15 @@ import { useHeroMetaTimeline } from '../../../hooks/queries/useHeroMetaTimeline'
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import {formatDateFull, formatDateShort} from '../../../utils/formatUtils';
-import type { HeroInfo } from '../../../types/heroes';
 import { Icon } from '../../Icon';
-import type {HeroMetaTimelineDto} from "../../../types/heroMetaTimeline.ts"; // Ваш компонент иконок
+import type {HeroMetaTimelineDto} from "../../../types/heroMetaTimeline.ts";
+import {useOutletContext} from "react-router-dom";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
-interface Props {
-    hero: HeroInfo;
-}
-
-// Тип ключей позиций (pos1, pos2...)
 type PositionKey = keyof HeroMetaTimelineDto;
 
-// Тип точки данных для графика
 interface ChartDataPoint {
     timestamp: number;
-    // Динамические ключи: 'pos1' (winrate) и 'pos1_matches' (count)
     [key: string]: number;
 }
 
@@ -91,8 +85,8 @@ const CustomTooltip = React.memo(({ active, payload, label }: TooltipProps<Value
     return null;
 });
 
-// --- MAIN COMPONENT ---
-export const HeroTrendsTab: React.FC<Props> = ({ hero }) => {
+export const HeroTrendsTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: timeline, isLoading, isError, refetch } = useHeroMetaTimeline(hero.id);
 
     const [activePositions, setActivePositions] = useState<PositionKey[]>(Object.keys(POS_CONFIG) as PositionKey[]);

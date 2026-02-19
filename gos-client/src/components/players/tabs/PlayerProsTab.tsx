@@ -1,9 +1,8 @@
 ﻿import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useOutletContext} from 'react-router-dom';
 import clsx from 'clsx';
 import { usePlayerPros } from '../../../hooks/queries/usePlayerPros';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import { BooleanState } from '../../../types/common';
 import { formatRelativeTime } from '../../../utils/formatUtils';
 import type { SortDirection } from '../../../store/teamStore';
@@ -11,15 +10,12 @@ import { SortIndicator } from '../../heroes/SortIndicator';
 import { APP_ROUTES } from '../../../config/navigation';
 import { Icon } from '../../Icon';
 import { Pagination } from '../../ui/Pagination';
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 type SortKey = 'pro' | 'team' | 'matches' | 'withMatches' | 'withWinPercent' | 'againstMatches' | 'againstWinPercent' | 'lastPlayed';
 
-export const PlayerProsTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerProsTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: prosData, isLoading } = usePlayerPros(accountId, filters);
 
     const [page, setPage] = useState(1);

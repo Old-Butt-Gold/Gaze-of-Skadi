@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import { usePlayerRecords } from '../../../hooks/queries/usePlayerRecords';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import { PlayerField, type PlayerEndpointParameters } from '../../../types/player';
+import { PlayerField} from '../../../types/player';
 import {
     FIELD_LABELS,
     getGameModeName,
@@ -14,18 +14,16 @@ import type { PlayerRecordDto } from "../../../types/playerRecord";
 import { HeroImage } from "../../heroes/HeroImage";
 import { RankIcon } from "../../distributions/RankIcon";
 import {isRadiantTeam, isTeamWon} from "../../../utils/matchUtils.ts";
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 const RECORD_CATEGORIES = Object.entries(FIELD_LABELS).map(([value, label]) => ({
     value: Number(value) as PlayerField,
     label
 }));
 
-export const PlayerRecordsTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerRecordsTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const [selectedField, setSelectedField] = useState<PlayerField>(PlayerField.Kills);
     const { data: records, isLoading } = usePlayerRecords(accountId, selectedField, filters);
 

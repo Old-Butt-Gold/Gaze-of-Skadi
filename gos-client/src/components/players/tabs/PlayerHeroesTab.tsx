@@ -2,22 +2,19 @@ import React, { useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { usePlayerHeroes } from '../../../hooks/queries/usePlayerHeroes';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import { formatRelativeTime } from '../../../utils/formatUtils';
 import type { SortDirection } from '../../../store/teamStore';
 import {SortIndicator} from "../../heroes/SortIndicator.tsx";
 import {HeroCell} from "../../heroes/HeroCell.tsx";
 import {useHeroes} from "../../../hooks/queries/useHeroes.ts";
 import { Pagination } from '../../ui/Pagination';
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 type SortKey = 'hero' | 'matches' | 'winPercent' | 'withMatches' | 'withWinPercent' | 'againstMatches' | 'againstWinPercent' | 'lastPlayed';
 
-export const PlayerHeroesTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerHeroesTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: heroesData, isLoading: isHeroesLoading } = usePlayerHeroes(accountId, filters);
     const { getHero } = useHeroes();
 

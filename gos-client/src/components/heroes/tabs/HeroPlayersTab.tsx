@@ -5,21 +5,19 @@ import { useSteamPlayers } from '../../../hooks/queries/useSteamPlayers';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
-import type { HeroInfo } from '../../../types/heroes';
 import type { SortDirection } from "../../../store/teamStore";
 import { SortIndicator } from "../SortIndicator";
 import type { SteamPlayerDto } from "../../../types/steam";
 import { PlayerCellShort } from "../../players/PlayerCellShort.tsx";
-import { Pagination } from '../../ui/Pagination'; // Импорт
-
-interface Props {
-    hero: HeroInfo;
-}
+import { Pagination } from '../../ui/Pagination';
+import {useOutletContext} from "react-router-dom";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
 type SortKey = 'games' | 'winrate' | 'player';
 const PAGE_SIZE = 20;
 
-export const HeroPlayersTab: React.FC<Props> = ({ hero }) => {
+export const HeroPlayersTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: players, isLoading, isError, refetch } = useHeroPlayers(hero.id);
 
     const [sortKey, setSortKey] = useState<SortKey>('games');

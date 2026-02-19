@@ -1,18 +1,14 @@
 ﻿import React, { useState, useMemo } from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import {Link, useOutletContext} from 'react-router-dom';
 import { useHeroRankings } from '../../../hooks/queries/useHeroRankings';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { RankIcon } from "../../distributions/RankIcon";
 import { LoadingSpinner } from "../../ui/LoadingSpinner";
-import type { HeroInfo } from "../../../types/heroes";
 import { Icon } from "../../Icon";
 import { APP_ROUTES } from "../../../config/navigation";
-import { Pagination } from '../../ui/Pagination'; // Import Pagination
-
-interface Props {
-    hero: HeroInfo;
-}
+import { Pagination } from '../../ui/Pagination';
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
 const PAGE_SIZE = 20;
 
@@ -24,7 +20,8 @@ const RankBadge = ({ rank }: { rank: number }) => {
     return <span className="text-[#808fa6] font-mono font-bold text-lg">#{rank}</span>;
 };
 
-export const HeroRankingsTab: React.FC<Props> = ({ hero }) => {
+export const HeroRankingsTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data, isLoading, isError, refetch } = useHeroRankings(hero.id);
     const [page, setPage] = useState(1);
 

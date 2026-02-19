@@ -6,12 +6,8 @@ import { select } from 'd3-selection';
 import 'd3-transition';
 import { usePlayerWordCloud } from '../../../hooks/queries/usePlayerWordCloud';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 type ViewMode = 'write' | 'read';
 
@@ -39,7 +35,8 @@ const WORD_COLORS = [
     '#c084fc', // Lighter Purple
 ];
 
-export const PlayerWordCloudTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerWordCloudTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data, isLoading, isError } = usePlayerWordCloud(accountId, filters);
     const [viewMode, setViewMode] = useState<ViewMode>('write');
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });

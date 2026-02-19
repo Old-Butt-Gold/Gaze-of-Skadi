@@ -11,13 +11,10 @@ import {
 } from 'recharts';
 import { usePlayerHistograms } from '../../../hooks/queries/usePlayerHistograms';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import { PlayerField, type PlayerEndpointParameters } from '../../../types/player';
+import { PlayerField} from '../../../types/player';
 import {FIELD_LABELS} from "../../../utils/enumUtils.ts";
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 const OPTIONS = Object.entries(FIELD_LABELS).map(([value, label]) => ({
     value: Number(value) as PlayerField,
@@ -71,7 +68,8 @@ const CustomHistogramTooltip = ({ active, payload, label, selectedFieldLabel }: 
     return null;
 };
 
-export const PlayerHistogramsTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerHistogramsTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const [selectedField, setSelectedField] = useState<PlayerField>(PlayerField.Kills);
     const { data, isLoading, isError } = usePlayerHistograms(accountId, selectedField, filters);
 

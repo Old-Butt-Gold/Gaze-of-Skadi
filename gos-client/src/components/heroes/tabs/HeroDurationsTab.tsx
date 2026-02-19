@@ -14,14 +14,11 @@ import { useHeroDurations } from '../../../hooks/queries/useHeroDurations';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
-import type { HeroInfo } from '../../../types/heroes';
-import type { HeroDurationDto } from '../../../types/heroDurations'; // Импортируйте ваш DTO
+import type { HeroDurationDto } from '../../../types/heroDurations';
 import clsx from 'clsx';
 import { formatDuration } from '../../../utils/formatUtils';
-
-interface Props {
-    hero: HeroInfo;
-}
+import {useOutletContext} from "react-router-dom";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
 // 1. Расширенный интерфейс данных для графика
 interface ChartData extends HeroDurationDto {
@@ -78,7 +75,8 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
     return null;
 };
 
-export const HeroDurationsTab: React.FC<Props> = ({ hero }) => {
+export const HeroDurationsTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: durations, isLoading, isError, refetch } = useHeroDurations(hero.id);
 
     // Подготовка данных для графика

@@ -1,16 +1,13 @@
 ﻿import React from 'react';
 import { usePlayerWardMap } from '../../../hooks/queries/usePlayerWardMap';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import { Icon } from '../../Icon';
 import {HeatmapCanvas} from "../HeatmapCanvas.tsx";
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
-
-export const PlayerWardMapTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerWardMapTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data, isLoading, isError } = usePlayerWardMap(accountId, filters);
 
     if (isLoading) return <LoadingSpinner text="Analyzing Vision..." />;

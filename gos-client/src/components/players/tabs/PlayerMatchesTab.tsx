@@ -1,6 +1,6 @@
 ﻿import React, { useMemo, useState } from 'react';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import {Link, useOutletContext} from 'react-router-dom';
 import { usePlayerMatches } from '../../../hooks/queries/usePlayerMatches';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
@@ -19,21 +19,17 @@ import {
     getLobbyTypeName,
 } from '../../../utils/enumUtils';
 import { isTeamWon } from '../../../utils/matchUtils';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import type { PlayerMatchDto } from '../../../types/playerMatches';
 import { getLaneConfig } from "../../../utils/scenariosUtils";
 import PartySizeIcon from "../PartySizeIcon";
 import { PlayerSlot } from "../../../types/common";
 import { Icon } from "../../Icon.tsx";
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 const ITEMS_PER_PAGE = 20;
 
-export const PlayerMatchesTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerMatchesTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: matches, isLoading, isError, refetch } = usePlayerMatches(accountId, filters);
     const [currentPage, setCurrentPage] = useState(1);
 

@@ -2,7 +2,6 @@
 import clsx from 'clsx';
 import { usePlayerCounts } from '../../../hooks/queries/usePlayerCounts';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import type { PlayerEndpointParameters } from '../../../types/player';
 import type { PlayerCountStats } from '../../../types/playerCount';
 import {
     getGameModeName,
@@ -14,11 +13,8 @@ import {
     getPatchName
 } from '../../../utils/enumUtils';
 import type {GameMode, LaneRole, LeaverStatus, LobbyType, Patch, Region, TeamEnum} from "../../../types/common.ts";
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 const StatRow = ({ label, stats, maxGames }: { label: string, stats: PlayerCountStats, maxGames: number }) => {
     const winRate = stats.games > 0 ? (stats.win / stats.games) * 100 : 0;
@@ -96,7 +92,8 @@ const StatCard = ({ title, data, nameMap }: { title: string, data: Record<string
     );
 };
 
-export const PlayerCountsTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerCountsTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data, isLoading } = usePlayerCounts(accountId, filters);
 
     if (isLoading) return <LoadingSpinner text="Crunching numbers..." />;

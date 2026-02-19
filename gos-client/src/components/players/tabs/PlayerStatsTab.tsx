@@ -1,12 +1,9 @@
 ﻿import React from 'react';
 import { usePlayerTotals } from '../../../hooks/queries/usePlayerTotals';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import {type PlayerEndpointParameters, PlayerField} from '../../../types/player';
-
-interface Props {
-    accountId: number;
-    filters: PlayerEndpointParameters;
-}
+import {PlayerField} from '../../../types/player';
+import {useOutletContext} from "react-router-dom";
+import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
 const FIELD_CONFIG: Record<string, { label: string; group: string; isDuration?: boolean; tooltip?: string; }> = {
     [PlayerField.Kills]: { label: 'Kills', group: 'Combat' },
@@ -68,7 +65,8 @@ const formatValue = (num: number, isDuration?: boolean): string => {
     return formatNumber(~~num);
 };
 
-export const PlayerStatsTab: React.FC<Props> = ({ accountId, filters }) => {
+export const PlayerStatsTab: React.FC = () => {
+    const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: totals, isLoading, isError } = usePlayerTotals(accountId, filters);
 
     if (isLoading) return <LoadingSpinner text="Analyzing Statistics..." />;

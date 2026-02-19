@@ -2,7 +2,7 @@
 import {
     calculateArmor, calculateDamage, calculateMagicResistance, getStatsIcon
 } from "../../../utils/heroUtils.ts";
-import { type HeroInfo, HeroPrimaryAttribute } from "../../../types/heroes.ts";
+import { HeroPrimaryAttribute } from "../../../types/heroes.ts";
 import { ExpandableBio } from "../ExpandableBio.tsx";
 import { AttributeBox } from "../AttributeBox.tsx";
 import { StatRow } from "../StatRow.tsx";
@@ -10,12 +10,11 @@ import { useHeroAbilities } from "../../../hooks/queries/useHeroAbilities.ts";
 import { FacetsSection } from "../FacetsSection.tsx";
 import {TalentTree} from "../TalentTree.tsx";
 import {AbilitiesSection} from "../AbilitiesSection.tsx";
+import {useOutletContext} from "react-router-dom";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
-export interface HeroOverviewTabProps {
-    hero: HeroInfo;
-}
-
-export const HeroOverviewTab: React.FC<HeroOverviewTabProps> = ({ hero }) => {
+export const HeroOverviewTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const damage = calculateDamage(hero);
     const armor = calculateArmor(hero);
     const magicResist = calculateMagicResistance(hero);

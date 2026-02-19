@@ -2,14 +2,10 @@
 import {useHeroItemPopularity} from '../../../hooks/queries/useHeroItemPopularity';
 import {LoadingSpinner} from '../../ui/LoadingSpinner';
 import {ErrorDisplay} from '../../ui/ErrorDisplay';
-import type {HeroInfo} from '../../../types/heroes';
 import {ItemByIdCell} from "../../items/ItemByIdCell.tsx";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
+import {useOutletContext} from "react-router-dom";
 
-interface Props {
-    hero: HeroInfo;
-}
-
-// Helper component for game stages
 const ItemSection = ({ title, itemsMap }: {
     title: string,
     itemsMap: Record<string, number>,
@@ -38,7 +34,8 @@ const ItemSection = ({ title, itemsMap }: {
     );
 };
 
-export const HeroItemsTab: React.FC<Props> = ({ hero }) => {
+export const HeroItemsTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: popularity, isLoading: isPopLoading, isError, refetch } = useHeroItemPopularity(hero.id);
 
     if (isPopLoading) return <LoadingSpinner text="Consulting the Shopkeeper..." />;

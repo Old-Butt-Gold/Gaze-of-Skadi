@@ -6,19 +6,17 @@ import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { calculateWinRate, getWinRateColor } from '../../../utils/heroStatsUtils';
 import type { SortDirection } from "../../../store/teamStore";
-import type { HeroInfo } from "../../../types/heroes.ts";
 import { SortIndicator } from "../SortIndicator.tsx";
 import { HeroCell } from "../HeroCell.tsx";
-import { Pagination } from '../../ui/Pagination'; // Импорт
-
-interface Props {
-    hero: HeroInfo;
-}
+import { Pagination } from '../../ui/Pagination';
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
+import {useOutletContext} from "react-router-dom";
 
 type SortKey = 'games' | 'winrate' | 'hero';
 const PAGE_SIZE = 20;
 
-export const HeroMatchupsTab: React.FC<Props> = ({ hero }) => {
+export const HeroMatchupsTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data: matchups, isLoading, isError, refetch } = useHeroMatchups(hero.id);
     const { getHero } = useHeroes();
 

@@ -20,6 +20,26 @@ import {PlayersQueuePage} from "./pages/PlayersQueuePage.tsx";
 import {HeroesMetaPage} from "./pages/HeroesMetaPage.tsx";
 import {MatchesTimelinePage} from "./pages/MatchesTimelinePage.tsx";
 import {PlayerDetailsPage} from "./pages/PlayerDetailsPage.tsx";
+import {PlayerStatsTab} from "./components/players/tabs/PlayerStatsTab.tsx";
+import {PlayerWordCloudTab} from "./components/players/tabs/PlayerWordCloudTab.tsx";
+import {PlayerHistogramsTab} from "./components/players/tabs/PlayerHistogramsTab.tsx";
+import {PlayerHeroesTab} from "./components/players/tabs/PlayerHeroesTab.tsx";
+import {PlayerWardMapTab} from "./components/players/tabs/PlayerWardMapTab.tsx";
+import {PlayerPeersTab} from "./components/players/tabs/PlayerPeersTab.tsx";
+import {PlayerProsTab} from "./components/players/tabs/PlayerProsTab.tsx";
+import {PlayerCountsTab} from "./components/players/tabs/PlayerCountsTab.tsx";
+import {PlayerRecordsTab} from "./components/players/tabs/PlayerRecordsTab.tsx";
+import {PlayerActivityTab} from "./components/players/tabs/PlayerActivityTab.tsx";
+import {PlayerMatchesTab} from "./components/players/tabs/PlayerMatchesTab.tsx";
+import { HeroOverviewTab } from "./components/heroes/tabs/HeroOverviewTab.tsx";
+import { HeroBenchmarksTab } from "./components/heroes/tabs/HeroBenchmarksTab.tsx";
+import { HeroRankingsTab } from "./components/heroes/tabs/HeroRankingsTab.tsx";
+import { HeroMatchupsTab } from "./components/heroes/tabs/HeroMatchupsTab.tsx";
+import { HeroItemsTab } from "./components/heroes/tabs/HeroItemsTab.tsx";
+import { HeroDurationsTab } from "./components/heroes/tabs/HeroDurationsTab.tsx";
+import { HeroPlayersTab } from "./components/heroes/tabs/HeroPlayersTab.tsx";
+import { HeroMatchesTab } from "./components/heroes/tabs/HeroMatchesTab.tsx";
+import { HeroTrendsTab } from "./components/heroes/tabs/HeroTrendsTab.tsx";
 
 function App() {
     return (
@@ -32,7 +52,20 @@ function App() {
                 <Route path={APP_ROUTES.TEAMS} element={<TeamsPage />} />
                 <Route path={`${APP_ROUTES.TEAMS}/:teamId`} element={<TeamDetailsPage />} />
                 <Route path={APP_ROUTES.HEROES} element={<HeroStatsPage />} />
-                <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />} />
+
+                <Route path={`${APP_ROUTES.HEROES}/:heroId`} element={<HeroDetailsPage />}>
+                    <Route index element={<Navigate to="overview" replace />} />
+                    <Route path="overview" element={<HeroOverviewTab />} />
+                    <Route path="benchmarks" element={<HeroBenchmarksTab />} />
+                    <Route path="rankings" element={<HeroRankingsTab />} />
+                    <Route path="matches" element={<HeroMatchesTab />} />
+                    <Route path="matchups" element={<HeroMatchupsTab />} />
+                    <Route path="items" element={<HeroItemsTab />} />
+                    <Route path="players" element={<HeroPlayersTab />} />
+                    <Route path="durations" element={<HeroDurationsTab />} />
+                    <Route path="trends" element={<HeroTrendsTab />} />
+                </Route>
+
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
                 <Route path={APP_ROUTES.MATCHES_QUEUE} element={<PlayersQueuePage />} />
                 <Route path={APP_ROUTES.META} element={<HeroesMetaPage />} />
@@ -46,7 +79,21 @@ function App() {
                     <Route path={APP_ROUTES.PROMATCHES} element={<SearchProMatchesTab />} />
                 </Route>
 
-                <Route path={`${APP_ROUTES.PLAYERS}/:playerId`} element={<PlayerDetailsPage />} />
+                <Route path={`${APP_ROUTES.PLAYERS}/:playerId`} element={<PlayerDetailsPage />}>
+                    <Route index element={<Navigate to="statistics" replace />} />
+                    <Route path="statistics" element={<PlayerStatsTab />} />
+                    <Route path="wordcloud" element={<PlayerWordCloudTab />} />
+                    <Route path="histogram" element={<PlayerHistogramsTab />} />
+                    <Route path="heroes" element={<PlayerHeroesTab />} />
+                    <Route path="wardmap" element={<PlayerWardMapTab />} />
+                    <Route path="peer" element={<PlayerPeersTab />} />
+                    <Route path="pro" element={<PlayerProsTab />} />
+                    <Route path="counts" element={<PlayerCountsTab />} />
+                    <Route path="records" element={<PlayerRecordsTab />} />
+                    <Route path="activity" element={<PlayerActivityTab />} />
+                    <Route path="matches" element={<PlayerMatchesTab />} />
+                </Route>
+
                 <Route path="matches/:matchId" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>

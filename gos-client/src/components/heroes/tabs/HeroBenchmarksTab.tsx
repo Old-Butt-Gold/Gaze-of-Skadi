@@ -3,9 +3,9 @@ import { useHeroBenchmarks } from '../../../hooks/queries/useHeroBenchmarks';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { BenchmarkChart } from '../charts/BenchmarkChart';
-import type { HeroInfo } from '../../../types/heroes';
+import {useOutletContext} from "react-router-dom";
+import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
 
-// Улучшенные иконки с лучшей визуализацией
 const GoldIcon = () => (
     <svg className="w-5 h-5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -50,11 +50,8 @@ const KillIcon = () => (
     </svg>
 );
 
-interface Props {
-    hero: HeroInfo;
-}
-
-export const HeroBenchmarksTab: React.FC<Props> = ({ hero }) => {
+export const HeroBenchmarksTab: React.FC = () => {
+    const { hero } = useOutletContext<HeroOutletContext>();
     const { data, isLoading, isError, refetch } = useHeroBenchmarks(hero.id);
 
     if (isLoading) return <LoadingSpinner text="Analyzing performance curves..." />;

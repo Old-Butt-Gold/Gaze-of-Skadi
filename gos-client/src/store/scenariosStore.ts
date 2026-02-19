@@ -13,7 +13,6 @@ interface ScenariosState {
   setActiveTab: (tab: ScenarioTab) => void;
   setSearchQuery: (query: string) => void;
   setSelectedTime: (time: number | 'all') => void;
-  resetFilters: () => void;
 }
 
 export const useScenariosStore = create<ScenariosState>((set) => ({
@@ -22,10 +21,8 @@ export const useScenariosStore = create<ScenariosState>((set) => ({
   searchQuery: '',
   selectedTime: 'all',
 
-  setSelectedHeroId: (id) => set({ selectedHeroId: id, searchQuery: '', selectedTime: 'all' }), // Сброс фильтров при смене героя
+  setSelectedHeroId: (id) => set({ selectedHeroId: id, searchQuery: '', selectedTime: 'all' }),
   setActiveTab: (tab) => set({ activeTab: tab, searchQuery: '', selectedTime: 'all' }),
   setSearchQuery: (query) => set({ searchQuery: query }),
   setSelectedTime: (time) => set({ selectedTime: time }),
-
-  resetFilters: () => set({ searchQuery: '', selectedTime: 'all' }),
 }));

@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import { HeroCell } from "../components/heroes/HeroCell";
 import { useRecordsStore } from '../store/recordsStore';
 import { APP_ROUTES } from "../config/navigation";
-import { Pagination } from '../components/ui/Pagination'; // Импорт пагинации
+import { Pagination } from '../components/ui/Pagination';
 
 const PAGE_SIZE = 20;
 
