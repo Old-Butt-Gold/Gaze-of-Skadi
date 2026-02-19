@@ -73,16 +73,14 @@ export const PlayerDetailsPage: React.FC = () => {
             <PlayerHeader player={player} filters={filters} />
 
             <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-                <div className="flex justify-center border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar">
-                    <div className="flex gap-1 min-w-max">
+                <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
+                    <div className="flex gap-1 min-w-max w-fit mx-auto px-4">
                         {tabs.map((tab) => (
                             <TabButton
                                 key={tab.id}
-                                label={tab.label}
+                                {...tab}
                                 isActive={activeTab === tab.id}
-                                disabled={tab.disabled}
-                                onClick={() => setActiveTab(tab.id)}
-                            />
+                                onClick={() => setActiveTab(tab.id)} />
                         ))}
                     </div>
                 </div>

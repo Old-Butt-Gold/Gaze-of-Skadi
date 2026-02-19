@@ -59,21 +59,23 @@ export const HeroDetailsPage: React.FC = () => {
             {/* === 2. STICKY TABS === */}
             <div className="sticky top-16 z-30 bg-[#0f1114]/95 backdrop-blur-md border-b border-[#2e353b] shadow-2xl">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex overflow-x-auto no-scrollbar gap-1 md:gap-2">
-                        {tabs.map(tab => (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className={clsx(
-                                    "py-4 px-4 md:px-6 text-xs md:text-sm font-bold uppercase tracking-widest border-b-2 transition-all duration-300 whitespace-nowrap",
-                                    activeTab === tab.id
-                                        ? "border-[#e7d291] text-[#e7d291] bg-gradient-to-t from-[#e7d291]/10 to-transparent"
-                                        : "border-transparent text-[#808fa6] hover:text-white hover:bg-[#1a1d24]"
-                                )}
-                            >
-                                {tab.label}
-                            </button>
-                        ))}
+                    <div className="flex overflow-x-auto no-scrollbar scroll-smooth items-center">
+                        <div className="flex gap-1 md:gap-2 min-w-max w-fit mx-auto px-4 py-2">
+                            {tabs.map(tab => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className={clsx(
+                                        "py-4 px-4 md:px-6 text-xs md:text-sm font-bold uppercase tracking-widest border-b-2 transition-all duration-300 whitespace-nowrap",
+                                        activeTab === tab.id
+                                            ? "border-[#e7d291] text-[#e7d291] bg-gradient-to-t from-[#e7d291]/10 to-transparent"
+                                            : "border-transparent text-[#808fa6] hover:text-white hover:bg-[#1a1d24]"
+                                    )}
+                                >
+                                    {tab.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

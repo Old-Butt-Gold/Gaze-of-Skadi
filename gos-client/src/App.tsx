@@ -40,7 +40,6 @@ function App() {
 
                 <Route path={APP_ROUTES.SEARCH} element={<SearchPage />}>
                     <Route index element={<Navigate to={APP_ROUTES.COMBOS} replace />} />
-
                     <Route path={APP_ROUTES.COMBOS} element={<SearchCombosTab />} />
                     <Route path={APP_ROUTES.FINDPLAYERS} element={<SearchPlayersTab />} />
                     <Route path={APP_ROUTES.PUBMATCHES} element={<SearchPublicMatchesTab />} />
