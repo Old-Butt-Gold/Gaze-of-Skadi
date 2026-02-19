@@ -585,7 +585,7 @@
     "id": 111,
     "name": "Day_Night_Cycle",
     "label": "Day/Night Cycle",
-    "message": "dota_chatwheel_message_Day_Night_Cycle"
+    "message": "Night is coming!"
   },
   "112": {
     "id": 112,
@@ -2246,41 +2246,6 @@
     "message": "They're all dead!",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e7/Misc_soundboard_all_dead.mp3"
   },
-  "415": {
-    "id": 415,
-    "name": "sprays_tomato_pie",
-    "image": "sprays/sprays_tomato_pie_icon.psd"
-  },
-  "416": {
-    "id": 416,
-    "name": "Guild_sprays_abba_tub",
-    "image": "sprays/sprays_abba_tub_icon.psd"
-  },
-  "417": {
-    "id": 417,
-    "name": "Guild_sprays_serious_silence",
-    "image": "sprays/sprays_serious_silence_icon.psd"
-  },
-  "418": {
-    "id": 418,
-    "name": "Guild_sprays_solid_trunk",
-    "image": "sprays/sprays_solid_trunk_icon.psd"
-  },
-  "419": {
-    "id": 419,
-    "name": "sprays_tiny_airlines",
-    "image": "sprays/sprays_tiny_airlines_icon.psd"
-  },
-  "420": {
-    "id": 420,
-    "name": "sprays_primal_feast",
-    "image": "sprays/sprays_primal_feast_icon.psd"
-  },
-  "421": {
-    "id": 421,
-    "name": "sprays_greeving_rosh",
-    "image": "sprays/sprays_greeving_rosh_icon.psd"
-  },
   "422": {
     "id": 422,
     "name": "Guild_Slark_Love",
@@ -3578,42 +3543,42 @@
     "name": "Crownfall_Queen_Imperia_1",
     "label": "Yes. Bleed for me! Ha ha ha!",
     "message": "Yes. Bleed for me! Ha ha ha!",
-    "url": "https://liquipedia.net/commons/images/9/96/Misc_soundboard_crownfall_queen_imperia_cw_bleed_for_me.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_bleed_for_me.mp3"
   },
   "663": {
     "id": 663,
     "name": "Crownfall_Queen_Imperia_2",
     "label": "Fall at my feet, peasant!",
     "message": "Fall at my feet, peasant!",
-    "url": "https://liquipedia.net/commons/images/f/f6/Misc_soundboard_crownfall_queen_imperia_cw_fall_at_my_feet.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_fall_at_my_feet.mp3"
   },
   "664": {
     "id": 664,
     "name": "Crownfall_Queen_Imperia_3",
     "label": "Long live the queen. The real queen.",
     "message": "Long live the queen. The real queen.",
-    "url": "https://liquipedia.net/commons/images/b/b2/Misc_soundboard_crownfall_queen_imperia_cw_long_live_real_queen.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_long_live_real_queen.mp3"
   },
   "665": {
     "id": 665,
     "name": "Crownfall_Queen_Imperia_4",
     "label": "Of all the ways to die!",
     "message": "Of all the ways to die!",
-    "url": "https://liquipedia.net/commons/images/7/75/Misc_soundboard_crownfall_queen_imperia_cw_of_all_the_ways_to_die.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_of_all_the_ways_to_die.mp3"
   },
   "666": {
     "id": 666,
     "name": "Crownfall_Queen_Imperia_5",
     "label": "Why am I surrounded by such peons?",
     "message": "Why am I surrounded by such peons?",
-    "url": "https://liquipedia.net/commons/images/5/5f/Misc_soundboard_crownfall_queen_imperia_cw_surrounded_by_peons.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_surrounded_by_peons.mp3"
   },
   "667": {
     "id": 667,
     "name": "Crownfall_Queen_Imperia_6",
     "label": "I'm seriously getting tired of this place.",
     "message": "I'm seriously getting tired of this place.",
-    "url": "https://liquipedia.net/commons/images/6/62/Misc_soundboard_crownfall_queen_imperia_cw_tired_of_this_place.mp3"
+    "url": "/assets/sounds/Misc_soundboard_crownfall_queen_imperia_cw_tired_of_this_place.mp3"
   },
   "668": {
     "id": 668,
@@ -3807,21 +3772,21 @@
     "name": "Crownfall_Queen_Imperia_7",
     "label": "Somebody do something!",
     "message": "Somebody do something!",
-    "url": "https://liquipedia.net/commons/images/0/09/Vo_vengefulspirit_imperia_crownfall_boss_late_03.mp3"
+    "url": "/assets/sounds/Vo_vengefulspirit_imperia_crownfall_boss_late_03.mp3"
   },
   "702": {
     "id": 702,
     "name": "Crownfall_Queen_Imperia_8",
     "label": "Pathetic",
     "message": "Pathetic",
-    "url": "https://liquipedia.net/commons/images/a/a3/Vo_vengefulspirit_queen_imperia_cw_pathetic.mp3"
+    "url": "/assets/sounds/Vo_vengefulspirit_queen_imperia_cw_pathetic.mp3"
   },
   "703": {
     "id": 703,
     "name": "Crownfall_Queen_Imperia_9",
     "label": "Your reckoning comes!",
     "message": "Your reckoning comes!",
-    "url": "https://liquipedia.net/commons/images/d/d6/Vo_vengefulspirit_imperia_attack_13.mp3"
+    "url": "/assets/sounds/Vo_vengefulspirit_imperia_attack_13.mp3"
   },
   "704": {
     "id": 704,
@@ -3858,41 +3823,6 @@
     "label": "I love Dota so much.",
     "message": "I love Dota so much.",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e0/Misc_soundboard_ti11_i_love_dota_so_much.mp3"
-  },
-  "710": {
-    "id": 710,
-    "name": "Frostivus2024_Spray_1",
-    "image": "sprays/frostivus2024_bakeet_cm_gralla.png"
-  },
-  "711": {
-    "id": 711,
-    "name": "Frostivus2024_Spray_2",
-    "image": "sprays/frostivus2024_cozy_clock.png"
-  },
-  "712": {
-    "id": 712,
-    "name": "Frostivus2024_Spray_3",
-    "image": "sprays/frostivus2024_io_socks.png"
-  },
-  "713": {
-    "id": 713,
-    "name": "Frostivus2024_Spray_4",
-    "image": "sprays/frostivus2024_snugbugs.png"
-  },
-  "714": {
-    "id": 714,
-    "name": "Guild_Disgruntled_Kid_Invoker",
-    "image": "sprays/disgruntled_kid_invoker.png"
-  },
-  "715": {
-    "id": 715,
-    "name": "Guild_Getting_Along",
-    "image": "sprays/getting_along.png"
-  },
-  "716": {
-    "id": 716,
-    "name": "Guild_Hoodwinking",
-    "image": "sprays/hoodwinking.png"
   },
   "717": {
     "id": 717,
