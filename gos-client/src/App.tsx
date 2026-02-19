@@ -40,6 +40,8 @@ import { HeroDurationsTab } from "./components/heroes/tabs/HeroDurationsTab.tsx"
 import { HeroPlayersTab } from "./components/heroes/tabs/HeroPlayersTab.tsx";
 import { HeroMatchesTab } from "./components/heroes/tabs/HeroMatchesTab.tsx";
 import { HeroTrendsTab } from "./components/heroes/tabs/HeroTrendsTab.tsx";
+import {MatchDetailsPage} from "./pages/MatchDetailsPage.tsx";
+import {MatchChatTab} from "./components/matches/tabs/MatchChatTab.tsx";
 
 function App() {
     return (
@@ -94,7 +96,12 @@ function App() {
                     <Route path="matches" element={<PlayerMatchesTab />} />
                 </Route>
 
-                <Route path="matches/:matchId" element={<NotFoundPage />} />
+                <Route path={`${APP_ROUTES.MATCHES}/:matchId`} element={<MatchDetailsPage />}>
+                    <Route index element={<Navigate to="chat" replace />} />
+
+                    <Route path="chat" element={<MatchChatTab />} />
+                </Route>
+
                 <Route path="*" element={<NotFoundPage />} />
             </Route>
         </Routes>

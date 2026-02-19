@@ -23,7 +23,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
 
     private IEnumerable<ChatMessageDto> GetChatDataForPlayers(Dictionary<string, ChatWheel> chatResources, Match match)
     {
-        foreach (var chat in match.Chat)
+        foreach (var chat in match.Chat.OrderBy(x => x.Time))
         {
             int index = (int)chat.Slot;
 
@@ -49,7 +49,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
                         Data = new ChatDataDto
                         {
                             Time = chat.Time,
-                            Message = resource.Message!,
+                            Message = resource.Message ?? string.Empty,
                             Type = mapper.Map<BaseEnumDto<ChatType>>(chat.Type),
                             SoundUrl = resource.Url,
                             ImageUrl = resource.Image,

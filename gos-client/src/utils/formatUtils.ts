@@ -34,18 +34,24 @@ export const formatTime = (unixSeconds: number): string => {
 };
 
 /**
- * Converts Seconds -> MM:SS or HH:MM:SS
+ * Converts Seconds -> MM:SS or HH:MM:SS (Handles negative time for Dota pre-game)
  */
 export const formatDuration = (seconds: number): string => {
-  const h = Math.floor(seconds / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = seconds % 60;
+  const isNegative = seconds < 0;
+  const absSeconds = Math.abs(seconds);
 
+  const h = Math.floor(absSeconds / 3600);
+  const m = Math.floor((absSeconds % 3600) / 60);
+  const s = Math.floor(absSeconds % 60);
+
+  let result = '';
   if (h > 0) {
-    return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    result = `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  } else {
+    result = `${m}:${s.toString().padStart(2, '0')}`;
   }
 
-  return `${m}:${s.toString().padStart(2, '0')}`;
+  return isNegative ? `-${result}` : result;
 };
 
 export const formatTimeRange = (startSeconds: number, endSeconds: number): string => {
