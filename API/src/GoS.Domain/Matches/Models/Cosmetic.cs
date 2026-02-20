@@ -20,12 +20,6 @@ public class Cosmetic
 	public string ImagePath { get; init; } = string.Empty;
 
 	/// <summary>
-	/// Gets the item ID
-	/// </summary>
-	[JsonPropertyName("item_id")]
-	public int ItemId { get; init; }
-
-	/// <summary>
 	/// Gets the item rarity
 	/// </summary>
 	[JsonPropertyName("item_rarity")]

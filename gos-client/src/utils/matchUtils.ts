@@ -18,6 +18,16 @@ const PLAYER_SLOT_COLORS: Record<number, string> = {
   132: "#A46900",
 } as const;
 
+const RARITY_COLORS: Record<string, string> = {
+  "arcana": "rgb(173, 229, 92)",
+  "immortal": "rgb(228, 174, 51)",
+  "legendary": "rgb(211, 44, 230)",
+  "mythical": "rgb(136, 71, 255)",
+  "rare": "rgb(75, 105, 255)",
+  "uncommon": "rgb(94, 152, 217)",
+  "common": "rgb(114, 114, 114)",
+} as const;
+
 /*const EXP_LEVEL = [
   0,
   240,
@@ -71,6 +81,11 @@ const PLAYER_SLOT_COLORS: Record<number, string> = {
 
 export const getPlayerColor = (playerSlot: number): string => {
   return PLAYER_SLOT_COLORS[playerSlot] ?? "#FFFFFF";
+};
+
+export const getItemRarityColor = (rarity: string | undefined | null): string => {
+  if (!rarity) return "transparent";
+  return RARITY_COLORS[rarity.toLowerCase()] ?? "rgb(114, 114, 114)";
 };
 
 export const isRadiantTeam = (radiant : BaseEnum<BooleanState>) : boolean => {

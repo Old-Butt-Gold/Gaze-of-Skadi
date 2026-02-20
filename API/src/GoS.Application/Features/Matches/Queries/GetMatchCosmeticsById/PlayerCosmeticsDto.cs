@@ -10,5 +10,6 @@ public record CosmeticDto
 {
     public required string ImageUrl { get; init; }
     public required string Name { get; init; }
+    public required string ItemRarity { get; init; }
     public required string MarketUrl { get; init; }
 }

@@ -42,6 +42,7 @@ import { HeroMatchesTab } from "./components/heroes/tabs/HeroMatchesTab.tsx";
 import { HeroTrendsTab } from "./components/heroes/tabs/HeroTrendsTab.tsx";
 import {MatchDetailsPage} from "./pages/MatchDetailsPage.tsx";
 import {MatchChatTab} from "./components/matches/tabs/MatchChatTab.tsx";
+import {MatchCosmeticsTab} from "./components/matches/tabs/MatchCosmeticsTab.tsx";
 
 function App() {
     return (
@@ -100,6 +101,7 @@ function App() {
                     <Route index element={<Navigate to="chat" replace />} />
 
                     <Route path="chat" element={<MatchChatTab />} />
+                    <Route path="cosmetics" element={<MatchCosmeticsTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />

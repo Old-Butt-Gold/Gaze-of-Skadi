@@ -1,16 +1,16 @@
 ﻿import React, { useState } from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import clsx from 'clsx';
 import { useMatchChat } from '../../../hooks/queries/useMatchChat';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
-import { HeroCell } from '../../heroes/HeroCell';
 import { Icon } from '../../Icon';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import { ChatType } from "../../../types/matchChat.ts";
 import { isRadiantTeam } from "../../../utils/matchUtils.ts";
-import { APP_ROUTES } from '../../../config/navigation';
+import {UnparsedMatchWarning} from "../UnparsedMatchWarning.tsx";
+import {MatchPlayerCell} from "../MatchPlayerCell.tsx";
 
 export const MatchChatTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
@@ -21,16 +21,9 @@ export const MatchChatTab: React.FC = () => {
     const { data: chatData, isLoading, isError } = useMatchChat(matchId, isParsed);
 
     if (!isParsed) {
-        return (
-            <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#2e353b] rounded-2xl bg-[#15171c]/50 mt-6 w-full lg:w-[90%] mx-auto">
-                <span className="text-6xl mb-4 opacity-50 grayscale">🔒</span>
-                <h2 className="text-2xl font-bold text-white mb-2">Parse Required</h2>
-                <p className="text-[#808fa6] max-w-md text-center leading-relaxed px-4">
-                    Chat logs are only available for parsed matches.
-                </p>
-            </div>
-        );
+        return <UnparsedMatchWarning />;
     }
+
     if (isLoading) return <div className="mt-10"><LoadingSpinner text="Decrypting Chat Logs..." /></div>;
     if (isError) return <div className="mt-10"><ErrorDisplay message="Failed to load chat." /></div>;
     if (!chatData || chatData.length === 0) {
@@ -107,7 +100,7 @@ export const MatchChatTab: React.FC = () => {
                                 <div
                                     key={idx}
                                     className={clsx(
-                                        "flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-3 md:p-4 hover:bg-[#1a1d24] transition-colors border-b border-[#2e353b]/30 last:border-b-0 relative group",
+                                        "flex flex-col md:flex-row md:items-center gap-2 md:gap-4 p-1 md:p-2 hover:bg-[#1a1d24] transition-colors border-b border-[#2e353b]/30 last:border-b-0 relative group",
                                         isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
                                     )}
                                 >
@@ -116,31 +109,8 @@ export const MatchChatTab: React.FC = () => {
                                     </div>
 
                                     <div className="flex flex-1 flex-col sm:flex-row sm:items-center gap-3">
-                                        <div className="flex items-center gap-3 sm:w-56 shrink-0">
-                                            <HeroCell heroId={player.heroId} showName={false} />
-                                            <div className="flex items-center gap-1.5 min-w-0">
-                                                <Icon src={isRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={5} />
-
-                                                {player.accountId ? (
-                                                    <Link
-                                                        to={`${APP_ROUTES.PLAYERS}/${player.accountId}`}
-                                                        className={clsx(
-                                                            "font-bold text-sm drop-shadow-sm hover:underline hover:opacity-80 transition-all",
-                                                            isRadiant ? "text-emerald-400" : "text-red-400"
-                                                        )}
-                                                    >
-                                                        {player.personaName || 'Unknown'}
-                                                    </Link>
-                                                ) : (
-                                                    <span className={clsx(
-                                                        "font-bold text-sm drop-shadow-sm",
-                                                        isRadiant ? "text-emerald-400" : "text-red-400"
-                                                    )}>
-                                                        {player.personaName || 'Unknown'}
-                                                    </span>
-                                                )}
-
-                                            </div>
+                                        <div className="sm:w-56 shrink-0">
+                                            <MatchPlayerCell player={player} />
                                         </div>
 
                                         <div className="flex-1 flex flex-wrap items-center gap-3 bg-[#0b0e13]/50 border border-[#2e353b]/50 px-4 py-2.5 rounded-lg shadow-inner">

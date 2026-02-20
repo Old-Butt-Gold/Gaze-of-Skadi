@@ -10,7 +10,7 @@ import {BooleanState, LeaverStatus} from '../../types/common';
 import {getLeaverStatusName, IsPlayerLeft} from "../../utils/enumUtils.ts";
 
 interface Props {
-    matchId: number;
+    matchId?: number;
     heroId: number;
     heroVariant?: number | null;
     leaverStatus?: LeaverStatus | null;
@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const HeroImage: React.FC<Props> = ({
-                                               matchId, heroId, heroVariant, leaverStatus, isParsed, showName = true
+                                               matchId, heroId, heroVariant, leaverStatus, isParsed, showName = false
                                            }) => {
     const { getHero, isLoading } = useHeroes();
     const hero = getHero(heroId);
@@ -46,7 +46,7 @@ export const HeroImage: React.FC<Props> = ({
     const isParsedMatch = isParsed === BooleanState.True;
 
     return (
-        <Link to={`${APP_ROUTES.MATCHES}/${matchId}`} className="block relative">
+        <Link to={!matchId ? `${APP_ROUTES.HEROES}/${heroId}` : `${APP_ROUTES.MATCHES}/${matchId}`} className="block relative">
             <div className="flex items-center gap-3">
                 <div className="relative group/hero">
                     {isParsedMatch && (
