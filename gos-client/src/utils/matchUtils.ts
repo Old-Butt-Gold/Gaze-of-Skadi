@@ -1,4 +1,4 @@
-﻿import type {BaseEnum, BooleanState} from "../types/common.ts";
+﻿import {type BaseEnum, type BooleanState, LaneRole} from "../types/common.ts";
 
 const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
@@ -95,4 +95,19 @@ export const isRadiantTeam = (radiant : BaseEnum<BooleanState>) : boolean => {
 export const isTeamWon = (radiant: BaseEnum<BooleanState>, win: BaseEnum<BooleanState> | null): boolean | null => {
   if (!win) return null; // If win status is missing
   return (isRadiantTeam(radiant) && win.value === 1) || (!isRadiantTeam(radiant) && win.value === 0);
+};
+
+export const getLaneInfo = (roleValue: number | undefined | null) => {
+  switch (roleValue) {
+    case LaneRole.Safe:
+      return { label: 'Safe Lane', iconSrc: '/assets/images/lane_safe.svg' };
+    case LaneRole.Mid:
+      return { label: 'Mid Lane', iconSrc: '/assets/images/lane_mid.svg' };
+    case LaneRole.Offlane:
+      return { label: 'Off Lane', iconSrc: '/assets/images/lane_off.svg' };
+    case LaneRole.Jungle:
+      return { label: 'Jungle', iconSrc: '/assets/images/lane_jungle.svg' };
+    default:
+      return null;
+  }
 };

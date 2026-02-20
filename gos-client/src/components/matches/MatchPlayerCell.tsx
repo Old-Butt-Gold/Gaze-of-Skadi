@@ -8,6 +8,7 @@ import type { PlayerInfoDto } from '../../types/matchPlayers';
 import { RankIcon } from '../distributions/RankIcon';
 import {HeroImage} from "../heroes/HeroImage.tsx";
 import {HeroCell} from "../heroes/HeroCell.tsx";
+import {LaneRoleIcon} from "./LaneRoleIcon.tsx";
 
 interface Props {
     player: PlayerInfoDto;
@@ -39,14 +40,9 @@ export const MatchPlayerCell: React.FC<Props> = ({ player, hideName, useIcon = t
             {!hideName && (
                 <div className="flex flex-col min-w-0 justify-center gap-0.5">
                     <div className="flex items-center gap-1">
-                        <Icon
-                            src={isRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"}
-                            size={4}
-                        />
-                        <RankIcon
-                            rank={player?.rankTier?.value}
-                            size={8}
-                        />
+                        <Icon src={isRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={4}/>
+                        <RankIcon rank={player?.rankTier?.value} size={8}/>
+                        <LaneRoleIcon laneRole={player?.laneRole?.value} size={4} />
                     </div>
 
                     {player.accountId ? (
