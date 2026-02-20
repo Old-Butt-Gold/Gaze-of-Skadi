@@ -65,7 +65,7 @@ export const MatchCosmeticsTab: React.FC = () => {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="relative group/item block w-20 h-14 lg:w-28 lg:h-20 rounded transition-all hover:-translate-y-1 shadow-sm hover:shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-                                                    style={{ borderBottom: `2px solid ${rarityColor}` }}
+                                                    style={{ borderBottom: `3px solid ${rarityColor}` }}
                                                 >
                                                     <div className="w-full h-full overflow-hidden rounded-t flex items-center justify-center">
                                                         <Icon
