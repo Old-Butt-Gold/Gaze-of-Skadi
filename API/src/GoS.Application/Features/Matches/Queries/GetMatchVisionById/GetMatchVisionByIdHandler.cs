@@ -98,10 +98,13 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
                 : WardType.Observer;
 
             var placementTime = placementEntry.Log.Time;
-            var removalTime = leftEntry.Log?.Time;
-            var duration = removalTime.HasValue
-                ? removalTime.Value - placementTime
-                : match.Duration - placementTime;
+            var removalTime = leftEntry.Log?.Time ?? match.Duration;
+            if (removalTime > match.Duration)
+            {
+                removalTime = match.Duration;
+            }
+
+            var duration = removalTime - placementTime;
 
             if (duration < 0) duration = 0;
 

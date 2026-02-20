@@ -23,6 +23,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
 
     private IEnumerable<ChatMessageDto> GetChatDataForPlayers(Dictionary<string, ChatWheel> chatResources, Match match)
     {
+        // TODO also save values from https://github.com/odota/media/tree/master/chatwheel, chat.Key = 129002 e.g.
         foreach (var chat in match.Chat.OrderBy(x => x.Time))
         {
             int index = (int)chat.Slot;

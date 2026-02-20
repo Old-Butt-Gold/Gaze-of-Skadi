@@ -28,7 +28,7 @@ public record WardPlacementDto
     public required BaseEnumDto<WardType> Type { get; init; }
     public required int OwnerIndex { get; init; }
     public required long PlacementTime { get; init; }
-    public required long? RemovalTime { get; init; }
+    public required long RemovalTime { get; init; }
     public required long Duration { get; init; }
     public required int? DestroyedById { get; init; }
     public required double X { get; init; }
