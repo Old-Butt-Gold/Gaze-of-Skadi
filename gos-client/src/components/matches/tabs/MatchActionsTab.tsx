@@ -66,11 +66,11 @@ export const MatchActionsTab: React.FC = () => {
 
         return (
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 flex flex-col xl:flex-row gap-4 lg:gap-6 shadow-md hover:border-[#4a5568] transition-colors relative">
-
-                <div className="flex flex-col md:flex-row xl:flex-col items-start md:items-center xl:items-start justify-between xl:justify-start gap-4 xl:w-56 shrink-0 xl:border-r border-[#2e353b] xl:pr-4">
-                    <MatchPlayerCell player={player} useIcon={false} />
-
-                    <div className="flex flex-col bg-[#0b0e13] border border-[#2e353b] rounded-lg px-4 py-2 text-center w-full md:w-auto xl:w-full mt-auto">
+                <div className="flex flex-col md:flex-row xl:flex-col items-center justify-center gap-4 xl:w-56 shrink-0 xl:border-r border-[#2e353b] xl:pr-4">
+                    <div className="flex items-center justify-center w-full">
+                        <MatchPlayerCell player={player} useIcon={false} />
+                    </div>
+                    <div className="flex flex-col bg-[#0b0e13] border border-[#2e353b] rounded-lg px-4 py-2 text-center w-full md:w-auto xl:w-full">
                         <span className="text-[10px] text-[#58606e] font-bold uppercase tracking-widest">Actions / Min</span>
                         <span className="text-2xl font-mono font-black text-[#e7d291] leading-none drop-shadow-sm">{data.actionsPerMin || 0}</span>
                     </div>

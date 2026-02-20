@@ -8,6 +8,7 @@ import { APP_ROUTES } from '../../config/navigation';
 import { Icon } from '../Icon';
 import {BooleanState, LeaverStatus} from '../../types/common';
 import {getLeaverStatusName, IsPlayerLeft} from "../../utils/enumUtils.ts";
+import {getPlayerColor} from "../../utils/matchUtils.ts";
 
 interface Props {
     matchId?: number;
@@ -16,10 +17,12 @@ interface Props {
     leaverStatus?: LeaverStatus | null;
     isParsed?: BooleanState | null | undefined;
     showName?: boolean;
+    playerSlot?: number;
 }
 
 export const HeroImage: React.FC<Props> = ({
-                                               matchId, heroId, heroVariant, leaverStatus, isParsed, showName = false
+                                               matchId, heroId, heroVariant, leaverStatus,
+                                               isParsed, showName = false, playerSlot = undefined
                                            }) => {
     const { getHero, isLoading } = useHeroes();
     const hero = getHero(heroId);
@@ -56,7 +59,8 @@ export const HeroImage: React.FC<Props> = ({
                     )}
 
                         <HeroTooltip heroId={heroId}>
-                            <div className="w-22 h-12 overflow-hidden rounded-sm relative transition-colors">
+                            <div className="w-22 h-12 overflow-hidden rounded-sm relative transition-colors"
+                                style={playerSlot !== undefined ? { borderRight: `4px solid ${getPlayerColor(playerSlot)}` } : undefined}>
                                 <Icon src={hero.img} alt={hero.localized_name} />
 
                                 {isLeaver && (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
 import { APP_ROUTES } from '../../config/navigation';
-import {getPlayerColor, isRadiantTeam} from '../../utils/matchUtils';
+import {isRadiantTeam} from '../../utils/matchUtils';
 import type { PlayerInfoDto } from '../../types/matchPlayers';
 import { RankIcon } from '../distributions/RankIcon';
 import {HeroImage} from "../heroes/HeroImage.tsx";
@@ -32,13 +32,13 @@ export const MatchPlayerCell: React.FC<Props> = ({ player, hideName, useIcon = t
                 ? <HeroCell heroId={player.heroId} />
                 : <div
                     className="flex shrink-0"
-                    style={{ borderRight: `3px solid ${getPlayerColor(player.playerSlot.value)}` }}
                 >
                     <HeroImage
                         heroId={player.heroId}
                         showName={false}
                         heroVariant={player.heroVariant}
                         leaverStatus={player?.leaverStatus?.value}
+                        playerSlot={player?.playerSlot?.value}
                     />
                 </div>
             }
