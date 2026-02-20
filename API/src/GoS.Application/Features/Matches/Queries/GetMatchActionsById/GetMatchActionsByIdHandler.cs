@@ -29,8 +29,9 @@ internal sealed class GetMatchActionsByIdHandler(ISender sender, IMapper mapper)
     }
 
     private List<ActionsDataDto> GetActionsForPlayer(MatchPlayer player)
-        => player.Actions.
-            Select(action => new ActionsDataDto
+        => player.Actions
+            .Where(x => Enum.IsDefined(x.Key))
+            .Select(action => new ActionsDataDto
                 { Key = mapper.Map<BaseEnumDto<UnitOrder>>(action.Key), Value = action.Value, })
             .ToList();
 }

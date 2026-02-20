@@ -1,4 +1,5 @@
 ﻿import {type BaseEnum, type BooleanState, LaneRole} from "../types/common.ts";
+import {UnitOrder} from "../types/matchActions.ts";
 
 const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
@@ -27,6 +28,50 @@ const RARITY_COLORS: Record<string, string> = {
   "uncommon": "rgb(94, 152, 217)",
   "common": "rgb(114, 114, 114)",
 } as const;
+
+export const UNIT_ORDER_CONFIG: Record<number, { short: string, full: string, group: string }> = {
+  [UnitOrder.None]: { short: "None", full: "None", group: "Misc" },
+  [UnitOrder.MoveToPosition]: { short: "Move (Pos)", full: "Move to Position", group: "Movement" },
+  [UnitOrder.MoveToTarget]: { short: "Move (Tgt)", full: "Move to Target", group: "Movement" },
+  [UnitOrder.AttackMove]: { short: "Atk Move", full: "Attack Move", group: "Combat" },
+  [UnitOrder.AttackTarget]: { short: "Atk Target", full: "Attack Target", group: "Combat" },
+  [UnitOrder.CastPosition]: { short: "Cast (Pos)", full: "Cast Position", group: "Abilities" },
+  [UnitOrder.CastTarget]: { short: "Cast (Tgt)", full: "Cast Target", group: "Abilities" },
+  [UnitOrder.CastTargetTree]: { short: "Cast (Tree)", full: "Cast Target Tree", group: "Abilities" },
+  [UnitOrder.CastNoTarget]: { short: "Cast (No Tgt)", full: "Cast No Target", group: "Abilities" },
+  [UnitOrder.CastToggle]: { short: "Toggle", full: "Cast Toggle", group: "Abilities" },
+  [UnitOrder.HoldPosition]: { short: "Hold Pos", full: "Hold Position", group: "Movement" },
+  [UnitOrder.TrainAbility]: { short: "Train Spell", full: "Train Ability", group: "Abilities" },
+  [UnitOrder.DropItem]: { short: "Drop Item", full: "Drop Item", group: "Items" },
+  [UnitOrder.GiveItem]: { short: "Give Item", full: "Give Item", group: "Items" },
+  [UnitOrder.PickupItem]: { short: "Pick Item", full: "Pickup Item", group: "Items" },
+  [UnitOrder.PickupRune]: { short: "Pick Rune", full: "Pickup Rune", group: "Items" },
+  [UnitOrder.PurchaseItem]: { short: "Buy Item", full: "Purchase Item", group: "Items" },
+  [UnitOrder.SellItem]: { short: "Sell Item", full: "Sell Item", group: "Items" },
+  [UnitOrder.DisassembleItem]: { short: "Disassemble", full: "Disassemble Item", group: "Items" },
+  [UnitOrder.MoveItem]: { short: "Move Item", full: "Move Item", group: "Items" },
+  [UnitOrder.CastToggleAuto]: { short: "Auto-cast", full: "Toggle Auto-cast", group: "Abilities" },
+  [UnitOrder.Stop]: { short: "Stop", full: "Stop", group: "Movement" },
+  [UnitOrder.Taunt]: { short: "Taunt", full: "Taunt", group: "Misc" },
+  [UnitOrder.Buyback]: { short: "Buyback", full: "Buyback", group: "Misc" },
+  [UnitOrder.Glyph]: { short: "Glyph", full: "Glyph", group: "Misc" },
+  [UnitOrder.EjectItemFromStash]: { short: "Eject Stash", full: "Eject Item from Stash", group: "Items" },
+  [UnitOrder.CastRune]: { short: "Cast Rune", full: "Cast Rune", group: "Items" },
+  [UnitOrder.PingAbility]: { short: "Ping Spell", full: "Ping Ability", group: "Misc" },
+  [UnitOrder.MoveToDirection]: { short: "Move Dir", full: "Move to Direction", group: "Movement" },
+  [UnitOrder.Patrol]: { short: "Patrol", full: "Patrol", group: "Movement" },
+  [UnitOrder.VectorTargetPosition]: { short: "Vector Pos", full: "Vector Target Position", group: "Abilities" },
+  [UnitOrder.Radar]: { short: "Scan", full: "Radar (Scan)", group: "Misc" },
+  [UnitOrder.SetItemCombineLock]: { short: "Lock Item", full: "Set Item Combine Lock", group: "Items" },
+  [UnitOrder.Continue]: { short: "Continue", full: "Continue", group: "Misc" },
+  [UnitOrder.VectorTargetCanceled]: { short: "Vector Cancel", full: "Vector Target Canceled", group: "Abilities" },
+  [UnitOrder.CastRiverPaint]: { short: "River Paint", full: "Cast River Paint", group: "Misc" },
+  [UnitOrder.PregameAdjustItemAssignment]: { short: "Adjust Item", full: "Pregame Adjust Item Assignment", group: "Items" },
+  [UnitOrder.DropItemAtFountain]: { short: "Drop Fountain", full: "Drop Item at Fountain", group: "Items" },
+  [UnitOrder.TakeItemFromNeutralItemStash]: { short: "Take Neutral", full: "Take Item from Neutral Stash", group: "Items" },
+  [UnitOrder.MoveRelative]: { short: "Move Rel", full: "Move Relative", group: "Movement" },
+  [UnitOrder.CastToggleAlt]: { short: "Toggle Alt", full: "Cast Toggle Alt", group: "Abilities" }
+};
 
 /*const EXP_LEVEL = [
   0,
