@@ -43,19 +43,14 @@ public record TeamfightPlayerDto
     public required IEnumerable<TeamfightPositionDto> DeathPositions { get; init; }
 }
 
-public record TeamfightResultDto
-{
-    public required BaseEnumDto<TeamEnum> Winner { get; init; }
-    public required long GoldAdvantage { get; init; }
-    public required long XpAdvantage { get; init; }
-}
-
 public record TeamfightDetailedDto
 {
     public required long Start { get; init; }
     public required long End { get; init; }
     public required long TotalDeaths { get; init; }
     public required long LastDeathTime { get; init; }
-    public required TeamfightResultDto Result { get; init; }
+    public required long XpAdvantage { get; init; }
+    public required long GoldAdvantage { get; init; }
+    public required BaseEnumDto<TeamEnum> Winner { get; init; }
     public required IEnumerable<TeamfightPlayerDto> Players { get; init; }
 }

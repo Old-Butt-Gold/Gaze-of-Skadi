@@ -88,12 +88,9 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
             End = fight.End,
             TotalDeaths = fight.Deaths,
             LastDeathTime = fight.LastDeath,
-            Result = new TeamfightResultDto
-            {
-                Winner = winner,
-                GoldAdvantage = Math.Abs(radiantGold - direGold),
-                XpAdvantage = Math.Abs(radiantXp - direXp)
-            },
+            Winner = winner,
+            GoldAdvantage = Math.Abs(radiantGold - direGold),
+            XpAdvantage = Math.Abs(radiantXp - direXp),
             Players = fight.Players.Select((tfPlayer, index) => MapTeamfightPlayer(tfPlayer, allPlayers[index], index)),
         };
     }

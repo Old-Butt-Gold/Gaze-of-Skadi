@@ -3,6 +3,7 @@ import type {ChatMessageDto} from "../types/matchChat.ts";
 import type {MatchPlayerInformationDto} from "../types/matchPlayers.ts";
 import type {PlayerCosmeticsDto} from "../types/matchCosmetics.ts";
 import type {PlayerActionsDto} from "../types/matchActions.ts";
+import type {PlayerItemsDto} from "../types/matchItems.ts";
 
 export const matchService = {
   getMatchPlayers: async (matchId: number): Promise<MatchPlayerInformationDto> => {
@@ -19,5 +20,9 @@ export const matchService = {
 
   getMatchActions: async (matchId: number): Promise<PlayerActionsDto[]> => {
     return apiClient.get(`/Matches/${matchId}/actions`);
-  }
+  },
+
+  getMatchItems: async (matchId: number): Promise<PlayerItemsDto[]> => {
+    return apiClient.get(`/Matches/${matchId}/items`);
+  },
 };

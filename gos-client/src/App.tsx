@@ -44,6 +44,7 @@ import {MatchDetailsPage} from "./pages/MatchDetailsPage.tsx";
 import {MatchChatTab} from "./components/matches/tabs/MatchChatTab.tsx";
 import {MatchCosmeticsTab} from "./components/matches/tabs/MatchCosmeticsTab.tsx";
 import {MatchActionsTab} from "./components/matches/tabs/MatchActionsTab.tsx";
+import {MatchItemsTab} from "./components/matches/tabs/MatchItemsTab.tsx";
 
 function App() {
     return (
@@ -104,6 +105,7 @@ function App() {
                     <Route path="chat" element={<MatchChatTab />} />
                     <Route path="cosmetics" element={<MatchCosmeticsTab />} />
                     <Route path="actions" element={<MatchActionsTab />} />
+                    <Route path="items" element={<MatchItemsTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />
