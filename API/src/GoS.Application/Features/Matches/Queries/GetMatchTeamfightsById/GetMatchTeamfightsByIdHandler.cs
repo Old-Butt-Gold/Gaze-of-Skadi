@@ -44,7 +44,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
         for (var i = 0; i < fight.Players.Count; i++)
         {
             var tfPlayer = fight.Players[i];
-            var isRadiantSide = i < 5;
+            var isRadiantSide = allPlayers[i].IsRadiant == BooleanState.True;
 
             if (isRadiantSide)
             {
