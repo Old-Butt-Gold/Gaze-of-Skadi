@@ -4,6 +4,7 @@ import type {MatchPlayerInformationDto} from "../types/matchPlayers.ts";
 import type {PlayerCosmeticsDto} from "../types/matchCosmetics.ts";
 import type {PlayerActionsDto} from "../types/matchActions.ts";
 import type {PlayerItemsDto} from "../types/matchItems.ts";
+import type {PlayerBenchmarkDto} from "../types/matchBenchmarks.ts";
 
 export const matchService = {
   getMatchPlayers: async (matchId: number): Promise<MatchPlayerInformationDto> => {
@@ -25,4 +26,8 @@ export const matchService = {
   getMatchItems: async (matchId: number): Promise<PlayerItemsDto[]> => {
     return apiClient.get(`/Matches/${matchId}/items`);
   },
+  getMatchBenchmarks: async (matchId: number): Promise<PlayerBenchmarkDto[]> => {
+    return apiClient.get(`/Matches/${matchId}/benchmarks`);
+  },
+
 };

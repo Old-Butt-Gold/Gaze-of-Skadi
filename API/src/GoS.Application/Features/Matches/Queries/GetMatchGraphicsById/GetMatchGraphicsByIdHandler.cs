@@ -109,7 +109,7 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
             PlayerIndex = index,
             GoldPerMinute = CreateMinuteValues(player.GoldEachMinute),
             XpPerMinute = CreateMinuteValues(player.XpEachMinute),
-            LastHitsPerMinute = CreateMinuteValues(player.LastHitsEachMinute)
+            LastHitsPerMinute = CreateMinuteValues(player.LastHitsEachMinute),
         });
 
     private IEnumerable<MinuteValueDto> CreateMinuteValues(IReadOnlyList<int> values) =>

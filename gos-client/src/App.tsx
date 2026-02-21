@@ -45,6 +45,7 @@ import {MatchChatTab} from "./components/matches/tabs/MatchChatTab.tsx";
 import {MatchCosmeticsTab} from "./components/matches/tabs/MatchCosmeticsTab.tsx";
 import {MatchActionsTab} from "./components/matches/tabs/MatchActionsTab.tsx";
 import {MatchItemsTab} from "./components/matches/tabs/MatchItemsTab.tsx";
+import {MatchBenchmarksTab} from "./components/matches/tabs/MatchBenchmarksTab.tsx";
 
 function App() {
     return (
@@ -102,6 +103,7 @@ function App() {
                 <Route path={`${APP_ROUTES.MATCHES}/:matchId`} element={<MatchDetailsPage />}>
                     <Route index element={<Navigate to="chat" replace />} />
 
+                    <Route path="benchmarks" element={<MatchBenchmarksTab />} />
                     <Route path="chat" element={<MatchChatTab />} />
                     <Route path="cosmetics" element={<MatchCosmeticsTab />} />
                     <Route path="actions" element={<MatchActionsTab />} />
