@@ -20,7 +20,6 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
         return new MatchGraphicsDto
         {
             Objectives = MapObjectives(match),
-            Teamfights = MapTeamfights(match),
             TeamAdvantages = MapTeamAdvantages(match),
             PlayerGraphs = MapPlayerGraphs(match.Players)
         };
@@ -88,26 +87,6 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
 
         return objectives.OrderBy(x => x.Time);
     }
-
-    private IEnumerable<TeamfightDto> MapTeamfights(Match match) =>
-        match.Teamfights.Select(tf => new TeamfightDto
-        {
-            Deaths = tf.Deaths,
-            Start = tf.Start,
-            End = tf.End,
-            Players = Enumerable.Range(0, tf.Players.Count)
-                .Select(i => CreateTeamfightPlayerState(tf.Players[i], i))
-                .OrderByDescending(x => x.GoldDelta)
-                .ToList()
-        });
-
-    private TeamfightPlayerStateDto CreateTeamfightPlayerState(TeamfightPlayer state, int index) =>
-        new()
-        {
-            PlayerIndex = index,
-            GoldDelta = state.GoldDelta,
-            WasDead = state.Deaths > 0
-        };
 
     private static IEnumerable<TeamAdvantageDto> MapTeamAdvantages(Match match)
     {

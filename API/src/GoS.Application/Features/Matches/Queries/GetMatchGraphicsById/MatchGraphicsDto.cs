@@ -4,27 +4,13 @@ using GoS.Domain.Matches.Enums;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
 
+// TODO move it to GetMatchTeamFightsByIdHandler
 public record ObjectiveDto
 {
     public required long Time { get; init; }
     public required BaseEnumDto<ObjectiveType> Type { get; init; }
     public required int? KillerPlayerIndex { get; init; }
     public required int? VictimPlayerIndex { get; init; }
-}
-
-public record TeamfightPlayerStateDto
-{
-    public required int PlayerIndex { get; init; }
-    public required long GoldDelta { get; init; }
-    public required bool WasDead { get; init; }
-}
-
-public record TeamfightDto
-{
-    public required long Start { get; init; }
-    public required long End { get; init; }
-    public required long Deaths { get; init; }
-    public required IEnumerable<TeamfightPlayerStateDto> Players { get; init; }
 }
 
 public record MinuteValueDto
@@ -44,7 +30,6 @@ public record PlayerGraphsDto
 public record MatchGraphicsDto
 {
     public required IEnumerable<ObjectiveDto> Objectives { get; init; }
-    public required IEnumerable<TeamfightDto> Teamfights { get; init; }
     public required IEnumerable<TeamAdvantageDto> TeamAdvantages { get; init; }
     public required IEnumerable<PlayerGraphsDto> PlayerGraphs { get; init; }
 }
