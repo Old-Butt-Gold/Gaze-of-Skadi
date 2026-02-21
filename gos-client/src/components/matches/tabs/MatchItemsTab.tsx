@@ -58,21 +58,23 @@ export const MatchItemsTab: React.FC = () => {
             .filter(item => showConsumables || !item.consumable);
 
         return (
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 flex flex-col xl:flex-row gap-4 lg:gap-6 shadow-md hover:border-[#4a5568] transition-colors relative">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 lg:p-5 flex flex-col xl:flex-row gap-5 lg:gap-6 shadow-md hover:border-[#4a5568] hover:shadow-lg hover:bg-[#181b21] transition-all relative group/card">
 
-                <div className="flex items-center xl:items-start justify-center xl:justify-start gap-4 xl:w-56 shrink-0 xl:border-r border-[#2e353b] xl:pr-4">
+                <div className="flex items-center justify-center xl:justify-start gap-4 xl:w-60 shrink-0 xl:border-r border-[#2e353b]/70 xl:pr-6">
                     <MatchPlayerCell player={player} useIcon={false} />
                 </div>
 
-                <div className="flex-1 flex flex-wrap items-start gap-x-2 gap-y-4">
+                <div className="flex-1 flex flex-wrap items-center gap-x-3 gap-y-5">
                     {filteredItems.length === 0 ? (
-                        <span className="text-xs text-[#58606e] italic my-auto">
-                            No core items purchased. {showConsumables ? '' : 'Try enabling consumables.'}
-                        </span>
+                        <div className="flex items-center justify-center w-full xl:w-auto h-full min-h-16">
+                            <span className="text-xs text-[#58606e] italic bg-[#0f1114] px-4 py-2 rounded-lg border border-[#2e353b]/50">
+                                No items match the current filter. {showConsumables ? '' : 'Try enabling consumables.'}
+                            </span>
+                        </div>
                     ) : (
                         filteredItems.map((item, itemIdx) => (
-                            <div key={`${item.itemKey}-${itemIdx}`} className="flex flex-col items-center gap-1.5 group/timeline hover:-translate-y-0.5 transition-transform">
-                                <span className="text-xs font-mono font-bold text-[#808fa6] group-hover/timeline:text-[#e7d291] transition-colors bg-[#0b0e13] px-1.5 py-0.5 rounded border border-[#2e353b]">
+                            <div key={`${item.itemKey}-${itemIdx}`} className="flex flex-col items-center gap-1.5 group/timeline hover:-translate-y-1 transition-transform relative z-10">
+                                <span className="text-xs font-mono font-bold text-[#808fa6] group-hover/timeline:text-[#10b981] group-hover/timeline:border-[#10b981]/50 transition-colors bg-[#0b0e13] px-2 py-0.5 rounded-full border border-[#2e353b] shadow-sm">
                                     {formatDuration(item.itemBuyTime)}
                                 </span>
 
@@ -100,13 +102,13 @@ export const MatchItemsTab: React.FC = () => {
                             : "bg-[#0f1114] border-[#2e353b] text-[#58606e] hover:border-[#4a5568] hover:text-[#808fa6]"
                     )}
                 >
-                    <div className={clsx("w-2 h-2 rounded-full", showConsumables ? "bg-[#e7d291]" : "bg-[#2e353b]")} />
+                    <div className={clsx("w-2 h-2 rounded-full transition-colors", showConsumables ? "bg-[#e7d291]" : "bg-[#2e353b]")} />
                     Consumables
                 </button>
             </div>
 
-            <div className="space-y-3">
-                <h3 className="flex items-center gap-2 text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest px-2">
+            <div className="space-y-4">
+                <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
                     <Icon src="/assets/images/radiant.png" size={6} /> Radiant Builds
                 </h3>
                 <div className="flex flex-col gap-3">
@@ -114,8 +116,8 @@ export const MatchItemsTab: React.FC = () => {
                 </div>
             </div>
 
-            <div className="space-y-3">
-                <h3 className="flex items-center gap-2 text-lg font-serif font-bold text-red-400 uppercase tracking-widest px-2">
+            <div className="space-y-4">
+                <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-red-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg">
                     <Icon src="/assets/images/dire.png" size={6} /> Dire Builds
                 </h3>
                 <div className="flex flex-col gap-3">
