@@ -90,7 +90,7 @@ export const MatchItemsTab: React.FC = () => {
     return (
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 space-y-4">
 
-            <div className="flex flex-wrap items-center justify-end gap-3 bg-[#15171c] p-4 rounded-xl border border-[#2e353b] shadow-sm">
+            <div className="flex flex-wrap items-center justify-start gap-3 bg-[#15171c] p-4 rounded-xl border border-[#2e353b] shadow-sm">
                 <span className="text-xs font-bold text-[#58606e] uppercase tracking-widest mr-2">Filters:</span>
 
                 <button

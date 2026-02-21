@@ -120,7 +120,7 @@ export const MatchActionsTab: React.FC = () => {
 
             <div className="space-y-4">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg">
-                    <Icon src="/assets/images/radiant.png" size={6} /> Radiant Builds
+                    <Icon src="/assets/images/radiant.png" size={6} /> Radiant Actions
                 </h3>
                 <div className="flex flex-col gap-3">
                     {radiantPlayers.map(idx => <PlayerActionCard key={`rad-${idx}`} playerIdx={idx} />)}
@@ -129,7 +129,7 @@ export const MatchActionsTab: React.FC = () => {
 
             <div className="space-y-4">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-red-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg">
-                    <Icon src="/assets/images/dire.png" size={6} /> Dire Builds
+                    <Icon src="/assets/images/dire.png" size={6} /> Dire Actions
                 </h3>
                 <div className="flex flex-col gap-3">
                     {direPlayers.map(idx => <PlayerActionCard key={`dir-${idx}`} playerIdx={idx} />)}

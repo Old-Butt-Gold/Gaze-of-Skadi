@@ -38,7 +38,7 @@ interface TeamBenchmarkTableProps {
 const TeamBenchmarkTable: React.FC<TeamBenchmarkTableProps> = ({ teamPlayers, players, benchmarksMap }) => {
     return (
         <div className="overflow-x-auto">
-            <div className="min-w-[1000px] flex flex-col">
+            <div className="w-full min-w-max flex flex-col">
                 <div className="grid grid-cols-[minmax(220px,2fr)_repeat(7,minmax(110px,1fr))] gap-2 p-4 bg-[#1a1d24] border-y border-[#2e353b] text-xs font-black text-[#808fa6] uppercase tracking-widest">
                     <div className="flex items-center justify-center">Player</div>
                     {BENCHMARK_COLUMNS.map(col => (
@@ -60,7 +60,7 @@ const TeamBenchmarkTable: React.FC<TeamBenchmarkTableProps> = ({ teamPlayers, pl
                                 key={playerIdx}
                                 className="grid grid-cols-[minmax(220px,2fr)_repeat(7,minmax(110px,1fr))] gap-2 p-3 lg:p-4 border-b border-[#2e353b]/40 last:border-b-0 hover:bg-[#1a1d24] transition-colors"
                             >
-                                <div className="flex items-center justify-center shrink-0 border-r border-[#2e353b]/50 pr-2">
+                                <div className="flex items-center justify-start shrink-0 border-r border-[#2e353b]/50 pr-2">
                                     <MatchPlayerCell player={player} useIcon={false} />
                                 </div>
 
@@ -78,7 +78,7 @@ const TeamBenchmarkTable: React.FC<TeamBenchmarkTableProps> = ({ teamPlayers, pl
                                             <span className={clsx("font-black text-sm drop-shadow-sm", getPercentageColor(pct))}>
                                                 {displayPct}%
                                             </span>
-                                            <span className="text-xs font-mono text-[#58606e] bg-[#0b0e13] px-2 py-0.5 rounded border border-[#2e353b]/50">
+                                            <span className="text-sm font-mono text-[#58606e] bg-[#0b0e13] px-2 py-0.5 rounded border border-[#2e353b]/50">
                                                 {displayRaw}
                                             </span>
                                         </div>

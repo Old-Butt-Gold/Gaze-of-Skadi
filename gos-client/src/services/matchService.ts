@@ -26,6 +26,7 @@ export const matchService = {
   getMatchItems: async (matchId: number): Promise<PlayerItemsDto[]> => {
     return apiClient.get(`/Matches/${matchId}/items`);
   },
+
   getMatchBenchmarks: async (matchId: number): Promise<PlayerBenchmarkDto[]> => {
     return apiClient.get(`/Matches/${matchId}/benchmarks`);
   },
