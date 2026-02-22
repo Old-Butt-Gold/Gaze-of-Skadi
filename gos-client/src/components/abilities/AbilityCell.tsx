@@ -16,7 +16,6 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
     {abilityName, size = 10, className, showTooltip = true}) => {
     const { getAbility, isLoading } = useAbilities();
 
-    // 1. Loading State
     if (isLoading) {
         return (
             <div
@@ -29,7 +28,6 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
         );
     }
 
-    // 2. No Data / Null Name State
     if (!abilityName) {
         return (
             <div
@@ -44,7 +42,6 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
 
     const ability = getAbility(abilityName);
 
-    // 3. Ability Not Found in Dictionary
     if (!ability) {
         return (
             <div
@@ -60,13 +57,12 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
         );
     }
 
-    // 4. Success State
     const iconSrc = getAbilityIconUrl(abilityName, ability.is_innate, ability.img);
 
     const content = (
         <div
             className={clsx(
-                "relative group overflow-hidden border border-[#2e353b] bg-[#0f1114] shadow-sm hover:border-[#808fa6] transition-colors cursor-help rounded",
+                "relative group overflow-hidden shadow-sm hover:border-[#808fa6] transition-colors cursor-help rounded",
                 className
             )}
         >

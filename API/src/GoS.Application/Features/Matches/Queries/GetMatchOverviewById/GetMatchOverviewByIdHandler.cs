@@ -90,9 +90,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             Kills = player.Kills,
             Deaths = player.Deaths,
             Assists = player.Assists,
-            LastHits = player.LastHitsEachMinute.Count > 0
-                ? player.LastHitsEachMinute[^1]
-                : 0,
+            LastHits = player.LastHits,
             Denies = player.Denies,
             NetWorth = player.NetWorth,
             GoldPerMin = player.GoldPerMin,

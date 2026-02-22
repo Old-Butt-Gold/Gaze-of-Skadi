@@ -32,17 +32,25 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IResourceM
     private static PerformanceDataDto GetPerformanceForPlayer(Dictionary<string, HeroInfo> heroes, MatchPlayer player) =>
         new()
         {
-            MultiKills = player.MultiKills.Keys.Max(),
-            KillStreaks = player.KillStreaks.Keys.Max(),
+            MultiKills = player.MultiKills.Keys.Count > 0 
+                        ? int.Parse(player.MultiKills.Keys.Max()!)
+                        : null,
+            KillStreaks = player.KillStreaks.Keys.Count > 0 
+                        ? int.Parse(player.KillStreaks.Keys.Max()!)
+                        : null,
             StunsDuration = player.Stuns,
             Stacks = player.CampsStacked,
-            Dead = player.LifeStateDead,
+            DeadTime = player.LifeStateDead,
             PurchasedTpscroll = player.PurchaseTpscroll,
             Buybacks = player.BuybackCount,
             Pings = player.Pings,
-            MaxHeroHitAbilityName = player.MaxHeroHit.Inflictor,
-            MaxHeroHitHeroId = heroes.First(x => x.Value.Name == player.MaxHeroHit.Key).Value.Id,
-            MaxHeroHitValue = player.MaxHeroHit.Value,
-            PerfomanceOthers = player.PerfomanceOthers,
+            MaxHeroHit = player.MaxHeroHit is null 
+                        ? null
+                        : new MaxHeroHitDto
+                        {
+                            MaxHeroHitAbilityOrItemName = player.MaxHeroHit.Inflictor ?? "null",
+                            MaxHeroHitHeroId = heroes.First(x => x.Value.Name == player.MaxHeroHit.Key).Value.Id,
+                            MaxHeroHitValue = player.MaxHeroHit.Value,
+                        },
         };
 }

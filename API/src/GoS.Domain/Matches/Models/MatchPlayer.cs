@@ -312,7 +312,7 @@ public class MatchPlayer
 	/// Gets a dictionary with information on the highest damage instance the player inflicted
 	/// </summary>
 	[JsonPropertyName("max_hero_hit")]
-	public MaxHeroHit MaxHeroHit { get; init; } = new();
+	public MaxHeroHit? MaxHeroHit { get; init; }
 
 	/// <summary>
 	/// Gets a dictionary with information on the number of the number of multikills the player had
@@ -349,12 +349,6 @@ public class MatchPlayer
 	/// </summary>
 	[JsonPropertyName("permanent_buffs")]
 	public List<PermanentBuff> PermanentBuffs { get; init; } = [];
-
-    /// <summary>
-    /// Gets a list of abilities for Other section in Perfomance tab
-    /// </summary>
-    [JsonPropertyName("performance_others")]
-    public Dictionary<string, int> PerfomanceOthers { get; init; } = [];
 
 	/// <summary>
 	/// Gets a total number of pings
@@ -516,7 +510,7 @@ public class MatchPlayer
 	/// Gets a total number of buyback the player used
 	/// </summary>
 	[JsonPropertyName("buyback_count")]
-	public int BuybackCount { get; init; }
+	public int? BuybackCount { get; init; }
 
 	/// <summary>
 	/// Gets a lane efficiency of the player (value between 0-1)
@@ -541,7 +535,7 @@ public class MatchPlayer
 	/// Gets a total number of TP scrolls purchased by the player
 	/// </summary>
 	[JsonPropertyName("purchase_tpscroll")]
-	public int PurchaseTpscroll { get; init; }
+	public int? PurchaseTpscroll { get; init; }
 
 	/// <summary>
 	/// Gets amount of actions per minute
@@ -554,7 +548,7 @@ public class MatchPlayer
 	/// </summary>
 	// How much time player was dead
 	[JsonPropertyName("life_state_dead")]
-	public int LifeStateDead { get; init; }
+	public int? LifeStateDead { get; init; }
 
 	/// <summary>
 	/// Gets the rank tier of the player. Tens place indicates rank, ones place indicates stars.

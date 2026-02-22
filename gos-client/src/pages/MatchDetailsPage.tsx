@@ -8,7 +8,7 @@ import { NotFoundPage } from './NotFoundPage';
 import { BooleanState } from '../types/common';
 import type { PlayerInfoDto } from '../types/matchPlayers';
 
-export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items' | 'benchmarks' | 'graphics';
+export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items' | 'benchmarks' | 'graphics' | 'performance';
 
 export interface MatchOutletContext {
     matchId: number;
@@ -43,16 +43,17 @@ export const MatchDetailsPage: React.FC = () => {
 
     const tabs: { id: MatchTab; label: string; requiresParse?: boolean }[] = [
         { id: 'benchmarks', label: 'Benchmarks', requiresParse: false },
+        { id: 'performance', label: 'Performance', requiresParse: true },
+        { id: 'graphics', label: 'Graphics', requiresParse: true },
+        { id: 'items', label: 'Items', requiresParse: true },
+        { id: 'actions', label: 'Actions', requiresParse: true },
         { id: 'chat', label: 'Chat Log', requiresParse: true },
         { id: 'cosmetics', label: 'Cosmetics', requiresParse: true },
-        { id: 'actions', label: 'Actions', requiresParse: true },
-        { id: 'items', label: 'Items', requiresParse: true },
-        { id: 'graphics', label: 'Graphics', requiresParse: true },
     ];
 
     return (
         <div className="w-full min-h-screen pb-10 animate-fade-in bg-[#0b0e13]">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-2">
+            <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="border-b border-[#2e353b] mb-6 overflow-x-auto">
                     <nav className="flex space-x-8 min-w-max">
                         {tabs.map((tab) => (

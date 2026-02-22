@@ -47,6 +47,7 @@ import {MatchActionsTab} from "./components/matches/tabs/MatchActionsTab.tsx";
 import {MatchItemsTab} from "./components/matches/tabs/MatchItemsTab.tsx";
 import {MatchBenchmarksTab} from "./components/matches/tabs/MatchBenchmarksTab.tsx";
 import {MatchGraphicsTab} from "./components/matches/tabs/MatchGraphicsTab.tsx";
+import {MatchPerformancesTab} from "./components/matches/tabs/MatchPerformancesTab.tsx";
 
 function App() {
     return (
@@ -110,6 +111,7 @@ function App() {
                     <Route path="actions" element={<MatchActionsTab />} />
                     <Route path="items" element={<MatchItemsTab />} />
                     <Route path="graphics" element={<MatchGraphicsTab />} />
+                    <Route path="performance" element={<MatchPerformancesTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />

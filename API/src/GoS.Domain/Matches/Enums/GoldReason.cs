@@ -13,6 +13,6 @@ public enum GoldReason
     Neutrals = 14,
     Roshan = 15,
     Courier = 16,
-    Runes = 17,
+    BountyRunes = 17,
     Wards = 20,
 }

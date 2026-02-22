@@ -45,7 +45,7 @@ public sealed class MatchesController : ApiControllerBase
     public Task<IActionResult> GetMatchBenchmarksById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchBenchmarksByIdQuery(matchId), ct);
 
-    [HttpGet("performances")]
+    [HttpGet("performance")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(typeof(IEnumerable<PlayerPerformanceDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchPerformancesById([FromRoute] long matchId, CancellationToken ct = default)
