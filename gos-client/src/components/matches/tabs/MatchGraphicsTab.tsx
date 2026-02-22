@@ -2,7 +2,6 @@
 import {useOutletContext} from 'react-router-dom';
 import clsx from 'clsx';
 import {
-    Area,
     CartesianGrid,
     ComposedChart,
     Line,
