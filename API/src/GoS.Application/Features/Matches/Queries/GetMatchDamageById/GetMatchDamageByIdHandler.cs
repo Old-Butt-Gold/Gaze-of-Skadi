@@ -1,15 +1,12 @@
-﻿using AutoMapper;
-using GoS.Application.Abstractions;
-using GoS.Application.Dto;
+﻿using GoS.Application.Abstractions;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 
-internal sealed class GetMatchDamageByIdHandler(
-    ISender sender, IMapper mapper, IResourceManager resourceManager
-) : IRequestHandler<GetMatchDamageByIdQuery, IEnumerable<PlayerDamageDto>?>
+internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager resourceManager) 
+    : IRequestHandler<GetMatchDamageByIdQuery, IEnumerable<PlayerDamageDto>?>
 {
     private Dictionary<string, int> _heroNameToIdMap = new();
     private HashSet<string> _validHeroNames = [];
@@ -117,7 +114,6 @@ internal sealed class GetMatchDamageByIdHandler(
                 {
                     InflictorKey = inflictor.Key,
                     TotalDamage = validBreakdown.Sum(b => b.Damage),
-                    SourceType = DetermineDamageSourceType(inflictor.Key),
                     Breakdown = validBreakdown
                 };
             }).ToList();
@@ -134,21 +130,6 @@ internal sealed class GetMatchDamageByIdHandler(
             {
                 InflictorKey = kvp.Key,
                 TotalDamage = kvp.Value,
-                SourceType = mapper.Map<BaseEnumDto<DamageSourceType>>(DetermineDamageSourceType(kvp.Key)),
             }).ToList();
-    }
-
-    private DamageSourceType DetermineDamageSourceType(string key)
-    {
-        if (key == "null")
-            return DamageSourceType.AutoAttack;
-
-        if (_validAbilityKeys.Contains(key))
-            return DamageSourceType.Ability;
-
-        if (_validItemKeys.Contains(key))
-            return DamageSourceType.Item;
-
-        throw new ArgumentException($"Unknown damage source key: '{key}'. It is not 'null', not a valid ability key, and not a valid item key.", nameof(key));
     }
 }

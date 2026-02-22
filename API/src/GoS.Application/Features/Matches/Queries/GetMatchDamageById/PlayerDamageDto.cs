@@ -1,6 +1,4 @@
-﻿using GoS.Application.Dto;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchDamageById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 
 public record HeroKillsDto
 {
@@ -24,7 +22,6 @@ public record DamageInflictorDto
 {
     public required string InflictorKey { get; init; }
     public required int TotalDamage { get; init; }
-    public required DamageSourceType SourceType { get; init; }
     public required IEnumerable<DamageBreakdownDto> Breakdown { get; init; }
 }
 
@@ -32,14 +29,6 @@ public record DamageSummaryDto
 {
     public required string InflictorKey { get; init; }
     public required int TotalDamage { get; init; }
-    public required BaseEnumDto<DamageSourceType> SourceType { get; init; }
-}
-
-public enum DamageSourceType
-{
-    AutoAttack,
-    Ability,
-    Item
 }
 
 public record PlayerDamageDto
