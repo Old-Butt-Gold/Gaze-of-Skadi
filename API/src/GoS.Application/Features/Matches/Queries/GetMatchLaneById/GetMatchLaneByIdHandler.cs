@@ -1,13 +1,10 @@
-﻿using AutoMapper;
-using GoS.Application.Dto;
-using GoS.Application.Features.Matches.Queries.GetMatchById;
-using GoS.Domain.BaseEnums;
+﻿using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchLaneById;
 
-internal sealed class GetMatchLaneByIdHandler(ISender sender, IMapper mapper)
+internal sealed class GetMatchLaneByIdHandler(ISender sender)
     : IRequestHandler<GetMatchLaneByIdQuery, IEnumerable<PlayerLaneDto>?>
 {
     public async Task<IEnumerable<PlayerLaneDto>?> Handle(GetMatchLaneByIdQuery request, CancellationToken ct)
@@ -39,7 +36,6 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender, IMapper mapper)
 
         return new PlayerLaneDto {
             PlayerIndex = index,
-            LaneRole = mapper.Map<BaseEnumDto<LaneRole>>(player.LaneRole),
             LaneEfficiency = Math.Round(player.LaneEfficiency * 100, 2),
             LastHitsAt10Minutes = SafeGetMinuteValue(player.LastHitsEachMinute, 10),
             DeniesAt10Minutes = SafeGetMinuteValue(player.DeniesAtDifferentTimes, 10),

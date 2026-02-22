@@ -135,7 +135,7 @@ export const FacetTooltip: React.FC<Props> = ({ heroId, variantId }) => {
             }}
         >
             <div className={clsx(
-                "rounded-lg border p-2 flex flex-col gap-3 relative overflow-hidden bg-linear-to-b shadow-[0_10px_40px_rgba(0,0,0,0.9)] backdrop-blur-xl",
+                "rounded-lg border p-2 flex flex-col gap-2 relative overflow-hidden bg-linear-to-b shadow-[0_10px_40px_rgba(0,0,0,0.9)] backdrop-blur-xl",
                 theme.bg, theme.border, theme.glow
             )}>
                 {/* Header */}

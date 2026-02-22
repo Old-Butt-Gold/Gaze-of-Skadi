@@ -1,7 +1,4 @@
-﻿using GoS.Application.Dto;
-using GoS.Domain.BaseEnums;
-
-namespace GoS.Application.Features.Matches.Queries.GetMatchLaneById;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchLaneById;
 
 public record LanePositionDto
 {
@@ -19,7 +16,6 @@ public record LaneCreepsPerMinuteDto
 public record PlayerLaneDto
 {
     public required int PlayerIndex { get; init; }
-    public required BaseEnumDto<LaneRole> LaneRole { get; init; }
     public required double LaneEfficiency { get; init; }
     public required int LastHitsAt10Minutes { get; init; }
     public required int DeniesAt10Minutes { get; init; }
