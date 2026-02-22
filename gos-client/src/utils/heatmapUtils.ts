@@ -34,3 +34,14 @@ export const parseWardData = (
 
   return points.map(p => ({ ...p, value: p.value / (maxVal || 1) }));
 };
+
+export const parsePositionsToHeatmap =
+    (positions: { x: number; y: number; count: number }[])
+    : Record<string, Record<string, number>> => {
+    const result: Record<string, Record<string, number>> = {};
+    positions.forEach(pos => {
+        if (!result[pos.x]) result[pos.x] = {};
+        result[pos.x][pos.y] = pos.count;
+    });
+    return result;
+};

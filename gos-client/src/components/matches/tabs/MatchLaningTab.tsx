@@ -17,12 +17,13 @@ import { ErrorDisplay } from '../../ui/ErrorDisplay.tsx';
 import { Icon } from '../../Icon.tsx';
 import { HeroCell } from '../../heroes/HeroCell.tsx';
 import { getPlayerColor, isRadiantTeam } from '../../../utils/matchUtils.ts';
+import { parsePositionsToHeatmap } from '../../../utils/heatmapUtils.ts';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage.tsx';
 import type { PlayerInfoDto } from '../../../types/matchPlayers.ts';
-import type { PlayerLaneDto, LanePositionDto } from '../../../types/matchLaning.ts';
-import {MatchPlayerCell} from "../MatchPlayerCell.tsx";
-import {HeatmapCanvas} from "../../players/HeatmapCanvas.tsx";
-import {UnparsedMatchWarning} from "../UnparsedMatchWarning.tsx";
+import type { PlayerLaneDto } from '../../../types/matchLaning.ts';
+import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
+import { HeatmapCanvas } from "../../players/HeatmapCanvas.tsx";
+import { UnparsedMatchWarning } from "../UnparsedMatchWarning.tsx";
 
 interface PlayerTooltipProps extends TooltipProps<number, string> {
     players: PlayerInfoDto[];
@@ -68,15 +69,6 @@ const LaningGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
     return null;
 };
 
-const parsePositionsToHeatmap = (positions: LanePositionDto[]): Record<string, Record<string, number>> => {
-    const result: Record<string, Record<string, number>> = {};
-    positions.forEach(pos => {
-        if (!result[pos.x]) result[pos.x] = {};
-        result[pos.x][pos.y] = pos.count;
-    });
-    return result;
-};
-
 const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLaneDto | undefined, isRadiant: boolean }> = ({ player, laningData, isRadiant }) => {
     const heatmapData = useMemo(() => {
         if (!laningData?.lanePositions) return {};
@@ -86,45 +78,55 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
     const efficiency = laningData?.laneEfficiency ?? 0.0;
 
     return (
-        <div className={clsx(
-            "flex flex-col xl:flex-row gap-6 p-4 lg:p-5 border border-[#2e353b] bg-[#15171c] hover:bg-[#1a1d24] transition-colors shadow-sm rounded-xl",
-            isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
-        )}>
+        <div className={"flex flex-col xl:flex-row gap-6 p-4 lg:p-5 border border-[#2e353b] bg-[#15171c] hover:bg-[#1a1d24] transition-colors shadow-sm rounded-xl"}>
             <div className="flex items-center xl:w-56 shrink-0 xl:border-r border-[#2e353b]/50 xl:pr-4">
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
 
             <div className="flex-1 grid grid-cols-3 gap-3 items-center">
-                <div className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50">
-                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">Efficiency</span>
-                    <span className={clsx("font-mono font-bold text-sm", efficiency >= 70 ? "text-emerald-400" : efficiency >= 50 ? "text-yellow-400" : "text-e3e3e3")}>
+                <div
+                    className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
+                    title="Lane Efficiency: How well the player farmed compared to perfect creep score."
+                >
+                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">Efficiency</span>
+                    <span className={clsx("font-mono font-bold text-sm", efficiency >= 70 ? "text-emerald-400" : efficiency >= 50 ? "text-yellow-400" : "text-[#e3e3e3]")}>
                         {efficiency}%
                     </span>
                 </div>
-                <div className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50">
-                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">LH @ 10</span>
+                <div
+                    className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
+                    title="Last Hits at 10 minutes"
+                >
+                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">LH @ 10</span>
                     <span className="font-mono text-[#e7d291] font-bold text-sm">
                         {laningData?.lastHitsAt10Minutes ?? 0}
                     </span>
                 </div>
-                <div className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50">
-                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">DN @ 10</span>
+                <div
+                    className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
+                    title="Denies at 10 minutes"
+                >
+                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">DN @ 10</span>
                     <span className="font-mono text-red-400 font-bold text-sm">
                         {laningData?.deniesAt10Minutes ?? 0}
                     </span>
                 </div>
             </div>
 
-            <div className="flex items-center justify-center xl:border-l border-[#2e353b]/50 xl:pl-6 shrink-0 pt-2 xl:pt-0">
-                <div className="border border-[#2e353b] rounded bg-[#0b0e13] p-1 shadow-inner">
-                    <HeatmapCanvas data={heatmapData} width={150} />
+            <div className="flex items-center justify-center xl:border-l border-[#2e353b]/50 xl:pl-6 shrink-0 pt-2 xl:pt-0 relative group/heatmap">
+                <div className="border border-[#2e353b] rounded bg-[#0b0e13] p-1 shadow-inner cursor-zoom-in">
+                    <HeatmapCanvas data={heatmapData} width={120} />
+                </div>
+
+                <div className="absolute z-50 opacity-0 invisible group-hover/heatmap:opacity-100 group-hover/heatmap:visible transition-all duration-300 xl:right-[110%] xl:top-1/2 xl:-translate-y-1/2 bottom-full mb-4 left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 pointer-events-none">
+                    <div className="border-2 border-[#4a5568] rounded-lg bg-[#0f1114] p-2 shadow-2xl">
+                        <HeatmapCanvas data={heatmapData} width={400} />
+                    </div>
                 </div>
             </div>
         </div>
     );
 };
-
-// --- ОСНОВНОЙ КОМПОНЕНТ ---
 
 export const MatchLaningTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
@@ -146,7 +148,6 @@ export const MatchLaningTab: React.FC = () => {
             });
         }
 
-        // Формируем данные для LineChart (Крипстат по минутам)
         let formattedChartData: Record<string, number>[] = [];
         if (laningData && laningData.length > 0) {
             const minutesSet = new Set<number>();
@@ -173,9 +174,8 @@ export const MatchLaningTab: React.FC = () => {
     }
 
     return (
-        <div className="w-full lg:w-[95%] mx-auto mt-6 animate-in fade-in duration-500 space-y-8 pb-10">
+        <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 space-y-4 pb-10">
 
-            {/* ГРАФИК КРИПСТАТА */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
@@ -212,7 +212,6 @@ export const MatchLaningTab: React.FC = () => {
                 </div>
             </div>
 
-            {/* СЕКЦИЯ RADIANT */}
             <div className="space-y-3">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg w-full md:w-auto">
                     <Icon src="/assets/images/radiant.png" size={6} />
@@ -230,7 +229,6 @@ export const MatchLaningTab: React.FC = () => {
                 </div>
             </div>
 
-            {/* СЕКЦИЯ DIRE */}
             <div className="space-y-3">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-red-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg w-full md:w-auto">
                     <Icon src="/assets/images/dire.png" size={6} />
