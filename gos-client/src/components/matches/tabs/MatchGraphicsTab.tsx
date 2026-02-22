@@ -1,18 +1,27 @@
-﻿import React, { useMemo, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+﻿import React, {useMemo, useState} from 'react';
+import {useOutletContext} from 'react-router-dom';
 import clsx from 'clsx';
 import {
-    ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip,
-    LineChart, Line, ReferenceLine, type TooltipProps, ComposedChart, Area
+    Area,
+    CartesianGrid,
+    ComposedChart,
+    Line,
+    LineChart,
+    ReferenceLine,
+    ResponsiveContainer,
+    Tooltip,
+    type TooltipProps,
+    XAxis,
+    YAxis
 } from 'recharts';
-import { useMatchGraphics } from '../../../hooks/queries/useMatchGraphics';
-import { LoadingSpinner } from '../../ui/LoadingSpinner';
-import { ErrorDisplay } from '../../ui/ErrorDisplay';
-import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
-import { HeroCell } from '../../heroes/HeroCell';
-import { getPlayerColor } from '../../../utils/matchUtils';
-import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import {useMatchGraphics} from '../../../hooks/queries/useMatchGraphics';
+import {LoadingSpinner} from '../../ui/LoadingSpinner';
+import {ErrorDisplay} from '../../ui/ErrorDisplay';
+import {UnparsedMatchWarning} from '../UnparsedMatchWarning';
+import {HeroCell} from '../../heroes/HeroCell';
+import {getPlayerColor} from '../../../utils/matchUtils';
+import type {MatchOutletContext} from '../../../pages/MatchDetailsPage';
+import type {PlayerInfoDto} from '../../../types/matchPlayers';
 
 type GraphType = 'goldPerMinute' | 'xpPerMinute' | 'lastHitsPerMinute';
 
@@ -41,12 +50,12 @@ interface PlayerTooltipProps extends TooltipProps<number, string> {
 const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, description }) => {
     if (value == null) return null;
     return (
-        <div className="relative group/metric bg-[#15171c] border border-[#2e353b] rounded-xl p-4 flex flex-col items-center justify-center shadow-md flex-1 min-w-[150px] transition-all hover:bg-[#1a1d24] cursor-help">
+        <div className="relative group/metric bg-[#15171c] border border-[#2e353b] rounded-xl p-4 flex flex-col items-center justify-center shadow-md flex-1 min-w-37.5 transition-all hover:bg-[#1a1d24] cursor-help">
             <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest mb-1">{label}</span>
             <span className={clsx("text-2xl font-black font-mono drop-shadow-md", colorClass)}>
                 {value.toLocaleString()}
             </span>
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#e3e3e3] text-[#0b0e13] text-xs font-bold uppercase tracking-wider px-3 py-2 rounded shadow-xl opacity-0 invisible group-hover/metric:opacity-100 group-hover/metric:visible transition-all whitespace-nowrap z-50 pointer-events-none text-center">
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 bg-[#e3e3e3] text-[#0b0e13] text-[10px] font-bold uppercase tracking-wider px-3 py-2 rounded shadow-xl opacity-0 invisible group-hover/metric:opacity-100 group-hover/metric:visible transition-all whitespace-nowrap z-50 pointer-events-none text-center">
                 {description}
                 <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#e3e3e3]" />
             </div>
@@ -57,7 +66,7 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, d
 const AdvantageTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-xl shadow-2xl min-w-[200px] z-50">
+            <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-xl shadow-2xl min-w-50 z-50">
                 <p className="text-[#808fa6] font-mono font-bold text-xs mb-3 border-b border-[#2e353b]/50 pb-2 text-center">
                     Minute {label}:00
                 </p>
@@ -71,11 +80,11 @@ const AdvantageTooltip: React.FC<TooltipProps<number, string>> = ({ active, payl
 
                         return (
                             <div key={entry.dataKey} className={clsx("flex flex-col gap-1 p-2 rounded border", bgGlow)}>
-                                <span className="text-xs font-bold uppercase tracking-wider" style={{ color: entry.color }}>
+                                <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: entry.color }}>
                                     {entry.name} Advantage
                                 </span>
                                 <span className={clsx("text-sm font-mono font-black", teamColor)}>
-                                    {teamName} +{Math.abs(val).toLocaleString()}
+                                    {teamName} {val > 0 ? '+' : ''}{val.toLocaleString()}
                                 </span>
                             </div>
                         );
@@ -92,9 +101,9 @@ const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
         const sorted = [...payload].sort((a, b) => (b.value || 0) - (a.value || 0));
 
         return (
-            <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-xl shadow-2xl min-w-[240px] z-50">
+            <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-xl shadow-2xl min-w-60 z-50">
                 <p className="text-[#808fa6] font-mono font-bold text-xs mb-3 border-b border-[#2e353b]/50 pb-2 text-center">
-                    {label}:00
+                    Minute {label}:00
                 </p>
                 <div className="flex flex-col gap-1.5">
                     {sorted.map((entry) => {
@@ -106,9 +115,9 @@ const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
                         return (
                             <div key={entry.dataKey} className="flex items-center justify-between gap-4">
                                 <div className="flex items-center gap-2 min-w-0">
-                                        <HeroCell heroId={player.heroId} showName={false} />
+                                    <HeroCell heroId={player.heroId} showName={false} />
                                     <span
-                                        className="text-xs font-bold truncate max-w-[110px]"
+                                        className="text-xs font-bold truncate max-w-27.5"
                                         style={{ color: entry.color }}
                                     >
                                         {player.personaName || 'Unknown'}
@@ -127,8 +136,6 @@ const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
     return null;
 };
 
-// --- ОСНОВНОЙ КОМПОНЕНТ ---
-
 export const MatchGraphicsTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
     const { data: graphicsData, isLoading, isError } = useMatchGraphics(matchId, isParsed);
@@ -145,8 +152,7 @@ export const MatchGraphicsTab: React.FC = () => {
         const chartData = minutes.map(min => {
             const point: Record<string, number> = { minute: min };
             graphicsData.playerGraphs.forEach(p => {
-                const val = p[playerGraphType].find(m => m.minute === min)?.value || 0;
-                point[`player${p.playerIndex}`] = val;
+                point[`player${p.playerIndex}`] = p[playerGraphType].find(m => m.minute === min)?.value || 0;
             });
             return point;
         });
@@ -154,14 +160,22 @@ export const MatchGraphicsTab: React.FC = () => {
         return { playerChartData: chartData };
     }, [graphicsData, playerGraphType]);
 
-    // Вычисляем симметричный домен для графика преимущества (чтобы 0 всегда был в центре)
     const maxAdvantage = useMemo(() => {
         if (!graphicsData?.teamAdvantages) return 0;
         let max = 0;
         graphicsData.teamAdvantages.forEach(d => {
             max = Math.max(max, Math.abs(d.radiantGoldAdvantage), Math.abs(d.radiantXpAdvantage));
         });
-        return Math.ceil(max / 1000) * 1000; // Округляем до тысяч
+        return Math.ceil(max / 1000) * 1000;
+    }, [graphicsData]);
+
+    const gradientOffset = useMemo(() => {
+        if (!graphicsData?.teamAdvantages || graphicsData.teamAdvantages.length === 0) return 0.5;
+        const max = Math.max(...graphicsData.teamAdvantages.map(d => d.radiantGoldAdvantage));
+        const min = Math.min(...graphicsData.teamAdvantages.map(d => d.radiantGoldAdvantage));
+        if (max <= 0) return 0;
+        if (min >= 0) return 1;
+        return max / (max - min);
     }, [graphicsData]);
 
     if (!isParsed) return <UnparsedMatchWarning />;
@@ -171,7 +185,6 @@ export const MatchGraphicsTab: React.FC = () => {
     return (
         <div className="w-full lg:w-[95%] mx-auto mt-6 animate-in fade-in duration-500 space-y-8">
 
-            {/* СЕКЦИЯ МЕТРИК */}
             {(graphicsData.throw != null || graphicsData.comeback != null || graphicsData.loss != null || graphicsData.stomp != null) && (
                 <div className="flex flex-wrap gap-4 w-full">
                     <MetricWidget
@@ -201,11 +214,9 @@ export const MatchGraphicsTab: React.FC = () => {
                 </div>
             )}
 
-            {/* ОБЪЕДИНЕННЫЙ ГРАФИК ПРЕИМУЩЕСТВА */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-2 h-6 bg-gradient-to-b from-[#10b981] to-[#ef4444] rounded-sm"></span>
                         Team Advantage
                     </h3>
                     <div className="flex gap-4 text-xs font-bold uppercase tracking-widest">
@@ -214,41 +225,34 @@ export const MatchGraphicsTab: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="w-full h-[60vh]">
+                <div className="w-full h-[70vh]">
                     <ResponsiveContainer width="100%" height="100%">
-                        <ComposedChart data={graphicsData.teamAdvantages} margin={{ top: 10, right: 30, left: 20, bottom: 0 }}>
+                        <ComposedChart data={graphicsData.teamAdvantages} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
                             <defs>
-                                {/* Так как домен симметричный, 50% - это всегда ровно 0 на оси Y */}
                                 <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="50%" stopColor="#10b981" stopOpacity={0.25} />
-                                    <stop offset="50%" stopColor="#ef4444" stopOpacity={0.25} />
+                                    <stop offset={gradientOffset} stopColor="#10b981" stopOpacity={0.25} />
+                                    <stop offset={gradientOffset} stopColor="#ef4444" stopOpacity={0.25} />
                                 </linearGradient>
                             </defs>
 
                             <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
                             <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} />
-                            {/* Устанавливаем симметричный домен, чтобы 0 был точно в центре */}
                             <YAxis domain={[-maxAdvantage, maxAdvantage]} stroke="#58606e" tickFormatter={(val) => `${val > 0 ? '+' : ''}${val}`} tick={{ fontSize: 12, fill: '#808fa6' }} />
 
-                            {/* Отключаем анимацию для максимальной скорости */}
                             <Tooltip content={<AdvantageTooltip />} isAnimationActive={false} cursor={{ stroke: '#808fa6', strokeWidth: 1, strokeDasharray: '4 4' }} />
 
                             <ReferenceLine y={0} stroke="#808fa6" strokeWidth={2} />
 
-                            {/* Золото - это залитая область (Area) для лучшего визуального эффекта доты */}
-                            <Area type="monotone" dataKey="radiantGoldAdvantage" name="Gold" fill="url(#splitColor)" stroke="#e7d291" strokeWidth={2} activeDot={{ r: 6, strokeWidth: 0, fill: '#e7d291' }} />
-                            {/* Опыт - просто линия (Line) поверх золота */}
-                            <Line type="monotone" dataKey="radiantXpAdvantage" name="XP" stroke="#38bdf8" strokeWidth={2} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#38bdf8' }} />
+                            <Area type="natural" dataKey="radiantGoldAdvantage" name="Gold" fill="url(#splitColor)" stroke="#e7d291" strokeWidth={2} activeDot={{ r: 6, strokeWidth: 0, fill: '#e7d291' }} />
+                            <Line type="natural" dataKey="radiantXpAdvantage" name="XP" stroke="#38bdf8" strokeWidth={2} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#38bdf8' }} />
                         </ComposedChart>
                     </ResponsiveContainer>
                 </div>
             </div>
 
-            {/* ГРАФИКИ ИГРОКОВ */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-2 h-6 bg-[#808fa6] rounded-sm"></span>
                         Player Metrics
                     </h3>
 
@@ -286,7 +290,7 @@ export const MatchGraphicsTab: React.FC = () => {
                             {players.map((player, idx) => (
                                 <Line
                                     key={`player-${idx}`}
-                                    type="monotone"
+                                    type="natural"
                                     dataKey={`player${idx}`}
                                     stroke={getPlayerColor(player.playerSlot.value)}
                                     strokeWidth={2}
