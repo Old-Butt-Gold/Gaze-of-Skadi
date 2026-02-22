@@ -33,5 +33,7 @@
   "npc_dota_goodguys_tower3_mid": "Radiant Mid T3",
   "npc_dota_goodguys_tower3_top": "Radiant Top T3",
   "npc_dota_badguys_tower4": "Dire T4 Towers",
-  "npc_dota_goodguys_tower4": "Radiant T4 Towers"
+  "npc_dota_goodguys_tower4": "Radiant T4 Towers",
+  "npc_dota_goodguys_healers": "Radiant Shrines",
+  "npc_dota_badguys_healers": "Dire Shrines"
 }

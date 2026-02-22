@@ -1,5 +1,4 @@
 ﻿using GoS.Application.Features.Matches.Queries.GetMatchById;
-using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
