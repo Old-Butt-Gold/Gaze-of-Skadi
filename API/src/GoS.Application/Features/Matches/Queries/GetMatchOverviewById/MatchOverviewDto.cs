@@ -26,13 +26,6 @@ public record AbilityUpgradeDto
     public required int AbilityId { get; init; }
 }
 
-public record TeamAdvantageDto
-{
-    public required int Minute { get; init; }
-    public required int RadiantGoldAdvantage { get; init; }
-    public required int RadiantXpAdvantage { get; init; }
-}
-
 public record ObjectiveDataDto
 {
     public required string Key { get; init; }
@@ -98,7 +91,6 @@ public record MatchOverviewDto
     public required Uri? ReplayUrl { get; init; }
     public required IEnumerable<PickBanDto> PicksBans { get; init; }
     public required IEnumerable<PlayerOverviewDto> Players { get; init; }
-    public required IEnumerable<TeamAdvantageDto> TeamAdvantages { get; init; }
     public required BaseEnumDto<BarracksStatus> DireBarracksStatus { get; init; }
     public required BaseEnumDto<BarracksStatus> RadiantBarracksStatus { get; init; }
     public required BaseEnumDto<TowerStatus> RadiantTowersStatus { get; init; }
@@ -108,8 +100,4 @@ public record MatchOverviewDto
     public required MatchTeamDto? RadiantTeam { get; set; }
     public required MatchTeamDto? DireTeam { get; set; }
     public required LeagueDto? League { get; set; }
-    public required int? Throw { get; init; }
-    public required int? Comeback { get; init; }
-    public required int? Loss { get; init; }
-    public required int? Stomp { get; init; }
 }

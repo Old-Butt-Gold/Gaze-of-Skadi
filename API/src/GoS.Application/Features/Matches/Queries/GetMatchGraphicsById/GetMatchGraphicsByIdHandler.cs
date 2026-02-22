@@ -1,14 +1,11 @@
-﻿using AutoMapper;
-using GoS.Application.Dto;
-using GoS.Application.Features.Matches.Queries.GetMatchById;
+﻿using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
-using GoS.Domain.Matches.Enums;
 using GoS.Domain.Matches.Models;
 using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
 
-internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper)
+internal sealed class GetMatchGraphicsByIdHandler(ISender sender)
     : IRequestHandler<GetMatchGraphicsByIdQuery, MatchGraphicsDto?>
 {
     public async Task<MatchGraphicsDto?> Handle(
@@ -19,73 +16,13 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender, IMapper mapper
 
         return new MatchGraphicsDto
         {
-            Objectives = MapObjectives(match),
             TeamAdvantages = MapTeamAdvantages(match),
-            PlayerGraphs = MapPlayerGraphs(match.Players)
+            PlayerGraphs = MapPlayerGraphs(match.Players),
+            Throw = match.Throw,
+            Comeback = match.Comeback,
+            Loss = match.Loss,
+            Stomp = match.Stomp,
         };
-    }
-
-    private IEnumerable<ObjectiveDto> MapObjectives(Match match)
-    {
-        var objectives = new List<ObjectiveDto>();
-
-        var firstBlood = match.Objectives
-            .FirstOrDefault(o => o.Type == ObjectiveType.ChatMessageFirstBlood);
-
-        if (firstBlood?.Slot is not null && firstBlood.Time.HasValue)
-        {
-            var killerIndex = (int)firstBlood.Slot;
-
-            int? victimIndex = null;
-
-            if (int.TryParse(firstBlood.Key?.GetRawText().Trim('"'), out var keyIndex))
-            {
-                victimIndex = keyIndex >= 0 && keyIndex < match.Players.Count
-                    ? keyIndex
-                    : null;
-            }
-
-            objectives.Add(new ObjectiveDto
-            {
-                Time = firstBlood.Time.Value,
-                Type = mapper.Map<BaseEnumDto<ObjectiveType>>(firstBlood.Type),
-                KillerPlayerIndex = killerIndex >= 0 && killerIndex < match.Players.Count
-                    ? killerIndex
-                    : null,
-                VictimPlayerIndex = victimIndex
-            });
-        }
-
-        var roshanKills = match.Objectives
-            .Where(o => o is { Type: ObjectiveType.ChatMessageRoshanKill, Time: not null });
-
-        objectives.AddRange(roshanKills.Select(roshanKill => new ObjectiveDto
-        {
-            Time = roshanKill.Time!.Value,
-            Type = mapper.Map<BaseEnumDto<ObjectiveType>>(roshanKill.Type),
-            KillerPlayerIndex = null,
-            VictimPlayerIndex = null
-        }));
-
-        var tormentorKills = match.Objectives
-            .Where(x => x is { Type: ObjectiveType.ChatMessageTormentorKill, Time: not null, Slot: not null });
-
-        objectives.AddRange(tormentorKills.Select(tormentorKill =>
-        {
-            var killerIndex = (int)tormentorKill.Slot!;
-
-            return new ObjectiveDto
-            {
-                Time = tormentorKill.Time!.Value,
-                Type = mapper.Map<BaseEnumDto<ObjectiveType>>(tormentorKill.Type),
-                KillerPlayerIndex = killerIndex >= 0 && killerIndex < match.Players.Count
-                    ? killerIndex
-                    : null,
-                VictimPlayerIndex = null
-            };
-        }));
-
-        return objectives.OrderBy(x => x.Time);
     }
 
     private static IEnumerable<TeamAdvantageDto> MapTeamAdvantages(Match match)

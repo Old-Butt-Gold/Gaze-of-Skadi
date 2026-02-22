@@ -3,7 +3,6 @@
 public record PlayerCastsDto
 {
     public required int PlayerIndex { get; init; }
-
     public required IEnumerable<AbilityCastDto> Abilities { get; set; }
     public required IEnumerable<ItemCastDto> Items { get; set; }
     public required IEnumerable<HitCastDto> Hits { get; set; }

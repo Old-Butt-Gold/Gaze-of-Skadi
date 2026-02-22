@@ -26,9 +26,9 @@ public record PlayerEarningsDto
     public required int CouriersKilled { get; init; }
     public required int RoshanKills { get; init; }
     public required int ObserverKills { get; init; }
+    public required int NecronomiconKills { get; set; }
+    public required int SentryKills { get; set; }
     public required IEnumerable<LastHitsSnapshotDto> LastHits { get; init; }
     public required IEnumerable<IncomeReasonDto<GoldReason>> GoldReasons { get; init; }
     public required IEnumerable<IncomeReasonDto<XpReason>> XpReasons { get; init; }
-    public required int NecronomiconKills { get; set; }
-    public required int SentryKills { get; set; }
 }

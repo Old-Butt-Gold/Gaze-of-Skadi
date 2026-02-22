@@ -1,16 +1,10 @@
-﻿using GoS.Application.Dto;
-using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
-using GoS.Domain.Matches.Enums;
+﻿namespace GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
 
-namespace GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
-
-// TODO move it to GetMatchTeamFightsByIdHandler
-public record ObjectiveDto
+public record TeamAdvantageDto
 {
-    public required long Time { get; init; }
-    public required BaseEnumDto<ObjectiveType> Type { get; init; }
-    public required int? KillerPlayerIndex { get; init; }
-    public required int? VictimPlayerIndex { get; init; }
+    public required int Minute { get; init; }
+    public required int RadiantGoldAdvantage { get; init; }
+    public required int RadiantXpAdvantage { get; init; }
 }
 
 public record MinuteValueDto
@@ -29,7 +23,26 @@ public record PlayerGraphsDto
 
 public record MatchGraphicsDto
 {
-    public required IEnumerable<ObjectiveDto> Objectives { get; init; }
     public required IEnumerable<TeamAdvantageDto> TeamAdvantages { get; init; }
     public required IEnumerable<PlayerGraphsDto> PlayerGraphs { get; init; }
+
+    /// <summary>
+    /// Величина "закинутого" преимущества. Максимальное золото, которое вела проигравшая команда перед тем, как проиграть.
+    /// </summary>
+    public required int? Throw { get; init; }
+
+    /// <summary>
+    /// Величина камбэка. Максимальное отставание по золоту, которое успешно отыграла победившая команда.
+    /// </summary>
+    public required int? Comeback { get; init; }
+
+    /// <summary>
+    /// Глубина поражения. Максимальное отставание по золоту, зафиксированное у проигравшей команды в любой момент игры.
+    /// </summary>
+    public required int? Loss { get; init; }
+
+    /// <summary>
+    /// Степень доминации (разгром). Максимальное преимущество по золоту, которого достигла победившая команда.
+    /// </summary>
+    public required int? Stomp { get; init; }
 }

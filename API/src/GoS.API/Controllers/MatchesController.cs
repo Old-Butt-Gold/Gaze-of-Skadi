@@ -107,7 +107,7 @@ public sealed class MatchesController : ApiControllerBase
 
     [HttpGet("teamfights")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<TeamfightDetailedDto>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<TotalTeamfightInformationDto>), StatusCodes.Status200OK)]
     public Task<IActionResult> GetMatchTeamfightsById([FromRoute] long matchId, CancellationToken ct = default)
         => HandleQueryAsync(new GetMatchTeamfightsByIdQuery(matchId), ct);
 

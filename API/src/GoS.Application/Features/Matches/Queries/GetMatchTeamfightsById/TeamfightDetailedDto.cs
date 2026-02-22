@@ -1,5 +1,6 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
+using GoS.Domain.Matches.Enums;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 
@@ -53,4 +54,18 @@ public record TeamfightDetailedDto
     public required long GoldAdvantage { get; init; }
     public required BaseEnumDto<TeamEnum> Winner { get; init; }
     public required IEnumerable<TeamfightPlayerDto> Players { get; init; }
+}
+
+public record ObjectiveDto
+{
+    public required long Time { get; init; }
+    public required BaseEnumDto<ObjectiveType> Type { get; init; }
+    public required int? KillerPlayerIndex { get; init; }
+    public required int? VictimPlayerIndex { get; init; }
+}
+
+public record TotalTeamfightInformationDto
+{
+    public required IEnumerable<ObjectiveDto> Objectives { get; init; }
+    public required IEnumerable<TeamfightDetailedDto> Teamfights { get; init; }
 }

@@ -45,10 +45,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             Region = mapper.Map<BaseEnumDto<Region>>(match.Region),
             ReplayUrl = match.ReplayUrl,
             PicksBans = MapPicksBans(match.PicksBans),
-            Players = match.Players.Select(MapPlayerOverview)
-                .ToList(),
-            TeamAdvantages = MapTeamAdvantages(match)
-                .ToList(),
+            Players = match.Players.Select(MapPlayerOverview).ToList(),
             DireBarracksStatus = mapper.Map<BaseEnumDto<BarracksStatus>>(match.BarracksStatusDire),
             RadiantBarracksStatus = mapper.Map<BaseEnumDto<BarracksStatus>>(match.BarracksStatusRadiant),
             RadiantTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusRadiant),
@@ -60,10 +57,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             RadiantTeam = mapper.Map<MatchTeamDto?>(match.RadiantTeam),
             DireTeam = mapper.Map<MatchTeamDto?>(match.DireTeam),
             League = mapper.Map<LeagueDto?>(match.League),
-            Throw = match.Throw,
-            Comeback = match.Comeback,
-            Loss = match.Loss,
-            Stomp = match.Stomp,
         };
 
     private IEnumerable<PickBanDto> MapPicksBans(IEnumerable<PickBan>? picksBans)
@@ -164,28 +157,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         }
 
         return items;
-    }
-
-    private IEnumerable<TeamAdvantageDto> MapTeamAdvantages(Match match)
-    {
-        var goldCount = match.RadiantGoldAdvantage.Count;
-        var xpCount = match.RadiantXpAdvantage.Count;
-        var minuteCount = Math.Min(goldCount, xpCount);
-
-        if (minuteCount == 0) return [];
-
-        var advantages = new List<TeamAdvantageDto>();
-        for (var minute = 0; minute < minuteCount; minute++)
-        {
-            advantages.Add(new TeamAdvantageDto
-            {
-                Minute = minute,
-                RadiantGoldAdvantage = match.RadiantGoldAdvantage[minute],
-                RadiantXpAdvantage = match.RadiantXpAdvantage[minute]
-            });
-        }
-
-        return advantages;
     }
 
     private IEnumerable<ObjectiveDataDto> GetObjectiveDataForPlayer(MatchPlayer player) =>

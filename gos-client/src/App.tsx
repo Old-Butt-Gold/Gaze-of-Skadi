@@ -46,6 +46,7 @@ import {MatchCosmeticsTab} from "./components/matches/tabs/MatchCosmeticsTab.tsx
 import {MatchActionsTab} from "./components/matches/tabs/MatchActionsTab.tsx";
 import {MatchItemsTab} from "./components/matches/tabs/MatchItemsTab.tsx";
 import {MatchBenchmarksTab} from "./components/matches/tabs/MatchBenchmarksTab.tsx";
+import {MatchGraphicsTab} from "./components/matches/tabs/MatchGraphicsTab.tsx";
 
 function App() {
     return (
@@ -73,7 +74,7 @@ function App() {
                 </Route>
 
                 <Route path={APP_ROUTES.NEWS} element={<NewsPage />} />
-                <Route path={APP_ROUTES.MATCHES_QUEUE} element={<PlayersQueuePage />} />
+                <Route path={APP_ROUTES.MATCH_QUEUE} element={<PlayersQueuePage />} />
                 <Route path={APP_ROUTES.META} element={<HeroesMetaPage />} />
                 <Route path={APP_ROUTES.MATCHES} element={<MatchesTimelinePage />} />
 
@@ -108,6 +109,7 @@ function App() {
                     <Route path="cosmetics" element={<MatchCosmeticsTab />} />
                     <Route path="actions" element={<MatchActionsTab />} />
                     <Route path="items" element={<MatchItemsTab />} />
+                    <Route path="graphics" element={<MatchGraphicsTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />
