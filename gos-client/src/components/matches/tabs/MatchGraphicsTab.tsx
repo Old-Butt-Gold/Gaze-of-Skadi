@@ -84,7 +84,7 @@ const AdvantageTooltip: React.FC<TooltipProps<number, string>> = ({ active, payl
                                     {entry.name} Advantage
                                 </span>
                                 <span className={clsx("text-sm font-mono font-black", teamColor)}>
-                                    {teamName} {val > 0 ? '+' : ''}{val.toLocaleString()}
+                                    {teamName} +{Math.abs(val).toLocaleString()}
                                 </span>
                             </div>
                         );
