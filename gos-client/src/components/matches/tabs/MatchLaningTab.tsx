@@ -88,7 +88,7 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
                     className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
                     title="Lane Efficiency: How well the player farmed compared to perfect creep score."
                 >
-                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">Efficiency</span>
+                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">Efficiency</span>
                     <span className={clsx("font-mono font-bold text-sm", efficiency >= 70 ? "text-emerald-400" : efficiency >= 50 ? "text-yellow-400" : "text-[#e3e3e3]")}>
                         {efficiency}%
                     </span>
@@ -97,7 +97,7 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
                     className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
                     title="Last Hits at 10 minutes"
                 >
-                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">LH @ 10</span>
+                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">LH @ 10</span>
                     <span className="font-mono text-[#e7d291] font-bold text-sm">
                         {laningData?.lastHitsAt10Minutes ?? 0}
                     </span>
@@ -106,7 +106,7 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
                     className="flex flex-col items-center justify-center h-16 w-full p-2 rounded bg-[#0b0e13] border border-[#2e353b]/50 cursor-help"
                     title="Denies at 10 minutes"
                 >
-                    <span className="text-[10px] text-[#808fa6] font-bold uppercase tracking-wider mb-1">DN @ 10</span>
+                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1">DN @ 10</span>
                     <span className="font-mono text-red-400 font-bold text-sm">
                         {laningData?.deniesAt10Minutes ?? 0}
                     </span>
@@ -114,12 +114,12 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
             </div>
 
             <div className="flex items-center justify-center xl:border-l border-[#2e353b]/50 xl:pl-6 shrink-0 pt-2 xl:pt-0 relative group/heatmap">
-                <div className="border border-[#2e353b] rounded bg-[#0b0e13] p-1 shadow-inner cursor-zoom-in">
+                <div className="border border-[#2e353b] rounded bg-[#0b0e13] shadow-inner cursor-zoom-in">
                     <HeatmapCanvas data={heatmapData} width={120} />
                 </div>
 
-                <div className="absolute z-50 opacity-0 invisible group-hover/heatmap:opacity-100 group-hover/heatmap:visible transition-all duration-300 xl:right-[110%] xl:top-1/2 xl:-translate-y-1/2 bottom-full mb-4 left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 pointer-events-none">
-                    <div className="border-2 border-[#4a5568] rounded-lg bg-[#0f1114] p-2 shadow-2xl">
+                <div className="absolute z-50 opacity-0 invisible group-hover/heatmap:opacity-100 group-hover/heatmap:visible transition-all duration-300 xl:right-[110%] bottom-full mb-4 left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 xl:bottom-[-20px] xl:mb-0 pointer-events-none">
+                    <div className="border-2 border-[#4a5568] rounded-lg bg-[#0f1114] shadow-2xl">
                         <HeatmapCanvas data={heatmapData} width={400} />
                     </div>
                 </div>

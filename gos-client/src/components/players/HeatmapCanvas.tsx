@@ -24,8 +24,8 @@ export const HeatmapCanvas: React.FC<Props> = ({ data, width }) => {
         heatmapInstance.current = h337.create({
             container: containerRef.current,
             radius: width * 0.05,
-            maxOpacity: 0.55,
-            minOpacity: 0,
+            maxOpacity: 0.8,
+            minOpacity: 0.05,
             blur: 0.90,
             backgroundColor: 'rgba(0,0,0,0)',
             gradient: {
