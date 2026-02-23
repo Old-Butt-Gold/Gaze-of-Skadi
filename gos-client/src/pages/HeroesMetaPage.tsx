@@ -155,8 +155,8 @@ export const HeroesMetaPage: React.FC = () => {
     const { data: meta, isLoading, isError, refetch } = useHeroesMeta();
     const [isGlobalExpanded, setIsGlobalExpanded] = useState(false);
 
-    if (isLoading) return <div className="min-h-screen flex items-center justify-center"><LoadingSpinner text="Analyzing the Meta..." /></div>;
-    if (isError || !meta) return <div className="min-h-screen flex items-center justify-center"><ErrorDisplay message="Failed to load meta data" onRetry={refetch} /></div>;
+    if (isLoading) return <LoadingSpinner text="Analyzing the Meta..." />;
+    if (isError || !meta) return <ErrorDisplay message="Failed to load meta data" onRetry={refetch} />;
 
     const totalHeroesCount = meta.heroesPos1?.length || 0;
 

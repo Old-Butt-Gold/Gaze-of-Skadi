@@ -24,8 +24,8 @@ export const MatchChatTab: React.FC = () => {
         return <UnparsedMatchWarning />;
     }
 
-    if (isLoading) return <div className="mt-10"><LoadingSpinner text="Decrypting Chat Logs..." /></div>;
-    if (isError) return <div className="mt-10"><ErrorDisplay message="Failed to load chat." /></div>;
+    if (isLoading) return <LoadingSpinner text="Decrypting Chat Logs..." />;
+    if (isError) return <ErrorDisplay message="Failed to load chat." />;
     if (!chatData || chatData.length === 0) {
         return <div className="text-center text-[#808fa6] py-10 bg-[#15171c] rounded-xl border border-[#2e353b] mt-6 w-full lg:w-[90%] mx-auto">No chat messages found in this match.</div>;
     }

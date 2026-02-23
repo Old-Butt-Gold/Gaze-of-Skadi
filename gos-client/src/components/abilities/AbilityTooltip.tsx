@@ -114,7 +114,7 @@ export const AbilityTooltip: React.FC<Props> = ({ abilityName, children }) => {
                     </div>
 
                     <div className="flex flex-col justify-center relative z-10 w-full min-w-0">
-                        <h4 className="text-white font-bold text-lg leading-tight font-serif uppercase tracking-wide truncate">
+                        <h4 className="text-white font-bold text-lg leading-tight font-serif uppercase tracking-wide">
                             {ability.dname}
                         </h4>
 

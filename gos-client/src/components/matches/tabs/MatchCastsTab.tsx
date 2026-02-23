@@ -1,6 +1,5 @@
 ﻿import React, { useMemo } from 'react';
 import { useOutletContext } from 'react-router-dom';
-import clsx from 'clsx';
 import { useMatchCasts } from '../../../hooks/queries/useMatchCasts';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
@@ -53,17 +52,14 @@ const AbilityCastItem: React.FC<{ ability: AbilityCastDto }> = ({ ability }) => 
     );
 };
 
-const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsDto | undefined, isRadiant: boolean }> = ({ player, castsData, isRadiant }) => {
+const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsDto | undefined }> = ({ player, castsData }) => {
 
     const sortedAbilities = useMemo(() => [...(castsData?.abilities || [])].sort((a, b) => b.timesUsed - a.timesUsed), [castsData]);
     const sortedItems = useMemo(() => [...(castsData?.items || [])].sort((a, b) => b.timesUsed - a.timesUsed), [castsData]);
     const sortedHits = useMemo(() => [...(castsData?.hits || [])].sort((a, b) => b.hitCount - a.hitCount), [castsData]);
 
     return (
-        <div className={clsx(
-            "flex flex-col xl:flex-row gap-5 lg:gap-6 p-4 lg:p-5 border border-[#2e353b] bg-[#15171c] hover:bg-[#1a1d24] transition-colors shadow-sm rounded-xl",
-            isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
-        )}>
+        <div className={"flex flex-col xl:flex-row gap-5 lg:gap-6 p-4 lg:p-5 border border-[#2e353b] bg-[#15171c] hover:bg-[#1a1d24] transition-colors shadow-sm rounded-xl"}>
             <div className="flex items-center justify-center xl:w-56 shrink-0 xl:border-r border-[#2e353b]/50 xl:pr-4">
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
@@ -178,7 +174,6 @@ export const MatchCastsTab: React.FC = () => {
                             key={`rad-${idx}`}
                             player={players[idx]}
                             castsData={castsMap.get(idx)}
-                            isRadiant={true}
                         />
                     ))}
                 </div>
@@ -195,7 +190,6 @@ export const MatchCastsTab: React.FC = () => {
                             key={`dir-${idx}`}
                             player={players[idx]}
                             castsData={castsMap.get(idx)}
-                            isRadiant={false}
                         />
                     ))}
                 </div>
