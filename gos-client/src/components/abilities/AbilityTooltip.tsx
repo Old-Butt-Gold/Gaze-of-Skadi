@@ -109,7 +109,7 @@ export const AbilityTooltip: React.FC<Props> = ({ abilityName, children }) => {
                         <div className="absolute inset-0 bg-gradient-to-r from-[#e7d291]/10 to-transparent pointer-events-none" />
                     )}
 
-                    <div className="w-16 h-16 bg-[#0f1114] border border-[#2e353b] flex items-center justify-center overflow-hidden rounded-sm shrink-0 relative z-10">
+                    <div className="w-16 h-16 flex items-center justify-center overflow-hidden rounded-sm shrink-0 relative z-10">
                         <Icon src={iconSrc ?? "unknown"} fallbackSrc="/assets/images/ability_unknown.png" />
                     </div>
 
