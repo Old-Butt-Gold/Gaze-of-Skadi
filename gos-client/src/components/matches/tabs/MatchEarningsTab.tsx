@@ -20,7 +20,7 @@ interface IndexedPlayer {
 
 const StatBox: React.FC<{ label: string; value: number; tooltip?: string }> = ({ label, value, tooltip }) => (
     <div className="flex flex-col items-center justify-center p-2 rounded bg-[#0b0e13]/50 border border-[#2e353b]/50 h-14 relative group/stat cursor-help">
-        <span className="text-[9px] text-[#808fa6] font-bold uppercase tracking-wider mb-1 text-center leading-none">{label}</span>
+        <span className="text-xs text-[#808fa6] font-bold uppercase tracking-wider mb-1 text-center leading-none">{label}</span>
         <span className={clsx("font-mono font-bold text-sm", value > 0 ? "text-[#e3e3e3]" : "text-[#58606e]")}>
             {value > 0 ? value.toLocaleString() : '-'}
         </span>
@@ -40,7 +40,7 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload
         const sortedPayload = [...payload].sort((a, b) => (Number(b.value) || 0) - (Number(a.value) || 0));
 
         return (
-            <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl flex flex-col gap-2 relative z-[1000]">
+            <div className="absolute -translate-y-full mb-2 bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl flex flex-col gap-2 z-50 pointer-events-none whitespace-nowrap">
                 {sortedPayload.map((entry) => (
                     <div key={entry.dataKey} className="flex items-center justify-between gap-6">
                         <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ const StackedBarRecharts: React.FC<{
                 </span>
             </div>
 
-            <div className="w-full h-4 relative overflow-hidden">
+            <div className="w-full h-6 relative flex items-center">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart layout="vertical" data={data.singleRowData} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
                         <XAxis type="number" hide domain={[0, maxDomain]} />
@@ -108,10 +108,14 @@ const StackedBarRecharts: React.FC<{
                             content={<CustomTooltip />}
                             cursor={{ fill: 'rgba(255, 255, 255, 0.05)' }}
                             allowEscapeViewBox={{ x: true, y: true }}
-                            wrapperStyle={{ zIndex: 1000 }}
+                            wrapperStyle={{
+                                zIndex: 1000,
+                                overflow: 'visible',
+                                pointerEvents: 'none'
+                            }}
                             isAnimationActive={false}
                         />
-                        {data.chartData.map((d) => (
+                        {data.chartData.map((d, ) => (
                             <Bar
                                 key={d.key}
                                 dataKey={d.key}
@@ -220,10 +224,10 @@ export const MatchEarningsTab: React.FC = () => {
     }
 
     return (
-        <div className="w-full lg:w-[95%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl">
+        <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
+            <div className="bg-[#15171c] border border-[#2e353b] shadow-xl">
 
-                <div className="hidden xl:grid grid-cols-[224px_1fr_1.5fr] bg-[#1a1d24] border-b border-[#2e353b] gap-6 rounded-t-xl">
+                <div className="hidden xl:grid grid-cols-[224px_1fr_1.5fr] bg-[#1a1d24] border-b border-[#2e353b] gap-6">
                     <div className="p-4 border-r border-[#2e353b]/50 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center">Player</div>
                     <div className="p-4 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center">Farming Stats</div>
                     <div className="p-4 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center">Income Reasons</div>
@@ -250,8 +254,8 @@ export const MatchEarningsTab: React.FC = () => {
                         <span className="text-red-400 font-serif font-bold uppercase tracking-widest text-sm">Dire Economics</span>
                     </div>
 
-                    {direPlayers.map((p, index) => (
-                        <div key={p.index} className={clsx(index === direPlayers.length - 1 && "rounded-b-xl overflow-hidden")}>
+                    {direPlayers.map((p, ) => (
+                        <div key={p.index}>
                             <PlayerEarningsCard
                                 player={p.info}
                                 earnings={earningsMap.get(p.index)}

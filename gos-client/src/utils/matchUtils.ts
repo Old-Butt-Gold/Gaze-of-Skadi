@@ -171,7 +171,7 @@ export const GOLD_REASONS: Record<number, { label: string, color: string }> = {
   [GoldReason.Roshan]: { label: "Roshan", color: "#f43f5e" },
   [GoldReason.Courier]: { label: "Courier", color: "#8b5cf6" },
   [GoldReason.BountyRunes]: { label: "Bounty Runes", color: "#facc15" },
-  [GoldReason.Wards]: { label: "Wards", color: "#0ea5e9" },
+  [GoldReason.Wards]: { label: "Wards", color: "#5ea5e9" },
 };
 
 export const XP_REASONS: Record<number, { label: string, color: string }> = {
