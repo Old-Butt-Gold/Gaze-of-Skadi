@@ -49,6 +49,7 @@ import {MatchBenchmarksTab} from "./components/matches/tabs/MatchBenchmarksTab.t
 import {MatchGraphicsTab} from "./components/matches/tabs/MatchGraphicsTab.tsx";
 import {MatchPerformancesTab} from "./components/matches/tabs/MatchPerformancesTab.tsx";
 import {MatchLaningTab} from "./components/matches/tabs/MatchLaningTab.tsx";
+import {MatchCastsTab} from "./components/matches/tabs/MatchCastsTab.tsx";
 
 function App() {
     return (
@@ -114,6 +115,7 @@ function App() {
                     <Route path="graphics" element={<MatchGraphicsTab />} />
                     <Route path="performance" element={<MatchPerformancesTab />} />
                     <Route path="laning" element={<MatchLaningTab />} />
+                    <Route path="casts" element={<MatchCastsTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />
