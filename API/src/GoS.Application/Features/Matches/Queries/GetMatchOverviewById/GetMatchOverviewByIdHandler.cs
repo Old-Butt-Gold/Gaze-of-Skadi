@@ -78,10 +78,12 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         const string aghanimKey = "ultimate_scepter";
 
         var aghanimShardBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.AghanimsShard)
-                               || player.PurchaseLog.Any(x => x.Key == shardKey);
+                               || player.PurchaseLog.Any(x => x.Key == shardKey)
+                               || player.AghanimsShard == BooleanState.True;
 
         var aghanimBuff = player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.UltimateScepter)
-                               || player.PurchaseLog.Any(x => x.Key == aghanimKey);
+                               || player.PurchaseLog.Any(x => x.Key == aghanimKey)
+                               || player.AghanimsScepter == BooleanState.True;
 
         return new PlayerOverviewDto
         {

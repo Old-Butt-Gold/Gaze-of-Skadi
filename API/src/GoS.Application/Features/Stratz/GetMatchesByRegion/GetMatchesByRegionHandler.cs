@@ -52,7 +52,7 @@ internal sealed class GetMatchesByRegionHandler(IRequester<StratzHttpRequesterOp
         var content = JsonContent.Create(graphqlQuery);
         content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-        var response = await requester.PostRequestAsync<MatchesByRegionResponse>("graphql", content, cancellationToken);
+        var response = await requester.PostRequestAsync<MatchesByRegionResponse>("graphql", null, content, cancellationToken);
 
         return new MatchesByRegionDto
         {

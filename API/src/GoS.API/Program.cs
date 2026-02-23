@@ -18,7 +18,7 @@ builder.Services.ConfigureSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
 builder.Services.ConfigureResourceManager();
-builder.Services.ConfigureRequester(builder.Configuration);
+builder.Services.ConfigureOpenDotaRequester(builder.Configuration);
 builder.Services.ConfigureStratzServices(builder.Configuration);
 builder.Services.ConfigureMemoryCache();
 builder.Services.ConfigureMediatR(builder.Configuration);

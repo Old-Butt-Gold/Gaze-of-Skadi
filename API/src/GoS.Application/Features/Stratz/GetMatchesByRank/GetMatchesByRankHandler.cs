@@ -66,7 +66,7 @@ internal sealed class GetMatchesByRankHandler(IRequester<StratzHttpRequesterOpti
         var content = JsonContent.Create(graphqlQuery);
         content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-        var response = await requester.PostRequestAsync<MatchesByRankResponse>("graphql", content, cancellationToken);
+        var response = await requester.PostRequestAsync<MatchesByRankResponse>("graphql", null, content, cancellationToken);
 
         return new MatchesByRankDto
         {

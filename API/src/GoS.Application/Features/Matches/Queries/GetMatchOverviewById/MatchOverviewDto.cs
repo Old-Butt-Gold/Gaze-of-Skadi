@@ -82,7 +82,7 @@ public record MatchOverviewDto
     public required int RadiantScore { get; init; }
     public required int DireScore { get; init; }
     public required BaseEnumDto<GameMode> GameMode { get; init; }
-    public BaseEnumDto<LobbyType> LobbyType { get; set; }
+    public required BaseEnumDto<LobbyType> LobbyType { get; set; }
     public required int Duration { get; init; }
     public long StartTime { get; set; }
     public required long EndTime { get; init; }

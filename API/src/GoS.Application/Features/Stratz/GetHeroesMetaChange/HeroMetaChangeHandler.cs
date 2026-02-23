@@ -84,7 +84,7 @@ internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOption
         var content = JsonContent.Create(graphqlQuery);
         content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-        var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", content, cancellationToken);
+        var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", null, content, cancellationToken);
 
         return new HeroMetaTimelineDto
         {

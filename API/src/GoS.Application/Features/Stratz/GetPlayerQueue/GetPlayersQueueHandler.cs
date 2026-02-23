@@ -55,7 +55,7 @@ internal sealed class GetPlayersQueueHandler(IRequester<StratzHttpRequesterOptio
         var content = JsonContent.Create(graphqlQuery);
         content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-        var playersRegions = await requester.PostRequestAsync<PlayersRegionsData?>("graphql", content, cancellationToken);
+        var playersRegions = await requester.PostRequestAsync<PlayersRegionsData?>("graphql", null, content, cancellationToken);
 
         var latestStats = playersRegions?.Data?.Stratz?.Page?.Matches?.MatchmakingStats ?? [];
 

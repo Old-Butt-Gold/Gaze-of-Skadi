@@ -85,7 +85,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
         var content = JsonContent.Create(graphqlQuery);
         content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-        var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", content, cancellationToken);
+        var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", null, content, cancellationToken);
 
         var pos1 = GroupAndSumHeroes(response?.Data?.HeroesPos1?.WinDay);
         var pos2 = GroupAndSumHeroes(response?.Data?.HeroesPos2?.WinDay);

@@ -13,7 +13,6 @@
     <ItemGroup>
       <PackageReference Include="AspNet.Security.OpenId" Version="9.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.3.0" />
-      <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.11" />
     </ItemGroup>
 
 </Project>

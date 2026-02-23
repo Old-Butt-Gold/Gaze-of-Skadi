@@ -51,7 +51,7 @@ internal sealed class GetMatchesByGameModeHandler(IRequester<StratzHttpRequester
             var content = JsonContent.Create(graphqlQuery);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-            var response = await requester.PostRequestAsync<MatchesByGameModeResponse>("graphql", content, cancellationToken);
+            var response = await requester.PostRequestAsync<MatchesByGameModeResponse>("graphql", null, content, cancellationToken);
 
             // Группируем и суммируем данные по месяцам для каждого режима
             return new MatchesByGameModeDto
