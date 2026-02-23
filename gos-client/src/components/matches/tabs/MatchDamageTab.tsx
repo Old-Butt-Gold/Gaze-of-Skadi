@@ -14,6 +14,11 @@ import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerDamageDto } from '../../../types/matchDamage';
 import type { PlayerInfoDto } from '../../../types/matchPlayers';
 
+interface IndexedPlayer {
+    info: PlayerInfoDto;
+    index: number;
+}
+
 const formatNumber = (num: number | undefined | null) => {
     if (!num || num === 0) return '-';
     if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
@@ -22,47 +27,49 @@ const formatNumber = (num: number | undefined | null) => {
 
 const MatrixGrid: React.FC<{
     title: string;
-    sourcePlayers: PlayerInfoDto[];
-    targetPlayers: PlayerInfoDto[];
+    sourcePlayers: IndexedPlayer[];
+    targetPlayers: IndexedPlayer[];
     damageMap: Map<number, PlayerDamageDto>;
     type: 'kills' | 'damage';
-}> = ({ title, sourcePlayers, targetPlayers, damageMap, type }) => {
+    isSourceRadiant: boolean;
+}> = ({ title, sourcePlayers, targetPlayers, damageMap, type, isSourceRadiant }) => {
     return (
         <div className="flex flex-col bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-sm flex-1 min-w-[300px]">
-            <div className="bg-[#1a1d24] border-b border-[#2e353b] p-3">
+            <div className="bg-[#1a1d24] border-b border-[#2e353b] p-3 flex justify-between items-center">
                 <span className="text-xs font-bold text-[#808fa6] uppercase tracking-widest">{title}</span>
             </div>
             <div className="overflow-x-auto">
                 <div className="min-w-max grid grid-cols-[auto_repeat(5,minmax(50px,1fr))_minmax(60px,1fr)]">
                     <div className="p-2 border-b border-r border-[#2e353b]/50 bg-[#0b0e13]/30" />
-                    {targetPlayers.map((tp, i) => (
-                        <div key={i} className="p-2 border-b border-[#2e353b]/50 bg-[#0b0e13]/30 flex items-center justify-center">
-                            <HeroCell heroId={tp.heroId} />
+                    {targetPlayers.map((tp) => (
+                        <div key={tp.index} className="p-2 border-b border-[#2e353b]/50 bg-[#0b0e13]/30 flex items-center justify-center">
+                            <HeroCell heroId={tp.info.heroId} />
                         </div>
                     ))}
                     <div className="p-2 border-b border-l border-[#2e353b]/50 bg-[#0b0e13]/50 flex items-center justify-center">
+                        <Icon size={8} src={isSourceRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"}/>
                     </div>
 
-                    {sourcePlayers.map((sp, i) => {
-                        const stats = damageMap.get(i);
+                    {sourcePlayers.map((sp) => {
+                        const stats = damageMap.get(sp.index);
                         let rowTotal = 0;
 
                         return (
-                            <React.Fragment key={i}>
+                            <React.Fragment key={sp.index}>
                                 <div className="p-2 border-r border-b border-[#2e353b]/50 bg-[#0b0e13]/30 flex items-center justify-center">
-                                    <HeroCell heroId={sp.heroId} />
+                                    <HeroCell heroId={sp.info.heroId} />
                                 </div>
-                                {targetPlayers.map((tp, i) => {
+                                {targetPlayers.map((tp) => {
                                     let val = 0;
                                     if (type === 'kills') {
-                                        val = stats?.killedHeroes.find(k => k.heroId === tp.heroId)?.times || 0;
+                                        val = stats?.killedHeroes.find(k => k.heroId === tp.info.heroId)?.times || 0;
                                     } else {
-                                        val = stats?.damageDealtToHeroes.find(d => d.heroId === tp.heroId)?.damage || 0;
+                                        val = stats?.damageDealtToHeroes.find(d => d.heroId === tp.info.heroId)?.damage || 0;
                                     }
                                     rowTotal += val;
 
                                     return (
-                                        <div key={i} className="p-2 border-b border-[#2e353b]/50 flex items-center justify-center hover:bg-[#1a1d24] transition-colors">
+                                        <div key={tp.index} className="p-2 border-b border-[#2e353b]/50 flex items-center justify-center transition-colors">
                                             <span className={clsx("font-mono text-xs font-bold", val > 0 ? (type === 'kills' ? "text-[#e3e3e3]" : "text-red-400") : "text-[#58606e]")}>
                                                 {type === 'damage' ? formatNumber(val) : (val === 0 ? '-' : val)}
                                             </span>
@@ -89,23 +96,23 @@ const PlayerDamageBreakdownRow: React.FC<{ player: PlayerInfoDto; data: PlayerDa
 
     return (
         <div className={clsx(
-            "flex flex-col xl:flex-row border-b border-[#2e353b]/50 hover:bg-[#1a1d24] transition-colors",
+            "flex flex-col xl:flex-row border-b border-[#2e353b]/50 transition-colors",
             isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
         )}>
-            <div className="flex items-center justify-center xl:w-56 shrink-0 xl:border-r border-[#2e353b]/50 p-4">
+            <div className="flex items-center justify-center xl:justify-start xl:w-[224px] shrink-0 xl:border-r border-[#2e353b]/50 p-4">
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
 
             <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 p-4">
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1.5">
                     {dealt.length > 0 ? dealt.map(inflictor => (
-                        <div key={inflictor.inflictorKey} className="flex items-center gap-3 p-0.5 rounded-lg ">
-                            <div className="flex flex-col items-center justify-center gap-1 shrink-0">
+                        <div key={inflictor.inflictorKey} className="flex items-center gap-3 p-0.5 rounded-lg transition-colors">
+                            <div className="flex flex-col items-center justify-center gap-1 shrink-0 w-12">
                                 <SourceIcon sourceName={inflictor.inflictorKey} />
                                 <span className="font-mono text-xs font-bold text-[#e7d291] leading-none">{formatNumber(inflictor.totalDamage)}</span>
                             </div>
                             <span className="text-[#58606e] text-xs flex items-center justify-center shrink-0">➔</span>
-                            <div className="flex flex-wrap items-center gap-2">
+                            <div className="flex flex-wrap items-center gap-2.5">
                                 {[...inflictor.breakdown].sort((a, b) => b.damage - a.damage).map(target => (
                                     <div key={target.targetHeroId} className="flex flex-col items-center justify-center gap-1">
                                         <HeroCell heroId={target.targetHeroId} />
@@ -114,16 +121,16 @@ const PlayerDamageBreakdownRow: React.FC<{ player: PlayerInfoDto; data: PlayerDa
                                 ))}
                             </div>
                         </div>
-                    )) : <span className="text-xs text-[#58606e] italic flex items-center h-full">No damage dealt.</span>}
+                    )) : <span className="text-xs text-[#58606e] italic flex items-center h-full px-2">No damage dealt.</span>}
                 </div>
 
-                <div className="flex flex-wrap gap-2 items-start content-start">
+                <div className="flex flex-wrap gap-3 items-start content-start">
                     {received.length > 0 ? received.map(inflictor => (
-                        <div key={inflictor.inflictorKey} className="flex flex-col items-center justify-center gap-1 p-1.5 rounded-lg">
+                        <div key={inflictor.inflictorKey} className="flex flex-col items-center justify-center gap-1 rounded-lg transition-colors w-12">
                             <SourceIcon sourceName={inflictor.inflictorKey} />
                             <span className="font-mono text-xs font-bold text-red-300 leading-none">{formatNumber(inflictor.totalDamage)}</span>
                         </div>
-                    )) : <span className="text-xs text-[#58606e] italic flex items-center h-full">No damage received.</span>}
+                    )) : <span className="text-xs text-[#58606e] italic flex items-center h-full px-2">No damage received.</span>}
                 </div>
             </div>
         </div>
@@ -135,14 +142,14 @@ export const MatchDamageTab: React.FC = () => {
     const { data: damageData, isLoading, isError } = useMatchDamage(matchId, isParsed);
 
     const { radiantPlayers, direPlayers, damageMap } = useMemo(() => {
-        const radiant: PlayerInfoDto[] = [];
-        const dire: PlayerInfoDto[] = [];
+        const radiant: IndexedPlayer[] = [];
+        const dire: IndexedPlayer[] = [];
         const map = new Map<number, PlayerDamageDto>();
 
         if (players && Array.isArray(players)) {
-            players.forEach(p => {
-                if (isRadiantTeam(p.isRadiant)) radiant.push(p);
-                else dire.push(p);
+            players.forEach((p, idx) => {
+                if (isRadiantTeam(p.isRadiant)) radiant.push({ info: p, index: idx });
+                else dire.push({ info: p, index: idx });
             });
         }
 
@@ -164,41 +171,52 @@ export const MatchDamageTab: React.FC = () => {
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 space-y-4 pb-10">
 
             <div className="space-y-4">
-                <div className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg w-full md:w-auto self-start">
+                <div className="flex items-center gap-3 px-4 py-2 bg-linear-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg w-full md:w-auto self-start">
                     <Icon src="/assets/images/radiant.png" size={6} />
                     <h3 className="text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest drop-shadow-sm">Radiant vs Dire</h3>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-4">
-                    <MatrixGrid title="Kills" sourcePlayers={radiantPlayers} targetPlayers={direPlayers} damageMap={damageMap} type="kills" />
-                    <MatrixGrid title="Damage" sourcePlayers={radiantPlayers} targetPlayers={direPlayers} damageMap={damageMap} type="damage" />
+                <div className="flex flex-col xl:flex-row gap-4">
+                    <MatrixGrid title="Kills" sourcePlayers={radiantPlayers} targetPlayers={direPlayers} damageMap={damageMap} type="kills" isSourceRadiant={true} />
+                    <MatrixGrid title="Damage" sourcePlayers={radiantPlayers} targetPlayers={direPlayers} damageMap={damageMap} type="damage" isSourceRadiant={true} />
                 </div>
             </div>
 
             <div className="space-y-4">
-                <div className="flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg w-full md:w-auto self-start">
+                <div className="flex items-center gap-3 px-4 py-2 bg-linear-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg w-full md:w-auto self-start">
                     <Icon src="/assets/images/dire.png" size={6} />
                     <h3 className="text-lg font-serif font-bold text-red-400 uppercase tracking-widest drop-shadow-sm">Dire vs Radiant</h3>
                 </div>
-                <div className="flex flex-col lg:flex-row gap-4">
-                    <MatrixGrid title="Kills" sourcePlayers={direPlayers} targetPlayers={radiantPlayers} damageMap={damageMap} type="kills" />
-                    <MatrixGrid title="Damage" sourcePlayers={direPlayers} targetPlayers={radiantPlayers} damageMap={damageMap} type="damage" />
+                <div className="flex flex-col xl:flex-row gap-4">
+                    <MatrixGrid title="Kills" sourcePlayers={direPlayers} targetPlayers={radiantPlayers} damageMap={damageMap} type="kills" isSourceRadiant={false} />
+                    <MatrixGrid title="Damage" sourcePlayers={direPlayers} targetPlayers={radiantPlayers} damageMap={damageMap} type="damage" isSourceRadiant={false} />
                 </div>
             </div>
 
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl">
-                <div className="grid grid-cols-1 xl:grid-cols-[224px_1fr_1fr] bg-[#1a1d24] border-b border-[#2e353b] p-4 gap-4">
-                    <div className="text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center xl:text-left">Player</div>
-                    <div className="text-xs font-bold text-[#38bdf8] uppercase tracking-widest text-center xl:text-left">Dealt</div>
-                    <div className="text-xs font-bold text-[#e7d291] uppercase tracking-widest text-center xl:text-left hidden lg:block">Received</div>
+
+                <div className="hidden xl:grid grid-cols-[224px_1fr_1fr] bg-[#1a1d24] border-b border-[#2e353b]">
+                    <div className="p-4 border-r border-[#2e353b]/50 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center">Player</div>
+                    <div className="p-4 text-xs font-bold text-[#38bdf8] uppercase tracking-widest text-center">Dealt</div>
+                    <div className="p-4 text-xs font-bold text-[#e7d291] uppercase tracking-widest text-center">Received</div>
                 </div>
 
                 <div className="flex flex-col">
-                    {radiantPlayers.map((p, i) => (
-                        <PlayerDamageBreakdownRow key={i} player={p} data={damageMap.get(i)} isRadiant={true} />
+                    <div className="bg-linear-to-r from-emerald-500/10 to-[#1a1d24] border-y border-[#2e353b] px-4 py-2 flex items-center gap-2">
+                        <Icon src="/assets/images/radiant.png" size={5} />
+                        <span className="text-emerald-400 font-serif font-bold uppercase tracking-widest text-sm">Radiant - Damage Breakdown</span>
+                    </div>
+
+                    {radiantPlayers.map((p) => (
+                        <PlayerDamageBreakdownRow key={p.index} player={p.info} data={damageMap.get(p.index)} isRadiant={true} />
                     ))}
-                    <div className="h-2 bg-[#0b0e13] w-full" />
-                    {direPlayers.map((p, i) => (
-                        <PlayerDamageBreakdownRow key={i} player={p} data={damageMap.get(i)} isRadiant={false} />
+
+                    <div className="bg-linear-to-r from-red-500/10 to-[#1a1d24] border-y border-[#2e353b] px-4 py-2 flex items-center gap-2 mt-4 xl:mt-0">
+                        <Icon src="/assets/images/dire.png" size={5} />
+                        <span className="text-red-400 font-serif font-bold uppercase tracking-widest text-sm">Dire - Damage Breakdown</span>
+                    </div>
+
+                    {direPlayers.map((p) => (
+                        <PlayerDamageBreakdownRow key={p.index} player={p.info} data={damageMap.get(p.index)} isRadiant={false} />
                     ))}
                 </div>
             </div>
