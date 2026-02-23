@@ -34,8 +34,8 @@ const AbilityCastItem: React.FC<{ ability: AbilityCastDto }> = ({ ability }) => 
 
             {hasTargets && (
                 <>
-                    <span className="text-[#58606e] text-xs px-1 flex items-center justify-center">➔</span>
-                    <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-[#58606e] text-xs flex items-center justify-center">➔</span>
+                    <div className="flex flex-wrap items-center gap-3 pl-3 border-l pr-3 border-r border-[#2e353b]/60">
                         {Object.entries(ability.targets!)
                             .sort(([, countA], [, countB]) => countB - countA)
                             .map(([heroIdStr, count]) => (
