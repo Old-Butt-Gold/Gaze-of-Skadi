@@ -20,7 +20,7 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
         return (
             <div
                 className={clsx(
-                    "bg-[#1a1d24] animate-pulse border border-[#2e353b] rounded",
+                    "bg-[#1a1d24] animate-pulse border border-[#2e353b]",
                     className
                 )}
                 style={{ width: `${size * 0.25}rem`, height: `${size * 0.25}rem` }}
@@ -32,7 +32,7 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
         return (
             <div
                 className={clsx(
-                    "bg-[#15171c] border border-[#2e353b] flex items-center justify-center opacity-30 rounded",
+                    "bg-[#15171c] border border-[#2e353b] flex items-center justify-center opacity-30",
                     className
                 )}
                 style={{ width: `${size * 0.25}rem`, height: `${size * 0.25}rem` }}
@@ -46,7 +46,7 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
         return (
             <div
                 className={clsx(
-                    "bg-[#15171c] border border-[#2e353b] flex items-center justify-center rounded",
+                    "bg-[#15171c] border border-[#2e353b] flex items-center justify-center",
                     className
                 )}
                 style={{ width: `${size * 0.25}rem`, height: `${size * 0.25}rem` }}
@@ -62,7 +62,7 @@ export const AbilityCell: React.FC<AbilityCellProps> = (
     const content = (
         <div
             className={clsx(
-                "relative group overflow-hidden shadow-sm hover:border-[#808fa6] transition-colors cursor-help rounded",
+                "relative group overflow-hidden shadow-sm hover:border-[#808fa6] transition-colors cursor-help",
                 className
             )}
         >

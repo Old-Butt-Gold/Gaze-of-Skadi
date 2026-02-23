@@ -15,9 +15,9 @@ import type { PlayerInfoDto } from '../../../types/matchPlayers';
 import { SourceIcon } from "../SourceIcon.tsx";
 
 const CastBadge: React.FC<{ children: React.ReactNode; count: number }> = ({ children, count }) => (
-    <div className="relative inline-block shrink-0">
+    <div className="relative flex shrink-0">
         {children}
-        <div className="absolute -bottom-1.5 -right-1.5 border border-[#2e353b] text-[#e7d291] text-xs font-mono font-black px-1.5 py-0.5 rounded-md z-10 leading-none shadow-sm">
+        <div className="absolute -bottom-1.5 -right-1.5 border border-[#2e353b] text-[#e7d291] text-xs font-mono font-black px-1.5 py-0.5 rounded-md z-10 leading-none shadow-sm flex items-center justify-center bg-[#0b0e13]">
             {count.toLocaleString()}
         </div>
     </div>
@@ -27,24 +27,21 @@ const AbilityCastItem: React.FC<{ ability: AbilityCastDto }> = ({ ability }) => 
     const hasTargets = ability.targets && Object.keys(ability.targets).length > 0;
 
     return (
-        <div className="flex items-center gap-3 border border-[#2e353b]/60 p-2 rounded-lg shadow-inner">
-            {/* Иконка способности */}
+        <div className="flex items-center gap-3 p-1">
             <CastBadge count={ability.timesUsed}>
                 <SourceIcon sourceName={ability.abilityKey} />
             </CastBadge>
 
-            {/* Цели (Targets) */}
             {hasTargets && (
                 <>
-                    <span className="text-[#58606e] text-xs px-1">➔</span>
+                    <span className="text-[#58606e] text-xs px-1 flex items-center justify-center">➔</span>
                     <div className="flex flex-wrap items-center gap-2">
                         {Object.entries(ability.targets!)
                             .sort(([, countA], [, countB]) => countB - countA)
                             .map(([heroIdStr, count]) => (
-                                <div key={heroIdStr} className="relative group/target flex items-center shrink-0">
+                                <div key={heroIdStr} className="relative group/target flex items-center gap-2 shrink-0">
                                     <HeroCell heroId={parseInt(heroIdStr, 10)} showName={false} />
-                                    {/* Маленький бейдж счетчика ударов по конкретной цели */}
-                                    <div className="absolute -top-1.5 -right-1.5 bg-red-500/20 border border-red-500/50 text-red-400 text-[9px] font-mono font-black px-1 rounded shadow-sm z-10 pointer-events-none">
+                                    <div className="absolute -top-1.5 -right-1.5 bg-red-500/20 border border-red-500/50 text-red-400 text-xs font-mono font-black px-1 rounded shadow-sm z-10 pointer-events-none flex items-center justify-center">
                                         {count}
                                     </div>
                                 </div>
@@ -55,8 +52,6 @@ const AbilityCastItem: React.FC<{ ability: AbilityCastDto }> = ({ ability }) => 
         </div>
     );
 };
-
-// --- КОМПОНЕНТ КАРТОЧКИ ИГРОКА ---
 
 const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsDto | undefined, isRadiant: boolean }> = ({ player, castsData, isRadiant }) => {
 
@@ -69,15 +64,12 @@ const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsD
             "flex flex-col xl:flex-row gap-5 lg:gap-6 p-4 lg:p-5 border border-[#2e353b] bg-[#15171c] hover:bg-[#1a1d24] transition-colors shadow-sm rounded-xl",
             isRadiant ? "border-l-4 border-l-emerald-500/50" : "border-l-4 border-l-red-500/50"
         )}>
-            {/* Блок Игрока (Строго по центру) */}
             <div className="flex items-center justify-center xl:w-56 shrink-0 xl:border-r border-[#2e353b]/50 xl:pr-4">
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
 
-            {/* Блок Контента */}
             <div className="flex-1 flex flex-col gap-6">
 
-                {/* 1. Способности */}
                 <div className="flex flex-col gap-2.5">
                     <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center gap-1.5">
                         Abilities Casts
@@ -88,53 +80,51 @@ const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsD
                                 <AbilityCastItem key={ability.abilityKey} ability={ability} />
                             ))
                         ) : (
-                            <span className="text-xs text-[#58606e] italic">No abilities casted.</span>
+                            <span className="text-xs text-[#58606e] italic flex items-center h-full">No abilities casted.</span>
                         )}
                     </div>
                 </div>
 
-                {/* 2. Предметы */}
                 <div className="flex flex-col gap-2.5">
                     <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center gap-1.5">
                         Items Casts
                     </span>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-4">
                         {sortedItems.length > 0 ? (
                             sortedItems.map(item => (
-                                <div key={item.itemKey} className="border border-[#2e353b]/60 p-2 rounded-lg shadow-inner cursor-help">
+                                <div key={item.itemKey} className="p-1 cursor-help flex items-center justify-center">
                                     <CastBadge count={item.timesUsed}>
                                         <SourceIcon sourceName={item.itemKey} />
                                     </CastBadge>
                                 </div>
                             ))
                         ) : (
-                            <span className="text-xs text-[#58606e] italic">No items casted.</span>
+                            <span className="text-xs text-[#58606e] italic flex items-center h-full">No items casted.</span>
                         )}
                     </div>
                 </div>
 
-                {/* 3. Удары (Hits) */}
                 <div className="flex flex-col gap-2.5">
                     <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center gap-1.5">
                         Targets Hit
                     </span>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-4">
                         {sortedHits.length > 0 ? (
                             sortedHits.map(hit => {
-                                // Пытаемся извлечь ID героя из targetHeroKey (формат "npc_dota_hero_antimage" или подобный)
-                                // Это зависит от того, что вам присылает бэкенд. Если это строка, лучше использовать SourceIcon.
                                 return (
-                                    <div key={hit.targetHeroKey} className="flex items-center gap-2 border border-[#2e353b]/60 p-2 rounded-lg shadow-inner">
-                                        <SourceIcon sourceName={hit.targetHeroKey} />
-                                        <span className="text-[#58606e] text-xs px-1">➔</span>
-                                        <span className="font-mono text-sm font-black text-red-400 drop-shadow-sm min-w-[20px] text-right">
+                                    <div key={hit.targetHeroKey} className="flex items-center gap-3 p-1">
+                                        <div className="flex items-center justify-center">
+                                            <SourceIcon sourceName={hit.targetHeroKey} />
+                                        </div>
+                                        <span className="text-[#58606e] text-xs flex items-center justify-center">➔</span>
+                                        <span className="font-mono text-sm font-black text-red-400 drop-shadow-sm flex items-center justify-center">
                                             {hit.hitCount.toLocaleString()}
                                         </span>
                                     </div>
                                 );
                             })
                         ) : (
-                            <span className="text-xs text-[#58606e] italic">No targets hit.</span>
+                            <span className="text-xs text-[#58606e] italic flex items-center h-full">No targets hit.</span>
                         )}
                     </div>
                 </div>
@@ -143,8 +133,6 @@ const PlayerCastsCard: React.FC<{ player: PlayerInfoDto, castsData: PlayerCastsD
         </div>
     );
 };
-
-// --- ОСНОВНОЙ КОМПОНЕНТ ВКЛАДКИ ---
 
 export const MatchCastsTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
@@ -179,7 +167,6 @@ export const MatchCastsTab: React.FC = () => {
     return (
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 space-y-4 pb-10">
 
-            {/* Секция Radiant */}
             <div className="space-y-3">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-emerald-500/10 to-transparent border-l-4 border-emerald-500 rounded-r-lg w-full md:w-auto">
                     <Icon src="/assets/images/radiant.png" size={6} />
@@ -197,7 +184,6 @@ export const MatchCastsTab: React.FC = () => {
                 </div>
             </div>
 
-            {/* Секция Dire */}
             <div className="space-y-3">
                 <h3 className="flex items-center gap-3 text-lg font-serif font-bold text-red-400 uppercase tracking-widest px-4 py-2 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-lg w-full md:w-auto">
                     <Icon src="/assets/images/dire.png" size={6} />

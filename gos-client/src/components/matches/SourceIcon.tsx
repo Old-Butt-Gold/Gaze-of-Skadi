@@ -11,7 +11,7 @@ export const SourceIcon: React.FC<{ sourceName: string }> = ({sourceName}) => {
 
     if (sourceName === "null" || !sourceName) {
         return (
-            <div className="w-10 h-8 rounded flex items-center justify-center cursor-help shrink-0" title="Auto-attack">
+            <div className="cursor-help shrink-0" title="Auto-attack">
                 <Icon src="/assets/images/default_attack.png" alt="Auto-attack"/>
             </div>
         );
