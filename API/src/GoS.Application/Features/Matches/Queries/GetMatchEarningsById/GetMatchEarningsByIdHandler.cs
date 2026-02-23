@@ -33,7 +33,6 @@ internal sealed class GetMatchEarningsByIdHandler(ISender sender, IMapper mapper
             NecronomiconKills = player.NecronomiconKills,
             ObserverKills = player.ObserverKills,
             SentryKills = player.SentryKills,
-            LastHits = GenerateLastHitsSnapshots(player.LastHitsEachMinute),
             GoldReasons = ConvertReasons(player.GoldReasons, mapper),
             XpReasons = ConvertReasons(player.XpReasons, mapper)
         };
@@ -47,27 +46,5 @@ internal sealed class GetMatchEarningsByIdHandler(ISender sender, IMapper mapper
                 Reason = mapper.Map<BaseEnumDto<TEnum>>(kvp.Key),
                 Amount = kvp.Value
             });
-    }
-
-    private static IEnumerable<LastHitsSnapshotDto> GenerateLastHitsSnapshots(IReadOnlyList<int> lastHitsEachMinute)
-    {
-        if (lastHitsEachMinute.Count == 0)
-            return [];
-
-        const int step = 5;
-
-        var snapshots = new List<LastHitsSnapshotDto>();
-        var maxMinute = lastHitsEachMinute.Count - 1;
-
-        for (var minute = step; minute <= maxMinute; minute += step)
-        {
-            snapshots.Add(new LastHitsSnapshotDto
-            {
-                Minute = minute,
-                LastHits = lastHitsEachMinute[minute]
-            });
-        }
-
-        return snapshots;
     }
 }

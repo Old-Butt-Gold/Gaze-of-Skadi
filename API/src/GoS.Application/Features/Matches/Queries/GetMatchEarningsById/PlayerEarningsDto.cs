@@ -9,12 +9,6 @@ public record IncomeReasonDto<TEnum> where TEnum : Enum
     public required int Amount { get; init; }
 }
 
-public record LastHitsSnapshotDto
-{
-    public required int Minute { get; init; }
-    public required int LastHits { get; init; }
-}
-
 public record PlayerEarningsDto
 {
     public required int PlayerIndex { get; init; }
@@ -28,7 +22,6 @@ public record PlayerEarningsDto
     public required int ObserverKills { get; init; }
     public required int NecronomiconKills { get; set; }
     public required int SentryKills { get; set; }
-    public required IEnumerable<LastHitsSnapshotDto> LastHits { get; init; }
     public required IEnumerable<IncomeReasonDto<GoldReason>> GoldReasons { get; init; }
     public required IEnumerable<IncomeReasonDto<XpReason>> XpReasons { get; init; }
 }

@@ -1,5 +1,6 @@
 ﻿import {type BaseEnum, type BooleanState, LaneRole} from "../types/common.ts";
 import {UnitOrder} from "../types/matchActions.ts";
+import {GoldReason, XpReason} from "../types/matchEarnings.ts";
 
 const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
@@ -155,4 +156,28 @@ export const getLaneInfo = (roleValue: number | undefined | null) => {
     default:
       return null;
   }
+};
+
+export const GOLD_REASONS: Record<number, { label: string, color: string }> = {
+  [GoldReason.Others]: { label: "Others", color: "#808fa6" },
+  [GoldReason.Deaths]: { label: "Deaths (Lost)", color: "#7f1d1d" },
+  [GoldReason.Buybacks]: { label: "Buybacks (Spent)", color: "#78350f" },
+  [GoldReason.Abandon]: { label: "Abandon", color: "#58606e" },
+  [GoldReason.SellItems]: { label: "Sell Items", color: "#d97706" },
+  [GoldReason.Buildings]: { label: "Buildings", color: "#f59e0b" },
+  [GoldReason.Heroes]: { label: "Heroes", color: "#ef4444" },
+  [GoldReason.Creeps]: { label: "Lane Creeps", color: "#38bdf8" },
+  [GoldReason.Neutrals]: { label: "Neutrals", color: "#10b981" },
+  [GoldReason.Roshan]: { label: "Roshan", color: "#f43f5e" },
+  [GoldReason.Courier]: { label: "Courier", color: "#8b5cf6" },
+  [GoldReason.BountyRunes]: { label: "Bounty Runes", color: "#facc15" },
+  [GoldReason.Wards]: { label: "Wards", color: "#0ea5e9" },
+};
+
+export const XP_REASONS: Record<number, { label: string, color: string }> = {
+  [XpReason.Others]: { label: "Others", color: "#808fa6" },
+  [XpReason.Heroes]: { label: "Heroes", color: "#ef4444" },
+  [XpReason.Creeps]: { label: "Creeps", color: "#38bdf8" },
+  [XpReason.Roshan]: { label: "Roshan", color: "#f43f5e" },
+  [XpReason.WisdomRunes]: { label: "Wisdom Runes", color: "#a855f7" },
 };
