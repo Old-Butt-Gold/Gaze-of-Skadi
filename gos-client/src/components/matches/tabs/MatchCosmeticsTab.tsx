@@ -9,13 +9,14 @@ import { UnparsedMatchWarning } from "../UnparsedMatchWarning.tsx";
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { Icon } from "../../Icon.tsx";
 import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type {CosmeticDto} from "../../../types/matchCosmetics.ts";
 
 interface IndexedPlayer {
     info: PlayerInfoDto;
     index: number;
 }
 
-const PlayerCosmeticsRow: React.FC<{ player: PlayerInfoDto; cosmetics: any[] | undefined }> = ({ player, cosmetics }) => {
+const PlayerCosmeticsRow: React.FC<{ player: PlayerInfoDto; cosmetics: CosmeticDto[] | undefined }> = ({ player, cosmetics }) => {
     const playerCosmetics = cosmetics || [];
 
     return (
@@ -78,7 +79,7 @@ export const MatchCosmeticsTab: React.FC = () => {
     const { radiantPlayers, direPlayers, cosmeticsMap } = useMemo(() => {
         const radiant: IndexedPlayer[] = [];
         const dire: IndexedPlayer[] = [];
-        const cMap = new Map();
+        const cMap = new Map<number, CosmeticDto[]>();
 
         if (cosmeticsData && Array.isArray(cosmeticsData)) {
             cosmeticsData.forEach(c => cMap.set(c.playerIndex, c.cosmetics));
