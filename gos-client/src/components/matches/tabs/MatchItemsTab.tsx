@@ -73,7 +73,7 @@ export const MatchItemsTab: React.FC = () => {
                         </div>
                     ) : (
                         filteredItems.map((item, itemIdx) => (
-                            <div key={`${item.itemKey}-${itemIdx}`} className="flex flex-col items-center gap-1.5 group/timeline hover:-translate-y-1 transition-transform relative z-10">
+                            <div key={`${item.itemKey}-${itemIdx}`} className="flex flex-col items-center gap-0.5 group/timeline hover:-translate-y-1 transition-transform relative z-10">
                                 <span className="text-xs font-mono font-bold text-[#808fa6] group-hover/timeline:text-[#10b981] group-hover/timeline:border-[#10b981]/50 transition-colors bg-[#0b0e13] px-2 py-0.5 rounded-full border border-[#2e353b] shadow-sm">
                                     {formatDuration(item.itemBuyTime)}
                                 </span>

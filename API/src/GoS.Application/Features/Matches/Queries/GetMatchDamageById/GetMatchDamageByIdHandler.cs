@@ -5,7 +5,7 @@ using MediatR;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 
-internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager resourceManager) 
+internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager resourceManager)
     : IRequestHandler<GetMatchDamageByIdQuery, IEnumerable<PlayerDamageDto>?>
 {
     private Dictionary<string, int> _heroNameToIdMap = new();
@@ -62,7 +62,7 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
         {
             HeroId = _heroNameToIdMap[kvp.Key],
             Times = kvp.Value
-        });
+        }).OrderByDescending(x => x.Times);
     }
 
     private IEnumerable<HeroKillsDto> MapKilledByHeroes(IDictionary<string, int>? killedBy)
@@ -88,7 +88,8 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
             {
                 HeroId = _heroNameToIdMap[kvp.Key],
                 Damage = kvp.Value
-            });
+            })
+            .OrderByDescending(x => x.Damage);
     }
 
     private IEnumerable<DamageInflictorDto> MapDamageInflictors(Dictionary<string, int>? damageInflictors, Dictionary<string, Dictionary<string, int>>? damageTargets)
@@ -116,7 +117,9 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
                     TotalDamage = validBreakdown.Sum(b => b.Damage),
                     Breakdown = validBreakdown
                 };
-            }).ToList();
+            })
+            .OrderByDescending(x => x.TotalDamage)
+            .ToList();
     }
 
     private IEnumerable<DamageSummaryDto> MapDamageTaken(IDictionary<string, int>? damageTaken)
@@ -130,6 +133,8 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
             {
                 InflictorKey = kvp.Key,
                 TotalDamage = kvp.Value,
-            }).ToList();
+            })
+            .OrderByDescending(x => x.TotalDamage)
+            .ToList();
     }
 }
