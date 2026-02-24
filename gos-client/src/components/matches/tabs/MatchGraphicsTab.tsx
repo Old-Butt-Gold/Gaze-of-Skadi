@@ -18,7 +18,7 @@ import {LoadingSpinner} from '../../ui/LoadingSpinner';
 import {ErrorDisplay} from '../../ui/ErrorDisplay';
 import {UnparsedMatchWarning} from '../UnparsedMatchWarning';
 import {HeroCell} from '../../heroes/HeroCell';
-import {getPlayerColor} from '../../../utils/matchUtils';
+import {getPlayerColor, EXP_LEVEL} from '../../../utils/matchUtils';
 import type {MatchOutletContext} from '../../../pages/MatchDetailsPage';
 import type {PlayerInfoDto} from '../../../types/matchPlayers';
 import {Icon} from "../../Icon.tsx";
@@ -45,7 +45,17 @@ interface MetricWidgetProps {
 
 interface PlayerTooltipProps extends TooltipProps<number, string> {
     players: PlayerInfoDto[];
+    graphType: GraphType;
 }
+
+const getLevelByXp = (xp: number): number => {
+    for (let i = 0; i < EXP_LEVEL.length; i++) {
+        if (xp < EXP_LEVEL[i]) {
+            return i;
+        }
+    }
+    return EXP_LEVEL.length; // Max level
+};
 
 const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, description }) => {
     if (value == null) return null;
@@ -66,7 +76,6 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, d
 const AdvantageTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
         return (
-            // Добавлен text-center для основного контейнера
             <div className="bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-xl shadow-2xl min-w-50 z-50 text-center">
                 <p className="text-[#808fa6] font-mono font-bold text-xs mb-3 border-b border-[#2e353b]/50 pb-2 text-center">
                     {label}:00
@@ -97,7 +106,7 @@ const AdvantageTooltip: React.FC<TooltipProps<number, string>> = ({ active, payl
     return null;
 };
 
-const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, label, players }) => {
+const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, label, players, graphType }) => {
     if (active && payload && payload.length) {
         const sorted = [...payload].sort((a, b) => (b.value || 0) - (a.value || 0));
 
@@ -113,6 +122,14 @@ const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
                         const player = players[pIndex];
                         if (!player) return null;
 
+                        const value = entry.value || 0;
+                        let displayValue = value.toLocaleString();
+
+                        if (graphType === 'xpPerMinute') {
+                            const level = getLevelByXp(value);
+                            displayValue = `${displayValue} (Lvl ${level})`;
+                        }
+
                         return (
                             <div key={entry.dataKey} className="flex items-center justify-between gap-4">
                                 <div className="flex items-center gap-2 min-w-0">
@@ -125,7 +142,7 @@ const PlayerGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
                                     </span>
                                 </div>
                                 <span className="text-xs font-mono font-black text-[#e3e3e3] shrink-0">
-                                    {entry.value?.toLocaleString()}
+                                    {displayValue}
                                 </span>
                             </div>
                         );
@@ -280,7 +297,7 @@ export const MatchGraphicsTab: React.FC = () => {
                             <YAxis stroke="#58606e" tick={{ fontSize: 12, fill: '#808fa6' }} />
 
                             <Tooltip
-                                content={<PlayerGraphTooltip players={players} />}
+                                content={<PlayerGraphTooltip players={players} graphType={playerGraphType} />}
                                 isAnimationActive={false}
                                 cursor={{ stroke: '#808fa6', strokeWidth: 1, strokeDasharray: '4 4' }}
                             />
