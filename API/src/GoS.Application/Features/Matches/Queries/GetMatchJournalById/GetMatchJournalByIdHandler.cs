@@ -13,7 +13,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 ) : IRequestHandler<GetMatchJournalByIdQuery, MatchJournalDto?>
 {
     private Dictionary<string, int> _heroNameToId = [];
-    private Dictionary<string, string> _objectiveKeyToName = [];
+    private HashSet<string> _objectives = [];
     private HashSet<string> _validHeroNames = [];
 
     public async Task<MatchJournalDto?> Handle(GetMatchJournalByIdQuery request, CancellationToken ct)
@@ -31,10 +31,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
         _validHeroNames = new HashSet<string>(_heroNameToId.Keys);
 
-        _objectiveKeyToName = objectives!.ToDictionary(
-            kvp => kvp.Key,
-            kvp => kvp.Value
-        );
+        _objectives = objectives!.ToHashSet();
 
         return new MatchJournalDto
         {
@@ -59,7 +56,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
             if (objective.Type == ObjectiveType.BuildingKill)
             {
                 var key = GetCleanedObjectiveKey(objective.Key?.GetRawText());
-                if (key != null && _objectiveKeyToName.TryGetValue(key, out _))
+                if (key != null && _objectives.Contains(key))
                 {
                     if (objective.Slot.HasValue)
                     {

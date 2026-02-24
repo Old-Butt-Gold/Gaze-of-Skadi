@@ -14,7 +14,7 @@ namespace GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager)
     : IRequestHandler<GetMatchOverviewByIdQuery, MatchOverviewDto?>
 {
-    private Dictionary<string, string> _objectives = [];
+    private HashSet<string> _objectives = [];
     private Dictionary<string, string> _itemIds = [];
 
     public async Task<MatchOverviewDto?> Handle(GetMatchOverviewByIdQuery request, CancellationToken ct)
@@ -23,7 +23,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         if (match is null) return null;
 
         _itemIds = (await resourceManager.GetItemIdsAsync())!;
-        _objectives = (await resourceManager.GetObjectiveNamesAsync())!;
+        _objectives = (await resourceManager.GetObjectiveNamesAsync())!.ToHashSet();
 
         return MapMatchOverview(match);
     }
@@ -161,7 +161,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
 
     private IEnumerable<ObjectiveDataDto> GetObjectiveDataForPlayer(MatchPlayer player) =>
         player.Damage
-            .Where(x => _objectives.ContainsKey(x.Key))
+            .Where(x => _objectives.Contains(x.Key))
             .Select(damage => new ObjectiveDataDto { Key = damage.Key, Value = damage.Value, })
             .ToList();
 }

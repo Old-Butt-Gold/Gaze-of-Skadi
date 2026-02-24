@@ -11,6 +11,7 @@ import type {PlayerLaneDto} from "../types/matchLaning.ts";
 import type {PlayerCastsDto} from "../types/matchCasts.ts";
 import type {PlayerDamageDto} from "../types/matchDamage.ts";
 import type {PlayerEarningsDto} from "../types/matchEarnings.ts";
+import type {PlayerObjectivesDto} from "../types/matchObjectvies.ts";
 
 export const matchService = {
   getMatchPlayers: async (matchId: number): Promise<MatchPlayerInformationDto> => {
@@ -59,5 +60,9 @@ export const matchService = {
 
   getMatchEarnings: async (matchId: number): Promise<PlayerEarningsDto[]> => {
     return apiClient.get(`/Matches/${matchId}/earnings`);
+  },
+
+  getMatchObjectives: async (matchId: number): Promise<PlayerObjectivesDto[]> => {
+    return apiClient.get(`/Matches/${matchId}/objectives`);
   },
 };

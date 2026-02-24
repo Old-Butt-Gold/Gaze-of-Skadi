@@ -22,5 +22,5 @@ public interface IResourceManager
 
     public Task<Dictionary<string, string>?> GetItemIdsAsync();
 
-    public Task<Dictionary<string, string>?> GetObjectiveNamesAsync();
+    public Task<IEnumerable<string>?> GetObjectiveNamesAsync();
 }

@@ -73,9 +73,9 @@ public sealed class ResourceController : ControllerBase
         return result is null ? NotFound() : Ok(result);
     }
 
-    [HttpGet("objective-names")]
+    [HttpGet("objectives")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(Dictionary<string, string>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(IEnumerable<string>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetObjectiveNames()
     {
         var result = await _resourceManager.GetObjectiveNamesAsync();

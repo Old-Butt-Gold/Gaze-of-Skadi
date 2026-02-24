@@ -18,5 +18,9 @@ export const resourceService = {
 
   getAbilities: async (): Promise<AbilityDictionary> => {
       return apiClient.get('/resource/abilities');
+  },
+
+  getObjectiveNames: async (): Promise<string[]> => {
+    return apiClient.get('/resource/objectives');
   }
 };

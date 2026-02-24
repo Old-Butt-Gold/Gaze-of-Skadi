@@ -66,7 +66,7 @@ internal sealed class CachedFileResourceManager : IResourceManager
         return GetOrCreateAsync(Resource.ItemIds, () => _fileResourceManager.GetItemIdsAsync());
     }
 
-    public Task<Dictionary<string, string>?> GetObjectiveNamesAsync()
+    public Task<IEnumerable<string>?> GetObjectiveNamesAsync()
     {
         return GetOrCreateAsync(Resource.Objectives, () => _fileResourceManager.GetObjectiveNamesAsync());
     }

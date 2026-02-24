@@ -60,9 +60,9 @@ internal sealed class FileResourceManager : IResourceManager
 		return LoadResourceAsync<Dictionary<string, string>?>(Resource.ItemIds);
 	}
 
-	public Task<Dictionary<string, string>?> GetObjectiveNamesAsync()
+	public Task<IEnumerable<string>?> GetObjectiveNamesAsync()
 	{
-		return LoadResourceAsync<Dictionary<string, string>?>(Resource.Objectives);
+		return LoadResourceAsync<IEnumerable<string>?>(Resource.Objectives);
 	}
 
 	private async Task<T> LoadResourceAsync<T>(Resource resource)

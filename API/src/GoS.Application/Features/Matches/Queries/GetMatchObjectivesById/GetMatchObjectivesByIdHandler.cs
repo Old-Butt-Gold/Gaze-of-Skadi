@@ -21,20 +21,21 @@ internal sealed class GetMatchObjectivesByIdHandler(ISender sender, IMapper mapp
         }
 
         var resources = await resourceManager.GetObjectiveNamesAsync();
+        var hashSet = resources!.ToHashSet();
 
         return match.Players
             .Select((player, index) => new PlayerObjectivesDto
             {
                 PlayerIndex = index,
-                Objectives = GetObjectivesForPlayer(resources!, player),
+                Objectives = GetObjectivesForPlayer(hashSet!, player),
             })
             .ToList();
     }
 
-    private ObjectivesDataDto GetObjectivesForPlayer(Dictionary<string, string> objectives, MatchPlayer player)
+    private ObjectivesDataDto GetObjectivesForPlayer(HashSet<string> objectives, MatchPlayer player)
     {
         var damages = player.Damage
-            .Where(x => objectives.ContainsKey(x.Key))
+            .Where(x => objectives.Contains(x.Key))
             .Select(damage => new DamageDataDto { Key = damage.Key, Value = damage.Value, })
             .ToList();
 

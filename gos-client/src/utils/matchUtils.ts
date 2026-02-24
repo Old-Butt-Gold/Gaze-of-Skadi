@@ -1,6 +1,7 @@
 ﻿import {type BaseEnum, type BooleanState, LaneRole} from "../types/common.ts";
 import {UnitOrder} from "../types/matchActions.ts";
 import {GoldReason, XpReason} from "../types/matchEarnings.ts";
+import {Rune} from "../types/matchObjectvies.ts";
 
 const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
@@ -180,4 +181,47 @@ export const XP_REASONS: Record<number, { label: string, color: string }> = {
   [XpReason.Creeps]: { label: "Creeps", color: "#38bdf8" },
   [XpReason.Roshan]: { label: "Roshan", color: "#f43f5e" },
   [XpReason.WisdomRunes]: { label: "Wisdom Runes", color: "#a855f7" },
+};
+
+export const RUNE_NAMES: Record<Rune, string> = {
+  [Rune.AmplifyDamage]: "Double Damage",
+  [Rune.Haste]: "Haste",
+  [Rune.Illusion]: "Illusion",
+  [Rune.Invisibility]: "Invisibility",
+  [Rune.Regeneration]: "Regeneration",
+  [Rune.Bounty]: "Bounty",
+  [Rune.Arcane]: "Arcane",
+  [Rune.Water]: "Water",
+  [Rune.Wisdom]: "Wisdom",
+  [Rune.Shield]: "Shield"
+};
+
+export const parseObjectiveName = (key: string): { name: string, team: 'radiant' | 'dire' | 'neutral' } => {
+  if (key === 'npc_dota_roshan') {
+    return { name: 'Roshan', team: 'neutral' };
+  }
+
+  const isRadiant = key.includes('goodguys');
+  const teamName = isRadiant ? 'Radiant' : 'Dire';
+  const teamKey = isRadiant ? 'radiant' : 'dire';
+
+  let building = '';
+  if (key.includes('fort')) building = 'Ancient';
+  else if (key.includes('healers')) building = 'Shrine';
+  else if (key.includes('tower1')) building = 'T1 Tower';
+  else if (key.includes('tower2')) building = 'T2 Tower';
+  else if (key.includes('tower3')) building = 'T3 Tower';
+  else if (key.includes('tower4')) building = 'T4 Tower';
+  else if (key.includes('melee_rax')) building = 'Melee Rax';
+  else if (key.includes('range_rax')) building = 'Ranged Rax';
+
+  let lane = '';
+  if (key.includes('_bot')) lane = ' Bot';
+  else if (key.includes('_mid')) lane = ' Mid';
+  else if (key.includes('_top')) lane = ' Top';
+
+  return {
+    name: `${teamName} ${building}${lane}`.trim(),
+    team: teamKey
+  };
 };
