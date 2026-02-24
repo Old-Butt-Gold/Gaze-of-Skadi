@@ -55,7 +55,6 @@ const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoD
             const deadPlayerInfo = allPlayers[p.playerIndex];
 
             return p.deathPositions.map((pos, idx) => {
-                // Ищем убийц (врагов, в чьем killedHeroes есть этот deadPlayer)
                 const killersInfo = tf.players
                     .filter(enemy => enemy.killedHeroes.some(kh => kh.heroId === deadPlayerInfo.heroId))
                     .map(enemy => allPlayers[enemy.playerIndex]);
@@ -76,7 +75,7 @@ const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoD
                 return (
                     <div key={death.id} className="absolute -translate-x-1/2 -translate-y-1/2 group/death hover:z-60" style={{ left: `${x}%`, top: `${y}%` }}>
 
-                        <div className="relative z-10 cursor-help pointer-events-auto rounded p-0.5 hover:scale-125 transition-transform duration-200">
+                        <div className="relative z-10 cursor-help pointer-events-auto rounded p-0.5 hover:scale-110 transition-transform duration-200">
                             <SimpleHeroIcon heroId={death.deadPlayer.heroId} sizeClass={iconSizeClass}/>
                         </div>
 
@@ -112,23 +111,27 @@ const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoD
 const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlayerDto }> = ({ playerInfo, stats }) => {
     return (
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 p-3 border-b border-[#2e353b]/50 hover:bg-[#1a1d24] transition-colors items-center text-sm">
-            <div className="lg:col-span-3 flex items-center justify-center w-full lg:justify-start gap-3 lg:border-r border-[#2e353b]/50 lg:pr-4">
-                <MatchPlayerCell player={playerInfo} useIcon={false} />
-                <div className="flex items-center gap-2 shrink-0">
+
+            <div className="lg:col-span-3 flex flex-col justify-center gap-1.5 w-full h-full lg:border-r border-[#2e353b]/50 lg:pr-4 min-w-0">
+                <div className="w-full min-w-0 flex items-center justify-center lg:justify-start overflow-hidden whitespace-normal [&>div]:max-w-full">
+                    <MatchPlayerCell player={playerInfo} useIcon={false} />
+                </div>
+
+                <div className="flex items-center gap-2 w-full cursor-help">
                     {stats.wasDead && (
-                        <div title="Died in fight">
+                        <div title="Died in fight" className="shrink-0 flex items-center justify-center">
                             <Icon src="/assets/images/death_icon.webp" alt="Dead" size={8} />
                         </div>
                     )}
                     {stats.usedBuyback && (
-                        <span className="text-xs font-bold text-[#facc15] uppercase tracking-widest border border-[#facc15]/30 bg-[#facc15]/10 px-1.5 py-0.5 rounded" title="Used Buyback">
+                        <span className="text-sm leading-none font-bold text-[#facc15] uppercase tracking-widest border border-[#facc15]/30 bg-[#facc15]/10 px-1.5 py-0.5 rounded shrink-0 flex items-center justify-center" title="Used Buyback">
                             BB
                         </span>
                     )}
                 </div>
             </div>
 
-            <div className="lg:col-span-2 flex justify-around w-full lg:justify-center gap-4 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold">
+            <div className="lg:col-span-2 flex justify-around w-full lg:justify-center gap-4 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold h-full">
                 <div className={clsx("flex items-center justify-center gap-1.5 w-full pr-2", stats.goldDelta >= 0 ? "text-[#e7d291]" : "text-red-400")} title="Gold Delta">
                     <Icon src="/assets/images/gold.png" size={4} />
                     <span>{stats.goldDelta > 0 ? '+' : ''}{stats.goldDelta.toLocaleString()}</span>
@@ -139,7 +142,7 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
                 </div>
             </div>
 
-            <div className="lg:col-span-2 flex justify-around w-full lg:justify-center gap-4 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold">
+            <div className="lg:col-span-2 flex justify-around w-full lg:justify-center gap-4 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold h-full">
                 <div className="flex flex-col items-center justify-center gap-0.5 w-full text-red-400" title="Damage Dealt">
                     <span className="text-xs text-[#808fa6] uppercase tracking-widest leading-none">Dmg</span>
                     <span>{stats.damage.toLocaleString()}</span>
@@ -150,7 +153,7 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
                 </div>
             </div>
 
-            <div className="lg:col-span-3 flex flex-col gap-1.5 lg:border-r border-[#2e353b]/50 lg:px-4 w-full items-center">
+            <div className="lg:col-span-3 flex flex-col justify-center gap-1.5 lg:border-r border-[#2e353b]/50 lg:px-4 w-full h-full">
                 <div className="flex flex-wrap justify-center items-center gap-1.5">
                     {stats.abilityUses.length > 0 ? stats.abilityUses.map(ab => <ActionBadge key={ab.abilityKey} iconKey={ab.abilityKey} count={ab.uses} />) : <span className="text-xs text-[#58606e] italic">No spells</span>}
                 </div>
@@ -159,7 +162,7 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
                 </div>
             </div>
 
-            <div className="lg:col-span-2 flex flex-wrap items-center justify-center gap-1 lg:pl-4 w-full">
+            <div className="lg:col-span-2 flex flex-wrap items-center justify-center gap-1 lg:pl-4 w-full h-full">
                 {stats.killedHeroes.length > 0 ? stats.killedHeroes.map((kh, i) => (
                     <div key={i} className="relative group/kill">
                         <HeroCell heroId={kh.heroId} showName={false} />

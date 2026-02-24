@@ -103,7 +103,7 @@ internal sealed class GetMatchTeamfightsByIdHandler(ISender sender, IMapper mapp
             Healing = playerState.Healing,
             GoldDelta = playerState.GoldDelta,
             XpDelta = playerState.XpDelta,
-            UsedBuyback = true,
+            UsedBuyback = playerState.Buybacks > 0,
             AbilityUses = MapAbilityUses(playerState.AbilityUses),
             ItemUses = MapItemUses(playerState.ItemUses),
             KilledHeroes = MapKilledHeroes(playerState.Killed),
