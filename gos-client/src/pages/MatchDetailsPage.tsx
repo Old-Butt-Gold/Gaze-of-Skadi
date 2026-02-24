@@ -8,7 +8,10 @@ import { NotFoundPage } from './NotFoundPage';
 import { BooleanState } from '../types/common';
 import type { PlayerInfoDto } from '../types/matchPlayers';
 
-export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items' | 'benchmarks' | 'graphics' | 'performance' | 'laning' | 'casts' | 'damage' | 'earnings' | 'objectives';
+export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items'
+    | 'benchmarks' | 'graphics' | 'performance' | 'laning'
+    | 'casts' | 'damage' | 'earnings' | 'objectives'
+    | 'vision';
 
 export interface MatchOutletContext {
     matchId: number;
@@ -52,6 +55,7 @@ export const MatchDetailsPage: React.FC = () => {
         { id: 'casts', label: 'Casts', requiresParse: true },
         { id: 'objectives', label: 'Objectives', requiresParse: true },
         { id: 'actions', label: 'Actions', requiresParse: true },
+        { id: 'vision', label: 'Vision', requiresParse: true },
         { id: 'chat', label: 'Chat Log', requiresParse: true },
         { id: 'cosmetics', label: 'Cosmetics', requiresParse: true },
     ];

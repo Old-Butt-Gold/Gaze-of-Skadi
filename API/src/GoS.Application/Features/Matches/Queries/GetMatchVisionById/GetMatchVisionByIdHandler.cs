@@ -47,7 +47,6 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
         {
             PlayerIndex = playerIndex,
             PurchasedItems = MapVisionItems(player.Purchase),
-            UsedItems = MapVisionItems(player.ItemUses)
         };
 
     private IEnumerable<VisionItemDto> MapVisionItems(IDictionary<string, int>? items)

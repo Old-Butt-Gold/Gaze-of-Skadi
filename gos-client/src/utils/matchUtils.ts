@@ -2,6 +2,7 @@
 import {UnitOrder} from "../types/matchActions.ts";
 import {GoldReason, XpReason} from "../types/matchEarnings.ts";
 import {Rune} from "../types/matchObjectvies.ts";
+import {VisionItemType} from "../types/matchVision.ts";
 
 const PLAYER_SLOT_COLORS: Record<number, string> = {
   0: "#3375FF",
@@ -224,4 +225,25 @@ export const parseObjectiveName = (key: string): { name: string, team: 'radiant'
     name: `${teamName} ${building}${lane}`.trim(),
     team: teamKey
   };
+};
+
+export const VISION_ITEM_ICONS: Record<number, string> = {
+  [VisionItemType.ObserverWard]: "/assets/images/ward_observer.png",
+  [VisionItemType.SentryWard]: "/assets/images/ward_sentry.png",
+  [VisionItemType.Dust]: "/assets/images/dust.png",
+  [VisionItemType.Gem]: "/assets/images/gem.png",
+  [VisionItemType.Smoke]: "/assets/images/smoke_of_deceit.png",
+};
+
+// Функция для перевода координат карты Dota 2 (обычно 64-192) в проценты (0-100%)
+export const normalizeMapCoordinate = (val: number, isY: boolean = false): number => {
+  let percentage = val;
+
+  percentage = ((val - 64) / 128) * 100;
+
+  // Ограничиваем пределы, чтобы точки не улетали за карту
+  percentage = Math.max(0, Math.min(100, percentage));
+
+  // В доте ось Y идет снизу вверх, а в вебе сверху вниз, поэтому инвертируем
+  return isY ? 100 - percentage : percentage;
 };

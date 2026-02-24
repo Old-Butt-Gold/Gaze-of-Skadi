@@ -39,7 +39,6 @@ public record PlayerVisionDto
 {
     public required int PlayerIndex { get; init; }
     public required IEnumerable<VisionItemDto> PurchasedItems { get; init; }
-    public required IEnumerable<VisionItemDto> UsedItems { get; init; }
 }
 
 public record MatchVisionDto
