@@ -35,7 +35,7 @@ const ObjectiveDamageBox: React.FC<{ damage: DamageDataDto }> = ({ damage }) => 
     const parsed = parseObjectiveName(damage.key);
 
     return (
-        <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-[#0b0e13]/50 border border-[#2e353b]/50 hover:bg-[#0b0e13] hover:border-[#58606e]/50 transition-colors shadow-inner min-w-[110px]">
+        <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-[#0b0e13]/50 border border-[#2e353b]/50 hover:bg-[#0b0e13] hover:border-[#58606e]/50 transition-colors shadow-inner min-w-[110px] flex-1 sm:flex-none">
             <span className={clsx(
                 "text-xs font-bold uppercase tracking-widest mb-1 text-center leading-none",
                 parsed.team === 'radiant' ? 'text-emerald-400' : parsed.team === 'dire' ? 'text-red-400' : 'text-[#facc15]'
@@ -54,41 +54,38 @@ const PlayerObjectivesCard: React.FC<{ player: PlayerInfoDto; data: PlayerObject
     const damages = useMemo(() => [...(data?.objectives?.damage || [])].sort((a, b) => b.value - a.value), [data]);
 
     return (
-        <div className={"flex flex-col xl:flex-row gap-5 p-4 border-b border-[#2e353b]/50 hover:bg-[#1a1d24] transition-colors"}>
+        <div className="flex flex-col xl:grid xl:grid-cols-12 gap-5 xl:gap-0 p-4 border-b border-[#2e353b]/50 hover:bg-[#1a1d24] transition-colors">
 
-            <div className="flex items-center justify-center xl:justify-start xl:w-56 shrink-0 xl:border-r border-[#2e353b]/50 xl:pr-4">
+            <div className="xl:col-span-2 flex items-center justify-center xl:justify-start shrink-0 xl:border-r border-[#2e353b]/50 xl:pr-6">
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
 
-            <div className="flex-1 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-6 xl:gap-8 items-center">
-
-                <div className="flex flex-col gap-2.5 xl:border-r border-[#2e353b]/50 xl:pr-8 min-w-[180px]">
-                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center gap-1.5">
-                        Runes Picked Up
-                    </span>
-                    <div className="flex flex-wrap gap-2 pt-1">
-                        {runes.length > 0 ? (
-                            runes.map(r => <RuneBadge key={r.key.value} rune={r} />)
-                        ) : (
-                            <span className="text-xs text-[#58606e] italic flex items-center h-full">No runes picked up.</span>
-                        )}
-                    </div>
+            <div className="xl:col-span-2 flex flex-col gap-2.5 shrink-0 xl:border-r border-[#2e353b]/50 xl:px-6">
+                <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center justify-center gap-1.5 w-full">
+                    Runes Picked Up
+                </span>
+                <div className="flex flex-wrap gap-2 pt-1 justify-center xl:justify-start">
+                    {runes.length > 0 ? (
+                        runes.map(r => <RuneBadge key={r.key.value} rune={r} />)
+                    ) : (
+                        <span className="text-sm text-[#58606e] italic flex items-center justify-center w-full h-full">No runes picked up.</span>
+                    )}
                 </div>
-
-                <div className="flex flex-col gap-2.5">
-                    <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center gap-1.5">
-                        Objective Damage
-                    </span>
-                    <div className="flex flex-wrap gap-3 pt-1">
-                        {damages.length > 0 ? (
-                            damages.map(d => <ObjectiveDamageBox key={d.key} damage={d} />)
-                        ) : (
-                            <span className="text-xs text-[#58606e] italic flex items-center h-full">No objective damage.</span>
-                        )}
-                    </div>
-                </div>
-
             </div>
+
+            <div className="xl:col-span-8 flex flex-col gap-2.5 flex-1 w-full xl:pl-6">
+                <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center justify-center gap-1.5 w-full">
+                    Objective Damage
+                </span>
+                <div className="flex flex-wrap gap-3 pt-1 justify-center xl:justify-start">
+                    {damages.length > 0 ? (
+                        damages.map(d => <ObjectiveDamageBox key={d.key} damage={d} />)
+                    ) : (
+                        <span className="text-sm text-[#58606e] italic flex items-center justify-center w-full h-full">No objective damage.</span>
+                    )}
+                </div>
+            </div>
+
         </div>
     );
 };
@@ -127,10 +124,10 @@ export const MatchObjectivesTab: React.FC = () => {
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl">
 
-                <div className="hidden xl:grid grid-cols-[224px_auto_1fr] bg-[#1a1d24] border-b border-[#2e353b] gap-8 rounded-t-xl px-4 py-4">
-                    <div className="text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center xl:border-r border-[#2e353b]/50 pr-4">Player</div>
-                    <div className="text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center min-w-[180px] xl:border-r border-[#2e353b]/50 pr-8">Runes</div>
-                    <div className="text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center">Building & Roshan Damage</div>
+                <div className="hidden xl:grid grid-cols-12 bg-[#1a1d24] border-b border-[#2e353b] rounded-t-xl px-4 py-4">
+                    <div className="col-span-2 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center border-r border-[#2e353b]/50 pr-6">Player</div>
+                    <div className="col-span-2 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center border-r border-[#2e353b]/50 px-6">Runes</div>
+                    <div className="col-span-8 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center pl-6">Building & Roshan Damage</div>
                 </div>
 
                 <div className="flex flex-col">
