@@ -64,15 +64,23 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
                 const teamStr = isRadiant ? 'radiant' : 'dire';
                 const typeStr = isObs ? 'observer' : 'sentry';
 
+                // Масштаб радиуса от ширины карты (Observer: ~1600 Range, Sentry: ~1000 Range)
+                const radiusPct = isObs ? '21.3%' : '13.3%';
+
                 return (
                     <div
                         key={i}
-                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-50"
-                        style={{ left: `${x}%`, top: `${y}%` }}
+                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-60 flex items-center justify-center"
+                        style={{
+                            left: `${x}%`,
+                            top: `${y}%`,
+                            width: radiusPct,
+                            aspectRatio: '1 / 1'
+                        }}
                     >
                         <div className={clsx(
-                            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.20] pointer-events-none border border-white/30 transition-all",
-                            isObs ? "bg-[#eab308] w-[21.3%] h-[21.3%]" : "bg-[#3b82f6] w-[13.3%] h-[13.3%]",
+                            "absolute inset-0 rounded-full opacity-[0.30] pointer-events-none border border-white/30 transition-all",
+                            isObs ? "bg-[#eab308]" : "bg-[#3b82f6]",
                             interactive ? "block" : "hidden group-hover/ward:block"
                         )} />
 
@@ -81,7 +89,7 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
                         </div>
 
                         {interactive && (
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl opacity-0 invisible group-hover/ward:opacity-100 group-hover/ward:visible transition-all z-50 pointer-events-none w-max max-w-50 flex flex-col gap-1.5">
+                            <div className="absolute bottom-[calc(50%+1rem)] left-1/2 -translate-x-1/2 mb-2 bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl opacity-0 invisible group-hover/ward:opacity-100 group-hover/ward:visible transition-all z-50 pointer-events-none w-max max-w-50 flex flex-col gap-1.5">
                                 <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 text-center">
                                     {isObs ? "Observer Ward" : "Sentry Ward"}
                                 </span>
@@ -94,7 +102,7 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
 
                                 {ward.destroyedById != null && (
                                     <div className="mt-2 flex items-center justify-between gap-3 bg-[#0b0e13]/50 p-1.5 rounded border border-red-500/20">
-                                        <span className="text-[10px] text-red-400 font-bold uppercase tracking-wider">Destroyed By</span>
+                                        <span className="text-xs text-red-400 font-bold uppercase tracking-wider">Destroyed By</span>
                                         <HeroCell heroId={ward.destroyedById} showName={false} />
                                     </div>
                                 )}
@@ -133,17 +141,19 @@ const PlayerVisionCard: React.FC<{
                 </div>
             </div>
 
-            <div className="xl:col-span-5 flex flex-col items-center justify-center gap-2 xl:pl-6 relative group/map">
+            <div className="xl:col-span-5 flex flex-col items-center justify-center gap-2 xl:pl-6 relative">
                 {wards.length > 0 ? (
                     <>
                         <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest mb-1 xl:hidden">Ward Map</span>
-                        <div className="cursor-zoom-in flex items-center justify-center">
-                            <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" iconSizeClass="w-3 h-3" />
-                        </div>
+                        <div className="relative group/map">
+                            <div className="cursor-zoom-in flex items-center justify-center">
+                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" iconSizeClass="w-3 h-3" />
+                            </div>
 
-                        <div className="fixed inset-0 z-9999 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 pointer-events-none flex items-center justify-center bg-[#0b0e13]/60 backdrop-blur-sm">
-                            <div className="rounded-xl pointer-events-auto bg-[#0f1114] border-2 border-[#4a5568] shadow-[0_0_60px_rgba(0,0,0,0.8)]">
-                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[90vw] max-w-[450px] aspect-square xl:w-[500px]" interactive={true} iconSizeClass="w-6 h-6" />
+                            <div className="fixed inset-0 z-9999 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 pointer-events-none flex items-center justify-center bg-[#0b0e13]/60 backdrop-blur-sm">
+                                <div className="rounded-xl pointer-events-auto bg-[#0f1114] border-2 border-[#4a5568]">
+                                    <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[90vw] max-w-[450px] aspect-square xl:w-[500px]" interactive={true} iconSizeClass="w-6 h-6" />
+                                </div>
                             </div>
                         </div>
                     </>
