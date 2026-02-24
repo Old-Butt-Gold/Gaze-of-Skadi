@@ -48,7 +48,7 @@ const VisionBadge: React.FC<{ item: VisionItemDto }> = ({ item }) => {
     );
 };
 
-const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, sizeClasses: string, interactive?: boolean }> = ({ wards, isRadiant, sizeClasses, interactive = false }) => {
+const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, sizeClasses: string, interactive?: boolean, iconSizeClass?: string }> = ({ wards, isRadiant, sizeClasses, interactive = false, iconSizeClass = "w-3 h-3" }) => {
     return (
         <div className={clsx("relative rounded-md border border-[#2e353b] bg-[#0f1114] shadow-inner shrink-0", sizeClasses, !interactive && "overflow-hidden pointer-events-none")}>
             <img
@@ -67,16 +67,16 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
                 return (
                     <div
                         key={i}
-                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-60"
+                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-50"
                         style={{ left: `${x}%`, top: `${y}%` }}
                     >
                         <div className={clsx(
-                            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.15] pointer-events-none border border-white/20",
-                            isObs ? "bg-[#eab308] w-[20cqw] aspect-square" : "bg-[#3b82f6] w-[12.5cqw] aspect-square",
-                            interactive ? "block" : "hidden group-hover/map:block"
+                            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.20] pointer-events-none border border-white/30 transition-all",
+                            isObs ? "bg-[#eab308] w-[21.3%] h-[21.3%]" : "bg-[#3b82f6] w-[13.3%] h-[13.3%]",
+                            interactive ? "block" : "hidden group-hover/ward:block"
                         )} />
 
-                        <div className="relative w-[4cqw] min-w-3 aspect-square z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)] cursor-help">
+                        <div className={clsx("relative z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)] cursor-help", iconSizeClass)}>
                             <img src={`/assets/images/${teamStr}_${typeStr}.png`} alt="Ward" className="w-full h-full object-contain pointer-events-auto" />
                         </div>
 
@@ -120,15 +120,15 @@ const PlayerVisionCard: React.FC<{
                 <MatchPlayerCell player={player} useIcon={false} />
             </div>
 
-            <div className="xl:col-span-4 flex flex-col gap-2.5 shrink-0 xl:border-r border-[#2e353b]/50 xl:px-6">
-                <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center justify-center gap-1.5 w-full">
+            <div className="xl:col-span-4 flex flex-col items-center justify-center gap-2.5 shrink-0 xl:border-r border-[#2e353b]/50 xl:px-6 py-1 h-full">
+                <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 flex items-center justify-center w-full">
                     Purchased Vision
                 </span>
-                <div className="flex flex-wrap gap-2 pt-1 justify-center xl:justify-start items-center">
+                <div className="flex flex-wrap gap-2 justify-center items-center w-full">
                     {vision?.purchasedItems?.length ? (
                         vision.purchasedItems.map((item, idx) => <VisionBadge key={idx} item={item} />)
                     ) : (
-                        <span className="text-xs text-[#58606e] italic w-full text-center">No items</span>
+                        <span className="text-xs text-[#58606e] italic text-center w-full">No items</span>
                     )}
                 </div>
             </div>
@@ -137,14 +137,13 @@ const PlayerVisionCard: React.FC<{
                 {wards.length > 0 ? (
                     <>
                         <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest mb-1 xl:hidden">Ward Map</span>
-
-                        <div className="cursor-zoom-in @container flex items-center justify-center">
-                            <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" />
+                        <div className="cursor-zoom-in flex items-center justify-center">
+                            <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" iconSizeClass="w-3 h-3" />
                         </div>
 
-                        <div className="absolute z-100 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 xl:left-auto xl:translate-x-0 xl:right-[105%] pointer-events-none @container">
-                            <div className="rounded-xl p-1.5 pointer-events-auto">
-                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[85vw] max-w-[400px] aspect-square xl:w-96 xl:h-96" interactive={true} />
+                        <div className="fixed inset-0 z-9999 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 pointer-events-none flex items-center justify-center bg-[#0b0e13]/60 backdrop-blur-sm">
+                            <div className="rounded-xl pointer-events-auto bg-[#0f1114] border-2 border-[#4a5568] shadow-[0_0_60px_rgba(0,0,0,0.8)]">
+                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[90vw] max-w-[450px] aspect-square xl:w-[500px]" interactive={true} iconSizeClass="w-6 h-6" />
                             </div>
                         </div>
                     </>
@@ -196,9 +195,9 @@ export const MatchVisionTab: React.FC = () => {
 
     return (
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl">
 
-                <div className="hidden xl:grid grid-cols-12 bg-[#1a1d24] border-b border-[#2e353b] px-4 py-4">
+                <div className="hidden xl:grid grid-cols-12 bg-[#1a1d24] border-b border-[#2e353b] px-4 py-4 rounded-t-xl">
                     <div className="col-span-3 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center border-r border-[#2e353b]/50 pr-6">Player</div>
                     <div className="col-span-4 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center border-r border-[#2e353b]/50 px-6">Purchased Vision</div>
                     <div className="col-span-5 text-xs font-bold text-[#808fa6] uppercase tracking-widest text-center pl-6">Ward Map</div>
