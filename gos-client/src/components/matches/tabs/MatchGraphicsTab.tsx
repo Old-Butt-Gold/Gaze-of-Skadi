@@ -49,7 +49,6 @@ interface PlayerTooltipProps extends TooltipProps<number, string> {
 
 const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, description }) => {
     if (value == null) return null;
-    if (value === 0) return null;
     return (
         <div className="relative group/metric bg-[#15171c] border border-[#2e353b] rounded-xl p-4 flex flex-col items-center justify-center shadow-md flex-1 min-w-37.5 transition-all hover:bg-[#1a1d24] cursor-help">
             <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest mb-1">{label}</span>
