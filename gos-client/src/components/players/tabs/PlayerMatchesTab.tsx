@@ -243,7 +243,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                             </div>
                             <div className="flex gap-1">
                                 {allies.map(heroId => (
-                                    <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
+                                    <div key={heroId} className="rounded overflow-hidden hover:scale-110 transition-transform relative z-10">
                                         <HeroCell heroId={heroId} showName={false} />
                                     </div>
                                 ))}
@@ -265,7 +265,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                             </div>
                             <div className="flex gap-1">
                                 {enemies.map(heroId => (
-                                    <div key={heroId} className="rounded border border-[#2e353b] overflow-hidden hover:scale-110 transition-transform relative z-10 bg-[#0f1114]">
+                                    <div key={heroId} className="rounded overflow-hidden hover:scale-110 transition-transform relative z-10">
                                         <HeroCell heroId={heroId} showName={false} />
                                     </div>
                                 ))}

@@ -117,7 +117,7 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
                     <MatchPlayerCell player={playerInfo} useIcon={false} />
                 </div>
 
-                <div className="flex items-center gap-2 w-full cursor-help">
+                <div className="flex items-center justify-center gap-2 w-full cursor-help">
                     {stats.wasDead && (
                         <div title="Died in fight" className="shrink-0 flex items-center justify-center">
                             <Icon src="/assets/images/death_icon.webp" alt="Dead" size={8} />
