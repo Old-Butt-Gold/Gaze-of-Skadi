@@ -57,6 +57,33 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
                 className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none rounded-md"
             />
 
+            <div className="absolute inset-0 pointer-events-none z-0">
+                {wards.map((ward, i) => {
+                    const x = normalizeMapCoordinate(ward.x, false);
+                    const y = normalizeMapCoordinate(ward.y, true);
+                    const isObs = ward.type.value === WardType.Observer;
+
+                    const radiusPct = isObs ? '21.3%' : '13.3%';
+
+                    return (
+                        <div
+                            key={`radius-${i}`}
+                            className={clsx(
+                                "absolute -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.3] border border-white/30 transition-all pointer-events-none",
+                                isObs ? "bg-[#eab308]" : "bg-[#3b82f6]",
+                                interactive ? "block" : "hidden"
+                            )}
+                            style={{
+                                left: `${x}%`,
+                                top: `${y}%`,
+                                width: radiusPct,
+                                aspectRatio: '1 / 1'
+                            }}
+                        />
+                    );
+                })}
+            </div>
+
             {wards.map((ward, i) => {
                 const x = normalizeMapCoordinate(ward.x, false);
                 const y = normalizeMapCoordinate(ward.y, true);
@@ -64,32 +91,18 @@ const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, si
                 const teamStr = isRadiant ? 'radiant' : 'dire';
                 const typeStr = isObs ? 'observer' : 'sentry';
 
-                // Масштаб радиуса от ширины карты (Observer: ~1600 Range, Sentry: ~1000 Range)
-                const radiusPct = isObs ? '21.3%' : '13.3%';
-
                 return (
                     <div
-                        key={i}
-                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-60 flex items-center justify-center"
-                        style={{
-                            left: `${x}%`,
-                            top: `${y}%`,
-                            width: radiusPct,
-                            aspectRatio: '1 / 1'
-                        }}
+                        key={`icon-${i}`}
+                        className="absolute -translate-x-1/2 -translate-y-1/2 group/ward hover:z-50 pointer-events-none"
+                        style={{ left: `${x}%`, top: `${y}%` }}
                     >
-                        <div className={clsx(
-                            "absolute inset-0 rounded-full opacity-[0.30] pointer-events-none border border-white/30 transition-all",
-                            isObs ? "bg-[#eab308]" : "bg-[#3b82f6]",
-                            interactive ? "block" : "hidden group-hover/ward:block"
-                        )} />
-
-                        <div className={clsx("relative z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)] cursor-help", iconSizeClass)}>
-                            <img src={`/assets/images/${teamStr}_${typeStr}.png`} alt="Ward" className="w-full h-full object-contain pointer-events-auto" />
+                        <div className={clsx("relative z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)] cursor-help pointer-events-auto", iconSizeClass)}>
+                            <img src={`/assets/images/${teamStr}_${typeStr}.png`} alt="Ward" className="w-full h-full object-contain" />
                         </div>
 
                         {interactive && (
-                            <div className="absolute bottom-[calc(50%+1rem)] left-1/2 -translate-x-1/2 mb-2 bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl opacity-0 invisible group-hover/ward:opacity-100 group-hover/ward:visible transition-all z-50 pointer-events-none w-max max-w-50 flex flex-col gap-1.5">
+                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-[#1a1d24]/95 backdrop-blur-md border border-[#2e353b] p-3 rounded-lg shadow-2xl opacity-0 invisible group-hover/ward:opacity-100 group-hover/ward:visible transition-all z-50 pointer-events-none w-max max-w-50 flex flex-col gap-1.5">
                                 <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest border-b border-[#2e353b]/50 pb-1 text-center">
                                     {isObs ? "Observer Ward" : "Sentry Ward"}
                                 </span>
