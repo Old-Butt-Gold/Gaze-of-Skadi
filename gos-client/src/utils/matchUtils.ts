@@ -76,7 +76,7 @@ export const UNIT_ORDER_CONFIG: Record<number, { short: string, full: string, gr
   [UnitOrder.CastToggleAlt]: { short: "Toggle Alt", full: "Cast Toggle Alt", group: "Abilities" }
 };
 
-/*const EXP_LEVEL = [
+export const EXP_LEVEL = [
   0,
   240,
   640,
@@ -107,7 +107,7 @@ export const UNIT_ORDER_CONFIG: Record<number, { short: string, full: string, gr
   49400,
   56400,
   63900
-];*/
+];
 
 /*const ANCIENTS_NAMES = [
   "npc_dota_neutral_jungle_stalker",
