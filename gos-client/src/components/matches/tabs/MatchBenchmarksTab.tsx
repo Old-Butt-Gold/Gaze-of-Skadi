@@ -123,7 +123,7 @@ export const MatchBenchmarksTab: React.FC = () => {
     }
 
     return (
-        <div className="w-full lg:w-[95%] mx-auto animate-in fade-in duration-500 space-y-4">
+        <div className="w-full lg:w-[90%] mx-auto animate-in fade-in duration-500 space-y-4">
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl">
                 <div className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-emerald-500/10 to-[#1a1d24] border-b border-[#2e353b]">
                     <Icon src="/assets/images/radiant.png" size={6} />

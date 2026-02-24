@@ -54,6 +54,7 @@ import {MatchDamageTab} from "./components/matches/tabs/MatchDamageTab.tsx";
 import {MatchEarningsTab} from "./components/matches/tabs/MatchEarningsTab.tsx";
 import {MatchObjectivesTab} from "./components/matches/tabs/MatchObjectivesTab.tsx";
 import {MatchVisionTab} from "./components/matches/tabs/MatchVisionTab.tsx";
+import {MatchTeamfightsTab} from "./components/matches/tabs/MatchTeamfightsTab.tsx";
 
 function App() {
     return (
@@ -124,6 +125,7 @@ function App() {
                     <Route path="earnings" element={<MatchEarningsTab />} />
                     <Route path="objectives" element={<MatchObjectivesTab />} />
                     <Route path="vision" element={<MatchVisionTab />} />
+                    <Route path="teamfights" element={<MatchTeamfightsTab />} />
                 </Route>
 
                 <Route path="*" element={<NotFoundPage />} />
