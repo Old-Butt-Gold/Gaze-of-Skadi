@@ -39,8 +39,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
             Buybacks = MapBuybacks(match.Players),
             Connections = MapConnections(match.Players),
             Kills = MapKills(match.Players),
-            Runes = MapRunes(match.Players),
-            TeamFights = MapTeamFights(match.Teamfights)
+            Runes = MapRunes(match.Players)
         };
     }
 
@@ -136,24 +135,30 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private static string? GetCleanedObjectiveKey(string? rawKey) => rawKey?.Trim('"').Trim();
 
-    private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players) =>
-        players
+    private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players)
+    {
+        /*return players
             .SelectMany((player, index) => player.BuybackLogs.Select(log => new BuybackEventDto
             {
-                Time = log.Time,
-                PlayerIndex = index
+                Time = log.Time, PlayerIndex = index
             }))
-            .OrderBy(x => x.Time);
+            .OrderBy(x => x.Time);*/
+        yield return new BuybackEventDto { Time = 60, PlayerIndex = 3, };
+    }
 
-    private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players) =>
-        players
+    private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players)
+    {
+        /*return players
             .SelectMany((player, index) => player.ConnectionLog.Select(log => new ConnectionEventDto
             {
-                Time = log.Time,
-                Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(log.Event),
-                PlayerIndex = index
+                Time = log.Time, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(log.Event), PlayerIndex = index
             }))
-            .OrderBy(x => x.Time);
+            .OrderBy(x => x.Time);*/
+        yield return new ConnectionEventDto
+        {
+            Time = 59, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(ConnectionEvent.Abandoned), PlayerIndex = 3
+        };
+    }
 
     private IEnumerable<KillEventDto> MapKills(IReadOnlyList<MatchPlayer> players) =>
         players
@@ -176,11 +181,4 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                 PlayerIndex = index
             }))
             .OrderBy(x => x.Time);
-
-    private IEnumerable<TeamFightEventDto> MapTeamFights(IEnumerable<Teamfight> teamfights) =>
-        teamfights.Select(fight => new TeamFightEventDto
-        {
-            StartTime = fight.Start,
-            EndTime = fight.End
-        }).OrderBy(x => x.StartTime);
 }
