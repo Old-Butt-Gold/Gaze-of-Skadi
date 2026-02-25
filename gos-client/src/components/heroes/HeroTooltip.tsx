@@ -120,7 +120,7 @@ export const HeroTooltip: React.FC<Props> = ({ heroId, children }) => {
             }}
         >
             <div className={clsx(
-                "w-full bg-slate-900 rounded-xl overflow-hidden border ring-1 ring-black/80 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] relative",
+                "w-full bg-slate-900 rounded-xl overflow-hidden border ring-1 ring-black/80 relative",
                 themeClasses
             )}>
                 {/* 1. Hero Image Header */}

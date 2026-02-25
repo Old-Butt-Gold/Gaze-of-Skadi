@@ -85,8 +85,8 @@ const ConnectionEventRow: React.FC<{ event: ConnectionEventDto; allPlayers: Play
     const type = event.event.value;
     const isRadiant = isRadiantTeam(player.isRadiant);
 
-    const isDisconnect = type === ConnectionEventType.Disconnected || type === ConnectionEventType.Abandoned;
-    const text = type === ConnectionEventType.Connected ? "Connected" : type === ConnectionEventType.Abandoned ? "Abandoned" : "Disconnected";
+    const isDisconnect = type === ConnectionEventType.Disconnected;
+    const text = type === ConnectionEventType.Connected ? "Connected" : type === ConnectionEventType.Reconnected ? "Reconnected" : "Disconnected";
 
     return (
         <div className={clsx("flex items-center gap-3 w-full", !isRadiant && "flex-row-reverse")}>

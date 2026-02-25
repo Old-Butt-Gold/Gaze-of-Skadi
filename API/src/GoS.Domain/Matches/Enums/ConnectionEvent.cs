@@ -3,6 +3,6 @@
 public enum ConnectionEvent
 {
     Connect,
-    Disconnect,
-    Abandoned
+    Reconnect,
+    Disconnect
 }

@@ -3,8 +3,8 @@ import type {Rune} from "./matchObjectvies.ts";
 
 export const ConnectionEventType = {
   Connected: 0,
-  Disconnected: 1,
-  Abandoned: 2
+  Reconnected: 1,
+  Disconnected: 2
 } as const;
 
 export type ConnectionEventType = typeof ConnectionEventType[keyof typeof ConnectionEventType];
