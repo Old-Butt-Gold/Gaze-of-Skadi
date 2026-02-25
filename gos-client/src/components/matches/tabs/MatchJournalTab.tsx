@@ -8,7 +8,7 @@ import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
 import { MatchPlayerCell } from '../MatchPlayerCell';
 import { Icon } from '../../Icon';
 import { HeroCell } from '../../heroes/HeroCell';
-import { RUNE_NAMES } from '../../../utils/matchUtils';
+import { RUNE_NAMES, isRadiantTeam } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerInfoDto } from '../../../types/matchPlayers';
@@ -24,15 +24,17 @@ import {
 
 const KillEventRow: React.FC<{ event: KillEventDto; allPlayers: PlayerInfoDto[] }> = ({ event, allPlayers }) => {
     const killer = allPlayers[event.killerIndex];
+    const victim = allPlayers.find(p => p.heroId === event.victimHeroId);
+    const isRadiant = killer ? isRadiantTeam(killer.isRadiant) : (victim ? !isRadiantTeam(victim.isRadiant) : true);
 
     return (
-        <div className="flex items-center gap-3">
+        <div className={clsx("flex items-center gap-3 w-full", !isRadiant && "flex-row-reverse")}>
             {killer ? (
-                <MatchPlayerCell player={killer} useIcon={false} />
+                <MatchPlayerCell player={killer} useIcon={false} hideName={true} />
             ) : (
                 <span className="text-xs font-bold text-red-400">NPC / Tower</span>
             )}
-            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded">
+            <div className={clsx("flex items-center gap-1.5 px-2 py-0.5 rounded", !isRadiant && "flex-row-reverse")}>
                 <span className="text-sm text-red-400 uppercase font-bold tracking-widest">Killed</span>
                 <Icon src="/assets/images/death_icon.webp" size={6} alt="Death" />
             </div>
@@ -43,11 +45,12 @@ const KillEventRow: React.FC<{ event: KillEventDto; allPlayers: PlayerInfoDto[] 
 
 const BuybackEventRow: React.FC<{ event: BuybackEventDto; allPlayers: PlayerInfoDto[] }> = ({ event, allPlayers }) => {
     const player = allPlayers[event.playerIndex];
+    const isRadiant = isRadiantTeam(player.isRadiant);
 
     return (
-        <div className="flex items-center gap-3">
-            <MatchPlayerCell player={player} useIcon={false} />
-            <div className="flex items-center gap-1.5 px-2 py-0.5 rounded">
+        <div className={clsx("flex items-center gap-3 w-full", !isRadiant && "flex-row-reverse")}>
+            <MatchPlayerCell player={player} useIcon={false} hideName={true} />
+            <div className={clsx("flex items-center gap-1.5 px-2 py-0.5 rounded", !isRadiant && "flex-row-reverse")}>
                 <span className="text-sm text-[#facc15] uppercase font-bold tracking-widest">Bought Back</span>
                 <Icon src="/assets/images/gold.png" size={6} />
             </div>
@@ -59,12 +62,13 @@ const RuneEventRow: React.FC<{ event: RuneEventDto; allPlayers: PlayerInfoDto[] 
     const player = allPlayers[event.playerIndex];
     const runeId = event.rune.value;
     const runeName = RUNE_NAMES[runeId] || "Unknown";
+    const isRadiant = isRadiantTeam(player.isRadiant);
 
     return (
-        <div className="flex items-center gap-3">
-            <MatchPlayerCell player={player} useIcon={false} />
+        <div className={clsx("flex items-center gap-3 w-full", !isRadiant && "flex-row-reverse")}>
+            <MatchPlayerCell player={player} useIcon={false} hideName={true} />
             <span className="text-xs text-[#808fa6] uppercase font-bold tracking-widest">Picked up</span>
-            <div className="flex items-center gap-1.5 py-0.5 rounded">
+            <div className={clsx("flex items-center gap-1.5 py-0.5 rounded", !isRadiant && "flex-row-reverse")}>
                 <Icon src={`/assets/images/rune_${runeId}.png`} size={6} alt={runeName} />
                 <span className="text-sm font-bold text-[#e7d291]">{runeName} Rune</span>
             </div>
@@ -75,16 +79,18 @@ const RuneEventRow: React.FC<{ event: RuneEventDto; allPlayers: PlayerInfoDto[] 
 const ConnectionEventRow: React.FC<{ event: ConnectionEventDto; allPlayers: PlayerInfoDto[] }> = ({ event, allPlayers }) => {
     const player = allPlayers[event.playerIndex];
     const type = event.event.value;
+    const isRadiant = isRadiantTeam(player.isRadiant);
 
     const isDisconnect = type === ConnectionEventType.Disconnected || type === ConnectionEventType.Abandoned;
     const text = type === ConnectionEventType.Connected ? "Connected" : type === ConnectionEventType.Abandoned ? "Abandoned" : "Disconnected";
 
     return (
-        <div className="flex items-center gap-3">
-            <MatchPlayerCell player={player} useIcon={false} />
+        <div className={clsx("flex items-center gap-3 w-full", !isRadiant && "flex-row-reverse")}>
+            <MatchPlayerCell player={player} useIcon={false} hideName={true} />
             <div className={clsx(
                 "flex items-center gap-1.5 px-2 py-0.5 rounded",
-                isDisconnect ? "text-red-400" : "text-emerald-400"
+                isDisconnect ? "text-red-400" : "text-emerald-400",
+                !isRadiant && "flex-row-reverse"
             )}>
                 <span className="text-sm uppercase font-bold tracking-widest">{text}</span>
                 {isDisconnect && <Icon src="/assets/images/disconnect_icon.png" />}
@@ -93,14 +99,10 @@ const ConnectionEventRow: React.FC<{ event: ConnectionEventDto; allPlayers: Play
     );
 };
 
-
-// --- ГЛАВНАЯ ВКЛАДКА ---
-
 export const MatchJournalTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
     const { data: journalData, isLoading, isError } = useMatchJournal(matchId, isParsed);
 
-    // Состояния фильтров
     const [filters, setFilters] = useState<Record<JournalEventType, boolean>>({
         kill: true,
         buyback: true,
@@ -112,7 +114,6 @@ export const MatchJournalTab: React.FC = () => {
         setFilters(prev => ({ ...prev, [type]: !prev[type] }));
     };
 
-    // Объединяем и сортируем все события
     const unifiedEvents = useMemo(() => {
         if (!journalData) return [];
 
@@ -138,14 +139,12 @@ export const MatchJournalTab: React.FC = () => {
     return (
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
 
-            {/* Header & Filters */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden mb-6">
                 <div className="p-4 lg:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <h2 className="text-xl font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-3">
                         Match Log
                     </h2>
 
-                    {/* Filter Toggles */}
                     <div className="flex flex-wrap bg-[#0b0e13] border border-[#2e353b] rounded-lg p-1 overflow-x-auto gap-1">
                         {[
                             { key: 'kill' as const, label: 'Kills', color: 'text-red-400' },
@@ -170,7 +169,6 @@ export const MatchJournalTab: React.FC = () => {
                 </div>
             </div>
 
-            {/* Timeline List */}
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden">
                 {filteredEvents.length === 0 ? (
                     <div className="text-center text-[#58606e] py-10 italic">No events match the selected filters.</div>
@@ -184,12 +182,10 @@ export const MatchJournalTab: React.FC = () => {
                                     index % 2 === 0 ? "bg-transparent" : "bg-[#0b0e13]/20"
                                 )}
                             >
-                                {/* Time Column */}
-                                <div className="font-mono font-bold text-sm text-[#808fa6] w-16 shrink-0 pt-1 sm:pt-0">
+                                <div className="font-mono font-bold text-sm text-[#808fa6] shrink-0 pt-1 sm:pt-0">
                                     {formatDuration(ev.time)}
                                 </div>
 
-                                {/* Content Column */}
                                 <div className="flex-1 min-w-0">
                                     {ev.type === 'kill' && <KillEventRow event={ev.data as KillEventDto} allPlayers={players} />}
                                     {ev.type === 'buyback' && <BuybackEventRow event={ev.data as BuybackEventDto} allPlayers={players} />}

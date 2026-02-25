@@ -144,6 +144,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
             }))
             .OrderBy(x => x.Time);*/
         yield return new BuybackEventDto { Time = 60, PlayerIndex = 3, };
+        yield return new BuybackEventDto { Time = 60, PlayerIndex = 8, };
     }
 
     private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players)
@@ -157,6 +158,11 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
         yield return new ConnectionEventDto
         {
             Time = 59, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(ConnectionEvent.Abandoned), PlayerIndex = 3
+        };
+
+        yield return new ConnectionEventDto
+        {
+            Time = 59, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(ConnectionEvent.Abandoned), PlayerIndex = 8
         };
     }
 
