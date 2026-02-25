@@ -209,10 +209,10 @@ export const parseObjectiveName = (key: string): { name: string, team: 'radiant'
   let building = '';
   if (key.includes('fort')) building = 'Ancient';
   else if (key.includes('healers')) building = 'Shrine';
-  else if (key.includes('tower1')) building = 'T1 Tower';
-  else if (key.includes('tower2')) building = 'T2 Tower';
-  else if (key.includes('tower3')) building = 'T3 Tower';
-  else if (key.includes('tower4')) building = 'T4 Tower';
+  else if (key.includes('tower1')) building = 'T1';
+  else if (key.includes('tower2')) building = 'T2';
+  else if (key.includes('tower3')) building = 'T3';
+  else if (key.includes('tower4')) building = 'T4';
   else if (key.includes('melee_rax')) building = 'Melee Rax';
   else if (key.includes('range_rax')) building = 'Ranged Rax';
 

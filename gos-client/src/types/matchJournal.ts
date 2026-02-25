@@ -1,4 +1,4 @@
-﻿import type { BaseEnum } from "./common";
+﻿import type {BaseEnum, TeamEnum} from "./common";
 import type {Rune} from "./matchObjectvies.ts";
 
 export const ConnectionEventType = {
@@ -8,6 +8,18 @@ export const ConnectionEventType = {
 } as const;
 
 export type ConnectionEventType = typeof ConnectionEventType[keyof typeof ConnectionEventType];
+
+export const ObjectiveType = {
+  BuildingKill: 0,
+  ChatMessageFirstBlood: 1,
+  ChatMessageRoshanKill: 2,
+  ChatMessageAegis: 3,
+  ChatMessageCourierLost: 4,
+  ChatMessageAegisStolen: 5,
+  ChatMessageTormentorKill: 6,
+} as const;
+
+export type ObjectiveType = typeof ObjectiveType[keyof typeof ObjectiveType];
 
 export interface ITimebleDto {
   time: number;
@@ -32,18 +44,26 @@ export interface RuneEventDto extends ITimebleDto {
   playerIndex: number;
 }
 
+export interface ObjectiveEventDto extends ITimebleDto {
+  type: BaseEnum<ObjectiveType>;
+  playerIndex: number | null;
+  target: string | null;
+  targetTeam: BaseEnum<TeamEnum> | null;
+}
+
 export interface MatchJournalDto {
+  objectives: ObjectiveEventDto[];
   buybacks: BuybackEventDto[];
   connections: ConnectionEventDto[];
   kills: KillEventDto[];
   runes: RuneEventDto[];
 }
 
-export type JournalEventType = 'kill' | 'buyback' | 'rune' | 'connection';
+export type JournalEventType = 'kill' | 'buyback' | 'rune' | 'connection' | 'objective';
 
 export interface UnifiedJournalEvent {
   id: string;
   type: JournalEventType;
   time: number;
-  data: BuybackEventDto | ConnectionEventDto | KillEventDto | RuneEventDto;
+  data: BuybackEventDto | ConnectionEventDto | KillEventDto | RuneEventDto | ObjectiveEventDto;
 }

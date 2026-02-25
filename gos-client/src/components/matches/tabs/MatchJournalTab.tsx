@@ -2,22 +2,26 @@
 import { useOutletContext } from 'react-router-dom';
 import clsx from 'clsx';
 import { useMatchJournal } from '../../../hooks/queries/useMatchJournal';
+import { useObjectiveNames } from '../../../hooks/queries/useObjectiveNames';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
 import { MatchPlayerCell } from '../MatchPlayerCell';
 import { Icon } from '../../Icon';
 import { HeroCell } from '../../heroes/HeroCell';
-import { RUNE_NAMES, isRadiantTeam } from '../../../utils/matchUtils';
+import { RUNE_NAMES, isRadiantTeam, parseObjectiveName } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
+import { TeamEnum } from "../../../types/common";
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerInfoDto } from '../../../types/matchPlayers';
 import {
     ConnectionEventType,
+    ObjectiveType,
     type BuybackEventDto,
     type ConnectionEventDto,
     type KillEventDto,
     type RuneEventDto,
+    type ObjectiveEventDto,
     type UnifiedJournalEvent,
     type JournalEventType
 } from '../../../types/matchJournal';
@@ -99,15 +103,108 @@ const ConnectionEventRow: React.FC<{ event: ConnectionEventDto; allPlayers: Play
     );
 };
 
+const ObjectiveEventRow: React.FC<{ event: ObjectiveEventDto; allPlayers: PlayerInfoDto[]; objectiveNames: string[] }> = ({ event, allPlayers, objectiveNames }) => {
+    const type = event.type.value;
+    const player = event.playerIndex != null ? allPlayers[event.playerIndex] : null;
+
+    let isRadiantEvent = true;
+    if (player) {
+        isRadiantEvent = isRadiantTeam(player.isRadiant);
+    } else if (event.targetTeam) {
+        isRadiantEvent = event.targetTeam.value === TeamEnum.Dire;
+    }
+
+    const rowClass = clsx("flex items-center gap-3 w-full", !isRadiantEvent && "flex-row-reverse");
+    const innerRowClass = clsx("flex items-center gap-1.5 py-0.5 rounded", !isRadiantEvent && "flex-row-reverse");
+
+    switch (type) {
+        case ObjectiveType.ChatMessageFirstBlood:
+            return (
+                <div className={rowClass}>
+                    {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
+                    <div className={innerRowClass}>
+                        <span className="text-sm text-red-400 font-bold uppercase tracking-widest">Drew First Blood</span>
+                        <Icon src="/assets/images/firstblood_icon.svg" size={6} alt="Drew First Blood" />
+                    </div>
+                </div>
+            );
+        case ObjectiveType.ChatMessageRoshanKill:
+            return (
+                <div className="flex items-center justify-center gap-3 w-full text-[#e7d291]">
+                    <Icon src="/assets/images/roshan_icon.png" size={8} alt="Roshan" />
+                    <span className="text-sm font-bold uppercase tracking-widest">Roshan was slained</span>
+                </div>
+            );
+        case ObjectiveType.ChatMessageAegis:
+        case ObjectiveType.ChatMessageAegisStolen:
+            return (
+                <div className={rowClass}>
+                    {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
+                    <div className={innerRowClass}>
+                        <span className="text-sm text-[#e7d291] font-bold uppercase tracking-widest">
+                            {type === ObjectiveType.ChatMessageAegisStolen ? "Stole Aegis" : "Picked up Aegis"}
+                        </span>
+                        <Icon src="/assets/images/aegis_icon.png" size={8} alt="Aegis" />
+                    </div>
+                </div>
+            );
+        case ObjectiveType.ChatMessageTormentorKill:
+            return (
+                <div className={rowClass}>
+                    {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
+                    <div className={innerRowClass}>
+                        <span className="text-sm text-[#38bdf8] font-bold uppercase tracking-widest">Have destroyed the Tormentor</span>
+                        <Icon src="/assets/images/shard_active.png" size={8} alt="Tormentor" />
+                    </div>
+                </div>
+            );
+        case ObjectiveType.BuildingKill:
+            {
+                const parsedTarget = event.target ? parseObjectiveName(event.target).name : "Building";
+
+                if (player) {
+                    return (
+                        <div className={rowClass}>
+                            <MatchPlayerCell player={player} useIcon={false} hideName={true} />
+                            <div className={innerRowClass}>
+                                <span className="text-sm text-[#f59e0b] font-bold uppercase tracking-widest">Destroyed {parsedTarget}</span>
+                            </div>
+                        </div>
+                    );
+                } else if (event.target && objectiveNames.includes(event.target)) {
+                    const isDireCreeps = event.targetTeam?.value === TeamEnum.Radiant;
+                    const creepIcon = isDireCreeps ? "/assets/images/dire_creep.png" : "/assets/images/radiant_creep.png";
+                    const creepName = isDireCreeps ? "Dire Creeps" : "Radiant Creeps";
+
+                    return (
+                        <div className={rowClass}>
+                            <div className={clsx("flex items-center gap-2", !isRadiantEvent && "flex-row-reverse")}>
+                                <Icon src={creepIcon} size={10} alt={creepName} />
+                            </div>
+                            <div className={innerRowClass}>
+                                <span className="text-sm text-[#f59e0b] font-bold uppercase tracking-widest">Destroyed {parsedTarget}</span>
+                            </div>
+                        </div>
+                    );
+                }
+                return null;
+            }
+        default:
+            return null;
+    }
+};
+
 export const MatchJournalTab: React.FC = () => {
     const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
     const { data: journalData, isLoading, isError } = useMatchJournal(matchId, isParsed);
+    const { data: objectiveNames = [] } = useObjectiveNames();
 
     const [filters, setFilters] = useState<Record<JournalEventType, boolean>>({
         kill: true,
         buyback: true,
         rune: true,
-        connection: true
+        connection: true,
+        objective: true
     });
 
     const toggleFilter = (type: JournalEventType) => {
@@ -123,6 +220,7 @@ export const MatchJournalTab: React.FC = () => {
         journalData.buybacks?.forEach((b, i) => events.push({ id: `bb-${i}`, type: 'buyback', time: b.time, data: b }));
         journalData.runes?.forEach((r, i) => events.push({ id: `rune-${i}`, type: 'rune', time: r.time, data: r }));
         journalData.connections?.forEach((c, i) => events.push({ id: `conn-${i}`, type: 'connection', time: c.time, data: c }));
+        journalData.objectives?.forEach((o, i) => events.push({ id: `obj-${i}`, type: 'objective', time: o.time, data: o }));
 
         return events.sort((a, b) => a.time - b.time);
     }, [journalData]);
@@ -148,6 +246,7 @@ export const MatchJournalTab: React.FC = () => {
                     <div className="flex flex-wrap bg-[#0b0e13] border border-[#2e353b] rounded-lg p-1 overflow-x-auto gap-1">
                         {[
                             { key: 'kill' as const, label: 'Kills', color: 'text-red-400' },
+                            { key: 'objective' as const, label: 'Objectives', color: 'text-[#f59e0b]' },
                             { key: 'buyback' as const, label: 'Buybacks', color: 'text-[#facc15]' },
                             { key: 'rune' as const, label: 'Runes', color: 'text-blue-400' },
                             { key: 'connection' as const, label: 'Connections', color: 'text-[#808fa6]' }
@@ -191,6 +290,7 @@ export const MatchJournalTab: React.FC = () => {
                                     {ev.type === 'buyback' && <BuybackEventRow event={ev.data as BuybackEventDto} allPlayers={players} />}
                                     {ev.type === 'rune' && <RuneEventRow event={ev.data as RuneEventDto} allPlayers={players} />}
                                     {ev.type === 'connection' && <ConnectionEventRow event={ev.data as ConnectionEventDto} allPlayers={players} />}
+                                    {ev.type === 'objective' && <ObjectiveEventRow event={ev.data as ObjectiveEventDto} allPlayers={players} objectiveNames={objectiveNames} />}
                                 </div>
                             </div>
                         ))}
