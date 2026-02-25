@@ -135,36 +135,24 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private static string? GetCleanedObjectiveKey(string? rawKey) => rawKey?.Trim('"').Trim();
 
-    private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players)
-    {
-        /*return players
+    private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players) =>
+        players
             .SelectMany((player, index) => player.BuybackLogs.Select(log => new BuybackEventDto
             {
-                Time = log.Time, PlayerIndex = index
+                Time = log.Time,
+                PlayerIndex = index
             }))
-            .OrderBy(x => x.Time);*/
-        yield return new BuybackEventDto { Time = 60, PlayerIndex = 3, };
-        yield return new BuybackEventDto { Time = 60, PlayerIndex = 8, };
-    }
+            .OrderBy(x => x.Time);
 
-    private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players)
-    {
-        /*return players
+    private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players) =>
+        players
             .SelectMany((player, index) => player.ConnectionLog.Select(log => new ConnectionEventDto
             {
-                Time = log.Time, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(log.Event), PlayerIndex = index
+                Time = log.Time,
+                Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(log.Event),
+                PlayerIndex = index
             }))
-            .OrderBy(x => x.Time);*/
-        yield return new ConnectionEventDto
-        {
-            Time = 59, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(ConnectionEvent.Abandoned), PlayerIndex = 3
-        };
-
-        yield return new ConnectionEventDto
-        {
-            Time = 59, Event = mapper.Map<BaseEnumDto<ConnectionEvent>>(ConnectionEvent.Abandoned), PlayerIndex = 8
-        };
-    }
+            .OrderBy(x => x.Time);
 
     private IEnumerable<KillEventDto> MapKills(IReadOnlyList<MatchPlayer> players) =>
         players
