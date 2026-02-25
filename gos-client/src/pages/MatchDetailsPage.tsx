@@ -65,24 +65,22 @@ export const MatchDetailsPage: React.FC = () => {
     return (
         <div className="w-full min-h-screen pb-10 animate-fade-in bg-[#0b0e13]">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="border-b border-[#2e353b] mb-6 overflow-x-auto">
-                    <nav className="flex space-x-8 min-w-max">
-                        {tabs.map((tab) => (
-                            <Link
-                                key={tab.id}
-                                to={tab.id}
-                                className={clsx(
-                                    "py-4 px-2 border-b-2 font-bold text-sm uppercase tracking-widest transition-colors flex items-center gap-2",
-                                    activeTab === tab.id
-                                        ? "border-[#e7d291] text-[#e7d291]"
-                                        : "border-transparent text-[#808fa6] hover:text-white hover:border-[#58606e]"
-                                )}
-                            >
-                                {tab.label}
-                                {tab.requiresParse && !isParsed && <span className="text-[10px] opacity-50">🔒</span>}
-                            </Link>
-                        ))}
-                    </nav>
+
+                <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
+                    <div className="flex gap-1 min-w-max w-fit mx-auto px-4">
+                        {tabs.map((tab) => {
+                            const isDisabled = tab.requiresParse && !isParsed;
+                            return (
+                                <TabButton
+                                    key={tab.id}
+                                    label={tab.label}
+                                    to={tab.id}
+                                    isActive={activeTab === tab.id}
+                                    disabled={isDisabled}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
 
                 <div className="min-h-[50vh] animate-in fade-in slide-in-from-bottom-2 duration-300">
@@ -92,3 +90,20 @@ export const MatchDetailsPage: React.FC = () => {
         </div>
     );
 };
+
+const TabButton = ({ label, to, isActive, disabled }: { label: string, to: string, isActive: boolean, disabled?: boolean }) => (
+    <Link
+        to={disabled ? '#' : to}
+        onClick={(e) => disabled && e.preventDefault()}
+        className={clsx(
+            "px-6 py-4 text-sm font-bold uppercase tracking-widest border-b-2 transition-all duration-300 whitespace-nowrap flex items-center",
+            isActive
+                ? "border-[#e7d291] text-[#e7d291] bg-linear-to-t from-[#e7d291]/10 to-transparent"
+                : "border-transparent text-[#808fa6] hover:text-white hover:bg-[#1a1d24]",
+            disabled && "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-[#808fa6]"
+        )}
+    >
+        {label}
+        {disabled && <span className="ml-2 text-xs opacity-50">🔒</span>}
+    </Link>
+);

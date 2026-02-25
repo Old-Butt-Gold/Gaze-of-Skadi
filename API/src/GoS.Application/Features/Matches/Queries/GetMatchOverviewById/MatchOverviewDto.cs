@@ -21,23 +21,13 @@ public record ItemPurchaseDto
     public int ItemIndex { get; set; }
 }
 
-public record AbilityUpgradeDto
-{
-    public required int AbilityId { get; init; }
-}
-
-public record ObjectiveDataDto
-{
-    public required string Key { get; init; }
-    public required int Value { get; init; }
-}
-
 public record PlayerOverviewDto
 {
     public required bool AghanimShardBuff { get; init; }
     public required bool AghanimBuff { get; init; }
     public required IEnumerable<PermanentBuffDto> PermanentBuff { get; init; }
     public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int Level { get; init; }
     public required long Kills { get; init; }
     public required int Deaths { get; init; }
     public required long Assists { get; init; }
@@ -56,8 +46,7 @@ public record PlayerOverviewDto
     public required BaseEnumDto<BooleanState>? Randomed { get; init; }
     public required IEnumerable<ItemPurchaseDto> Items { get; init; }
     public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
-    public required IEnumerable<AbilityUpgradeDto> AbilityUpgrades { get; init; }
-    public required IEnumerable<ObjectiveDataDto> Objectives { get; init; }
+    public required IEnumerable<int> AbilityUpgradesIds { get; init; }
 }
 
 public record PermanentBuffDto
@@ -85,7 +74,6 @@ public record MatchOverviewDto
     public required BaseEnumDto<LobbyType> LobbyType { get; set; }
     public required int Duration { get; init; }
     public long StartTime { get; set; }
-    public required long EndTime { get; init; }
     public required long MatchId { get; init; }
     public required BaseEnumDto<Region> Region { get; init; }
     public required Uri? ReplayUrl { get; init; }

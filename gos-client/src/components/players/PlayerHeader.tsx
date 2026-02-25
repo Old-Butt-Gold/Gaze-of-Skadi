@@ -1,14 +1,12 @@
 ﻿import React, { useState } from 'react';
 import clsx from 'clsx';
-import type { PlayerDto, PlayerEndpointParameters } from '../../types/player';
+import type { PlayerDto } from '../../types/player';
 import { Icon } from '../Icon';
 import { BooleanState } from '../../types/common';
-import { usePlayerWinLoss } from "../../hooks/queries/usePlayerWinLoss";
 import { RankIcon } from "../distributions/RankIcon";
 
 interface Props {
     player: PlayerDto;
-    filters: PlayerEndpointParameters;
 }
 
 const AliasesDropdown: React.FC<{ aliases: PlayerDto['aliases'] }> = ({ aliases }) => {
@@ -28,7 +26,6 @@ const AliasesDropdown: React.FC<{ aliases: PlayerDto['aliases'] }> = ({ aliases 
                 </svg>
             </button>
 
-            {/* Dropdown Menu - Fixed z-index and positioning context */}
             {isOpen && (
                 <>
                     <div className="fixed inset-0" onClick={() => setIsOpen(false)} />
@@ -53,17 +50,8 @@ const AliasesDropdown: React.FC<{ aliases: PlayerDto['aliases'] }> = ({ aliases 
     );
 };
 
-export const PlayerHeader: React.FC<Props> = ({ player, filters }) => {
+export const PlayerHeader: React.FC<Props> = ({ player }) => {
     const { profile } = player;
-
-    const { data: wl, isLoading: isWlLoading } = usePlayerWinLoss(profile.accountId, filters);
-
-    const isStatsEmpty = wl && wl.wins === 0 && wl.losses === 0;
-    const isHistoryAvailable = profile.fhUnavailable?.value !== BooleanState.True && !isStatsEmpty;
-
-    const totalMatches = (wl?.wins || 0) + (wl?.losses || 0);
-    const winRate = totalMatches > 0 ? ((wl?.wins || 0) / totalMatches * 100).toFixed(2) : '0.0';
-    const winRateColor = Number(winRate) >= 50 ? 'text-emerald-400' : 'text-red-400';
 
     return (
         <div className="relative w-full bg-[#15171c] border-b border-[#2e353b] overflow-visible z-20"> {/* overflow-visible is key for dropdowns */}
@@ -103,39 +91,6 @@ export const PlayerHeader: React.FC<Props> = ({ player, filters }) => {
                             <div className="flex items-center gap-1.5 hover:text-white transition-colors bg-[#2e353b]/30 px-3 py-1.5 rounded-full border border-[#2e353b] hover:border-[#58606e]">
                                 Name: {profile.name ?? "Unknown"}
                             </div>
-                        </div>
-
-                        <div className="mt-2 w-full md:w-auto">
-                            {isHistoryAvailable ? (
-                                <div className="inline-flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-8 bg-[#0f1114]/60 border border-[#2e353b] rounded-xl px-6 py-3 backdrop-blur-sm shadow-lg min-w-[280px]">
-                                    {isWlLoading ? (
-                                        <div className="h-10 w-full bg-[#2e353b] animate-pulse rounded" />
-                                    ) : (
-                                        <>
-                                            <div className="text-center md:text-left">
-                                                <div className="text-[10px] text-[#58606e] font-bold uppercase tracking-widest mb-0.5">Record</div>
-                                                <div className="font-bold text-lg font-mono tracking-tight">
-                                                    <span className="text-emerald-400">{wl?.wins}</span>
-                                                    <span className="text-[#58606e] mx-1.5">-</span>
-                                                    <span className="text-red-400">{wl?.losses}</span>
-                                                </div>
-                                            </div>
-                                            <div className="w-full h-px sm:w-px sm:h-8 bg-[#2e353b]" />
-                                            <div className="text-center md:text-left">
-                                                <div className="text-[10px] text-[#58606e] font-bold uppercase tracking-widest mb-0.5">Win Rate</div>
-                                                <div className={clsx("font-bold text-lg font-mono tracking-tight", winRateColor)}>
-                                                    {winRate}%
-                                                </div>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            ) : (
-                                <div className="inline-flex items-center gap-3 bg-red-950/20 border border-red-900/40 text-red-200 px-5 py-3 rounded-lg text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
-                                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_#ef4444]" />
-                                    Match History Private
-                                </div>
-                            )}
                         </div>
                     </div>
 

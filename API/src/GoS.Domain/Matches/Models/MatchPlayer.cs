@@ -333,12 +333,6 @@ public class MatchPlayer
 	public List<WardLog> ObsLog { get; init; } = [];
 
 	/// <summary>
-	/// Gets a party ID
-	/// </summary>
-	[JsonPropertyName("party_id")]
-	public int? PartyId { get; init; }
-
-	/// <summary>
 	/// Gets a size of the players party. If not in a party, will return 1.
 	/// </summary>
 	[JsonPropertyName("party_size")]

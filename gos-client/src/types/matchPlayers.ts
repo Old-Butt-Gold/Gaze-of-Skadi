@@ -17,8 +17,6 @@ export interface PlayerInfoDto {
   laneRole: BaseEnum<LaneRole>;
   rankTier: BaseEnum<Rank> | null;
   isRadiant: BaseEnum<BooleanState>;
-  level: number;
-  partyId: number | null;
   partySize: number | null;
 }
 

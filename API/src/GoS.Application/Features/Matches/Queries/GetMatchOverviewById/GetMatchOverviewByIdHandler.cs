@@ -40,7 +40,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             LobbyType = mapper.Map<BaseEnumDto<LobbyType>>(match.LobbyType),
             Duration = match.Duration,
             StartTime = match.StartTime,
-            EndTime = match.StartTime + match.Duration,
             MatchId = match.MatchId,
             Region = mapper.Map<BaseEnumDto<Region>>(match.Region),
             ReplayUrl = match.ReplayUrl,
@@ -119,17 +118,13 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
                 ? player.ItemNeutral
                 : null,
             NeutralAura = player.ItemNeutralAura,
-            AbilityUpgrades = player.AbilityUpgradesArr.Select(abilityId => new AbilityUpgradeDto
-                {
-                    AbilityId = abilityId
-                })
-                .ToList(),
+            AbilityUpgradesIds = player.AbilityUpgradesArr,
             AghanimShardBuff = aghanimShardBuff,
             AghanimBuff = aghanimBuff,
-            Objectives = GetObjectiveDataForPlayer(player),
             Kda = Math.Round(player.Kda, 2),
             PredVict = mapper.Map<BaseEnumDto<BooleanState>?>(player.PredVict),
             Randomed = mapper.Map<BaseEnumDto<BooleanState>?>(player.Randomed),
+            Level = player.Level,
         };
     }
 
@@ -158,10 +153,4 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
 
         return items;
     }
-
-    private IEnumerable<ObjectiveDataDto> GetObjectiveDataForPlayer(MatchPlayer player) =>
-        player.Damage
-            .Where(x => _objectives.Contains(x.Key))
-            .Select(damage => new ObjectiveDataDto { Key = damage.Key, Value = damage.Value, })
-            .ToList();
 }

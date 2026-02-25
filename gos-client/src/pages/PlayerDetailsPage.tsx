@@ -67,7 +67,7 @@ export const PlayerDetailsPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-[#0f1114] text-white pb-10">
 
-            <PlayerHeader player={player} filters={filters} />
+            <PlayerHeader player={player} />
 
             <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-4">
                 <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
