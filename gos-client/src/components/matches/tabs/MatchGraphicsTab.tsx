@@ -1,5 +1,5 @@
-﻿import React, {useMemo, useState} from 'react';
-import {useOutletContext} from 'react-router-dom';
+﻿import React, { useMemo, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import clsx from 'clsx';
 import {
     CartesianGrid,
@@ -13,15 +13,16 @@ import {
     XAxis,
     YAxis
 } from 'recharts';
-import {useMatchGraphics} from '../../../hooks/queries/useMatchGraphics';
-import {LoadingSpinner} from '../../ui/LoadingSpinner';
-import {ErrorDisplay} from '../../ui/ErrorDisplay';
-import {UnparsedMatchWarning} from '../UnparsedMatchWarning';
-import {HeroCell} from '../../heroes/HeroCell';
-import {getPlayerColor, EXP_LEVEL} from '../../../utils/matchUtils';
-import type {MatchOutletContext} from '../../../pages/MatchDetailsPage';
-import type {PlayerInfoDto} from '../../../types/matchPlayers';
-import {Icon} from "../../Icon.tsx";
+import { useMatchGraphics } from '../../../hooks/queries/useMatchGraphics';
+import { useHeroes } from '../../../hooks/queries/useHeroes';
+import { LoadingSpinner } from '../../ui/LoadingSpinner';
+import { ErrorDisplay } from '../../ui/ErrorDisplay';
+import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
+import { HeroCell } from '../../heroes/HeroCell';
+import { getPlayerColor, EXP_LEVEL } from '../../../utils/matchUtils';
+import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
+import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import { Icon } from "../../Icon.tsx";
 
 type GraphType = 'goldPerMinute' | 'xpPerMinute' | 'lastHitsPerMinute';
 
@@ -55,6 +56,32 @@ const getLevelByXp = (xp: number): number => {
         }
     }
     return EXP_LEVEL.length; // Max level
+};
+
+const PlayerToggleIcon: React.FC<{ heroId: number | null; color: string; isHidden: boolean; onClick: () => void }> = ({ heroId, color, isHidden, onClick }) => {
+    const { getHero } = useHeroes();
+    if (!heroId) return null;
+    const hero = getHero(heroId);
+
+    return (
+        <button
+            onClick={onClick}
+            className={clsx(
+                "relative w-8 h-8 sm:w-10 sm:h-10 rounded overflow-hidden border-b-4 transition-all duration-200 shrink-0",
+                isHidden
+                    ? "opacity-30 border-transparent grayscale hover:grayscale-50 hover:opacity-60"
+                    : "opacity-100 hover:brightness-110 drop-shadow-md"
+            )}
+            style={{ borderBottomColor: isHidden ? 'transparent' : color }}
+            title={hero?.localized_name}
+        >
+            {hero ? (
+                <Icon src={hero.icon} />
+            ) : (
+                <div className="w-full h-full bg-slate-800 animate-pulse" />
+            )}
+        </button>
+    );
 };
 
 const MetricWidget: React.FC<MetricWidgetProps> = ({ label, value, colorClass, description }) => {
@@ -159,6 +186,18 @@ export const MatchGraphicsTab: React.FC = () => {
     const { data: graphicsData, isLoading, isError } = useMatchGraphics(matchId, isParsed);
 
     const [playerGraphType, setPlayerGraphType] = useState<GraphType>('goldPerMinute');
+    const [hiddenPlayers, setHiddenPlayers] = useState<Set<number>>(new Set());
+
+    const togglePlayer = (index: number) => {
+        setHiddenPlayers(prev => {
+            const next = new Set(prev);
+            if (next.has(index)) next.delete(index);
+            else next.add(index);
+            return next;
+        });
+    };
+
+    const resetHiddenPlayers = () => setHiddenPlayers(new Set());
 
     const { playerChartData } = useMemo(() => {
         if (!graphicsData?.playerGraphs) return { playerChartData: [] };
@@ -266,26 +305,60 @@ export const MatchGraphicsTab: React.FC = () => {
             </div>
 
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
-                        Player Metrics
-                    </h3>
 
-                    <div className="flex bg-[#0b0e13] border border-[#2e353b] rounded-lg p-1 overflow-x-auto">
-                        {GRAPH_OPTIONS.map(type => (
+                <div className="flex flex-col gap-4 mb-6">
+                    <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                        <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
+                            Player Metrics
+                        </h3>
+
+                        <div className="flex bg-[#0b0e13] border border-[#2e353b] rounded-lg p-1 overflow-x-auto w-fit max-w-full">
+                            {GRAPH_OPTIONS.map(type => (
+                                <button
+                                    key={type.id}
+                                    onClick={() => setPlayerGraphType(type.id)}
+                                    className={clsx(
+                                        "px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-md transition-all whitespace-nowrap",
+                                        playerGraphType === type.id
+                                            ? "bg-[#2e353b] text-[#e7d291] shadow-inner"
+                                            : "text-[#58606e] hover:text-[#808fa6] hover:bg-[#1a1d24]"
+                                    )}
+                                >
+                                    {type.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-3 bp-2 lg:p-3 rounded-xl">
+                        <span className="text-sm text-[#808fa6] uppercase font-bold tracking-widest px-2 shrink-0">
+                            Toggle Heroes
+                        </span>
+                        <div className="flex items-center flex-1 overflow-x-auto gap-1.5 pb-1 sm:pb-0 min-w-max">
+                            {players.map((p, idx) => {
+                                const isHidden = hiddenPlayers.has(idx);
+                                const color = getPlayerColor(p.playerSlot.value);
+                                return (
+                                    <React.Fragment key={`toggle-${idx}`}>
+                                        {idx === 5 && <div className="w-px h-6 bg-[#2e353b] mx-1 sm:mx-2 shrink-0" />}
+                                        <PlayerToggleIcon
+                                            heroId={p.heroId}
+                                            color={color}
+                                            isHidden={isHidden}
+                                            onClick={() => togglePlayer(idx)}
+                                        />
+                                    </React.Fragment>
+                                );
+                            })}
+                        </div>
+                        {hiddenPlayers.size > 0 && (
                             <button
-                                key={type.id}
-                                onClick={() => setPlayerGraphType(type.id)}
-                                className={clsx(
-                                    "px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-md transition-all whitespace-nowrap",
-                                    playerGraphType === type.id
-                                        ? "bg-[#2e353b] text-[#e7d291] shadow-inner"
-                                        : "text-[#58606e] hover:text-[#808fa6] hover:bg-[#1a1d24]"
-                                )}
+                                onClick={resetHiddenPlayers}
+                                className="text-[10px] font-bold text-[#e7d291] uppercase tracking-wider hover:text-white transition-colors px-2 shrink-0 border border-[#e7d291]/30 bg-[#e7d291]/10 rounded py-1 ml-auto sm:ml-0"
                             >
-                                {type.label}
+                                Reset All
                             </button>
-                        ))}
+                        )}
                     </div>
                 </div>
 
@@ -305,6 +378,7 @@ export const MatchGraphicsTab: React.FC = () => {
                             {players.map((player, idx) => (
                                 <Line
                                     key={`player-${idx}`}
+                                    hide={hiddenPlayers.has(idx)} // Скрытие линии
                                     type="natural"
                                     dataKey={`player${idx}`}
                                     stroke={getPlayerColor(player.playerSlot.value)}
