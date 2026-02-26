@@ -574,12 +574,77 @@
     "message": "Patience from Zhou",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e8/Misc_soundboard_patience.mp3"
   },
+  "97": {
+    "id": 97,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97.wav"
+  },
+  "98": {
+    "id": 98,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98.wav"
+  },
+  "99": {
+    "id": 99,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99.wav"
+  },
+  "100": {
+    "id": 100,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100.wav"
+  },
   "101": {
     "id": 101,
     "name": "Bozhe_Ti_Posmotri",
     "label": "Что Происходит",
     "message": "Боже, ты посмотри вокруг, что происходит!",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/6a/Misc_soundboard_bozhe_ti_posmotri.mp3"
+  },
+  "102": {
+    "id": 102,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102.wav"
+  },
+  "103": {
+    "id": 103,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103.wav"
+  },
+  "104": {
+    "id": 104,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104.wav"
+  },
+  "105": {
+    "id": 105,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105.wav"
+  },
+  "106": {
+    "id": 106,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106.wav"
+  },
+  "107": {
+    "id": 107,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107.wav"
+  },
+  "108": {
+    "id": 108,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108.wav"
+  },
+  "109": {
+    "id": 109,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109.wav"
+  },
+  "110": {
+    "id": 110,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110.wav"
   },
   "111": {
     "id": 111,
@@ -593,6 +658,11 @@
     "label": "That's Playing to Win!",
     "message": "That's playing to win, baby!",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/a/a6/Misc_soundboard_playing_to_win.mp3"
+  },
+  "113": {
+    "id": 113,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113.wav"
   },
   "114": {
     "id": 114,
@@ -656,6 +726,26 @@
     "label": "Ding Ding Ding!",
     "message": "Ding Ding Ding Mother******",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/d/d0/Misc_soundboard_ding_ding_ding.mp3"
+  },
+  "123": {
+    "id": 123,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_123.wav"
+  },
+  "124": {
+    "id": 124,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_124.wav"
+  },
+  "125": {
+    "id": 125,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_125.wav"
+  },
+  "126": {
+    "id": 126,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126.wav"
   },
   "131": {
     "id": 131,
@@ -996,6 +1086,36 @@
     "label": "Как Герой",
     "message": "Жил до конца, умер как герой",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/2/21/Misc_soundboard_zhil_do_konsta.mp3"
+  },
+  "184": {
+    "id": 184,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_184.wav"
+  },
+  "185": {
+    "id": 185,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_185.wav"
+  },
+  "186": {
+    "id": 186,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_186.wav"
+  },
+  "187": {
+    "id": 187,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_187.wav"
+  },
+  "188": {
+    "id": 188,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_188.wav"
+  },
+  "189": {
+    "id": 189,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_189.wav"
   },
   "190": {
     "id": 190,
@@ -3844,5 +3964,4765 @@
     "label": "Брбрбрбр. Ладно, смотрим дальше.",
     "message": "Брбрбрбр. Ладно, смотрим дальше.",
     "url": "https://static.wikia.nocookie.net/dota2_gamepedia/images/3/3b/Misc_soundboard_ti11_ok_lets_see_whats_next_ru.mp3"
+  },
+  "1001": {
+    "id": 1001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1001.mp3"
+  },
+  "1002": {
+    "id": 1002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1002.mp3"
+  },
+  "1003": {
+    "id": 1003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1003.mp3"
+  },
+  "1004": {
+    "id": 1004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1004.mp3"
+  },
+  "1005": {
+    "id": 1005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1005.mp3"
+  },
+  "1006": {
+    "id": 1006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1006.mp3"
+  },
+  "1007": {
+    "id": 1007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1007.mp3"
+  },
+  "1008": {
+    "id": 1008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_1008.mp3"
+  },
+  "2001": {
+    "id": 2001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2001.mp3"
+  },
+  "2002": {
+    "id": 2002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2002.mp3"
+  },
+  "2003": {
+    "id": 2003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2003.mp3"
+  },
+  "2004": {
+    "id": 2004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2004.mp3"
+  },
+  "2005": {
+    "id": 2005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2005.mp3"
+  },
+  "2006": {
+    "id": 2006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2006.mp3"
+  },
+  "2007": {
+    "id": 2007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2007.mp3"
+  },
+  "2008": {
+    "id": 2008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_2008.mp3"
+  },
+  "3001": {
+    "id": 3001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3001.mp3"
+  },
+  "3002": {
+    "id": 3002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3002.mp3"
+  },
+  "3003": {
+    "id": 3003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3003.mp3"
+  },
+  "3004": {
+    "id": 3004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3004.mp3"
+  },
+  "3005": {
+    "id": 3005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3005.mp3"
+  },
+  "3006": {
+    "id": 3006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3006.mp3"
+  },
+  "3007": {
+    "id": 3007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3007.mp3"
+  },
+  "3008": {
+    "id": 3008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_3008.mp3"
+  },
+  "4001": {
+    "id": 4001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4001.mp3"
+  },
+  "4002": {
+    "id": 4002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4002.mp3"
+  },
+  "4003": {
+    "id": 4003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4003.mp3"
+  },
+  "4004": {
+    "id": 4004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4004.mp3"
+  },
+  "4005": {
+    "id": 4005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4005.mp3"
+  },
+  "4006": {
+    "id": 4006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4006.mp3"
+  },
+  "4007": {
+    "id": 4007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4007.mp3"
+  },
+  "4008": {
+    "id": 4008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_4008.mp3"
+  },
+  "5001": {
+    "id": 5001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5001.mp3"
+  },
+  "5002": {
+    "id": 5002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5002.mp3"
+  },
+  "5003": {
+    "id": 5003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5003.mp3"
+  },
+  "5004": {
+    "id": 5004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5004.mp3"
+  },
+  "5005": {
+    "id": 5005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5005.mp3"
+  },
+  "5006": {
+    "id": 5006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5006.mp3"
+  },
+  "5007": {
+    "id": 5007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5007.mp3"
+  },
+  "5008": {
+    "id": 5008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_5008.mp3"
+  },
+  "6001": {
+    "id": 6001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6001.mp3"
+  },
+  "6002": {
+    "id": 6002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6002.mp3"
+  },
+  "6003": {
+    "id": 6003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6003.mp3"
+  },
+  "6004": {
+    "id": 6004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6004.mp3"
+  },
+  "6005": {
+    "id": 6005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6005.mp3"
+  },
+  "6006": {
+    "id": 6006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6006.mp3"
+  },
+  "6007": {
+    "id": 6007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6007.mp3"
+  },
+  "6008": {
+    "id": 6008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_6008.mp3"
+  },
+  "7001": {
+    "id": 7001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7001.mp3"
+  },
+  "7002": {
+    "id": 7002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7002.mp3"
+  },
+  "7003": {
+    "id": 7003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7003.mp3"
+  },
+  "7004": {
+    "id": 7004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7004.mp3"
+  },
+  "7005": {
+    "id": 7005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7005.mp3"
+  },
+  "7006": {
+    "id": 7006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7006.mp3"
+  },
+  "7007": {
+    "id": 7007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7007.mp3"
+  },
+  "7008": {
+    "id": 7008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_7008.mp3"
+  },
+  "8001": {
+    "id": 8001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8001.mp3"
+  },
+  "8002": {
+    "id": 8002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8002.mp3"
+  },
+  "8003": {
+    "id": 8003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8003.mp3"
+  },
+  "8004": {
+    "id": 8004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8004.mp3"
+  },
+  "8005": {
+    "id": 8005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8005.mp3"
+  },
+  "8006": {
+    "id": 8006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8006.mp3"
+  },
+  "8007": {
+    "id": 8007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8007.mp3"
+  },
+  "8008": {
+    "id": 8008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_8008.mp3"
+  },
+  "9001": {
+    "id": 9001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9001.mp3"
+  },
+  "9002": {
+    "id": 9002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9002.mp3"
+  },
+  "9003": {
+    "id": 9003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9003.mp3"
+  },
+  "9004": {
+    "id": 9004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9004.mp3"
+  },
+  "9005": {
+    "id": 9005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9005.mp3"
+  },
+  "9006": {
+    "id": 9006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9006.mp3"
+  },
+  "9007": {
+    "id": 9007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9007.mp3"
+  },
+  "9008": {
+    "id": 9008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_9008.mp3"
+  },
+  "10001": {
+    "id": 10001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10001.mp3"
+  },
+  "10002": {
+    "id": 10002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10002.mp3"
+  },
+  "10003": {
+    "id": 10003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10003.mp3"
+  },
+  "10004": {
+    "id": 10004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10004.mp3"
+  },
+  "10005": {
+    "id": 10005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10005.mp3"
+  },
+  "10006": {
+    "id": 10006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10006.mp3"
+  },
+  "10007": {
+    "id": 10007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10007.mp3"
+  },
+  "10008": {
+    "id": 10008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_10008.mp3"
+  },
+  "11001": {
+    "id": 11001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11001.mp3"
+  },
+  "11002": {
+    "id": 11002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11002.mp3"
+  },
+  "11003": {
+    "id": 11003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11003.mp3"
+  },
+  "11004": {
+    "id": 11004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11004.mp3"
+  },
+  "11005": {
+    "id": 11005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11005.mp3"
+  },
+  "11006": {
+    "id": 11006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11006.mp3"
+  },
+  "11007": {
+    "id": 11007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11007.mp3"
+  },
+  "11008": {
+    "id": 11008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_11008.mp3"
+  },
+  "12001": {
+    "id": 12001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12001.mp3"
+  },
+  "12002": {
+    "id": 12002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12002.mp3"
+  },
+  "12003": {
+    "id": 12003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12003.mp3"
+  },
+  "12004": {
+    "id": 12004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12004.mp3"
+  },
+  "12005": {
+    "id": 12005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12005.mp3"
+  },
+  "12006": {
+    "id": 12006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12006.mp3"
+  },
+  "12007": {
+    "id": 12007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12007.mp3"
+  },
+  "12008": {
+    "id": 12008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_12008.mp3"
+  },
+  "13001": {
+    "id": 13001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13001.mp3"
+  },
+  "13002": {
+    "id": 13002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13002.mp3"
+  },
+  "13003": {
+    "id": 13003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13003.mp3"
+  },
+  "13004": {
+    "id": 13004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13004.mp3"
+  },
+  "13005": {
+    "id": 13005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13005.mp3"
+  },
+  "13006": {
+    "id": 13006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13006.mp3"
+  },
+  "13007": {
+    "id": 13007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13007.mp3"
+  },
+  "13008": {
+    "id": 13008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_13008.mp3"
+  },
+  "14001": {
+    "id": 14001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14001.mp3"
+  },
+  "14002": {
+    "id": 14002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14002.mp3"
+  },
+  "14003": {
+    "id": 14003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14003.mp3"
+  },
+  "14004": {
+    "id": 14004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14004.mp3"
+  },
+  "14005": {
+    "id": 14005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14005.mp3"
+  },
+  "14006": {
+    "id": 14006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14006.mp3"
+  },
+  "14007": {
+    "id": 14007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14007.mp3"
+  },
+  "14008": {
+    "id": 14008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_14008.mp3"
+  },
+  "15001": {
+    "id": 15001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15001.mp3"
+  },
+  "15002": {
+    "id": 15002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15002.mp3"
+  },
+  "15003": {
+    "id": 15003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15003.mp3"
+  },
+  "15004": {
+    "id": 15004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15004.mp3"
+  },
+  "15005": {
+    "id": 15005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15005.mp3"
+  },
+  "15006": {
+    "id": 15006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15006.mp3"
+  },
+  "15007": {
+    "id": 15007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15007.mp3"
+  },
+  "15008": {
+    "id": 15008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_15008.mp3"
+  },
+  "16001": {
+    "id": 16001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16001.mp3"
+  },
+  "16002": {
+    "id": 16002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16002.mp3"
+  },
+  "16003": {
+    "id": 16003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16003.mp3"
+  },
+  "16004": {
+    "id": 16004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16004.mp3"
+  },
+  "16005": {
+    "id": 16005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16005.mp3"
+  },
+  "16006": {
+    "id": 16006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16006.mp3"
+  },
+  "16007": {
+    "id": 16007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16007.mp3"
+  },
+  "16008": {
+    "id": 16008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_16008.mp3"
+  },
+  "17001": {
+    "id": 17001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17001.mp3"
+  },
+  "17002": {
+    "id": 17002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17002.mp3"
+  },
+  "17003": {
+    "id": 17003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17003.mp3"
+  },
+  "17004": {
+    "id": 17004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17004.mp3"
+  },
+  "17005": {
+    "id": 17005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17005.mp3"
+  },
+  "17006": {
+    "id": 17006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17006.mp3"
+  },
+  "17007": {
+    "id": 17007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17007.mp3"
+  },
+  "17008": {
+    "id": 17008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_17008.mp3"
+  },
+  "18001": {
+    "id": 18001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18001.mp3"
+  },
+  "18002": {
+    "id": 18002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18002.mp3"
+  },
+  "18003": {
+    "id": 18003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18003.mp3"
+  },
+  "18004": {
+    "id": 18004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18004.mp3"
+  },
+  "18005": {
+    "id": 18005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18005.mp3"
+  },
+  "18006": {
+    "id": 18006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18006.mp3"
+  },
+  "18007": {
+    "id": 18007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18007.mp3"
+  },
+  "18008": {
+    "id": 18008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_18008.mp3"
+  },
+  "19001": {
+    "id": 19001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19001.mp3"
+  },
+  "19002": {
+    "id": 19002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19002.mp3"
+  },
+  "19003": {
+    "id": 19003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19003.mp3"
+  },
+  "19004": {
+    "id": 19004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19004.mp3"
+  },
+  "19005": {
+    "id": 19005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19005.mp3"
+  },
+  "19006": {
+    "id": 19006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19006.mp3"
+  },
+  "19007": {
+    "id": 19007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19007.mp3"
+  },
+  "19008": {
+    "id": 19008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_19008.mp3"
+  },
+  "20001": {
+    "id": 20001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20001.mp3"
+  },
+  "20002": {
+    "id": 20002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20002.mp3"
+  },
+  "20003": {
+    "id": 20003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20003.mp3"
+  },
+  "20004": {
+    "id": 20004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20004.mp3"
+  },
+  "20005": {
+    "id": 20005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20005.mp3"
+  },
+  "20006": {
+    "id": 20006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20006.mp3"
+  },
+  "20007": {
+    "id": 20007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20007.mp3"
+  },
+  "20008": {
+    "id": 20008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_20008.mp3"
+  },
+  "21001": {
+    "id": 21001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21001.mp3"
+  },
+  "21002": {
+    "id": 21002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21002.mp3"
+  },
+  "21003": {
+    "id": 21003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21003.mp3"
+  },
+  "21004": {
+    "id": 21004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21004.mp3"
+  },
+  "21005": {
+    "id": 21005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21005.mp3"
+  },
+  "21006": {
+    "id": 21006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21006.mp3"
+  },
+  "21007": {
+    "id": 21007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21007.mp3"
+  },
+  "21008": {
+    "id": 21008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_21008.mp3"
+  },
+  "22001": {
+    "id": 22001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22001.mp3"
+  },
+  "22002": {
+    "id": 22002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22002.mp3"
+  },
+  "22003": {
+    "id": 22003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22003.mp3"
+  },
+  "22004": {
+    "id": 22004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22004.mp3"
+  },
+  "22005": {
+    "id": 22005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22005.mp3"
+  },
+  "22006": {
+    "id": 22006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22006.mp3"
+  },
+  "22007": {
+    "id": 22007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22007.mp3"
+  },
+  "22008": {
+    "id": 22008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_22008.mp3"
+  },
+  "23001": {
+    "id": 23001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23001.mp3"
+  },
+  "23002": {
+    "id": 23002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23002.mp3"
+  },
+  "23003": {
+    "id": 23003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23003.mp3"
+  },
+  "23004": {
+    "id": 23004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23004.mp3"
+  },
+  "23005": {
+    "id": 23005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23005.mp3"
+  },
+  "23006": {
+    "id": 23006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23006.mp3"
+  },
+  "23007": {
+    "id": 23007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23007.mp3"
+  },
+  "23008": {
+    "id": 23008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_23008.mp3"
+  },
+  "25001": {
+    "id": 25001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25001.mp3"
+  },
+  "25002": {
+    "id": 25002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25002.mp3"
+  },
+  "25003": {
+    "id": 25003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25003.mp3"
+  },
+  "25004": {
+    "id": 25004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25004.mp3"
+  },
+  "25005": {
+    "id": 25005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25005.mp3"
+  },
+  "25006": {
+    "id": 25006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25006.mp3"
+  },
+  "25007": {
+    "id": 25007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25007.mp3"
+  },
+  "25008": {
+    "id": 25008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_25008.mp3"
+  },
+  "26001": {
+    "id": 26001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26001.mp3"
+  },
+  "26002": {
+    "id": 26002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26002.mp3"
+  },
+  "26003": {
+    "id": 26003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26003.mp3"
+  },
+  "26004": {
+    "id": 26004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26004.mp3"
+  },
+  "26005": {
+    "id": 26005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26005.mp3"
+  },
+  "26006": {
+    "id": 26006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26006.mp3"
+  },
+  "26007": {
+    "id": 26007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26007.mp3"
+  },
+  "26008": {
+    "id": 26008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_26008.mp3"
+  },
+  "27001": {
+    "id": 27001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27001.mp3"
+  },
+  "27002": {
+    "id": 27002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27002.mp3"
+  },
+  "27003": {
+    "id": 27003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27003.mp3"
+  },
+  "27004": {
+    "id": 27004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27004.mp3"
+  },
+  "27005": {
+    "id": 27005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27005.mp3"
+  },
+  "27006": {
+    "id": 27006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27006.mp3"
+  },
+  "27007": {
+    "id": 27007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27007.mp3"
+  },
+  "27008": {
+    "id": 27008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_27008.mp3"
+  },
+  "28001": {
+    "id": 28001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28001.mp3"
+  },
+  "28002": {
+    "id": 28002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28002.mp3"
+  },
+  "28003": {
+    "id": 28003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28003.mp3"
+  },
+  "28004": {
+    "id": 28004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28004.mp3"
+  },
+  "28005": {
+    "id": 28005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28005.mp3"
+  },
+  "28006": {
+    "id": 28006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28006.mp3"
+  },
+  "28007": {
+    "id": 28007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28007.mp3"
+  },
+  "28008": {
+    "id": 28008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_28008.mp3"
+  },
+  "29001": {
+    "id": 29001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29001.mp3"
+  },
+  "29002": {
+    "id": 29002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29002.mp3"
+  },
+  "29003": {
+    "id": 29003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29003.mp3"
+  },
+  "29004": {
+    "id": 29004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29004.mp3"
+  },
+  "29005": {
+    "id": 29005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29005.mp3"
+  },
+  "29006": {
+    "id": 29006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29006.mp3"
+  },
+  "29007": {
+    "id": 29007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29007.mp3"
+  },
+  "29008": {
+    "id": 29008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_29008.mp3"
+  },
+  "30001": {
+    "id": 30001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30001.mp3"
+  },
+  "30002": {
+    "id": 30002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30002.mp3"
+  },
+  "30003": {
+    "id": 30003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30003.mp3"
+  },
+  "30004": {
+    "id": 30004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30004.mp3"
+  },
+  "30005": {
+    "id": 30005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30005.mp3"
+  },
+  "30006": {
+    "id": 30006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30006.mp3"
+  },
+  "30007": {
+    "id": 30007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30007.mp3"
+  },
+  "30008": {
+    "id": 30008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_30008.mp3"
+  },
+  "31001": {
+    "id": 31001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31001.mp3"
+  },
+  "31002": {
+    "id": 31002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31002.mp3"
+  },
+  "31003": {
+    "id": 31003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31003.mp3"
+  },
+  "31004": {
+    "id": 31004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31004.mp3"
+  },
+  "31005": {
+    "id": 31005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31005.mp3"
+  },
+  "31006": {
+    "id": 31006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31006.mp3"
+  },
+  "31007": {
+    "id": 31007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31007.mp3"
+  },
+  "31008": {
+    "id": 31008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_31008.mp3"
+  },
+  "32001": {
+    "id": 32001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32001.mp3"
+  },
+  "32002": {
+    "id": 32002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32002.mp3"
+  },
+  "32003": {
+    "id": 32003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32003.mp3"
+  },
+  "32004": {
+    "id": 32004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32004.mp3"
+  },
+  "32005": {
+    "id": 32005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32005.mp3"
+  },
+  "32006": {
+    "id": 32006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32006.mp3"
+  },
+  "32007": {
+    "id": 32007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32007.mp3"
+  },
+  "32008": {
+    "id": 32008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_32008.mp3"
+  },
+  "33001": {
+    "id": 33001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33001.mp3"
+  },
+  "33002": {
+    "id": 33002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33002.mp3"
+  },
+  "33003": {
+    "id": 33003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33003.mp3"
+  },
+  "33004": {
+    "id": 33004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33004.mp3"
+  },
+  "33005": {
+    "id": 33005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33005.mp3"
+  },
+  "33006": {
+    "id": 33006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33006.mp3"
+  },
+  "33007": {
+    "id": 33007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33007.mp3"
+  },
+  "33008": {
+    "id": 33008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_33008.mp3"
+  },
+  "34001": {
+    "id": 34001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34001.mp3"
+  },
+  "34002": {
+    "id": 34002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34002.mp3"
+  },
+  "34003": {
+    "id": 34003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34003.mp3"
+  },
+  "34004": {
+    "id": 34004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34004.mp3"
+  },
+  "34005": {
+    "id": 34005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34005.mp3"
+  },
+  "34006": {
+    "id": 34006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34006.mp3"
+  },
+  "34007": {
+    "id": 34007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34007.mp3"
+  },
+  "34008": {
+    "id": 34008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_34008.mp3"
+  },
+  "35001": {
+    "id": 35001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35001.mp3"
+  },
+  "35002": {
+    "id": 35002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35002.mp3"
+  },
+  "35003": {
+    "id": 35003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35003.mp3"
+  },
+  "35004": {
+    "id": 35004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35004.mp3"
+  },
+  "35005": {
+    "id": 35005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35005.mp3"
+  },
+  "35006": {
+    "id": 35006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35006.mp3"
+  },
+  "35007": {
+    "id": 35007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35007.mp3"
+  },
+  "35008": {
+    "id": 35008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_35008.mp3"
+  },
+  "36001": {
+    "id": 36001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36001.mp3"
+  },
+  "36002": {
+    "id": 36002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36002.mp3"
+  },
+  "36003": {
+    "id": 36003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36003.mp3"
+  },
+  "36004": {
+    "id": 36004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36004.mp3"
+  },
+  "36005": {
+    "id": 36005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36005.mp3"
+  },
+  "36006": {
+    "id": 36006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36006.mp3"
+  },
+  "36007": {
+    "id": 36007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36007.mp3"
+  },
+  "36008": {
+    "id": 36008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_36008.mp3"
+  },
+  "37001": {
+    "id": 37001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37001.mp3"
+  },
+  "37002": {
+    "id": 37002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37002.mp3"
+  },
+  "37003": {
+    "id": 37003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37003.mp3"
+  },
+  "37004": {
+    "id": 37004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37004.mp3"
+  },
+  "37005": {
+    "id": 37005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37005.mp3"
+  },
+  "37006": {
+    "id": 37006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37006.mp3"
+  },
+  "37007": {
+    "id": 37007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37007.mp3"
+  },
+  "37008": {
+    "id": 37008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_37008.mp3"
+  },
+  "38001": {
+    "id": 38001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38001.mp3"
+  },
+  "38002": {
+    "id": 38002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38002.mp3"
+  },
+  "38003": {
+    "id": 38003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38003.mp3"
+  },
+  "38004": {
+    "id": 38004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38004.mp3"
+  },
+  "38005": {
+    "id": 38005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38005.mp3"
+  },
+  "38006": {
+    "id": 38006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38006.mp3"
+  },
+  "38007": {
+    "id": 38007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38007.mp3"
+  },
+  "38008": {
+    "id": 38008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_38008.mp3"
+  },
+  "39001": {
+    "id": 39001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39001.mp3"
+  },
+  "39002": {
+    "id": 39002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39002.mp3"
+  },
+  "39003": {
+    "id": 39003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39003.mp3"
+  },
+  "39004": {
+    "id": 39004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39004.mp3"
+  },
+  "39005": {
+    "id": 39005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39005.mp3"
+  },
+  "39006": {
+    "id": 39006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39006.mp3"
+  },
+  "39007": {
+    "id": 39007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39007.mp3"
+  },
+  "39008": {
+    "id": 39008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_39008.mp3"
+  },
+  "40001": {
+    "id": 40001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40001.mp3"
+  },
+  "40002": {
+    "id": 40002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40002.mp3"
+  },
+  "40003": {
+    "id": 40003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40003.mp3"
+  },
+  "40004": {
+    "id": 40004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40004.mp3"
+  },
+  "40005": {
+    "id": 40005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40005.mp3"
+  },
+  "40006": {
+    "id": 40006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40006.mp3"
+  },
+  "40007": {
+    "id": 40007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40007.mp3"
+  },
+  "40008": {
+    "id": 40008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_40008.mp3"
+  },
+  "41001": {
+    "id": 41001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41001.mp3"
+  },
+  "41002": {
+    "id": 41002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41002.mp3"
+  },
+  "41003": {
+    "id": 41003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41003.mp3"
+  },
+  "41004": {
+    "id": 41004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41004.mp3"
+  },
+  "41005": {
+    "id": 41005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41005.mp3"
+  },
+  "41006": {
+    "id": 41006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41006.mp3"
+  },
+  "41007": {
+    "id": 41007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41007.mp3"
+  },
+  "41008": {
+    "id": 41008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_41008.mp3"
+  },
+  "42001": {
+    "id": 42001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42001.mp3"
+  },
+  "42002": {
+    "id": 42002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42002.mp3"
+  },
+  "42003": {
+    "id": 42003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42003.mp3"
+  },
+  "42004": {
+    "id": 42004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42004.mp3"
+  },
+  "42005": {
+    "id": 42005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42005.mp3"
+  },
+  "42006": {
+    "id": 42006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42006.mp3"
+  },
+  "42007": {
+    "id": 42007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42007.mp3"
+  },
+  "42008": {
+    "id": 42008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_42008.mp3"
+  },
+  "43001": {
+    "id": 43001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43001.mp3"
+  },
+  "43002": {
+    "id": 43002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43002.mp3"
+  },
+  "43003": {
+    "id": 43003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43003.mp3"
+  },
+  "43004": {
+    "id": 43004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43004.mp3"
+  },
+  "43005": {
+    "id": 43005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43005.mp3"
+  },
+  "43006": {
+    "id": 43006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43006.mp3"
+  },
+  "43007": {
+    "id": 43007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43007.mp3"
+  },
+  "43008": {
+    "id": 43008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_43008.mp3"
+  },
+  "44001": {
+    "id": 44001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44001.mp3"
+  },
+  "44002": {
+    "id": 44002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44002.mp3"
+  },
+  "44003": {
+    "id": 44003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44003.mp3"
+  },
+  "44004": {
+    "id": 44004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44004.mp3"
+  },
+  "44005": {
+    "id": 44005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44005.mp3"
+  },
+  "44006": {
+    "id": 44006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44006.mp3"
+  },
+  "44007": {
+    "id": 44007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44007.mp3"
+  },
+  "44008": {
+    "id": 44008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_44008.mp3"
+  },
+  "45001": {
+    "id": 45001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45001.mp3"
+  },
+  "45002": {
+    "id": 45002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45002.mp3"
+  },
+  "45003": {
+    "id": 45003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45003.mp3"
+  },
+  "45004": {
+    "id": 45004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45004.mp3"
+  },
+  "45005": {
+    "id": 45005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45005.mp3"
+  },
+  "45006": {
+    "id": 45006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45006.mp3"
+  },
+  "45007": {
+    "id": 45007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45007.mp3"
+  },
+  "45008": {
+    "id": 45008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_45008.mp3"
+  },
+  "46001": {
+    "id": 46001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46001.mp3"
+  },
+  "46002": {
+    "id": 46002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46002.mp3"
+  },
+  "46003": {
+    "id": 46003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46003.mp3"
+  },
+  "46004": {
+    "id": 46004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46004.mp3"
+  },
+  "46005": {
+    "id": 46005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46005.mp3"
+  },
+  "46006": {
+    "id": 46006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46006.mp3"
+  },
+  "46007": {
+    "id": 46007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46007.mp3"
+  },
+  "46008": {
+    "id": 46008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_46008.mp3"
+  },
+  "47001": {
+    "id": 47001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47001.mp3"
+  },
+  "47002": {
+    "id": 47002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47002.mp3"
+  },
+  "47003": {
+    "id": 47003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47003.mp3"
+  },
+  "47004": {
+    "id": 47004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47004.mp3"
+  },
+  "47005": {
+    "id": 47005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47005.mp3"
+  },
+  "47006": {
+    "id": 47006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47006.mp3"
+  },
+  "47007": {
+    "id": 47007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47007.mp3"
+  },
+  "47008": {
+    "id": 47008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_47008.mp3"
+  },
+  "48001": {
+    "id": 48001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48001.mp3"
+  },
+  "48002": {
+    "id": 48002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48002.mp3"
+  },
+  "48003": {
+    "id": 48003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48003.mp3"
+  },
+  "48004": {
+    "id": 48004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48004.mp3"
+  },
+  "48005": {
+    "id": 48005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48005.mp3"
+  },
+  "48006": {
+    "id": 48006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48006.mp3"
+  },
+  "48007": {
+    "id": 48007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48007.mp3"
+  },
+  "48008": {
+    "id": 48008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_48008.mp3"
+  },
+  "49001": {
+    "id": 49001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49001.mp3"
+  },
+  "49002": {
+    "id": 49002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49002.mp3"
+  },
+  "49003": {
+    "id": 49003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49003.mp3"
+  },
+  "49004": {
+    "id": 49004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49004.mp3"
+  },
+  "49005": {
+    "id": 49005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49005.mp3"
+  },
+  "49006": {
+    "id": 49006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49006.mp3"
+  },
+  "49007": {
+    "id": 49007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49007.mp3"
+  },
+  "49008": {
+    "id": 49008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_49008.mp3"
+  },
+  "50001": {
+    "id": 50001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50001.mp3"
+  },
+  "50002": {
+    "id": 50002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50002.mp3"
+  },
+  "50003": {
+    "id": 50003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50003.mp3"
+  },
+  "50004": {
+    "id": 50004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50004.mp3"
+  },
+  "50005": {
+    "id": 50005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50005.mp3"
+  },
+  "50006": {
+    "id": 50006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50006.mp3"
+  },
+  "50007": {
+    "id": 50007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50007.mp3"
+  },
+  "50008": {
+    "id": 50008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_50008.mp3"
+  },
+  "51001": {
+    "id": 51001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51001.mp3"
+  },
+  "51002": {
+    "id": 51002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51002.mp3"
+  },
+  "51003": {
+    "id": 51003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51003.mp3"
+  },
+  "51004": {
+    "id": 51004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51004.mp3"
+  },
+  "51005": {
+    "id": 51005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51005.mp3"
+  },
+  "51006": {
+    "id": 51006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51006.mp3"
+  },
+  "51007": {
+    "id": 51007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51007.mp3"
+  },
+  "51008": {
+    "id": 51008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_51008.mp3"
+  },
+  "52001": {
+    "id": 52001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52001.mp3"
+  },
+  "52002": {
+    "id": 52002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52002.mp3"
+  },
+  "52003": {
+    "id": 52003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52003.mp3"
+  },
+  "52004": {
+    "id": 52004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52004.mp3"
+  },
+  "52005": {
+    "id": 52005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52005.mp3"
+  },
+  "52006": {
+    "id": 52006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52006.mp3"
+  },
+  "52007": {
+    "id": 52007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52007.mp3"
+  },
+  "52008": {
+    "id": 52008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_52008.mp3"
+  },
+  "53001": {
+    "id": 53001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53001.mp3"
+  },
+  "53002": {
+    "id": 53002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53002.mp3"
+  },
+  "53003": {
+    "id": 53003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53003.mp3"
+  },
+  "53004": {
+    "id": 53004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53004.mp3"
+  },
+  "53005": {
+    "id": 53005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53005.mp3"
+  },
+  "53006": {
+    "id": 53006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53006.mp3"
+  },
+  "53007": {
+    "id": 53007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53007.mp3"
+  },
+  "53008": {
+    "id": 53008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_53008.mp3"
+  },
+  "54001": {
+    "id": 54001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54001.mp3"
+  },
+  "54002": {
+    "id": 54002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54002.mp3"
+  },
+  "54003": {
+    "id": 54003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54003.mp3"
+  },
+  "54004": {
+    "id": 54004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54004.mp3"
+  },
+  "54005": {
+    "id": 54005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54005.mp3"
+  },
+  "54006": {
+    "id": 54006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54006.mp3"
+  },
+  "54007": {
+    "id": 54007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54007.mp3"
+  },
+  "54008": {
+    "id": 54008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_54008.mp3"
+  },
+  "55001": {
+    "id": 55001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55001.mp3"
+  },
+  "55002": {
+    "id": 55002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55002.mp3"
+  },
+  "55003": {
+    "id": 55003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55003.mp3"
+  },
+  "55004": {
+    "id": 55004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55004.mp3"
+  },
+  "55005": {
+    "id": 55005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55005.mp3"
+  },
+  "55006": {
+    "id": 55006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55006.mp3"
+  },
+  "55007": {
+    "id": 55007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55007.mp3"
+  },
+  "55008": {
+    "id": 55008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_55008.mp3"
+  },
+  "56001": {
+    "id": 56001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56001.mp3"
+  },
+  "56002": {
+    "id": 56002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56002.mp3"
+  },
+  "56003": {
+    "id": 56003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56003.mp3"
+  },
+  "56004": {
+    "id": 56004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56004.mp3"
+  },
+  "56005": {
+    "id": 56005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56005.mp3"
+  },
+  "56006": {
+    "id": 56006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56006.mp3"
+  },
+  "56007": {
+    "id": 56007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56007.mp3"
+  },
+  "56008": {
+    "id": 56008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_56008.mp3"
+  },
+  "57001": {
+    "id": 57001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57001.mp3"
+  },
+  "57002": {
+    "id": 57002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57002.mp3"
+  },
+  "57003": {
+    "id": 57003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57003.mp3"
+  },
+  "57004": {
+    "id": 57004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57004.mp3"
+  },
+  "57005": {
+    "id": 57005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57005.mp3"
+  },
+  "57006": {
+    "id": 57006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57006.mp3"
+  },
+  "57007": {
+    "id": 57007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57007.mp3"
+  },
+  "57008": {
+    "id": 57008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_57008.mp3"
+  },
+  "58001": {
+    "id": 58001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58001.mp3"
+  },
+  "58002": {
+    "id": 58002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58002.mp3"
+  },
+  "58003": {
+    "id": 58003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58003.mp3"
+  },
+  "58004": {
+    "id": 58004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58004.mp3"
+  },
+  "58005": {
+    "id": 58005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58005.mp3"
+  },
+  "58006": {
+    "id": 58006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58006.mp3"
+  },
+  "58007": {
+    "id": 58007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58007.mp3"
+  },
+  "58008": {
+    "id": 58008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_58008.mp3"
+  },
+  "59001": {
+    "id": 59001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59001.mp3"
+  },
+  "59002": {
+    "id": 59002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59002.mp3"
+  },
+  "59003": {
+    "id": 59003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59003.mp3"
+  },
+  "59004": {
+    "id": 59004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59004.mp3"
+  },
+  "59005": {
+    "id": 59005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59005.mp3"
+  },
+  "59006": {
+    "id": 59006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59006.mp3"
+  },
+  "59007": {
+    "id": 59007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59007.mp3"
+  },
+  "59008": {
+    "id": 59008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_59008.mp3"
+  },
+  "60001": {
+    "id": 60001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60001.mp3"
+  },
+  "60002": {
+    "id": 60002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60002.mp3"
+  },
+  "60003": {
+    "id": 60003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60003.mp3"
+  },
+  "60004": {
+    "id": 60004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60004.mp3"
+  },
+  "60005": {
+    "id": 60005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60005.mp3"
+  },
+  "60006": {
+    "id": 60006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60006.mp3"
+  },
+  "60007": {
+    "id": 60007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60007.mp3"
+  },
+  "60008": {
+    "id": 60008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_60008.mp3"
+  },
+  "61001": {
+    "id": 61001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61001.mp3"
+  },
+  "61002": {
+    "id": 61002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61002.mp3"
+  },
+  "61003": {
+    "id": 61003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61003.mp3"
+  },
+  "61004": {
+    "id": 61004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61004.mp3"
+  },
+  "61005": {
+    "id": 61005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61005.mp3"
+  },
+  "61006": {
+    "id": 61006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61006.mp3"
+  },
+  "61007": {
+    "id": 61007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61007.mp3"
+  },
+  "61008": {
+    "id": 61008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_61008.mp3"
+  },
+  "62001": {
+    "id": 62001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62001.mp3"
+  },
+  "62002": {
+    "id": 62002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62002.mp3"
+  },
+  "62003": {
+    "id": 62003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62003.mp3"
+  },
+  "62004": {
+    "id": 62004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62004.mp3"
+  },
+  "62005": {
+    "id": 62005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62005.mp3"
+  },
+  "62006": {
+    "id": 62006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62006.mp3"
+  },
+  "62007": {
+    "id": 62007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62007.mp3"
+  },
+  "62008": {
+    "id": 62008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_62008.mp3"
+  },
+  "63001": {
+    "id": 63001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63001.mp3"
+  },
+  "63002": {
+    "id": 63002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63002.mp3"
+  },
+  "63003": {
+    "id": 63003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63003.mp3"
+  },
+  "63004": {
+    "id": 63004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63004.mp3"
+  },
+  "63005": {
+    "id": 63005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63005.mp3"
+  },
+  "63006": {
+    "id": 63006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63006.mp3"
+  },
+  "63007": {
+    "id": 63007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63007.mp3"
+  },
+  "63008": {
+    "id": 63008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_63008.mp3"
+  },
+  "64001": {
+    "id": 64001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64001.mp3"
+  },
+  "64002": {
+    "id": 64002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64002.mp3"
+  },
+  "64003": {
+    "id": 64003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64003.mp3"
+  },
+  "64004": {
+    "id": 64004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64004.mp3"
+  },
+  "64005": {
+    "id": 64005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64005.mp3"
+  },
+  "64006": {
+    "id": 64006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64006.mp3"
+  },
+  "64007": {
+    "id": 64007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64007.mp3"
+  },
+  "64008": {
+    "id": 64008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_64008.mp3"
+  },
+  "65001": {
+    "id": 65001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65001.mp3"
+  },
+  "65002": {
+    "id": 65002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65002.mp3"
+  },
+  "65003": {
+    "id": 65003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65003.mp3"
+  },
+  "65004": {
+    "id": 65004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65004.mp3"
+  },
+  "65005": {
+    "id": 65005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65005.mp3"
+  },
+  "65006": {
+    "id": 65006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65006.mp3"
+  },
+  "65007": {
+    "id": 65007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65007.mp3"
+  },
+  "65008": {
+    "id": 65008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_65008.mp3"
+  },
+  "66001": {
+    "id": 66001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66001.mp3"
+  },
+  "66002": {
+    "id": 66002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66002.mp3"
+  },
+  "66003": {
+    "id": 66003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66003.mp3"
+  },
+  "66004": {
+    "id": 66004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66004.mp3"
+  },
+  "66005": {
+    "id": 66005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66005.mp3"
+  },
+  "66006": {
+    "id": 66006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66006.mp3"
+  },
+  "66007": {
+    "id": 66007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66007.mp3"
+  },
+  "66008": {
+    "id": 66008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_66008.mp3"
+  },
+  "67001": {
+    "id": 67001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67001.mp3"
+  },
+  "67002": {
+    "id": 67002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67002.mp3"
+  },
+  "67003": {
+    "id": 67003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67003.mp3"
+  },
+  "67004": {
+    "id": 67004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67004.mp3"
+  },
+  "67005": {
+    "id": 67005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67005.mp3"
+  },
+  "67006": {
+    "id": 67006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67006.mp3"
+  },
+  "67007": {
+    "id": 67007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67007.mp3"
+  },
+  "67008": {
+    "id": 67008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_67008.mp3"
+  },
+  "68001": {
+    "id": 68001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68001.mp3"
+  },
+  "68002": {
+    "id": 68002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68002.mp3"
+  },
+  "68003": {
+    "id": 68003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68003.mp3"
+  },
+  "68004": {
+    "id": 68004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68004.mp3"
+  },
+  "68005": {
+    "id": 68005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68005.mp3"
+  },
+  "68006": {
+    "id": 68006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68006.mp3"
+  },
+  "68007": {
+    "id": 68007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68007.mp3"
+  },
+  "68008": {
+    "id": 68008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_68008.mp3"
+  },
+  "69001": {
+    "id": 69001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69001.mp3"
+  },
+  "69002": {
+    "id": 69002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69002.mp3"
+  },
+  "69003": {
+    "id": 69003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69003.mp3"
+  },
+  "69004": {
+    "id": 69004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69004.mp3"
+  },
+  "69005": {
+    "id": 69005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69005.mp3"
+  },
+  "69006": {
+    "id": 69006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69006.mp3"
+  },
+  "69007": {
+    "id": 69007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69007.mp3"
+  },
+  "69008": {
+    "id": 69008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_69008.mp3"
+  },
+  "70001": {
+    "id": 70001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70001.mp3"
+  },
+  "70002": {
+    "id": 70002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70002.mp3"
+  },
+  "70003": {
+    "id": 70003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70003.mp3"
+  },
+  "70004": {
+    "id": 70004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70004.mp3"
+  },
+  "70005": {
+    "id": 70005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70005.mp3"
+  },
+  "70006": {
+    "id": 70006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70006.mp3"
+  },
+  "70007": {
+    "id": 70007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70007.mp3"
+  },
+  "70008": {
+    "id": 70008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_70008.mp3"
+  },
+  "71001": {
+    "id": 71001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71001.mp3"
+  },
+  "71002": {
+    "id": 71002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71002.mp3"
+  },
+  "71003": {
+    "id": 71003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71003.mp3"
+  },
+  "71004": {
+    "id": 71004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71004.mp3"
+  },
+  "71005": {
+    "id": 71005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71005.mp3"
+  },
+  "71006": {
+    "id": 71006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71006.mp3"
+  },
+  "71007": {
+    "id": 71007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71007.mp3"
+  },
+  "71008": {
+    "id": 71008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_71008.mp3"
+  },
+  "72001": {
+    "id": 72001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72001.mp3"
+  },
+  "72002": {
+    "id": 72002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72002.mp3"
+  },
+  "72003": {
+    "id": 72003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72003.mp3"
+  },
+  "72004": {
+    "id": 72004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72004.mp3"
+  },
+  "72005": {
+    "id": 72005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72005.mp3"
+  },
+  "72006": {
+    "id": 72006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72006.mp3"
+  },
+  "72007": {
+    "id": 72007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72007.mp3"
+  },
+  "72008": {
+    "id": 72008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_72008.mp3"
+  },
+  "73001": {
+    "id": 73001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73001.mp3"
+  },
+  "73002": {
+    "id": 73002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73002.mp3"
+  },
+  "73003": {
+    "id": 73003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73003.mp3"
+  },
+  "73004": {
+    "id": 73004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73004.mp3"
+  },
+  "73005": {
+    "id": 73005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73005.mp3"
+  },
+  "73006": {
+    "id": 73006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73006.mp3"
+  },
+  "73007": {
+    "id": 73007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73007.mp3"
+  },
+  "73008": {
+    "id": 73008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_73008.mp3"
+  },
+  "74001": {
+    "id": 74001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74001.mp3"
+  },
+  "74002": {
+    "id": 74002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74002.mp3"
+  },
+  "74003": {
+    "id": 74003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74003.mp3"
+  },
+  "74004": {
+    "id": 74004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74004.mp3"
+  },
+  "74005": {
+    "id": 74005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74005.mp3"
+  },
+  "74006": {
+    "id": 74006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74006.mp3"
+  },
+  "74007": {
+    "id": 74007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74007.mp3"
+  },
+  "74008": {
+    "id": 74008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_74008.mp3"
+  },
+  "75001": {
+    "id": 75001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75001.mp3"
+  },
+  "75002": {
+    "id": 75002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75002.mp3"
+  },
+  "75003": {
+    "id": 75003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75003.mp3"
+  },
+  "75004": {
+    "id": 75004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75004.mp3"
+  },
+  "75005": {
+    "id": 75005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75005.mp3"
+  },
+  "75006": {
+    "id": 75006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75006.mp3"
+  },
+  "75007": {
+    "id": 75007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75007.mp3"
+  },
+  "75008": {
+    "id": 75008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_75008.mp3"
+  },
+  "76001": {
+    "id": 76001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76001.mp3"
+  },
+  "76002": {
+    "id": 76002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76002.mp3"
+  },
+  "76003": {
+    "id": 76003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76003.mp3"
+  },
+  "76004": {
+    "id": 76004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76004.mp3"
+  },
+  "76005": {
+    "id": 76005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76005.mp3"
+  },
+  "76006": {
+    "id": 76006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76006.mp3"
+  },
+  "76007": {
+    "id": 76007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76007.mp3"
+  },
+  "76008": {
+    "id": 76008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_76008.mp3"
+  },
+  "77001": {
+    "id": 77001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77001.mp3"
+  },
+  "77002": {
+    "id": 77002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77002.mp3"
+  },
+  "77003": {
+    "id": 77003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77003.mp3"
+  },
+  "77004": {
+    "id": 77004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77004.mp3"
+  },
+  "77005": {
+    "id": 77005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77005.mp3"
+  },
+  "77006": {
+    "id": 77006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77006.mp3"
+  },
+  "77007": {
+    "id": 77007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77007.mp3"
+  },
+  "77008": {
+    "id": 77008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_77008.mp3"
+  },
+  "78001": {
+    "id": 78001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78001.mp3"
+  },
+  "78002": {
+    "id": 78002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78002.mp3"
+  },
+  "78003": {
+    "id": 78003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78003.mp3"
+  },
+  "78004": {
+    "id": 78004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78004.mp3"
+  },
+  "78005": {
+    "id": 78005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78005.mp3"
+  },
+  "78006": {
+    "id": 78006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78006.mp3"
+  },
+  "78007": {
+    "id": 78007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78007.mp3"
+  },
+  "78008": {
+    "id": 78008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_78008.mp3"
+  },
+  "79001": {
+    "id": 79001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79001.mp3"
+  },
+  "79002": {
+    "id": 79002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79002.mp3"
+  },
+  "79003": {
+    "id": 79003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79003.mp3"
+  },
+  "79004": {
+    "id": 79004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79004.mp3"
+  },
+  "79005": {
+    "id": 79005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79005.mp3"
+  },
+  "79006": {
+    "id": 79006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79006.mp3"
+  },
+  "79007": {
+    "id": 79007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79007.mp3"
+  },
+  "79008": {
+    "id": 79008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_79008.mp3"
+  },
+  "80001": {
+    "id": 80001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80001.mp3"
+  },
+  "80002": {
+    "id": 80002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80002.mp3"
+  },
+  "80003": {
+    "id": 80003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80003.mp3"
+  },
+  "80004": {
+    "id": 80004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80004.mp3"
+  },
+  "80005": {
+    "id": 80005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80005.mp3"
+  },
+  "80006": {
+    "id": 80006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80006.mp3"
+  },
+  "80007": {
+    "id": 80007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80007.mp3"
+  },
+  "80008": {
+    "id": 80008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_80008.mp3"
+  },
+  "81001": {
+    "id": 81001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81001.mp3"
+  },
+  "81002": {
+    "id": 81002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81002.mp3"
+  },
+  "81003": {
+    "id": 81003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81003.mp3"
+  },
+  "81004": {
+    "id": 81004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81004.mp3"
+  },
+  "81005": {
+    "id": 81005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81005.mp3"
+  },
+  "81006": {
+    "id": 81006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81006.mp3"
+  },
+  "81007": {
+    "id": 81007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81007.mp3"
+  },
+  "81008": {
+    "id": 81008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_81008.mp3"
+  },
+  "82001": {
+    "id": 82001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82001.mp3"
+  },
+  "82002": {
+    "id": 82002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82002.mp3"
+  },
+  "82003": {
+    "id": 82003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82003.mp3"
+  },
+  "82004": {
+    "id": 82004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82004.mp3"
+  },
+  "82005": {
+    "id": 82005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82005.mp3"
+  },
+  "82006": {
+    "id": 82006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82006.mp3"
+  },
+  "82007": {
+    "id": 82007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82007.mp3"
+  },
+  "82008": {
+    "id": 82008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_82008.mp3"
+  },
+  "83001": {
+    "id": 83001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83001.mp3"
+  },
+  "83002": {
+    "id": 83002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83002.mp3"
+  },
+  "83003": {
+    "id": 83003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83003.mp3"
+  },
+  "83004": {
+    "id": 83004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83004.mp3"
+  },
+  "83005": {
+    "id": 83005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83005.mp3"
+  },
+  "83006": {
+    "id": 83006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83006.mp3"
+  },
+  "83007": {
+    "id": 83007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83007.mp3"
+  },
+  "83008": {
+    "id": 83008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_83008.mp3"
+  },
+  "84001": {
+    "id": 84001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84001.mp3"
+  },
+  "84002": {
+    "id": 84002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84002.mp3"
+  },
+  "84003": {
+    "id": 84003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84003.mp3"
+  },
+  "84004": {
+    "id": 84004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84004.mp3"
+  },
+  "84005": {
+    "id": 84005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84005.mp3"
+  },
+  "84006": {
+    "id": 84006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84006.mp3"
+  },
+  "84007": {
+    "id": 84007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84007.mp3"
+  },
+  "84008": {
+    "id": 84008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_84008.mp3"
+  },
+  "85001": {
+    "id": 85001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85001.mp3"
+  },
+  "85002": {
+    "id": 85002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85002.mp3"
+  },
+  "85003": {
+    "id": 85003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85003.mp3"
+  },
+  "85004": {
+    "id": 85004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85004.mp3"
+  },
+  "85005": {
+    "id": 85005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85005.mp3"
+  },
+  "85006": {
+    "id": 85006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85006.mp3"
+  },
+  "85007": {
+    "id": 85007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85007.mp3"
+  },
+  "85008": {
+    "id": 85008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_85008.mp3"
+  },
+  "86001": {
+    "id": 86001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86001.mp3"
+  },
+  "86002": {
+    "id": 86002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86002.mp3"
+  },
+  "86003": {
+    "id": 86003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86003.mp3"
+  },
+  "86004": {
+    "id": 86004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86004.mp3"
+  },
+  "86005": {
+    "id": 86005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86005.mp3"
+  },
+  "86006": {
+    "id": 86006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86006.mp3"
+  },
+  "86007": {
+    "id": 86007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86007.mp3"
+  },
+  "86008": {
+    "id": 86008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_86008.mp3"
+  },
+  "87001": {
+    "id": 87001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87001.mp3"
+  },
+  "87002": {
+    "id": 87002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87002.mp3"
+  },
+  "87003": {
+    "id": 87003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87003.mp3"
+  },
+  "87004": {
+    "id": 87004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87004.mp3"
+  },
+  "87005": {
+    "id": 87005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87005.mp3"
+  },
+  "87006": {
+    "id": 87006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87006.mp3"
+  },
+  "87007": {
+    "id": 87007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87007.mp3"
+  },
+  "87008": {
+    "id": 87008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_87008.mp3"
+  },
+  "88001": {
+    "id": 88001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88001.mp3"
+  },
+  "88002": {
+    "id": 88002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88002.mp3"
+  },
+  "88003": {
+    "id": 88003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88003.mp3"
+  },
+  "88004": {
+    "id": 88004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88004.mp3"
+  },
+  "88005": {
+    "id": 88005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88005.mp3"
+  },
+  "88006": {
+    "id": 88006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88006.mp3"
+  },
+  "88007": {
+    "id": 88007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88007.mp3"
+  },
+  "88008": {
+    "id": 88008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_88008.mp3"
+  },
+  "89001": {
+    "id": 89001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89001.mp3"
+  },
+  "89002": {
+    "id": 89002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89002.mp3"
+  },
+  "89003": {
+    "id": 89003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89003.mp3"
+  },
+  "89004": {
+    "id": 89004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89004.mp3"
+  },
+  "89005": {
+    "id": 89005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89005.mp3"
+  },
+  "89006": {
+    "id": 89006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89006.mp3"
+  },
+  "89007": {
+    "id": 89007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89007.mp3"
+  },
+  "89008": {
+    "id": 89008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_89008.mp3"
+  },
+  "90001": {
+    "id": 90001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90001.mp3"
+  },
+  "90002": {
+    "id": 90002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90002.mp3"
+  },
+  "90003": {
+    "id": 90003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90003.mp3"
+  },
+  "90004": {
+    "id": 90004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90004.mp3"
+  },
+  "90005": {
+    "id": 90005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90005.mp3"
+  },
+  "90006": {
+    "id": 90006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90006.mp3"
+  },
+  "90007": {
+    "id": 90007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90007.mp3"
+  },
+  "90008": {
+    "id": 90008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_90008.mp3"
+  },
+  "91001": {
+    "id": 91001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91001.wav"
+  },
+  "91002": {
+    "id": 91002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91002.wav"
+  },
+  "91003": {
+    "id": 91003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91003.wav"
+  },
+  "91004": {
+    "id": 91004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91004.wav"
+  },
+  "91005": {
+    "id": 91005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91005.wav"
+  },
+  "91006": {
+    "id": 91006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91006.wav"
+  },
+  "91007": {
+    "id": 91007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91007.wav"
+  },
+  "91008": {
+    "id": 91008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_91008.wav"
+  },
+  "92001": {
+    "id": 92001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92001.mp3"
+  },
+  "92002": {
+    "id": 92002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92002.mp3"
+  },
+  "92003": {
+    "id": 92003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92003.mp3"
+  },
+  "92004": {
+    "id": 92004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92004.mp3"
+  },
+  "92005": {
+    "id": 92005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92005.mp3"
+  },
+  "92006": {
+    "id": 92006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92006.mp3"
+  },
+  "92007": {
+    "id": 92007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92007.mp3"
+  },
+  "92008": {
+    "id": 92008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_92008.mp3"
+  },
+  "93001": {
+    "id": 93001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93001.mp3"
+  },
+  "93002": {
+    "id": 93002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93002.mp3"
+  },
+  "93003": {
+    "id": 93003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93003.mp3"
+  },
+  "93004": {
+    "id": 93004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93004.mp3"
+  },
+  "93005": {
+    "id": 93005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93005.mp3"
+  },
+  "93006": {
+    "id": 93006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93006.mp3"
+  },
+  "93007": {
+    "id": 93007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93007.mp3"
+  },
+  "93008": {
+    "id": 93008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_93008.mp3"
+  },
+  "94001": {
+    "id": 94001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94001.mp3"
+  },
+  "94002": {
+    "id": 94002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94002.mp3"
+  },
+  "94003": {
+    "id": 94003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94003.mp3"
+  },
+  "94004": {
+    "id": 94004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94004.mp3"
+  },
+  "94005": {
+    "id": 94005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94005.mp3"
+  },
+  "94006": {
+    "id": 94006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94006.mp3"
+  },
+  "94007": {
+    "id": 94007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94007.mp3"
+  },
+  "94008": {
+    "id": 94008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_94008.mp3"
+  },
+  "95001": {
+    "id": 95001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95001.mp3"
+  },
+  "95002": {
+    "id": 95002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95002.mp3"
+  },
+  "95003": {
+    "id": 95003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95003.mp3"
+  },
+  "95004": {
+    "id": 95004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95004.mp3"
+  },
+  "95005": {
+    "id": 95005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95005.mp3"
+  },
+  "95006": {
+    "id": 95006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95006.mp3"
+  },
+  "95007": {
+    "id": 95007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95007.mp3"
+  },
+  "95008": {
+    "id": 95008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_95008.mp3"
+  },
+  "96001": {
+    "id": 96001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96001.mp3"
+  },
+  "96002": {
+    "id": 96002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96002.mp3"
+  },
+  "96003": {
+    "id": 96003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96003.mp3"
+  },
+  "96004": {
+    "id": 96004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96004.mp3"
+  },
+  "96005": {
+    "id": 96005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96005.mp3"
+  },
+  "96006": {
+    "id": 96006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96006.mp3"
+  },
+  "96007": {
+    "id": 96007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96007.mp3"
+  },
+  "96008": {
+    "id": 96008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_96008.mp3"
+  },
+  "97001": {
+    "id": 97001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97001.mp3"
+  },
+  "97002": {
+    "id": 97002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97002.mp3"
+  },
+  "97003": {
+    "id": 97003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97003.mp3"
+  },
+  "97004": {
+    "id": 97004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97004.mp3"
+  },
+  "97005": {
+    "id": 97005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97005.mp3"
+  },
+  "97006": {
+    "id": 97006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97006.mp3"
+  },
+  "97007": {
+    "id": 97007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97007.mp3"
+  },
+  "97008": {
+    "id": 97008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_97008.mp3"
+  },
+  "98001": {
+    "id": 98001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98001.mp3"
+  },
+  "98002": {
+    "id": 98002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98002.mp3"
+  },
+  "98003": {
+    "id": 98003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98003.mp3"
+  },
+  "98004": {
+    "id": 98004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98004.mp3"
+  },
+  "98005": {
+    "id": 98005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98005.mp3"
+  },
+  "98006": {
+    "id": 98006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98006.mp3"
+  },
+  "98007": {
+    "id": 98007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98007.mp3"
+  },
+  "98008": {
+    "id": 98008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_98008.mp3"
+  },
+  "99001": {
+    "id": 99001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99001.mp3"
+  },
+  "99002": {
+    "id": 99002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99002.mp3"
+  },
+  "99003": {
+    "id": 99003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99003.mp3"
+  },
+  "99004": {
+    "id": 99004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99004.mp3"
+  },
+  "99005": {
+    "id": 99005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99005.mp3"
+  },
+  "99006": {
+    "id": 99006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99006.mp3"
+  },
+  "99007": {
+    "id": 99007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99007.mp3"
+  },
+  "99008": {
+    "id": 99008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_99008.mp3"
+  },
+  "100001": {
+    "id": 100001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100001.mp3"
+  },
+  "100002": {
+    "id": 100002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100002.mp3"
+  },
+  "100003": {
+    "id": 100003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100003.mp3"
+  },
+  "100004": {
+    "id": 100004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100004.mp3"
+  },
+  "100005": {
+    "id": 100005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100005.mp3"
+  },
+  "100006": {
+    "id": 100006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100006.mp3"
+  },
+  "100007": {
+    "id": 100007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100007.mp3"
+  },
+  "100008": {
+    "id": 100008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_100008.mp3"
+  },
+  "101001": {
+    "id": 101001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101001.mp3"
+  },
+  "101002": {
+    "id": 101002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101002.mp3"
+  },
+  "101003": {
+    "id": 101003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101003.mp3"
+  },
+  "101004": {
+    "id": 101004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101004.mp3"
+  },
+  "101005": {
+    "id": 101005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101005.mp3"
+  },
+  "101006": {
+    "id": 101006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101006.mp3"
+  },
+  "101007": {
+    "id": 101007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101007.mp3"
+  },
+  "101008": {
+    "id": 101008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_101008.mp3"
+  },
+  "102001": {
+    "id": 102001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102001.mp3"
+  },
+  "102002": {
+    "id": 102002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102002.mp3"
+  },
+  "102003": {
+    "id": 102003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102003.mp3"
+  },
+  "102004": {
+    "id": 102004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102004.mp3"
+  },
+  "102005": {
+    "id": 102005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102005.mp3"
+  },
+  "102006": {
+    "id": 102006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102006.mp3"
+  },
+  "102007": {
+    "id": 102007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102007.mp3"
+  },
+  "102008": {
+    "id": 102008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_102008.mp3"
+  },
+  "103001": {
+    "id": 103001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103001.mp3"
+  },
+  "103002": {
+    "id": 103002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103002.mp3"
+  },
+  "103003": {
+    "id": 103003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103003.mp3"
+  },
+  "103004": {
+    "id": 103004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103004.mp3"
+  },
+  "103005": {
+    "id": 103005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103005.mp3"
+  },
+  "103006": {
+    "id": 103006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103006.mp3"
+  },
+  "103007": {
+    "id": 103007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103007.mp3"
+  },
+  "103008": {
+    "id": 103008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_103008.mp3"
+  },
+  "104001": {
+    "id": 104001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104001.mp3"
+  },
+  "104002": {
+    "id": 104002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104002.mp3"
+  },
+  "104003": {
+    "id": 104003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104003.mp3"
+  },
+  "104004": {
+    "id": 104004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104004.mp3"
+  },
+  "104005": {
+    "id": 104005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104005.mp3"
+  },
+  "104006": {
+    "id": 104006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104006.mp3"
+  },
+  "104007": {
+    "id": 104007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104007.mp3"
+  },
+  "104008": {
+    "id": 104008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_104008.mp3"
+  },
+  "105001": {
+    "id": 105001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105001.mp3"
+  },
+  "105002": {
+    "id": 105002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105002.mp3"
+  },
+  "105003": {
+    "id": 105003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105003.mp3"
+  },
+  "105004": {
+    "id": 105004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105004.mp3"
+  },
+  "105005": {
+    "id": 105005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105005.mp3"
+  },
+  "105006": {
+    "id": 105006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105006.mp3"
+  },
+  "105007": {
+    "id": 105007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105007.mp3"
+  },
+  "105008": {
+    "id": 105008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_105008.mp3"
+  },
+  "106001": {
+    "id": 106001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106001.mp3"
+  },
+  "106002": {
+    "id": 106002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106002.mp3"
+  },
+  "106003": {
+    "id": 106003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106003.mp3"
+  },
+  "106004": {
+    "id": 106004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106004.mp3"
+  },
+  "106005": {
+    "id": 106005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106005.mp3"
+  },
+  "106006": {
+    "id": 106006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106006.mp3"
+  },
+  "106007": {
+    "id": 106007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106007.mp3"
+  },
+  "106008": {
+    "id": 106008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_106008.mp3"
+  },
+  "107001": {
+    "id": 107001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107001.mp3"
+  },
+  "107002": {
+    "id": 107002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107002.mp3"
+  },
+  "107003": {
+    "id": 107003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107003.mp3"
+  },
+  "107004": {
+    "id": 107004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107004.mp3"
+  },
+  "107005": {
+    "id": 107005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107005.mp3"
+  },
+  "107006": {
+    "id": 107006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107006.mp3"
+  },
+  "107007": {
+    "id": 107007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107007.mp3"
+  },
+  "107008": {
+    "id": 107008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_107008.mp3"
+  },
+  "108001": {
+    "id": 108001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108001.mp3"
+  },
+  "108002": {
+    "id": 108002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108002.mp3"
+  },
+  "108003": {
+    "id": 108003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108003.mp3"
+  },
+  "108004": {
+    "id": 108004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108004.mp3"
+  },
+  "108005": {
+    "id": 108005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108005.mp3"
+  },
+  "108006": {
+    "id": 108006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108006.mp3"
+  },
+  "108007": {
+    "id": 108007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108007.mp3"
+  },
+  "108008": {
+    "id": 108008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_108008.mp3"
+  },
+  "109001": {
+    "id": 109001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109001.mp3"
+  },
+  "109002": {
+    "id": 109002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109002.mp3"
+  },
+  "109003": {
+    "id": 109003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109003.mp3"
+  },
+  "109004": {
+    "id": 109004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109004.mp3"
+  },
+  "109005": {
+    "id": 109005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109005.mp3"
+  },
+  "109006": {
+    "id": 109006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109006.mp3"
+  },
+  "109007": {
+    "id": 109007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109007.mp3"
+  },
+  "109008": {
+    "id": 109008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_109008.mp3"
+  },
+  "110001": {
+    "id": 110001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110001.mp3"
+  },
+  "110002": {
+    "id": 110002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110002.mp3"
+  },
+  "110003": {
+    "id": 110003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110003.mp3"
+  },
+  "110004": {
+    "id": 110004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110004.mp3"
+  },
+  "110005": {
+    "id": 110005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110005.mp3"
+  },
+  "110006": {
+    "id": 110006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110006.mp3"
+  },
+  "110007": {
+    "id": 110007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110007.mp3"
+  },
+  "110008": {
+    "id": 110008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_110008.mp3"
+  },
+  "111001": {
+    "id": 111001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111001.mp3"
+  },
+  "111002": {
+    "id": 111002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111002.mp3"
+  },
+  "111003": {
+    "id": 111003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111003.mp3"
+  },
+  "111004": {
+    "id": 111004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111004.mp3"
+  },
+  "111005": {
+    "id": 111005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111005.mp3"
+  },
+  "111006": {
+    "id": 111006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111006.mp3"
+  },
+  "111007": {
+    "id": 111007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111007.mp3"
+  },
+  "111008": {
+    "id": 111008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_111008.mp3"
+  },
+  "112001": {
+    "id": 112001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112001.mp3"
+  },
+  "112002": {
+    "id": 112002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112002.mp3"
+  },
+  "112003": {
+    "id": 112003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112003.mp3"
+  },
+  "112004": {
+    "id": 112004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112004.mp3"
+  },
+  "112005": {
+    "id": 112005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112005.mp3"
+  },
+  "112006": {
+    "id": 112006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112006.mp3"
+  },
+  "112007": {
+    "id": 112007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112007.mp3"
+  },
+  "112008": {
+    "id": 112008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_112008.mp3"
+  },
+  "113001": {
+    "id": 113001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113001.mp3"
+  },
+  "113002": {
+    "id": 113002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113002.mp3"
+  },
+  "113003": {
+    "id": 113003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113003.mp3"
+  },
+  "113004": {
+    "id": 113004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113004.mp3"
+  },
+  "113005": {
+    "id": 113005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113005.mp3"
+  },
+  "113006": {
+    "id": 113006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113006.mp3"
+  },
+  "113007": {
+    "id": 113007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113007.mp3"
+  },
+  "113008": {
+    "id": 113008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_113008.mp3"
+  },
+  "114001": {
+    "id": 114001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114001.mp3"
+  },
+  "114002": {
+    "id": 114002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114002.mp3"
+  },
+  "114003": {
+    "id": 114003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114003.mp3"
+  },
+  "114004": {
+    "id": 114004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114004.mp3"
+  },
+  "114005": {
+    "id": 114005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114005.mp3"
+  },
+  "114006": {
+    "id": 114006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114006.mp3"
+  },
+  "114007": {
+    "id": 114007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114007.mp3"
+  },
+  "114008": {
+    "id": 114008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_114008.mp3"
+  },
+  "119001": {
+    "id": 119001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119001.mp3"
+  },
+  "119002": {
+    "id": 119002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119002.mp3"
+  },
+  "119003": {
+    "id": 119003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119003.mp3"
+  },
+  "119004": {
+    "id": 119004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119004.mp3"
+  },
+  "119005": {
+    "id": 119005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119005.mp3"
+  },
+  "119006": {
+    "id": 119006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119006.mp3"
+  },
+  "119007": {
+    "id": 119007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119007.mp3"
+  },
+  "119008": {
+    "id": 119008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_119008.mp3"
+  },
+  "120001": {
+    "id": 120001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120001.mp3"
+  },
+  "120002": {
+    "id": 120002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120002.mp3"
+  },
+  "120003": {
+    "id": 120003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120003.mp3"
+  },
+  "120004": {
+    "id": 120004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120004.mp3"
+  },
+  "120005": {
+    "id": 120005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120005.mp3"
+  },
+  "120006": {
+    "id": 120006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120006.mp3"
+  },
+  "120007": {
+    "id": 120007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120007.mp3"
+  },
+  "120008": {
+    "id": 120008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_120008.mp3"
+  },
+  "121001": {
+    "id": 121001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121001.mp3"
+  },
+  "121002": {
+    "id": 121002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121002.mp3"
+  },
+  "121003": {
+    "id": 121003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121003.mp3"
+  },
+  "121004": {
+    "id": 121004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121004.mp3"
+  },
+  "121005": {
+    "id": 121005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121005.mp3"
+  },
+  "121006": {
+    "id": 121006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121006.mp3"
+  },
+  "121007": {
+    "id": 121007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121007.mp3"
+  },
+  "121008": {
+    "id": 121008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_121008.mp3"
+  },
+  "126001": {
+    "id": 126001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126001.mp3"
+  },
+  "126002": {
+    "id": 126002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126002.mp3"
+  },
+  "126003": {
+    "id": 126003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126003.mp3"
+  },
+  "126004": {
+    "id": 126004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126004.mp3"
+  },
+  "126005": {
+    "id": 126005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126005.mp3"
+  },
+  "126006": {
+    "id": 126006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126006.mp3"
+  },
+  "126007": {
+    "id": 126007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126007.mp3"
+  },
+  "126008": {
+    "id": 126008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_126008.mp3"
+  },
+  "128001": {
+    "id": 128001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128001.mp3"
+  },
+  "128002": {
+    "id": 128002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128002.mp3"
+  },
+  "128003": {
+    "id": 128003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128003.mp3"
+  },
+  "128004": {
+    "id": 128004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128004.mp3"
+  },
+  "128005": {
+    "id": 128005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128005.mp3"
+  },
+  "128006": {
+    "id": 128006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128006.mp3"
+  },
+  "128007": {
+    "id": 128007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128007.mp3"
+  },
+  "128008": {
+    "id": 128008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_128008.mp3"
+  },
+  "129001": {
+    "id": 129001,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129001.mp3"
+  },
+  "129002": {
+    "id": 129002,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129002.mp3"
+  },
+  "129003": {
+    "id": 129003,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129003.mp3"
+  },
+  "129004": {
+    "id": 129004,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129004.mp3"
+  },
+  "129005": {
+    "id": 129005,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129005.mp3"
+  },
+  "129006": {
+    "id": 129006,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129006.mp3"
+  },
+  "129007": {
+    "id": 129007,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129007.mp3"
+  },
+  "129008": {
+    "id": 129008,
+    "name": "",
+    "url": "/assets/sounds/dota_chatwheel_129008.mp3"
   }
 }
