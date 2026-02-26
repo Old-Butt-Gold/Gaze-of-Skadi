@@ -35,7 +35,6 @@ export const MatchesTimelinePage: React.FC = () => {
         <div className="min-h-screen bg-[#0b0e13] text-[#e3e3e3] pb-12">
 
             <div className="relative h-48 w-full bg-gradient-to-b from-[#1a1d24] to-[#0b0e13] border-b border-[#2e353b] mb-8">
-                <div className="absolute inset-0 bg-[url('/assets/images/dashboard_bg_2.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
                 <div className="mx-auto px-4 h-full flex flex-col justify-center items-center text-center relative z-10">
                     <div className="flex items-center gap-3 mb-2">
                         <span className="h-px w-10 bg-[#e7d291]" />

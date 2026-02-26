@@ -58,7 +58,6 @@ export const PlayerHeader: React.FC<Props> = ({ player }) => {
 
             {/* Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0f1114] via-[#15171c] to-transparent pointer-events-none z-0" />
-            <div className="absolute top-0 right-0 w-full md:w-2/3 h-full bg-[url('/assets/images/dashboard_bg_2.jpg')] bg-cover bg-center opacity-10 mask-image-linear-gradient-to-l" />
 
             <div className="relative z-10 mx-auto px-4 py-8 md:py-10 max-w-7xl">
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">

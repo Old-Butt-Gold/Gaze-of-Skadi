@@ -137,7 +137,6 @@ export const PlayerHistogramsTab: React.FC = () => {
 
                 {/* Background Decor */}
                 <div className="absolute inset-0 bg-gradient-to-b from-[#15171c] to-[#0f1114] -z-10" />
-                <div className="absolute inset-0 bg-[url('/assets/images/graph_texture.png')] opacity-5 mix-blend-overlay pointer-events-none -z-10" />
 
                 {isLoading ? (
                     <div className="absolute inset-0 flex items-center justify-center bg-[#15171c]/80 z-10 backdrop-blur-sm">

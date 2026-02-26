@@ -29,7 +29,7 @@ export const TalentTree: React.FC<TalentTreeProps> = ({ talents }) => {
                 </div>
             </div>
 
-            <div className="p-6 bg-[url('/assets/images/talent_bg_texture.png')] bg-cover bg-center relative min-h-[300px]">
+            <div className="p-6 relative min-h-[300px]">
                 <div className="absolute inset-0 bg-[#0f1114]/95" />
 
                 <div className="absolute left-1/2 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-[#2e353b] to-transparent -translate-x-1/2 z-0" />

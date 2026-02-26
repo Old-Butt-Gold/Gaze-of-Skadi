@@ -16,7 +16,6 @@ export const TeamHeader: React.FC<Props> = ({ team }) => {
         <div className="relative bg-[#1a1d24] border-b border-[#2e353b] overflow-hidden">
             {/* Background Texture/Gradient */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0f1114] via-[#1a1d24] to-[#0f1114] z-0"></div>
-            <div className="absolute inset-0 bg-[url('/assets/images/texture_pattern.png')] opacity-5 z-0 mix-blend-overlay"></div>
 
             <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div className="flex flex-col items-center gap-6 md:gap-8">
