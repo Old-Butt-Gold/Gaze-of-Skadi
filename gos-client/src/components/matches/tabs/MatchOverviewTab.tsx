@@ -69,6 +69,84 @@ const DIRE_BUILDINGS: BuildingConfig[] = [
     { id: 'dire_fort', name: 'Dire Ancient', type: 'fort', x: 85.5, y: 15.5, img: 'dire_fort.png', sizeClass: 'w-6' },
 ];
 
+const TeamDraftCard: React.FC<{
+    teamName: string;
+    iconSrc: string;
+    titleColorClass: string;
+    bgGradientClass: string;
+    draft: { picks: PickBanDto[], bans: PickBanDto[] };
+}> = ({ teamName, iconSrc, titleColorClass, bgGradientClass, draft }) => {
+    return (
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 relative">
+            <div className={clsx("absolute inset-0 pointer-events-none", bgGradientClass)} />
+            <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                    <Icon src={iconSrc} size={6} />
+                    <h3 className={clsx("text-lg font-serif font-bold uppercase tracking-widest", titleColorClass)}>
+                        {teamName} Draft
+                    </h3>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                    {draft.bans.length > 0 && (
+                        <div className="flex flex-col gap-2">
+                            <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Bans</span>
+                            <div className="flex flex-wrap gap-2">
+                                {draft.bans.map(b => (
+                                    <div key={b.order} className="relative group/ban grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 scale-90 origin-left">
+                                        <HeroCell heroId={b.heroId} showName={false} />
+                                        <div className="absolute inset-0 mix-blend-color pointer-events-none" />
+                                        <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-4 h-4 rounded-full flex items-center justify-center">
+                                            <span className="text-xs font-bold text-[#808fa6]">{b.order}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {draft.picks.length > 0 && (
+                        <div className="flex flex-col gap-2">
+                            <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Picks</span>
+                            <div className="flex flex-wrap gap-3">
+                                {draft.picks.map(p => (
+                                    <div key={p.order} className="relative group/pick transform transition-transform duration-300 hover:-translate-y-1">
+                                        <HeroCell heroId={p.heroId} showName={false} />
+                                        <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-4 h-4 rounded-full flex items-center justify-center">
+                                            <span className="text-xs font-bold text-[#e7d291]">{p.order}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const BuildingIcon: React.FC<{ building: BuildingConfig; isAlive: boolean; }> = ({ building, isAlive }) => {
+    return (
+        <div
+            className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-60 transition-all duration-300 group/building cursor-help"
+            style={{ left: `${building.x}%`, top: `${building.y}%` }}
+        >
+            <img
+                src={`/assets/images/${building.img}`}
+                alt={building.name}
+                className={clsx("object-contain drop-shadow-md", building.sizeClass)}
+                style={{ filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)' }}
+            />
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
+                <span className="text-xs font-bold text-[#e3e3e3]">{building.name}</span>
+                <span className={clsx("text-xs font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
+                    {isAlive ? "Alive" : "Destroyed"}
+                </span>
+            </div>
+        </div>
+    );
+};
+
 export const MatchOverviewTab: React.FC = () => {
     const { matchId, generalInformation } = useOutletContext<MatchOutletContext>();
     const { data: overview, isLoading, isError } = useMatchOverview(matchId);
@@ -76,8 +154,8 @@ export const MatchOverviewTab: React.FC = () => {
     const matchWinner = generalInformation.winner.value === TeamEnum.Radiant ? TeamEnum.Radiant : TeamEnum.Dire;
 
     const { radiantDraft, direDraft } = useMemo(() => {
-        const rad = { picks: [] as PickBanDto[], bans: [] as PickBanDto[]  };
-        const dire = { picks: [] as PickBanDto[] , bans: [] as PickBanDto[] };
+        const rad = { picks: [] as PickBanDto[], bans: [] as PickBanDto[] };
+        const dire = { picks: [] as PickBanDto[], bans: [] as PickBanDto[] };
 
         if (overview?.picksBans) {
             const sorted = [...overview.picksBans].sort((a, b) => a.order - b.order);
@@ -99,94 +177,32 @@ export const MatchOverviewTab: React.FC = () => {
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
                 {(radiantDraft.picks.length > 0 || radiantDraft.bans.length > 0 || direDraft.picks.length > 0 || direDraft.bans.length > 0)
-                    && (<div className="flex flex-col gap-6">
-                    <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 relative">
-                        <div className="absolute inset-0 bg-linear-to-r from-emerald-500/10 via-transparent to-transparent pointer-events-none" />
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-3 mb-4">
-                                <Icon src="/assets/images/radiant.png" size={6} />
-                                <h3 className="text-lg font-serif font-bold text-emerald-400 uppercase tracking-widest">Radiant Draft</h3>
-                            </div>
+                    && (
+                        <div className="flex flex-col gap-6">
+                            <TeamDraftCard
+                                teamName="Radiant"
+                                iconSrc="/assets/images/radiant.png"
+                                titleColorClass="text-emerald-400"
+                                bgGradientClass="bg-linear-to-r from-emerald-500/10 via-transparent to-transparent"
+                                draft={radiantDraft}
+                            />
 
-                            <div className="flex flex-col gap-4">
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Bans</span>
-                                    <div className="flex flex-wrap gap-2">
-                                        {radiantDraft.bans.map(b => (
-                                            <div key={b.order} className="relative group/ban grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 scale-90 origin-left">
-                                                <HeroCell heroId={b.heroId} showName={false} />
-                                                <div className="absolute inset-0 mix-blend-color pointer-events-none" />
-                                                <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-4 h-4 rounded-full flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-[#808fa6]">{b.order}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Picks</span>
-                                    <div className="flex flex-wrap gap-3">
-                                        {radiantDraft.picks.map(p => (
-                                            <div key={p.order} className="relative group/pick transform transition-transform duration-300 hover:-translate-y-1">
-                                                <HeroCell heroId={p.heroId} showName={false} />
-                                                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-4 h-4 rounded-full flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-[#e7d291]">{p.order}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                            <TeamDraftCard
+                                teamName="Dire"
+                                iconSrc="/assets/images/dire.png"
+                                titleColorClass="text-red-400"
+                                bgGradientClass="bg-linear-to-r from-red-500/10 via-transparent to-transparent"
+                                draft={direDraft}
+                            />
                         </div>
-                    </div>
-
-                    <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 relative">
-                        <div className="absolute inset-0 bg-linear-to-r from-red-500/10 via-transparent to-transparent pointer-events-none" />
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-3 mb-4">
-                                <Icon src="/assets/images/dire.png" size={6} />
-                                <h3 className="text-lg font-serif font-bold text-red-400 uppercase tracking-widest">Dire Draft</h3>
-                            </div>
-
-                            <div className="flex flex-col gap-4">
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Bans</span>
-                                    <div className="flex flex-wrap gap-2">
-                                        {direDraft.bans.map(b => (
-                                            <div key={b.order} className="relative group/ban grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100 scale-90 origin-left">
-                                                <HeroCell heroId={b.heroId} showName={false} />
-                                                <div className="absolute inset-0 mix-blend-color pointer-events-none" />
-                                                <div className="absolute top-0 right-0 translate-x-1/3 -translate-y-1/3 w-4 h-4 rounded-full flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-[#808fa6]">{b.order}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <span className="text-xs text-[#58606e] font-bold uppercase tracking-widest">Picks</span>
-                                    <div className="flex flex-wrap gap-3">
-                                        {direDraft.picks.map(p => (
-                                            <div key={p.order} className="relative group/pick transform transition-transform duration-300 hover:-translate-y-1">
-                                                <HeroCell heroId={p.heroId} showName={false} />
-                                                <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-4 h-4 rounded-full flex items-center justify-center">
-                                                    <span className="text-xs font-bold text-[#e7d291]">{p.order}</span>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>)}
+                    )}
 
                 <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 flex flex-col items-center justify-center relative">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest mb-6 w-full text-center">
                         Building Status
                     </h3>
 
-                    <div className="relative w-full max-w-[500px] aspect-square rounded-xl border border-[#2e353b] bg-[#0f1114]">
+                    <div className="relative w-full max-w-[600px] aspect-square rounded-xl border border-[#2e353b] bg-[#0f1114]">
                         <img
                             src="/assets/images/detailed_740.webp"
                             alt="Map"
@@ -203,26 +219,7 @@ export const MatchOverviewTab: React.FC = () => {
                                 isAlive = matchWinner !== TeamEnum.Dire;
                             }
 
-                            return (
-                                <div
-                                    key={b.id}
-                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-60 transition-all duration-300 group/building cursor-help"
-                                    style={{ left: `${b.x}%`, top: `${b.y}%` }}
-                                >
-                                    <img
-                                        src={`/assets/images/${b.img}`}
-                                        alt={b.name}
-                                        className={clsx("object-contain drop-shadow-md", b.sizeClass)}
-                                        style={{ filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)' }}
-                                    />
-                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
-                                        <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
-                                        <span className={clsx("text-xs font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
-                                            {isAlive ? "Alive" : "Destroyed"}
-                                        </span>
-                                    </div>
-                                </div>
-                            );
+                            return <BuildingIcon key={b.id} building={b} isAlive={isAlive} />;
                         })}
 
                         {DIRE_BUILDINGS.map((b) => {
@@ -235,26 +232,7 @@ export const MatchOverviewTab: React.FC = () => {
                                 isAlive = matchWinner !== TeamEnum.Radiant;
                             }
 
-                            return (
-                                <div
-                                    key={b.id}
-                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-60 transition-all duration-300 group/building cursor-help"
-                                    style={{ left: `${b.x}%`, top: `${b.y}%` }}
-                                >
-                                    <img
-                                        src={`/assets/images/${b.img}`}
-                                        alt={b.name}
-                                        className={clsx("object-contain drop-shadow-md", b.sizeClass)}
-                                        style={{ filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)' }}
-                                    />
-                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
-                                        <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
-                                        <span className={clsx("text-xs font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
-                                            {isAlive ? "Alive" : "Destroyed"}
-                                        </span>
-                                    </div>
-                                </div>
-                            );
+                            return <BuildingIcon key={b.id} building={b} isAlive={isAlive} />;
                         })}
                     </div>
                 </div>
