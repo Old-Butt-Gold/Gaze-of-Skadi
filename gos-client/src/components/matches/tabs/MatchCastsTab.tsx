@@ -10,7 +10,7 @@ import { HeroCell } from '../../heroes/HeroCell';
 import { isRadiantTeam } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerCastsDto, AbilityCastDto } from '../../../types/matchCasts';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { SourceIcon } from "../SourceIcon.tsx";
 
 const CastBadge: React.FC<{ children: React.ReactNode; count: number }> = ({ children, count }) => (

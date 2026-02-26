@@ -9,7 +9,7 @@ import { Icon } from '../../Icon';
 import { isRadiantTeam } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerBenchmarkDto } from '../../../types/matchBenchmarks';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 
 const BENCHMARK_COLUMNS = [
     { key: 'GoldPerMin', label: 'GPM', full: 'Gold Per Minute' },

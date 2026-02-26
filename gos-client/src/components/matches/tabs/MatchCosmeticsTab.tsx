@@ -8,7 +8,7 @@ import { getItemRarityColor, isRadiantTeam } from '../../../utils/matchUtils';
 import { UnparsedMatchWarning } from "../UnparsedMatchWarning.tsx";
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { Icon } from "../../Icon.tsx";
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import type {CosmeticDto} from "../../../types/matchCosmetics.ts";
 
 interface IndexedPlayer {

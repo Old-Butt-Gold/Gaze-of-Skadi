@@ -3,7 +3,7 @@ using GoS.Application.Abstractions;
 using GoS.Application.Dto;
 using GoS.Application.Features.Common.Queries.GetLeagues;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
-using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
+using GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 using GoS.Domain.Matches.Models;
@@ -14,7 +14,6 @@ namespace GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper, IResourceManager resourceManager)
     : IRequestHandler<GetMatchOverviewByIdQuery, MatchOverviewDto?>
 {
-    private HashSet<string> _objectives = [];
     private Dictionary<string, string> _itemIds = [];
 
     public async Task<MatchOverviewDto?> Handle(GetMatchOverviewByIdQuery request, CancellationToken ct)
@@ -23,7 +22,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         if (match is null) return null;
 
         _itemIds = (await resourceManager.GetItemIdsAsync())!;
-        _objectives = (await resourceManager.GetObjectiveNamesAsync())!.ToHashSet();
 
         return MapMatchOverview(match);
     }
@@ -31,31 +29,12 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
     private MatchOverviewDto MapMatchOverview(Match match) =>
         new()
         {
-            Winner = mapper.Map<BaseEnumDto<TeamEnum>>(match.RadiantWin == BooleanState.True
-                ? TeamEnum.Radiant
-                : TeamEnum.Dire),
-            RadiantScore = match.RadiantScore,
-            DireScore = match.DireScore,
-            GameMode = mapper.Map<BaseEnumDto<GameMode>>(match.GameMode),
-            LobbyType = mapper.Map<BaseEnumDto<LobbyType>>(match.LobbyType),
-            Duration = match.Duration,
-            StartTime = match.StartTime,
-            MatchId = match.MatchId,
-            Region = mapper.Map<BaseEnumDto<Region>>(match.Region),
-            ReplayUrl = match.ReplayUrl,
             PicksBans = MapPicksBans(match.PicksBans),
             Players = match.Players.Select(MapPlayerOverview).ToList(),
             DireBarracksStatus = mapper.Map<BaseEnumDto<BarracksStatus>>(match.BarracksStatusDire),
             RadiantBarracksStatus = mapper.Map<BaseEnumDto<BarracksStatus>>(match.BarracksStatusRadiant),
             RadiantTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusRadiant),
             DireTowersStatus = mapper.Map<BaseEnumDto<TowerStatus>>(match.TowerStatusDire),
-            IsParsed = mapper.Map<BaseEnumDto<BooleanState>>(match.Version is not null
-                ? BooleanState.True
-                : BooleanState.False),
-            Patch = mapper.Map<BaseEnumDto<Patch>>(match.Patch),
-            RadiantTeam = mapper.Map<MatchTeamDto?>(match.RadiantTeam),
-            DireTeam = mapper.Map<MatchTeamDto?>(match.DireTeam),
-            League = mapper.Map<LeagueDto?>(match.League),
         };
 
     private IEnumerable<PickBanDto> MapPicksBans(IEnumerable<PickBan>? picksBans)

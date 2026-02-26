@@ -6,6 +6,7 @@ using GoS.Application.Features.Matches.Queries.GetMatchChatById;
 using GoS.Application.Features.Matches.Queries.GetMatchCosmeticsById;
 using GoS.Application.Features.Matches.Queries.GetMatchDamageById;
 using GoS.Application.Features.Matches.Queries.GetMatchEarningsById;
+using GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 using GoS.Application.Features.Matches.Queries.GetMatchGraphicsById;
 using GoS.Application.Features.Matches.Queries.GetMatchItemsById;
 using GoS.Application.Features.Matches.Queries.GetMatchJournalById;
@@ -13,7 +14,6 @@ using GoS.Application.Features.Matches.Queries.GetMatchLaneById;
 using GoS.Application.Features.Matches.Queries.GetMatchObjectivesById;
 using GoS.Application.Features.Matches.Queries.GetMatchOverviewById;
 using GoS.Application.Features.Matches.Queries.GetMatchPerformancesById;
-using GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
 using GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 using GoS.Application.Features.Matches.Queries.GetMatchVisionById;
 using MediatR;
@@ -27,11 +27,11 @@ public sealed class MatchesController : ApiControllerBase
 {
     public MatchesController(ISender sender) : base(sender) { }
 
-    [HttpGet("players")]
+    [HttpGet("general-info")]
     [Produces(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(IEnumerable<MatchPlayerInformationDto>), StatusCodes.Status200OK)]
-    public Task<IActionResult> GetMatchPlayersById([FromRoute] long matchId, CancellationToken ct = default)
-        => HandleQueryAsync(new GetMatchPlayersByIdQuery(matchId), ct);
+    [ProducesResponseType(typeof(IEnumerable<MatchGeneralInformationDto>), StatusCodes.Status200OK)]
+    public Task<IActionResult> GetGeneralInformationById([FromRoute] long matchId, CancellationToken ct = default)
+        => HandleQueryAsync(new GetMatchGeneralInformationByIdQuery(matchId), ct);
 
     [HttpGet("overview")]
     [Produces(MediaTypeNames.Application.Json)]

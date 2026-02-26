@@ -6,7 +6,7 @@ import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { NotFoundPage } from './NotFoundPage';
 import { BooleanState } from '../types/common';
-import type { PlayerInfoDto } from '../types/matchPlayers';
+import type { PlayerInfoDto } from '../types/matchGeneralInformation.ts';
 
 export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items'
     | 'benchmarks' | 'graphics' | 'performance' | 'laning'

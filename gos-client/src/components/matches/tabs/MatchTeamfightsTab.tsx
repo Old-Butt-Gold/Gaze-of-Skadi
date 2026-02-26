@@ -12,7 +12,7 @@ import { SourceIcon } from '../SourceIcon';
 import { isRadiantTeam, normalizeMapCoordinate } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { type TeamfightDetailedDto, type TeamfightPlayerDto } from '../../../types/matchTeamfights';
 import { TeamEnum } from "../../../types/common.ts";
 import { useHeroes } from "../../../hooks/queries/useHeroes.ts";

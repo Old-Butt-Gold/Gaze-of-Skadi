@@ -13,7 +13,7 @@ import { RUNE_NAMES, isRadiantTeam, parseObjectiveName } from '../../../utils/ma
 import { formatDuration } from '../../../utils/formatUtils';
 import { TeamEnum } from "../../../types/common";
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import {
     ConnectionEventType,
     ObjectiveType,

@@ -11,7 +11,7 @@ import { HeroCell } from '../../heroes/HeroCell';
 import { isRadiantTeam, VISION_ITEM_ICONS, normalizeMapCoordinate } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { WardType, VisionItemType, type VisionItemDto, type WardPlacementDto, type PlayerVisionDto } from '../../../types/matchVision';
 
 interface IndexedPlayer {

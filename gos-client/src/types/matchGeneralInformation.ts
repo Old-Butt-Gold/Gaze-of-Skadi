@@ -20,7 +20,7 @@ export interface PlayerInfoDto {
   partySize: number | null;
 }
 
-export interface MatchPlayerInformationDto {
+export interface MatchGeneralInformationDto {
   isMatchParsed: BaseEnum<BooleanState>;
   players: PlayerInfoDto[];
 }

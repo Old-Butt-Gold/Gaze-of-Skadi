@@ -19,7 +19,7 @@ import { HeroCell } from '../../heroes/HeroCell.tsx';
 import { getPlayerColor, isRadiantTeam } from '../../../utils/matchUtils.ts';
 import { parsePositionsToHeatmap } from '../../../utils/heatmapUtils.ts';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage.tsx';
-import type { PlayerInfoDto } from '../../../types/matchPlayers.ts';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import type { PlayerLaneDto } from '../../../types/matchLaning.ts';
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { HeatmapCanvas } from "../../players/HeatmapCanvas.tsx";

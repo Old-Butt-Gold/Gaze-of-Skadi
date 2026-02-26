@@ -21,7 +21,7 @@ import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
 import { HeroCell } from '../../heroes/HeroCell';
 import { getPlayerColor, EXP_LEVEL } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { Icon } from "../../Icon.tsx";
 
 type GraphType = 'goldPerMinute' | 'xpPerMinute' | 'lastHitsPerMinute';

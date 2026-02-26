@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { Icon } from '../Icon';
 import { APP_ROUTES } from '../../config/navigation';
 import {isRadiantTeam} from '../../utils/matchUtils';
-import type { PlayerInfoDto } from '../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../types/matchGeneralInformation.ts';
 import { RankIcon } from '../distributions/RankIcon';
 import {HeroImage} from "../heroes/HeroImage.tsx";
 import {HeroCell} from "../heroes/HeroCell.tsx";

@@ -10,7 +10,7 @@ import { isRadiantTeam } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerPerformanceDto, MaxHeroHitDto } from '../../../types/matchPerformances';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { useMatchPerformances } from "../../../hooks/queries/useMatchPerfomances.ts";
 import {SourceIcon} from "../SourceIcon.tsx";
 

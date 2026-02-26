@@ -9,7 +9,7 @@ import { MatchPlayerCell } from '../MatchPlayerCell';
 import { Icon } from '../../Icon';
 import { isRadiantTeam, RUNE_NAMES, parseObjectiveName } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import type {DamageDataDto, PlayerObjectivesDto, RunesDataDto} from "../../../types/matchObjectvies.ts";
 
 interface IndexedPlayer {

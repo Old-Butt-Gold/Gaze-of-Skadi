@@ -8,6 +8,5 @@ public class GetMatchOverviewByIdMapperProfile : Profile
     public GetMatchOverviewByIdMapperProfile()
     {
         CreateMap<PermanentBuff, PermanentBuffDto>();
-        CreateMap<MatchTeam, MatchTeamDto>();
     }
 }

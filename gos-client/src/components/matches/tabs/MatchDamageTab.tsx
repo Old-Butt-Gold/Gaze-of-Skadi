@@ -12,7 +12,7 @@ import { SourceIcon } from '../SourceIcon';
 import { isRadiantTeam } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerDamageDto } from '../../../types/matchDamage';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 
 interface IndexedPlayer {
     info: PlayerInfoDto;

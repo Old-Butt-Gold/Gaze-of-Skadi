@@ -10,7 +10,7 @@ import { Icon } from '../../Icon';
 import { isRadiantTeam, GOLD_REASONS, XP_REASONS } from '../../../utils/matchUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerEarningsDto, IncomeReasonDto } from '../../../types/matchEarnings';
-import type { PlayerInfoDto } from '../../../types/matchPlayers';
+import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, type TooltipProps } from 'recharts';
 
 interface IndexedPlayer {

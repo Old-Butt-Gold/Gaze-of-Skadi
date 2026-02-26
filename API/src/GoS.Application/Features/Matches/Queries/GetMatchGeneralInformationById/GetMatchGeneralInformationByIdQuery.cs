@@ -1,9 +1,9 @@
 ﻿using GoS.Application.Abstractions.Queries;
 using GoS.Application.Caching;
 
-namespace GoS.Application.Features.Matches.Queries.GetMatchPlayersById;
+namespace GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 
-public record GetMatchPlayersByIdQuery(long MatchId) : ICacheableQuery<MatchPlayerInformationDto?>
+public record GetMatchGeneralInformationByIdQuery(long MatchId) : ICacheableQuery<MatchGeneralInformationDto?>
 {
     public string GetCacheKey() => CacheKey.Create("players", new { id = MatchId });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
