@@ -9,6 +9,7 @@
 
 export interface PlayerInfoDto {
   heroId: number;
+  name: string | null;
   personaName: string | null;
   heroVariant: number | null;
   accountId: number | null;

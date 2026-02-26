@@ -42,6 +42,8 @@ public class PlayerInfoDto
 {
     public long HeroId { get; init; }
 
+    public string? Name { get; init; }
+
     // May be unknown
     public string? PersonaName { get; init; }
 

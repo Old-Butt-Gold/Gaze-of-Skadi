@@ -58,13 +58,13 @@ export const MatchPlayerCell: React.FC<Props> = ({ player, hideName, useIcon = t
                         <Link
                             to={`${APP_ROUTES.PLAYERS}/${player.accountId}`}
                             className={clsx(nameClasses, "hover:underline")}
-                            title={player.personaName || 'Anonymous'}
+                            title={player.name || player.personaName || 'Anonymous'}
                         >
-                            {player.personaName || 'Anonymous'}
+                            {player.name ||  player.personaName || 'Anonymous'}
                         </Link>
                     ) : (
                         <span className={nameClasses}>
-                            {player.personaName || 'Anonymous'}
+                            {player.name || player.personaName || 'Anonymous'}
                         </span>
                     )}
                 </div>

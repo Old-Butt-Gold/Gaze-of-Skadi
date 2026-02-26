@@ -428,6 +428,12 @@ public class MatchPlayer
 	[JsonPropertyName("xp_t")]
 	public List<int> XpEachMinute { get; init; } = [];
 
+    /// <summary>
+    /// Gets a name of the player
+    /// </summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; init; }
+
 	/// <summary>
 	/// Gets a persona name of the player
 	/// </summary>
