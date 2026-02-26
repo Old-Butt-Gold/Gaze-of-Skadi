@@ -217,7 +217,7 @@ export const MatchOverviewTab: React.FC = () => {
                                     />
                                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
                                         <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
-                                        <span className={clsx("text-[9px] font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
+                                        <span className={clsx("text-xs font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
                                             {isAlive ? "Alive" : "Destroyed"}
                                         </span>
                                     </div>
@@ -249,7 +249,7 @@ export const MatchOverviewTab: React.FC = () => {
                                     />
                                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
                                         <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
-                                        <span className={clsx("text-[9px] font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
+                                        <span className={clsx("text-xs font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
                                             {isAlive ? "Alive" : "Destroyed"}
                                         </span>
                                     </div>
