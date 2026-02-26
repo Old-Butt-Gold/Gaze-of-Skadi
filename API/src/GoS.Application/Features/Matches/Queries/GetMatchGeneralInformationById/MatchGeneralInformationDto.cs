@@ -22,6 +22,7 @@ public class MatchTeamDto
 
 public record MatchHeaderInformationDto
 {
+    public required long MatchId { get; init; }
     public required BaseEnumDto<TeamEnum> Winner { get; init; }
     public required int RadiantScore { get; init; }
     public required int DireScore { get; init; }

@@ -17,7 +17,7 @@ import type {TeamfightDetailedDto} from "../types/matchTeamfights.ts";
 import type {MatchJournalDto} from "../types/matchJournal.ts";
 
 export const matchService = {
-  getMatchPlayers: async (matchId: number): Promise<MatchGeneralInformationDto> => {
+  getMatchGeneralInformation: async (matchId: number): Promise<MatchGeneralInformationDto> => {
     return apiClient.get(`/Matches/${matchId}/general-info`);
   },
 

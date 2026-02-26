@@ -28,6 +28,7 @@ internal sealed class GetMatchGeneralInformationByIdHandler(ISender sender, IMap
     private MatchHeaderInformationDto MapMatchOverview(Match match) =>
         new()
         {
+            MatchId = match.MatchId,
             Winner = mapper.Map<BaseEnumDto<TeamEnum>>(match.RadiantWin == BooleanState.True
                 ? TeamEnum.Radiant
                 : TeamEnum.Dire),

@@ -1,12 +1,13 @@
 ﻿import React, { useEffect } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-import { useMatchPlayers } from '../hooks/queries/useMatchPlayers';
+import { useMatchGeneralInformation } from '../hooks/queries/useMatchGeneralInformation';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { NotFoundPage } from './NotFoundPage';
 import { BooleanState } from '../types/common';
-import type { PlayerInfoDto } from '../types/matchGeneralInformation.ts';
+import { MatchHeader } from '../components/matches/MatchHeader';
+import type { PlayerInfoDto } from '../types/matchGeneralInformation';
 
 export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items'
     | 'benchmarks' | 'graphics' | 'performance' | 'laning'
@@ -26,7 +27,7 @@ export const MatchDetailsPage: React.FC = () => {
 
     const activeTab = location.pathname.split('/').pop() as MatchTab;
 
-    const { data: matchData, isLoading, isError } = useMatchPlayers(parsedId);
+    const { data: matchData, isLoading, isError } = useMatchGeneralInformation(parsedId);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -63,8 +64,11 @@ export const MatchDetailsPage: React.FC = () => {
     ];
 
     return (
-        <div className="w-full min-h-screen pb-10 animate-fade-in bg-[#0b0e13]">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full min-h-screen bg-[#0b0e13] text-white pb-10">
+
+            <MatchHeader matchData={matchData} />
+
+            <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-4">
 
                 <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
                     <div className="flex gap-1 min-w-max w-fit mx-auto px-4">

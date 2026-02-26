@@ -1,4 +1,5 @@
 ﻿import {GameMode, LaneRole, LeaverStatus, LobbyType, Patch, Region, TeamEnum} from '../types/common';
+import { Tier } from "../types/matchGeneralInformation.ts";
 import {PlayerField} from "../types/player.ts";
 
 const GAME_MODE_NAMES: Record<GameMode, string> = {
@@ -148,8 +149,19 @@ export const FIELD_LABELS: Record<PlayerField, string> = {
   [PlayerField.ActionsPerMin]: 'Actions Per Min (APM)',
 };
 
-export const getPlayerField = (field : PlayerField) : string => FIELD_LABELS[field] ?? "Unknown Field";
-
 export const IsPlayerLeft = (leaverStatus : LeaverStatus | null | undefined) => leaverStatus !== undefined && leaverStatus !== null &&
   leaverStatus !== LeaverStatus.Stayed &&
   leaverStatus !== LeaverStatus.LeftSafely;
+
+const TIER_NAMES: Record<number, string> = {
+  [Tier.None]: 'None',
+  [Tier.Amateur]: 'Amateur',
+  [Tier.Excluded]: 'Excluded',
+  [Tier.Premium]: 'Premium',
+  [Tier.Professional]: 'Professional'
+};
+
+export const getTierName = (tier: number | undefined | null): string => {
+  if (tier === undefined || tier === null) return 'Unknown Tier';
+  return TIER_NAMES[tier] ?? 'Unknown Tier';
+};
