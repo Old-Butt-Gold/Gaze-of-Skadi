@@ -7,12 +7,12 @@ import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { HeroCell } from '../../heroes/HeroCell';
 import { Icon } from '../../Icon';
 import { TeamEnum } from '../../../types/common';
-import {BarracksStatus, type PickBanDto, TowerStatus} from '../../../types/matchOverview';
+import { BarracksStatus, type PickBanDto, TowerStatus } from '../../../types/matchOverview';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import { isRadiantTeam } from '../../../utils/matchUtils';
 
 interface BuildingConfig {
     id: string;
+    name: string;
     type: 'tower' | 'rax' | 'fort';
     x: number;
     y: number;
@@ -22,57 +22,58 @@ interface BuildingConfig {
 }
 
 const RADIANT_BUILDINGS: BuildingConfig[] = [
-    { id: 'rad_t1_top', type: 'tower', bit: TowerStatus.TopTier1, x: 12, y: 44, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t2_top', type: 'tower', bit: TowerStatus.TopTier2, x: 12, y: 62, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t3_top', type: 'tower', bit: TowerStatus.TopTier3, x: 12, y: 74, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t1_mid', type: 'tower', bit: TowerStatus.MidTier1, x: 44, y: 55, img: 'radiant_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t2_mid', type: 'tower', bit: TowerStatus.MidTier2, x: 34, y: 65, img: 'radiant_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t3_mid', type: 'tower', bit: TowerStatus.MidTier3, x: 26, y: 73, img: 'radiant_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t1_bot', type: 'tower', bit: TowerStatus.BottomTier1, x: 82, y: 88, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t2_bot', type: 'tower', bit: TowerStatus.BottomTier2, x: 55, y: 88, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t3_bot', type: 'tower', bit: TowerStatus.BottomTier3, x: 28, y: 88, img: 'radiant_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t4_1', type: 'tower', bit: TowerStatus.T4Left, x: 17, y: 81, img: 'radiant_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_t4_2', type: 'tower', bit: TowerStatus.T4Right, x: 20, y: 84, img: 'radiant_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'rad_rax_top_m', type: 'rax', bit: BarracksStatus.MeleeTop, x: 10, y: 77, img: 'radiant_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_rax_top_r', type: 'rax', bit: BarracksStatus.RangedTop, x: 14, y: 77, img: 'radiant_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_rax_mid_m', type: 'rax', bit: BarracksStatus.MeleeMiddle, x: 22, y: 76, img: 'radiant_rax_angle.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_rax_mid_r', type: 'rax', bit: BarracksStatus.RangedMiddle, x: 25, y: 79, img: 'radiant_rax_angle.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_rax_bot_m', type: 'rax', bit: BarracksStatus.MeleeBottom, x: 26, y: 86, img: 'radiant_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_rax_bot_r', type: 'rax', bit: BarracksStatus.RangedBottom, x: 26, y: 90, img: 'radiant_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'rad_fort', type: 'fort', x: 14, y: 86, img: 'radiant_fort.png', sizeClass: 'w-8 sm:w-12' },
+    { id: 'rad_t1_top', name: 'Top Tier 1 Tower', type: 'tower', bit: TowerStatus.TopTier1, x: 11, y: 37, img: 'radiant_tower.png', sizeClass: 'w-6' },
+    { id: 'rad_t2_top', name: 'Top Tier 2 Tower', type: 'tower', bit: TowerStatus.TopTier2, x: 11, y: 57, img: 'radiant_tower.png', sizeClass: 'w-6' },
+    { id: 'rad_t3_top', name: 'Top Tier 3 Tower', type: 'tower', bit: TowerStatus.TopTier3, x: 10, y: 71, img: 'radiant_tower.png', sizeClass: 'w-6' },
+    { id: 'rad_t1_mid', name: 'Middle Tier 1 Tower', type: 'tower', bit: TowerStatus.MidTier1, x: 40, y: 56.5, img: 'radiant_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_t2_mid', name: 'Middle Tier 2 Tower', type: 'tower', bit: TowerStatus.MidTier2, x: 29, y: 67, img: 'radiant_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_t3_mid', name: 'Middle Tier 3 Tower', type: 'tower', bit: TowerStatus.MidTier3, x: 22, y: 75, img: 'radiant_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_t1_bot', name: 'Bottom Tier 1 Tower', type: 'tower', bit: TowerStatus.BottomTier1, x: 80, y: 86, img: 'radiant_tower.png', sizeClass: 'w-6' },
+    { id: 'rad_t2_bot', name: 'Bottom Tier 2 Tower', type: 'tower', bit: TowerStatus.BottomTier2, x: 47, y: 88, img: 'radiant_tower.png', sizeClass: 'w-6' },
+    { id: 'rad_t3_bot', name: 'Bottom Tier 3 Tower', type: 'tower', bit: TowerStatus.BottomTier3, x: 26, y: 86.6, img: 'radiant_tower.png', sizeClass: 'w-6' },
+
+    { id: 'rad_t4_1', name: 'Tier 4 Tower (Left)', type: 'tower', bit: TowerStatus.T4Left, x: 13, y: 81, img: 'radiant_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_t4_2', name: 'Tier 4 Tower (Right)', type: 'tower', bit: TowerStatus.T4Right, x: 15.5, y: 83.2, img: 'radiant_tower_angle.png', sizeClass: 'w-6' },
+
+    { id: 'rad_rax_top_m', name: 'Top Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeTop, x: 12, y: 74.5, img: 'radiant_rax.png', sizeClass: 'w-6' },
+    { id: 'rad_rax_top_r', name: 'Top Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedTop, x: 8, y: 74.5, img: 'radiant_rax.png', sizeClass: 'w-6' },
+    { id: 'rad_rax_mid_m', name: 'Middle Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeMiddle, x: 20.5, y: 78.5, img: 'radiant_rax_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_rax_mid_r', name: 'Middle Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedMiddle, x: 18, y: 76, img: 'radiant_rax_angle.png', sizeClass: 'w-6' },
+    { id: 'rad_rax_bot_m', name: 'Bottom Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeBottom, x: 22.5, y: 88, img: 'radiant_rax.png', sizeClass: 'w-6' },
+    { id: 'rad_rax_bot_r', name: 'Bottom Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedBottom, x: 22.5, y: 84.5, img: 'radiant_rax.png', sizeClass: 'w-6' },
+
+    { id: 'rad_fort', name: 'Radiant Ancient', type: 'fort', x: 11, y: 85, img: 'radiant_fort.png', sizeClass: 'w-6' },
 ];
 
 const DIRE_BUILDINGS: BuildingConfig[] = [
-    { id: 'dire_t1_top', type: 'tower', bit: TowerStatus.TopTier1, x: 18, y: 15, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t2_top', type: 'tower', bit: TowerStatus.TopTier2, x: 45, y: 15, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t3_top', type: 'tower', bit: TowerStatus.TopTier3, x: 72, y: 15, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t1_mid', type: 'tower', bit: TowerStatus.MidTier1, x: 55, y: 44, img: 'dire_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t2_mid', type: 'tower', bit: TowerStatus.MidTier2, x: 65, y: 34, img: 'dire_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t3_mid', type: 'tower', bit: TowerStatus.MidTier3, x: 74, y: 26, img: 'dire_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t1_bot', type: 'tower', bit: TowerStatus.BottomTier1, x: 88, y: 56, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t2_bot', type: 'tower', bit: TowerStatus.BottomTier2, x: 88, y: 38, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t3_bot', type: 'tower', bit: TowerStatus.BottomTier3, x: 88, y: 28, img: 'dire_tower.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t4_1', type: 'tower', bit: TowerStatus.T4Left, x: 80, y: 16, img: 'dire_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_t4_2', type: 'tower', bit: TowerStatus.T4Right, x: 83, y: 19, img: 'dire_tower_angle.png', sizeClass: 'w-4 sm:w-6' },
-    { id: 'dire_rax_top_m', type: 'rax', bit: BarracksStatus.MeleeTop, x: 74, y: 10, img: 'dire_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_rax_top_r', type: 'rax', bit: BarracksStatus.RangedTop, x: 74, y: 14, img: 'dire_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_rax_mid_m', type: 'rax', bit: BarracksStatus.MeleeMiddle, x: 75, y: 21, img: 'dire_rax_angle.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_rax_mid_r', type: 'rax', bit: BarracksStatus.RangedMiddle, x: 78, y: 24, img: 'dire_rax_angle.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_rax_bot_m', type: 'rax', bit: BarracksStatus.MeleeBottom, x: 86, y: 23, img: 'dire_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_rax_bot_r', type: 'rax', bit: BarracksStatus.RangedBottom, x: 90, y: 23, img: 'dire_rax.png', sizeClass: 'w-3 sm:w-4.5' },
-    { id: 'dire_fort', type: 'fort', x: 86, y: 14, img: 'dire_fort.png', sizeClass: 'w-8 sm:w-12' },
+    { id: 'dire_t1_top', name: 'Top Tier 1 Tower', type: 'tower', bit: TowerStatus.TopTier1, x: 17, y: 14.5, img: 'dire_tower.png', sizeClass: 'w-6' },
+    { id: 'dire_t2_top', name: 'Top Tier 2 Tower', type: 'tower', bit: TowerStatus.TopTier2, x: 46, y: 12, img: 'dire_tower.png', sizeClass: 'w-6' },
+    { id: 'dire_t3_top', name: 'Top Tier 3 Tower', type: 'tower', bit: TowerStatus.TopTier3, x: 70, y: 15, img: 'dire_tower.png', sizeClass: 'w-6' },
+    { id: 'dire_t1_mid', name: 'Middle Tier 1 Tower', type: 'tower', bit: TowerStatus.MidTier1, x: 55, y: 44, img: 'dire_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_t2_mid', name: 'Middle Tier 2 Tower', type: 'tower', bit: TowerStatus.MidTier2, x: 66.5, y: 35, img: 'dire_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_t3_mid', name: 'Middle Tier 3 Tower', type: 'tower', bit: TowerStatus.MidTier3, x: 75, y: 27, img: 'dire_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_t1_bot', name: 'Bottom Tier 1 Tower', type: 'tower', bit: TowerStatus.BottomTier1, x: 86, y: 62, img: 'dire_tower.png', sizeClass: 'w-6' },
+    { id: 'dire_t2_bot', name: 'Bottom Tier 2 Tower', type: 'tower', bit: TowerStatus.BottomTier2, x: 86.5, y: 46, img: 'dire_tower.png', sizeClass: 'w-6' },
+    { id: 'dire_t3_bot', name: 'Bottom Tier 3 Tower', type: 'tower', bit: TowerStatus.BottomTier3, x: 87.3, y: 31.5, img: 'dire_tower.png', sizeClass: 'w-6' },
+
+    { id: 'dire_t4_1', name: 'Tier 4 Tower (Left)', type: 'tower', bit: TowerStatus.T4Left, x: 81.5, y: 18, img: 'dire_tower_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_t4_2', name: 'Tier 4 Tower (Right)', type: 'tower', bit: TowerStatus.T4Right, x: 84.5, y: 20.5, img: 'dire_tower_angle.png', sizeClass: 'w-6' },
+
+    { id: 'dire_rax_top_m', name: 'Top Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeTop, x: 73.5, y: 16.5, img: 'dire_rax.png', sizeClass: 'w-6' },
+    { id: 'dire_rax_top_r', name: 'Top Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedTop, x: 73.5, y: 12.5, img: 'dire_rax.png', sizeClass: 'w-6' },
+    { id: 'dire_rax_mid_m', name: 'Middle Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeMiddle, x: 78.5, y: 25, img: 'dire_rax_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_rax_mid_r', name: 'Middle Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedMiddle, x: 75.5, y: 22.5, img: 'dire_rax_angle.png', sizeClass: 'w-6' },
+    { id: 'dire_rax_bot_m', name: 'Bottom Melee Barracks', type: 'rax', bit: BarracksStatus.MeleeBottom, x: 89, y: 27.5, img: 'dire_rax.png', sizeClass: 'w-6' },
+    { id: 'dire_rax_bot_r', name: 'Bottom Ranged Barracks', type: 'rax', bit: BarracksStatus.RangedBottom, x: 85, y: 27.5, img: 'dire_rax.png', sizeClass: 'w-6' },
+
+    { id: 'dire_fort', name: 'Dire Ancient', type: 'fort', x: 85.5, y: 15.5, img: 'dire_fort.png', sizeClass: 'w-6' },
 ];
 
 export const MatchOverviewTab: React.FC = () => {
-    const { matchId, players } = useOutletContext<MatchOutletContext>();
+    const { matchId, generalInformation } = useOutletContext<MatchOutletContext>();
     const { data: overview, isLoading, isError } = useMatchOverview(matchId);
 
-    const matchWinner = useMemo(() => {
-        if (!players || players.length === 0) return null;
-        const anyRadiant = players.find(p => isRadiantTeam(p.isRadiant));
-        if (!anyRadiant) return null;
-        return anyRadiant.isRadiant.value === 1 && anyRadiant.isRadiant ? TeamEnum.Radiant : TeamEnum.Dire;
-    }, [players]);
+    const matchWinner = generalInformation.winner.value === TeamEnum.Radiant ? TeamEnum.Radiant : TeamEnum.Dire;
 
     const { radiantDraft, direDraft } = useMemo(() => {
         const rad = { picks: [] as PickBanDto[], bans: [] as PickBanDto[]  };
@@ -97,7 +98,8 @@ export const MatchOverviewTab: React.FC = () => {
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 
-                <div className="flex flex-col gap-6">
+                {(radiantDraft.picks.length > 0 || radiantDraft.bans.length > 0 || direDraft.picks.length > 0 || direDraft.bans.length > 0)
+                    && (<div className="flex flex-col gap-6">
                     <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 relative">
                         <div className="absolute inset-0 bg-linear-to-r from-emerald-500/10 via-transparent to-transparent pointer-events-none" />
                         <div className="relative z-10">
@@ -177,14 +179,14 @@ export const MatchOverviewTab: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>)}
 
                 <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 flex flex-col items-center justify-center relative">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest mb-6 w-full text-center">
                         Building Status
                     </h3>
 
-                    <div className="relative w-full max-w-[500px] aspect-square rounded-xl border border-[#2e353b] overflow-hidden bg-[#0f1114]">
+                    <div className="relative w-full max-w-[500px] aspect-square rounded-xl border border-[#2e353b] bg-[#0f1114]">
                         <img
                             src="/assets/images/detailed_740.webp"
                             alt="Map"
@@ -198,20 +200,27 @@ export const MatchOverviewTab: React.FC = () => {
                             } else if (b.type === 'rax' && b.bit !== undefined) {
                                 isAlive = (overview.radiantBarracksStatus.value & b.bit) !== 0;
                             } else if (b.type === 'fort') {
-                                isAlive = matchWinner !== TeamEnum.Radiant;
+                                isAlive = matchWinner !== TeamEnum.Dire;
                             }
 
                             return (
                                 <div
                                     key={b.id}
-                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 drop-shadow-md"
-                                    style={{
-                                        left: `${b.x}%`,
-                                        top: `${b.y}%`,
-                                        filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)'
-                                    }}
+                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-60 transition-all duration-300 group/building cursor-help"
+                                    style={{ left: `${b.x}%`, top: `${b.y}%` }}
                                 >
-                                    <img src={`/assets/images/${b.img}`} alt={b.id} className={clsx("object-contain", b.sizeClass)} />
+                                    <img
+                                        src={`/assets/images/${b.img}`}
+                                        alt={b.name}
+                                        className={clsx("object-contain drop-shadow-md", b.sizeClass)}
+                                        style={{ filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)' }}
+                                    />
+                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
+                                        <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
+                                        <span className={clsx("text-[9px] font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
+                                            {isAlive ? "Alive" : "Destroyed"}
+                                        </span>
+                                    </div>
                                 </div>
                             );
                         })}
@@ -223,20 +232,27 @@ export const MatchOverviewTab: React.FC = () => {
                             } else if (b.type === 'rax' && b.bit !== undefined) {
                                 isAlive = (overview.direBarracksStatus.value & b.bit) !== 0;
                             } else if (b.type === 'fort') {
-                                isAlive = matchWinner !== TeamEnum.Dire;
+                                isAlive = matchWinner !== TeamEnum.Radiant;
                             }
 
                             return (
                                 <div
                                     key={b.id}
-                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 transition-all duration-300 drop-shadow-md"
-                                    style={{
-                                        left: `${b.x}%`,
-                                        top: `${b.y}%`,
-                                        filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)'
-                                    }}
+                                    className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-60 transition-all duration-300 group/building cursor-help"
+                                    style={{ left: `${b.x}%`, top: `${b.y}%` }}
                                 >
-                                    <img src={`/assets/images/${b.img}`} alt={b.id} className={clsx("object-contain", b.sizeClass)} />
+                                    <img
+                                        src={`/assets/images/${b.img}`}
+                                        alt={b.name}
+                                        className={clsx("object-contain drop-shadow-md", b.sizeClass)}
+                                        style={{ filter: isAlive ? 'none' : 'grayscale(100%) brightness(70%) opacity(0.8)' }}
+                                    />
+                                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 w-max bg-[#1a1d24]/95 border border-[#2e353b] p-2 rounded shadow-xl opacity-0 invisible group-hover/building:opacity-100 group-hover/building:visible transition-all z-50 pointer-events-none flex flex-col items-center">
+                                        <span className="text-xs font-bold text-[#e3e3e3]">{b.name}</span>
+                                        <span className={clsx("text-[9px] font-bold uppercase tracking-widest", isAlive ? "text-emerald-400" : "text-red-400")}>
+                                            {isAlive ? "Alive" : "Destroyed"}
+                                        </span>
+                                    </div>
                                 </div>
                             );
                         })}

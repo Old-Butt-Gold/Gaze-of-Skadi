@@ -7,7 +7,7 @@ import { ErrorDisplay } from '../components/ui/ErrorDisplay';
 import { NotFoundPage } from './NotFoundPage';
 import { BooleanState } from '../types/common';
 import { MatchHeader } from '../components/matches/MatchHeader';
-import type { PlayerInfoDto } from '../types/matchGeneralInformation';
+import type {MatchHeaderInformationDto, PlayerInfoDto} from '../types/matchGeneralInformation';
 
 export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items'
     | 'benchmarks' | 'graphics' | 'performance' | 'laning'
@@ -17,6 +17,7 @@ export type MatchTab = 'overview' | 'chat' | 'cosmetics' | 'actions' | 'items'
 export interface MatchOutletContext {
     matchId: number;
     players: PlayerInfoDto[];
+    generalInformation: MatchHeaderInformationDto;
     isParsed: boolean;
 }
 
@@ -42,6 +43,7 @@ export const MatchDetailsPage: React.FC = () => {
     const contextValue: MatchOutletContext = {
         matchId: parsedId,
         players: matchData.players,
+        generalInformation: matchData.matchGeneral,
         isParsed
     };
 
