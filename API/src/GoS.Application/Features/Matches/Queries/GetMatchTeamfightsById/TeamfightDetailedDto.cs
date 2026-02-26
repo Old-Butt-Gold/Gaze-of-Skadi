@@ -1,6 +1,5 @@
 ﻿using GoS.Application.Dto;
 using GoS.Domain.BaseEnums;
-using GoS.Domain.Matches.Enums;
 
 namespace GoS.Application.Features.Matches.Queries.GetMatchTeamfightsById;
 

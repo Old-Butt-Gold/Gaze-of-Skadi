@@ -1,7 +1,6 @@
 using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Dto;
-using GoS.Application.Features.Common.Queries.GetLeagues;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
 using GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 using GoS.Domain.BaseEnums;
@@ -65,7 +64,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
 
         return new PlayerOverviewDto
         {
-            PermanentBuff = mapper.Map<IEnumerable<PermanentBuffDto>>(player.PermanentBuffs),
             PlayerInfo = mapper.Map<PlayerInfoDto>(player),
             Kills = player.Kills,
             Deaths = player.Deaths,
@@ -118,12 +116,12 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             var itemPurchase = new ItemPurchaseDto {
                 ItemIndex = index,
                 ItemId = itemId,
-                FirstPurchaseTime = null
+                PurchaseTime = null
             };
 
             if (firstPurchaseTime.Count != 0 && firstPurchaseTime.TryGetValue(_itemIds[itemId.ToString()], out var purchaseTime))
             {
-                itemPurchase.FirstPurchaseTime = purchaseTime;
+                itemPurchase.PurchaseTime = purchaseTime;
             }
 
             items.Add(itemPurchase);

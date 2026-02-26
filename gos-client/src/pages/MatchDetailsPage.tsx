@@ -46,6 +46,7 @@ export const MatchDetailsPage: React.FC = () => {
     };
 
     const tabs: { id: MatchTab; label: string; requiresParse?: boolean }[] = [
+        { id: 'overview', label: 'Overview', requiresParse: false },
         { id: 'benchmarks', label: 'Benchmarks', requiresParse: false },
         { id: 'performance', label: 'Performance', requiresParse: true },
         { id: 'laning', label: 'Laning', requiresParse: true },

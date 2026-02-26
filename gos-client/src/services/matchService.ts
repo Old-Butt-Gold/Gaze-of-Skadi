@@ -15,10 +15,15 @@ import type {PlayerObjectivesDto} from "../types/matchObjectvies.ts";
 import type {MatchVisionDto} from "../types/matchVision.ts";
 import type {TeamfightDetailedDto} from "../types/matchTeamfights.ts";
 import type {MatchJournalDto} from "../types/matchJournal.ts";
+import type {MatchOverviewDto} from "../types/matchOverview.ts";
 
 export const matchService = {
   getMatchGeneralInformation: async (matchId: number): Promise<MatchGeneralInformationDto> => {
     return apiClient.get(`/Matches/${matchId}/general-info`);
+  },
+
+  getMatchOverview: async (matchId: number): Promise<MatchOverviewDto> => {
+    return apiClient.get(`/Matches/${matchId}/overview`);
   },
 
   getMatchChat: async (matchId: number): Promise<ChatMessageDto[]> => {
