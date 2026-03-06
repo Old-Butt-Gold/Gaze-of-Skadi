@@ -6,6 +6,7 @@
 }
 
 export interface HeroMetaTimelineDto {
+  overall: HeroMetaPointDto[];
   pos1: HeroMetaPointDto[];
   pos2: HeroMetaPointDto[];
   pos3: HeroMetaPointDto[];

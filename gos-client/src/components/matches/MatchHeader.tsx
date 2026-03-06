@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
+import { useParseMatch } from '../../hooks/mutations/useParseMatch';
 import {
     getGameModeName,
     getLobbyTypeName,
@@ -13,7 +14,7 @@ import {
     formatRelativeTime,
     formatDateFull
 } from '../../utils/formatUtils';
-import { TeamEnum } from '../../types/common';
+import { TeamEnum, BooleanState } from '../../types/common';
 import type { MatchGeneralInformationDto } from '../../types/matchGeneralInformation';
 
 interface MatchHeaderProps {
@@ -21,11 +22,15 @@ interface MatchHeaderProps {
 }
 
 export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
-    const { matchGeneral } = matchData;
+    const { matchGeneral, isMatchParsed } = matchData;
     const isRadiantWin = matchGeneral.winner.value === TeamEnum.Radiant;
     const isDireWin = matchGeneral.winner.value === TeamEnum.Dire;
 
+    const isParsed = isMatchParsed.value === BooleanState.True;
+
     const endTimeSeconds = matchGeneral.startTime + matchGeneral.duration;
+
+    const parseMutation = useParseMatch();
 
     return (
         <div className="w-full bg-[#15171c] border-b border-[#2e353b] relative overflow-hidden">
@@ -48,17 +53,53 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
                         <span className="text-[#808fa6]">Lobby: {getLobbyTypeName(matchGeneral.lobbyType.value)}</span>
                     </div>
 
-                    {matchGeneral.replayUrl && (
-                        <a
-                            href={matchGeneral.replayUrl.toString()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-[#e7d291] hover:text-white transition-colors bg-[#2e353b] hover:bg-[#3d464d] px-3 py-1 rounded border border-[#4a5568] shadow-sm"
-                        >
-                            <Icon src="/assets/images/download_icon.svg" size={4} /> Replay
-                        </a>
-                    )}
+                    <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-end">
+                        {!isParsed && (
+                            <button
+                                onClick={() => parseMutation.mutate(matchGeneral.matchId)}
+                                disabled={parseMutation.isPending || parseMutation.isSuccess}
+                                className={clsx(
+                                    "flex items-center justify-center gap-2 px-3 py-1 text-xs font-bold uppercase tracking-widest rounded transition-all duration-300 border shadow-sm",
+                                    parseMutation.isSuccess
+                                        ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 cursor-default"
+                                        : parseMutation.isPending
+                                            ? "bg-[#2e353b] text-[#808fa6] border-[#4a5568] cursor-wait"
+                                            : "bg-linear-to-r from-[#b88a44] to-[#e7d291] text-[#0b0e13] border-transparent hover:brightness-110 shadow-[0_0_10px_rgba(231,210,145,0.2)]"
+                                )}
+                            >
+                                {parseMutation.isPending ? (
+                                    <>
+                                        <svg className="animate-spin h-3.5 w-3.5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Requesting...
+                                    </>
+                                ) : parseMutation.isSuccess ? (
+                                    "Parse Queued ✓"
+                                ) : (
+                                    "Request Parse"
+                                )}
+                            </button>
+                        )}
+
+                        {matchGeneral.replayUrl && (
+                            <a
+                                href={matchGeneral.replayUrl.toString()}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-[#e7d291] hover:text-white transition-colors bg-[#2e353b] hover:bg-[#3d464d] px-3 py-1 rounded border border-[#4a5568] shadow-sm"
+                            >
+                                <Icon src="/assets/images/download_icon.svg" size={4} /> Replay
+                            </a>
+                        )}
+                    </div>
                 </div>
+                {parseMutation.isError && (
+                    <div className="w-full text-center bg-red-500/10 text-red-400 text-[10px] font-bold uppercase tracking-widest py-1 border-b border-red-500/20">
+                        Failed to request parse. Please try again later.
+                    </div>
+                )}
             </div>
 
             <div className="mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">

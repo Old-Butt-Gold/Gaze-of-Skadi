@@ -16,11 +16,22 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
         {
             operationName = "HeroesMetaPositions",
             variables = new { },
-            query = """
+            query = $$"""
                     query HeroesMetaPositions($bracketIds: [RankBracket], $gameModeIds: [GameModeEnumType]) {
+                      heroesOverall: heroStats {
+                        winDay(
+                          take: {{request.Days}}
+                          bracketIds: $bracketIds
+                          gameModeIds: $gameModeIds
+                        ) {
+                          heroId
+                          matchCount
+                          winCount
+                        }
+                      }
                       heroesPos1: heroStats {
                         winDay(
-                          take: 30
+                          take: {{request.Days}}
                           positionIds: [POSITION_1]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -32,7 +43,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos2: heroStats {
                         winDay(
-                          take: 30
+                          take: {{request.Days}}
                           positionIds: [POSITION_2]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -44,7 +55,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos3: heroStats {
                         winDay(
-                          take: 30
+                          take: {{request.Days}}
                           positionIds: [POSITION_3]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -56,7 +67,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos4: heroStats {
                         winDay(
-                          take: 30
+                          take: {{request.Days}}
                           positionIds: [POSITION_4]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -68,7 +79,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
                       }
                       heroesPos5: heroStats {
                         winDay(
-                          take: 30
+                          take: {{request.Days}}
                           positionIds: [POSITION_5]
                           bracketIds: $bracketIds
                           gameModeIds: $gameModeIds
@@ -87,6 +98,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
 
         var response = await requester.PostRequestAsync<HeroesMetaData>("graphql", null, content, cancellationToken);
 
+        var overall = GroupAndSumHeroes(response?.Data?.HeroesOverall?.WinDay);
         var pos1 = GroupAndSumHeroes(response?.Data?.HeroesPos1?.WinDay);
         var pos2 = GroupAndSumHeroes(response?.Data?.HeroesPos2?.WinDay);
         var pos3 = GroupAndSumHeroes(response?.Data?.HeroesPos3?.WinDay);
@@ -95,6 +107,7 @@ internal sealed class GetHeroesMetaHandler(IRequester<StratzHttpRequesterOptions
 
         return new HeroesMetaDto
         {
+            HeroesOverall = mapper.Map<IEnumerable<HeroStatsDto>>(overall.OrderByDescending(x => x.WinRate)),
             HeroesPos1 = mapper.Map<IEnumerable<HeroStatsDto>>(pos1.OrderByDescending(x => x.WinRate)),
             HeroesPos2 = mapper.Map<IEnumerable<HeroStatsDto>>(pos2.OrderByDescending(x => x.WinRate)),
             HeroesPos3 = mapper.Map<IEnumerable<HeroStatsDto>>(pos3.OrderByDescending(x => x.WinRate)),

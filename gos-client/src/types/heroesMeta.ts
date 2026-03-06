@@ -6,9 +6,10 @@
 }
 
 export interface HeroesMetaDto {
-  heroesPos1: HeroStatsDto[]; // Safe Lane
-  heroesPos2: HeroStatsDto[]; // Mid Lane
-  heroesPos3: HeroStatsDto[]; // Off Lane
-  heroesPos4: HeroStatsDto[]; // Soft Support
-  heroesPos5: HeroStatsDto[]; // Hard Support
+  heroesOverall: HeroStatsDto[];
+  heroesPos1: HeroStatsDto[];
+  heroesPos2: HeroStatsDto[];
+  heroesPos3: HeroStatsDto[];
+  heroesPos4: HeroStatsDto[];
+  heroesPos5: HeroStatsDto[];
 }

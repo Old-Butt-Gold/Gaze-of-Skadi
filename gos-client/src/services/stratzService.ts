@@ -9,8 +9,8 @@ export const stratzService = {
     return apiClient.get('/stratz/players-queue');
   },
 
-  getHeroesMeta: async (): Promise<HeroesMetaDto> => {
-    return apiClient.get('/stratz/heroes-meta');
+  getHeroesMeta: async (days: number): Promise<HeroesMetaDto> => {
+    return apiClient.get(`/stratz/heroes-meta?days=${days}`);
   },
 
   getHeroMetaTimeline: async (heroId: number): Promise<HeroMetaTimelineDto> => {

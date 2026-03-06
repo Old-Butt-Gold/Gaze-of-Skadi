@@ -2,6 +2,7 @@
 
 public sealed class HeroesMetaDto
 {
+    public required IEnumerable<HeroStatsDto> HeroesOverall { get; set; }
     public required IEnumerable<HeroStatsDto> HeroesPos1 { get; set; }
     public required IEnumerable<HeroStatsDto> HeroesPos2 { get; set; }
     public required IEnumerable<HeroStatsDto> HeroesPos3 { get; set; }

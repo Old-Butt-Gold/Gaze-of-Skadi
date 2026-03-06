@@ -2,10 +2,10 @@
 import { stratzService } from '../../services/stratzService';
 import type {HeroesMetaDto} from "../../types/heroesMeta.ts";
 
-export const useHeroesMeta = () => {
+export const useHeroesMeta = (days: number) => {
   return useQuery<HeroesMetaDto, Error>({
-    queryKey: ['heroesMeta'],
-    queryFn: stratzService.getHeroesMeta,
+    queryKey: ['heroesMeta', days],
+    queryFn: () => stratzService.getHeroesMeta(days),
     staleTime: 1000 * 60 * 30,
   });
 };

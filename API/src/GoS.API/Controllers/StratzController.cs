@@ -25,13 +25,13 @@ public class StratzController : ApiControllerBase
     [HttpGet("heroes-meta")]
     [ProducesResponseType(typeof(HeroesMetaDto), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetHeroesMeta(CancellationToken ct = default)
-        => HandleQueryAsync(new GetHeroesMetaQuery(), ct);
+    public Task<IActionResult> GetHeroesMeta([FromQuery] int days = 30, CancellationToken ct = default)
+        => HandleQueryAsync(new GetHeroesMetaQuery(days), ct);
 
     [HttpGet("heroes-meta/{heroId:int}")]
     [ProducesResponseType(typeof(HeroMetaTimelineDto), StatusCodes.Status200OK)]
     [Produces(MediaTypeNames.Application.Json)]
-    public Task<IActionResult> GetHeroesMeta(int heroId, CancellationToken ct = default)
+    public Task<IActionResult> GetHeroMeta(int heroId, CancellationToken ct = default)
         => HandleQueryAsync(new HeroMetaChangeQuery(heroId), ct);
 
     [HttpGet("matches-game-mode")]

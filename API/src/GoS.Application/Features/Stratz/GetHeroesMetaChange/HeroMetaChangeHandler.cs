@@ -17,6 +17,17 @@ internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOption
             variables = new { },
             query = """
                     query HeroesMetaPositions($bracketIds: [RankBracket], $gameModeIds: [GameModeEnumType]) {
+                      heroesOverall: heroStats {
+                        winDay(
+                          take: 30
+                          bracketIds: $bracketIds
+                          gameModeIds: $gameModeIds
+                        ) {
+                          heroId
+                          matchCount
+                          winCount
+                        }
+                      }
                       heroesPos1: heroStats {
                         winDay(
                           take: 30
@@ -88,6 +99,7 @@ internal sealed class HeroMetaChangeHandler(IRequester<StratzHttpRequesterOption
 
         return new HeroMetaTimelineDto
         {
+            Overall = GroupAndSumHeroes(response?.Data?.HeroesOverall?.WinDay, request.HeroId),
             Pos1 = GroupAndSumHeroes(response?.Data?.HeroesPos1?.WinDay, request.HeroId),
             Pos2 = GroupAndSumHeroes(response?.Data?.HeroesPos2?.WinDay, request.HeroId),
             Pos3 = GroupAndSumHeroes(response?.Data?.HeroesPos3?.WinDay, request.HeroId),

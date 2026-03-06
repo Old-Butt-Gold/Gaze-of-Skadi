@@ -2,6 +2,7 @@
 
 public sealed class HeroMetaTimelineDto
 {
+    public IEnumerable<HeroMetaPointDto> Overall { get; set; } = [];
     public IEnumerable<HeroMetaPointDto> Pos1 { get; set; } = [];
     public IEnumerable<HeroMetaPointDto> Pos2 { get; set; } = [];
     public IEnumerable<HeroMetaPointDto> Pos3 { get; set; } = [];

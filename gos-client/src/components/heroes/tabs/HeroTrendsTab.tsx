@@ -14,11 +14,11 @@ import clsx from 'clsx';
 import { useHeroMetaTimeline } from '../../../hooks/queries/useHeroMetaTimeline';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
-import {formatDateFull, formatDateShort} from '../../../utils/formatUtils';
+import { formatDateFull, formatDateShort } from '../../../utils/formatUtils';
 import { Icon } from '../../Icon';
-import type {HeroMetaTimelineDto} from "../../../types/heroMetaTimeline.ts";
-import {useOutletContext} from "react-router-dom";
-import type {HeroOutletContext} from "../../../pages/HeroDetailsPage.tsx";
+import type { HeroMetaTimelineDto } from "../../../types/heroMetaTimeline.ts";
+import { useOutletContext } from "react-router-dom";
+import type { HeroOutletContext } from "../../../pages/HeroDetailsPage.tsx";
 
 type PositionKey = keyof HeroMetaTimelineDto;
 
@@ -27,8 +27,9 @@ interface ChartDataPoint {
     [key: string]: number;
 }
 
-// Конфигурация
-const POS_CONFIG: Record<PositionKey, { label: string, color: string, icon: string }> = {
+// Конфигурация. Добавили Overall.
+const POS_CONFIG: Record<PositionKey, { label: string, color: string, icon?: string }> = {
+    overall: { label: 'Overall', color: '#e3e3e3' },
     pos1: { label: 'Safe Lane', color: '#e7d291', icon: '/assets/images/pos-1.svg' },
     pos2: { label: 'Mid Lane', color: '#60a5fa', icon: '/assets/images/pos-2.svg' },
     pos3: { label: 'Off Lane', color: '#f87171', icon: '/assets/images/pos-3.svg' },
@@ -58,7 +59,7 @@ const CustomTooltip = React.memo(({ active, payload, label }: TooltipProps<Value
                         return (
                             <div key={entry.name} className="flex items-center justify-between text-xs">
                                 <div className="flex items-center gap-2 text-[#a3aab8]">
-                                    <Icon src={config?.icon} size={4} />
+                                    {config.icon && <Icon src={config.icon} size={4} />}
                                     <span>{config?.label}</span>
                                 </div>
 
@@ -97,8 +98,7 @@ export const HeroTrendsTab: React.FC = () => {
 
         const dataMap = new Map<number, ChartDataPoint>();
 
-        // Безопасный перебор ключей (pos1..pos5)
-        (Object.keys(timeline) as PositionKey[]).forEach((posKey) => {
+        (Object.keys(POS_CONFIG) as PositionKey[]).forEach((posKey) => {
             const points = timeline[posKey];
             if (!points) return;
 
@@ -232,7 +232,7 @@ export const HeroTrendsTab: React.FC = () => {
                                             stroke={conf.color}
                                             fill={`url(#grad-${key})`}
                                             fillOpacity={1}
-                                            strokeWidth={2}
+                                            strokeWidth={key === 'overall' ? 3 : 2} // Слегка выделим линию Overall
                                             animationDuration={800}
                                             activeDot={{ r: 4, strokeWidth: 0, fill: '#fff' }}
                                         />

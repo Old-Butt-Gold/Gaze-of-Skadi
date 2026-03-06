@@ -11,6 +11,10 @@ public sealed class HeroesMetaData
 
 public sealed class HeroesMeta
 {
+
+    [JsonPropertyName("heroesOverall")]
+    public HeroStatsQuery? HeroesOverall { get; set; }
+
     [JsonPropertyName("heroesPos1")]
     public HeroStatsQuery? HeroesPos1 { get; set; }
 
