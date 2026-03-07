@@ -166,7 +166,7 @@ export const HeroTrendsTab: React.FC = () => {
                                         : "bg-transparent border-transparent text-[#58606e] opacity-50 grayscale"
                                 )}
                             >
-                                <Icon src={config.icon} size={4} />
+                                {config.icon && <Icon src={config.icon} size={4} />}
                                 {config.label}
                                 {/* Цветная точка статуса */}
                                 <span
