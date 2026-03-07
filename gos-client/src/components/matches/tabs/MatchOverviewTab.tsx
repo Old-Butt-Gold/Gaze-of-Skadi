@@ -2,13 +2,15 @@
 import { useOutletContext } from 'react-router-dom';
 import clsx from 'clsx';
 import { useMatchOverview } from '../../../hooks/queries/useMatchOverview';
+import { useHeroes } from '../../../hooks/queries/useHeroes';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { HeroCell } from '../../heroes/HeroCell';
 import { Icon } from '../../Icon';
-import { TeamEnum } from '../../../types/common';
+import {LaneRole, TeamEnum} from '../../../types/common';
 import { BarracksStatus, type PickBanDto, TowerStatus } from '../../../types/matchOverview';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
+import {isRadiantTeam} from "../../../utils/matchUtils.ts";
 
 interface BuildingConfig {
     id: string;
@@ -68,6 +70,22 @@ const DIRE_BUILDINGS: BuildingConfig[] = [
 
     { id: 'dire_fort', name: 'Dire Ancient', type: 'fort', x: 85.5, y: 15.5, img: 'dire_fort.png', sizeClass: 'w-6' },
 ];
+
+const RADIANT_HERO_POSITIONS: Record<number, {x: number, y: number}[]> = {
+    1: [{x: 82, y: 92}, {x: 86, y: 90}, {x: 78, y: 94}], // Safe (Bottom)
+    2: [{x: 36, y: 62}, {x: 32, y: 66}],                 // Mid
+    3: [{x: 10, y: 30}, {x: 14, y: 32}, {x: 14, y: 24}], // Offlane (Top)
+    4: [{x: 35, y: 80}, {x: 40, y: 75}],                 // Jungle
+    0: [{x: 8, y: 88}, {x: 12, y: 92}]                   // Roam / Unknown (Base)
+};
+
+const DIRE_HERO_POSITIONS: Record<number, {x: number, y: number}[]> = {
+    1: [{x: 22, y: 10}, {x: 26, y: 12}, {x: 18, y: 10}], // Safe (Top)
+    2: [{x: 60, y: 40}, {x: 58, y: 38}],                 // Mid
+    3: [{x: 92, y: 68}, {x: 88, y: 72}, {x: 92, y: 74}], // Offlane (Bottom)
+    4: [{x: 65, y: 18}, {x: 60, y: 22}],                 // Jungle
+    0: [{x: 92, y: 10}, {x: 88, y: 8}]                   // Roam / Unknown (Base)
+};
 
 const TeamDraftCard: React.FC<{
     teamName: string;
@@ -147,8 +165,34 @@ const BuildingIcon: React.FC<{ building: BuildingConfig; isAlive: boolean; }> = 
     );
 };
 
+const MapHeroIcon: React.FC<{ heroId: number; isRadiant: boolean; x: number; y: number; playerName: string | null }> = ({ heroId, isRadiant, x, y, playerName }) => {
+    const { getHero } = useHeroes();
+    const hero = getHero(heroId);
+
+    if (!hero) return null;
+
+    return (
+        <div
+            className={clsx(
+                "absolute -translate-x-1/2 -translate-y-1/2 z-30 hover:z-70 rounded-xl overflow-hidden transition-all duration-200 cursor-help hover:scale-110",
+                isRadiant
+                    ? "filter drop-shadow-[0_0_8px_rgba(16,185,129,0.6)] hover:drop-shadow-[0_0_15px_rgba(16,185,129,0.9)]"
+                    : "filter drop-shadow-[0_0_8px_rgba(244,63,94,0.6)] hover:drop-shadow-[0_0_15px_rgba(244,63,94,0.9)]"
+            )}
+            style={{ left: `${x}%`, top: `${y}%` }}
+            title={playerName ? `${playerName} (${hero.localized_name})` : hero.localized_name}
+        >
+            <img
+                src={hero.icon}
+                alt={hero.localized_name}
+                className="w-10 h-10 rounded-xl"
+            />
+        </div>
+    );
+};
+
 export const MatchOverviewTab: React.FC = () => {
-    const { matchId, generalInformation } = useOutletContext<MatchOutletContext>();
+    const { matchId, generalInformation, players } = useOutletContext<MatchOutletContext>();
     const { data: overview, isLoading, isError } = useMatchOverview(matchId);
 
     const matchWinner = generalInformation.winner.value === TeamEnum.Radiant ? TeamEnum.Radiant : TeamEnum.Dire;
@@ -167,6 +211,35 @@ export const MatchOverviewTab: React.FC = () => {
         }
         return { radiantDraft: rad, direDraft: dire };
     }, [overview]);
+
+    const mapHeroes = useMemo(() => {
+        if (!players) return [];
+
+        const counts = {
+            radiant: { 1: 0, 2: 0, 3: 0, 4: 0, 0: 0 },
+            dire: { 1: 0, 2: 0, 3: 0, 4: 0, 0: 0 }
+        };
+
+        return players.map(p => {
+            const isRad = isRadiantTeam(p.isRadiant);
+            const teamKey = isRad ? 'radiant' : 'dire';
+            const role = p.laneRole?.value || LaneRole.None; // 1: Safe, 2: Mid, 3: Off, 4: Jungle, 0: None
+
+            const index = counts[teamKey][role as keyof typeof counts['radiant']]++;
+
+            const positionsArray = isRad ? RADIANT_HERO_POSITIONS : DIRE_HERO_POSITIONS;
+            const rolePositions = positionsArray[role] || positionsArray[0];
+            const coord = rolePositions[Math.min(index, rolePositions.length - 1)];
+
+            return {
+                heroId: p.heroId,
+                isRadiant: isRad,
+                x: coord.x,
+                y: coord.y,
+                playerName: p.personaName || p.name
+            };
+        });
+    }, [players]);
 
     if (isLoading) return <LoadingSpinner text="Loading Match Overview..." />;
     if (isError || !overview) return <ErrorDisplay message="Failed to load match overview." />;
@@ -234,6 +307,10 @@ export const MatchOverviewTab: React.FC = () => {
 
                             return <BuildingIcon key={b.id} building={b} isAlive={isAlive} />;
                         })}
+
+                        {mapHeroes.map((heroProps, i) => (
+                            <MapHeroIcon key={`hero-map-${i}`} {...heroProps} />
+                        ))}
                     </div>
                 </div>
 
