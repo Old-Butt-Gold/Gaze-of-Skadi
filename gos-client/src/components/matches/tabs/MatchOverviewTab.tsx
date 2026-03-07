@@ -199,7 +199,7 @@ export const MatchOverviewTab: React.FC = () => {
 
                 <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden p-5 flex flex-col items-center justify-center relative">
                     <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest mb-6 w-full text-center">
-                        Building Status
+                        Map Status
                     </h3>
 
                     <div className="relative w-full max-w-[600px] aspect-square rounded-xl border border-[#2e353b] bg-[#0f1114]">

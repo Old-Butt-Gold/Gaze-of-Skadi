@@ -19,6 +19,7 @@ export interface PlayerInfoDto {
   rankTier: BaseEnum<Rank> | null;
   isRadiant: BaseEnum<BooleanState>;
   partySize: number | null;
+  partyId: number | null;
 }
 
 export interface MatchGeneralInformationDto {

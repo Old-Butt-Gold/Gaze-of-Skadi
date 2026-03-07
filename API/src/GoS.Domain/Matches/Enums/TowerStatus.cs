@@ -6,8 +6,8 @@ public enum TowerStatus
     None            = 0,
 
     // T4 Towers (2 bits)
-    T4Left          = 1 << 10,  // 1024
-    T4Right         = 1 << 9,   // 512
+    T4Right          = 1 << 10,  // 1024
+    T4Left         = 1 << 9,   // 512
 
     // Bottom Lane Towers (3 bits: T3, T2, T1)
     BottomTier3     = 1 << 8,   // 256

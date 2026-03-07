@@ -62,4 +62,5 @@ public class PlayerInfoDto
     public required BaseEnumDto<BooleanState> IsRadiant { get; init; }
 
     public int? PartySize { get; init; }
+    public int? PartyId { get; init; }
 }

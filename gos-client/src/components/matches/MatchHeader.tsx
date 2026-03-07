@@ -1,4 +1,4 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Icon } from '../Icon';
 import { useParseMatch } from '../../hooks/mutations/useParseMatch';
@@ -32,19 +32,54 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
 
     const parseMutation = useParseMatch();
 
+    // Состояние для копирования ID
+    const [copiedId, setCopiedId] = useState(false);
+
+    const handleCopyId = () => {
+        navigator.clipboard.writeText(matchGeneral.matchId.toString());
+        setCopiedId(true);
+        setTimeout(() => setCopiedId(false), 2000);
+    };
+
+    // Определение дня или ночи: смена каждые 5 минут (300 секунд).
+    // Первые 5 минут (0-299 сек) - день (четные интервалы)
+    // 5-10 минут (300-599 сек) - ночь (нечетные интервалы)
+    const isDayTime = Math.floor(matchGeneral.duration / 300) % 2 === 0;
+
     return (
         <div className="w-full bg-[#15171c] border-b border-[#2e353b] relative overflow-hidden">
 
             <div className={clsx(
                 "absolute inset-0 opacity-25 pointer-events-none transition-all duration-1000",
-                isRadiantWin ? "bg-linear-to-r from-emerald-500 via-transparent to-transparent" :
-                    isDireWin ? "bg-linear-to-l from-red-500 via-transparent to-transparent" : ""
+                isRadiantWin ? "bg-gradient-to-r from-emerald-500 via-transparent to-transparent" :
+                    isDireWin ? "bg-gradient-to-l from-red-500 via-transparent to-transparent" : ""
             )} />
 
             <div className="w-full bg-[#0b0e13] border-b border-[#2e353b] relative z-20">
-                <div className="mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-4 text-xs font-bold text-[#58606e] uppercase tracking-widest">
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-4">
-                        <span className="text-[#808fa6]">ID: <span className="text-white">{matchGeneral.matchId}</span></span>
+                <div className="mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row flex-wrap items-center justify-between gap-4 text-xs font-bold text-[#58606e] uppercase tracking-widest">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-4 w-full sm:w-auto justify-center sm:justify-start">
+                        <span className="flex items-center gap-1.5 text-[#808fa6]">
+                            ID:
+                            <button
+                                onClick={handleCopyId}
+                                className="text-white hover:text-[#e7d291] transition-colors flex items-center gap-1 group"
+                                title="Copy Match ID"
+                            >
+                                {matchGeneral.matchId}
+                                <svg
+                                    className={clsx(
+                                        "w-3 h-3 transition-all",
+                                        copiedId ? "text-emerald-400" : "text-[#58606e] opacity-0 group-hover:opacity-100"
+                                    )}
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                >
+                                    {copiedId
+                                        ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    }
+                                </svg>
+                            </button>
+                        </span>
                         <span className="hidden sm:inline opacity-50">•</span>
                         <span>Patch <span className="text-[#808fa6]">{getPatchName(matchGeneral.patch.value)}</span></span>
                         <span className="hidden sm:inline opacity-50">•</span>
@@ -64,7 +99,7 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
                                         ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 cursor-default"
                                         : parseMutation.isPending
                                             ? "bg-[#2e353b] text-[#808fa6] border-[#4a5568] cursor-wait"
-                                            : "bg-linear-to-r from-[#b88a44] to-[#e7d291] text-[#0b0e13] border-transparent hover:brightness-110 shadow-[0_0_10px_rgba(231,210,145,0.2)]"
+                                            : "bg-gradient-to-r from-[#b88a44] to-[#e7d291] text-[#0b0e13] border-transparent hover:brightness-110 shadow-[0_0_10px_rgba(231,210,145,0.2)]"
                                 )}
                             >
                                 {parseMutation.isPending ? (
@@ -128,19 +163,31 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
                         {getGameModeName(matchGeneral.gameMode.value)}
                     </div>
 
-                    <div className="flex items-center justify-center gap-6 sm:gap-10 bg-[#0b0e13]/60 px-8 sm:px-12 py-3 rounded-2xl border border-[#2e353b] shadow-inner backdrop-blur-sm">
+                    <div className="flex items-center justify-center gap-6 sm:gap-10 bg-[#0b0e13]/60 px-8 sm:px-12 py-3 rounded-2xl border border-[#2e353b] shadow-inner backdrop-blur-sm relative">
                         <span className="text-4xl sm:text-5xl font-mono font-black drop-shadow-lg text-emerald-400">
                             {matchGeneral.radiantScore}
                         </span>
-                        <span className="text-xl font-bold text-[#58606e] tracking-widest opacity-50">
-                            VS
-                        </span>
+
+                        <div className="flex flex-col items-center gap-1">
+                            <span className="text-xl font-bold text-[#58606e] tracking-widest opacity-50">
+                                VS
+                            </span>
+                        </div>
+
                         <span className="text-4xl sm:text-5xl font-mono font-black drop-shadow-lg text-red-400">
                             {matchGeneral.direScore}
                         </span>
                     </div>
 
-                    <div className="flex flex-col items-center gap-1 mt-4">
+                    <div className="flex flex-col items-center gap-1 mt-2">
+
+                        <span className="text-xl sm:text-2xl font-mono font-black text-[#e3e3e3] tracking-wider drop-shadow-sm"
+                              title={isDayTime ? "Day time at match end" : "Night time at match end"}>
+                            <Icon
+                                src={isDayTime ? "/assets/images/day-icon.svg" : "/assets/images/night-icon.svg"}
+                                size={6}
+                            />
+                        </span>
                         <span className="text-xl sm:text-2xl font-mono font-black text-[#e3e3e3] tracking-wider drop-shadow-sm">
                             {formatDuration(matchGeneral.duration)}
                         </span>

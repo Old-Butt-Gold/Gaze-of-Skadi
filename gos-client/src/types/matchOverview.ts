@@ -12,8 +12,8 @@ export const BarracksStatus = {
 
 export const TowerStatus = {
   None: 0,
-  T4Left: 1 << 10,
-  T4Right: 1 << 9,
+  T4Right: 1 << 10,
+  T4Left: 1 << 9,
   BottomTier3: 1 << 8,
   BottomTier2: 1 << 7,
   BottomTier1: 1 << 6,
