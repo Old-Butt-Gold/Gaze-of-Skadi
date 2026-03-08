@@ -12,7 +12,7 @@ import { BarracksStatus, type PickBanDto, type PlayerOverviewDto, TowerStatus } 
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import { isRadiantTeam } from "../../../utils/matchUtils.ts";
 import type { PlayerInfoDto } from "../../../types/matchGeneralInformation.ts";
-import { formatK } from "../../../utils/formatUtils.ts";
+import {formatDuration, formatK } from "../../../utils/formatUtils.ts";
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { ItemByIdCell } from "../../items/ItemByIdCell.tsx";
 import { ItemTooltip } from "../../items/ItemTooltip.tsx";
@@ -252,7 +252,7 @@ const OverviewPlayerTable: React.FC<{
 
                         return (
                             <tr key={stats.playerIndex} className="hover:bg-[#1a1d24] transition-colors group">
-                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-70">
+                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-[240px]">
                                     <MatchPlayerCell player={info} useIcon={false} />
                                 </td>
 
@@ -283,23 +283,44 @@ const OverviewPlayerTable: React.FC<{
 
                                 <td className="p-1">
                                     <div className="flex items-center justify-center gap-1.5 shrink-0">
-
                                         <div className="flex flex-col shrink-0">
-                                            <div className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner w-full">
+                                            <div className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner w-max">
                                                 {inventory.map((item, idx) => (
-                                                    <div key={`inv-${idx}`} className="aspect-4/3 w-10 rounded-sm overflow-hidden border border-[#2e353b] shadow-sm flex items-center justify-center">
-                                                        {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
+                                                    <div key={`inv-${idx}`} className="relative aspect-4/3 w-10 sm:w-11 bg-[#1a1d24] rounded-sm overflow-hidden border border-[#2e353b] shadow-sm flex items-center justify-center">
+                                                        {item ? (
+                                                            <>
+                                                                <ItemByIdCell itemId={item.itemId.toString()} />
+                                                                {item.purchaseTime != null && (
+                                                                    <div className="absolute bottom-0 inset-x-0 z-10 bg-black/60 flex items-center justify-center py-[1.5px] pointer-events-none">
+                                                                        <span className="text-[10px] leading-none font-mono font-bold text-[#e3e3e3] drop-shadow-md">
+                                                                            {formatDuration(item.purchaseTime)}
+                                                                        </span>
+                                                                    </div>
+                                                                )}
+                                                            </>
+                                                        ) : null}
                                                     </div>
                                                 ))}
                                             </div>
 
                                             <div
-                                                className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 w-full opacity-80 hover:opacity-100 transition-opacity cursor-help"
+                                                className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 w-max opacity-80 hover:opacity-100 transition-opacity cursor-help"
                                                 title="Backpack"
                                             >
                                                 {backpack.map((item, idx) => (
-                                                    <div key={`bp-${idx}`} className="aspect-4/3 w-10 rounded-sm overflow-hidden border border-[#2e353b] flex items-center justify-center">
-                                                        {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
+                                                    <div key={`bp-${idx}`} className="relative aspect-4/3 w-10 sm:w-11 bg-[#1a1d24] rounded-sm overflow-hidden border border-[#2e353b] flex items-center justify-center">
+                                                        {item ? (
+                                                            <>
+                                                                <ItemByIdCell itemId={item.itemId.toString()} />
+                                                                {item.purchaseTime != null && (
+                                                                    <div className="absolute bottom-0 inset-x-0 z-10 bg-black/60 flex items-center justify-center py-[1.5px] pointer-events-none">
+                                                                        <span className="text-[10px] leading-none font-mono font-bold text-[#a3aab8] drop-shadow-md">
+                                                                            {formatDuration(item.purchaseTime)}
+                                                                        </span>
+                                                                    </div>
+                                                                )}
+                                                            </>
+                                                        ) : null}
                                                     </div>
                                                 ))}
                                             </div>
@@ -336,7 +357,7 @@ const OverviewPlayerTable: React.FC<{
                                                 src={stats.aghanimBuff ? "/assets/images/scepter_active.png" : "/assets/images/scepter_inactive.png"}
                                                 alt="Scepter"
                                                 className={clsx("w-8 h-8 object-contain transition-all",
-                                                    stats.aghanimBuff ? "drop-shadow-[0_0_2px_rgba(56,189,248,0.6)] hover:scale-110" : "opacity-30 grayscale"
+                                                    stats.aghanimBuff ? "drop-shadow-[0_0_1px_rgba(56,189,248,0.6)] hover:scale-110" : "opacity-30 grayscale"
                                                 )}
                                             />
                                         </ItemTooltip>
@@ -345,7 +366,7 @@ const OverviewPlayerTable: React.FC<{
                                                 src={stats.aghanimShardBuff ? "/assets/images/shard_active.png" : "/assets/images/shard_inactive.png"}
                                                 alt="Shard"
                                                 className={clsx("w-8 h-8 object-contain transition-all",
-                                                    stats.aghanimShardBuff ? "drop-shadow-[0_0_2px_rgba(56,189,248,0.6)] hover:scale-110" : "opacity-30 grayscale"
+                                                    stats.aghanimShardBuff ? "drop-shadow-[0_0_1px_rgba(56,189,248,0.6)] hover:scale-110" : "opacity-30 grayscale"
                                                 )}
                                             />
                                         </ItemTooltip>

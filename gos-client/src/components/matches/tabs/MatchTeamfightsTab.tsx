@@ -131,12 +131,12 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
                 </div>
             </div>
 
-            <div className="lg:col-span-2 flex justify-around w-full lg:justify-center gap-4 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold h-full">
-                <div className={clsx("flex items-center justify-center gap-1.5 w-full pr-2", stats.goldDelta >= 0 ? "text-[#e7d291]" : "text-red-400")} title="Gold Delta">
+            <div className="lg:col-span-2 flex flex-row lg:flex-col justify-around lg:justify-center items-center w-full gap-4 lg:gap-1.5 lg:border-r border-[#2e353b]/50 lg:px-4 font-mono font-bold h-full min-w-0">
+                <div className={clsx("flex items-center justify-center gap-1.5 whitespace-nowrap", stats.goldDelta >= 0 ? "text-[#e7d291]" : "text-red-400")} title="Gold Delta">
                     <Icon src="/assets/images/gold.png" size={4} />
                     <span>{stats.goldDelta > 0 ? '+' : ''}{stats.goldDelta.toLocaleString()}</span>
                 </div>
-                <div className={clsx("flex items-center justify-center gap-1.5 w-full", stats.xpDelta >= 0 ? "text-[#38bdf8]" : "text-red-400")} title="XP Delta">
+                <div className={clsx("flex items-center justify-center gap-1.5 whitespace-nowrap", stats.xpDelta >= 0 ? "text-[#38bdf8]" : "text-red-400")} title="XP Delta">
                     <Icon src="/assets/images/experience.png" size={4} />
                     <span>{stats.xpDelta > 0 ? '+' : ''}{stats.xpDelta.toLocaleString()}</span>
                 </div>
