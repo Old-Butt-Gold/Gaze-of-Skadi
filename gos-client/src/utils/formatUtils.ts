@@ -85,3 +85,10 @@ export const formatDateShort = (unixSeconds: number): string => {
     month: 'short',
   }).format(date);
 };
+
+export const formatK = (num: number): string => {
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+  }
+  return num.toString();
+};

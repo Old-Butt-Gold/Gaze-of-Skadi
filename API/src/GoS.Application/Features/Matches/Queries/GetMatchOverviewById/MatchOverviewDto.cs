@@ -34,7 +34,7 @@ public record PlayerOverviewDto
 {
     public required bool AghanimShardBuff { get; init; }
     public required bool AghanimBuff { get; init; }
-    public required PlayerInfoDto PlayerInfo { get; init; }
+    public required int PlayerIndex { get; init; }
     public required int Level { get; init; }
     public required long Kills { get; init; }
     public required int Deaths { get; init; }

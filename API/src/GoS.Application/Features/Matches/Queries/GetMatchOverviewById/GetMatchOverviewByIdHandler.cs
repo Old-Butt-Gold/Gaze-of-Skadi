@@ -2,7 +2,6 @@ using AutoMapper;
 using GoS.Application.Abstractions;
 using GoS.Application.Dto;
 using GoS.Application.Features.Matches.Queries.GetMatchById;
-using GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 using GoS.Domain.Matches.Models;
@@ -49,7 +48,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         });
     }
 
-    private PlayerOverviewDto MapPlayerOverview(MatchPlayer player)
+    private PlayerOverviewDto MapPlayerOverview(MatchPlayer player, int index)
     {
         const string shardKey = "aghanims_shard";
         const string aghanimKey = "ultimate_scepter";
@@ -64,7 +63,7 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
 
         return new PlayerOverviewDto
         {
-            PlayerInfo = mapper.Map<PlayerInfoDto>(player),
+            PlayerIndex = index,
             Kills = player.Kills,
             Deaths = player.Deaths,
             Assists = player.Assists,
