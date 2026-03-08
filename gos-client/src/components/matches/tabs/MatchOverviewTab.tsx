@@ -281,21 +281,24 @@ const OverviewPlayerTable: React.FC<{
                                 <td className="px-3 py-2 text-center font-mono text-[#a3aab8]">{stats.towerDamage > 0 ? formatK(stats.towerDamage) : '-'}</td>
                                 <td className="px-3 py-2 text-center font-mono text-emerald-400">{stats.heroHealing > 0 ? formatK(stats.heroHealing) : '-'}</td>
 
-                                <td className="px-4 py-2">
-                                    <div className="flex items-center justify-center gap-3 shrink-0 min-w-max">
+                                <td className="p-1">
+                                    <div className="flex items-center justify-center gap-1.5 shrink-0">
 
-                                        <div className="flex flex-col gap-1">
-                                            <div className="grid grid-cols-3 gap-0.5 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner w-max">
+                                        <div className="flex flex-col shrink-0">
+                                            <div className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner w-full">
                                                 {inventory.map((item, idx) => (
-                                                    <div key={`inv-${idx}`} className="w-[38px] h-[28px] rounded-sm overflow-hidden border border-[#2e353b] shadow-sm flex items-center justify-center">
+                                                    <div key={`inv-${idx}`} className="aspect-4/3 w-10 rounded-sm overflow-hidden border border-[#2e353b] shadow-sm flex items-center justify-center">
                                                         {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
                                                     </div>
                                                 ))}
                                             </div>
 
-                                            <div className="grid grid-cols-3 gap-0.5 p-1 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 w-max opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Backpack">
+                                            <div
+                                                className="grid grid-cols-3 gap-0.5 sm:gap-1 p-1 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 w-full opacity-80 hover:opacity-100 transition-opacity cursor-help"
+                                                title="Backpack"
+                                            >
                                                 {backpack.map((item, idx) => (
-                                                    <div key={`bp-${idx}`} className="w-[38px] h-[28px] rounded-sm overflow-hidden border border-[#2e353b] flex items-center justify-center">
+                                                    <div key={`bp-${idx}`} className="aspect-4/3 w-10 rounded-sm overflow-hidden border border-[#2e353b] flex items-center justify-center">
                                                         {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
                                                     </div>
                                                 ))}
@@ -308,7 +311,7 @@ const OverviewPlayerTable: React.FC<{
                                                     className="w-10 h-10 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center cursor-help shrink-0"
                                                     title="Neutral Item"
                                                 >
-                                                    {stats.neutralItem ? <ItemByIdCell itemId={stats.neutralItem.toString()} /> : null}
+                                                    <ItemByIdCell itemId={stats.neutralItem.toString()} />
                                                 </div>
 
                                                 {stats.neutralAura ? (
