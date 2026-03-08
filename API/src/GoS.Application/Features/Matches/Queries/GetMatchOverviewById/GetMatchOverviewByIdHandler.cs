@@ -97,9 +97,6 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             AbilityUpgradesIds = player.AbilityUpgradesArr,
             AghanimShardBuff = aghanimShardBuff,
             AghanimBuff = aghanimBuff,
-            Kda = Math.Round(player.Kda, 2),
-            PredVict = mapper.Map<BaseEnumDto<BooleanState>?>(player.PredVict),
-            Randomed = mapper.Map<BaseEnumDto<BooleanState>?>(player.Randomed),
             Level = player.Level,
         };
     }

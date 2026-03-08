@@ -1,4 +1,4 @@
-﻿import type {BaseEnum, BooleanState, TeamEnum} from "./common";
+﻿import type {BaseEnum, TeamEnum} from "./common";
 
 export const BarracksStatus = {
   None: 0,
@@ -39,7 +39,6 @@ export interface PlayerOverviewDto {
   kills: number;
   deaths: number;
   assists: number;
-  kda: number;
   lastHits: number;
   denies: number;
   netWorth: number;
@@ -50,8 +49,6 @@ export interface PlayerOverviewDto {
   heroHealing: number;
   neutralItem: number | null;
   neutralAura: number | null;
-  predVict: BaseEnum<BooleanState> | null;
-  randomed: BaseEnum<BooleanState> | null;
   items: ItemPurchaseDto[];
   backpackItems: ItemPurchaseDto[];
   abilityUpgradesIds: number[];

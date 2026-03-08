@@ -1,5 +1,4 @@
 ﻿using GoS.Application.Dto;
-using GoS.Application.Features.Matches.Queries.GetMatchGeneralInformationById;
 using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 
@@ -39,7 +38,6 @@ public record PlayerOverviewDto
     public required long Kills { get; init; }
     public required int Deaths { get; init; }
     public required long Assists { get; init; }
-    public required double Kda { get; init; }
     public required int LastHits { get; init; }
     public required int Denies { get; init; }
     public required int NetWorth { get; init; }
@@ -50,8 +48,6 @@ public record PlayerOverviewDto
     public required long HeroHealing { get; init; }
     public required int? NeutralItem { get; init; }
     public required int? NeutralAura { get; init; }
-    public required BaseEnumDto<BooleanState>? PredVict { get; init; }
-    public required BaseEnumDto<BooleanState>? Randomed { get; init; }
     public required IEnumerable<ItemPurchaseDto> Items { get; init; }
     public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
     public required IEnumerable<int> AbilityUpgradesIds { get; init; }

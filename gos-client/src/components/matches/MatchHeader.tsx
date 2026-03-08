@@ -51,8 +51,8 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
 
             <div className={clsx(
                 "absolute inset-0 opacity-25 pointer-events-none transition-all duration-1000",
-                isRadiantWin ? "bg-gradient-to-r from-emerald-500 via-transparent to-transparent" :
-                    isDireWin ? "bg-gradient-to-l from-red-500 via-transparent to-transparent" : ""
+                isRadiantWin ? "bg-linear-to-r from-emerald-500 via-transparent to-transparent" :
+                    isDireWin ? "bg-linear-to-l from-red-500 via-transparent to-transparent" : ""
             )} />
 
             <div className="w-full bg-[#0b0e13] border-b border-[#2e353b] relative z-20">
@@ -99,7 +99,7 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
                                         ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30 cursor-default"
                                         : parseMutation.isPending
                                             ? "bg-[#2e353b] text-[#808fa6] border-[#4a5568] cursor-wait"
-                                            : "bg-gradient-to-r from-[#b88a44] to-[#e7d291] text-[#0b0e13] border-transparent hover:brightness-110 shadow-[0_0_10px_rgba(231,210,145,0.2)]"
+                                            : "bg-linear-to-r from-[#b88a44] to-[#e7d291] text-[#0b0e13] border-transparent hover:brightness-110 shadow-[0_0_10px_rgba(231,210,145,0.2)]"
                                 )}
                             >
                                 {parseMutation.isPending ? (

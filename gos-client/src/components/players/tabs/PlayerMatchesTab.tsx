@@ -11,6 +11,7 @@ import { ItemByIdCell } from '../../items/ItemByIdCell';
 import { RankIcon } from '../../distributions/RankIcon';
 import { APP_ROUTES } from '../../../config/navigation';
 import {
+    formatDateFull,
     formatDuration,
     formatRelativeTime
 } from '../../../utils/formatUtils';
@@ -165,7 +166,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                                 <PartySizeIcon partySize={match.partySize} />
 
                             </div>
-                            <span className="text-xs text-[#58606e] font-mono mt-0.5">
+                            <span className="text-xs text-[#58606e] font-mono mt-0.5 cursor-help" title={formatDateFull(match.startTime)}>
                                 {formatRelativeTime(match.startTime)}
                             </span>
                         </div>
@@ -236,7 +237,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                                 : "bg-red-900/10 border-red-500/20"
                         )}>
                             <div className="flex items-center gap-1">
-                                <Icon src={isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={3} />
+                                <Icon src={isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={4} />
                                 <span className={clsx("font-bold uppercase tracking-wider text-xs", isPlayerRadiant ? "text-emerald-400" : "text-red-400")}>
                                     Allies
                                 </span>
@@ -258,7 +259,7 @@ const MatchCard: React.FC<{ match: PlayerMatchDto }> = ({ match }) => {
                                 : "bg-red-900/10 border-red-500/20"
                         )}>
                             <div className="flex items-center gap-1">
-                                <Icon src={!isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={3} />
+                                <Icon src={!isPlayerRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={4} />
                                 <span className={clsx("font-bold uppercase tracking-wider text-xs", !isPlayerRadiant ? "text-emerald-400" : "text-red-400")}>
                                     Enemy
                                 </span>

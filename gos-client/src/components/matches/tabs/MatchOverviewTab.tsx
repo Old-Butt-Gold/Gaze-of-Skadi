@@ -252,7 +252,7 @@ const OverviewPlayerTable: React.FC<{
 
                         return (
                             <tr key={stats.playerIndex} className="hover:bg-[#1a1d24] transition-colors group">
-                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-[240px]">
+                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-60">
                                     <MatchPlayerCell player={info} useIcon={false} />
                                 </td>
 
