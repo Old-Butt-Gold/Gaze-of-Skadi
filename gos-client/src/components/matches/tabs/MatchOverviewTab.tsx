@@ -222,10 +222,10 @@ const OverviewPlayerTable: React.FC<{
     return (
         <div className="w-full bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden mb-6">
             <div className="overflow-x-auto no-scrollbar">
-                <table className="w-full text-left text-sm whitespace-nowrap">
+                <table className="w-full text-left text-sm whitespace-nowrap min-w-max">
                     <thead>
-                    <tr className="bg-[#0f1114] border-b border-[#2e353b] text-[#808fa6] text-[10px] uppercase tracking-widest">
-                        <th className="px-4 py-3 font-bold sticky left-0 z-10 bg-[#0f1114] shadow-[4px_0_10px_rgba(0,0,0,0.3)]">Player</th>
+                    <tr className="bg-[#0f1114] border-b border-[#2e353b] text-[#808fa6] text-xs uppercase tracking-widest">
+                        <th className="px-4 py-3 font-bold sticky left-0 z-20 bg-[#0f1114] shadow-[4px_0_10px_rgba(0,0,0,0.3)]">Player</th>
                         <th className="px-3 py-3 font-bold text-center cursor-help" title="Level achieved by hero">LVL</th>
                         <th className="px-3 py-3 font-bold text-center cursor-help" title="Number of kills by hero">K</th>
                         <th className="px-3 py-3 font-bold text-center cursor-help" title="Number of deaths by hero">D</th>
@@ -244,17 +244,15 @@ const OverviewPlayerTable: React.FC<{
                     {overviewPlayers.map((stats) => {
                         const info = playersInfo[stats.playerIndex];
 
-                        // Инвентарь (0-5)
                         const inventory = Array(6).fill(null);
                         stats.items.filter(i => i.itemIndex >= 0 && i.itemIndex <= 5).forEach(i => inventory[i.itemIndex] = i);
 
-                        // Рюкзак (0-2)
                         const backpack = Array(3).fill(null);
                         stats.backpackItems.forEach(i => backpack[i.itemIndex % 3] = i);
 
                         return (
                             <tr key={stats.playerIndex} className="hover:bg-[#1a1d24] transition-colors group">
-                                <td className="px-5 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
+                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-70">
                                     <MatchPlayerCell player={info} useIcon={false} />
                                 </td>
 
@@ -284,56 +282,50 @@ const OverviewPlayerTable: React.FC<{
                                 <td className="px-3 py-2 text-center font-mono text-emerald-400">{stats.heroHealing > 0 ? formatK(stats.heroHealing) : '-'}</td>
 
                                 <td className="px-4 py-2">
-                                    <div className="flex items-start justify-center gap-4">
+                                    <div className="flex items-center justify-center gap-3 shrink-0 min-w-max">
 
-                                        {/* Блок: Инвентарь + Рюкзак */}
-                                        <div className="flex flex-col gap-1 items-center">
-                                            {/* Основной инвентарь (Сетка 3x2) */}
-                                            <div className="grid grid-cols-3 gap-1 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner">
+                                        <div className="flex flex-col gap-1">
+                                            <div className="grid grid-cols-3 gap-0.5 p-1 bg-[#0b0e13]/50 rounded border border-[#2e353b]/50 shadow-inner w-max">
                                                 {inventory.map((item, idx) => (
-                                                    <div key={`inv-${idx}`} className="w-9 h-7 bg-[#1a1d24] rounded-sm border border-[#2e353b] shadow-sm flex items-center justify-center">
+                                                    <div key={`inv-${idx}`} className="w-[38px] h-[28px] rounded-sm overflow-hidden border border-[#2e353b] shadow-sm flex items-center justify-center">
                                                         {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
                                                     </div>
                                                 ))}
                                             </div>
 
-                                            {/* Рюкзак (Сетка 3x1, визуально отделен) */}
-                                            <div
-                                                className="grid grid-cols-3 gap-1 p-0.5 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 opacity-70 hover:opacity-100 transition-opacity cursor-help"
-                                                title="Backpack"
-                                            >
+                                            <div className="grid grid-cols-3 gap-0.5 p-1 bg-[#0f1114] rounded border border-dashed border-[#58606e]/30 w-max opacity-80 hover:opacity-100 transition-opacity cursor-help" title="Backpack">
                                                 {backpack.map((item, idx) => (
-                                                    <div key={`bp-${idx}`} className="w-7 h-5 bg-[#1a1d24] rounded-sm border border-[#2e353b] flex items-center justify-center">
+                                                    <div key={`bp-${idx}`} className="w-[38px] h-[28px] rounded-sm overflow-hidden border border-[#2e353b] flex items-center justify-center">
                                                         {item ? <ItemByIdCell itemId={item.itemId.toString()} /> : <span className="opacity-0"></span>}
                                                     </div>
                                                 ))}
                                             </div>
                                         </div>
 
-                                        {/* Блок: Нейтралки (Активная + Аура) */}
-                                        <div className="flex flex-col gap-2 items-center mt-1">
-                                            {/* Основной нейтральный предмет */}
-                                            <div
-                                                className="w-9 h-9 rounded-full bg-[#0b0e13]  border border-[#58606e] flex items-center justify-center cursor-help"
-                                                title="Neutral Item"
-                                            >
-                                                {stats.neutralItem ? <ItemByIdCell itemId={stats.neutralItem.toString()} /> : null}
-                                            </div>
-
-                                            {/* Нейтральная Аура (если есть) */}
-                                            {stats.neutralAura && (
+                                        {stats.neutralItem && (
+                                            <div className="flex flex-col items-center justify-center gap-1.5 shrink-0">
                                                 <div
-                                                    className="w-7 h-7 rounded-full bg-[#1a1d24] overflow-hidden border border-[#58606e] flex items-center justify-center opacity-90 cursor-help"
-                                                    title="Neutral Aura (from team)"
+                                                    className="w-10 h-10 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center cursor-help shrink-0"
+                                                    title="Neutral Item"
                                                 >
-                                                    <ItemByIdCell itemId={stats.neutralAura.toString()} />
+                                                    {stats.neutralItem ? <ItemByIdCell itemId={stats.neutralItem.toString()} /> : null}
                                                 </div>
-                                            )}
-                                        </div>
+
+                                                {stats.neutralAura ? (
+                                                    <div
+                                                        className="w-8 h-8 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center opacity-90 cursor-help shrink-0"
+                                                        title="Neutral Aura"
+                                                    >
+                                                        <ItemByIdCell itemId={stats.neutralAura.toString()} />
+                                                    </div>
+                                                ) : (
+                                                    <div className="w-7 h-7 shrink-0" />
+                                                )}
+                                            </div>
+                                        )}
                                     </div>
                                 </td>
 
-                                {/* Buffs: Aghanim Shard & Scepter */}
                                 <td className="px-4 py-2">
                                     <div className="flex flex-col items-center justify-center">
                                         <ItemTooltip itemName="ultimate_scepter">
@@ -362,30 +354,30 @@ const OverviewPlayerTable: React.FC<{
 
                     {/* --- TOTALS ROW --- */}
                     <tr className="bg-[#0b0e13] border-t border-[#2e353b] text-xs font-bold text-[#a3aab8] group">
-                        <td className="px-4 py-3 sticky left-0 z-10 bg-[#0b0e13] shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
+                        <td className="px-4 py-4 sticky left-0 z-10 bg-[#0b0e13] shadow-[4px_0_10px_rgba(0,0,0,0.3)]">
                             <div className="flex items-center gap-3">
                                 <Icon src={isRadiant ? "/assets/images/radiant.png" : "/assets/images/dire.png"} size={6} />
-                                <span className={clsx("uppercase tracking-widest text-sm", isRadiant ? "text-emerald-400" : "text-red-400")}>{teamName}</span>
+                                <span className={clsx("uppercase tracking-widest text-sm", isRadiant ? "text-emerald-400" : "text-red-400")}>{teamName} Total</span>
                             </div>
                         </td>
-                        <td className="px-3 py-3 text-center"></td>
-                        <td className="px-3 py-3 text-center text-emerald-400 font-mono text-sm">{totals.kills}</td>
-                        <td className="px-3 py-3 text-center text-red-400 font-mono text-sm">{totals.deaths}</td>
-                        <td className="px-3 py-3 text-center text-[#e3e3e3] font-mono text-sm">{totals.assists}</td>
-                        <td className="px-3 py-3 text-center font-mono">
+                        <td className="px-3 py-4 text-center"></td>
+                        <td className="px-3 py-4 text-center text-emerald-400 font-mono text-sm">{totals.kills}</td>
+                        <td className="px-3 py-4 text-center text-red-400 font-mono text-sm">{totals.deaths}</td>
+                        <td className="px-3 py-4 text-center text-[#e3e3e3] font-mono text-sm">{totals.assists}</td>
+                        <td className="px-3 py-4 text-center font-mono">
                             <span className="text-[#e3e3e3]">{totals.lastHits}</span> / {totals.denies}
                         </td>
-                        <td className="px-3 py-3 text-center font-mono text-[#e7d291]">
+                        <td className="px-3 py-4 text-center font-mono text-[#e7d291]">
                             {formatK(totals.netWorth)}
                         </td>
-                        <td className="px-3 py-3 text-center font-mono">
+                        <td className="px-3 py-4 text-center font-mono">
                             <span className="text-[#e7d291]">{formatK(totals.gpm)}</span> / <span className="text-[#38bdf8]">{formatK(totals.xpm)}</span>
                         </td>
-                        <td className="px-3 py-3 text-center font-mono text-[#e3e3e3]">{formatK(totals.heroDamage)}</td>
-                        <td className="px-3 py-3 text-center font-mono">{formatK(totals.towerDamage)}</td>
-                        <td className="px-3 py-3 text-center font-mono text-emerald-400">{formatK(totals.heroHealing)}</td>
-                        <td className="px-4 py-3 col-span-2"></td>
-                        <td className="px-4 py-3"></td>
+                        <td className="px-3 py-4 text-center font-mono text-[#e3e3e3]">{formatK(totals.heroDamage)}</td>
+                        <td className="px-3 py-4 text-center font-mono">{formatK(totals.towerDamage)}</td>
+                        <td className="px-3 py-4 text-center font-mono text-emerald-400">{formatK(totals.heroHealing)}</td>
+                        <td className="px-4 py-4 col-span-2"></td>
+                        <td className="px-4 py-4"></td>
                     </tr>
                     </tbody>
                 </table>
