@@ -34,7 +34,7 @@ export const HeroDetailsHeader: React.FC<HeroHeaderProps> = ({ hero }) => {
                 {/* Video Overlay */}
                     <video
                         autoPlay muted loop playsInline
-                        className="w-full h-full object-contain transition-opacity duration-700 opacity-70"
+                        className="w-full h-full object-contain transition-opacity duration-700 opacity-90"
                         src={hero.video}
                     />
                 </div>
@@ -57,7 +57,7 @@ export const HeroDetailsHeader: React.FC<HeroHeaderProps> = ({ hero }) => {
                                     <img
                                         src={hero.img}
                                         alt={hero.localized_name}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-102"
                                     />
                                     {/* Primary Attribute Badge */}
                                     <div className="absolute top-2 left-2 bg-black/80 backdrop-blur-md p-1.5 rounded-lg border border-white/10 shadow-lg">

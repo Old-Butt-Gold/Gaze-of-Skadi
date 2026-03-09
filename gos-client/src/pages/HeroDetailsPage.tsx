@@ -78,7 +78,7 @@ export const HeroDetailsPage: React.FC = () => {
         if (!heroesData) return { prevHero: null, nextHero: null };
 
         const heroesArray = Object.values(heroesData).sort((a, b) =>
-            a.id - b.id,
+            a.localized_name.localeCompare(b.localized_name)
         );
 
         const currentIndex = heroesArray.findIndex(h => h.id === parsedId);
@@ -117,7 +117,7 @@ export const HeroDetailsPage: React.FC = () => {
     const contextValue: HeroOutletContext = { hero };
 
     return (
-        <div className="min-h-screen bg-[#0f1114] text-white pb-10 animate-fade-in relative">
+        <div className="min-h-screen bg-[#0f1114] text-white pb-10 animate-fade-in relative" key={hero.id}>
 
             <HeroSwitcher prevHero={prevHero} nextHero={nextHero} tabSuffix={tabSuffix} />
 
@@ -134,7 +134,7 @@ export const HeroDetailsPage: React.FC = () => {
                                     className={clsx(
                                         "py-4 px-4 md:px-6 text-xs md:text-sm font-bold uppercase tracking-widest border-b-2 transition-all duration-300 whitespace-nowrap block",
                                         activeTab === tab.id
-                                            ? "border-[#e7d291] text-[#e7d291] bg-gradient-to-t from-[#e7d291]/10 to-transparent"
+                                            ? "border-[#e7d291] text-[#e7d291] bg-linear-to-t from-[#e7d291]/10 to-transparent"
                                             : "border-transparent text-[#808fa6] hover:text-white hover:bg-[#1a1d24]"
                                     )}
                                 >
