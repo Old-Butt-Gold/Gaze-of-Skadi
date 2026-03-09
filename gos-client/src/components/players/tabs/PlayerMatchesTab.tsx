@@ -66,7 +66,7 @@ export const PlayerMatchesTab: React.FC = () => {
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" id="matches-list-top">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 px-2">
-                <div className="flex flex-wrap items-center gap-4">
+                <div className="flex flex-wrap items-center gap-6">
                     <h3 className="text-xl font-serif font-bold text-white uppercase tracking-widest">
                         Match History
                     </h3>
@@ -77,18 +77,30 @@ export const PlayerMatchesTab: React.FC = () => {
                             setCurrentPage(1);
                         }}
                         className={clsx(
-                            "flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-bold uppercase tracking-wider transition-all",
+                            "group flex items-center gap-3 px-3 py-1.5 rounded-lg border transition-all duration-300 cursor-pointer",
                             showParsedOnly
-                                ? "bg-[#e7d291]/10 border-[#e7d291]/50 text-[#e7d291] shadow-inner"
-                                : "bg-[#0f1114] border-[#2e353b] text-[#58606e] hover:border-[#4a5568] hover:text-[#808fa6]"
+                                ? "bg-[#e7d291]/5 border-[#e7d291]/30"
+                                : "bg-[#0f1114] border-[#2e353b] hover:bg-[#15171c]"
                         )}
                         title="Show only matches that have been fully parsed for advanced statistics"
                     >
                         <div className={clsx(
-                            "w-2.5 h-2.5 rounded-full transition-colors",
-                            showParsedOnly ? "bg-[#e7d291]" : "bg-[#2e353b]"
-                        )} />
-                        Parsed Only
+                            "relative flex items-center w-9 h-5 rounded-full border transition-colors duration-300",
+                            showParsedOnly ? "bg-[#e7d291]/20 border-[#e7d291]/50" : "bg-[#0b0e13] border-[#58606e]/30"
+                        )}>
+                            <div className={clsx(
+                                "absolute w-3 h-3 rounded-full transition-all duration-300 shadow-sm",
+                                showParsedOnly
+                                    ? "translate-x-5 bg-[#e7d291] shadow-[0_0_8px_rgba(231,210,145,0.6)]"
+                                    : "translate-x-1 bg-[#58606e] group-hover:bg-[#808fa6]"
+                            )} />
+                        </div>
+                        <span className={clsx(
+                            "text-xs font-bold uppercase tracking-wider transition-colors duration-300",
+                            showParsedOnly ? "text-[#e7d291]" : "text-[#58606e] group-hover:text-[#808fa6]"
+                        )}>
+                            Parsed Only
+                        </span>
                     </button>
                 </div>
 
