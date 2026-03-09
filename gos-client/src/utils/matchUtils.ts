@@ -1,4 +1,4 @@
-﻿import {type BaseEnum, type BooleanState, LaneRole} from "../types/common.ts";
+﻿import {type BaseEnum, type BooleanState, LaneRole, Patch} from "../types/common.ts";
 import {UnitOrder} from "../types/matchActions.ts";
 import {GoldReason, XpReason} from "../types/matchEarnings.ts";
 import {Rune} from "../types/matchObjectvies.ts";
@@ -246,4 +246,75 @@ export const normalizeMapCoordinate = (val: number, isY: boolean = false): numbe
 
   // В доте ось Y идет снизу вверх, а в вебе сверху вниз, поэтому инвертируем
   return isY ? 100 - percentage : percentage;
+};
+
+const PATCH_MAP_IMAGES: Record<Patch, string> = {
+  [Patch.v6_70]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_71]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_72]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_73]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_74]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_75]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_76]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_77]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_78]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_79]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_80]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_81]: "/assets/images/detailed_pre682.webp",
+  [Patch.v6_82]: "/assets/images/detailed_682.webp",
+  [Patch.v6_83]: "/assets/images/detailed_682.webp",
+  [Patch.v6_84]: "/assets/images/detailed_682.webp",
+  [Patch.v6_85]: "/assets/images/detailed_682.webp",
+  [Patch.v6_86]: "/assets/images/detailed_686.webp",
+  [Patch.v6_87]: "/assets/images/detailed_686.webp",
+  [Patch.v6_88]: "/assets/images/detailed_686.webp",
+  [Patch.v7_00]: "/assets/images/detailed_700.webp",
+  [Patch.v7_01]: "/assets/images/detailed_700.webp",
+  [Patch.v7_02]: "/assets/images/detailed_700.webp",
+  [Patch.v7_03]: "/assets/images/detailed_700.webp",
+  [Patch.v7_04]: "/assets/images/detailed_700.webp",
+  [Patch.v7_05]: "/assets/images/detailed_700.webp",
+  [Patch.v7_06]: "/assets/images/detailed_700.webp",
+  [Patch.v7_07]: "/assets/images/detailed_707.webp",
+  [Patch.v7_08]: "/assets/images/detailed_707.webp",
+  [Patch.v7_09]: "/assets/images/detailed_707.webp",
+  [Patch.v7_10]: "/assets/images/detailed_707.webp",
+  [Patch.v7_11]: "/assets/images/detailed_707.webp",
+  [Patch.v7_12]: "/assets/images/detailed_707.webp",
+  [Patch.v7_13]: "/assets/images/detailed_707.webp",
+  [Patch.v7_14]: "/assets/images/detailed_707.webp",
+  [Patch.v7_15]: "/assets/images/detailed_707.webp",
+  [Patch.v7_16]: "/assets/images/detailed_707.webp",
+  [Patch.v7_17]: "/assets/images/detailed_707.webp",
+  [Patch.v7_18]: "/assets/images/detailed_707.webp",
+  [Patch.v7_19]: "/assets/images/detailed_707.webp",
+  [Patch.v7_20]: "/assets/images/detailed_720.webp",
+  [Patch.v7_21]: "/assets/images/detailed_720.webp",
+  [Patch.v7_22]: "/assets/images/detailed_720.webp",
+  [Patch.v7_23]: "/assets/images/detailed_723.webp",
+  [Patch.v7_24]: "/assets/images/detailed_723.webp",
+  [Patch.v7_25]: "/assets/images/detailed_723.webp",
+  [Patch.v7_26]: "/assets/images/detailed_723.webp",
+  [Patch.v7_27]: "/assets/images/detailed_723.webp",
+  [Patch.v7_28]: "/assets/images/detailed_723.webp",
+  [Patch.v7_29]: "/assets/images/detailed_723.webp",
+  [Patch.v7_30]: "/assets/images/detailed_723.webp",
+  [Patch.v7_31]: "/assets/images/detailed_723.webp",
+  [Patch.v7_32]: "/assets/images/detailed_732.webp",
+  [Patch.v7_33]: "/assets/images/detailed_733.webp",
+  [Patch.v7_34]: "/assets/images/detailed_733.webp",
+  [Patch.v7_35]: "/assets/images/detailed_733.webp",
+  [Patch.v7_36]: "/assets/images/detailed_733.webp",
+  [Patch.v7_37]: "/assets/images/detailed_733.webp",
+  [Patch.v7_38]: "/assets/images/detailed_738.webp",
+  [Patch.v7_39]: "/assets/images/detailed_738.webp",
+  [Patch.v7_40]: "/assets/images/detailed_740.webp",
+};
+
+export const getMapImageForPatch = (patch?: Patch | null): string => {
+  if (patch == null || !PATCH_MAP_IMAGES[patch]) {
+    return PATCH_MAP_IMAGES[Patch.v7_40];
+  }
+
+  return PATCH_MAP_IMAGES[patch];
 };

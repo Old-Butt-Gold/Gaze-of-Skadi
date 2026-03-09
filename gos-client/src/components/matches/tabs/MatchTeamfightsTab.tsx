@@ -9,12 +9,12 @@ import { MatchPlayerCell } from '../MatchPlayerCell';
 import { Icon } from '../../Icon';
 import { HeroCell } from '../../heroes/HeroCell';
 import { SourceIcon } from '../SourceIcon';
-import { isRadiantTeam, normalizeMapCoordinate } from '../../../utils/matchUtils';
+import { isRadiantTeam, normalizeMapCoordinate, getMapImageForPatch } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { type TeamfightDetailedDto, type TeamfightPlayerDto } from '../../../types/matchTeamfights';
-import { TeamEnum } from "../../../types/common.ts";
+import {type Patch, TeamEnum} from "../../../types/common.ts";
 import { useHeroes } from "../../../hooks/queries/useHeroes.ts";
 
 const SimpleHeroIcon: React.FC<{ heroId: number | null; sizeClass?: string; }> = ({ heroId, sizeClass = "w-10 h-10" }) => {
@@ -49,7 +49,7 @@ const ActionBadge: React.FC<{ iconKey: string; count: number }> = ({ iconKey, co
     </div>
 );
 
-const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoDto[]; sizeClasses: string; interactive?: boolean; iconSizeClass?: string }> = ({ tf, allPlayers, sizeClasses, interactive = false, iconSizeClass = "w-4 h-4" }) => {
+const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoDto[]; sizeClasses: string; interactive?: boolean; iconSizeClass?: string; patchId?: Patch | null }> = ({ tf, allPlayers, sizeClasses, interactive = false, iconSizeClass = "w-4 h-4", patchId }) => {
     const deaths = useMemo(() => {
         return tf.players.flatMap(p => {
             const deadPlayerInfo = allPlayers[p.playerIndex];
@@ -66,7 +66,7 @@ const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoD
 
     return (
         <div className={clsx("relative rounded-md border border-[#2e353b] bg-[#0f1114] shadow-inner shrink-0", sizeClasses, !interactive && "overflow-hidden pointer-events-none")}>
-            <img src="/assets/images/detailed_740.webp" alt="Minimap" className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none rounded-md" />
+            <img src={getMapImageForPatch(patchId)} alt="Minimap" className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none rounded-md" />
 
             {deaths.map((death) => {
                 const x = normalizeMapCoordinate(death.x, false);
@@ -180,7 +180,7 @@ const PlayerFightRow: React.FC<{ playerInfo: PlayerInfoDto; stats: TeamfightPlay
     );
 };
 
-const TeamfightCard: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoDto[]; index: number }> = ({ tf, allPlayers, index }) => {
+const TeamfightCard: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoDto[]; index: number; patchId?: Patch | null }> = ({ tf, allPlayers, index, patchId }) => {
     const isRadiantWin = tf.winner.value === TeamEnum.Radiant;
     const isDireWin = tf.winner.value === TeamEnum.Dire;
 
@@ -263,12 +263,12 @@ const TeamfightCard: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfo
                     <span className="text-xs font-bold text-[#808fa6] uppercase tracking-widest mb-3">Death Map</span>
 
                     <div className="cursor-zoom-in flex items-center justify-center">
-                        <TeamfightMap tf={tf} allPlayers={allPlayers} sizeClasses="w-48 h-48 lg:w-56 lg:h-56" iconSizeClass="w-5 h-5" />
+                        <TeamfightMap tf={tf} allPlayers={allPlayers} sizeClasses="w-48 h-48 lg:w-56 lg:h-56" iconSizeClass="w-5 h-5" patchId={patchId} />
                     </div>
 
                     <div className="fixed inset-0 z-9999 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 pointer-events-none flex items-center justify-center bg-[#0b0e13]/80 backdrop-blur-sm">
                         <div className="rounded-xl pointer-events-auto border-2 border-[#4a5568] shadow-[0_0_60px_rgba(0,0,0,0.8)] relative">
-                            <TeamfightMap tf={tf} allPlayers={allPlayers} sizeClasses="w-[90vw] max-w-[500px] aspect-square xl:w-[600px]" interactive={true} iconSizeClass="w-10 h-10" />
+                            <TeamfightMap tf={tf} allPlayers={allPlayers} sizeClasses="w-[90vw] max-w-[500px] aspect-square xl:w-[600px]" interactive={true} iconSizeClass="w-10 h-10" patchId={patchId} />
                         </div>
                     </div>
                 </div>
@@ -279,8 +279,10 @@ const TeamfightCard: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfo
 };
 
 export const MatchTeamfightsTab: React.FC = () => {
-    const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
+    const { matchId, players, isParsed, generalInformation } = useOutletContext<MatchOutletContext>();
     const { data: teamfights, isLoading, isError } = useMatchTeamfights(matchId, isParsed);
+
+    const patchId = generalInformation?.patch?.value;
 
     if (!isParsed) return <UnparsedMatchWarning />;
     if (isLoading) return <LoadingSpinner text="Analyzing Teamfights..." />;
@@ -293,7 +295,7 @@ export const MatchTeamfightsTab: React.FC = () => {
         <div className="w-full lg:w-[90%] mx-auto mt-6 animate-in fade-in duration-500 pb-10">
             <div className="flex flex-col">
                 {teamfights.map((tf, index) => (
-                    <TeamfightCard key={index} index={index} tf={tf} allPlayers={players} />
+                    <TeamfightCard key={index} index={index} tf={tf} allPlayers={players} patchId={patchId} />
                 ))}
             </div>
         </div>

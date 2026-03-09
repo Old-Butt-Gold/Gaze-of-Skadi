@@ -10,7 +10,7 @@ import { Icon } from '../../Icon';
 import { LaneRole, TeamEnum } from '../../../types/common';
 import { BarracksStatus, type PickBanDto, type PlayerOverviewDto, TowerStatus } from '../../../types/matchOverview';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import { isRadiantTeam } from "../../../utils/matchUtils.ts";
+import {getMapImageForPatch, isRadiantTeam} from "../../../utils/matchUtils.ts";
 import type { PlayerInfoDto } from "../../../types/matchGeneralInformation.ts";
 import {formatDuration, formatK } from "../../../utils/formatUtils.ts";
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
@@ -478,6 +478,8 @@ export const MatchOverviewTab: React.FC = () => {
         return { radiantPlayers: rad, direPlayers: dire };
     }, [overview, players]);
 
+    const mapImage = getMapImageForPatch(generalInformation?.patch?.value);
+
     if (isLoading) return <LoadingSpinner text="Loading Match Overview..." />;
     if (isError || !overview) return <ErrorDisplay message="Failed to load match overview." />;
 
@@ -533,7 +535,7 @@ export const MatchOverviewTab: React.FC = () => {
 
                     <div className="relative w-full max-w-150 aspect-square rounded-xl border border-[#2e353b] bg-[#0f1114]">
                         <img
-                            src="/assets/images/detailed_740.webp"
+                            src={mapImage}
                             alt="Map"
                             className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none"
                         />

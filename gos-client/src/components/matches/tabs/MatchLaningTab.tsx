@@ -24,6 +24,7 @@ import type { PlayerLaneDto } from '../../../types/matchLaning.ts';
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { HeatmapCanvas } from "../../players/HeatmapCanvas.tsx";
 import { UnparsedMatchWarning } from "../UnparsedMatchWarning.tsx";
+import type {Patch} from "../../../types/common.ts";
 
 interface PlayerTooltipProps extends TooltipProps<number, string> {
     players: PlayerInfoDto[];
@@ -69,7 +70,7 @@ const LaningGraphTooltip: React.FC<PlayerTooltipProps> = ({ active, payload, lab
     return null;
 };
 
-const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLaneDto | undefined, isRadiant: boolean }> = ({ player, laningData, isRadiant }) => {
+const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLaneDto | undefined, isRadiant: boolean, patchId?: Patch | null }> = ({ player, laningData, isRadiant, patchId }) => {
     const heatmapData = useMemo(() => {
         if (!laningData?.lanePositions) return {};
         return parsePositionsToHeatmap(laningData.lanePositions);
@@ -115,12 +116,12 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
 
             <div className="flex items-center justify-center xl:border-l border-[#2e353b]/50 xl:pl-6 shrink-0 pt-2 xl:pt-0 relative group/heatmap">
                 <div className="border border-[#2e353b] rounded bg-[#0b0e13] shadow-inner cursor-zoom-in">
-                    <HeatmapCanvas data={heatmapData} width={120} />
+                    <HeatmapCanvas data={heatmapData} width={120} patch={patchId} />
                 </div>
 
                 <div className="absolute z-50 opacity-0 invisible group-hover/heatmap:opacity-100 group-hover/heatmap:visible transition-all duration-300 xl:right-[110%] bottom-full mb-4 left-1/2 -translate-x-1/2 xl:left-auto xl:translate-x-0 xl:bottom-[-20px] xl:mb-0 pointer-events-none">
                     <div className="border-2 border-[#4a5568] rounded-lg bg-[#0f1114] shadow-2xl">
-                        <HeatmapCanvas data={heatmapData} width={400} />
+                        <HeatmapCanvas data={heatmapData} width={400} patch={patchId} />
                     </div>
                 </div>
             </div>
@@ -129,8 +130,10 @@ const PlayerLaningCard: React.FC<{ player: PlayerInfoDto, laningData: PlayerLane
 };
 
 export const MatchLaningTab: React.FC = () => {
-    const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
+    const { matchId, players, isParsed, generalInformation } = useOutletContext<MatchOutletContext>();
     const { data: laningData, isLoading, isError } = useMatchLaning(matchId, isParsed);
+
+    const patchId = generalInformation?.patch?.value;
 
     const { radiantPlayers, direPlayers, laningMap, chartData } = useMemo(() => {
         const radiant: number[] = [];
@@ -224,6 +227,7 @@ export const MatchLaningTab: React.FC = () => {
                             player={players[idx]}
                             laningData={laningMap.get(idx)}
                             isRadiant={true}
+                            patchId={patchId}
                         />
                     ))}
                 </div>
@@ -241,6 +245,7 @@ export const MatchLaningTab: React.FC = () => {
                             player={players[idx]}
                             laningData={laningMap.get(idx)}
                             isRadiant={false}
+                            patchId={patchId}
                         />
                     ))}
                 </div>

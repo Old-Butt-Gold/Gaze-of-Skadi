@@ -8,11 +8,12 @@ import { UnparsedMatchWarning } from '../UnparsedMatchWarning';
 import { MatchPlayerCell } from '../MatchPlayerCell';
 import { Icon } from '../../Icon';
 import { HeroCell } from '../../heroes/HeroCell';
-import { isRadiantTeam, VISION_ITEM_ICONS, normalizeMapCoordinate } from '../../../utils/matchUtils';
+import { isRadiantTeam, VISION_ITEM_ICONS, normalizeMapCoordinate, getMapImageForPatch } from '../../../utils/matchUtils';
 import { formatDuration } from '../../../utils/formatUtils';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
 import type { PlayerInfoDto } from '../../../types/matchGeneralInformation.ts';
 import { WardType, VisionItemType, type VisionItemDto, type WardPlacementDto, type PlayerVisionDto } from '../../../types/matchVision';
+import type {Patch} from "../../../types/common.ts";
 
 interface IndexedPlayer {
     info: PlayerInfoDto;
@@ -48,11 +49,11 @@ const VisionBadge: React.FC<{ item: VisionItemDto }> = ({ item }) => {
     );
 };
 
-const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, sizeClasses: string, interactive?: boolean, iconSizeClass?: string }> = ({ wards, isRadiant, sizeClasses, interactive = false, iconSizeClass = "w-3 h-3" }) => {
+const WardMapInner: React.FC<{ wards: WardPlacementDto[], isRadiant: boolean, sizeClasses: string, interactive?: boolean, iconSizeClass?: string, patchId?: Patch | null }> = ({ wards, isRadiant, sizeClasses, interactive = false, iconSizeClass = "w-3 h-3", patchId }) => {
     return (
         <div className={clsx("relative rounded-md border border-[#2e353b] bg-[#0f1114] shadow-inner shrink-0", sizeClasses, !interactive && "overflow-hidden pointer-events-none")}>
             <img
-                src="/assets/images/detailed_740.webp"
+                src={getMapImageForPatch(patchId)}
                 alt="Minimap"
                 className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none rounded-md"
             />
@@ -133,7 +134,8 @@ const PlayerVisionCard: React.FC<{
     vision: PlayerVisionDto | undefined;
     wards: WardPlacementDto[];
     isRadiant: boolean;
-}> = ({ player, vision, wards, isRadiant }) => {
+    patchId?: Patch | null;
+}> = ({ player, vision, wards, isRadiant, patchId }) => {
     return (
         <div className={"flex flex-col xl:grid xl:grid-cols-12 gap-5 xl:gap-0 p-4 border-b border-[#2e353b]/50 hover:bg-[#1a1d24] transition-colors relative"}>
 
@@ -160,12 +162,12 @@ const PlayerVisionCard: React.FC<{
                         <span className="text-xs text-[#808fa6] font-bold uppercase tracking-widest mb-1 xl:hidden">Ward Map</span>
                         <div className="relative group/map">
                             <div className="cursor-zoom-in flex items-center justify-center">
-                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" iconSizeClass="w-3 h-3" />
+                                <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-32 h-32 sm:w-40 sm:h-40" iconSizeClass="w-3 h-3" patchId={patchId} />
                             </div>
 
                             <div className="fixed inset-0 z-9999 opacity-0 invisible group-hover/map:opacity-100 group-hover/map:visible transition-all duration-300 pointer-events-none flex items-center justify-center bg-[#0b0e13]/60 backdrop-blur-sm">
                                 <div className="rounded-xl pointer-events-auto bg-[#0f1114] border-2 border-[#4a5568]">
-                                    <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[90vw] max-w-[450px] aspect-square xl:w-[500px]" interactive={true} iconSizeClass="w-6 h-6" />
+                                    <WardMapInner wards={wards} isRadiant={isRadiant} sizeClasses="w-[90vw] max-w-[450px] aspect-square xl:w-[500px]" interactive={true} iconSizeClass="w-6 h-6" patchId={patchId} />
                                 </div>
                             </div>
                         </div>
@@ -180,8 +182,10 @@ const PlayerVisionCard: React.FC<{
 };
 
 export const MatchVisionTab: React.FC = () => {
-    const { matchId, players, isParsed } = useOutletContext<MatchOutletContext>();
+    const { matchId, players, isParsed, generalInformation } = useOutletContext<MatchOutletContext>();
     const { data: visionData, isLoading, isError } = useMatchVision(matchId, isParsed);
+
+    const patchId = generalInformation?.patch?.value;
 
     const { radiantPlayers, direPlayers, visionMap, wardsMap } = useMemo(() => {
         const radiant: IndexedPlayer[] = [];
@@ -239,6 +243,7 @@ export const MatchVisionTab: React.FC = () => {
                             vision={visionMap.get(p.index)}
                             wards={wardsMap.get(p.index) || []}
                             isRadiant={true}
+                            patchId={patchId}
                         />
                     ))}
 
@@ -254,6 +259,7 @@ export const MatchVisionTab: React.FC = () => {
                                 vision={visionMap.get(p.index)}
                                 wards={wardsMap.get(p.index) || []}
                                 isRadiant={false}
+                                patchId={patchId}
                             />
                         </div>
                     ))}

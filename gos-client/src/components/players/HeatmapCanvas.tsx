@@ -1,10 +1,13 @@
 ﻿import React, { useEffect, useRef } from 'react';
 import h337 from '@mars3d/heatmap.js';
 import { parseWardData } from '../../utils/heatmapUtils';
+import {Patch} from "../../types/common.ts";
+import {getMapImageForPatch} from "../../utils/matchUtils.ts";
 
 interface Props {
     data: Record<string, Record<string, number>>;
     width: number;
+    patch?: Patch | null;
 }
 
 interface HeatmapInstance {
@@ -12,7 +15,7 @@ interface HeatmapInstance {
     repaint: () => void;
 }
 
-export const HeatmapCanvas: React.FC<Props> = ({ data, width }) => {
+export const HeatmapCanvas: React.FC<Props> = ({ data, width, patch = Patch.v7_40 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const heatmapInstance = useRef<HeatmapInstance | null>(null);
 
@@ -47,13 +50,15 @@ export const HeatmapCanvas: React.FC<Props> = ({ data, width }) => {
 
     }, [data, width]);
 
+    const mapSrc = getMapImageForPatch(patch);
+
     return (
         <div
             className="relative rounded-sm overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] bg-[#0f1114]"
             style={{ width, height: width }}
         >
             <img
-                src="/assets/images/detailed_740.webp"
+                src={mapSrc}
                 alt="Minimap"
                 className="absolute inset-0 w-full h-full object-cover opacity-90 z-0 pointer-events-none"
             />
