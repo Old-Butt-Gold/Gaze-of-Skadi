@@ -19,6 +19,7 @@ import {
     getLaneRoleName
 } from '../../utils/enumUtils';
 import { getLaneInfo } from '../../utils/matchUtils';
+import type {HeroInfo} from "../../types/heroes.ts";
 
 interface Props {
     currentFilters: PlayerEndpointParameters;
@@ -31,16 +32,205 @@ const allRegions = Object.values(Region).filter(v => v !== 0) as Region[];
 const allPatches = Object.values(Patch).reverse() as Patch[];
 const allLanes = Object.values(LaneRole).filter(v => v !== 0) as LaneRole[];
 
+const HeroSearchDropdown: React.FC<{
+    heroes: HeroInfo[];
+    selectedHeroId?: number;
+    onSelect: (id: number | undefined) => void;
+    placeholder: string;
+    disabled?: boolean;
+    disabledHeroIds?: number[];
+    clearable?: boolean;
+}> = ({ heroes, selectedHeroId, onSelect, placeholder, disabled, disabledHeroIds = [], clearable = true }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [search, setSearch] = useState('');
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (ref.current && !ref.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const selectedHero = selectedHeroId ? heroes.find(h => h.id === selectedHeroId) : null;
+    const filteredHeroes = heroes.filter(h => h.localized_name.toLowerCase().includes(search.toLowerCase()));
+
+    return (
+        <div className="relative" ref={ref}>
+            <div
+                className={clsx(
+                    "w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg py-2 px-3 text-sm flex items-center justify-between transition-colors",
+                    disabled ? "opacity-50 cursor-not-allowed" : "cursor-pointer",
+                    isOpen && "border-[#e7d291]"
+                )}
+                onClick={() => {
+                    if (!disabled) {
+                        setIsOpen(!isOpen);
+                        setSearch('');
+                    }
+                }}
+            >
+                <div className="flex items-center gap-2">
+                    {selectedHero ? (
+                        <>
+                            <img src={selectedHero.icon} alt="hero" className="w-6 h-6 rounded object-cover shadow-sm" />
+                            <span>{selectedHero.localized_name}</span>
+                        </>
+                    ) : (
+                        <span className="text-[#e3e3e3]">{placeholder}</span>
+                    )}
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#e3e3e3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+
+            {isOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-[#1a1d24] border border-[#2e353b] rounded-lg shadow-2xl z-50 flex flex-col overflow-hidden">
+                    <div className="p-2 border-b border-[#2e353b] bg-[#0b0e13]">
+                        <input
+                            autoFocus
+                            type="text"
+                            placeholder="Search hero..."
+                            value={search}
+                            onChange={e => setSearch(e.target.value)}
+                            className="w-full bg-[#15171c] text-[#e3e3e3] border border-[#2e353b] rounded px-3 py-1.5 text-sm focus:outline-none focus:border-[#e7d291]"
+                        />
+                    </div>
+                    <div className="max-h-60 overflow-y-auto no-scrollbar">
+                        {clearable && (
+                            <div
+                                className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
+                                onClick={() => { onSelect(undefined); setIsOpen(false); }}
+                            >
+                                {placeholder}
+                            </div>
+                        )}
+                        {filteredHeroes.map(h => {
+                            const isDisabled = disabledHeroIds.includes(h.id);
+                            return (
+                                <div
+                                    key={h.id}
+                                    className={clsx(
+                                        "px-3 py-1.5 text-sm flex items-center gap-2 transition-colors",
+                                        isDisabled ? "opacity-50 cursor-not-allowed bg-[#0b0e13]" : "cursor-pointer hover:bg-[#2e353b] text-[#e3e3e3]"
+                                    )}
+                                    onClick={() => {
+                                        if (!isDisabled) {
+                                            onSelect(h.id);
+                                            setIsOpen(false);
+                                        }
+                                    }}
+                                >
+                                    <img src={h.icon} alt={h.localized_name} className="w-6 h-6 rounded object-cover shadow-sm" />
+                                    {h.localized_name}
+                                </div>
+                            );
+                        })}
+                        {filteredHeroes.length === 0 && (
+                            <div className="px-3 py-4 text-sm text-[#58606e] text-center">
+                                No heroes found
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+const LaneDropdown: React.FC<{
+    selectedRole?: number;
+    onSelect: (role: number | undefined) => void;
+}> = ({ selectedRole, onSelect }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (ref.current && !ref.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const selectedLaneInfo = selectedRole ? getLaneInfo(selectedRole) : null;
+
+    return (
+        <div className="relative" ref={ref}>
+            <div
+                className={clsx(
+                    "w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg py-2 px-3 text-sm flex items-center justify-between cursor-pointer transition-colors",
+                    isOpen && "border-[#e7d291]"
+                )}
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                <div className="flex items-center gap-2">
+                    {selectedLaneInfo ? (
+                        <>
+                            <Icon src={selectedLaneInfo.iconSrc} size={5} />
+                            <span>{getLaneRoleName(selectedRole! as LaneRole)}</span>
+                        </>
+                    ) : (
+                        <span className="text-[#e3e3e3]">Any Lane</span>
+                    )}
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#e3e3e3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+
+            {isOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-[#1a1d24] border border-[#2e353b] rounded-lg shadow-2xl z-50 overflow-hidden">
+                    <div
+                        className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
+                        onClick={() => { onSelect(undefined); setIsOpen(false); }}
+                    >
+                        Any Lane
+                    </div>
+                    {allLanes.map(role => {
+                        const info = getLaneInfo(role);
+                        return (
+                            <div
+                                key={role}
+                                className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
+                                onClick={() => { onSelect(role); setIsOpen(false); }}
+                            >
+                                {info && <Icon src={info.iconSrc} size={5} />}
+                                {getLaneRoleName(role)}
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
+        </div>
+    );
+};
+
+const FilterButton: React.FC<{ isActive: boolean, onClick: () => void, label: string, icon?: string, colorClass?: string }> = ({ isActive, onClick, label, icon, colorClass }) => (
+    <button
+        onClick={onClick}
+        className={clsx(
+            "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all",
+            isActive
+                ? clsx("bg-[#2e353b] shadow-inner", colorClass || "text-[#e3e3e3]")
+                : "text-[#58606e] hover:bg-[#1a1d24] hover:text-[#808fa6]"
+        )}
+    >
+        {icon && <Icon src={icon} size={4} />}
+        {label}
+    </button>
+);
+
 export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [localFilters, setLocalFilters] = useState<PlayerEndpointParameters>(currentFilters);
     const [accIdInput, setAccIdInput] = useState('');
-
-    const [laneDropdownOpen, setLaneDropdownOpen] = useState(false);
-    const [heroDropdownOpen, setHeroDropdownOpen] = useState(false);
-
-    const laneRef = useRef<HTMLDivElement>(null);
-    const heroRef = useRef<HTMLDivElement>(null);
 
     const { data: heroesData } = useHeroes();
     const heroes = Object.values(heroesData || {}).sort((a, b) => a.localized_name.localeCompare(b.localized_name));
@@ -48,19 +238,6 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
     useEffect(() => {
         setLocalFilters(currentFilters);
     }, [currentFilters]);
-
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (laneRef.current && !laneRef.current.contains(event.target as Node)) {
-                setLaneDropdownOpen(false);
-            }
-            if (heroRef.current && !heroRef.current.contains(event.target as Node)) {
-                setHeroDropdownOpen(false);
-            }
-        };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
 
     const handleApply = () => {
         onApply(localFilters);
@@ -112,13 +289,14 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
     };
 
     const activeFilterCount = Object.keys(localFilters).length;
-    const selectedHero = localFilters.heroId ? heroes.find(h => h.id === localFilters.heroId) : null;
-    const selectedLaneInfo = localFilters.laneRole != null ? getLaneInfo(localFilters.laneRole) : null;
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl overflow-hidden mb-6 transition-all duration-300">
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl mb-6 relative z-40">
             <div
-                className="flex items-center justify-between p-4 cursor-pointer hover:bg-[#1a1d24] transition-colors"
+                className={clsx(
+                    "flex items-center justify-between p-4 cursor-pointer hover:bg-[#1a1d24] transition-colors",
+                    isExpanded ? "rounded-t-xl border-b border-[#2e353b]/50" : "rounded-xl"
+                )}
                 onClick={() => setIsExpanded(!isExpanded)}
             >
                 <div className="flex items-center gap-3">
@@ -132,15 +310,15 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                     )}
                 </div>
                 <div className={clsx("transition-transform duration-300", isExpanded && "rotate-180")}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#808fa6]" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#e3e3e3]" viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                     </svg>
                 </div>
             </div>
 
-            <div className={clsx("overflow-hidden transition-all duration-500 ease-in-out", isExpanded ? "opacity-100" : "max-h-0 opacity-0")}>
-                <div className="p-4 pt-0 border-t border-[#2e353b]/50">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4">
+            <div className={clsx("transition-all duration-500 ease-in-out bg-[#15171c] rounded-b-xl", isExpanded ? "opacity-100" : "max-h-0 opacity-0 overflow-hidden")}>
+                <div className="p-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-[#58606e] uppercase tracking-widest">Result</label>
@@ -191,93 +369,22 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                             </select>
                         </div>
 
-                        {/* Custom Lane Dropdown */}
-                        <div className="flex flex-col gap-2" ref={laneRef}>
+                        <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-[#58606e] uppercase tracking-widest">Lane</label>
-                            <div className="relative">
-                                <div
-                                    className={clsx(
-                                        "w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg py-2 px-3 text-sm cursor-pointer flex items-center justify-between transition-colors",
-                                        laneDropdownOpen && "border-[#e7d291]"
-                                    )}
-                                    onClick={() => setLaneDropdownOpen(!laneDropdownOpen)}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        {selectedLaneInfo && <Icon src={selectedLaneInfo.iconSrc} size={5} />}
-                                        <span>{localFilters.laneRole != null ? getLaneRoleName(localFilters.laneRole) : "Any Lane"}</span>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#808fa6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </div>
-
-                                {laneDropdownOpen && (
-                                    <div className="absolute top-full left-0 right-0 mt-1 bg-[#1a1d24] border border-[#2e353b] rounded-lg shadow-2xl z-50 overflow-hidden">
-                                        <div
-                                            className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
-                                            onClick={() => { updateFilter('laneRole', undefined); setLaneDropdownOpen(false); }}
-                                        >
-                                            Any Lane
-                                        </div>
-                                        {allLanes.map(role => {
-                                            const info = getLaneInfo(role);
-                                            return (
-                                                <div
-                                                    key={role}
-                                                    className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
-                                                    onClick={() => { updateFilter('laneRole', role); setLaneDropdownOpen(false); }}
-                                                >
-                                                    {info && <Icon src={info.iconSrc} size={5} />}
-                                                    {getLaneRoleName(role)}
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
-                            </div>
+                            <LaneDropdown
+                                selectedRole={localFilters.laneRole}
+                                onSelect={(val) => updateFilter('laneRole', val as LaneRole)}
+                            />
                         </div>
 
-                        {/* Custom Hero Dropdown */}
-                        <div className="flex flex-col gap-2" ref={heroRef}>
+                        <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-[#58606e] uppercase tracking-widest">Played Hero</label>
-                            <div className="relative">
-                                <div
-                                    className={clsx(
-                                        "w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg py-2 px-3 text-sm cursor-pointer flex items-center justify-between transition-colors",
-                                        heroDropdownOpen && "border-[#e7d291]"
-                                    )}
-                                    onClick={() => setHeroDropdownOpen(!heroDropdownOpen)}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        {selectedHero && <img src={selectedHero.icon} alt="hero" className="w-6 h-6 rounded object-cover shadow-sm" />}
-                                        <span>{selectedHero ? selectedHero.localized_name : "Any Hero"}</span>
-                                    </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#808fa6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </div>
-
-                                {heroDropdownOpen && (
-                                    <div className="absolute top-full left-0 right-0 mt-1 bg-[#1a1d24] border border-[#2e353b] rounded-lg shadow-2xl z-50 max-h-60 overflow-y-auto no-scrollbar">
-                                        <div
-                                            className="px-3 py-2 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
-                                            onClick={() => { updateFilter('heroId', undefined); setHeroDropdownOpen(false); }}
-                                        >
-                                            Any Hero
-                                        </div>
-                                        {heroes.map(h => (
-                                            <div
-                                                key={h.id}
-                                                className="px-3 py-1.5 hover:bg-[#2e353b] cursor-pointer text-sm text-[#e3e3e3] flex items-center gap-2"
-                                                onClick={() => { updateFilter('heroId', h.id); setHeroDropdownOpen(false); }}
-                                            >
-                                                <img src={h.icon} alt={h.localized_name} className="w-6 h-6 rounded object-cover shadow-sm" />
-                                                {h.localized_name}
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                            <HeroSearchDropdown
+                                heroes={heroes}
+                                selectedHeroId={localFilters.heroId}
+                                onSelect={(val) => updateFilter('heroId', val)}
+                                placeholder="Any Hero"
+                            />
                         </div>
 
                         <div className="flex flex-col gap-2">
@@ -341,25 +448,19 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                     <div className="w-full h-px bg-[#2e353b]/50 my-6" />
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
                         <div className="flex flex-col gap-2">
                             <label className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest flex items-center justify-between">
                                 <span>Allied Heroes</span>
                                 <span className="text-[#58606e]">{(localFilters.withHeroIds?.length || 0)}/5</span>
                             </label>
-                            <select
-                                value=""
-                                onChange={(e) => {
-                                    if (e.target.value) addArrayItem('withHeroIds', Number(e.target.value), 5);
-                                }}
+                            <HeroSearchDropdown
+                                heroes={heroes}
+                                onSelect={(val) => val && addArrayItem('withHeroIds', val, 5)}
+                                placeholder="Add Allied Hero..."
                                 disabled={(localFilters.withHeroIds?.length || 0) >= 5}
-                                className="w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#e7d291] appearance-none disabled:opacity-50"
-                            >
-                                <option value="" disabled>Add Allied Hero...</option>
-                                {heroes.map(h => (
-                                    <option key={h.id} value={h.id} disabled={localFilters.withHeroIds?.includes(h.id)}>{h.localized_name}</option>
-                                ))}
-                            </select>
+                                disabledHeroIds={localFilters.withHeroIds}
+                                clearable={false}
+                            />
                             {localFilters.withHeroIds && localFilters.withHeroIds.length > 0 && (
                                 <div className="flex flex-wrap gap-2 mt-1">
                                     {localFilters.withHeroIds.map(id => {
@@ -369,7 +470,7 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                                             <div key={id} className="flex items-center gap-1.5 bg-[#1a1d24] border border-[#2e353b] rounded p-1 pr-2 shadow-sm">
                                                 <img src={h.icon} alt={h.localized_name} className="w-5 h-5 rounded-sm object-cover" />
                                                 <span className="text-xs text-[#e3e3e3]">{h.localized_name}</span>
-                                                <button onClick={() => removeArrayItem('withHeroIds', id)} className="text-[#808fa6] hover:text-red-400 ml-1 transition-colors">✕</button>
+                                                <button onClick={() => removeArrayItem('withHeroIds', id)} className="text-[#e3e3e3] hover:text-red-400 ml-1 transition-colors">✕</button>
                                             </div>
                                         );
                                     })}
@@ -382,19 +483,14 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                                 <span>Opposing Heroes</span>
                                 <span className="text-[#58606e]">{(localFilters.againstHeroIds?.length || 0)}/5</span>
                             </label>
-                            <select
-                                value=""
-                                onChange={(e) => {
-                                    if (e.target.value) addArrayItem('againstHeroIds', Number(e.target.value), 5);
-                                }}
+                            <HeroSearchDropdown
+                                heroes={heroes}
+                                onSelect={(val) => val && addArrayItem('againstHeroIds', val, 5)}
+                                placeholder="Add Opposing Hero..."
                                 disabled={(localFilters.againstHeroIds?.length || 0) >= 5}
-                                className="w-full bg-[#0b0e13] text-[#e3e3e3] border border-[#2e353b] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#e7d291] appearance-none disabled:opacity-50"
-                            >
-                                <option value="" disabled>Add Opposing Hero...</option>
-                                {heroes.map(h => (
-                                    <option key={h.id} value={h.id} disabled={localFilters.againstHeroIds?.includes(h.id)}>{h.localized_name}</option>
-                                ))}
-                            </select>
+                                disabledHeroIds={localFilters.againstHeroIds}
+                                clearable={false}
+                            />
                             {localFilters.againstHeroIds && localFilters.againstHeroIds.length > 0 && (
                                 <div className="flex flex-wrap gap-2 mt-1">
                                     {localFilters.againstHeroIds.map(id => {
@@ -404,7 +500,7 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                                             <div key={id} className="flex items-center gap-1.5 bg-[#1a1d24] border border-[#2e353b] rounded p-1 pr-2 shadow-sm">
                                                 <img src={h.icon} alt={h.localized_name} className="w-5 h-5 rounded-sm object-cover" />
                                                 <span className="text-xs text-[#e3e3e3]">{h.localized_name}</span>
-                                                <button onClick={() => removeArrayItem('againstHeroIds', id)} className="text-[#808fa6] hover:text-red-400 ml-1 transition-colors">✕</button>
+                                                <button onClick={() => removeArrayItem('againstHeroIds', id)} className="text-[#e3e3e3] hover:text-red-400 ml-1 transition-colors">✕</button>
                                             </div>
                                         );
                                     })}
@@ -467,18 +563,3 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
         </div>
     );
 };
-
-const FilterButton: React.FC<{ isActive: boolean, onClick: () => void, label: string, icon?: string, colorClass?: string }> = ({ isActive, onClick, label, icon, colorClass }) => (
-    <button
-        onClick={onClick}
-        className={clsx(
-            "flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-xs font-bold uppercase tracking-wider transition-all",
-            isActive
-                ? clsx("bg-[#2e353b] shadow-inner", colorClass || "text-[#e3e3e3]")
-                : "text-[#58606e] hover:bg-[#1a1d24] hover:text-[#808fa6]"
-        )}
-    >
-        {icon && <Icon src={icon} size={3.5} />}
-        {label}
-    </button>
-);
