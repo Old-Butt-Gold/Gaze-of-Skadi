@@ -73,7 +73,7 @@ export const MatchDetailsPage: React.FC = () => {
 
             <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-4">
 
-                <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
+                <div className="flex border-b border-[#2e353b] mb-4 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
                     <div className="flex gap-1 min-w-max w-fit mx-auto px-4">
                         {tabs.map((tab) => {
                             const isDisabled = tab.requiresParse && !isParsed;

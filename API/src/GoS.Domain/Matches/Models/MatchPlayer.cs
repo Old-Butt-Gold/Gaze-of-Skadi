@@ -345,7 +345,7 @@ public class MatchPlayer
 	/// Gets a list describing permanent buffs the player had at the end of the game. List of constants can be found here: https://github.com/odota/dotaconstants/blob/master/json/permanent_buffs.json
 	/// </summary>
 	[JsonPropertyName("permanent_buffs")]
-	public List<PermanentBuff> PermanentBuffs { get; init; } = [];
+	public List<PermanentBuff>? PermanentBuffs { get; init; } = [];
 
 	/// <summary>
 	/// Gets a total number of pings

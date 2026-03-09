@@ -169,7 +169,7 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({ matchData }) => {
                         </span>
 
                         <div className="flex flex-col items-center gap-1">
-                            <span className="text-xl font-bold text-[#58606e] tracking-widest opacity-50">
+                            <span className="text-xl font-bold text-[#58606e] tracking-widest">
                                 VS
                             </span>
                         </div>

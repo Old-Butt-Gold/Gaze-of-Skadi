@@ -291,7 +291,7 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
     const activeFilterCount = Object.keys(localFilters).length;
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl mb-6 relative z-40">
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl shadow-xl mb-3 relative z-40">
             <div
                 className={clsx(
                     "flex items-center justify-between p-4 cursor-pointer hover:bg-[#1a1d24] transition-colors",
