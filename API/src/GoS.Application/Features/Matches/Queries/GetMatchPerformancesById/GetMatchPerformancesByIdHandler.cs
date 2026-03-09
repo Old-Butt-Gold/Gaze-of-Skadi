@@ -32,10 +32,10 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IResourceM
     private static PerformanceDataDto GetPerformanceForPlayer(Dictionary<string, HeroInfo> heroes, MatchPlayer player) =>
         new()
         {
-            MultiKills = player.MultiKills.Keys.Count > 0 
+            MultiKills = player.MultiKills.Keys.Count > 0
                         ? int.Parse(player.MultiKills.Keys.Max()!)
                         : null,
-            KillStreaks = player.KillStreaks.Keys.Count > 0 
+            KillStreaks = player.KillStreaks.Keys.Count > 0
                         ? int.Parse(player.KillStreaks.Keys.Max()!)
                         : null,
             StunsDuration = player.Stuns,
@@ -44,7 +44,7 @@ internal sealed class GetMatchPerformancesByIdHandler(ISender sender, IResourceM
             PurchasedTpscroll = player.PurchaseTpscroll,
             Buybacks = player.BuybackCount,
             Pings = player.Pings,
-            MaxHeroHit = player.MaxHeroHit is null 
+            MaxHeroHit = player.MaxHeroHit is null
                         ? null
                         : new MaxHeroHitDto
                         {

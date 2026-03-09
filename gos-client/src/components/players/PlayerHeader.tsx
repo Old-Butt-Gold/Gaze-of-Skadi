@@ -54,7 +54,7 @@ export const PlayerHeader: React.FC<Props> = ({ player }) => {
     const { profile } = player;
 
     return (
-        <div className="relative w-full bg-[#15171c] border-b border-[#2e353b] overflow-visible z-20"> {/* overflow-visible is key for dropdowns */}
+        <div className="relative w-full bg-[#15171c] border-b border-[#2e353b] overflow-visible z-50"> {/* overflow-visible is key for dropdowns */}
 
             {/* Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0f1114] via-[#15171c] to-transparent pointer-events-none z-0" />
