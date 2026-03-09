@@ -75,11 +75,6 @@ public class PlayerEndpointParameters
 	/// </summary>
 	public List<int>? AgainstHeroIds { get; set; }
 
-	/// <summary>
-	/// Gets the minimum number of games played, for filtering hero stats.
-	/// </summary>
-	public int? Having { get; set; }
-
     public List<int>? IncludedPlayersIds { get; set; }
 
     /// <summary>

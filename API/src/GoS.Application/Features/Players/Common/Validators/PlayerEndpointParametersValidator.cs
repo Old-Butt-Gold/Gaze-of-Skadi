@@ -36,18 +36,13 @@ public class PlayerEndpointParametersValidator : AbstractValidator<IPlayerEndpoi
             .WithMessage("IsRadiant must be 0 (dire) or 1 (radiant).");
 
         RuleFor(x => x.Parameters.PartySize)
-            .Must(v => v is null or > 1 and < 5)
+            .Must(v => v is null or >= 1 and <= 5)
             .WithMessage("PartySize must be between 1 and 5.");
 
         RuleFor(x => x.Parameters.Date)
             .InclusiveBetween(0, MaxDateDays)
             .When(x => x.Parameters is { Date: not null })
             .WithMessage($"Date must be between 0 and {MaxDateDays} days.");
-
-        RuleFor(x => x.Parameters.Having)
-            .GreaterThanOrEqualTo(0)
-            .When(x => x.Parameters is { Having: not null })
-            .WithMessage("Having must be greater than or equal to 0.");
 
         RuleFor(x => x.Parameters.Project)
             .Must(list => list is not { Count: > MaxProjectionCount })

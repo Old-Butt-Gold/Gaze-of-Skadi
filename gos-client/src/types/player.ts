@@ -21,7 +21,6 @@ export interface PlayerEndpointParameters {
   isRadiant?: BooleanState;
   withHeroIds?: number[];
   againstHeroIds?: number[];
-  having?: number; // minimum games
   includedPlayersIds?: number[];
   partySize?: number;
 }

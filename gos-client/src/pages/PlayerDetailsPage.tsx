@@ -5,6 +5,7 @@ import { usePlayer } from '../hooks/queries/usePlayer';
 import { LoadingSpinner } from '../components/ui/LoadingSpinner';
 import { NotFoundPage } from './NotFoundPage';
 import { PlayerHeader } from '../components/players/PlayerHeader';
+import { PlayerFiltersPanel } from '../components/players/PlayerFiltersPanel'; // <--- ИМПОРТ
 import type { PlayerEndpointParameters } from '../types/player';
 import { BooleanState } from '../types/common';
 import { usePlayerWinLoss } from "../hooks/queries/usePlayerWinLoss";
@@ -29,7 +30,7 @@ export const PlayerDetailsPage: React.FC = () => {
 
     const activeTab = location.pathname.split('/').pop() as PlayerTabType;
 
-    const [filters, ] = useState<PlayerEndpointParameters>({});
+    const [filters, setFilters] = useState<PlayerEndpointParameters>({});
 
     const { data: player, isLoading, isError } = usePlayer(parsedId);
     const { data: wl } = usePlayerWinLoss(parsedId, filters, !!player);
@@ -70,6 +71,14 @@ export const PlayerDetailsPage: React.FC = () => {
             <PlayerHeader player={player} />
 
             <div className="mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+
+                <div className="mb-4">
+                    <PlayerFiltersPanel
+                        currentFilters={filters}
+                        onApply={setFilters}
+                    />
+                </div>
+
                 <div className="flex border-b border-[#2e353b] mb-8 overflow-x-auto no-scrollbar scroll-smooth items-center justify-start">
                     <div className="flex gap-1 min-w-max w-fit mx-auto px-4">
                         {tabs.map((tab) => (
@@ -88,10 +97,9 @@ export const PlayerDetailsPage: React.FC = () => {
                     {isPrivate ? (
                         <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#2e353b] rounded-3xl bg-[#15171c]/50">
                             <span className="text-6xl mb-4 opacity-50 grayscale">🔒</span>
-                            <h2 className="text-2xl font-bold text-white mb-2">Private Profile</h2>
+                            <h2 className="text-2xl font-bold text-white mb-2">Private Profile or No Matches</h2>
                             <p className="text-[#808fa6] max-w-md text-center leading-relaxed px-4">
-                                This player has not exposed their match data to public API.
-                                <br/>We cannot retrieve match history or statistics.
+                                This player has not exposed their match data to public API, or no matches match the current filters.
                             </p>
                         </div>
                     ) : (
@@ -110,7 +118,7 @@ const TabButton = ({ label, to, isActive, disabled }: { label: string, to: strin
         className={clsx(
             "px-6 py-4 text-sm font-bold uppercase tracking-widest border-b-2 transition-all duration-300 whitespace-nowrap",
             isActive
-                ? "border-[#e7d291] text-[#e7d291] bg-gradient-to-t from-[#e7d291]/10 to-transparent"
+                ? "border-[#e7d291] text-[#e7d291] bg-linear-to-t from-[#e7d291]/10 to-transparent"
                 : "border-transparent text-[#808fa6] hover:text-white hover:bg-[#1a1d24]",
             disabled && "opacity-50 cursor-not-allowed hover:bg-transparent hover:text-[#808fa6]"
         )}

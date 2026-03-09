@@ -1,4 +1,5 @@
 ﻿import axios from 'axios';
+import qs from 'qs';
 
 export const apiClient = axios.create({
   baseURL: 'https://localhost:7048/api',
@@ -6,6 +7,9 @@ export const apiClient = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  paramsSerializer: (params) => {
+    return qs.stringify(params, { arrayFormat: 'repeat' });
+  }
 });
 
 // Интерцептор для обработки ответов (опционально, но полезно)
