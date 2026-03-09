@@ -77,19 +77,19 @@ const DIRE_BUILDINGS: BuildingConfig[] = [
 ];
 
 const RADIANT_HERO_POSITIONS: Record<number, {x: number, y: number}[]> = {
-    1: [{x: 82, y: 92}, {x: 86, y: 90}, {x: 78, y: 94}], // Safe (Bottom)
-    2: [{x: 36, y: 62}, {x: 32, y: 66}],                 // Mid
-    3: [{x: 10, y: 30}, {x: 14, y: 32}, {x: 14, y: 24}], // Offlane (Top)
-    4: [{x: 35, y: 80}, {x: 40, y: 75}],                 // Jungle
-    0: [{x: 8, y: 88}, {x: 12, y: 92}]                   // Roam / Unknown (Base)
+    1: [{x: 82, y: 92}, {x: 86, y: 90}, {x: 78, y: 94}, {x: 90, y: 88}, {x: 74, y: 96}], // Safe (Bottom)
+    2: [{x: 36, y: 62}, {x: 32, y: 66}, {x: 40, y: 58}, {x: 28, y: 70}, {x: 44, y: 54}], // Mid
+    3: [{x: 10, y: 30}, {x: 14, y: 32}, {x: 14, y: 24}, {x: 6,  y: 26}, {x: 18, y: 36}], // Offlane (Top)
+    4: [{x: 35, y: 80}, {x: 40, y: 75}, {x: 30, y: 85}, {x: 45, y: 70}, {x: 25, y: 88}], // Jungle
+    0: [{x: 8,  y: 88}, {x: 12, y: 92}, {x: 5,  y: 92}, {x: 15, y: 88}, {x: 8,  y: 96}]  // Roam / Unknown (Base)
 };
 
 const DIRE_HERO_POSITIONS: Record<number, {x: number, y: number}[]> = {
-    1: [{x: 22, y: 10}, {x: 26, y: 12}, {x: 18, y: 10}], // Safe (Top)
-    2: [{x: 60, y: 40}, {x: 58, y: 38}],                 // Mid
-    3: [{x: 92, y: 68}, {x: 88, y: 72}, {x: 92, y: 74}], // Offlane (Bottom)
-    4: [{x: 65, y: 18}, {x: 60, y: 22}],                 // Jungle
-    0: [{x: 92, y: 10}, {x: 88, y: 8}]                   // Roam / Unknown (Base)
+    1: [{x: 22, y: 10}, {x: 26, y: 12}, {x: 18, y: 10}, {x: 30, y: 14}, {x: 14, y: 8}],  // Safe (Top)
+    2: [{x: 60, y: 40}, {x: 58, y: 38}, {x: 64, y: 36}, {x: 54, y: 42}, {x: 68, y: 32}], // Mid
+    3: [{x: 92, y: 68}, {x: 88, y: 72}, {x: 92, y: 74}, {x: 84, y: 76}, {x: 96, y: 64}], // Offlane (Bottom)
+    4: [{x: 65, y: 18}, {x: 60, y: 22}, {x: 70, y: 14}, {x: 55, y: 26}, {x: 75, y: 10}], // Jungle
+    0: [{x: 92, y: 10}, {x: 88, y: 8},  {x: 95, y: 14}, {x: 85, y: 5},  {x: 90, y: 15}]  // Roam / Unknown (Base)
 };
 
 const TeamDraftCard: React.FC<{
