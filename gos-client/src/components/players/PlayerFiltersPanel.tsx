@@ -97,7 +97,7 @@ const HeroSearchDropdown: React.FC<{
                             placeholder="Search hero..."
                             value={search}
                             onChange={e => setSearch(e.target.value)}
-                            className="w-full bg-[#15171c] text-[#e3e3e3] border border-[#2e353b] rounded px-3 py-1.5 text-sm focus:outline-none focus:border-[#e7d291]"
+                            className="w-full bg-[#15171c] text-[#e3e3e3] border border-[#2e353b] rounded px-3 py-1.5 text-sm focus:outline-none"
                         />
                     </div>
                     <div className="max-h-60 overflow-y-auto no-scrollbar">
@@ -520,7 +520,7 @@ export const PlayerFiltersPanel: React.FC<Props> = ({ currentFilters, onApply })
                                     value={accIdInput}
                                     onChange={(e) => setAccIdInput(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleAddAccountId()}
-                                    className="w-full bg-transparent text-[#e3e3e3] px-3 py-2 text-sm focus:outline-none placeholder-[#58606e]"
+                                    className="w-full bg-transparent text-[#e3e3e3] px-3 py-2 text-sm focus:outline-none placeholder-[#e3e3e3]"
                                 />
                                 <button
                                     onClick={handleAddAccountId}
