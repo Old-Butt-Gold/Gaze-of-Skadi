@@ -90,9 +90,9 @@ const TeamfightMap: React.FC<{ tf: TeamfightDetailedDto; allPlayers: PlayerInfoD
                                 </div>
 
                                 {death.killers.length > 0 && (
-                                    <div className="flex flex-col gap-1 items-center justify-center p-2 rounded mt-1">
+                                    <div className="flex flex-col gap-1 items-center justify-center rounded mt-1">
                                         <span className="text-xs text-[#808fa6] uppercase font-bold">Killed By:</span>
-                                        <div className="flex flex-wrap items-center justify-center gap-2">
+                                        <div className="flex flex-col items-center justify-center gap-2 w-full overflow-hidden">
                                             {death.killers.map((k, i) => (
                                                 <MatchPlayerCell key={i} player={k} useIcon={false} />
                                             ))}
