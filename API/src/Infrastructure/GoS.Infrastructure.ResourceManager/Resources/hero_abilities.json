@@ -62,12 +62,12 @@
     "shard": {
       "shard_desc": "Creates a blinked fragment of Anti-Mage next to the enemy caster upon reflecting their unit-targeted spell while active.",
       "shard_skill_name": "antimage_counterspell",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/anti-mage/anti-mage_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/antimage/antimage_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "After casting Blink, your next Mana Break within 5s burns an additional 20% max mana and prevents the target from regenerating or gaining mana for a short duration. This debuff is undispellable. Blink Cooldown reduced by 1s.",
       "scepter_skill_name": "antimage_blink",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/anti-mage/anti-mage_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/antimage/antimage_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_axe": {
@@ -375,12 +375,12 @@
     "shard": {
       "shard_desc": "Slides in a direction, creating a crystal clone of herself in her place and disjointing incoming projectiles. If the clone takes enough damage or times out, it shatters, Frostbiting enemies in a 450 AoE around its place. The Clone can also be destroyed by Crystal Maiden's own spells.",
       "shard_skill_name": "crystal_maiden_crystal_clone",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/crystal maiden/crystal maiden_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/crystal_maiden/crystal_maiden_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Allows you to move, cast and attack during Freezing Field. Can still be interrupted by enemies. You move 75% slower during this. Increases total number of explosions by 20%. Applies Frostbite to any unit that has been standing in the Freezing Field for over 2s.",
       "scepter_skill_name": "crystal_maiden_freezing_field",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/crystal maiden/crystal maiden_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/crystal_maiden/crystal_maiden_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_drow_ranger": {
@@ -542,7 +542,6 @@
       "juggernaut_blade_fury",
       "juggernaut_healing_ward",
       "juggernaut_blade_dance",
-      "juggernaut_swift_slash",
       "juggernaut_duelist",
       "juggernaut_omni_slash"
     ],
@@ -1544,12 +1543,12 @@
     "shard": {
       "shard_desc": "Bounces once on an enemy, prioritizing heroes, within 75% of Magic Missile's current cast range from the first target.",
       "shard_skill_name": "vengefulspirit_magic_missile",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful_spirit/vengeful_spirit_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengefulspirit/vengefulspirit_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Upon death, creates a strong illusion of Vengeful Spirit that deals full damage, takes increased damage, and can cast all of her spells. If the illusion is alive when Vengeful Spirit respawn, she will take its place. XP earned by her illusion is given to her. Strong Illusions are not instantly killed by spells.",
       "scepter_skill_name": "vengefulspirit_command_aura",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengeful_spirit/vengeful_spirit_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/vengefulspirit/vengefulspirit_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_windrunner": {
@@ -3079,7 +3078,7 @@
       {
         "id": 2,
         "name": "faceless_void_time_zone",
-        "icon": "chrono_cube",
+        "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/chrono_cube.png",
         "color": "Purple",
         "title": "Time Zone",
         "description": "Faceless Void can cast Time Zone, dramatically slowing down enemies and speeding up allies in an area.",
@@ -3167,7 +3166,7 @@
     "shard": {
       "shard_desc": "This ability deals 50% more damage when its owner is in ghost form.",
       "shard_skill_name": "skeleton_king_mortal_strike",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skeleton_king/skeleton_king_aghanims_shard.jpg"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/skeleton_king/skeleton_king_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Grants the ability to transform fallen allied heroes into ghosts. Increases the duration of the ghost form.",
@@ -3263,7 +3262,6 @@
       "phantom_assassin_stifling_dagger",
       "phantom_assassin_phantom_strike",
       "phantom_assassin_blur",
-      "phantom_assassin_fan_of_knives",
       "phantom_assassin_immaterial",
       "phantom_assassin_coup_de_grace"
     ],
@@ -3864,12 +3862,12 @@
     "shard": {
       "shard_desc": "Clockwerk activates a jetpack, gaining flying movement, flying vision, and bonus movement speed. Clockwerk has a severely-limited turn rate during this time and cannot attack. Jetpack can be toggled on and off for the duration of the buff.",
       "shard_skill_name": "rattletrap_jetpack",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/clockwerk/clockwerk_aghanims_shard.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/rattletrap/rattletrap_aghanims_shard.webm"
     },
     "aghanim_scepter": {
       "scepter_desc": "Supercharges Clockwerks abilities: Battery Assault affects all enemies in its range; Clockwerk's attack speed in Power Cogs is increased; Rocket Flares have a reduced cooldown and fire additional rockets to either side of the target; Hookshot stun radius and duration is increased; Jetpack moves faster. Clockwerk's movement and attack speed becomes slowed to a crawl after the duration runs out.",
       "scepter_skill_name": "rattletrap_overclocking",
-      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/clockwerk/clockwerk_aghanims_scepter.webm"
+      "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/rattletrap/rattletrap_aghanims_scepter.webm"
     }
   },
   "npc_dota_hero_leshrac": {
@@ -6477,7 +6475,7 @@
       "ogre_magi_fireblast",
       "ogre_magi_ignite",
       "ogre_magi_bloodlust",
-      "ogre_magi_dumb_l_ck",
+      "ogre_magi_dumb_luck",
       "ogre_magi_multicast"
     ],
     "talents": [
@@ -7158,7 +7156,6 @@
       "slark_dark_pact",
       "slark_pounce",
       "slark_saltwater_shiv",
-      "slark_depth_shroud",
       "slark_essence_shift",
       "slark_shadow_dance"
     ],
@@ -7577,7 +7574,6 @@
       "shredder_timber_chain",
       "shredder_reactive_armor",
       "shredder_chakram",
-      "shredder_return_chakram",
       "shredder_exposure_therapy"
     ],
     "talents": [
@@ -7631,8 +7627,7 @@
         "title": "Twisted Chakram",
         "description": "Launches a second independent Chakram that follows a curved path and returns to Timbersaw, damaging and slowing enemies it passes through. Enemies caught in the saw blade will move more slowly for every 5% of health missing.",
         "abilities": [
-          "shredder_twisted_chakram",
-          "shredder_return_chakram_2"
+          "shredder_twisted_chakram"
         ]
       }
     ],
@@ -8918,7 +8913,6 @@
       "pangolier_swashbuckle",
       "pangolier_shield_crash",
       "pangolier_lucky_shot",
-      "pangolier_rollup",
       "pangolier_gyroshell",
       "pangolier_gyroshell_stop",
       "pangolier_rollup_stop",
@@ -9810,11 +9804,11 @@
   },
   "npc_dota_hero_ringmaster": {
     "abilities": [
+      "ringmaster_dark_carnival_souvenirs",
       "ringmaster_tame_the_beasts",
       "ringmaster_the_box",
       "ringmaster_impalement",
       "ringmaster_empty_souvenir",
-      "ringmaster_spotlight",
       "ringmaster_wheel",
       "ringmaster_tame_the_beasts_crack"
     ],
