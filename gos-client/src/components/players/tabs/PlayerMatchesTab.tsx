@@ -1,6 +1,6 @@
 ﻿import React, { useMemo, useState } from 'react';
 import clsx from 'clsx';
-import {Link, useOutletContext} from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import { usePlayerMatches } from '../../../hooks/queries/usePlayerMatches';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
@@ -23,7 +23,7 @@ import { isTeamWon } from '../../../utils/matchUtils';
 import type { PlayerMatchDto } from '../../../types/playerMatches';
 import { getLaneConfig } from "../../../utils/scenariosUtils";
 import PartySizeIcon from "../PartySizeIcon";
-import { PlayerSlot } from "../../../types/common";
+import { PlayerSlot, BooleanState } from "../../../types/common";
 import { Icon } from "../../Icon.tsx";
 import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
 
@@ -32,18 +32,27 @@ const ITEMS_PER_PAGE = 20;
 export const PlayerMatchesTab: React.FC = () => {
     const { accountId, filters } = useOutletContext<PlayerOutletContext>();
     const { data: matches, isLoading, isError, refetch } = usePlayerMatches(accountId, filters);
+
     const [currentPage, setCurrentPage] = useState(1);
+    const [showParsedOnly, setShowParsedOnly] = useState(false);
 
-    const { paginatedMatches, totalPages } = useMemo(() => {
-        if (!matches) return { paginatedMatches: [], totalPages: 0 };
+    const { paginatedMatches, totalPages, totalFiltered } = useMemo(() => {
+        if (!matches) return { paginatedMatches: [], totalPages: 0, totalFiltered: 0 };
 
-        const sorted = [...matches].sort((a, b) => b.startTime - a.startTime);
-        const total = Math.ceil(sorted.length / ITEMS_PER_PAGE);
+        const filteredMatches = showParsedOnly
+            ? matches.filter(m => m.isMatchParsed.value === BooleanState.True)
+            : matches;
+
+        const total = Math.ceil(filteredMatches.length / ITEMS_PER_PAGE);
         const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const sliced = sorted.slice(start, start + ITEMS_PER_PAGE);
+        const sliced = filteredMatches.slice(start, start + ITEMS_PER_PAGE);
 
-        return { paginatedMatches: sliced, totalPages: total };
-    }, [matches, currentPage]);
+        return {
+            paginatedMatches: sliced,
+            totalPages: total,
+            totalFiltered: filteredMatches.length
+        };
+    }, [matches, currentPage, showParsedOnly]);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
@@ -56,23 +65,55 @@ export const PlayerMatchesTab: React.FC = () => {
 
     return (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500" id="matches-list-top">
-            <div className="flex justify-between items-end mb-6 px-2">
-                <h3 className="text-xl font-serif font-bold text-white uppercase tracking-widest">
-                    Match History
-                </h3>
-                <span className="text-xs text-[#58606e] font-bold uppercase tracking-wider">
-                    {matches.length} Records
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 px-2">
+                <div className="flex flex-wrap items-center gap-4">
+                    <h3 className="text-xl font-serif font-bold text-white uppercase tracking-widest">
+                        Match History
+                    </h3>
+
+                    <button
+                        onClick={() => {
+                            setShowParsedOnly(!showParsedOnly);
+                            setCurrentPage(1);
+                        }}
+                        className={clsx(
+                            "flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs font-bold uppercase tracking-wider transition-all",
+                            showParsedOnly
+                                ? "bg-[#e7d291]/10 border-[#e7d291]/50 text-[#e7d291] shadow-inner"
+                                : "bg-[#0f1114] border-[#2e353b] text-[#58606e] hover:border-[#4a5568] hover:text-[#808fa6]"
+                        )}
+                        title="Show only matches that have been fully parsed for advanced statistics"
+                    >
+                        <div className={clsx(
+                            "w-2.5 h-2.5 rounded-full transition-colors",
+                            showParsedOnly ? "bg-[#e7d291]" : "bg-[#2e353b]"
+                        )} />
+                        Parsed Only
+                    </button>
+                </div>
+
+                <span className="text-xs text-[#58606e] font-bold uppercase tracking-wider shrink-0">
+                    {totalFiltered} Records
                 </span>
             </div>
 
-            <div className="flex flex-col gap-4">
-                {paginatedMatches.map((match) => (
-                    <MatchCard key={match.matchId} match={match} />
-                ))}
-            </div>
+            {paginatedMatches.length > 0 ? (
+                <div className="flex flex-col gap-4">
+                    {paginatedMatches.map((match) => (
+                        <MatchCard key={match.matchId} match={match} />
+                    ))}
+                </div>
+            ) : (
+                <div className="text-center text-[#808fa6] py-12 bg-[#15171c] rounded-xl border border-[#2e353b]">
+                    <span className="text-4xl mb-3 block opacity-50">📂</span>
+                    No parsed matches found with the current global filters.
+                    <br />
+                    Try disabling the "Parsed Only" toggle.
+                </div>
+            )}
 
             {totalPages > 1 && (
-                <div className="mt-8 border-t border-[#2e353b] pt-4">
+                <div className="pt-4">
                     <Pagination
                         currentPage={currentPage}
                         totalPages={totalPages}
