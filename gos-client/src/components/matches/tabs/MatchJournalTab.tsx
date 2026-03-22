@@ -137,13 +137,18 @@ const ObjectiveEventRow: React.FC<{ event: ObjectiveEventDto; allPlayers: Player
             );
         case ObjectiveType.ChatMessageAegis:
         case ObjectiveType.ChatMessageAegisStolen:
+        case ObjectiveType.ChatMessageAegisDenied:
             return (
                 <div className={rowClass}>
                     {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
                     <div className={innerRowClass}>
-                        <span className="text-sm text-[#e7d291] font-bold uppercase tracking-widest">
-                            {type === ObjectiveType.ChatMessageAegisStolen ? "Stole Aegis" : "Picked up Aegis"}
-                        </span>
+                <span className="text-sm text-[#e7d291] font-bold uppercase tracking-widest">
+                    {type === ObjectiveType.ChatMessageAegisStolen
+                        ? "Aegis Stolen"
+                        : type === ObjectiveType.ChatMessageAegisDenied
+                            ? "Aegis Denied"
+                            : "Aegis Picked Up"}
+                </span>
                         <Icon src="/assets/images/aegis_icon.png" size={8} alt="Aegis" />
                     </div>
                 </div>

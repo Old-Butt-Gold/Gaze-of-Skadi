@@ -16,7 +16,8 @@ export const ObjectiveType = {
   ChatMessageAegis: 3,
   ChatMessageCourierLost: 4,
   ChatMessageAegisStolen: 5,
-  ChatMessageTormentorKill: 6,
+  ChatMessageAegisDenied: 6,
+  ChatMessageTormentorKill: 7,
 } as const;
 
 export type ObjectiveType = typeof ObjectiveType[keyof typeof ObjectiveType];

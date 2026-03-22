@@ -22,6 +22,9 @@ public enum ObjectiveType
     [JsonPropertyName("CHAT_MESSAGE_AEGIS_STOLEN")]
     ChatMessageAegisStolen,
 
+    [JsonPropertyName("CHAT_MESSAGE_DENIED_AEGIS")]
+    ChatMessageAegisDenied,
+
     [JsonPropertyName("CHAT_MESSAGE_MINIBOSS_KILL")]
     ChatMessageTormentorKill,
 }
