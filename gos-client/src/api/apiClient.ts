@@ -2,7 +2,7 @@
 import qs from 'qs';
 
 export const apiClient = axios.create({
-  baseURL: 'https://localhost:7048/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
