@@ -4,7 +4,7 @@ import cloud from 'd3-cloud';
 import { scaleOrdinal } from 'd3-scale';
 import { select } from 'd3-selection';
 import 'd3-transition';
-import { usePlayerWordCloud } from '../../../hooks/queries/usePlayerWordCloud';
+import { usePlayerWordCloud } from '../../../hooks/queries/usePlayerWordCloud.ts';
 import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import {useOutletContext} from "react-router-dom";
 import type {PlayerOutletContext} from "../../../pages/PlayerDetailsPage.tsx";
