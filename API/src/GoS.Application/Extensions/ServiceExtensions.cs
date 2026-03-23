@@ -62,7 +62,7 @@ public static class ServiceExtensions
         }, typeof(AssemblyReference).Assembly);
     }
 
-    public static IHttpClientBuilder AddResilientHttpClient<TClientInterface, TClient, TOptions>(this IServiceCollection services, string pipelineName, 
+    public static IHttpClientBuilder AddResilientHttpClient<TClientInterface, TClient, TOptions>(this IServiceCollection services, string pipelineName,
         Action<IServiceProvider, HttpClient>? configureClient = null)
         where TClientInterface : class
         where TClient : class, TClientInterface
@@ -103,6 +103,7 @@ public static class ServiceExtensions
                 ShouldHandle = static args => args.Outcome switch
                 {
                     { Exception: HttpRequestException } => PredicateResult.True(),
+                    { Exception: TaskCanceledException } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.TooManyRequests } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.ServiceUnavailable } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.GatewayTimeout } => PredicateResult.True(),
@@ -121,6 +122,7 @@ public static class ServiceExtensions
                 ShouldHandle = static args => args.Outcome switch
                 {
                     { Exception: HttpRequestException } => PredicateResult.True(),
+                    { Exception: TaskCanceledException } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.ServiceUnavailable } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.GatewayTimeout } => PredicateResult.True(),
                     _ => PredicateResult.False()

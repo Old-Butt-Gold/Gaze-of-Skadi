@@ -22,9 +22,13 @@ export const searchService = {
       return apiClient.get(`/search/proplayers?q=${q}`);
     },
 
-    getPublicMatches: async (params: PublicMatchesParams): Promise<PublicMatchDto[]> => {
-      return apiClient.get('/search/public', { params });
-    },
+   getPublicMatches: async (params: PublicMatchesParams): Promise<PublicMatchDto[]> => {
+     const cleanParams = Object.fromEntries(
+       Object.entries(params).filter(([, value]) => value != null && value !== '')
+     );
+
+     return apiClient.get('/search/public', { params: cleanParams });
+   },
 
   getProMatches: async (lessThanMatchId?: number | null): Promise<ProMatchDto[]> => {
     const params = lessThanMatchId ? { lessThanMatchId } : {};
