@@ -180,7 +180,10 @@ public enum Patch
 
     [Description("2025-05-22T23:36:01.602Z")]
     v7_39 = 58,
-    
+
     [Description("2025-12-16T00:50:40.281Z")]
     v7_40 = 59,
+
+    [Description("2026-03-24T00:50:59.580Z")]
+    v7_41 = 60,
 }
