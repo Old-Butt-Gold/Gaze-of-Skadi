@@ -3570,8 +3570,9 @@
       "Nuker",
       "Initiator"
     ],
-    "img": "/apps/dota2/images/dota_react/heroes/disruptor.png?",
-    "icon": "/apps/dota2/images/dota_react/heroes/icons/disruptor.png?",
+    "img": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+    "icon": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/icons/disruptor.png",
+    "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/disruptor.webm",
     "base_health": 120,
     "base_health_regen": 0.25,
     "base_mana": 75,

@@ -61527,6 +61527,7 @@
   },
   "oracle_prognosticate": {
     "dname": "Prognosticate",
+    "desc": "The hero can predict and reveal to allies the location of the next Power Rune, as well as the exact respawn time of Roshan.",
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [],
@@ -70525,6 +70526,7 @@
   },
   "muerta_supernatural": {
     "dname": "Supernatural",
+    "desc": "When an enemy hero dies within a 925 radius, the ability owner gains one stack, granting +1% spell damage. Upon death, the owner loses half of their stacks (rounded down).",
     "is_innate": true,
     "behavior": "Passive",
     "attrib": [],

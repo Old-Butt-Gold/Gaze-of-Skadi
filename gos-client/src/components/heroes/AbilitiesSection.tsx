@@ -217,9 +217,11 @@ export const AbilitiesSection: React.FC<Props> = ({ heroAbilities }) => {
                         </div>
 
                         {/* Description */}
-                        {selectedAbility.desc !== null && selectedAbility.desc !== "" && (<p className="text-[#e3e3e3] text-sm md:text-base leading-relaxed bg-[#0f1114]/50 p-4 rounded border border-[#2e353b] mb-6">
-                            {selectedAbility.desc}
-                        </p>)}
+                        {selectedAbility.desc !== null && selectedAbility.desc !== "" && (
+                            <p className="text-[#e3e3e3] text-sm md:text-base leading-relaxed bg-[#0f1114]/50 p-4 rounded border border-[#2e353b] mb-6 whitespace-pre-line">
+                                {selectedAbility.desc}
+                            </p>
+                        )}
 
                         {/* Stats Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-xs md:text-sm font-bold text-[#808fa6] mb-6">
