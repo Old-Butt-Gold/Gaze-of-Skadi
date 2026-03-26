@@ -260,6 +260,7 @@ export const Patch = {
   v7_38: 57,
   v7_39: 58,
   v7_40: 59,
+  v7_41: 60,
 } as const;
 export type Patch = typeof Patch[keyof typeof Patch];
 

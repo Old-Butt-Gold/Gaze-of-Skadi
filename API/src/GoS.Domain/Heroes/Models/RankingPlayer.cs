@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using GoS.Domain.BaseEnums;
 
 namespace GoS.Domain.Heroes.Models;
 
@@ -47,5 +48,5 @@ public class RankingPlayer
 	/// Gets rank tier of the player.
 	/// </summary>
 	[JsonPropertyName("rank_tier")]
-	public int RankTier { get; init; }
+	public Rank? RankTier { get; init; }
 }

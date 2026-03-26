@@ -8554,10 +8554,11 @@
     "abilities": [
       "techies_sticky_bomb",
       "techies_reactive_tazer",
+      "techies_reactive_tazer_stop",
       "techies_suicide",
       "techies_mutually_assured_destruction",
-      "techies_land_mines",
-      "techies_reactive_tazer_stop"
+      "techies_focused_detonate",
+      "techies_land_mines"
     ],
     "talents": [
       {

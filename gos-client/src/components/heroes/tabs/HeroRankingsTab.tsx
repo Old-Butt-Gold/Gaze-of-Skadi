@@ -137,7 +137,7 @@ export const HeroRankingsTab: React.FC = () => {
                                     <td className="px-6 py-3 text-center align-middle">
                                         <div className="flex justify-center scale-110">
                                             <RankIcon
-                                                rank={player.rankTier}
+                                                rank={player.rankTier?.value}
                                                 size={10}
                                             />
                                         </div>

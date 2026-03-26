@@ -1,4 +1,7 @@
-﻿namespace GoS.Application.Features.Heroes.Queries.GetHeroRanking;
+﻿using GoS.Application.Dto;
+using GoS.Domain.BaseEnums;
+
+namespace GoS.Application.Features.Heroes.Queries.GetHeroRanking;
 
 public class HeroRankingDto
 {
@@ -16,6 +19,6 @@ public class RankingPlayerDto
 
     public Uri? Avatar { get; init; }
 
-    public int RankTier { get; init; }
+    public BaseEnumDto<Rank>? RankTier { get; init; }
 }
 

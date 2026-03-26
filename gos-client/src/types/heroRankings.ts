@@ -1,11 +1,11 @@
-﻿import type {Rank} from "./common.ts";
+﻿import type {BaseEnum, Rank} from "./common.ts";
 
 export interface RankingPlayerDto {
   accountId: number;
   score: number;
   personaName: string;
   avatar: string | null;
-  rankTier: Rank;
+  rankTier: BaseEnum<Rank> | null;
 }
 
 export interface HeroRankingDto {
