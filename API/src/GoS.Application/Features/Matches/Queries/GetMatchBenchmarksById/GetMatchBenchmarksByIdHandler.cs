@@ -17,7 +17,6 @@ internal sealed class GetMatchBenchmarksByIdHandler(ISender sender)
             return null;
         }
 
-        // TODO on old matches return dire team first (matchId: 3077089495)
         return match.Players.Select(player => ExtractBenchmarks(player.Benchmarks))
             .Select((benchmarks, index) =>
                 new PlayerBenchmarkDto

@@ -60,18 +60,6 @@ public class ProMatch
 	public string LeagueName { get; init; } = string.Empty;
 
 	/// <summary>
-	/// Gets identifier for the series of the match.
-	/// </summary>
-	[JsonPropertyName("series_id")]
-	public long? SeriesId { get; init; }
-
-	/// <summary>
-	/// Gets type of series the match was.
-	/// </summary>
-	[JsonPropertyName("series_type")]
-	public long? SeriesType { get; init; }
-
-	/// <summary>
 	/// Gets the number of kills the Radiant team had when the match ended.
 	/// </summary>
 	[JsonPropertyName("radiant_score")]

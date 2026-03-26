@@ -8,12 +8,6 @@ namespace GoS.Domain.Matches.Models;
 public class Cosmetic
 {
 	/// <summary>
-	/// Gets the creation date
-	/// </summary>
-	[JsonPropertyName("creation_date")]
-	public DateTimeOffset? CreationDate { get; init; }
-
-	/// <summary>
 	/// Gets the image path
 	/// </summary>
 	[JsonPropertyName("image_path")]

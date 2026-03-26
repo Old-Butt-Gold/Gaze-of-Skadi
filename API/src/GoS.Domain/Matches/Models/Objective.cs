@@ -33,16 +33,4 @@ public class Objective
 	/// </summary>
 	[JsonPropertyName("key")]
 	public JsonElement? Key { get; init; }
-
-	/// <summary>
-	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
-	/// </summary>
-	[JsonPropertyName("player_slot")]
-	public PlayerSlot? PlayerSlot { get; init; }
-
-	/// <summary>
-	/// Gets which unit got the objective
-	/// </summary>
-	[JsonPropertyName("unit")]
-	public string? Unit { get; init; }
 }

@@ -8,13 +8,13 @@ public class BenchmarkDto
 
 public class BenchmarkResultDto
 {
-    public List<BenchmarkValueDto> GoldPerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> XpPerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> KillsPerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> LastHitPerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> HeroDamagePerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> HeroHealingPerMinutes { get; set; } = [];
-    public List<BenchmarkValueDto> TowerDamage { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> GoldPerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> XpPerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> KillsPerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> LastHitPerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> HeroDamagePerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> HeroHealingPerMinutes { get; set; } = [];
+    public IEnumerable<BenchmarkValueDto> TowerDamage { get; set; } = [];
 }
 
 public class BenchmarkValueDto

@@ -25,7 +25,7 @@ internal sealed class GetMatchChatByIdHandler(ISender sender, IMapper mapper, IR
     {
         foreach (var chat in match.Chat.OrderBy(x => x.Time))
         {
-            int index = (int)chat.Slot;
+            var index = chat.Slot;
 
             switch (chat.Type)
             {

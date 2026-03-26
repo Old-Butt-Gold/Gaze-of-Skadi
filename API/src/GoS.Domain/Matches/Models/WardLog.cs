@@ -28,24 +28,6 @@ public class WardLog
 	public BooleanState EntityLeft { get; init; }
 
 	/// <summary>
-	/// Gets a key
-	/// </summary>
-	[JsonPropertyName("key")]
-	public string Key { get; init; } = string.Empty;
-
-	/// <summary>
-	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
-	/// </summary>
-	[JsonPropertyName("player_slot")]
-	public PlayerSlot PlayerSlot { get; init; }
-
-	/// <summary>
-	/// Gets a slot
-	/// </summary>
-	[JsonPropertyName("slot")]
-	public PlayerSlotSequence Slot { get; init; }
-
-	/// <summary>
 	/// Gets a time
 	/// </summary>
 	[JsonPropertyName("time")]

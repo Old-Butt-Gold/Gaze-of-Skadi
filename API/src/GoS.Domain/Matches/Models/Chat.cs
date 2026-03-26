@@ -1,5 +1,4 @@
 ﻿using System.Text.Json.Serialization;
-using GoS.Domain.BaseEnums;
 using GoS.Domain.Matches.Enums;
 
 namespace GoS.Domain.Matches.Models;
@@ -31,12 +30,5 @@ public class Chat
 	/// Gets the slot of the player
 	/// </summary>
 	[JsonPropertyName("slot")]
-	public PlayerSlotSequence Slot { get; init; }
-
-	/// <summary>
-	/// Gets which slot the player is in. 0-127 are Radiant, 128-255 are Dire.
-	/// </summary>
-	[JsonPropertyName("player_slot")]
-	public PlayerSlot PlayerSlot { get; init; }
+	public int Slot { get; init; }
 }
-

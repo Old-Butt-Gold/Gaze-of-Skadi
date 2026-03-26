@@ -53,12 +53,6 @@ public class PublicMatch
 	public Rank AvgRankTier { get; init; }
 
 	/// <summary>
-	/// Gets number of rank tiers in the match.
-	/// </summary>
-	[JsonPropertyName("num_rank_tier")]
-	public int NumRankTier { get; init; }
-
-	/// <summary>
 	/// Gets a list of player IDs in the radiant team.
 	/// </summary>
 	[JsonPropertyName("radiant_team")]
