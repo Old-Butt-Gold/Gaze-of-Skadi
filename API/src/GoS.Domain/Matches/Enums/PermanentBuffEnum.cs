@@ -20,4 +20,7 @@ public enum PermanentBuffEnum
     PowerCapture = 17,
     Cutpurse = 18,
     TrackGold = 19,
+    EldwurmsEdda = 22,
+    Curiosity = 23,
+    LeviathansCatch = 24,
 }
