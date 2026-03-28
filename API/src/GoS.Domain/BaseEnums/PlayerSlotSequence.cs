@@ -5,6 +5,7 @@
 /// </summary>
 public enum PlayerSlotSequence
 {
+    Unknown = -1,
     PlayerRadiant1 = 0,
     PlayerRadiant2,
     PlayerRadiant3,

@@ -309,6 +309,7 @@ const PATCH_MAP_IMAGES: Record<Patch, string> = {
   [Patch.v7_38]: "/assets/images/detailed_738.webp",
   [Patch.v7_39]: "/assets/images/detailed_738.webp",
   [Patch.v7_40]: "/assets/images/detailed_740.webp",
+  [Patch.v7_41]: "/assets/images/detailed_740.webp",
 };
 
 export const getMapImageForPatch = (patch?: Patch | null): string => {

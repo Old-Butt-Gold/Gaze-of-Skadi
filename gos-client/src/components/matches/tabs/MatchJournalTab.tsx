@@ -194,6 +194,26 @@ const ObjectiveEventRow: React.FC<{ event: ObjectiveEventDto; allPlayers: Player
                 }
                 return null;
             }
+        case ObjectiveType.ChatMessageCourierLost:
+        {
+            const isCourierRadiant = event.targetTeam
+                ? event.targetTeam.value === TeamEnum.Radiant
+                : (player ? isRadiantTeam(player.isRadiant) : true);
+
+            const courierIcon = isCourierRadiant
+                ? "/assets/images/radiant_courier_icon.png"
+                : "/assets/images/dire_courier_icon.png";
+
+            return (
+                <div className={rowClass}>
+                    {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
+                    <div className={innerRowClass}>
+                        <span className="text-sm text-red-400 font-bold uppercase tracking-widest">Killed Courier</span>
+                        <Icon src={courierIcon} size={8} alt="Courier" />
+                    </div>
+                </div>
+            );
+        }
         default:
             return null;
     }

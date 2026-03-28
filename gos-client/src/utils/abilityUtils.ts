@@ -68,7 +68,8 @@ const INNATE_ICONS = new Set([
   "venomancer_poison_sting",
   "visage_silent_as_the_grave",
   "windrunner_tailwind",
-  "winter_wyvern_eldwurms_edda"
+  "winter_wyvern_eldwurms_edda",
+  "tidehunter_krill_eater"
 ]);
 
 export const getAbilityIconUrl = (abilityKey: string | null, is_innate : BooleanState | null, originalImg : string | null)  => {

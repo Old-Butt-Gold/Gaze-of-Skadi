@@ -66,7 +66,7 @@ const StackedBarRecharts: React.FC<{
     maxDomain: number;
 }> = ({ title, reasons, dictionary, isGold, maxDomain }) => {
     const data = useMemo(() => {
-        const positive = reasons.map(r => ({ ...r, amount: Math.abs(r.amount) })).filter(r => r.amount > 0).sort((a, b) => b.amount - a.amount);
+        const positive = reasons.map(r => ({ ...r, amount: r.amount })).sort((a, b) => b.amount - a.amount);
         const total = positive.reduce((sum, r) => sum + r.amount, 0);
 
         const chartData = positive.map(r => {
@@ -199,8 +199,8 @@ export const MatchEarningsTab: React.FC = () => {
             earningsData.forEach(d => {
                 map.set(d.playerIndex, d);
 
-                const playerGold = d.goldReasons.reduce((acc, r) => acc + Math.abs(r.amount), 0);
-                const playerXp = d.xpReasons.reduce((acc, r) => acc + Math.abs(r.amount), 0);
+                const playerGold = d.goldReasons.reduce((acc, r) => acc + r.amount, 0);
+                const playerXp = d.xpReasons.reduce((acc, r) => acc + r.amount, 0);
 
                 if (playerGold > maxG) maxG = playerGold;
                 if (playerXp > maxX) maxX = playerXp;

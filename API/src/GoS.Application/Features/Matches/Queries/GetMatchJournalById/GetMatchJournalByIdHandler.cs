@@ -45,8 +45,6 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<ObjectiveEventDto> MapObjectives(IEnumerable<Objective> objectives, IReadOnlyList<MatchPlayer> players)
     {
-        objectives = objectives.Where(x => x.Type != ObjectiveType.ChatMessageCourierLost);
-
         List<ObjectiveEventDto> objectiveEventDtos = [];
         foreach (var objective in objectives)
         {
@@ -117,6 +115,17 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                     }
                 }
             }
+            else if (objective.Type == ObjectiveType.ChatMessageCourierLost)
+            {
+                objectiveEventDtos.Add(new ObjectiveEventDto
+                {
+                    Time = objective.Time.Value,
+                    Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
+                    PlayerIndex = objective.Killer!.Value <= PlayerSlot.PlayerRadiant5 ? (int)objective.Killer.Value : (int) PlayerSlot.PlayerRadiant5 + (int)objective.Killer!.Value - (int) PlayerSlot.PlayerDire1 + 1,
+                    Target = null,
+                    TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(IsInRadiantTeam(objective.Killer!.Value) ? TeamEnum.Dire : TeamEnum.Radiant),
+                });
+            }
             else
             {
                 objectiveEventDtos.Add(new ObjectiveEventDto
@@ -175,4 +184,11 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
                 PlayerIndex = index
             }))
             .OrderBy(x => x.Time);
+
+    private static bool IsInRadiantTeam(PlayerSlot playerSlot) =>
+        playerSlot switch
+        {
+            <= PlayerSlot.PlayerRadiant5 => true,
+            _ => false
+        };
 }
