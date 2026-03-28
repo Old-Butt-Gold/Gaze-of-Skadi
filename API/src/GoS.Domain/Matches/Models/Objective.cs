@@ -28,6 +28,12 @@ public class Objective
 	[JsonPropertyName("slot")]
 	public PlayerSlotSequence? Slot { get; init; }
 
+    /// <summary>
+    /// Used only to when courier was lost
+    /// </summary>
+    [JsonPropertyName("killer")]
+    public PlayerSlot? Killer { get; init; }
+
 	/// <summary>
 	/// Gets integers and strings
 	/// </summary>
