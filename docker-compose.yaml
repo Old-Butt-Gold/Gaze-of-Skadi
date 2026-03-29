@@ -1,38 +1,19 @@
 version: '3.9'
 
 services:
-  gos-frontend:
+  gos-app:
     build:
-      context: gos-client
-      dockerfile: ./Dockerfile
-    container_name: gos-frontend-container
+      context: .
+      dockerfile: API/src/GoS.API/Dockerfile
+    container_name: gos-app-container
     ports:
-      - "43200:43200"
-    environment:
-      VITE_API_BASE_URL: "http://gos-api:43190"
-      HOST: "0.0.0.0"
-      PORT: "43200"
-    depends_on:
-      gos-api:
-        condition: service_healthy
-    restart: unless-stopped
-    networks:
-      - gos-network
-
-  gos-api:
-    build:
-      context: API
-      dockerfile: ./src/GoS.API/Dockerfile
-    container_name: gos-api-container
+      - "43190:43190"
     environment:
       ASPNETCORE_ENVIRONMENT: "Release"
       ASPNETCORE_URLS: "http://+:43190"
-
       Redis__Enabled: "true"
       Redis__Configuration: "redis:6379"
       Redis__InstanceName: "GoS:"
-
-      Cors__AllowedOrigins__0: "http://gos-frontend:43200"
     depends_on:
       redis:
         condition: service_healthy

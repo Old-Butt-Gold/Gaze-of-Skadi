@@ -63,6 +63,12 @@ app.MapControllers();
 
 app.MapHealthChecks("/health");
 
+if (!app.Environment.IsDevelopment())
+{
+    app.UseStaticFiles();
+    app.MapFallbackToFile("index.html");
+}
+
 app.AssertAutoMapperConfigurationValid(app.Services);
 
 app.Run();

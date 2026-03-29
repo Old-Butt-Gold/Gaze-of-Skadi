@@ -1,0 +1,17 @@
+# Фронтенд
+gos-client/node_modules/
+gos-client/dist/
+gos-client/.env.local
+
+# Бэкенд
+**/bin/
+**/obj/
+**/.vs/
+**/.idea/
+**/*.user
+**/*.suo
+
+# Docker/Git
+.git/
+.gitignore
+docker-compose*.yml
