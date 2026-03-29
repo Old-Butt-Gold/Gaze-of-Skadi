@@ -51,4 +51,6 @@ public record PlayerOverviewDto
     public required IEnumerable<ItemPurchaseDto> Items { get; init; }
     public required IEnumerable<ItemPurchaseDto> BackpackItems { get; init; }
     public required IEnumerable<int> AbilityUpgradesIds { get; init; }
+    public required BaseEnumDto<BooleanState>? PredictedVictory { get; init; }
+    public required BaseEnumDto<BooleanState>? Randomed { get; init; }
 }

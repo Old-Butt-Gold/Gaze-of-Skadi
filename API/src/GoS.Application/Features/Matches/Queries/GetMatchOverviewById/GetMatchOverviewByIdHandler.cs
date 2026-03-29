@@ -98,6 +98,8 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
             AghanimShardBuff = aghanimShardBuff,
             AghanimBuff = aghanimBuff,
             Level = player.Level,
+            PredictedVictory = mapper.Map<BaseEnumDto<BooleanState>>(player.PredVict),
+            Randomed = mapper.Map<BaseEnumDto<BooleanState>>(player.Randomed),
         };
     }
 

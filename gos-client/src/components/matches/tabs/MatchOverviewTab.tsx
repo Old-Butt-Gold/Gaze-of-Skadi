@@ -7,12 +7,12 @@ import { LoadingSpinner } from '../../ui/LoadingSpinner';
 import { ErrorDisplay } from '../../ui/ErrorDisplay';
 import { HeroCell } from '../../heroes/HeroCell';
 import { Icon } from '../../Icon';
-import { LaneRole, TeamEnum } from '../../../types/common';
+import { LaneRole, TeamEnum, BooleanState } from '../../../types/common'; // Добавлен BooleanState
 import { BarracksStatus, type PickBanDto, type PlayerOverviewDto, TowerStatus } from '../../../types/matchOverview';
 import type { MatchOutletContext } from '../../../pages/MatchDetailsPage';
-import {getMapImageForPatch, isRadiantTeam} from "../../../utils/matchUtils.ts";
+import { getMapImageForPatch, isRadiantTeam } from "../../../utils/matchUtils.ts";
 import type { PlayerInfoDto } from "../../../types/matchGeneralInformation.ts";
-import {formatDuration, formatK } from "../../../utils/formatUtils.ts";
+import { formatDuration, formatK } from "../../../utils/formatUtils.ts";
 import { MatchPlayerCell } from "../MatchPlayerCell.tsx";
 import { ItemByIdCell } from "../../items/ItemByIdCell.tsx";
 import { ItemTooltip } from "../../items/ItemTooltip.tsx";
@@ -250,10 +250,38 @@ const OverviewPlayerTable: React.FC<{
                         const backpack = Array(3).fill(null);
                         stats.backpackItems.forEach(i => backpack[i.itemIndex % 3] = i);
 
+                        const hasPredictedVictory = stats.predictedVictory?.value === BooleanState.True;
+                        const hasRandomed = stats.randomed?.value === BooleanState.True;
+
                         return (
                             <tr key={stats.playerIndex} className="hover:bg-[#1a1d24] transition-colors group">
-                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-60">
-                                    <MatchPlayerCell player={info} useIcon={false} />
+                                <td className="px-4 py-2 sticky left-0 z-10 bg-[#15171c] group-hover:bg-[#1a1d24] shadow-[4px_0_10px_rgba(0,0,0,0.3)] max-w-64">
+                                    <div className="flex flex-col gap-1.5">
+                                        <MatchPlayerCell player={info} useIcon={false} />
+
+                                        {(hasPredictedVictory || hasRandomed) && (
+                                            <div className="flex flex-wrap items-center gap-1.5 mt-[-2px]">
+                                                {hasPredictedVictory && (
+                                                    <div
+                                                        className="flex items-center gap-1 px-1.5 py-0.5 rounded border bg-[#b88a44]/10 border-[#b88a44]/30 text-[#e7d291] cursor-help w-max"
+                                                        title="Predicted Victory"
+                                                    >
+                                                        <Icon src="/assets/images/predicted_victory.svg" size={3.5} />
+                                                        <span className="text-[9px] font-bold uppercase tracking-widest leading-none pt-px">Predicted</span>
+                                                    </div>
+                                                )}
+                                                {hasRandomed && (
+                                                    <div
+                                                        className="flex items-center gap-1 px-1.5 py-0.5 rounded border bg-[#8b5cf6]/10 border-[#8b5cf6]/30 text-[#c4b5fd] cursor-help w-max"
+                                                        title="Randomed Hero"
+                                                    >
+                                                        <Icon src="/assets/images/randomed.svg" size={3.5} />
+                                                        <span className="text-[9px] font-bold uppercase tracking-widest leading-none pt-px">Randomed</span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
                                 </td>
 
                                 <td className="px-3 py-2 text-center">
