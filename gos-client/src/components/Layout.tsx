@@ -14,7 +14,7 @@ export const Layout: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-[#0b0e13] flex flex-col font-sans text-[#e3e3e3]">
-            <nav className="bg-[#15171c]/95 backdrop-blur-md border-b border-[#2e353b] sticky top-0 z-50 transition-all">
+            <nav className="bg-[#15171c]/95 backdrop-blur-md sticky top-0 z-50 transition-all">
                 <div className="mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between xl:justify-center relative">
                     <div className="xl:absolute xl:left-6 top-1/2 xl:-translate-y-1/2 flex-shrink-0 flex items-center gap-3 z-20">
                         <Link to={APP_ROUTES.HOME} className="flex items-center gap-3 hover:opacity-80 transition-opacity group">
@@ -76,7 +76,7 @@ export const Layout: React.FC = () => {
                     "xl:hidden border-t border-[#2e353b] bg-[#15171c] overflow-hidden transition-all duration-300 ease-in-out origin-top absolute w-full z-40 shadow-2xl",
                     isMobileMenuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
                 )}>
-                    <div className="px-2 pt-2 pb-6 space-y-1 sm:px-3 overflow-y-auto max-h-[70vh] custom-scrollbar">
+                    <div className="px-2 pt-2 pb-2 space-y-1 sm:px-3 overflow-y-auto max-h-[70vh] custom-scrollbar">
                         {MAIN_NAVIGATION.map((item) => {
                             const isActive = location.pathname === item.path ||
                                 (item.path !== '/' && location.pathname.startsWith(item.path));
@@ -105,7 +105,7 @@ export const Layout: React.FC = () => {
             </main>
 
             {/* --- FOOTER --- */}
-            <footer className="bg-[#0f1114] border-t border-[#2e353b] py-8 mt-auto relative">
+            <footer className="bg-[#15171c]/95 py-2 mt-auto relative">
                 <div className="mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-2">
                         <img src="/gaze-of-skadi.png" alt="Logo" className="w-6 h-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-80 transition-all" />
