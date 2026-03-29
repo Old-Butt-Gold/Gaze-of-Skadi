@@ -23,7 +23,6 @@ export const NewsPage: React.FC = () => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     if (isLoading) return <LoadingSpinner text="Fetching updates from the Ancients..." />;

@@ -28,11 +28,6 @@ export const TeamMatchesTable: React.FC<Props> = ({ matches, team }) => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        // Опционально: скролл к началу списка при смене страницы
-        const element = document.getElementById('matches-top');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
     };
 
     return (

@@ -86,7 +86,6 @@ export const HeroPlayersTab: React.FC = () => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        document.getElementById('players-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Scouting professional players..." />;

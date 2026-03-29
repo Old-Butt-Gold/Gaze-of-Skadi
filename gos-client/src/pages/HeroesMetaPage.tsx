@@ -231,7 +231,6 @@ export const HeroesMetaPage: React.FC = () => {
                             onClick={() => {
                                 setIsGlobalExpanded(!isGlobalExpanded);
                                 if (isGlobalExpanded) {
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }}
                             className="flex items-center gap-3 px-6 py-3 bg-[#15171c]/95 backdrop-blur border border-[#e7d291]/50 hover:border-[#e7d291] hover:bg-[#1e222b]/95 text-white rounded-full shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all transform hover:-translate-y-1 group"

@@ -146,7 +146,7 @@ export const PlayersQueuePage: React.FC = () => {
             <div className="mx-auto px-4">
 
                 {/* Chart Container */}
-                <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 shadow-2xl relative">
+                <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-2 shadow-2xl relative">
 
                     {/* Toolbar */}
                     <div className="flex justify-end mb-4">
@@ -160,7 +160,7 @@ export const PlayersQueuePage: React.FC = () => {
 
                     <div className="h-[40vh] w-full">
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={rawData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                            <AreaChart data={rawData} margin={{ top: 5, right: 10, left: 0, bottom: 0 }}>
                                 <defs>{gradients}</defs>
                                 <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
                                 <XAxis
@@ -172,8 +172,9 @@ export const PlayersQueuePage: React.FC = () => {
                                 />
                                 <YAxis
                                     stroke="#58606e"
-                                    tick={{ fontSize: 10, fill: '#58606e' }}
+                                    tick={{ fontSize: 10, fill: '#58606e', dx: 0 }}  // dx:0 - тики начинаются с края
                                     tickFormatter={(val) => val >= 1000 ? `${(val / 1000).toFixed(1)}k` : val}
+                                    width={30}
                                 />
                                 <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#e7d291', strokeWidth: 1, strokeDasharray: '4 4' }} />
                                 {areas}

@@ -94,8 +94,6 @@ export const HeroMatchesTab: React.FC = () => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        // Optional: Scroll to top of table
-        document.getElementById('matches-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Loading match history..." />;

@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { useAbilities } from '../../hooks/queries/useAbilities';
 import type { Talent, TalentLevel } from '../../types/heroAbility';
-import {Icon} from "../Icon.tsx";
+import { Icon } from "../Icon.tsx";
 
 interface TalentTreeProps {
     talents: Talent[];
@@ -29,7 +29,7 @@ export const TalentTree: React.FC<TalentTreeProps> = ({ talents }) => {
                 </div>
             </div>
 
-            <div className="p-6 relative min-h-[300px]">
+            <div className="p-4 md:p-6 relative min-h-[300px]">
                 <div className="absolute inset-0 bg-[#0f1114]/95" />
 
                 <div className="absolute left-1/2 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-[#2e353b] to-transparent -translate-x-1/2 z-0" />
@@ -69,12 +69,12 @@ const TalentRow = ({
         <div className="flex items-center justify-between relative py-2 group hover:bg-white/[0.02] transition-colors rounded-lg">
             <TalentCell talent={leftTalent} side="left" />
 
-            <div className="shrink-0 z-10 mx-4">
+            <div className="shrink-0 z-10 mx-2">
                 <div className="w-12 h-12 rounded-full bg-[#15171c] border-2 border-[#2e353b] flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden group-hover:border-[#58606e] group-hover:scale-110 transition-all duration-300">
                     <div className="absolute inset-0 bg-radial-gradient from-[#e7d291]/10 to-transparent opacity-50" />
 
                     <span
-                        className="font-serif font-black text-xl leading-none relative z-10 select-none"
+                        className="font-serif font-black text-lg md:text-xl leading-none relative z-10 select-none"
                         style={{
                             color: '#e7d291',
                             textShadow: '0 0 10px rgba(255, 83, 28, 0.6)'
@@ -99,18 +99,19 @@ const TalentCell = ({ talent, side }: { talent?: Talent, side: 'left' | 'right' 
     return (
         <div
             className={clsx(
-                "flex-1 flex items-center h-full px-2 transition-all duration-300",
+                "flex-1 min-w-0 flex items-center h-full px-1 md:px-2 transition-all duration-300",
                 side === 'left' ? "justify-end text-right" : "justify-start text-left",
                 talent ? "opacity-100" : "opacity-20 grayscale"
             )}
         >
             <span
                 className={clsx(
-                    "text-xs md:text-sm font-medium leading-tight max-w-[200px] md:max-w-none",
+                    "text-[11px] md:text-sm font-medium leading-tight block break-words overflow-wrap-anywhere line-clamp-2",
                     talent
                         ? "text-[#a3aab8] group-hover:text-white group-hover:drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]"
                         : "text-[#2e353b]"
                 )}
+                title={displayName}
             >
                 {displayName}
             </span>

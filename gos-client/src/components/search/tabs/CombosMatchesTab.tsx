@@ -103,7 +103,7 @@ const HeroPicker =
                     />
                 </div>
             </div>
-            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-2 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#0f1114] pr-2 pb-2 h-64 md:h-auto">
+            <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-2 overflow-y-auto scrollbar-thin scrollbar-thumb-[#2e353b] scrollbar-track-[#0f1114] pr-2 pb-2 md:h-auto">
                 {filteredHeroes.map(hero => {
                     const isSelected = selectedIds.includes(hero.id);
                     return (
@@ -317,13 +317,18 @@ export const SearchCombosTab: React.FC = () => {
                                             </td>
 
                                             {/* Radiant Heroes */}
-                                            <td className="px-6 py-4 align-middle">
-                                                <div className="flex flex-wrap justify-center gap-1">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 align-middle">
+                                                <div className="flex items-center justify-center gap-0.5 md:gap-1">
                                                     {match.teamA.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-20 transition-transform hover:scale-110 group/tooltip" title={h.localized_name} >
-                                                                <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-emerald-900/50 overflow-hidden bg-[#0f1114] shadow-sm relative z-10">
+                                                            <Link
+                                                                to={`${APP_ROUTES.HEROES}/${h.id}`}
+                                                                key={h.id}
+                                                                className="relative shrink-0 hover:z-20 transition-transform hover:scale-110 group/tooltip"
+                                                                title={h.localized_name}
+                                                            >
+                                                                <div className="w-10 h-7 md:w-12 md:h-9 rounded overflow-hidden relative z-10">
                                                                     <Icon src={h.img} alt={h.localized_name}/>
                                                                 </div>
 
@@ -337,14 +342,18 @@ export const SearchCombosTab: React.FC = () => {
                                                 </div>
                                             </td>
 
-                                            {/* Dire Heroes */}
-                                            <td className="px-6 py-4 align-middle">
-                                                <div className="flex flex-wrap justify-center gap-1">
+                                            <td className="px-3 md:px-6 py-3 md:py-4 align-middle">
+                                                <div className="flex items-center justify-center gap-0.5 md:gap-1">
                                                     {match.teamB.map(heroId => {
                                                         const h = getHero(heroId);
                                                         return h ? (
-                                                            <Link to={`${APP_ROUTES.HEROES}/${h.id}`} key={h.id} className="relative z-0 hover:z-20 transition-transform hover:scale-110 group/tooltip" title={h.localized_name} >
-                                                                <div className="w-10 h-6 md:w-12 md:h-7 rounded border border-red-900/50 overflow-hidden bg-[#0f1114] shadow-sm relative z-10">
+                                                            <Link
+                                                                to={`${APP_ROUTES.HEROES}/${h.id}`}
+                                                                key={h.id}
+                                                                className="relative shrink-0 hover:z-20 transition-transform hover:scale-110 group/tooltip"
+                                                                title={h.localized_name}
+                                                            >
+                                                                <div className="w-10 h-7 md:w-12 md:h-9 rounded overflow-hidden relative z-10">
                                                                     <Icon src={h.img} alt={h.localized_name}/>
                                                                 </div>
 

@@ -119,7 +119,7 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
     const domainRight: AxisDomain = [0, maxCumulative * 1.1];
 
     return (
-        <div className="w-full h-full min-h-125 rounded-2xl p-4 md:p-6 shadow-sm">
+        <div className="w-full h-full min-h-125 rounded-2xl p-1 md:p-6 shadow-sm">
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart // Используем ComposedChart для комбинации графиков
                     data={data}

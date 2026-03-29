@@ -38,8 +38,6 @@ export const HeroRankingsTab: React.FC = () => {
 
     const handlePageChange = (newPage: number) => {
         setPage(newPage);
-        // Optional: Scroll to top of table on page change
-        document.getElementById('rankings-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Loading Leaderboard..." />;

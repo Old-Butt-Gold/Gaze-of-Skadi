@@ -124,7 +124,7 @@ export const HeroDurationsTab: React.FC = () => {
             </div>
 
             {/* Chart Container */}
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 md:p-6 shadow-2xl h-[500px]">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-2 md:p-6 shadow-2xl h-[50vh]">
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={chartData} margin={{ top: 20, right: 20, bottom: 20, left: 0 }}>
                         <defs>
@@ -152,8 +152,6 @@ export const HeroDurationsTab: React.FC = () => {
                             yAxisId="left"
                             stroke="#58606e"
                             tick={{ fill: '#808fa6', fontSize: 12 }}
-                            tickLine={false}
-                            axisLine={false}
                             label={{ value: 'Games', angle: -90, position: 'insideLeft', fill: '#58606e', fontSize: 10, dy: 30 }}
                         />
 

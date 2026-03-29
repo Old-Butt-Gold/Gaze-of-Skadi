@@ -54,8 +54,8 @@ export const SearchPublicMatchesTab: React.FC = () => {
 
     const handleMinRankChange = (val: number | null) => { setMinRank(val); setLessThanMatchId(null); };
     const handleMaxRankChange = (val: number | null) => { setMaxRank(val); setLessThanMatchId(null); };
-    const handleNextPage = () => { if (matches && matches.length > 0) { setLessThanMatchId(matches[matches.length - 1].matchId); window.scrollTo({ top: 0, behavior: 'smooth' }); } };
-    const handleReset = () => { setLessThanMatchId(null); window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    const handleNextPage = () => { if (matches && matches.length > 0) { setLessThanMatchId(matches[matches.length - 1].matchId); window.scrollTo({ top: 0, }); } };
+    const handleReset = () => { setLessThanMatchId(null); window.scrollTo({ top: 0, }); };
 
     const isValid = !minRank || !maxRank || minRank <= maxRank;
     const { data: matches, isLoading, isError, refetch, isFetching } = usePublicMatches(
@@ -124,8 +124,7 @@ export const SearchPublicMatchesTab: React.FC = () => {
                                             </div>
                                             {/* Mobile Rank Show */}
                                             <div className="md:hidden flex items-center gap-2">
-                                                <span className="text-[10px] text-[#58606e] font-bold">Tier {match.avgRankTier.value}</span>
-                                                <RankIcon rank={match.avgRankTier.value} size={6} />
+                                                <RankIcon rank={match.avgRankTier.value} size={8} />
                                             </div>
                                         </div>
 

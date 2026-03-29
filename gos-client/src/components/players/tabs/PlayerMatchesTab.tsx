@@ -56,7 +56,6 @@ export const PlayerMatchesTab: React.FC = () => {
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
-        document.getElementById('matches-list-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Loading match history..." />;

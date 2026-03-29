@@ -247,7 +247,7 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                         )}>
                             {/* Sticky Hero Cell */}
                             <td className={clsx(
-                                "px-4 py-2 sticky left-0 z-10 border-r border-[#2e353b] transition-colors shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] align-middle",
+                                "px-2 py-2 sticky left-0 z-10 border-r border-[#2e353b] transition-colors shadow-[4px_0_10px_-2px_rgba(0,0,0,0.5)] align-middle",
                                 idx % 2 === 0 ? "bg-[#15171c] group-hover:bg-[#1e222b]" : "bg-[#181a20] group-hover:bg-[#1e222b]"
                             )}>
                                 <HeroCell heroId={row.id} showName={true} />
@@ -288,7 +288,6 @@ export const HeroStatsTable: React.FC<Props> = ({ stats, activeTab, searchQuery 
                                             </td>
                                         );
                                     })}
-                                    {/* Pub Column */}
                                     <td className="px-2 py-2 text-center border-r border-[#2e353b]/30 align-middle">
                                         <StatCell pick={row.ranked.pub.pick} win={row.ranked.pub.win} />
                                     </td>

@@ -15,7 +15,6 @@ export const TeamsPage: React.FC = () => {
 
     const handlePageChange = (page: number) => {
         actions.setCurrentPage(page);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     if (isLoading) return <LoadingSpinner text="Scouting Teams..." />;

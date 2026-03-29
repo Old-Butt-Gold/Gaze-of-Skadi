@@ -143,7 +143,7 @@ export const HeroTrendsTab: React.FC = () => {
             </div>
 
             {/* Main Content */}
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 shadow-lg">
+            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-2 shadow-lg">
 
                 {/* Legend / Filter Toggles */}
                 <div className="flex flex-wrap gap-3 mb-6 justify-center md:justify-end">
@@ -186,7 +186,7 @@ export const HeroTrendsTab: React.FC = () => {
                 {hasData ? (
                     <div className="h-[50vh] w-full select-none">
                         <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                            <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                                 <defs>
                                     {(Object.keys(POS_CONFIG) as PositionKey[]).map((key) => (
                                         <linearGradient key={key} id={`grad-${key}`} x1="0" y1="0" x2="0" y2="1">
@@ -213,7 +213,7 @@ export const HeroTrendsTab: React.FC = () => {
                                     tickFormatter={(val) => `${val.toFixed(0)}%`}
                                     axisLine={false}
                                     tickLine={false}
-                                    dx={-10}
+                                    width={30}
                                 />
                                 <Tooltip content={<CustomTooltip />} cursor={{ stroke: '#e7d291', strokeWidth: 1, strokeDasharray: '4 4' }} />
 

@@ -107,9 +107,9 @@ export const TimelineAreaChart: React.FC<Props> = ({ title, description, data, c
     if (isError) return null;
 
     return (
-        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-4 shadow-lg flex flex-col h-full">
+        <div className="bg-[#15171c] border border-[#2e353b] rounded-xl p-2 shadow-lg flex flex-col h-full">
             {/* Header */}
-            <div className="mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <div className="mb-4 ml-2 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                 <div>
                     <h3 className="text-lg font-serif font-bold text-white uppercase tracking-widest">{title}</h3>
                     {description && <p className="text-[#808fa6] text-xs">{description}</p>}
@@ -149,9 +149,7 @@ export const TimelineAreaChart: React.FC<Props> = ({ title, description, data, c
                             stroke="#58606e"
                             tick={{ fontSize: 10, fill: '#58606e' }}
                             tickFormatter={(val) => val >= 1000000 ? `${(val / 1000000).toFixed(1)}M` : val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val}
-                            axisLine={false}
-                            tickLine={false}
-                            dx={-10}
+                            width={40}
                         />
                         <Tooltip
                             content={(props) => <CustomTooltip {...props} config={config} />}

@@ -77,7 +77,7 @@ const ProMatchCard = ({ match }: { match: ProMatchDto }) => {
                                 {match.direScore}
                             </span>
                         </div>
-                        <span className="text-[10px] text-[#58606e] font-mono mt-1">
+                        <span className="text-xs text-[#58606e] font-mono mt-1">
                             {formatDuration(match.duration)}
                         </span>
                     </div>
@@ -136,13 +136,11 @@ export const SearchProMatchesTab: React.FC = () => {
         if (matches && matches.length > 0) {
             const lastMatch = matches[matches.length - 1];
             setLessThanMatchId(lastMatch.matchId);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 
     const handleReset = () => {
         setLessThanMatchId(null);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     return (

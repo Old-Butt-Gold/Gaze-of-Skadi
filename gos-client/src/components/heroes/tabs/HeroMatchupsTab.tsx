@@ -86,8 +86,6 @@ export const HeroMatchupsTab: React.FC = () => {
 
     const handlePageChange = (newPage: number) => {
         setCurrentPage(newPage);
-        // Optional: Scroll to top
-        document.getElementById('matchups-table-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (isLoading) return <LoadingSpinner text="Analyzing battle records..." />;

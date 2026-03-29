@@ -283,15 +283,16 @@ export const MatchGraphicsTab: React.FC = () => {
                                 <ReferenceArea y1={-maxAdvantage} y2={0} fill="#ef4444" fillOpacity={0.1} />
 
                                 <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
-                                <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} />
+                                <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} dy={5} />
 
                                 <YAxis
                                     domain={[-maxAdvantage, maxAdvantage]}
                                     tickCount={7}
                                     allowDataOverflow={true}
                                     stroke="#58606e"
-                                    tickFormatter={(val) => `+${val}`}
+                                    tickFormatter={(val) => Number(val) > 0 ? `+${val}` : `${val}`}
                                     tick={{ fontSize: 12, fill: '#808fa6' }}
+                                    width={45}
                                 />
 
                                 <Tooltip content={<AdvantageTooltip />} isAnimationActive={false} cursor={{ stroke: '#808fa6', strokeWidth: 1, strokeDasharray: '4 4' }} />
@@ -368,8 +369,8 @@ export const MatchGraphicsTab: React.FC = () => {
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart data={playerChartData} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
                             <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
-                            <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} />
-                            <YAxis stroke="#58606e" tick={{ fontSize: 12, fill: '#808fa6' }} />
+                            <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} dy={5} />
+                            <YAxis stroke="#58606e" tick={{ fontSize: 12, fill: '#808fa6' }} width={45} />
 
                             <Tooltip
                                 content={<PlayerGraphTooltip players={players} graphType={playerGraphType} />}

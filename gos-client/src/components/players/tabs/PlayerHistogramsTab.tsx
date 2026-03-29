@@ -153,7 +153,7 @@ export const PlayerHistogramsTab: React.FC = () => {
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart
                                 data={chartData}
-                                margin={{ top: 20, right: 10, left: -20, bottom: 20 }}
+                                margin={{ top: 20, right: 10, left: 0, bottom: 20 }}
                                 barCategoryGap="10%" // Space between bars
                             >
                                 <defs>
@@ -197,6 +197,7 @@ export const PlayerHistogramsTab: React.FC = () => {
                                     tick={{ fill: '#58606e', fontSize: 11, fontWeight: 'bold' }}
                                     axisLine={false}
                                     tickLine={false}
+                                    width={45}
                                 />
 
                                 <Tooltip

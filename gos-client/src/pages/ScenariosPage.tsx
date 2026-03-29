@@ -33,7 +33,6 @@ export const ScenariosPage: React.FC = () => {
 
     const handlePageChange = (page: number) => {
         actions.setPage(page);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     if (!filters.selectedHeroId) {
