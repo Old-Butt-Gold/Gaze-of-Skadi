@@ -26,6 +26,8 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender)
 
     private static IEnumerable<TeamAdvantageDto> MapTeamAdvantages(Match match)
     {
+        if (match.RadiantGoldAdvantage is null || match.RadiantXpAdvantage is null) return [];
+
         var goldCount = match.RadiantGoldAdvantage.Count;
         var xpCount = match.RadiantXpAdvantage.Count;
         var minuteCount = Math.Min(goldCount, xpCount);
@@ -48,11 +50,11 @@ internal sealed class GetMatchGraphicsByIdHandler(ISender sender)
             LastHitsPerMinute = CreateMinuteValues(player.LastHitsEachMinute),
         });
 
-    private IEnumerable<MinuteValueDto> CreateMinuteValues(IReadOnlyList<int> values) =>
-        Enumerable.Range(0, values.Count)
-            .Select(minute => new MinuteValueDto
-            {
-                Minute = minute,
-                Value = values[minute]
-            });
+    private IEnumerable<MinuteValueDto> CreateMinuteValues(IReadOnlyList<int>? values)
+    {
+        if (values is null) return [];
+
+        return Enumerable.Range(0, values.Count)
+            .Select(minute => new MinuteValueDto { Minute = minute, Value = values[minute] });
+    }
 }

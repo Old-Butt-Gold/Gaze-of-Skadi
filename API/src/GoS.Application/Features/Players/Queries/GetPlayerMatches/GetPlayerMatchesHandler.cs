@@ -40,6 +40,19 @@ internal sealed class GetPlayerMatchesHandler(IRequester<OpenDotaHttpRequesterOp
         request.Parameters.Project = Project;
         var parameters = PlayerQueryHelpers.BuildParameters(request.Parameters);
         var playerMatches = await requester.GetResponseAsync<IEnumerable<PlayerMatch>>($"players/{request.AccountId}/matches", parameters, ct);
+        playerMatches = playerMatches
+            .Where(x => x is {
+                GameMode: not null,
+                LobbyType: not null,
+                HeroId: not null,
+                Kills: not null,
+                Assists: not null,
+                Deaths: not null,
+                LeaverStatus: not null,
+                PlayerSlot: not null,
+                Duration: not null,
+                StartTime: not null,
+        });
         return mapper.Map<IEnumerable<PlayerMatchDto>?>(playerMatches);
     }
 }

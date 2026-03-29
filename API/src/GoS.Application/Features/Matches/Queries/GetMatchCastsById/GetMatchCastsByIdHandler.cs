@@ -29,7 +29,7 @@ internal sealed class GetMatchCastsByIdHandler(ISender sender, IResourceManager 
                     {
                         AbilityKey = kvp.Key,
                         TimesUsed = kvp.Value,
-                        Targets = player.AbilityTargets.TryGetValue(kvp.Key, out var stringTargets)
+                        Targets = player.AbilityTargets is not null && player.AbilityTargets.TryGetValue(kvp.Key, out var stringTargets)
                             ? ConvertTargetsToInt(stringTargets, heroNameToId)
                             : null
                     })

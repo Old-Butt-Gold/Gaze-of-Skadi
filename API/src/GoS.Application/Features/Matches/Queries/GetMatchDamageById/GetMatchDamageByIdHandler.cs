@@ -94,29 +94,42 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
 
     private IEnumerable<DamageInflictorDto> MapDamageInflictors(Dictionary<string, int>? damageInflictors, Dictionary<string, Dictionary<string, int>>? damageTargets)
     {
-        if (damageInflictors == null || damageTargets == null)
+        if (damageInflictors == null)
             return [];
 
-        return damageInflictors
-            .Where(inflictor => damageTargets.ContainsKey(inflictor.Key))
-            .Select(inflictor =>
-            {
-                var targetBreakdown = damageTargets[inflictor.Key];
-                var validBreakdown = targetBreakdown
-                    .Where(target => _validHeroNames.Contains(target.Key))
-                    .Select(target => new DamageBreakdownDto
-                    {
-                        TargetHeroId = _heroNameToIdMap[target.Key],
-                        Damage = target.Value
-                    })
-                    .ToList();
-
-                return new DamageInflictorDto
+        if (damageTargets is not null)
+        {
+            return damageInflictors
+                .Where(inflictor => damageTargets.ContainsKey(inflictor.Key))
+                .Select(inflictor =>
                 {
-                    InflictorKey = inflictor.Key,
-                    TotalDamage = validBreakdown.Sum(b => b.Damage),
-                    Breakdown = validBreakdown
-                };
+                    var targetBreakdown = damageTargets[inflictor.Key];
+                    var validBreakdown = targetBreakdown
+                        .Where(target => _validHeroNames.Contains(target.Key))
+                        .Select(target => new DamageBreakdownDto
+                        {
+                            TargetHeroId = _heroNameToIdMap[target.Key],
+                            Damage = target.Value
+                        })
+                        .ToList();
+
+                    return new DamageInflictorDto
+                    {
+                        InflictorKey = inflictor.Key,
+                        TotalDamage = validBreakdown.Sum(b => b.Damage),
+                        Breakdown = validBreakdown
+                    };
+                })
+                .OrderByDescending(x => x.TotalDamage)
+                .ToList();
+        }
+
+        return damageInflictors
+            .Select(inflictor => new DamageInflictorDto
+            {
+                InflictorKey = inflictor.Key,
+                TotalDamage = inflictor.Value,
+                Breakdown = []
             })
             .OrderByDescending(x => x.TotalDamage)
             .ToList();
@@ -128,7 +141,7 @@ internal sealed class GetMatchDamageByIdHandler(ISender sender, IResourceManager
             return [];
 
         return damageTaken
-            .Where(kvp => kvp.Key == "null" || _validAbilityKeys.Contains(kvp.Key) || _validItemKeys.Contains(kvp.Key))
+            .Where(kvp => kvp.Key == "null" || kvp.Key == "undefined" || _validAbilityKeys.Contains(kvp.Key) || _validItemKeys.Contains(kvp.Key))
             .Select(kvp => new DamageSummaryDto
             {
                 InflictorKey = kvp.Key,

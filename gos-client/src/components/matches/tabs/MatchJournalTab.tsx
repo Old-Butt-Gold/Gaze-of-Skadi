@@ -204,9 +204,18 @@ const ObjectiveEventRow: React.FC<{ event: ObjectiveEventDto; allPlayers: Player
                 ? "/assets/images/radiant_courier_icon.png"
                 : "/assets/images/dire_courier_icon.png";
 
+            const creepIcon = isRadiantEvent ? "/assets/images/radiant_creep.png" : "/assets/images/dire_creep.png";
+
             return (
                 <div className={rowClass}>
-                    {player && <MatchPlayerCell player={player} useIcon={false} hideName={true} />}
+                    {player ? (
+                        <MatchPlayerCell player={player} useIcon={false} hideName={true} />
+                    ) : (
+                        <div className={clsx("flex items-center gap-2", !isRadiantEvent && "flex-row-reverse")}>
+                            <Icon src={creepIcon} size={10} />
+                        </div>
+                    )}
+
                     <div className={innerRowClass}>
                         <span className="text-sm text-red-400 font-bold uppercase tracking-widest">Killed Courier</span>
                         <Icon src={courierIcon} size={8} alt="Courier" />

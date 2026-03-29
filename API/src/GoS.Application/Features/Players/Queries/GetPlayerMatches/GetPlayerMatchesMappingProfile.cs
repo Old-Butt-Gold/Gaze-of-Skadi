@@ -17,7 +17,7 @@ public class GetPlayerMatchesMappingProfile : Profile
             .ForMember(x => x.IsMatchParsed, opt => opt.MapFrom(src =>
                 BaseEnumDto<BooleanState>.FromEnum(IsParsedMatch(src.Version))))
             .ForMember(x => x.IsRadiant, opt => opt.MapFrom(src =>
-                BaseEnumDto<BooleanState>.FromEnum(IsInRadiantTeam(src.PlayerSlot))))
+                BaseEnumDto<BooleanState>.FromEnum(IsInRadiantTeam(src.PlayerSlot!.Value)))) // will be always non-nullable, because of filtering it inside GetPlayerMatchesHandler
             .ForMember(x => x.HeroVariant, opt => opt.MapFrom(src =>
                 src.HeroVariant - 1));
         CreateMap<PlayerMatchHero, PlayerMatchHeroDto>();

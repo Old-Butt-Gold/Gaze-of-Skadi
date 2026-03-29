@@ -49,16 +49,16 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
             PurchasedItems = MapVisionItems(player.Purchase),
         };
 
-    private IEnumerable<VisionItemDto> MapVisionItems(IDictionary<string, int>? items)
+    private IEnumerable<VisionItemDto> MapVisionItems(IDictionary<string, int?>? items)
     {
         if (items == null) return [];
 
         return items
-            .Where(item => VisibilityItemKeys.Contains(item.Key))
+            .Where(item => VisibilityItemKeys.Contains(item.Key) && item.Value.HasValue)
             .Select(item => new VisionItemDto
             {
                 ItemType = mapper.Map<BaseEnumDto<VisionItemType>>(VisibilityItemMap[item.Key]),
-                Quantity = item.Value
+                Quantity = item.Value!.Value
             });
     }
 
@@ -72,6 +72,7 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
             return [];
 
         var groupedLogs = allWardLogs
+            .Where(x => x.Log.Ehandle != 0)
             .GroupBy(log => log.Log.Ehandle)
             .Select(g => new
             {
@@ -134,13 +135,13 @@ internal sealed class GetMatchVisionByIdHandler(ISender sender, IMapper mapper, 
 
     private IEnumerable<(int Index, WardLog Log)> GetPlayerWardLogs(MatchPlayer player, int index)
     {
-        foreach (var log in player.ObsLog)
+        foreach (var log in player.ObsLog ?? [])
             yield return (index, log);
-        foreach (var log in player.ObsLeftLog)
+        foreach (var log in player.ObsLeftLog ?? [])
             yield return (index, log);
-        foreach (var log in player.SenLog)
+        foreach (var log in player.SenLog ?? [])
             yield return (index, log);
-        foreach (var log in player.SenLeftLog)
+        foreach (var log in player.SenLeftLog ?? [])
             yield return (index, log);
     }
 }

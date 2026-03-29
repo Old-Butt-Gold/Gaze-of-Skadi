@@ -27,4 +27,18 @@ public enum ObjectiveType
 
     [JsonPropertyName("CHAT_MESSAGE_MINIBOSS_KILL")]
     ChatMessageTormentorKill,
+
+    // FOR SUPPORTING OLD FORMATS
+
+    [JsonPropertyName("CHAT_MESSAGE_TOWER_KILL")]
+    OldChatMessageTowerKill,
+
+    [JsonPropertyName("CHAT_MESSAGE_TOWER_DENY")]
+    OldChatMessageTowerDeny,
+
+    [JsonPropertyName("CHAT_MESSAGE_BARRACKS_KILL")]
+    OldChatMessageBarracksKill,
+
+    [JsonPropertyName("chat_event")]
+    OldChatEvent,
 }

@@ -103,11 +103,12 @@ public static class ServiceExtensions
                 ShouldHandle = static args => args.Outcome switch
                 {
                     { Exception: HttpRequestException } => PredicateResult.True(),
-                    { Exception: TaskCanceledException } => PredicateResult.True(),
+                    { Exception: OperationCanceledException } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.TooManyRequests } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.ServiceUnavailable } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.GatewayTimeout } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.BadGateway } => PredicateResult.True(),
+                    { Exception: Polly.Timeout.TimeoutRejectedException } => PredicateResult.True(),
                     _ => PredicateResult.False()
                 }
             });
@@ -122,9 +123,10 @@ public static class ServiceExtensions
                 ShouldHandle = static args => args.Outcome switch
                 {
                     { Exception: HttpRequestException } => PredicateResult.True(),
-                    { Exception: TaskCanceledException } => PredicateResult.True(),
+                    { Exception: OperationCanceledException } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.ServiceUnavailable } => PredicateResult.True(),
                     { Result.StatusCode: HttpStatusCode.GatewayTimeout } => PredicateResult.True(),
+                    { Exception: Polly.Timeout.TimeoutRejectedException } => PredicateResult.True(),
                     _ => PredicateResult.False()
                 }
             });

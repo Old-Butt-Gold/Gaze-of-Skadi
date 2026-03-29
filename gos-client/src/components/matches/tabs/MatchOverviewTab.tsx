@@ -329,7 +329,7 @@ const OverviewPlayerTable: React.FC<{
                                         {stats.neutralItem && (
                                             <div className="flex flex-col items-center justify-center gap-1.5 shrink-0">
                                                 <div
-                                                    className="w-10 h-10 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center cursor-help shrink-0"
+                                                    className="w-10 h-10 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center cursor-help shrink-0 [&_div]:w-full [&_div]:h-full [&_img]:!object-cover [&_img]:!w-full [&_img]:!h-full [&_img]:rounded-full [&_img]:scale-90"
                                                     title="Neutral Item"
                                                 >
                                                     <ItemByIdCell itemId={stats.neutralItem.toString()} />
@@ -337,13 +337,13 @@ const OverviewPlayerTable: React.FC<{
 
                                                 {stats.neutralAura ? (
                                                     <div
-                                                        className="w-8 h-8 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center opacity-90 cursor-help shrink-0"
+                                                        className="w-8 h-8 rounded-full overflow-hidden border border-[#58606e] flex items-center justify-center opacity-90 cursor-help shrink-0 [&_div]:w-full [&_div]:h-full [&_img]:!object-cover [&_img]:!w-full [&_img]:!h-full [&_img]:rounded-full [&_img]:scale-90"
                                                         title="Neutral Aura"
                                                     >
                                                         <ItemByIdCell itemId={stats.neutralAura.toString()} />
                                                     </div>
                                                 ) : (
-                                                    <div className="w-7 h-7 shrink-0" />
+                                                    <div className="w-8 h-8 shrink-0" />
                                                 )}
                                             </div>
                                         )}

@@ -9,7 +9,7 @@ export const SourceIcon: React.FC<{ sourceName: string }> = ({sourceName}) => {
     const {getItem} = useItems();
     const {getAbility} = useAbilities();
 
-    if (sourceName === "null" || !sourceName) {
+    if (sourceName === "null" || sourceName === "undefined" || !sourceName) {
         return (
             <div className="cursor-help shrink-0" title="Auto-attack">
                 <Icon src="/assets/images/default_attack.png" alt="Auto-attack"/>

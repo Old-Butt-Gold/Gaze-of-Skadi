@@ -2,6 +2,7 @@ namespace GoS.Domain.BaseEnums;
 
 public enum PlayerSlot
 {
+    Unknown = -1,
     PlayerRadiant1 = 0,
     PlayerRadiant2,
     PlayerRadiant3,

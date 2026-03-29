@@ -45,6 +45,11 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<ObjectiveEventDto> MapObjectives(IEnumerable<Objective> objectives, IReadOnlyList<MatchPlayer> players)
     {
+        objectives = objectives.Where(x => x.Type != ObjectiveType.OldChatMessageBarracksKill
+                                           && x.Type != ObjectiveType.OldChatMessageTowerKill
+                                           && x.Type != ObjectiveType.OldChatMessageTowerDeny
+                                           && x.Type != ObjectiveType.OldChatEvent);
+
         List<ObjectiveEventDto> objectiveEventDtos = [];
         foreach (var objective in objectives)
         {
@@ -117,14 +122,28 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
             }
             else if (objective.Type == ObjectiveType.ChatMessageCourierLost)
             {
-                objectiveEventDtos.Add(new ObjectiveEventDto
+                if (objective.Killer!.Value != PlayerSlot.Unknown)
                 {
-                    Time = objective.Time.Value,
-                    Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
-                    PlayerIndex = objective.Killer!.Value <= PlayerSlot.PlayerRadiant5 ? (int)objective.Killer.Value : (int) PlayerSlot.PlayerRadiant5 + (int)objective.Killer!.Value - (int) PlayerSlot.PlayerDire1 + 1,
-                    Target = null,
-                    TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(IsInRadiantTeam(objective.Killer!.Value) ? TeamEnum.Dire : TeamEnum.Radiant),
-                });
+                    objectiveEventDtos.Add(new ObjectiveEventDto
+                    {
+                        Time = objective.Time.Value,
+                        Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
+                        PlayerIndex = objective.Killer!.Value <= PlayerSlot.PlayerRadiant5 ? (int)objective.Killer.Value : (int) PlayerSlot.PlayerRadiant5 + (int)objective.Killer!.Value - (int) PlayerSlot.PlayerDire1 + 1,
+                        Target = null,
+                        TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(IsInRadiantTeam(objective.Killer!.Value) ? TeamEnum.Dire : TeamEnum.Radiant),
+                    });
+                }
+                else
+                {
+                    objectiveEventDtos.Add(new ObjectiveEventDto
+                    {
+                        Time = objective.Time.Value,
+                        Type = mapper.Map<BaseEnumDto<ObjectiveType>>(objective.Type),
+                        PlayerIndex = null,
+                        Target = null,
+                        TargetTeam = mapper.Map<BaseEnumDto<TeamEnum>>(objective.Team is 1 ? TeamEnum.Dire : TeamEnum.Radiant),
+                    });
+                }
             }
             else
             {
@@ -146,6 +165,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<BuybackEventDto> MapBuybacks(IReadOnlyList<MatchPlayer> players) =>
         players
+            .Where(x => x.BuybackLogs is not null)
             .SelectMany((player, index) => player.BuybackLogs.Select(log => new BuybackEventDto
             {
                 Time = log.Time,
@@ -155,6 +175,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<ConnectionEventDto> MapConnections(IReadOnlyList<MatchPlayer> players) =>
         players
+            .Where(x => x.ConnectionLog is not null)
             .SelectMany((player, index) => player.ConnectionLog.Select(log => new ConnectionEventDto
             {
                 Time = log.Time,
@@ -165,6 +186,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<KillEventDto> MapKills(IReadOnlyList<MatchPlayer> players) =>
         players
+            .Where(x => x.KillsLog is not null)
             .SelectMany((player, index) => player.KillsLog
                 .Where(kill => _validHeroNames.Contains(kill.Key))
                 .Select(kill => new KillEventDto
@@ -177,6 +199,7 @@ internal sealed class GetMatchJournalByIdHandler(ISender sender, IMapper mapper,
 
     private IEnumerable<RuneEventDto> MapRunes(IReadOnlyList<MatchPlayer> players) =>
         players
+            .Where(x => x.RuneLogs is not null)
             .SelectMany((player, index) => player.RuneLogs.Select(rune => new RuneEventDto
             {
                 Time = rune.Time,

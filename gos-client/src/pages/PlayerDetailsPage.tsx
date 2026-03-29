@@ -43,9 +43,17 @@ export const PlayerDetailsPage: React.FC = () => {
     if (isLoading) return <LoadingSpinner text="Summoning Player Profile..." />;
     if (isError || !player) return <NotFoundPage />;
 
-    const isPrivateProfile = player.profile.fhUnavailable?.value === BooleanState.True;
+    // 1. Считаем количество примененных фильтров
+    const activeFilterCount = Object.keys(filters).length;
 
-    const noData = wl && wl.wins === 0 && wl.losses === 0;
+    // 2. Разделяем логику: скрыт ли профиль настройками Доты, либо он полностью пуст
+    const isExplicitlyPrivate = player.profile.fhUnavailable?.value === BooleanState.True;
+    const isGloballyEmpty = wl && wl.wins === 0 && wl.losses === 0 && activeFilterCount === 0;
+
+    const isPrivateProfile = isExplicitlyPrivate && isGloballyEmpty;
+
+    // 3. "Нет данных" теперь означает, что матчей нет ИМЕННО из-за фильтров
+    const noData = wl && wl.wins === 0 && wl.losses === 0 && !isPrivateProfile;
 
     const tabsDisabled = isPrivateProfile;
 
@@ -67,8 +75,6 @@ export const PlayerDetailsPage: React.FC = () => {
         accountId: parsedId,
         filters
     };
-
-    const activeFilterCount = Object.keys(filters).length;
 
     return (
         <div className="min-h-screen bg-[#0f1114] text-white pb-10">
@@ -103,29 +109,36 @@ export const PlayerDetailsPage: React.FC = () => {
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 relative z-10">
                     {isPrivateProfile ? (
                         <div className="flex flex-col items-center justify-center py-20 border-2 border-dashed border-[#2e353b] rounded-3xl bg-[#15171c]/50">
-                            <span className="text-6xl mb-4 opacity-50 grayscale">🔒</span>
-                            <h2 className="text-2xl font-bold text-white mb-2">Private Profile</h2>
+                            <span className="text-6xl mb-4 opacity-50 grayscale">
+                                {isExplicitlyPrivate ? "🔒" : "📭"}
+                            </span>
+                            <h2 className="text-2xl font-bold text-white mb-2">
+                                {isExplicitlyPrivate ? "Private Profile" : "No Matches"}
+                            </h2>
                             <p className="text-[#808fa6] max-w-md text-center leading-relaxed px-4">
-                                This player has not exposed their match data to public API.
-                                <br/>We cannot retrieve match history or statistics.
+                                {isExplicitlyPrivate ? (
+                                    <>
+                                        This player has not exposed their match data to public API.
+                                        <br/>We cannot retrieve match history or statistics.
+                                    </>
+                                ) : (
+                                    "This player doesn't have any recorded matches yet."
+                                )}
                             </p>
                         </div>
                     ) : noData ? (
                         <div className="flex flex-col items-center justify-center py-10 border-2 border-dashed border-[#2e353b] rounded-3xl bg-[#15171c]/50">
+                            <span className="text-4xl mb-4 opacity-50 grayscale">📂</span>
                             <h2 className="text-2xl font-bold text-white mb-2">No Matches Found</h2>
                             <p className="text-[#808fa6] max-w-md text-center leading-relaxed px-4">
-                                {activeFilterCount > 0
-                                    ? "No matches match the currently applied filters. Try changing or resetting them."
-                                    : "This player doesn't have any recorded matches yet."}
+                                No matches match the currently applied filters. Try changing or resetting them.
                             </p>
-                            {activeFilterCount > 0 && (
-                                <button
-                                    onClick={() => setFilters({})}
-                                    className="mt-6 px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest text-[#0b0e13] bg-[#e7d291] hover:brightness-110 shadow-lg transition-all transform hover:-translate-y-px"
-                                >
-                                    Reset Filters
-                                </button>
-                            )}
+                            <button
+                                onClick={() => setFilters({})}
+                                className="mt-6 px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest text-[#0b0e13] bg-[#e7d291] hover:brightness-110 shadow-lg transition-all transform hover:-translate-y-px"
+                            >
+                                Reset Filters
+                            </button>
                         </div>
                     ) : (
                         <Outlet context={contextValue} />

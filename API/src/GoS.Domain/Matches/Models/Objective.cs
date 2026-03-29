@@ -28,15 +28,22 @@ public class Objective
 	[JsonPropertyName("slot")]
 	public PlayerSlotSequence? Slot { get; init; }
 
+	/// <summary>
+	/// Gets integers and strings
+	/// </summary>
+	[JsonPropertyName("key")]
+	public JsonElement? Key { get; init; }
+
+    // USED ONLY FOR COURIER LOST
+
     /// <summary>
     /// Used only to when courier was lost
     /// </summary>
     [JsonPropertyName("killer")]
     public PlayerSlot? Killer { get; init; }
 
-	/// <summary>
-	/// Gets integers and strings
-	/// </summary>
-	[JsonPropertyName("key")]
-	public JsonElement? Key { get; init; }
+    /// <summary>
+    /// What team killed it, 1 – Radiant, 2 – Dire
+    /// </summary>
+    public int? Team { get; init; }
 }

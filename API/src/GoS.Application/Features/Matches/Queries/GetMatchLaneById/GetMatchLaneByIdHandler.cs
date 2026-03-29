@@ -17,13 +17,10 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender)
 
     private PlayerLaneDto MapPlayerToDto(MatchPlayer player, int index)
     {
-        var creepsPerMinute = Enumerable.Range(0, Math.Min(
-                player.LastHitsEachMinute.Count,
-                player.DeniesAtDifferentTimes.Count
-            ))
+        var creepsPerMinute = Enumerable.Range(0, player.LastHitsEachMinute.Count)
             .Select(minute => new LaneCreepsPerMinuteDto {
                 Minute = minute,
-                TotalCreeps = player.LastHitsEachMinute[minute] + player.DeniesAtDifferentTimes[minute]
+                TotalCreeps = player.LastHitsEachMinute[minute] + (player.DeniesAtDifferentTimes?[minute] ?? 0)
             });
 
         var lanePositions = player.LanePos
@@ -43,6 +40,11 @@ internal sealed class GetMatchLaneByIdHandler(ISender sender)
             LanePositions = lanePositions
         };
 
-        int SafeGetMinuteValue(IReadOnlyList<int> data, int minute) => minute < data.Count ? data[minute] : 0;
+        int SafeGetMinuteValue(IReadOnlyList<int>? data, int minute)
+        {
+            if (data is null) return 0;
+
+            return minute < data.Count ? data[minute] : 0;
+        }
     }
 }

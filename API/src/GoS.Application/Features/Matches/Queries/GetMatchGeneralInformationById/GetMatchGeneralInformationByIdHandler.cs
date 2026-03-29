@@ -32,8 +32,8 @@ internal sealed class GetMatchGeneralInformationByIdHandler(ISender sender, IMap
             Winner = mapper.Map<BaseEnumDto<TeamEnum>>(match.RadiantWin == BooleanState.True
                 ? TeamEnum.Radiant
                 : TeamEnum.Dire),
-            RadiantScore = match.RadiantScore,
-            DireScore = match.DireScore,
+            RadiantScore = match.RadiantScore == 0 ? (int) match.Players.Where(x => x.IsRadiant == BooleanState.True).Sum(x => x.Kills) : match.RadiantScore,
+            DireScore = match.DireScore == 0 ? (int) match.Players.Where(x => x.IsRadiant == BooleanState.False).Sum(x => x.Kills) : match.DireScore,
             GameMode = mapper.Map<BaseEnumDto<GameMode>>(match.GameMode),
             LobbyType = mapper.Map<BaseEnumDto<LobbyType>>(match.LobbyType),
             Duration = match.Duration,

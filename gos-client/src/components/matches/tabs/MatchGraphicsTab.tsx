@@ -262,47 +262,49 @@ export const MatchGraphicsTab: React.FC = () => {
                 </div>
             )}
 
-            <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
-                        Team Advantage
-                    </h3>
-                    <div className="flex gap-4 text-xs font-bold uppercase tracking-widest">
-                        <span className="flex items-center gap-1.5 text-[#e7d291]"><Icon src={"/assets/images/gold.png"} size={6} /> Gold</span>
-                        <span className="flex items-center gap-1.5 text-[#38bdf8]"><Icon src={"/assets/images/experience.png"} size={6} /> XP</span>
+            {graphicsData.teamAdvantages && graphicsData.teamAdvantages.length > 0 && (
+                <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                        <h3 className="text-lg font-serif font-bold text-[#e3e3e3] uppercase tracking-widest flex items-center gap-2">
+                            Team Advantage
+                        </h3>
+                        <div className="flex gap-4 text-xs font-bold uppercase tracking-widest">
+                            <span className="flex items-center gap-1.5 text-[#e7d291]"><Icon src={"/assets/images/gold.png"} size={6} /> Gold</span>
+                            <span className="flex items-center gap-1.5 text-[#38bdf8]"><Icon src={"/assets/images/experience.png"} size={6} /> XP</span>
+                        </div>
+                    </div>
+
+                    <div className="w-full h-[70vh]">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <ComposedChart data={graphicsData.teamAdvantages} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
+
+                                <ReferenceArea y1={0} y2={maxAdvantage} fill="#10b981" fillOpacity={0.1} />
+
+                                <ReferenceArea y1={-maxAdvantage} y2={0} fill="#ef4444" fillOpacity={0.1} />
+
+                                <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
+                                <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} />
+
+                                <YAxis
+                                    domain={[-maxAdvantage, maxAdvantage]}
+                                    tickCount={7}
+                                    allowDataOverflow={true}
+                                    stroke="#58606e"
+                                    tickFormatter={(val) => `+${val}`}
+                                    tick={{ fontSize: 12, fill: '#808fa6' }}
+                                />
+
+                                <Tooltip content={<AdvantageTooltip />} isAnimationActive={false} cursor={{ stroke: '#808fa6', strokeWidth: 1, strokeDasharray: '4 4' }} />
+
+                                <ReferenceLine y={0} stroke="#e3e3e3" strokeWidth={1} strokeOpacity={0.5} />
+
+                                <Line type="monotone" dataKey="radiantGoldAdvantage" name="Gold" stroke="#e7d291" strokeWidth={2.5} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#e7d291' }} />
+                                <Line type="monotone" dataKey="radiantXpAdvantage" name="XP" stroke="#38bdf8" strokeWidth={2.5} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#38bdf8' }} />
+                            </ComposedChart>
+                        </ResponsiveContainer>
                     </div>
                 </div>
-
-                <div className="w-full h-[70vh]">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <ComposedChart data={graphicsData.teamAdvantages} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
-
-                            <ReferenceArea y1={0} y2={maxAdvantage} fill="#10b981" fillOpacity={0.1} />
-
-                            <ReferenceArea y1={-maxAdvantage} y2={0} fill="#ef4444" fillOpacity={0.1} />
-
-                            <CartesianGrid strokeDasharray="3 3" stroke="#2e353b" vertical={false} />
-                            <XAxis dataKey="minute" stroke="#58606e" tickFormatter={(val) => `${val}:00`} tick={{ fontSize: 12, fill: '#808fa6' }} />
-
-                            <YAxis
-                                domain={[-maxAdvantage, maxAdvantage]}
-                                tickCount={7}
-                                allowDataOverflow={true}
-                                stroke="#58606e"
-                                tickFormatter={(val) => `+${val}`}
-                                tick={{ fontSize: 12, fill: '#808fa6' }}
-                            />
-
-                            <Tooltip content={<AdvantageTooltip />} isAnimationActive={false} cursor={{ stroke: '#808fa6', strokeWidth: 1, strokeDasharray: '4 4' }} />
-
-                            <ReferenceLine y={0} stroke="#e3e3e3" strokeWidth={1} strokeOpacity={0.5} />
-
-                            <Line type="monotone" dataKey="radiantGoldAdvantage" name="Gold" stroke="#e7d291" strokeWidth={2.5} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#e7d291' }} />
-                            <Line type="monotone" dataKey="radiantXpAdvantage" name="XP" stroke="#38bdf8" strokeWidth={2.5} dot={false} activeDot={{ r: 6, strokeWidth: 0, fill: '#38bdf8' }} />
-                        </ComposedChart>
-                    </ResponsiveContainer>
-                </div>
-            </div>
+            )}
 
             <div className="bg-[#15171c] border border-[#2e353b] rounded-xl overflow-hidden shadow-xl p-4 lg:p-6">
 
