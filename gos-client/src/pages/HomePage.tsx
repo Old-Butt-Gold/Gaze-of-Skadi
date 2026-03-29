@@ -9,7 +9,7 @@ export const HomePage: React.FC = () => {
                 {`
                     @keyframes slow-pan {
                         0% { transform: scale(1) translate(0, 0); }
-                        50% { transform: scale(1.05) translate(-1%, -2%); }
+                        50% { transform: scale(1.025) translate(-1%, -2%); }
                         100% { transform: scale(1) translate(0, 0); }
                     }
                     .animate-bg-pan {
