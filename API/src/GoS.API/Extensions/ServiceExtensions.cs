@@ -30,15 +30,23 @@ public static class ServiceExtensions
         services.AddMemoryCache();
     }
 
-    public static void ConfigureCors(this IServiceCollection services)
+    public static void ConfigureCors(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddCors(options =>
         {
             options.AddPolicy("CorsGlobalPolicy", builder =>
-                builder.WithOrigins("http://localhost:5173")
+            {
+                var allowedOrigins = configuration
+                                         .GetSection("Cors:AllowedOrigins")
+                                         .Get<string[]>()
+                                     ?? ["http://localhost:5173"];
+
+                builder
+                    .WithOrigins(allowedOrigins)
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials());
+                    .AllowCredentials();
+            });
         });
     }
 

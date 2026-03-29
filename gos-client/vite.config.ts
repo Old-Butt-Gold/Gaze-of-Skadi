@@ -7,4 +7,14 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+  base: '/',
+  server: {
+    port: 5173,
+    host: true,
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'esbuild',
+  }
 })

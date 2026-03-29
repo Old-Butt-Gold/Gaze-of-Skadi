@@ -13,7 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.ConfigureControllers();
-builder.Services.ConfigureCors();
+builder.Services.ConfigureCors(builder.Configuration);
 builder.Services.ConfigureSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
@@ -46,8 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
+//app.UseHttpsRedirection();
 
 // For correct IP definition
 app.UseForwardedHeaders(new ForwardedHeadersOptions()

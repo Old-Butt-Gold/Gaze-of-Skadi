@@ -35,7 +35,7 @@ export const useAuth = () => {
   const login = () => {
     const currentPath = window.location.href; // Полный путь, включая домен фронта
 
-    window.location.href = `https://localhost:7048/api/auth/login?returnUrl=${encodeURIComponent(currentPath)}`;
+    window.location.href = `${import.meta.env.VITE_API_BASE_URL}/auth/login?returnUrl=${encodeURIComponent(currentPath)}`;
   };
 
   return {

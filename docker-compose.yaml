@@ -1,25 +1,54 @@
 version: '3.9'
 
 services:
+  gos-frontend:
+    build:
+      context: gos-client
+      dockerfile: ./Dockerfile
+    container_name: gos-frontend-container
+    ports:
+      - "43200:43200"
+    environment:
+      VITE_API_BASE_URL: "http://gos-api:43190"
+      HOST: "0.0.0.0"
+      PORT: "43200"
+    depends_on:
+      gos-api:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - gos-network
+
   gos-api:
     build:
-      context: .
-      dockerfile: ./API/src/GoS.API/Dockerfile
+      context: API
+      dockerfile: ./src/GoS.API/Dockerfile
     container_name: gos-api-container
-    ports:
-      - "43190:43190"
     environment:
+      ASPNETCORE_ENVIRONMENT: "Release"
+      ASPNETCORE_URLS: "http://+:43190"
+
+      Redis__Enabled: "true"
       Redis__Configuration: "redis:6379"
       Redis__InstanceName: "GoS:"
+
+      Cors__AllowedOrigins__0: "http://gos-frontend:43200"
     depends_on:
-      - redis
+      redis:
+        condition: service_healthy
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:43190/health" ]
+      start_period: 10s
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - gos-network
 
   redis:
     image: redis:latest
     container_name: gos-redis-container
-    ports:
-      - "6379:6379"
     volumes:
       - gos_redis:/data
     healthcheck:
@@ -28,6 +57,12 @@ services:
       timeout: 5s
       retries: 5
     restart: unless-stopped
+    networks:
+      - gos-network
 
 volumes:
   gos_redis:
+
+networks:
+  gos-network:
+    driver: bridge
