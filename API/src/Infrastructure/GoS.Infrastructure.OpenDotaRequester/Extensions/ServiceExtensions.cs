@@ -2,17 +2,18 @@ using System.Net.Http.Headers;
 using GoS.Application.Abstractions;
 using GoS.Application.Extensions;
 using GoS.Application.Options;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GoS.Infrastructure.Requester.Extensions;
 
 public static class ServiceExtensions
 {
-    public static void ConfigureOpenDotaRequester(this IServiceCollection services, IConfiguration configuration)
+    public static void ConfigureOpenDotaRequester(this IServiceCollection services)
     {
-        services.Configure<OpenDotaHttpRequesterOptions>(
-            configuration.GetSection(OpenDotaHttpRequesterOptions.ConfigurationPath));
+        services.AddOptions<OpenDotaHttpRequesterOptions>()
+            .BindConfiguration(OpenDotaHttpRequesterOptions.ConfigurationPath)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
 
         services.AddResilientHttpClient<IRequester<OpenDotaHttpRequesterOptions>, OpenDotaRequester, OpenDotaHttpRequesterOptions>(
             pipelineName: "opendota-resilience",

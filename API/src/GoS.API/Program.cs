@@ -18,14 +18,14 @@ builder.Services.ConfigureSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSerializationOptionsProvider();
 builder.Services.ConfigureResourceManager();
-builder.Services.ConfigureOpenDotaRequester(builder.Configuration);
-builder.Services.ConfigureStratzServices(builder.Configuration);
+builder.Services.ConfigureOpenDotaRequester();
+builder.Services.ConfigureStratzServices();
 builder.Services.ConfigureMemoryCache();
 builder.Services.ConfigureMediatR(builder.Configuration);
 builder.Services.ConfigureFluentValidation();
 builder.Services.ConfigureExchangeRedis(builder.Configuration);
 builder.Services.ConfigureSteamAuthentication(builder.Configuration);
-builder.Services.ConfigureSteamServices(builder.Configuration);
+builder.Services.ConfigureSteamServices();
 builder.Services.ConfigureAutoMapper();
 builder.Services.AddHealthChecks();
 

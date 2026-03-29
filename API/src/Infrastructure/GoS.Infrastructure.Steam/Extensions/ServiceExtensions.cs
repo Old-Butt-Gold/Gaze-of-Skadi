@@ -30,11 +30,14 @@ public static class ServiceExtensions
             });
     }
 
-    public static void ConfigureSteamServices(this IServiceCollection services, IConfiguration configuration)
+    public static void ConfigureSteamServices(this IServiceCollection services)
     {
         services.AddScoped<ISteamIdConverter, SteamIdConverter>();
 
-        services.Configure<SteamHttpRequesterOptions>(configuration.GetSection(SteamHttpRequesterOptions.ConfigurationPath));
+        services.AddOptions<SteamHttpRequesterOptions>()
+            .BindConfiguration(SteamHttpRequesterOptions.ConfigurationPath)
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
 
         services.AddResilientHttpClient<IRequester<SteamHttpRequesterOptions>, SteamHttpRequester, SteamHttpRequesterOptions>(
             pipelineName: "steam-resilience");
