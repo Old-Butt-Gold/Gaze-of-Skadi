@@ -113,17 +113,15 @@ const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
 };
 
 export const DistributionChart: React.FC<Props> = ({ data }) => {
-    // Вычисляем максимум для правой оси, чтобы линия не прилипала к потолку
     const maxCumulative = data.length > 0 ? data[data.length - 1].cumulativeSum : 0;
-    // Добавляем 10% отступа сверху
     const domainRight: AxisDomain = [0, maxCumulative * 1.1];
 
     return (
-        <div className="w-full h-full min-h-125 rounded-2xl p-1 md:p-6 shadow-sm">
+        <div className="w-full h-full min-h-[300px] bg-[#15171c] border border-[#2e353b] rounded-2xl p-2 sm:p-4 shadow-xl relative z-0">
             <ResponsiveContainer width="100%" height="100%">
                 <ComposedChart // Используем ComposedChart для комбинации графиков
                     data={data}
-                    margin={{ top: 2, right: 2, left: 2, bottom: 4 }}
+                    margin={{ top: 10, right: 0, left: 0, bottom: 10 }}
                 >
                     <defs>
                         {/* Градиент для линии */}
@@ -133,7 +131,7 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
                         </linearGradient>
                     </defs>
 
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={false} stroke="#f1f5f9" />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} horizontal={true} stroke="#f1f5f9" />
 
                     <XAxis
                         dataKey="rank.name"
@@ -141,7 +139,7 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
                         tickLine={false}
                         interval={0}
                         tick={(props) => <RankGroupTick {...props} data={data} />}
-                        height={80}
+                        height={70}
                     />
 
                     {/* Левая ось Y (Количество игроков на ранге) */}
@@ -149,7 +147,8 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
                         yAxisId="left"
                         axisLine={false}
                         tickLine={false}
-                        tick={{ fill: '#94a3b8', fontSize: 11 }}
+                        width={35}
+                        tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: 600 }}
                         tickFormatter={(val) => val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val}
                     />
 
@@ -159,8 +158,9 @@ export const DistributionChart: React.FC<Props> = ({ data }) => {
                         orientation="right"
                         axisLine={false}
                         tickLine={false}
+                        width={35}
                         domain={domainRight}
-                        tick={{ fill: '#d97706', fontSize: 11 }}
+                        tick={{ fill: '#d97706', fontSize: 10, fontWeight: 600 }}
                         tickFormatter={(val) => val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val}
                     />
 

@@ -149,7 +149,7 @@ export const TimelineAreaChart: React.FC<Props> = ({ title, description, data, c
                             stroke="#58606e"
                             tick={{ fontSize: 10, fill: '#58606e' }}
                             tickFormatter={(val) => val >= 1000000 ? `${(val / 1000000).toFixed(1)}M` : val >= 1000 ? `${(val / 1000).toFixed(0)}k` : val}
-                            width={40}
+                            width={45}
                         />
                         <Tooltip
                             content={(props) => <CustomTooltip {...props} config={config} />}

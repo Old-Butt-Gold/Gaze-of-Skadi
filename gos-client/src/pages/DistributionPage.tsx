@@ -26,13 +26,13 @@ export const DistributionPage: React.FC = () => {
     return (
         <div className="space-y-6 w-full animate-fade-in p-3">
             {/* Page Header */}
-            <div className="flex flex-col md:flex-row justify-between items-end gap-4 pb-4 border-b border-[#2e353b]">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-4 px-2 pb-4 border-b border-[#2e353b]">
                 <div>
-                    <h2 className="text-3xl font-serif font-bold text-[#808fa6] tracking-widest uppercase drop-shadow-md">
+                    <h2 className="text-2xl font-serif font-bold text-[#808fa6] tracking-widest uppercase drop-shadow-md">
                         Rank Distribution
                     </h2>
-                    <p className="text-[#808fa6] mt-1 text-sm">
-                        Analytics based on <span className="font-mono font-bold text-[#e7d291]">{totalPlayers.toLocaleString()}</span> players this season.
+                    <p className="text-[#808fa6] mt-1.5 text-xs sm:text-sm font-medium">
+                        Analytics based on <span className="font-mono font-bold text-[#e7d291] bg-[#e7d291]/10 px-1.5 py-0.5 rounded border border-[#e7d291]/20">{totalPlayers.toLocaleString()}</span> players this season.
                     </p>
                 </div>
             </div>
