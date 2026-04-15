@@ -204,7 +204,8 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/movement.png",
         "color": "Purple",
         "title": "Sleepwalk",
-        "description": "Nightmared units walk in Bane's chosen direction."
+        "description": "Nightmared units walk in Bane's chosen direction.",
+        "deprecated": 1
       }
     ],
     "shard": {
@@ -4302,7 +4303,8 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/nuke.png",
         "color": "Yellow",
         "title": "Trial By Pyre",
-        "description": "This facet doesn't do anything. Clinkz is still burning with revenge..."
+        "description": "This facet doesn't do anything. Clinkz is still burning with revenge...",
+        "deprecated": 1
       }
     ],
     "shard": {
@@ -5913,7 +5915,8 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/mana.png",
         "color": "Blue",
         "title": "Obsidian Decimator",
-        "description": "When Essence Flux restores mana, it also temporarily increases maximum mana."
+        "description": "When Essence Flux restores mana, it also temporarily increases maximum mana.",
+        "deprecated": 1
       },
       {
         "id": 1,
@@ -5921,6 +5924,7 @@
         "icon": "https://cdn.steamstatic.com/apps/dota2/images/dota_react/icons/facets/healing.png",
         "color": "Blue",
         "title": "Overwhelming Devourer",
+        "deprecated": 1,
         "description": "Heroes affected by Astral Imprisonment and Sanity's Eclipse heal Outworld Destroyer every time they cast a spell."
       }
     ],
