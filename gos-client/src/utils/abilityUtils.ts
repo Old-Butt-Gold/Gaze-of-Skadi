@@ -70,7 +70,20 @@ const INNATE_ICONS = new Set([
   "windrunner_tailwind",
   "winter_wyvern_eldwurms_edda",
   "tidehunter_krill_eater",
-  "bane_ichor_of_nyctasha"
+  "bane_ichor_of_nyctasha",
+  "beastmaster_inner_beast",
+  "clinkz_infernal_shred",
+  "dragon_knight_dragon_blood",
+  "wisp_equilibrium",
+  "keeper_of_the_light_bright_speed",
+  "morphling_ebb_and_flow",
+  "night_stalker_midnight_feast",
+  "ringmaster_dark_carnival_souvenirs",
+  "skywrath_mage_shield_of_the_scion",
+  "sven_wrath_of_god",
+  "templar_assassin_inner_peace",
+  "vengefulspirit_retribution",
+  "skeleton_king_vampiric_spirit"
 ]);
 
 export const getAbilityIconUrl = (abilityKey: string | null, is_innate : BooleanState | null, originalImg : string | null)  => {

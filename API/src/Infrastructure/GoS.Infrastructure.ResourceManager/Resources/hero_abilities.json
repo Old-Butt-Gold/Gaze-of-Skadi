@@ -795,8 +795,7 @@
       "morphling_morph_agi",
       "morphling_morph_str",
       "morphling_replicate",
-      "morphling_morph_replicate",
-      "morphling_accumulation"
+      "morphling_morph_replicate"
     ],
     "talents": [
       {
@@ -3421,7 +3420,7 @@
     ],
     "shard": {
       "shard_desc": "Life Drain can target your Nether Ward, causing life drain to refract to all enemy heroes within 700 units of the ward for 75% of its normal value. The effect is interrupted if the ward is destroyed.",
-      "shard_skill_name": "pugna_life_drain",
+      "shard_skill_name": "pugna_nether_ward",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/pugna/pugna_aghanims_shard.webm"
     },
     "aghanim_scepter": {
@@ -7055,14 +7054,14 @@
   },
   "npc_dota_hero_wisp": {
     "abilities": [
+      "wisp_equilibrium",
       "wisp_tether",
       "wisp_tether_break",
       "wisp_spirits",
       "wisp_overcharge",
       "wisp_spirits_in",
       "wisp_spirits_out",
-      "wisp_relocate",
-      "wisp_essence_conduction"
+      "wisp_relocate"
     ],
     "talents": [
       {
@@ -8550,7 +8549,7 @@
     },
     "aghanim_scepter": {
       "scepter_desc": "Upon gaining this ability and every 90 sec, the hero draws a random tarot card. The hero always knows which card will be next. Only one card can be active at a time.\n«Death»: +40% spell damage.\n«Fool»: +100% gold gained.\n«World»: +150% intelligence.\n«Lovers»: +40% healing amplification.\n«Tower»: barrier against all damage types with 400 health (regenerates if no damage is taken for 7 sec.)",
-      "scepter_skill_name": "oracle_prognosticate",
+      "scepter_skill_name": "oracle_diviners_deck",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/oracle/oracle_aghanims_scepter.webm"
     }
   },
@@ -8629,7 +8628,7 @@
     ],
     "shard": {
       "shard_desc": "M.A.D. becomes an active ability. Techies plant an M.A.D. which can be detonated manually with a sub-ability. Only one M.A.D. from the active ability can be placed at a time.",
-      "shard_skill_name": "techies_reactive_tazer",
+      "shard_skill_name": "techies_mutually_assured_destruction",
       "video": "https://cdn.steamstatic.com/apps/dota2/videos/dota_react/abilities/techies/techies_aghanims_shard.webm"
     },
     "aghanim_scepter": {
