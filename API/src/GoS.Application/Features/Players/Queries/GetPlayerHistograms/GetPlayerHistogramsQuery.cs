@@ -10,6 +10,5 @@ public record GetPlayerHistogramsQuery(long AccountId, PlayerField Field, Player
     : ICacheableQuery<IEnumerable<PlayerHistogramDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:histograms", new { accountId = AccountId, field = Field, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(30);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

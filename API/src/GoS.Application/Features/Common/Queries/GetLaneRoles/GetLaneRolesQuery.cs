@@ -8,5 +8,4 @@ public record GetLaneRolesQuery(int HeroId) : ICacheableQuery<IEnumerable<LaneRo
 {
     public string GetCacheKey() => CacheKey.Create("scenarios:laneRoles");
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(6);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

@@ -7,6 +7,4 @@ public sealed record GetMatchesByRankQuery(int Take = 240) : ICacheableQuery<Mat
     public string GetCacheKey() => $"stratz:matches-by-rank:{Take}";
 
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(24);
-
-    public TimeSpan? GetSlidingExpiration() => null;
 }

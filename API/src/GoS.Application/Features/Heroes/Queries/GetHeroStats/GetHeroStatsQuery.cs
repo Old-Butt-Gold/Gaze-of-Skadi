@@ -7,5 +7,4 @@ public record GetHeroStatsQuery : ICacheableQuery<IEnumerable<HeroStatsGroupedDt
 {
     public string GetCacheKey() => CacheKey.Create("hero:stats");
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
-    public TimeSpan? GetSlidingExpiration() => TimeSpan.FromMinutes(30);
 }

@@ -7,6 +7,5 @@ namespace GoS.Application.Features.Heroes.Queries.GetHeroItemPopularity;
 public record GetHeroItemPopularityQuery(int HeroId) : ICacheableQuery<HeroItemPopularityDto?>, IHeroIdRequest
 {
     public string GetCacheKey() => CacheKey.Create("hero:itemPopularity", new { heroId = HeroId });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(6);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(2);
 }

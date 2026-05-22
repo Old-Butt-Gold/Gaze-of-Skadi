@@ -22,7 +22,7 @@ export const TeamHeader: React.FC<Props> = ({ team }) => {
 
                     {/* Logo Container */}
                     <div className="relative group">
-                        <div className="absolute -inset-1 bg-gradient-to-br from-[#e7d291]/20 to-transparent rounded-2xl blur opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute -inset-1 rounded-2xl blur opacity-50 group-hover:opacity-100 transition-opacity"></div>
                             <Icon
                                 src={team.logoUrl || "fallback"}
                                 size={64}

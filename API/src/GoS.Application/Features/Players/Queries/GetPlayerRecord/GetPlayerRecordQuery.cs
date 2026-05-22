@@ -10,6 +10,5 @@ public record GetPlayerRecordsQuery(long AccountId, PlayerField Field, PlayerEnd
     : ICacheableQuery<IEnumerable<PlayerRecordDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:record", new { accountId = AccountId, field = Field, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(60);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(60);
 }

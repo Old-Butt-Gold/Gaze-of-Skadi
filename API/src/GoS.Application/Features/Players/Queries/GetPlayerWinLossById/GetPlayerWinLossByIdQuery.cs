@@ -9,6 +9,5 @@ public record GetPlayerWinLossByIdQuery(long AccountId, PlayerEndpointParameters
     : ICacheableQuery<PlayerWinLossDto?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:wl", new { accountId = AccountId, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(5);
-    public TimeSpan? GetSlidingExpiration() => TimeSpan.FromMinutes(2);
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

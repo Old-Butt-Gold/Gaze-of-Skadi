@@ -8,5 +8,4 @@ public record GetHeroesQuery : ICacheableQuery<Dictionary<string, HeroInfo>?>
 {
     public string GetCacheKey() => CacheKey.Create("heroes:all");
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(24);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

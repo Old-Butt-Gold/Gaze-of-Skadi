@@ -7,5 +7,4 @@ public record GetMatchGeneralInformationByIdQuery(long MatchId) : ICacheableQuer
 {
     public string GetCacheKey() => CacheKey.Create("players", new { id = MatchId });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

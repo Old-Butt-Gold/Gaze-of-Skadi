@@ -14,6 +14,5 @@ public record GetPlayerActivityQuery(long AccountId, PlayerEndpointParameters Pa
         tz = TimezoneOffsetHours ?? 0
     });
 
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(60);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

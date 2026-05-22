@@ -7,5 +7,4 @@ public record GetTeamPlayersByIdQuery(int Id) : ICacheableQuery<IEnumerable<Team
 {
     public string GetCacheKey() => CacheKey.Create("team:players", new { id = Id });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(6);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

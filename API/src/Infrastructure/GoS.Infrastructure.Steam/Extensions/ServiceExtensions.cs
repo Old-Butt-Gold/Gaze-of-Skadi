@@ -20,6 +20,7 @@ public static class ServiceExtensions
             .AddCookie(options =>
             {
                 options.Cookie.SameSite = SameSiteMode.None;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
                 options.ExpireTimeSpan = TimeSpan.FromDays(7);
                 options.Cookie.Name = "GoS.Auth";
             })

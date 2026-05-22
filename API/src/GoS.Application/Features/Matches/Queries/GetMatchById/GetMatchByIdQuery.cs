@@ -8,5 +8,4 @@ internal sealed record GetMatchByIdQuery(long MatchId) : ICacheableQuery<Match?>
 {
     public string GetCacheKey() => CacheKey.Create("match", new { id = MatchId });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

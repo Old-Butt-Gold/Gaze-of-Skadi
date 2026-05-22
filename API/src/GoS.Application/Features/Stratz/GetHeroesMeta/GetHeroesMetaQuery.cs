@@ -6,7 +6,5 @@ public sealed record GetHeroesMetaQuery(int Days = 30) : ICacheableQuery<HeroesM
 {
     public string GetCacheKey() => $"stratz:heroes-meta:days:{Days}";
 
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(5);
-
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

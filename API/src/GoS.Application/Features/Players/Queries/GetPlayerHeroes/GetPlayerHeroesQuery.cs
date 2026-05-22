@@ -9,6 +9,5 @@ public record GetPlayerHeroesQuery(long AccountId, PlayerEndpointParameters Para
     : ICacheableQuery<IEnumerable<PlayerHeroDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:heroes", new { accountId = AccountId, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(20);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

@@ -7,5 +7,4 @@ public record FindMatchesQuery(int[] TeamA, int[] TeamB) : ICacheableQuery<IEnum
 {
     public string GetCacheKey() => CacheKey.Create("match", new { TeamA, TeamB });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

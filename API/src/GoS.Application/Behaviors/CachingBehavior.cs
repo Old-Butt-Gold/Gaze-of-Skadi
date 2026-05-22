@@ -45,9 +45,6 @@ public sealed class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRe
         if (cacheable.GetAbsoluteExpirationRelativeToNow() is { } absoluteTtl)
             cacheOptions.AbsoluteExpirationRelativeToNow = absoluteTtl;
 
-        if (cacheable.GetSlidingExpiration() is { } slidingTtl)
-            cacheOptions.SlidingExpiration = slidingTtl;
-
         await _cache.SetAsync(key, response, serializerOptions, cacheOptions, ct);
 
         return response;

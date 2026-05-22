@@ -8,5 +8,4 @@ public record GetHeroBenchmarkQuery(int HeroId) : ICacheableQuery<BenchmarkDto?>
 {
     public string GetCacheKey() => CacheKey.Create("hero:benchmark", new { heroId = HeroId });
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(2);
-    public TimeSpan? GetSlidingExpiration() => TimeSpan.FromMinutes(30);
 }

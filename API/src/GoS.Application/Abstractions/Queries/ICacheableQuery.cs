@@ -6,5 +6,4 @@ public interface ICacheableQuery<out TResponse> : IRequest<TResponse>
 {
     string GetCacheKey();
     TimeSpan? GetAbsoluteExpirationRelativeToNow();
-    TimeSpan? GetSlidingExpiration();
 }

@@ -9,6 +9,5 @@ public record GetPlayerTotalsQuery(long AccountId, PlayerEndpointParameters Para
     : ICacheableQuery<IEnumerable<PlayerTotalDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:totals", new { accountId = AccountId, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(20);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

@@ -7,7 +7,5 @@ public sealed record GetMatchesByGameModeQuery(int Take = 240) : ICacheableQuery
     public string GetCacheKey() => $"stratz:matches-by-game-mode:{Take}";
 
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(24);
-
-    public TimeSpan? GetSlidingExpiration() => null;
 }
 

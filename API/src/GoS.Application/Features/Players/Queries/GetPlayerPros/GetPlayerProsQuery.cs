@@ -9,6 +9,5 @@ public record GetPlayerProsQuery(long AccountId, PlayerEndpointParameters Parame
     : ICacheableQuery<IEnumerable<PlayerProDto>?>, IPlayerEndpointParametersRequest
 {
     public string GetCacheKey() => CacheKey.Create("player:pros", new { accountId = AccountId, p = Parameters });
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(60);
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

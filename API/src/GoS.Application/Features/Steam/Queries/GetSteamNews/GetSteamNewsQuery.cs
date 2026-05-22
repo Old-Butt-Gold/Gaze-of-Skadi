@@ -6,7 +6,5 @@ public record GetSteamNewsQuery(int Count) : ICacheableQuery<IEnumerable<SteamNe
 {
     public string GetCacheKey() => $"steam:news:count={Count}";
 
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(5);
-
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

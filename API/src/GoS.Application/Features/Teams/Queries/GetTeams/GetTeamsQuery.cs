@@ -7,5 +7,4 @@ public record GetTeamsQuery : ICacheableQuery<IEnumerable<TeamDto>?>
 {
     public string GetCacheKey() => CacheKey.Create("teams:all");
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(24);
-    public TimeSpan? GetSlidingExpiration() => null;
 }

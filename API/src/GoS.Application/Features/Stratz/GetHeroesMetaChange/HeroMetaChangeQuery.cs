@@ -7,7 +7,5 @@ public record HeroMetaChangeQuery(int HeroId) : ICacheableQuery<HeroMetaTimeline
 {
     public string GetCacheKey() => $"stratz:hero-meta-change:{HeroId}";
 
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(5);
-
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

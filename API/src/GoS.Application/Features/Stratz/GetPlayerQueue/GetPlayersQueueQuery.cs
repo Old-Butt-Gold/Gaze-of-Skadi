@@ -6,7 +6,5 @@ public sealed record GetPlayersQueueQuery : ICacheableQuery<IEnumerable<PlayersQ
 {
     public string GetCacheKey() => "stratz:players-queue";
 
-    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromMinutes(5);
-
-    public TimeSpan? GetSlidingExpiration() => null;
+    public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(1);
 }

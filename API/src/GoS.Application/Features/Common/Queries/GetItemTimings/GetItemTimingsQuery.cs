@@ -8,5 +8,4 @@ public record GetItemTimingsQuery(int HeroId) : ICacheableQuery<IEnumerable<Item
 {
     public string GetCacheKey() => CacheKey.Create("scenarios:itemTimings");
     public TimeSpan? GetAbsoluteExpirationRelativeToNow() => TimeSpan.FromHours(6);
-    public TimeSpan? GetSlidingExpiration() => null;
 }
