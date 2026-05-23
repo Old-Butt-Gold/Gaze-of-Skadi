@@ -53,11 +53,11 @@ internal sealed class GetMatchOverviewByIdHandler(ISender sender, IMapper mapper
         const string shardKey = "aghanims_shard";
         const string aghanimKey = "ultimate_scepter";
 
-        var aghanimShardBuff = (player.PermanentBuffs != null && player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.AghanimsShard))
+        var aghanimShardBuff = (player.PermanentBuffs != null && player.PermanentBuffs.Any(x => x.PermanentBuffEnum == (int)PermanentBuffEnum.AghanimsShard))
                                || player.PurchaseLog.Any(x => x.Key == shardKey)
                                || player.AghanimsShard == BooleanState.True;
 
-        var aghanimBuff = (player.PermanentBuffs != null && player.PermanentBuffs.Any(x => x.PermanentBuffEnum == PermanentBuffEnum.UltimateScepter))
+        var aghanimBuff = (player.PermanentBuffs != null && player.PermanentBuffs.Any(x => x.PermanentBuffEnum == (int)PermanentBuffEnum.UltimateScepter))
                            || player.PurchaseLog.Any(x => x.Key == aghanimKey)
                            || player.AghanimsScepter == BooleanState.True;
 

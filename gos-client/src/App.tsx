@@ -112,7 +112,7 @@ function App() {
                 </Route>
 
                 <Route path={`${APP_ROUTES.MATCHES}/:matchId`} element={<MatchDetailsPage />}>
-                    <Route index element={<Navigate to="benchmarks" replace />} />
+                    <Route index element={<Navigate to="overview" replace />} />
 
                     <Route path="benchmarks" element={<MatchBenchmarksTab />} />
                     <Route path="chat" element={<MatchChatTab />} />

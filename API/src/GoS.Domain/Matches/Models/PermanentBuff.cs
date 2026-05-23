@@ -12,7 +12,7 @@ public class PermanentBuff
 	/// Gets the list of constants can be found here: https://github.com/odota/dotaconstants/blob/master/json/permanent_buffs.json
 	/// </summary>
 	[JsonPropertyName("permanent_buff")]
-	public PermanentBuffEnum PermanentBuffEnum { get; init; }
+	public int PermanentBuffEnum { get; init; }
 
 	/// <summary>
 	/// Gets a stack count
